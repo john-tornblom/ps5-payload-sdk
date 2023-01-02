@@ -6,7 +6,12 @@ the [BD-J ELF loader][bjd-elf] or the [PS5 Webkit ELF loader][webkit-elf].
 In order to generate trampolines for essential system libraries on the PS5, you
 need to obtain sprx files from your PS5 console. Decrypt the sprx files your
 payload is suppose to interact with, and place them (with the same filename as
-used on the PS5) in the root directory of this repository.
+used on the PS5) in the root directory of this repository. You also need a build
+environment. On Debian-flavored operating systems, you can invoke the following
+command to install dependencies used by the SDK.
+```console
+john@localhost:ps5-payload-sdk$ sudo apt-get install wget clang python3 python3-pyelftools
+```
 
 ## Building
 ```console
