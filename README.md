@@ -1,5 +1,5 @@
 # PS5 Payload SDK
-This is an SDK for developing payloads targeted at exploited PS5s, running
+This is an SDK for developing ELF payloads targeted at exploited PS5s, running
 the [BD-J ELF loader][bjd-elf] or the [PS5 Webkit ELF loader][webkit-elf].
 
 ## Prerequisites
