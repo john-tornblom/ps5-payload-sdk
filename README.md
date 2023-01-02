@@ -35,8 +35,7 @@ to discuss the solution properly before you commit time and effort.
 ## License
 Files in the include_bsd directory are licenced under BSD licences. The files
 crt1.c, Makefile, and trampgen.py are licensed under the GPLv3+. The file
-linker.x is copied from [PS5SDK][PS5SDK], which is licensed under the GPLv2
-license.
+linker.x is copied from [PS5SDK][PS5SDK], which is licensed under the GPLv2.
 
 [issues]: https://github.com/john-tornblom/ps5-payload-sdk/issues/new
 [bjd-elf]: https://github.com/john-tornblom/bdj-sdk/tree/master/samples/ps5-elf-loader
