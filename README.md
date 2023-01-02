@@ -28,7 +28,7 @@ please file an issue before you start to work on you changes. This will allow us
 to discuss the solution properly before you commit time and effort.
 
 ## License
-Files in the include_bsd directory are licence under BSD licences. The files
+Files in the include_bsd directory are licenced under BSD licences. The files
 crt1.c, Makefile, and trampgen.py are licensed under the GPLv3+. The file
 linker.x is copied from [PS5SDK][PS5SDK], which is licensed under the GPLv2
 license.
