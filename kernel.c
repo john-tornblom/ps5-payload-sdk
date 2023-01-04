@@ -22,6 +22,7 @@ static int (*sysctlbyname)(const char *, void *, unsigned long*,
  * public constants.
  **/
 unsigned long KERNEL_ADDRESS_DATA_BASE = 0;
+unsigned long KERNEL_ADDRESS_ALLPROC = 0;
 
 const unsigned long KERNEL_OFFSET_PROC_P_UCRED = 0x40;
 const unsigned long KERNEL_OFFSET_PROC_P_PID   = 0xBC;
@@ -115,35 +116,35 @@ kernel_init_rw(const payload_args_t *args) {
 
   switch(kernel_get_fw_version() & 0xffff0000) {
   case 0x3000000:
-    KERNEL_OFFSET_ALLPROC = 0x276DC58;
+    KERNEL_ADDRESS_ALLPROC = KERNEL_ADDRESS_DATA_BASE + 0x276DC58;
     break;
 
   case 0x3100000:
-    KERNEL_OFFSET_ALLPROC = 0x276DC58;
+    KERNEL_ADDRESS_ALLPROC = KERNEL_ADDRESS_DATA_BASE + 0x276DC58;
     break;
 
   case 0x3200000:
-    KERNEL_OFFSET_ALLPROC = 0x276DC58;
+    KERNEL_ADDRESS_ALLPROC = KERNEL_ADDRESS_DATA_BASE + 0x276DC58;
     break;
 
   case 0x3210000:
-    KERNEL_OFFSET_ALLPROC = 0x276DC58;
+    KERNEL_ADDRESS_ALLPROC = KERNEL_ADDRESS_DATA_BASE + 0x276DC58;
     break;
 
   case 0x4020000:
-    KERNEL_OFFSET_ALLPROC = 0x27EDCB8;
+    KERNEL_ADDRESS_ALLPROC = KERNEL_ADDRESS_DATA_BASE + 0x27EDCB8;
     break;
 
   case 0x4030000:
-    KERNEL_OFFSET_ALLPROC = 0x27EDCB8;
+    KERNEL_ADDRESS_ALLPROC = KERNEL_ADDRESS_DATA_BASE + 0x27EDCB8;
     break;
 
   case 0x4500000:
-    KERNEL_OFFSET_ALLPROC = 0x27EDCB8;
+    KERNEL_ADDRESS_ALLPROC = KERNEL_ADDRESS_DATA_BASE + 0x27EDCB8;
     break;
 
   case 0x4510000:
-    KERNEL_OFFSET_ALLPROC = 0x27EDCB8;
+    KERNEL_ADDRESS_ALLPROC = KERNEL_ADDRESS_DATA_BASE + 0x27EDCB8;
     break;
 
   default:

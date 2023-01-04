@@ -5,7 +5,6 @@
 
 
 int main() {
-  uint64_t allproc_addr = KERNEL_ADDRESS_DATA_BASE + KERNEL_OFFSET_ALLPROC;
   uint64_t cur_proc_ucred_addr = 0;
   uint64_t next_proc_addr = 0;
   uint64_t cur_proc_addr = 0;
@@ -16,7 +15,7 @@ int main() {
   printf("[+] PID = 0x%x\n", pid);
   printf("[+] UID = 0x%x\n", getuid());
 
-  kernel_copyout(allproc_addr, &cur_proc_addr, sizeof(cur_proc_addr));
+  kernel_copyout(KERNEL_ADDRESS_ALLPROC, &cur_proc_addr, sizeof(cur_proc_addr));
   for (;;) {
     // Get next proc
     kernel_copyout(cur_proc_addr, &next_proc_addr, sizeof(next_proc_addr));
