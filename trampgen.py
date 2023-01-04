@@ -51,6 +51,9 @@ def symbols(sym_type, filename):
                 if sym_type != sym.entry['st_info']['type']:
                     continue
 
+                if sym.entry['st_shndx'] == 'SHN_UNDEF':
+                    continue
+
                 sym_nid = sym.name[:11]
                 if not sym_nid in nid_map:
                     logger.warning(f'skipping unknown NID {sym.name}')
@@ -74,7 +77,7 @@ if __name__ == '__main__':
 
     # declare functions
     for sym in funcs:
-        print(f'static void* __{sym}__ = 0;')
+        print(f'static __attribute__ ((used)) void* __{sym}__ = 0;')
         print('asm(')
         print('    ".intel_syntax noprefix\\n"')
         print(f'    ".global {sym}\\n"')
@@ -84,8 +87,11 @@ if __name__ == '__main__':
 
     # initialize function pointers
     stem = Path(cli_args.prx).stem
-    print(f'int {stem}_dlsym(int (*dlsym)(int, const char*, void*)) ' + '{')
+    print('__attribute__((constructor(102))) static int')
+    print(f'{stem}_dlsym(int (*dlsym)(int, const char*, void*)) ' + '{')
     for sym in funcs:
-        print(f'  if(dlsym({modid}, "{sym}", &__{sym}__)) return -1;')
+        print(f'  dlsym({modid}, "{sym}", &__{sym}__);')
+
+    print('')
     print('  return 0;')
     print('}')

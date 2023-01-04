@@ -14,8 +14,9 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-CC      := clang
-CFLAGS  := -ffreestanding -fno-builtin -nostdlib -static
+CC     ?= cc
+CFLAGS := -ffreestanding -fno-builtin -nostdlib -static -masm=intel
+
 PYTHON  := python3
 DESTDIR ?= /opt/ps5-payload-sdk
 
@@ -31,16 +32,16 @@ all: crt1.o $(MOD_ARCHIVES)
 nid_db.xml:
 	wget $(NID_DB_URL)
 
-libkernel.c: libkernel.sprx nid_db.xml
+libkernel.c: libkernel.sprx nid_db.xml trampgen.py
 	$(PYTHON) trampgen.py --module-id 0x2001 --prx $< > $@
 
-libkernel_sys.c: libkernel_sys.sprx nid_db.xml
+libkernel_sys.c: libkernel_sys.sprx nid_db.xml trampgen.py
 	$(PYTHON) trampgen.py --module-id 0x2001 --prx $< > $@
 
-libkernel_web.c: libkernel_web.sprx nid_db.xml
+libkernel_web.c: libkernel_web.sprx nid_db.xml trampgen.py
 	$(PYTHON) trampgen.py --module-id 0x2001 --prx $< > $@
 
-libSceLibcInternal.c: libSceLibcInternal.sprx nid_db.xml
+libSceLibcInternal.c: libSceLibcInternal.sprx nid_db.xml trampgen.py
 	$(PYTHON) trampgen.py --module-id 0x2 --prx $< > $@
 
 %.o: %.c
@@ -52,8 +53,8 @@ libSceLibcInternal.c: libSceLibcInternal.sprx nid_db.xml
 clean:
 	rm -f *.o *.a nid_db.xml
 
-install:
-	install -d $(DESTDIR)/target/lib
-	install linker.x $(DESTDIR)/target
-	install crt1.o $(MOD_ARCHIVES) $(DESTDIR)/target/lib
-	cp -r include_bsd $(DESTDIR)/target/include
+install: linker.x crt1.o $(MOD_ARCHIVES)
+	install -d $(DESTDIR)/usr/lib
+	install linker.x $(DESTDIR)
+	install crt1.o $(MOD_ARCHIVES) $(DESTDIR)/usr/lib
+	cp -r include_bsd $(DESTDIR)/usr/include

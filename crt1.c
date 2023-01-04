@@ -15,26 +15,89 @@ along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
 
+/**
+ * Prototype for sceKernelDlsym().
+ **/
+typedef int (*dlsym_t)(int, const char*, void*);
+
+
+/**
+ * Prototype for module constructors.
+ **/
+typedef int (*init_module_t)(dlsym_t*);
+
+
+/**
+ * Prototype for module destructors.
+ **/
+typedef void (*fini_module_t)(void);
+
+
+/**
+ * Payload arguments provided by the ELF loader.
+ **/
 typedef struct payload_args {
-  int (*sceKernelDlsym)(int, const char*, void*);
-  int *rwpipe;
-  int *rwpair;
-  long kpipe_addr;
-  long kdata_base_addr;
-  int *payloadout;
+  dlsym_t *sceKernelDlsym;
+  int     *rwpipe;
+  int     *rwpair;
+  long     kpipe_addr;
+  long     kdata_base_addr;
+  int     *payloadout;
 } payload_args_t;
 
 
-extern int main(int argc, char*argv[]);
+/**
+ * Symbols provided by the ELF linker.
+ **/
+extern int (*__init_array_start[])(dlsym_t*) __attribute__((weak));
+extern int (*__init_array_end[])(dlsym_t*) __attribute__((weak));
+extern void (*__fini_array_start[])(void) __attribute__((weak));
+extern void (*__fini_array_end[])(void) __attribute__((weak));
 
 
-int
-_start(payload_args_t *args, int sock_fd) {
-  //TODO: init modules
+/**
+ * Entry point to the actual payload.
+ **/
+extern int main(int argc, char* argv[]);
+
+
+/**
+ * Entry-point used by the ELF loader.
+ **/
+long _start(payload_args_t *args) {
+  unsigned long base_addr = 0x926100000l; //FIXME: this should be parameterized.
+  unsigned long array_addr = 0;
+  unsigned long count = 0;
+  int error = 0;
   
-  *args->payloadout = main(0, 0);
+  // run module constructors
+  array_addr = base_addr + (unsigned long)__init_array_start;
+  count = __init_array_end - __init_array_start;
+  for(int i=0; i<count; i++) {
+    unsigned long *init_module_ptr = (unsigned long*)(array_addr + (i * sizeof(init_module_t*)));
+    unsigned long init_module_addr = *init_module_ptr + base_addr;
+    init_module_t init_module = (init_module_t)init_module_addr;
+    if((error=init_module(args->sceKernelDlsym))) {
+      break;
+    }
+  }
 
+  // run payload
+  if(!error) {
+    *args->payloadout = main(0, 0);
+  } else {
+    *args->payloadout = error;
+  }
+  
+  // run module destructors
+  array_addr = base_addr + (unsigned long)__fini_array_start;
+  count = __fini_array_end - __fini_array_start;
+  for(int i=0; i<count; i++) {
+    unsigned long *fini_module_ptr = (unsigned long*)(array_addr + (i * sizeof(fini_module_t*)));
+    unsigned long fini_module_addr = *fini_module_ptr + base_addr;
+    fini_module_t fini_module = (fini_module_t)fini_module_addr;
+    fini_module();
+  }
+  
   return *args->payloadout;
 }
-
-
