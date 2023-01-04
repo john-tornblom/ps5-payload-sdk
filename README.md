@@ -24,7 +24,12 @@ john@localhost:ps5-payload-sdk$ make DESTDIR=/opt/ps5-payload-sdk install
 ```
 
 ## Usage
-TODO
+```console
+john@localhost:ps5-payload-sdk$ export PS5_PAYLOAD_SDK=/opt/ps5-payload-sdk
+john@localhost:ps5-payload-sdk$ make -C samples/hello_world
+john@localhost:ps5-payload-sdk$ export PS5_HOST=ps5; export PS5_PORT=9020
+john@localhost:ps5-payload-sdk$ make -C samples/hello_world test
+```
 
 ## Reporting Bugs
 If you encounter problems with ps5-payload-sdk, please [file a github issue][issues].
