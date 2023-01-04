@@ -35,7 +35,7 @@ nid_map = {entry.get('obf'): entry.get('sym')
 
 
 
-def symbols(sym_type, filename):
+def symbols(sym_type, filename, library_index):
     '''
     yield symbol names in PT_DYNAMIC segments using the NID lookup table
     'nid_db.xml'.
@@ -54,12 +54,18 @@ def symbols(sym_type, filename):
                 if sym.entry['st_shndx'] == 'SHN_UNDEF':
                     continue
 
-                sym_nid = sym.name[:11]
-                if not sym_nid in nid_map:
-                    logger.warning(f'skipping unknown NID {sym.name}')
+                if not sym.name:
                     continue
 
-                yield nid_map[sym_nid]
+                nid, lid, mid = sym.name.split('#')
+                if library_index != lid:
+                    continue
+
+                if not nid in nid_map:
+                    logger.warning(f'skipping unknown NID {nid}')
+                    continue
+
+                yield nid_map[nid]
 
 
 if __name__ == '__main__':
@@ -68,12 +74,13 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--prx', required=True)
     parser.add_argument('--module-id', required=True)
+    parser.add_argument('--library-index', required=True)
 
     cli_args = parser.parse_args()
 
     modid = cli_args.module_id
-    funcs = sorted(set(symbols('STT_FUNC', cli_args.prx)))
-    gvars = sorted(set(symbols('STT_OBJECT', cli_args.prx)))
+    funcs = sorted(symbols('STT_FUNC', cli_args.prx, cli_args.library_index))
+    gvars = sorted(symbols('STT_OBJECT', cli_args.prx, cli_args.library_index))
 
     print('#include "payload.h"')
     print('')

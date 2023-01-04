@@ -33,16 +33,16 @@ nid_db.xml:
 	wget $(NID_DB_URL)
 
 libkernel.c: libkernel.sprx nid_db.xml trampgen.py
-	$(PYTHON) trampgen.py --module-id 0x2001 --prx $< > $@
+	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx $< > $@
 
 libkernel_sys.c: libkernel_sys.sprx nid_db.xml trampgen.py
-	$(PYTHON) trampgen.py --module-id 0x2001 --prx $< > $@
+	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx $< > $@
 
 libkernel_web.c: libkernel_web.sprx nid_db.xml trampgen.py
-	$(PYTHON) trampgen.py --module-id 0x2001 --prx $< > $@
+	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx $< > $@
 
 libSceLibcInternal.c: libSceLibcInternal.sprx nid_db.xml trampgen.py
-	$(PYTHON) trampgen.py --module-id 0x2 --prx $< > $@
+	$(PYTHON) trampgen.py --library-index C --module-id 0x2 --prx $< > $@
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
