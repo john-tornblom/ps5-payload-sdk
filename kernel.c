@@ -49,7 +49,7 @@ static unsigned long kdata_base = 0;
 /**
  *
  **/
-long
+unsigned int
 kernel_get_fw_version(void) {
   unsigned int version = 0;
   unsigned long size = sizeof(version);

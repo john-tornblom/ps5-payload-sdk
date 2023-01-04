@@ -11,6 +11,7 @@ int main() {
   uint32_t cur_proc_pid = 0;
   pid_t pid = getpid();
 
+  printf("[+] FW version is 0x%x\n", kernel_get_fw_version());
   printf("[+] kernel .data base is 0x%llx\n", KERNEL_ADDRESS_DATA_BASE);
   printf("[+] PID = 0x%x\n", pid);
   printf("[+] UID = 0x%x\n", getuid());
