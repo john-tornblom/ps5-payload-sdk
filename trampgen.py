@@ -99,8 +99,9 @@ if __name__ == '__main__':
     stem = Path(cli_args.prx).stem
     print('__attribute__((constructor(102))) static int')
     print(f'{stem}_dlsym(const payload_args_t *args) ' + '{')
+    print('  int err = 0;')
     for sym in funcs:
-        print(f'  args->sceKernelDlsym({modid}, "{sym}", &__{sym}__);')
+        print(f'  if((err=args->sceKernelDlsym({modid}, "{sym}", &__{sym}__))) return err;')
 
     print('')
     print('  return 0;')
