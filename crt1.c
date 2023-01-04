@@ -14,43 +14,14 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
-
-/**
- * Prototype for sceKernelDlsym().
- **/
-typedef int (*dlsym_t)(int, const char*, void*);
-
-
-/**
- * Prototype for module constructors.
- **/
-typedef int (*init_module_t)(dlsym_t*);
-
-
-/**
- * Prototype for module destructors.
- **/
-typedef void (*fini_module_t)(void);
-
-
-/**
- * Payload arguments provided by the ELF loader.
- **/
-typedef struct payload_args {
-  dlsym_t *sceKernelDlsym;
-  int     *rwpipe;
-  int     *rwpair;
-  long     kpipe_addr;
-  long     kdata_base_addr;
-  int     *payloadout;
-} payload_args_t;
+#include "payload.h"
 
 
 /**
  * Symbols provided by the ELF linker.
  **/
-extern int (*__init_array_start[])(dlsym_t*) __attribute__((weak));
-extern int (*__init_array_end[])(dlsym_t*) __attribute__((weak));
+extern int (*__init_array_start[])(const payload_args_t *) __attribute__((weak));
+extern int (*__init_array_end[])(const payload_args_t *) __attribute__((weak));
 extern void (*__fini_array_start[])(void) __attribute__((weak));
 extern void (*__fini_array_end[])(void) __attribute__((weak));
 
@@ -77,7 +48,7 @@ long _start(payload_args_t *args) {
     unsigned long *init_module_ptr = (unsigned long*)(array_addr + (i * sizeof(init_module_t*)));
     unsigned long init_module_addr = *init_module_ptr + base_addr;
     init_module_t init_module = (init_module_t)init_module_addr;
-    if((error=init_module(args->sceKernelDlsym))) {
+    if((error=init_module(args))) {
       break;
     }
   }
@@ -101,3 +72,4 @@ long _start(payload_args_t *args) {
   
   return *args->payloadout;
 }
+

@@ -75,6 +75,9 @@ if __name__ == '__main__':
     funcs = sorted(set(symbols('STT_FUNC', cli_args.prx)))
     gvars = sorted(set(symbols('STT_OBJECT', cli_args.prx)))
 
+    print('#include "payload.h"')
+    print('')
+    
     # declare functions
     for sym in funcs:
         print(f'static __attribute__ ((used)) void* __{sym}__ = 0;')
@@ -88,9 +91,9 @@ if __name__ == '__main__':
     # initialize function pointers
     stem = Path(cli_args.prx).stem
     print('__attribute__((constructor(102))) static int')
-    print(f'{stem}_dlsym(int (*dlsym)(int, const char*, void*)) ' + '{')
+    print(f'{stem}_dlsym(const payload_args_t *args) ' + '{')
     for sym in funcs:
-        print(f'  dlsym({modid}, "{sym}", &__{sym}__);')
+        print(f'  args->sceKernelDlsym({modid}, "{sym}", &__{sym}__);')
 
     print('')
     print('  return 0;')

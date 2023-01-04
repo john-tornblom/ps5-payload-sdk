@@ -5,7 +5,7 @@ endif
 PS5_HOST ?= ps5
 PS5_PORT ?= 9020
 
-ELF := hello_world.elf
+ELF := pipe_pirate.elf
 
 CC ?= cc
 LD ?= ld

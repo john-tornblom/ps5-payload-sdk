@@ -47,6 +47,15 @@ libSceLibcInternal.c: libSceLibcInternal.sprx nid_db.xml trampgen.py
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
+libkernel.a: libkernel.o kernel.o
+	ar rcs $@ $^
+
+libkernel_web.a: libkernel_web.o kernel.o
+	ar rcs $@ $^
+
+libkernel_sys.a: libkernel_sys.o kernel.o
+	ar rcs $@ $^
+
 %.a: %.o
 	ar rcs $@ $^
 
@@ -57,4 +66,5 @@ install: linker.x crt1.o $(MOD_ARCHIVES)
 	install -d $(DESTDIR)/usr/lib
 	install linker.x $(DESTDIR)
 	install crt1.o $(MOD_ARCHIVES) $(DESTDIR)/usr/lib
-	cp -r include_bsd $(DESTDIR)/usr/include
+	cp -r include_bsd/. $(DESTDIR)/usr/include
+	cp -r include_ps5/. $(DESTDIR)/usr/include/ps5
