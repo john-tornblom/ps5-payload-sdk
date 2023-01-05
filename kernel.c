@@ -32,8 +32,6 @@ const unsigned long KERNEL_OFFSET_UCRED_CR_RUID  = 0x08;
 const unsigned long KERNEL_OFFSET_UCRED_CR_SVUID = 0x0C;
 const unsigned long KERNEL_OFFSET_UCRED_CR_RGID  = 0x14;
 
-unsigned long KERNEL_OFFSET_ALLPROC = 0;
-
 
 /**
  * private global variables.
