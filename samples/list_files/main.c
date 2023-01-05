@@ -1,0 +1,53 @@
+#include <dirent.h>
+#include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+
+static void
+list_dir(const char *base_path) {
+  char tmp_path[PATH_MAX+1];
+  struct stat statbuf;
+  struct dirent *dp;
+  DIR *dir;
+
+  if(!(dir=opendir(base_path))) {
+    perror(base_path);
+    return;
+  }
+
+  while((dp=readdir(dir))) {
+    if(!strcmp(dp->d_name, ".")) {
+      continue;
+    }
+
+    if(!strcmp(dp->d_name, "..")) {
+      continue;
+    }
+
+    strncpy(tmp_path, base_path, PATH_MAX);
+    strncat(tmp_path, "/", PATH_MAX);
+    strncat(tmp_path, dp->d_name, PATH_MAX);
+
+    if(stat(tmp_path, &statbuf)) {
+      perror(tmp_path);
+      continue;
+    }
+
+    if(S_ISDIR(statbuf.st_mode)) {
+      list_dir(tmp_path);
+    } else {
+      printf("%s\n", tmp_path + 1);
+    }
+  }
+  closedir(dir);
+}
+
+int main() {
+  list_dir("/");
+
+  return EXIT_SUCCESS;
+}
