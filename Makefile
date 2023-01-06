@@ -32,16 +32,16 @@ all: crt1.o $(MOD_ARCHIVES)
 nid_db.xml:
 	wget $(NID_DB_URL)
 
-libkernel.c: trampgen.py libkernel.sprx
+libkernel.c: trampgen.py
 	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx libkernel.sprx > $@
 
-libkernel_sys.c: trampgen.py libkernel_sys.sprx
+libkernel_sys.c: trampgen.py
 	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx libkernel_sys.sprx > $@
 
-libkernel_web.c: trampgen.py libkernel_web.sprx
+libkernel_web.c: trampgen.py
 	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx libkernel_web.sprx > $@
 
-libSceLibcInternal.c: trampgen.py libSceLibcInternal.sprx
+libSceLibcInternal.c: trampgen.py
 	$(PYTHON) trampgen.py --library-index C --module-id 0x2 --prx libSceLibcInternal.sprx > $@
 
 %.o: %.c
