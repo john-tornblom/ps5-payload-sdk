@@ -32,17 +32,17 @@ all: crt1.o $(MOD_ARCHIVES)
 nid_db.xml:
 	wget $(NID_DB_URL)
 
-libkernel.c: libkernel.sprx nid_db.xml trampgen.py
-	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx $< > $@
+libkernel.c: trampgen.py libkernel.sprx
+	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx libkernel.sprx > $@
 
-libkernel_sys.c: libkernel_sys.sprx nid_db.xml trampgen.py
-	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx $< > $@
+libkernel_sys.c: trampgen.py libkernel_sys.sprx
+	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx libkernel_sys.sprx > $@
 
-libkernel_web.c: libkernel_web.sprx nid_db.xml trampgen.py
-	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx $< > $@
+libkernel_web.c: trampgen.py libkernel_web.sprx
+	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx libkernel_web.sprx > $@
 
-libSceLibcInternal.c: libSceLibcInternal.sprx nid_db.xml trampgen.py
-	$(PYTHON) trampgen.py --library-index C --module-id 0x2 --prx $< > $@
+libSceLibcInternal.c: trampgen.py libSceLibcInternal.sprx
+	$(PYTHON) trampgen.py --library-index C --module-id 0x2 --prx libSceLibcInternal.sprx > $@
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
