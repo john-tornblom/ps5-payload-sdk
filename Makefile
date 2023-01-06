@@ -27,7 +27,7 @@ MOD_ARCHIVES := $(MOD_SOURCES:.c=.a)
 NID_DB_URL  := https://raw.githubusercontent.com/astrelsky/GhidraOrbis/master/data/nid_db.xml
 
 
-all: crt1.o $(MOD_ARCHIVES)
+all: nid_db.xml crt1.o $(MOD_ARCHIVES)
 
 nid_db.xml:
 	wget $(NID_DB_URL)
