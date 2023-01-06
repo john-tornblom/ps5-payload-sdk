@@ -1,0 +1,33 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt-get install wget build-essential python3 python3-pyelftools
+
+    - name: Build SDK
+      run: make
+
+    - name: Install SDK
+      run: make install DESTDIR=/tmp/ps5-payload-sdk
+
+    - name: Build Samples
+      run: |
+        make -C hello_world PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C klog PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C list_files PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C pipe_pirate PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C ps PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+
