@@ -42,7 +42,7 @@ libkernel_web.c: trampgen.py
 	$(PYTHON) trampgen.py --library-index I --module-id 0x2001 --prx libkernel_web.sprx > $@
 
 libSceLibcInternal.c: trampgen.py
-	$(PYTHON) trampgen.py --library-index C --module-id 0x2 --prx libSceLibcInternal.sprx > $@
+	$(PYTHON) trampgen.py --library-index C --module-id 0x2    --prx libSceLibcInternal.sprx > $@
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
