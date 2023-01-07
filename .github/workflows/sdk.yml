@@ -2,6 +2,10 @@ name: CI
 
 on: push
 
+env:
+  DESTDIR: /tmp/ps5-payload-sdk
+  PS5_PAYLOAD_SDK: $DESTDIR
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,13 +25,13 @@ jobs:
       run: make
 
     - name: Install SDK
-      run: make install DESTDIR=/tmp/ps5-payload-sdk
+      run: make install
 
     - name: Build Samples
       run: |
-        make -C samples/hello_world PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
-        make -C samples/klog        PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
-        make -C samples/list_files  PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
-        make -C samples/pipe_pirate PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
-        make -C samples/ps          PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C samples/hello_world
+        make -C samples/klog
+        make -C samples/list_files
+        make -C samples/pipe_pirate
+        make -C samples/ps
 
