@@ -40,4 +40,5 @@ jobs:
         make -C samples/list_files
         make -C samples/pipe_pirate
         make -C samples/ps
+        make -C samples/hwinfo
 
