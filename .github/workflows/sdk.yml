@@ -3,8 +3,8 @@ name: CI
 on: push
 
 env:
-  DESTDIR: /tmp/ps5-payload-sdk
-  PS5_PAYLOAD_SDK: $DESTDIR
+  DESTDIR: "/tmp/ps5-payload-sdk"
+  PS5_PAYLOAD_SDK: "$DESTDIR"
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
     - name: Upload bindist
       uses: actions/upload-artifact@v3
       with:
-        path: $PS5_PAYLOAD_SDK
+        path: ${{env.PS5_PAYLOAD_SDK}}
         name: ps5-payload-sdk
   
     - name: Build Samples
