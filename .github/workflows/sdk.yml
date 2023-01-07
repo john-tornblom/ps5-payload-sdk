@@ -25,9 +25,9 @@ jobs:
 
     - name: Build Samples
       run: |
-        make -C hello_world PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
-        make -C klog PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
-        make -C list_files PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
-        make -C pipe_pirate PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
-        make -C ps PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C samples/hello_world PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C samples/klog        PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C samples/list_files  PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C samples/pipe_pirate PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
+        make -C samples/ps          PS5_PAYLOAD_SDK=/tmp/ps5-payload-sdk
 
