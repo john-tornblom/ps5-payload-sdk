@@ -27,6 +27,12 @@ jobs:
     - name: Install SDK
       run: make install
 
+    - name: Upload bindist
+      uses: actions/upload-artifact@v3
+      with:
+        path: $PS5_PAYLOAD_SDK
+        name: ps5-payload-sdk
+  
     - name: Build Samples
       run: |
         make -C samples/hello_world
