@@ -68,3 +68,4 @@ install: linker.x crt1.o $(MOD_ARCHIVES)
 	install crt1.o $(MOD_ARCHIVES) $(DESTDIR)/usr/lib
 	cp -r include_bsd/. $(DESTDIR)/usr/include
 	cp -r include_ps5/. $(DESTDIR)/usr/include/ps5
+	cp -r samples/. $(DESTDIR)/samples
