@@ -4,7 +4,7 @@ on: push
 
 env:
   DESTDIR: "/tmp/ps5-payload-sdk"
-  PS5_PAYLOAD_SDK: "$DESTDIR"
+  PS5_PAYLOAD_SDK: "/tmp/ps5-payload-sdk"
 
 jobs:
   build:
