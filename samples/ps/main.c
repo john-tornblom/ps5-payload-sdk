@@ -4,6 +4,8 @@
 #include <sys/sysctl.h>
 #include <stdio.h>
 
+#include <ps5/kernel.h>
+
 #ifndef PID_MAX
 #define PID_MAX 99999
 #endif
@@ -15,14 +17,15 @@ main() {
   size_t len;
   char buf[10000];
 
-  printf("     PID      PPID     PGID      SID          Emul  Command\n");
+  printf("     PID      PPID     PGID      SID      UID        AuthId    Emul  Command\n");
   for(i=0; i<=PID_MAX; i++) {
     len = sizeof(buf);
     mib[3] = i;
     if(sysctl(mib, 4, buf, &len, NULL, 0) != -1) {
       struct kinfo_proc *kp = (struct kinfo_proc*)buf;
-      printf("%8u  %8u %8u %8u   %11s  %s\n",
+      printf("%8u  %8u %8u %8u %8u %016llx   %11s  %s\n",
 	     kp->ki_pid, kp->ki_ppid, kp->ki_pgid, kp->ki_sid,
+	     kp->ki_uid, kernel_get_authid(kp->ki_pid),
 	     kp->ki_emul, kp->ki_comm);
     }
   }

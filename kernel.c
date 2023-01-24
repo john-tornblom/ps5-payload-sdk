@@ -10,6 +10,7 @@
 /**
  * libkernel symbols
  **/
+static int (*getpid)(void);
 static long (*_read)(int, void*, unsigned long);
 static long (*_write)(int, const void*, unsigned long);
 static int (*_getsockopt)(int, int, int, void *, unsigned int *);
@@ -31,6 +32,11 @@ const unsigned long KERNEL_OFFSET_UCRED_CR_UID   = 0x04;
 const unsigned long KERNEL_OFFSET_UCRED_CR_RUID  = 0x08;
 const unsigned long KERNEL_OFFSET_UCRED_CR_SVUID = 0x0C;
 const unsigned long KERNEL_OFFSET_UCRED_CR_RGID  = 0x14;
+
+const unsigned long KERNEL_OFFSET_UCRED_CR_SCEAUTHID = 0x58;
+const unsigned long KERNEL_OFFSET_UCRED_CR_SCECAPS0  = 0x60;
+const unsigned long KERNEL_OFFSET_UCRED_CR_SCECAPS1  = 0x68;
+const unsigned long KERNEL_OFFSET_UCRED_CR_SCEATTR0  = 0x83;
 
 
 /**
@@ -60,13 +66,16 @@ kernel_get_fw_version(void) {
 }
 
 
-
 /**
  *
  **/
 __attribute__((constructor(101))) static int
 kernel_init_rw(const payload_args_t *args) {
   int error = 0;
+
+  if((error=args->sceKernelDlsym(0x2001, "getpid", &getpid))) {
+    return error;
+  }
 
   if((error=args->sceKernelDlsym(0x2001, "_read", &_read))) {
     return error;
@@ -176,12 +185,11 @@ kwrite(unsigned long addr, unsigned long *data) {
 }
 
 
-
 /**
  *
  **/
 int
-kernel_copyin(const void *udaddr, void* kaddr, unsigned long len) {
+kernel_copyin(const void *udaddr, unsigned long kaddr, unsigned long len) {
   unsigned long write_buf[3];
 
   // Set pipe flags
@@ -193,7 +201,7 @@ kernel_copyin(const void *udaddr, void* kaddr, unsigned long len) {
   }
 
   // Set pipe data addr
-  write_buf[0] = (unsigned long)kaddr;
+  write_buf[0] = kaddr;
   write_buf[1] = 0;
   write_buf[2] = 0;
   if(kwrite(pipe_addr + 0x10, (unsigned long *) &write_buf)) {
@@ -213,7 +221,7 @@ kernel_copyin(const void *udaddr, void* kaddr, unsigned long len) {
  *
  **/
 int
-kernel_copyout(const void *kaddr, void *udaddr, unsigned long len) {
+kernel_copyout(unsigned long kaddr, void *udaddr, unsigned long len) {
   unsigned long write_buf[3];
 
   // Set pipe flags
@@ -225,7 +233,7 @@ kernel_copyout(const void *kaddr, void *udaddr, unsigned long len) {
   }
 
   // Set pipe data addr
-  write_buf[0] = (unsigned long)kaddr;
+  write_buf[0] = kaddr;
   write_buf[1] = 0;
   write_buf[2] = 0;
   if(kwrite(pipe_addr + 0x10, (unsigned long *) &write_buf)) {
@@ -234,6 +242,103 @@ kernel_copyout(const void *kaddr, void *udaddr, unsigned long len) {
 
   // Perform read across pipe
   if(_read(rw_pipe[0], udaddr, len) < 0) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_get_proc(unsigned int pid) {
+  unsigned int other_pid = 0;
+  unsigned long addr = 0;
+  unsigned long next = 0;
+
+  if(pid == 0) {
+    pid = getpid();
+  }
+
+  if(kernel_copyout(KERNEL_ADDRESS_ALLPROC, &addr, sizeof(addr))) {
+    return 0;
+  }
+
+  while(addr) {
+    if(kernel_copyout(addr + KERNEL_OFFSET_PROC_P_PID, &other_pid, sizeof(other_pid))) {
+      return 0;
+    }
+
+    if(pid == other_pid) {
+      break;
+    }
+
+    if(kernel_copyout(addr, &next, sizeof(next))) {
+      return 0;
+    }
+
+    addr = next;
+  }
+
+  return addr;
+}
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_get_ucred(unsigned int pid) {
+  unsigned long proc = 0;
+  unsigned long ucred = 0;
+
+  if(!(proc=kernel_get_proc(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(proc + KERNEL_OFFSET_PROC_P_UCRED, &ucred, sizeof(ucred))) {
+    return 0;
+  }
+
+  return ucred;
+}
+
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_get_authid(unsigned int pid) {
+  unsigned long authid = 0;
+  unsigned long ucred = 0;
+
+  if(!(ucred=kernel_get_ucred(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(ucred + KERNEL_OFFSET_UCRED_CR_SCEAUTHID, &authid, sizeof(authid))) {
+    return 0;
+  }
+
+  return authid;
+}
+
+
+/**
+ *
+ **/
+int
+kernel_set_authid(unsigned int pid, unsigned long authid) {
+  unsigned long ucred = 0;
+
+  if(!(ucred=kernel_get_ucred(pid))) {
+    return -1;
+  }
+
+  if(kernel_copyin(&authid, ucred + KERNEL_OFFSET_UCRED_CR_SCEAUTHID, sizeof(authid))) {
     return -1;
   }
 
