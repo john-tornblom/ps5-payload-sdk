@@ -258,10 +258,6 @@ kernel_get_proc(unsigned int pid) {
   unsigned long addr = 0;
   unsigned long next = 0;
 
-  if(pid == 0) {
-    pid = getpid();
-  }
-
   if(kernel_copyout(KERNEL_ADDRESS_ALLPROC, &addr, sizeof(addr))) {
     return 0;
   }
