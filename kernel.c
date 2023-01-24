@@ -263,7 +263,8 @@ kernel_get_proc(unsigned int pid) {
   }
 
   while(addr) {
-    if(kernel_copyout(addr + KERNEL_OFFSET_PROC_P_PID, &other_pid, sizeof(other_pid))) {
+    if(kernel_copyout(addr + KERNEL_OFFSET_PROC_P_PID, &other_pid,
+		      sizeof(other_pid))) {
       return 0;
     }
 
@@ -294,7 +295,8 @@ kernel_get_ucred(unsigned int pid) {
     return 0;
   }
 
-  if(kernel_copyout(proc + KERNEL_OFFSET_PROC_P_UCRED, &ucred, sizeof(ucred))) {
+  if(kernel_copyout(proc + KERNEL_OFFSET_PROC_P_UCRED, &ucred,
+		    sizeof(ucred))) {
     return 0;
   }
 
@@ -315,7 +317,8 @@ kernel_get_authid(unsigned int pid) {
     return 0;
   }
 
-  if(kernel_copyout(ucred + KERNEL_OFFSET_UCRED_CR_SCEAUTHID, &authid, sizeof(authid))) {
+  if(kernel_copyout(ucred + KERNEL_OFFSET_UCRED_CR_SCEAUTHID, &authid,
+		    sizeof(authid))) {
     return 0;
   }
 
@@ -334,7 +337,8 @@ kernel_set_authid(unsigned int pid, unsigned long authid) {
     return -1;
   }
 
-  if(kernel_copyin(&authid, ucred + KERNEL_OFFSET_UCRED_CR_SCEAUTHID, sizeof(authid))) {
+  if(kernel_copyin(&authid, ucred + KERNEL_OFFSET_UCRED_CR_SCEAUTHID,
+		   sizeof(authid))) {
     return -1;
   }
 
