@@ -17,7 +17,7 @@ main() {
   size_t len;
   char buf[10000];
 
-  printf("     PID      PPID     PGID      SID      UID        AuthId    Emul  Command\n");
+  printf("     PID      PPID     PGID      SID      UID           AuthId          Emul  Command\n");
   for(i=0; i<=PID_MAX; i++) {
     len = sizeof(buf);
     mib[3] = i;
