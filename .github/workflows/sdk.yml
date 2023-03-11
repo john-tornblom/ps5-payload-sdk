@@ -32,7 +32,7 @@ jobs:
         echo PS5_PAYLOAD_SDK=${{ runner.tool_cache }}/ps5-payload-sdk >> $GITHUB_ENV
         echo PS5_HOST=ps5 >> $GITHUB_ENV
         echo PS5_PORT=9020 >> $GITHUB_ENV
-        tar -zcf ps5-payload-sdk.tar.gz ${{ runner.tool_cache }}/ps5-payload-sdk
+        tar -zcf ps5-payload-sdk.tar.gz -C ${{ runner.tool_cache }}/ps5-payload-sdk .
 
     - name: Build
       run: |
