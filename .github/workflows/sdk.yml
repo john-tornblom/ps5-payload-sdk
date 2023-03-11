@@ -1,39 +1,39 @@
-name: CI
+name: Build SDK
 
-on: push
+on:
+  push:
+    paths-ignore:
+      - "**/*.md"
+      - '**/*.txt'
+  pull_request:
+    paths-ignore:
+      - "**/*.md"
+      - '**/*.txt'
+  workflow_dispatch:
 
-env:
-  DESTDIR: "/tmp/ps5-payload-sdk"
-  PS5_PAYLOAD_SDK: "/tmp/ps5-payload-sdk"
+concurrency:
+  group: ${{ github.ref }}-${{ github.event_name  }}
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
+
     - name: Checkout
       uses: actions/checkout@v3
-      with:
-        submodules: recursive
 
-    - name: Install dependencies
+    - name: Setup SDK
       run: |
         sudo apt update
-        sudo apt-get install wget build-essential python3 python3-pyelftools
+        sudo apt install wget build-essential python3 python3-pyelftools
+        make
+        make DESTDIR=${{ runner.tool_cache }}/ps5-payload-sdk install
+        echo PS5_PAYLOAD_SDK=${{ runner.tool_cache }}/ps5-payload-sdk >> $GITHUB_ENV
+        echo PS5_HOST=ps5 >> $GITHUB_ENV
+        echo PS5_PORT=9020 >> $GITHUB_ENV
 
-    - name: Build SDK
-      run: make
-
-    - name: Install SDK
-      run: make install
-
-    - name: Upload bindist
-      uses: actions/upload-artifact@v3
-      with:
-        path: ${{env.PS5_PAYLOAD_SDK}}
-        name: ps5-payload-sdk
-  
-    - name: Build Samples
+    - name: Build
       run: |
         make -C samples/hello_world
         make -C samples/klog
@@ -42,3 +42,9 @@ jobs:
         make -C samples/ps
         make -C samples/hwinfo
 
+    - name: Upload payload
+      uses: actions/upload-artifact@v3
+      with:
+        name: Payload binaries
+        path: ./**/*.elf
+        if-no-files-found: error
