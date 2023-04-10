@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/cam/cam_xpt.h 224806 2011-08-12 20:09:38Z mjacob $
+ * $FreeBSD: releng/11.0/sys/cam/cam_xpt.h 291716 2015-12-03 20:54:55Z ken $
  */
 
 #ifndef _CAM_CAM_XPT_H
@@ -35,6 +35,7 @@
 /* Forward Declarations */
 union ccb;
 struct cam_periph;
+struct cam_ed;
 struct cam_sim;
 
 /*
@@ -55,6 +56,7 @@ struct cam_path;
 struct async_node {
 	SLIST_ENTRY(async_node)	links;
 	u_int32_t	event_enable;	/* Async Event enables */
+	u_int32_t	event_lock;	/* Take SIM lock for handlers. */
 	void		(*callback)(void *arg, u_int32_t code,
 				    struct cam_path *path, void *args);
 	void		*callback_arg;
@@ -63,33 +65,15 @@ struct async_node {
 SLIST_HEAD(async_list, async_node);
 SLIST_HEAD(periph_list, cam_periph);
 
-#if defined(CAM_DEBUG_FLAGS) && !defined(CAMDEBUG)
-#error "You must have options CAMDEBUG to use options CAM_DEBUG_FLAGS"
-#endif
-
-/*
- * In order to enable the CAM_DEBUG_* options, the user must have CAMDEBUG
- * enabled.  Also, the user must have either none, or all of CAM_DEBUG_BUS,
- * CAM_DEBUG_TARGET, and CAM_DEBUG_LUN specified.
- */
-#if defined(CAM_DEBUG_BUS) || defined(CAM_DEBUG_TARGET) \
-    || defined(CAM_DEBUG_LUN)
-#ifdef CAMDEBUG
-#if !defined(CAM_DEBUG_BUS) || !defined(CAM_DEBUG_TARGET) \
-    || !defined(CAM_DEBUG_LUN)
-#error "You must define all or none of CAM_DEBUG_BUS, CAM_DEBUG_TARGET \
-        and CAM_DEBUG_LUN"
-#endif /* !CAM_DEBUG_BUS || !CAM_DEBUG_TARGET || !CAM_DEBUG_LUN */
-#else /* !CAMDEBUG */
-#error "You must use options CAMDEBUG if you use the CAM_DEBUG_* options"
-#endif /* CAMDEBUG */
-#endif /* CAM_DEBUG_BUS || CAM_DEBUG_TARGET || CAM_DEBUG_LUN */
-
 void			xpt_action(union ccb *new_ccb);
 void			xpt_action_default(union ccb *new_ccb);
 union ccb		*xpt_alloc_ccb(void);
 union ccb		*xpt_alloc_ccb_nowait(void);
 void			xpt_free_ccb(union ccb *free_ccb);
+void			xpt_setup_ccb_flags(struct ccb_hdr *ccb_h,
+					    struct cam_path *path,
+					    u_int32_t priority,
+					    u_int32_t flags);
 void			xpt_setup_ccb(struct ccb_hdr *ccb_h,
 				      struct cam_path *path,
 				      u_int32_t priority);
@@ -111,14 +95,16 @@ void			xpt_path_counts(struct cam_path *path, uint32_t *bus_ref,
 					uint32_t *device_ref);
 int			xpt_path_comp(struct cam_path *path1,
 				      struct cam_path *path2);
+int			xpt_path_comp_dev(struct cam_path *path,
+					  struct cam_ed *dev);
 void			xpt_print_path(struct cam_path *path);
+void			xpt_print_device(struct cam_ed *device);
 void			xpt_print(struct cam_path *path, const char *fmt, ...);
 int			xpt_path_string(struct cam_path *path, char *str,
 					size_t str_len);
 path_id_t		xpt_path_path_id(struct cam_path *path);
 target_id_t		xpt_path_target_id(struct cam_path *path);
 lun_id_t		xpt_path_lun_id(struct cam_path *path);
-int			xpt_path_legacy_ata_id(struct cam_path *path);
 struct cam_sim		*xpt_path_sim(struct cam_path *path);
 struct cam_periph	*xpt_path_periph(struct cam_path *path);
 void			xpt_async(u_int32_t async_code, struct cam_path *path,
@@ -128,6 +114,13 @@ void			xpt_hold_boot(void);
 void			xpt_release_boot(void);
 void			xpt_lock_buses(void);
 void			xpt_unlock_buses(void);
+struct mtx *		xpt_path_mtx(struct cam_path *path);
+#define xpt_path_lock(path)	mtx_lock(xpt_path_mtx(path))
+#define xpt_path_unlock(path)	mtx_unlock(xpt_path_mtx(path))
+#define xpt_path_assert(path, what)	mtx_assert(xpt_path_mtx(path), (what))
+#define xpt_path_owned(path)	mtx_owned(xpt_path_mtx(path))
+#define xpt_path_sleep(path, chan, priority, wmesg, timo)		\
+    msleep((chan), xpt_path_mtx(path), (priority), (wmesg), (timo))
 cam_status		xpt_register_async(int event, ac_callback_t *cbfunc,
 					   void *cbarg, struct cam_path *path);
 cam_status		xpt_compile_path(struct cam_path *new_path,
@@ -135,6 +128,10 @@ cam_status		xpt_compile_path(struct cam_path *new_path,
 					 path_id_t path_id,
 					 target_id_t target_id,
 					 lun_id_t lun_id);
+cam_status		xpt_clone_path(struct cam_path **new_path,
+				      struct cam_path *path);
+void			xpt_copy_path(struct cam_path *new_path,
+				      struct cam_path *path);
 
 void			xpt_release_path(struct cam_path *path);
 

@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/lib/libpmc/pmclog.h 190395 2009-03-24 22:35:05Z fabient $
+ * $FreeBSD: releng/11.0/lib/libpmc/pmclog.h 233628 2012-03-28 20:58:30Z fabient $
  */
 
 #ifndef	_PMCLOG_H_
@@ -84,6 +84,13 @@ struct pmclog_ev_pcsample {
 struct pmclog_ev_pmcallocate {
 	uint32_t	pl_event;
 	const char *	pl_evname;
+	uint32_t	pl_flags;
+	pmc_id_t	pl_pmcid;
+};
+
+struct pmclog_ev_pmcallocatedyn {
+	uint32_t	pl_event;
+	char 		pl_evname[PMC_NAME_MAX];
 	uint32_t	pl_flags;
 	pmc_id_t	pl_pmcid;
 };
@@ -146,6 +153,7 @@ struct pmclog_ev {
 		struct pmclog_ev_map_out	pl_mo;
 		struct pmclog_ev_pcsample	pl_s;
 		struct pmclog_ev_pmcallocate	pl_a;
+		struct pmclog_ev_pmcallocatedyn	pl_ad;
 		struct pmclog_ev_pmcattach	pl_t;
 		struct pmclog_ev_pmcdetach	pl_d;
 		struct pmclog_ev_proccsw	pl_c;

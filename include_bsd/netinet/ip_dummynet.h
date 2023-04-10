@@ -24,12 +24,12 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/netinet/ip_dummynet.h 206845 2010-04-19 16:17:30Z luigi $
+ * $FreeBSD: releng/11.0/sys/netinet/ip_dummynet.h 300779 2016-05-26 21:40:13Z truckman $
  */
 
 #ifndef _IP_DUMMYNET_H
 #define _IP_DUMMYNET_H
-
+#define NEW_AQM
 /*
  * Definition of the kernel-userland API for dummynet.
  *
@@ -85,7 +85,13 @@ enum {
 	/* special commands for emulation of sysctl variables */
 	DN_SYSCTL_GET,
 	DN_SYSCTL_SET,
-
+#ifdef NEW_AQM
+	/* subtypes used for setting/getting extra parameters.
+	 * these subtypes used with IP_DUMMYNET3 command (get)
+	 * and DN_TEXT (set). */
+	DN_AQM_PARAMS, /* AQM extra params */
+	DN_SCH_PARAMS, /* scheduler extra params */
+#endif
 	DN_LAST,
 };
 
@@ -104,6 +110,10 @@ enum {	/* user flags */
 	DN_HAS_PROFILE	= 0x0010,	/* a link has a profile */
 	DN_IS_RED	= 0x0020,
 	DN_IS_GENTLE_RED= 0x0040,
+	DN_IS_ECN	= 0x0080,
+	#ifdef NEW_AQM
+	DN_IS_AQM = 0x0100,     /* AQMs: e.g Codel & PIE */
+	#endif
 	DN_PIPE_CMD	= 0x1000,	/* pipe config... */
 };
 
@@ -171,8 +181,8 @@ struct dn_flow {
 	struct ipfw_flow_id fid;
 	uint64_t	tot_pkts; /* statistics counters  */
 	uint64_t	tot_bytes;
-	uint32_t	length; /* Queue lenght, in packets */
-	uint32_t	len_bytes; /* Queue lenght, in bytes */
+	uint32_t	length; /* Queue length, in packets */
+	uint32_t	len_bytes; /* Queue length, in bytes */
 	uint32_t	drops;
 };
 
@@ -209,7 +219,19 @@ struct dn_profile {
 	int	samples[ED_MAX_SAMPLES_NO];	/* may be shorter */
 };
 
-
+#ifdef NEW_AQM
+/* Extra parameters for AQM and scheduler.
+ * This struct is used to pass and retrieve parameters (configurations)
+ * to/from AQM and Scheduler.
+ */
+struct dn_extra_parms {
+	struct dn_id oid;
+	char name[16];
+	uint32_t nr;
+#define DN_MAX_EXTRA_PARM	10
+	int64_t par[DN_MAX_EXTRA_PARM];
+};
+#endif
 
 /*
  * Overall structure of dummynet

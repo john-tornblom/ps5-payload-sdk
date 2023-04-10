@@ -1,4 +1,4 @@
-/* $FreeBSD: release/9.0.0/sys/dev/usb/usb_process.h 217350 2011-01-13 14:15:36Z jhb $ */
+/* $FreeBSD: releng/11.0/sys/dev/usb/usb_process.h 286773 2015-08-14 12:57:53Z hselasky $ */
 /*-
  * Copyright (c) 2008 Hans Petter Selasky. All rights reserved.
  *
@@ -27,11 +27,14 @@
 #ifndef _USB_PROCESS_H_
 #define	_USB_PROCESS_H_
 
+#ifndef USB_GLOBAL_INCLUDE_FILE
 #include <sys/interrupt.h>
 #include <sys/priority.h>
 #include <sys/runq.h>
+#endif
 
 /* defines */
+#define	USB_PRI_HIGHEST	PI_SWI(SWI_TTY)
 #define	USB_PRI_HIGH	PI_SWI(SWI_NET)
 #define	USB_PRI_MED	PI_SWI(SWI_CAMBIO)
 
@@ -42,6 +45,7 @@
 /* structure prototypes */
 
 struct usb_proc_msg;
+struct usb_device;
 
 /*
  * The following structure defines the USB process.
@@ -78,5 +82,11 @@ void	usb_proc_mwait(struct usb_process *up, void *pm0, void *pm1);
 void	usb_proc_free(struct usb_process *up);
 void   *usb_proc_msignal(struct usb_process *up, void *pm0, void *pm1);
 void	usb_proc_rewakeup(struct usb_process *up);
+int	usb_proc_is_called_from(struct usb_process *up);
+
+void	usb_proc_explore_mwait(struct usb_device *, void *, void *);
+void   *usb_proc_explore_msignal(struct usb_device *, void *, void *);
+void	usb_proc_explore_lock(struct usb_device *);
+void	usb_proc_explore_unlock(struct usb_device *);
 
 #endif					/* _USB_PROCESS_H_ */

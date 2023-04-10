@@ -25,7 +25,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/net/ieee8023ad_lacp.h 177289 2008-03-17 01:26:44Z thompsa $
+ * $FreeBSD: releng/11.0/sys/net/ieee8023ad_lacp.h 286700 2015-08-12 20:21:04Z hiren $
  */
 
 /*
@@ -75,6 +75,7 @@
 	"\007DEFAULTED"		\
 	"\010EXPIRED"
 
+#ifdef _KERNEL
 /*
  * IEEE802.3 slow protocols
  *
@@ -245,6 +246,12 @@ struct lacp_softc {
 	struct lacp_portmap	lsc_pmap[2];
 	volatile u_int		lsc_activemap;
 	u_int32_t		lsc_hashkey;
+	struct {
+		u_int32_t	lsc_rx_test;
+		u_int32_t	lsc_tx_test;
+	} lsc_debug;
+	u_int32_t		lsc_strict_mode;
+	boolean_t		lsc_fast_timeout; /* if set, fast timeout */
 };
 
 #define	LACP_TYPE_ACTORINFO	1
@@ -277,15 +284,15 @@ struct lacp_softc {
 
 struct mbuf	*lacp_input(struct lagg_port *, struct mbuf *);
 struct lagg_port *lacp_select_tx_port(struct lagg_softc *, struct mbuf *);
-int		lacp_attach(struct lagg_softc *);
-int		lacp_detach(struct lagg_softc *);
+void		lacp_attach(struct lagg_softc *);
+void		lacp_detach(void *);
 void		lacp_init(struct lagg_softc *);
 void		lacp_stop(struct lagg_softc *);
 int		lacp_port_create(struct lagg_port *);
 void		lacp_port_destroy(struct lagg_port *);
 void		lacp_linkstate(struct lagg_port *);
-void		lacp_req(struct lagg_softc *, caddr_t);
-void		lacp_portreq(struct lagg_port *, caddr_t);
+void		lacp_req(struct lagg_softc *, void *);
+void		lacp_portreq(struct lagg_port *, void *);
 
 static __inline int
 lacp_isactive(struct lagg_port *lgp)
@@ -331,3 +338,4 @@ lacp_isdistributing(struct lagg_port *lgp)
 #define	LACP_LAGIDSTR_MAX	\
 	(1 + LACP_PARTNERSTR_MAX + 1 + LACP_PARTNERSTR_MAX + 1)
 #define	LACP_STATESTR_MAX	(255) /* XXX */
+#endif	/* _KERNEL */

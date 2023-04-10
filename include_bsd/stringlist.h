@@ -12,11 +12,6 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- * 3. All advertising materials mentioning features or use of this software
- *    must display the following acknowledgement:
- *	This product includes software developed by Christos Zoulas.
- * 4. The name of the author may not be used to endorse or promote products
- *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
  * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -30,7 +25,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/include/stringlist.h 109508 2003-01-19 01:16:01Z obrien $
+ * $FreeBSD: releng/11.0/include/stringlist.h 283201 2015-05-21 08:38:25Z bapt $
  */
 
 #ifndef _STRINGLIST_H
@@ -51,7 +46,7 @@ __BEGIN_DECLS
 StringList *sl_init(void);
 int	 sl_add(StringList *, char *);
 void	 sl_free(StringList *, int);
-char	*sl_find(StringList *, char *);
+char	*sl_find(StringList *, const char *);
 __END_DECLS
 
 #endif /* _STRINGLIST_H */

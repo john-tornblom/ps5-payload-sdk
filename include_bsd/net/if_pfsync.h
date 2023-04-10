@@ -1,6 +1,4 @@
-/*	$OpenBSD: if_pfsync.h,v 1.35 2008/06/29 08:42:15 mcbride Exp $	*/
-
-/*
+/*-
  * Copyright (c) 2001 Michael Shalayeff
  * All rights reserved.
  *
@@ -26,7 +24,7 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/*
+/*-
  * Copyright (c) 2008 David Gwynne <dlg@openbsd.org>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -41,6 +39,12 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+
+/*
+ *	$OpenBSD: if_pfsync.h,v 1.35 2008/06/29 08:42:15 mcbride Exp $
+ *	$FreeBSD: releng/11.0/sys/net/if_pfsync.h 262489 2014-02-25 18:44:33Z jhb $
+ */
+
 
 #ifndef _NET_IF_PFSYNC_H_
 #define	_NET_IF_PFSYNC_H_
@@ -62,22 +66,6 @@
 #define	PFSYNC_ACT_TDB		11	/* TDB replay counter update */
 #define	PFSYNC_ACT_EOF		12	/* end of frame */
 #define	PFSYNC_ACT_MAX		13
-
-#define	PFSYNC_ACTIONS		"CLR ST",		\
-				"INS ST",		\
-				"INS ST ACK",		\
-				"UPD ST",		\
-				"UPD ST COMP",		\
-				"UPD ST REQ",		\
-				"DEL ST",		\
-				"DEL ST COMP",		\
-				"INS FR",		\
-				"DEL FR",		\
-				"BULK UPD STAT",	\
-				"TDB UPD",		\
-				"EOF"
-
-#define	PFSYNC_HMAC_LEN	20
 
 /*
  * A pfsync frame is built from a header followed by several sections which
@@ -182,7 +170,7 @@ struct pfsync_del_c {
 	u_int32_t			creatorid;
 } __packed;
 
-/* 
+/*
  * INS_F, DEL_F
  */
 
@@ -215,28 +203,7 @@ struct pfsync_tdb {
 	u_int8_t			_pad[2];
 } __packed;
 
-/*
- * EOF
- */
-
-struct pfsync_eof {
-	u_int8_t			hmac[PFSYNC_HMAC_LEN];
-} __packed;
-
 #define	PFSYNC_HDRLEN		sizeof(struct pfsync_header)
-
-
-
-/*
- * Names for PFSYNC sysctl objects
- */
-#define	PFSYNCCTL_STATS		1	/* PFSYNC stats */
-#define	PFSYNCCTL_MAXID		2
-
-#define	PFSYNCCTL_NAMES { \
-	{ 0, 0 }, \
-	{ "stats", CTLTYPE_STRUCT }, \
-}
 
 struct pfsyncstats {
 	u_int64_t	pfsyncs_ipackets;	/* total input packets, IPv4 */
@@ -256,6 +223,9 @@ struct pfsyncstats {
 	u_int64_t	pfsyncs_opackets6;	/* total output packets, IPv6 */
 	u_int64_t	pfsyncs_onomem;		/* no memory for an mbuf */
 	u_int64_t	pfsyncs_oerrors;	/* ip output error */
+
+	u_int64_t	pfsyncs_iacts[PFSYNC_ACT_MAX];
+	u_int64_t	pfsyncs_oacts[PFSYNC_ACT_MAX];
 };
 
 /*
@@ -265,13 +235,11 @@ struct pfsyncreq {
 	char		 pfsyncr_syncdev[IFNAMSIZ];
 	struct in_addr	 pfsyncr_syncpeer;
 	int		 pfsyncr_maxupdates;
-	int		 pfsyncr_authlevel;
+	int		 pfsyncr_defer;
 };
 
-#ifdef __FreeBSD__
 #define	SIOCSETPFSYNC   _IOW('i', 247, struct ifreq)
 #define	SIOCGETPFSYNC   _IOWR('i', 248, struct ifreq)
-#endif
 
 #ifdef _KERNEL
 
@@ -288,37 +256,10 @@ struct pfsyncreq {
 #define	PFSYNC_S_DEFER	0xfe
 #define	PFSYNC_S_NONE	0xff
 
-#ifdef __FreeBSD__
-void			pfsync_input(struct mbuf *, __unused int);
-#else
-void			pfsync_input(struct mbuf *, ...);
-#endif
-int			pfsync_sysctl(int *, u_int,  void *, size_t *,
-			    void *, size_t);
-
 #define	PFSYNC_SI_IOCTL		0x01
 #define	PFSYNC_SI_CKSUM		0x02
 #define	PFSYNC_SI_ACK		0x04
-int			pfsync_state_import(struct pfsync_state *, u_int8_t);
-#ifndef __FreeBSD__
-void			pfsync_state_export(struct pfsync_state *,
-			    struct pf_state *);
-#endif
 
-void			pfsync_insert_state(struct pf_state *);
-void			pfsync_update_state(struct pf_state *);
-void			pfsync_delete_state(struct pf_state *);
-void			pfsync_clear_states(u_int32_t, const char *);
-
-#ifdef notyet
-void			pfsync_update_tdb(struct tdb *, int);
-void			pfsync_delete_tdb(struct tdb *);
-#endif
-
-int			pfsync_defer(struct pf_state *, struct mbuf *);
-
-int			pfsync_up(void);
-int			pfsync_state_in_use(struct pf_state *);
-#endif
+#endif /* _KERNEL */
 
 #endif /* _NET_IF_PFSYNC_H_ */

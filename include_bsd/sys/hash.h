@@ -23,7 +23,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * $OpenBSD: hash.h,v 1.4 2004/05/25 18:37:23 jmc Exp $
- * $FreeBSD: release/9.0.0/sys/sys/hash.h 168557 2007-04-09 22:55:14Z thompsa $
+ * $FreeBSD: releng/11.0/sys/sys/hash.h 273268 2014-10-18 22:15:11Z des $
  */
 
 #ifndef _SYS_HASH_H_
@@ -118,4 +118,17 @@ hash32_strne(const void *buf, size_t len, int end, const char **ep,
 
 	return hash;
 }
+
+#ifdef _KERNEL
+/*
+ * Hashing function from Bob Jenkins. Implementation in libkern/jenkins_hash.c.
+ */
+uint32_t jenkins_hash(const void *, size_t, uint32_t);
+uint32_t jenkins_hash32(const uint32_t *, size_t, uint32_t);
+
+uint32_t murmur3_32_hash(const void *, size_t, uint32_t);
+uint32_t murmur3_32_hash32(const uint32_t *, size_t, uint32_t);
+
+#endif /* _KERNEL */
+
 #endif /* !_SYS_HASH_H_ */

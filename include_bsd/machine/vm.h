@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2009 Advanced Computing Technologies LLC
+ * Copyright (c) 2009 Hudson River Trading LLC
  * Written by: John H. Baldwin <jhb@FreeBSD.org>
  * All rights reserved.
  *
@@ -24,7 +24,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/amd64/include/vm.h 195649 2009-07-12 23:31:20Z alc $
+ * $FreeBSD: releng/11.0/sys/amd64/include/vm.h 281887 2015-04-23 14:22:20Z jhb $
  */
 
 #ifndef _MACHINE_VM_H_
@@ -38,7 +38,7 @@
 #define	VM_MEMATTR_WRITE_THROUGH	((vm_memattr_t)PAT_WRITE_THROUGH)
 #define	VM_MEMATTR_WRITE_PROTECTED	((vm_memattr_t)PAT_WRITE_PROTECTED)
 #define	VM_MEMATTR_WRITE_BACK		((vm_memattr_t)PAT_WRITE_BACK)
-#define	VM_MEMATTR_UNCACHED		((vm_memattr_t)PAT_UNCACHED)
+#define	VM_MEMATTR_WEAK_UNCACHEABLE	((vm_memattr_t)PAT_UNCACHED)
 
 #define	VM_MEMATTR_DEFAULT		VM_MEMATTR_WRITE_BACK
 

@@ -1,17 +1,17 @@
 /*-
  * Copyright (c) 2001-2007, by Cisco Systems, Inc. All rights reserved.
- * Copyright (c) 2008-2011, by Randall Stewart. All rights reserved.
- * Copyright (c) 2008-2011, by Michael Tuexen. All rights reserved.
+ * Copyright (c) 2008-2012, by Randall Stewart. All rights reserved.
+ * Copyright (c) 2008-2012, by Michael Tuexen. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
  * a) Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ *    this list of conditions and the following disclaimer.
  *
  * b) Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in
- *   the documentation and/or other materials provided with the distribution.
+ *    the documentation and/or other materials provided with the distribution.
  *
  * c) Neither the name of Cisco Systems, Inc. nor the names of its
  *    contributors may be used to endorse or promote products derived
@@ -30,13 +30,11 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/* $KAME: sctp_header.h,v 1.14 2005/03/06 16:04:17 itojun Exp $	 */
-
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_header.h 228037 2011-11-27 19:13:45Z tuexen $");
+__FBSDID("$FreeBSD: releng/11.0/sys/netinet/sctp_header.h 303267 2016-07-24 14:50:16Z tuexen $");
 
-#ifndef __sctp_header_h__
-#define __sctp_header_h__
+#ifndef _NETINET_SCTP_HEADER_H_
+#define _NETINET_SCTP_HEADER_H_
 
 #include <sys/time.h>
 #include <netinet/sctp.h>
@@ -83,12 +81,6 @@ struct sctp_supported_addr_param {
 	struct sctp_paramhdr ph;/* type=SCTP_SUPPORTED_ADDRTYPE */
 	uint16_t addr_type[2];	/* array of supported address types */
 }                         SCTP_PACKED;
-
-/* ECN parameter */
-struct sctp_ecn_supported_param {
-	struct sctp_paramhdr ph;/* type=SCTP_ECN_CAPABLE */
-}                        SCTP_PACKED;
-
 
 /* heartbeat info parameter */
 struct sctp_heartbeat_info_param {
@@ -160,6 +152,23 @@ struct sctp_data_chunk {
 	struct sctp_data dp;
 }               SCTP_PACKED;
 
+struct sctp_idata {
+	uint32_t tsn;
+	uint16_t stream_id;
+	uint16_t reserved;	/* Where does the SSN go? */
+	uint32_t msg_id;
+	union {
+		uint32_t protocol_id;
+		uint32_t fsn;	/* Fragment Sequence Number */
+	}     ppid_fsn;
+	/* user data follows */
+}          SCTP_PACKED;
+
+struct sctp_idata_chunk {
+	struct sctp_chunkhdr ch;
+	struct sctp_idata dp;
+}                SCTP_PACKED;
+
 /*
  * Structures for the control chunks
  */
@@ -209,34 +218,6 @@ struct sctp_state_cookie {	/* this is our definition... */
 	 * (minus the cookie).
 	 */
 }                 SCTP_PACKED;
-
-
-/* Used for NAT state error cause */
-struct sctp_missing_nat_state {
-	uint16_t cause;
-	uint16_t length;
-	uint8_t data[];
-}                      SCTP_PACKED;
-
-
-struct sctp_inv_mandatory_param {
-	uint16_t cause;
-	uint16_t length;
-	uint32_t num_param;
-	uint16_t param;
-	/*
-	 * We include this to 0 it since only a missing cookie will cause
-	 * this error.
-	 */
-	uint16_t resv;
-}                        SCTP_PACKED;
-
-struct sctp_unresolv_addr {
-	uint16_t cause;
-	uint16_t length;
-	uint16_t addr_type;
-	uint16_t reserved;	/* Only one invalid addr type */
-}                  SCTP_PACKED;
 
 /* state cookie parameter */
 struct sctp_state_cookie_param {
@@ -378,27 +359,10 @@ struct sctp_shutdown_complete_chunk {
 	struct sctp_chunkhdr ch;
 }                            SCTP_PACKED;
 
-/* Oper error holding a stale cookie */
-struct sctp_stale_cookie_msg {
-	struct sctp_paramhdr ph;/* really an error cause */
-	uint32_t time_usec;
-}                     SCTP_PACKED;
-
 struct sctp_adaptation_layer_indication {
 	struct sctp_paramhdr ph;
 	uint32_t indication;
 }                                SCTP_PACKED;
-
-struct sctp_cookie_while_shutting_down {
-	struct sctphdr sh;
-	struct sctp_chunkhdr ch;
-	struct sctp_paramhdr ph;/* really an error cause */
-}                               SCTP_PACKED;
-
-struct sctp_shutdown_complete_msg {
-	struct sctphdr sh;
-	struct sctp_shutdown_complete_chunk shut_cmp;
-}                          SCTP_PACKED;
 
 /*
  * draft-ietf-tsvwg-addip-sctp
@@ -431,6 +395,12 @@ struct sctp_strseq {
 	uint16_t sequence;
 }           SCTP_PACKED;
 
+struct sctp_strseq_mid {
+	uint16_t stream;
+	uint16_t flags;
+	uint32_t msg_id;
+};
+
 struct sctp_forward_tsn_msg {
 	struct sctphdr sh;
 	struct sctp_forward_tsn_chunk msg;
@@ -458,6 +428,11 @@ struct sctp_pktdrop_chunk {
 
 /**********STREAM RESET STUFF ******************/
 
+struct sctp_stream_reset_request {
+	struct sctp_paramhdr ph;
+	uint32_t request_seq;
+}                         SCTP_PACKED;
+
 struct sctp_stream_reset_out_request {
 	struct sctp_paramhdr ph;
 	uint32_t request_seq;	/* monotonically increasing seq no */
@@ -471,7 +446,6 @@ struct sctp_stream_reset_in_request {
 	uint32_t request_seq;
 	uint16_t list_of_streams[];	/* if not all list of streams */
 }                            SCTP_PACKED;
-
 
 struct sctp_stream_reset_tsn_request {
 	struct sctp_paramhdr ph;
@@ -499,27 +473,18 @@ struct sctp_stream_reset_add_strm {
 	uint16_t reserved;
 }                          SCTP_PACKED;
 
-#define SCTP_STREAM_RESET_NOTHING   0x00000000	/* Nothing for me to do */
-#define SCTP_STREAM_RESET_PERFORMED 0x00000001	/* Did it */
-#define SCTP_STREAM_RESET_DENIED    0x00000002	/* refused to do it */
-#define SCTP_STREAM_RESET_ERROR_STR 0x00000003	/* bad Stream no */
-#define SCTP_STREAM_RESET_TRY_LATER 0x00000004	/* collision, try again */
-#define SCTP_STREAM_RESET_BAD_SEQNO 0x00000005	/* bad str-reset seq no */
+#define SCTP_STREAM_RESET_RESULT_NOTHING_TO_DO   0x00000000	/* XXX: unused */
+#define SCTP_STREAM_RESET_RESULT_PERFORMED       0x00000001
+#define SCTP_STREAM_RESET_RESULT_DENIED          0x00000002
+#define SCTP_STREAM_RESET_RESULT_ERR__WRONG_SSN  0x00000003	/* XXX: unused */
+#define SCTP_STREAM_RESET_RESULT_ERR_IN_PROGRESS 0x00000004
+#define SCTP_STREAM_RESET_RESULT_ERR_BAD_SEQNO   0x00000005
+#define SCTP_STREAM_RESET_RESULT_IN_PROGRESS     0x00000006	/* XXX: unused */
 
 /*
  * convience structures, note that if you are making a request for specific
  * streams then the request will need to be an overlay structure.
  */
-
-struct sctp_stream_reset_out_req {
-	struct sctp_chunkhdr ch;
-	struct sctp_stream_reset_out_request sr_req;
-}                         SCTP_PACKED;
-
-struct sctp_stream_reset_in_req {
-	struct sctp_chunkhdr ch;
-	struct sctp_stream_reset_in_request sr_req;
-}                        SCTP_PACKED;
 
 struct sctp_stream_reset_tsn_req {
 	struct sctp_chunkhdr ch;
@@ -566,12 +531,6 @@ struct sctp_auth_chunk {
 	uint16_t hmac_id;
 	uint8_t hmac[];
 }               SCTP_PACKED;
-
-struct sctp_auth_invalid_hmac {
-	struct sctp_paramhdr ph;
-	uint16_t hmac_id;
-	uint16_t padding;
-}                      SCTP_PACKED;
 
 /*
  * we pre-reserve enough room for a ECNE or CWR AND a SACK with no missing

@@ -30,7 +30,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)nfsnode.h	8.9 (Berkeley) 5/14/95
- * $FreeBSD: release/9.0.0/sys/nfsclient/nfsnode.h 224604 2011-08-02 11:24:42Z rmacklem $
+ * $FreeBSD: releng/11.0/sys/nfsclient/nfsnode.h 235332 2012-05-12 12:02:51Z rmacklem $
  */
 
 #ifndef _NFSCLIENT_NFSNODE_H_
@@ -104,9 +104,6 @@ struct nfsnode {
 	time_t			n_attrstamp;	/* Attr. cache timestamp */
 	struct nfs_accesscache	n_accesscache[NFS_ACCESSCACHESIZE];
 	struct timespec		n_mtime;	/* Prev modify time. */
-	struct timespec		n_ctime;	/* Prev create time. */
-	struct timespec		n_dmtime;	/* Prev dir modify time. */
-	int			n_dmtime_ticks;	/* Tick of -ve cache entry */
 	nfsfh_t			*n_fhp;		/* NFS File Handle */
 	struct vnode		*n_vnode;	/* associated vnode */
 	struct vnode		*n_dvp;		/* parent vnode */
@@ -131,6 +128,7 @@ struct nfsnode {
 	uint32_t		n_namelen;
 	int			n_directio_opens;
 	int                     n_directio_asyncwr;
+	struct ucred		*n_writecred;	/* Cred. for putpages */
 };
 
 #define n_atim		n_un1.nf_atim

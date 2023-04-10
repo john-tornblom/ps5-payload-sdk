@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/pmclog.h 185363 2008-11-27 09:00:47Z jkoshy $
+ * $FreeBSD: releng/11.0/sys/sys/pmclog.h 233628 2012-03-28 20:58:30Z fabient $
  */
 
 #ifndef	_SYS_PMCLOG_H_
@@ -60,7 +60,13 @@ enum pmclog_type {
 	 */
 	PMCLOG_TYPE_MAP_IN,
 	PMCLOG_TYPE_MAP_OUT,
-	PMCLOG_TYPE_CALLCHAIN
+	PMCLOG_TYPE_CALLCHAIN,
+	/*
+	 * V3 ABI
+	 *
+	 * New variant of PMCLOG_TYPE_PMCALLOCATE for dynamic event.
+	 */
+	PMCLOG_TYPE_PMCALLOCATEDYN
 };
 
 /*
@@ -204,6 +210,14 @@ struct pmclog_userdata {
 	uint32_t		pl_userdata;
 } __packed;
 
+struct pmclog_pmcallocatedyn {
+	PMCLOG_ENTRY_HEADER
+	uint32_t		pl_pmcid;
+	uint32_t		pl_event;
+	uint32_t		pl_flags;
+	char			pl_evname[PMC_NAME_MAX];
+} __packed;
+
 union pmclog_entry {		/* only used to size scratch areas */
 	struct pmclog_callchain		pl_cc;
 	struct pmclog_closelog		pl_cl;
@@ -213,6 +227,7 @@ union pmclog_entry {		/* only used to size scratch areas */
 	struct pmclog_map_out		pl_mo;
 	struct pmclog_pcsample		pl_s;
 	struct pmclog_pmcallocate	pl_a;
+	struct pmclog_pmcallocatedyn	pl_ad;
 	struct pmclog_pmcattach		pl_t;
 	struct pmclog_pmcdetach		pl_d;
 	struct pmclog_proccsw		pl_c;
@@ -243,6 +258,7 @@ int	pmclog_configure_log(struct pmc_mdep *_md, struct pmc_owner *_po,
     int _logfd);
 int	pmclog_deconfigure_log(struct pmc_owner *_po);
 int	pmclog_flush(struct pmc_owner *_po);
+int	pmclog_close(struct pmc_owner *_po);
 void	pmclog_initialize(void);
 void	pmclog_process_callchain(struct pmc *_pm, struct pmc_sample *_ps);
 void	pmclog_process_closelog(struct pmc_owner *po);

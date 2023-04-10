@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/rctl.h 221362 2011-05-03 07:32:58Z trasz $
+ * $FreeBSD: releng/11.0/sys/sys/rctl.h 297633 2016-04-07 04:23:25Z trasz $
  */
 
 /*
@@ -129,7 +129,8 @@ struct rctl_rule {
 #define	RCTL_ACTION_DENY		(RCTL_ACTION_SIGNAL_MAX + 1)
 #define	RCTL_ACTION_LOG			(RCTL_ACTION_SIGNAL_MAX + 2)
 #define	RCTL_ACTION_DEVCTL		(RCTL_ACTION_SIGNAL_MAX + 3)
-#define	RCTL_ACTION_MAX			RCTL_ACTION_DEVCTL
+#define	RCTL_ACTION_THROTTLE		(RCTL_ACTION_SIGNAL_MAX + 4)
+#define	RCTL_ACTION_MAX			RCTL_ACTION_THROTTLE
 
 #define	RCTL_AMOUNT_UNDEFINED		-1
 
@@ -140,6 +141,8 @@ void	rctl_rule_release(struct rctl_rule *rule);
 int	rctl_rule_add(struct rctl_rule *rule);
 int	rctl_rule_remove(struct rctl_rule *filter);
 int	rctl_enforce(struct proc *p, int resource, uint64_t amount);
+void	rctl_throttle_decay(struct racct *racct, int resource);
+int64_t	rctl_pcpu_available(const struct proc *p);
 uint64_t rctl_get_limit(struct proc *p, int resource);
 uint64_t rctl_get_available(struct proc *p, int resource);
 const char *rctl_resource_name(int resource);

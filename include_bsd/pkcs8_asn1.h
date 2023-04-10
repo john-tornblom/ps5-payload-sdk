@@ -25,9 +25,9 @@ typedef char *heim_general_string;
 
 typedef char *heim_utf8_string;
 
-typedef char *heim_printable_string;
+typedef struct heim_octet_string heim_printable_string;
 
-typedef char *heim_ia5_string;
+typedef struct heim_octet_string heim_ia5_string;
 
 typedef struct heim_bmp_string {
   size_t length;
@@ -70,6 +70,17 @@ typedef struct heim_octet_string heim_any_set;
     }                                                          \
   } while (0)
 
+#ifdef _WIN32
+#ifndef ASN1_LIB
+#define ASN1EXP  __declspec(dllimport)
+#else
+#define ASN1EXP
+#endif
+#define ASN1CALL __stdcall
+#else
+#define ASN1EXP
+#define ASN1CALL
+#endif
 struct units;
 
 #endif
@@ -82,11 +93,11 @@ PKCS8PrivateKeyAlgorithmIdentifier ::= AlgorithmIdentifier
 
 typedef AlgorithmIdentifier PKCS8PrivateKeyAlgorithmIdentifier;
 
-int    encode_PKCS8PrivateKeyAlgorithmIdentifier(unsigned char *, size_t, const PKCS8PrivateKeyAlgorithmIdentifier *, size_t *);
-int    decode_PKCS8PrivateKeyAlgorithmIdentifier(const unsigned char *, size_t, PKCS8PrivateKeyAlgorithmIdentifier *, size_t *);
-void   free_PKCS8PrivateKeyAlgorithmIdentifier  (PKCS8PrivateKeyAlgorithmIdentifier *);
-size_t length_PKCS8PrivateKeyAlgorithmIdentifier(const PKCS8PrivateKeyAlgorithmIdentifier *);
-int    copy_PKCS8PrivateKeyAlgorithmIdentifier  (const PKCS8PrivateKeyAlgorithmIdentifier *, PKCS8PrivateKeyAlgorithmIdentifier *);
+ASN1EXP int    ASN1CALL decode_PKCS8PrivateKeyAlgorithmIdentifier(const unsigned char *, size_t, PKCS8PrivateKeyAlgorithmIdentifier *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS8PrivateKeyAlgorithmIdentifier(unsigned char *, size_t, const PKCS8PrivateKeyAlgorithmIdentifier *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS8PrivateKeyAlgorithmIdentifier(const PKCS8PrivateKeyAlgorithmIdentifier *);
+ASN1EXP int    ASN1CALL copy_PKCS8PrivateKeyAlgorithmIdentifier  (const PKCS8PrivateKeyAlgorithmIdentifier *, PKCS8PrivateKeyAlgorithmIdentifier *);
+ASN1EXP void   ASN1CALL free_PKCS8PrivateKeyAlgorithmIdentifier  (PKCS8PrivateKeyAlgorithmIdentifier *);
 
 
 /*
@@ -95,11 +106,11 @@ PKCS8PrivateKey ::= OCTET STRING
 
 typedef heim_octet_string PKCS8PrivateKey;
 
-int    encode_PKCS8PrivateKey(unsigned char *, size_t, const PKCS8PrivateKey *, size_t *);
-int    decode_PKCS8PrivateKey(const unsigned char *, size_t, PKCS8PrivateKey *, size_t *);
-void   free_PKCS8PrivateKey  (PKCS8PrivateKey *);
-size_t length_PKCS8PrivateKey(const PKCS8PrivateKey *);
-int    copy_PKCS8PrivateKey  (const PKCS8PrivateKey *, PKCS8PrivateKey *);
+ASN1EXP int    ASN1CALL decode_PKCS8PrivateKey(const unsigned char *, size_t, PKCS8PrivateKey *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS8PrivateKey(unsigned char *, size_t, const PKCS8PrivateKey *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS8PrivateKey(const PKCS8PrivateKey *);
+ASN1EXP int    ASN1CALL copy_PKCS8PrivateKey  (const PKCS8PrivateKey *, PKCS8PrivateKey *);
+ASN1EXP void   ASN1CALL free_PKCS8PrivateKey  (PKCS8PrivateKey *);
 
 
 /*
@@ -111,11 +122,11 @@ typedef struct PKCS8Attributes {
   Attribute *val;
 } PKCS8Attributes;
 
-int    encode_PKCS8Attributes(unsigned char *, size_t, const PKCS8Attributes *, size_t *);
-int    decode_PKCS8Attributes(const unsigned char *, size_t, PKCS8Attributes *, size_t *);
-void   free_PKCS8Attributes  (PKCS8Attributes *);
-size_t length_PKCS8Attributes(const PKCS8Attributes *);
-int    copy_PKCS8Attributes  (const PKCS8Attributes *, PKCS8Attributes *);
+ASN1EXP int    ASN1CALL decode_PKCS8Attributes(const unsigned char *, size_t, PKCS8Attributes *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS8Attributes(unsigned char *, size_t, const PKCS8Attributes *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS8Attributes(const PKCS8Attributes *);
+ASN1EXP int    ASN1CALL copy_PKCS8Attributes  (const PKCS8Attributes *, PKCS8Attributes *);
+ASN1EXP void   ASN1CALL free_PKCS8Attributes  (PKCS8Attributes *);
 
 
 /*
@@ -131,17 +142,17 @@ typedef struct PKCS8PrivateKeyInfo {
   heim_integer version;
   PKCS8PrivateKeyAlgorithmIdentifier privateKeyAlgorithm;
   PKCS8PrivateKey privateKey;
-  struct  {
+  struct PKCS8PrivateKeyInfo_attributes {
     unsigned int len;
     Attribute *val;
   } *attributes;
 } PKCS8PrivateKeyInfo;
 
-int    encode_PKCS8PrivateKeyInfo(unsigned char *, size_t, const PKCS8PrivateKeyInfo *, size_t *);
-int    decode_PKCS8PrivateKeyInfo(const unsigned char *, size_t, PKCS8PrivateKeyInfo *, size_t *);
-void   free_PKCS8PrivateKeyInfo  (PKCS8PrivateKeyInfo *);
-size_t length_PKCS8PrivateKeyInfo(const PKCS8PrivateKeyInfo *);
-int    copy_PKCS8PrivateKeyInfo  (const PKCS8PrivateKeyInfo *, PKCS8PrivateKeyInfo *);
+ASN1EXP int    ASN1CALL decode_PKCS8PrivateKeyInfo(const unsigned char *, size_t, PKCS8PrivateKeyInfo *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS8PrivateKeyInfo(unsigned char *, size_t, const PKCS8PrivateKeyInfo *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS8PrivateKeyInfo(const PKCS8PrivateKeyInfo *);
+ASN1EXP int    ASN1CALL copy_PKCS8PrivateKeyInfo  (const PKCS8PrivateKeyInfo *, PKCS8PrivateKeyInfo *);
+ASN1EXP void   ASN1CALL free_PKCS8PrivateKeyInfo  (PKCS8PrivateKeyInfo *);
 
 
 /*
@@ -150,11 +161,11 @@ PKCS8EncryptedData ::= OCTET STRING
 
 typedef heim_octet_string PKCS8EncryptedData;
 
-int    encode_PKCS8EncryptedData(unsigned char *, size_t, const PKCS8EncryptedData *, size_t *);
-int    decode_PKCS8EncryptedData(const unsigned char *, size_t, PKCS8EncryptedData *, size_t *);
-void   free_PKCS8EncryptedData  (PKCS8EncryptedData *);
-size_t length_PKCS8EncryptedData(const PKCS8EncryptedData *);
-int    copy_PKCS8EncryptedData  (const PKCS8EncryptedData *, PKCS8EncryptedData *);
+ASN1EXP int    ASN1CALL decode_PKCS8EncryptedData(const unsigned char *, size_t, PKCS8EncryptedData *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS8EncryptedData(unsigned char *, size_t, const PKCS8EncryptedData *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS8EncryptedData(const PKCS8EncryptedData *);
+ASN1EXP int    ASN1CALL copy_PKCS8EncryptedData  (const PKCS8EncryptedData *, PKCS8EncryptedData *);
+ASN1EXP void   ASN1CALL free_PKCS8EncryptedData  (PKCS8EncryptedData *);
 
 
 /*
@@ -169,11 +180,11 @@ typedef struct PKCS8EncryptedPrivateKeyInfo {
   PKCS8EncryptedData encryptedData;
 } PKCS8EncryptedPrivateKeyInfo;
 
-int    encode_PKCS8EncryptedPrivateKeyInfo(unsigned char *, size_t, const PKCS8EncryptedPrivateKeyInfo *, size_t *);
-int    decode_PKCS8EncryptedPrivateKeyInfo(const unsigned char *, size_t, PKCS8EncryptedPrivateKeyInfo *, size_t *);
-void   free_PKCS8EncryptedPrivateKeyInfo  (PKCS8EncryptedPrivateKeyInfo *);
-size_t length_PKCS8EncryptedPrivateKeyInfo(const PKCS8EncryptedPrivateKeyInfo *);
-int    copy_PKCS8EncryptedPrivateKeyInfo  (const PKCS8EncryptedPrivateKeyInfo *, PKCS8EncryptedPrivateKeyInfo *);
+ASN1EXP int    ASN1CALL decode_PKCS8EncryptedPrivateKeyInfo(const unsigned char *, size_t, PKCS8EncryptedPrivateKeyInfo *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS8EncryptedPrivateKeyInfo(unsigned char *, size_t, const PKCS8EncryptedPrivateKeyInfo *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS8EncryptedPrivateKeyInfo(const PKCS8EncryptedPrivateKeyInfo *);
+ASN1EXP int    ASN1CALL copy_PKCS8EncryptedPrivateKeyInfo  (const PKCS8EncryptedPrivateKeyInfo *, PKCS8EncryptedPrivateKeyInfo *);
+ASN1EXP void   ASN1CALL free_PKCS8EncryptedPrivateKeyInfo  (PKCS8EncryptedPrivateKeyInfo *);
 
 
 #endif /* __pkcs8_asn1_h__ */

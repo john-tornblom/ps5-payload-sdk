@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)paths.h	8.1 (Berkeley) 6/2/93
- * $FreeBSD: release/9.0.0/include/paths.h 219019 2011-02-25 00:04:39Z gabor $
+ * $FreeBSD: releng/11.0/include/paths.h 297205 2016-03-23 04:18:57Z imp $
  */
 
 #ifndef _PATHS_H_
@@ -36,13 +36,12 @@
 #include <sys/cdefs.h>
 
 /* Default search path. */
-#define	_PATH_DEFPATH	"/usr/bin:/bin"
+#define	_PATH_DEFPATH	"/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 /* All standard utilities path. */
 #define	_PATH_STDPATH	"/usr/bin:/bin:/usr/sbin:/sbin"
 /* Locate system binaries. */
 #define	_PATH_SYSPATH	"/sbin:/usr/sbin"
 
-#define	_PATH_AUTHCONF	"/etc/auth.conf"
 #define	_PATH_BSHELL	"/bin/sh"
 #define	_PATH_CAPABILITY	"/etc/capability"
 #define	_PATH_CAPABILITY_DB	"/etc/capability.db"
@@ -51,13 +50,17 @@
 #define	_PATH_CSHELL	"/bin/csh"
 #define	_PATH_CSMAPPER	"/usr/share/i18n/csmapper"
 #define	_PATH_DEFTAPE	"/dev/sa0"
+#define	_PATH_DEVGPIOC	"/dev/gpioc"
 #define	_PATH_DEVNULL	"/dev/null"
 #define	_PATH_DEVZERO	"/dev/zero"
 #define	_PATH_DRUM	"/dev/drum"
 #define	_PATH_ESDB	"/usr/share/i18n/esdb"
 #define	_PATH_ETC	"/etc"
+#define	_PATH_FIRMWARE	"/usr/share/firmware"
 #define	_PATH_FTPUSERS	"/etc/ftpusers"
 #define	_PATH_FWMEM	"/dev/fwmem"
+#define	_PATH_GBDE	"/sbin/gbde"
+#define	_PATH_GELI	"/sbin/geli"
 #define	_PATH_HALT	"/sbin/halt"
 #ifdef COMPAT_32BIT
 #define	_PATH_I18NMODULE	"/usr/lib32/i18n"
@@ -86,6 +89,7 @@
 #define	_PATH_SHELLS	"/etc/shells"
 #define	_PATH_TTY	"/dev/tty"
 #define	_PATH_UNIX	"don't use _PATH_UNIX"
+#define	_PATH_UFSSUSPEND	"/dev/ufssuspend"
 #define	_PATH_VI	"/usr/bin/vi"
 #define	_PATH_WALL	"/usr/bin/wall"
 
@@ -105,7 +109,7 @@ __END_DECLS
 
 #ifdef RESCUE
 #undef	_PATH_DEFPATH
-#define	_PATH_DEFPATH	"/rescue:/usr/bin:/bin"
+#define	_PATH_DEFPATH	"/rescue:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 #undef	_PATH_STDPATH
 #define	_PATH_STDPATH	"/rescue:/usr/bin:/bin:/usr/sbin:/sbin"
 #undef	_PATH_SYSPATH

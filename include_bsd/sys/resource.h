@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)resource.h	8.4 (Berkeley) 1/9/95
- * $FreeBSD: release/9.0.0/sys/sys/resource.h 210220 2010-07-18 11:13:36Z trasz $
+ * $FreeBSD: releng/11.0/sys/sys/resource.h 301110 2016-06-01 07:45:03Z ed $
  */
 
 #ifndef _SYS_RESOURCE_H_
@@ -36,6 +36,16 @@
 #include <sys/cdefs.h>
 #include <sys/_timeval.h>
 #include <sys/_types.h>
+
+#ifndef _ID_T_DECLARED
+typedef	__id_t		id_t;
+#define	_ID_T_DECLARED
+#endif
+
+#ifndef _RLIM_T_DECLARED
+typedef	__rlim_t	rlim_t;
+#define	_RLIM_T_DECLARED
+#endif
 
 /*
  * Process priority specifications to get/setpriority.
@@ -79,6 +89,13 @@ struct rusage {
 #define	ru_last		ru_nivcsw
 };
 
+#if __BSD_VISIBLE
+struct __wrusage {
+	struct rusage	wru_self;
+	struct rusage	wru_children;
+};
+#endif
+
 /*
  * Resource limits
  */
@@ -96,10 +113,12 @@ struct rusage {
 #define	RLIMIT_AS	RLIMIT_VMEM	/* standard name for RLIMIT_VMEM */
 #define	RLIMIT_NPTS	11		/* pseudo-terminals */
 #define	RLIMIT_SWAP	12		/* swap used */
+#define	RLIMIT_KQUEUES	13		/* kqueues allocated */
+#define	RLIMIT_UMTXP	14		/* process-shared umtx */
 
-#define	RLIM_NLIMITS	13		/* number of resource limits */
+#define	RLIM_NLIMITS	15		/* number of resource limits */
 
-#define	RLIM_INFINITY	((rlim_t)(((uint64_t)1 << 63) - 1))
+#define	RLIM_INFINITY	((rlim_t)(((__uint64_t)1 << 63) - 1))
 /* XXX Missing: RLIM_SAVED_MAX, RLIM_SAVED_CUR */
 
 
@@ -108,7 +127,7 @@ struct rusage {
  */
 
 #ifdef _RLIMIT_IDENT
-static char *rlimit_ident[RLIM_NLIMITS] = {
+static const char *rlimit_ident[RLIM_NLIMITS] = {
 	"cpu",
 	"fsize",
 	"data",
@@ -122,12 +141,9 @@ static char *rlimit_ident[RLIM_NLIMITS] = {
 	"vmem",
 	"npts",
 	"swap",
+	"kqueues",
+	"umtx",
 };
-#endif
-
-#ifndef _RLIM_T_DECLARED
-typedef	__rlim_t	rlim_t;
-#define	_RLIM_T_DECLARED
 #endif
 
 struct rlimit {

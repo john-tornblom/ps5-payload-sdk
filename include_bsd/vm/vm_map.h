@@ -57,7 +57,7 @@
  * any improvements or extensions that they make and grant Carnegie the
  * rights to redistribute these changes.
  *
- * $FreeBSD: release/9.0.0/sys/vm/vm_map.h 219819 2011-03-21 09:40:01Z jeff $
+ * $FreeBSD: releng/11.0/sys/vm/vm_map.h 302399 2016-07-07 20:58:16Z alc $
  */
 
 /*
@@ -97,31 +97,27 @@ union vm_map_object {
  *	Also included is control information for virtual copy operations.
  */
 struct vm_map_entry {
-	struct vm_map_entry *prev;	/* previous entry */						// 0x00
-	struct vm_map_entry *next;	/* next entry */							// 0x08
-	struct vm_map_entry *left;	/* left child in binary search tree */		// 0x10
-	struct vm_map_entry *right;	/* right child in binary search tree */		// 0x18
-	vm_offset_t start;		/* start address */								// 0x20
-	vm_offset_t end;		/* end address */								// 0x28
-	vm_offset_t avail_ssize;	/* amt can grow if this is a stack */		// 0x30
-	vm_size_t adj_free;		/* amount of adjacent free space */				// 0x38
-	vm_size_t max_free;		/* max free space in subtree */					// 0x40
-	union vm_map_object object;	/* object I point to */						// 0x48
-	vm_ooffset_t offset;		/* offset into object */					// 0x50
-	vm_eflags_t eflags;		/* map entry flags */							// 0x58
-	vm_prot_t protection;		/* protection code */						// 0x5C
-	vm_prot_t max_protection;	/* maximum protection */					// 0x5D
-	vm_inherit_t inheritance;	/* inheritance */							// 0x5E
-	int wired_count;		/* can be paged if = 0 */						// 0x60
-	vm_pindex_t lastr;		/* last read */									// 0x68
-	struct ucred *cred;		/* tmp storage for creator ref */				// 0x70
-
-#ifdef ONI_PLATFORM
-	uint8_t unk78[0x15];													// 0x78
-	char name[0x20];														// 0x8D
-	uint8_t unkAD[0x13];													// 0xAD
-#endif
-}; // 0xC0
+	struct vm_map_entry *prev;	/* previous entry */
+	struct vm_map_entry *next;	/* next entry */
+	struct vm_map_entry *left;	/* left child in binary search tree */
+	struct vm_map_entry *right;	/* right child in binary search tree */
+	vm_offset_t start;		/* start address */
+	vm_offset_t end;		/* end address */
+	vm_offset_t avail_ssize;	/* amt can grow if this is a stack */
+	vm_offset_t next_read;		/* vaddr of the next sequential read */
+	vm_size_t adj_free;		/* amount of adjacent free space */
+	vm_size_t max_free;		/* max free space in subtree */
+	union vm_map_object object;	/* object I point to */
+	vm_ooffset_t offset;		/* offset into object */
+	vm_eflags_t eflags;		/* map entry flags */
+	vm_prot_t protection;		/* protection code */
+	vm_prot_t max_protection;	/* maximum protection */
+	vm_inherit_t inheritance;	/* inheritance */
+	uint8_t read_ahead;		/* pages in the read-ahead window */
+	int wired_count;		/* can be paged if = 0 */
+	struct ucred *cred;		/* tmp storage for creator ref */
+	struct thread *wiring_thread;
+};
 
 #define MAP_ENTRY_NOSYNC		0x0001
 #define MAP_ENTRY_IS_SUB_MAP		0x0002
@@ -145,6 +141,7 @@ struct vm_map_entry {
 #define	MAP_ENTRY_GROWS_UP		0x2000	/* Bottom-up stacks */
 
 #define	MAP_ENTRY_WIRE_SKIPPED		0x4000
+#define	MAP_ENTRY_VN_WRITECNT		0x8000	/* writeable vnode mapping */
 
 #ifdef	_KERNEL
 static __inline u_char
@@ -180,9 +177,9 @@ vm_map_entry_system_wired_count(vm_map_entry_t entry)
  *	(c)	const until freed
  */
 struct vm_map {
-	struct vm_map_entry header;	/* List of entries */									// 0x0
-	struct sx lock;			/* Lock for map data */										// 0xC0
-	struct mtx system_mtx;																// 0xE0
+	struct vm_map_entry header;	/* List of entries */
+	struct sx lock;			/* Lock for map data */
+	struct mtx system_mtx;
 	int nentries;			/* Number of entries */
 	vm_size_t size;			/* virtual size */
 	u_int timestamp;		/* Version number */
@@ -194,8 +191,6 @@ struct vm_map {
 #define	min_offset	header.start	/* (c) */
 #define	max_offset	header.end	/* (c) */
 	int busy;
-
-	char unk130[0x48];
 };
 
 /*
@@ -206,13 +201,13 @@ struct vm_map {
 
 #ifdef	_KERNEL
 static __inline vm_offset_t
-vm_map_max(vm_map_t map)
+vm_map_max(const struct vm_map *map)
 {
 	return (map->max_offset);
 }
 
 static __inline vm_offset_t
-vm_map_min(vm_map_t map)
+vm_map_min(const struct vm_map *map)
 {
 	return (map->min_offset);
 }
@@ -304,25 +299,25 @@ void vm_map_wait_busy(vm_map_t map);
 			_vm_map_lock_downgrade(map, LOCK_FILE, LOCK_LINE)
 
 long vmspace_resident_count(struct vmspace *vmspace);
-long vmspace_wired_count(struct vmspace *vmspace);
 #endif	/* _KERNEL */
 
 
-/* XXX: number of kernel maps and entries to statically allocate */
+/* XXX: number of kernel maps to statically allocate */
 #define MAX_KMAP	10
-#define	MAX_KMAPENT	128
 
 /*
  * Copy-on-write flags for vm_map operations
  */
-#define MAP_UNUSED_01		0x0001
+#define MAP_INHERIT_SHARE	0x0001
 #define MAP_COPY_ON_WRITE	0x0002
 #define MAP_NOFAULT		0x0004
 #define MAP_PREFAULT		0x0008
 #define MAP_PREFAULT_PARTIAL	0x0010
 #define MAP_DISABLE_SYNCER	0x0020
+#define	MAP_CHECK_EXCL		0x0040
 #define MAP_DISABLE_COREDUMP	0x0100
 #define MAP_PREFAULT_MADVISE	0x0200	/* from (user) madvise request */
+#define	MAP_VN_WRITECOUNT	0x0400
 #define	MAP_STACK_GROWS_DOWN	0x1000
 #define	MAP_STACK_GROWS_UP	0x2000
 #define	MAP_ACC_CHARGED		0x4000
@@ -331,19 +326,29 @@ long vmspace_wired_count(struct vmspace *vmspace);
 /*
  * vm_fault option flags
  */
-#define VM_FAULT_NORMAL 0		/* Nothing special */
-#define VM_FAULT_CHANGE_WIRING 1	/* Change the wiring as appropriate */
-#define	VM_FAULT_DIRTY 2		/* Dirty the page; use w/VM_PROT_COPY */
+#define	VM_FAULT_NORMAL	0		/* Nothing special */
+#define	VM_FAULT_WIRE	1		/* Wire the mapped page */
+#define	VM_FAULT_DIRTY	2		/* Dirty the page; use w/VM_PROT_COPY */
 
 /*
- * The following "find_space" options are supported by vm_map_find()
+ * Initially, mappings are slightly sequential.  The maximum window size must
+ * account for the map entry's "read_ahead" field being defined as an uint8_t.
+ */
+#define	VM_FAULT_READ_AHEAD_MIN		7
+#define	VM_FAULT_READ_AHEAD_INIT	15
+#define	VM_FAULT_READ_AHEAD_MAX		min(atop(MAXPHYS) - 1, UINT8_MAX)
+
+/*
+ * The following "find_space" options are supported by vm_map_find().
+ *
+ * For VMFS_ALIGNED_SPACE, the desired alignment is specified to
+ * the macro argument as log base 2 of the desired alignment.
  */
 #define	VMFS_NO_SPACE		0	/* don't find; use the given range */
 #define	VMFS_ANY_SPACE		1	/* find a range with any alignment */
-#define	VMFS_ALIGNED_SPACE	2	/* find a superpage-aligned range */
-#if defined(__mips__)
-#define	VMFS_TLB_ALIGNED_SPACE	3	/* find a TLB entry aligned range */
-#endif
+#define	VMFS_OPTIMAL_SPACE	2	/* find a range with optimal alignment*/
+#define	VMFS_SUPER_SPACE	3	/* find a superpage-aligned range */
+#define	VMFS_ALIGNED_SPACE(x)	((x) << 8) /* find a range with fixed alignment */
 
 /*
  * vm_map_wire and vm_map_unwire option flags
@@ -361,7 +366,7 @@ boolean_t vm_map_check_protection (vm_map_t, vm_offset_t, vm_offset_t, vm_prot_t
 vm_map_t vm_map_create(pmap_t, vm_offset_t, vm_offset_t);
 int vm_map_delete(vm_map_t, vm_offset_t, vm_offset_t);
 int vm_map_find(vm_map_t, vm_object_t, vm_ooffset_t, vm_offset_t *, vm_size_t,
-    int, vm_prot_t, vm_prot_t, int);
+    vm_offset_t, int, vm_prot_t, vm_prot_t, int);
 int vm_map_fixed(vm_map_t, vm_object_t, vm_ooffset_t, vm_offset_t, vm_size_t,
     vm_prot_t, vm_prot_t, int);
 int vm_map_findspace (vm_map_t, vm_offset_t, vm_size_t, vm_offset_t *);
@@ -374,16 +379,13 @@ int vm_map_lookup_locked(vm_map_t *, vm_offset_t, vm_prot_t, vm_map_entry_t *, v
     vm_pindex_t *, vm_prot_t *, boolean_t *);
 void vm_map_lookup_done (vm_map_t, vm_map_entry_t);
 boolean_t vm_map_lookup_entry (vm_map_t, vm_offset_t, vm_map_entry_t *);
-void vm_map_pmap_enter(vm_map_t map, vm_offset_t addr, vm_prot_t prot,
-    vm_object_t object, vm_pindex_t pindex, vm_size_t size, int flags);
 int vm_map_protect (vm_map_t, vm_offset_t, vm_offset_t, vm_prot_t, boolean_t);
 int vm_map_remove (vm_map_t, vm_offset_t, vm_offset_t);
+void vm_map_simplify_entry(vm_map_t map, vm_map_entry_t entry);
 void vm_map_startup (void);
 int vm_map_submap (vm_map_t, vm_offset_t, vm_offset_t, vm_map_t);
 int vm_map_sync(vm_map_t, vm_offset_t, vm_offset_t, boolean_t, boolean_t);
 int vm_map_madvise (vm_map_t, vm_offset_t, vm_offset_t, int);
-void vm_map_simplify_entry (vm_map_t, vm_map_entry_t);
-void vm_init2 (void);
 int vm_map_stack (vm_map_t, vm_offset_t, vm_size_t, vm_prot_t, vm_prot_t, int);
 int vm_map_growstack (struct proc *p, vm_offset_t addr);
 int vm_map_unwire(vm_map_t map, vm_offset_t start, vm_offset_t end,

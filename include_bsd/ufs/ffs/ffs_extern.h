@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)ffs_extern.h	8.6 (Berkeley) 3/30/95
- * $FreeBSD: release/9.0.0/sys/ufs/ffs/ffs_extern.h 225166 2011-08-25 08:17:39Z mm $
+ * $FreeBSD: releng/11.0/sys/ufs/ffs/ffs_extern.h 294983 2016-01-28 12:21:23Z trasz $
  */
 
 #ifndef _UFS_FFS_EXTERN_H
@@ -77,11 +77,12 @@ void	ffs_fserr(struct fs *, ino_t, char *);
 int	ffs_isblock(struct fs *, u_char *, ufs1_daddr_t);
 int	ffs_isfreeblock(struct fs *, u_char *, ufs1_daddr_t);
 void	ffs_load_inode(struct buf *, struct inode *, struct fs *, ino_t);
-int	ffs_mountroot(void);
 void	ffs_oldfscompat_write(struct fs *, struct ufsmount *);
+int	ffs_own_mount(const struct mount *mp);
 int	ffs_reallocblks(struct vop_reallocblks_args *);
 int	ffs_realloccg(struct inode *, ufs2_daddr_t, ufs2_daddr_t,
 	    ufs2_daddr_t, int, int, int, struct ucred *, struct buf **);
+int	ffs_reload(struct mount *, struct thread *, int);
 int	ffs_sbupdate(struct ufsmount *, int, int);
 void	ffs_setblock(struct fs *, u_char *, ufs1_daddr_t);
 int	ffs_snapblkfree(struct fs *, struct vnode *, ufs2_daddr_t, long, ino_t,
@@ -92,14 +93,16 @@ void	ffs_snapshot_mount(struct mount *mp);
 void	ffs_snapshot_unmount(struct mount *mp);
 void	process_deferred_inactive(struct mount *mp);
 void	ffs_sync_snap(struct mount *, int);
-int	ffs_syncvnode(struct vnode *vp, int waitfor);
-int	ffs_truncate(struct vnode *, off_t, int, struct ucred *, struct thread *);
+int	ffs_syncvnode(struct vnode *vp, int waitfor, int flags);
+int	ffs_truncate(struct vnode *, off_t, int, struct ucred *);
 int	ffs_update(struct vnode *, int);
 int	ffs_valloc(struct vnode *, int, struct ucred *, struct vnode **);
 
 int	ffs_vfree(struct vnode *, ino_t, int);
 vfs_vget_t ffs_vget;
 int	ffs_vgetf(struct mount *, ino_t, int, struct vnode **, int);
+void	ffs_susp_initialize(void);
+void	ffs_susp_uninitialize(void);
 
 #define	FFSV_FORCEINSMQ	0x0001
 
@@ -148,9 +151,7 @@ void	softdep_setup_sbupdate(struct ufsmount *, struct fs *, struct buf *);
 void	softdep_fsync_mountdev(struct vnode *);
 int	softdep_sync_metadata(struct vnode *);
 int	softdep_sync_buf(struct vnode *, struct buf *, int);
-int     softdep_process_worklist(struct mount *, int);
 int     softdep_fsync(struct vnode *);
-int	softdep_waitidle(struct mount *);
 int	softdep_prealloc(struct vnode *, int);
 int	softdep_journal_lookup(struct mount *, struct vnode **);
 void	softdep_journal_freeblocks(struct inode *, struct ucred *, off_t, int);
@@ -163,10 +164,16 @@ void	softdep_freework(struct workhead *);
 /*
  * Things to request flushing in softdep_request_cleanup()
  */
-#define FLUSH_INODES		1
-#define FLUSH_INODES_WAIT	2
-#define FLUSH_BLOCKS		3
-#define FLUSH_BLOCKS_WAIT	4
+#define	FLUSH_INODES		1
+#define	FLUSH_INODES_WAIT	2
+#define	FLUSH_BLOCKS		3
+#define	FLUSH_BLOCKS_WAIT	4
+/*
+ * Flag to ffs_syncvnode() to request flushing of data only,
+ * but skip the ffs_update() on the inode itself. Used to avoid
+ * deadlock when flushing snapshot inodes while holding snaplk.
+ */
+#define	NO_INO_UPDT		0x00000001
 
 int	ffs_rdonly(struct inode *);
 

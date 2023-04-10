@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/stdint.h 221502 2011-05-05 14:45:24Z obrien $
+ * $FreeBSD: releng/11.0/sys/sys/stdint.h 290492 2015-11-07 12:30:43Z kib $
  */
 
 #ifndef _SYS_STDINT_H_
@@ -55,13 +55,15 @@ typedef	__uint_fast16_t		uint_fast16_t;
 typedef	__uint_fast32_t		uint_fast32_t;
 typedef	__uint_fast64_t		uint_fast64_t;
 
-#ifndef _INTMAX_T_DECLARED
-typedef	__intmax_t		intmax_t;
-#define	_INTMAX_T_DECLARED
+/* GNU and Darwin define this and people seem to think it's portable */
+#if defined(UINTPTR_MAX) && defined(UINT64_MAX) && (UINTPTR_MAX == UINT64_MAX)
+#define	__WORDSIZE		64
+#else
+#define	__WORDSIZE		32
 #endif
-#ifndef _UINTMAX_T_DECLARED
-typedef	__uintmax_t		uintmax_t;
-#define	_UINTMAX_T_DECLARED
-#endif
+
+/* Limits of wchar_t. */
+#define	WCHAR_MIN	__WCHAR_MIN
+#define	WCHAR_MAX	__WCHAR_MAX
 
 #endif /* !_SYS_STDINT_H_ */

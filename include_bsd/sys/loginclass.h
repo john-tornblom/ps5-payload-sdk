@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/loginclass.h 220137 2011-03-29 17:47:25Z trasz $
+ * $FreeBSD: releng/11.0/sys/sys/loginclass.h 290861 2015-11-15 12:50:14Z trasz $
  */
 
 #ifndef _SYS_LOGINCLASS_H_
@@ -48,6 +48,7 @@ void	loginclass_hold(struct loginclass *lc);
 void	loginclass_free(struct loginclass *lc);
 struct loginclass	*loginclass_find(const char *name);
 void	loginclass_racct_foreach(void (*callback)(struct racct *racct,
-	    void *arg2, void *arg3), void *arg2, void *arg3);
+	    void *arg2, void *arg3), void (*pre)(void), void (*post)(void),
+	    void *arg2, void *arg3);
 
 #endif /* !_SYS_LOGINCLASS_H_ */

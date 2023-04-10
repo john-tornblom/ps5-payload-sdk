@@ -1,7 +1,7 @@
 /*
  * Prototypes for the OSTA functions
  *
- * $FreeBSD: release/9.0.0/sys/fs/udf/osta.h 162255 2006-09-12 19:02:34Z imp $
+ * $FreeBSD: releng/11.0/sys/fs/udf/osta.h 298806 2016-04-29 20:51:24Z pfg $
  */
 
 /*-
@@ -28,7 +28,7 @@
 #endif
 
 /***********************************************************************
- * The following two typedef's are to remove compiler dependancies.
+ * The following two typedef's are to remove compiler dependencies.
  * byte needs to be unsigned 8-bit, and unicode_t needs to be
  * unsigned 16-bit.
  */

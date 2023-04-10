@@ -1,4 +1,4 @@
-/* $FreeBSD: release/9.0.0/sys/dev/usb/usb_ioctl.h 223467 2011-06-23 07:54:03Z hselasky $ */
+/* $FreeBSD: releng/11.0/sys/dev/usb/usb_ioctl.h 283879 2015-06-01 11:24:34Z hselasky $ */
 /*-
  * Copyright (c) 2008 Hans Petter Selasky. All rights reserved.
  * Copyright (c) 1998 The NetBSD Foundation, Inc. All rights reserved.
@@ -29,17 +29,30 @@
 #ifndef _USB_IOCTL_H_
 #define	_USB_IOCTL_H_
 
+#ifndef USB_GLOBAL_INCLUDE_FILE
 #include <sys/ioccom.h>
+#include <sys/cdefs.h>
 
 /* Building "kdump" depends on these includes */
 
 #include <dev/usb/usb_endian.h>
 #include <dev/usb/usb.h>
+#endif
 
 #define	USB_DEVICE_NAME "usbctl"
 #define	USB_DEVICE_DIR "usb"
 #define	USB_GENERIC_NAME "ugen"
 #define	USB_TEMPLATE_SYSCTL "hw.usb.template"	/* integer type */
+
+/*
+ * Align IOCTL structures to hide differences when running 32-bit
+ * programs under 64-bit kernels:
+ */
+#ifdef COMPAT_32BIT
+#define	USB_IOCTL_STRUCT_ALIGN(n) __aligned(n)
+#else
+#define	USB_IOCTL_STRUCT_ALIGN(n)
+#endif
 
 /* Definition of valid template sysctl values */
 
@@ -51,6 +64,9 @@ enum {
 	USB_TEMP_AUDIO,		/* USB Audio */
 	USB_TEMP_KBD,		/* USB Keyboard */
 	USB_TEMP_MOUSE,		/* USB Mouse */
+	USB_TEMP_PHONE,		/* USB Phone */
+	USB_TEMP_SERIALNET,	/* USB CDC Ethernet and Modem */
+	USB_TEMP_MIDI,		/* USB MIDI */
 	USB_TEMP_MAX,
 };
 
@@ -62,7 +78,7 @@ struct usb_read_dir {
 #endif
 	uint32_t urd_startentry;
 	uint32_t urd_maxlen;
-};
+} USB_IOCTL_STRUCT_ALIGN(8);
 
 struct usb_ctl_request {
 #ifdef COMPAT_32BIT
@@ -74,12 +90,12 @@ struct usb_ctl_request {
 	uint16_t ucr_actlen;		/* actual length transferred */
 	uint8_t	ucr_addr;		/* zero - currently not used */
 	struct usb_device_request ucr_request;
-};
+} USB_IOCTL_STRUCT_ALIGN(8);
 
 struct usb_alt_interface {
 	uint8_t	uai_interface_index;
 	uint8_t	uai_alt_index;
-};
+} USB_IOCTL_STRUCT_ALIGN(1);
 
 struct usb_gen_descriptor {
 #ifdef COMPAT_32BIT
@@ -98,7 +114,7 @@ struct usb_gen_descriptor {
 	uint8_t	ugd_endpt_index;
 	uint8_t	ugd_report_type;
 	uint8_t	reserved[8];
-};
+} USB_IOCTL_STRUCT_ALIGN(8);
 
 struct usb_device_info {
 	uint16_t udi_productNo;
@@ -127,24 +143,33 @@ struct usb_device_info {
 	char	udi_vendor[128];
 	char	udi_serial[64];
 	char	udi_release[8];
-};
+} USB_IOCTL_STRUCT_ALIGN(2);
+
+#define	USB_DEVICE_PORT_PATH_MAX 32
+
+struct usb_device_port_path {
+	uint8_t udp_bus;		/* which bus we are on */
+	uint8_t udp_index;		/* which device index */
+	uint8_t udp_port_level;		/* how many levels: 0, 1, 2 ... */
+	uint8_t udp_port_no[USB_DEVICE_PORT_PATH_MAX];
+} USB_IOCTL_STRUCT_ALIGN(1);
 
 struct usb_device_stats {
 	uint32_t uds_requests_ok[4];	/* Indexed by transfer type UE_XXX */
 	uint32_t uds_requests_fail[4];	/* Indexed by transfer type UE_XXX */
-};
+} USB_IOCTL_STRUCT_ALIGN(4);
 
 struct usb_fs_start {
 	uint8_t	ep_index;
-};
+} USB_IOCTL_STRUCT_ALIGN(1);
 
 struct usb_fs_stop {
 	uint8_t	ep_index;
-};
+} USB_IOCTL_STRUCT_ALIGN(1);
 
 struct usb_fs_complete {
 	uint8_t	ep_index;
-};
+} USB_IOCTL_STRUCT_ALIGN(1);
 
 /* This structure is used for all endpoint types */
 struct usb_fs_endpoint {
@@ -177,7 +202,7 @@ struct usb_fs_endpoint {
 	/* timeout value for no timeout */
 #define	USB_FS_TIMEOUT_NONE 0
 	int	status;			/* see USB_ERR_XXX */
-};
+} USB_IOCTL_STRUCT_ALIGN(8);
 
 struct usb_fs_init {
 	/* userland pointer to endpoints structure */
@@ -188,11 +213,11 @@ struct usb_fs_init {
 #endif
 	/* maximum number of endpoints */
 	uint8_t	ep_index_max;
-};
+} USB_IOCTL_STRUCT_ALIGN(8);
 
 struct usb_fs_uninit {
 	uint8_t	dummy;			/* zero */
-};
+} USB_IOCTL_STRUCT_ALIGN(1);
 
 struct usb_fs_open {
 #define	USB_FS_MAX_BUFSIZE (1 << 18)
@@ -204,15 +229,20 @@ struct usb_fs_open {
 	uint8_t	dev_index;		/* currently unused */
 	uint8_t	ep_index;
 	uint8_t	ep_no;			/* bEndpointNumber */
-};
+} USB_IOCTL_STRUCT_ALIGN(4);
+
+struct usb_fs_open_stream {
+	struct usb_fs_open fs_open;
+	uint16_t stream_id;		/* stream ID */
+} USB_IOCTL_STRUCT_ALIGN(4);
 
 struct usb_fs_close {
 	uint8_t	ep_index;
-};
+} USB_IOCTL_STRUCT_ALIGN(1);
 
 struct usb_fs_clear_stall_sync {
 	uint8_t	ep_index;
-};
+} USB_IOCTL_STRUCT_ALIGN(1);
 
 struct usb_gen_quirk {
 	uint16_t index;			/* Quirk Index */
@@ -222,11 +252,11 @@ struct usb_gen_quirk {
 	uint16_t bcdDeviceHigh;		/* High Device Revision */
 	uint16_t reserved[2];
 	/*
-	 * String version of quirk including terminating zero. See UQ_XXX in
-	 * "usb_quirk.h".
+	 * String version of quirk including terminating zero. See
+	 * UQ_XXX in "usb_quirk.h".
 	 */
 	char	quirkname[64 - 14];
-};
+} USB_IOCTL_STRUCT_ALIGN(2);
 
 /* USB controller */
 #define	USB_REQUEST		_IOWR('U', 1, struct usb_ctl_request)
@@ -270,7 +300,9 @@ struct usb_gen_quirk {
 #define	USB_IFACE_DRIVER_DETACH	_IOW ('U', 125, int)
 #define	USB_GET_PLUGTIME	_IOR ('U', 126, uint32_t)
 #define	USB_READ_DIR		_IOW ('U', 127, struct usb_read_dir)
-/* 128 - 135 unused */
+/* 128 - 133 unused */
+#define	USB_GET_DEV_PORT_PATH	_IOR ('U', 134, struct usb_device_port_path)
+#define	USB_GET_POWER_USAGE	_IOR ('U', 135, int)
 #define	USB_SET_TX_FORCE_SHORT	_IOW ('U', 136, int)
 #define	USB_SET_TX_TIMEOUT	_IOW ('U', 137, int)
 #define	USB_GET_TX_FRAME_SIZE	_IOR ('U', 138, int)
@@ -289,6 +321,10 @@ struct usb_gen_quirk {
 #define	USB_GET_CM_OVER_DATA	_IOR ('U', 180, int)
 #define	USB_SET_CM_OVER_DATA	_IOW ('U', 181, int)
 
+/* GPIO control */
+#define	USB_GET_GPIO		_IOR ('U', 182, int)
+#define	USB_SET_GPIO		_IOW ('U', 183, int)
+
 /* USB file system interface */
 #define	USB_FS_START		_IOW ('U', 192, struct usb_fs_start)
 #define	USB_FS_STOP		_IOW ('U', 193, struct usb_fs_stop)
@@ -298,6 +334,7 @@ struct usb_gen_quirk {
 #define	USB_FS_OPEN		_IOWR('U', 197, struct usb_fs_open)
 #define	USB_FS_CLOSE		_IOW ('U', 198, struct usb_fs_close)
 #define	USB_FS_CLEAR_STALL_SYNC _IOW ('U', 199, struct usb_fs_clear_stall_sync)
+#define	USB_FS_OPEN_STREAM	_IOWR('U', 200, struct usb_fs_open_stream)
 
 /* USB quirk system interface */
 #define	USB_DEV_QUIRK_GET	_IOWR('Q', 0, struct usb_gen_quirk)

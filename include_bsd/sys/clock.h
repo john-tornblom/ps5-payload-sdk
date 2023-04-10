@@ -41,7 +41,7 @@
  *
  * All that code should go here for service.
  *
- * $FreeBSD: release/9.0.0/sys/sys/clock.h 204646 2010-03-03 17:55:51Z joel $
+ * $FreeBSD: releng/11.0/sys/sys/clock.h 204646 2010-03-03 17:55:51Z joel $
  */
 
 #ifndef _SYS_CLOCK_H_

@@ -1,9 +1,7 @@
-#ifndef __sctp_lock_bsd_h__
-#define __sctp_lock_bsd_h__
 /*-
  * Copyright (c) 2001-2007, by Cisco Systems, Inc. All rights reserved.
- * Copyright (c) 2008-2011, by Randall Stewart. All rights reserved.
- * Copyright (c) 2008-2011, by Michael Tuexen. All rights reserved.
+ * Copyright (c) 2008-2012, by Randall Stewart. All rights reserved.
+ * Copyright (c) 2008-2012, by Michael Tuexen. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -32,6 +30,12 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <sys/cdefs.h>
+__FBSDID("$FreeBSD: releng/11.0/sys/netinet/sctp_lock_bsd.h 298942 2016-05-02 20:56:11Z pfg $");
+
+#ifndef _NETINET_SCTP_LOCK_BSD_H_
+#define _NETINET_SCTP_LOCK_BSD_H_
+
 /*
  * General locking concepts: The goal of our locking is to of course provide
  * consistency and yet minimize overhead. We will attempt to use
@@ -45,7 +49,7 @@
  * Most other locks (INP and INFO) attempt to localize the locking i.e. we try
  * to contain the lock and unlock within the function that needs to lock it.
  * This sometimes mean we do extra locks and unlocks and lose a bit of
- * efficency, but if the performance statements about non-recursive locks are
+ * efficiency, but if the performance statements about non-recursive locks are
  * true this should not be a problem.  One issue that arises with this only
  * lock when needed is that if an implicit association setup is done we have
  * a problem. If at the time I lookup an association I have NULL in the tcb
@@ -70,9 +74,6 @@
  * SCTP_INP_INFO_RLOCK() and then when we want to add a new association to
  * the SCTP_BASE_INFO() list's we will do a SCTP_INP_INFO_WLOCK().
  */
-#include <sys/cdefs.h>
-__FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_lock_bsd.h 218319 2011-02-05 12:12:51Z rrs $");
-
 
 extern struct sctp_foo_stuff sctp_logoff[];
 extern int sctp_logoff_stuff;

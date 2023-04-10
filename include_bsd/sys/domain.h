@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)domain.h	8.1 (Berkeley) 6/2/93
- * $FreeBSD: release/9.0.0/sys/sys/domain.h 195837 2009-07-23 20:46:49Z rwatson $
+ * $FreeBSD: releng/11.0/sys/sys/domain.h 285522 2015-07-14 02:00:50Z cem $
  */
 
 #ifndef _SYS_DOMAIN_H_
@@ -42,6 +42,7 @@
  */
 struct	mbuf;
 struct	ifnet;
+struct	socket;
 
 struct domain {
 	int	dom_family;		/* AF_xxx */
@@ -51,25 +52,18 @@ struct domain {
 	void	(*dom_destroy)		/* cleanup structures / state */
 		(void);
 	int	(*dom_externalize)	/* externalize access rights */
-		(struct mbuf *, struct mbuf **);
+		(struct mbuf *, struct mbuf **, int);
 	void	(*dom_dispose)		/* dispose of internalized rights */
-		(struct mbuf *);
+		(struct socket *);
 	struct	protosw *dom_protosw, *dom_protoswNPROTOSW;
 	struct	domain *dom_next;
 	int	(*dom_rtattach)		/* initialize routing table */
 		(void **, int);
 	int	(*dom_rtdetach)		/* clean up routing table */
 		(void **, int);
-	int	dom_rtoffset;		/* an arg to rtattach, in bits */
-		/* XXX MRT.
-		 * rtoffset May be 0 if the domain supplies its own rtattach(),
-		 * in which case, a 0 indicates it's being called from 
-		 * vfs_export.c (HACK)  Only for AF_INET{,6} at this time.
-		 * Temporary ABI compat hack.. fix post RELENG_7
-		 */
-	int	dom_maxrtkey;		/* for routing layer */
 	void	*(*dom_ifattach)(struct ifnet *);
 	void	(*dom_ifdetach)(struct ifnet *, void *);
+	int	(*dom_ifmtu)(struct ifnet *);
 					/* af-dependent data on ifnet */
 };
 

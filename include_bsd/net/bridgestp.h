@@ -67,7 +67,7 @@
  *
  * OpenBSD: if_bridge.h,v 1.14 2001/03/22 03:48:29 jason Exp
  *
- * $FreeBSD: release/9.0.0/sys/net/bridgestp.h 222834 2011-06-07 20:46:03Z zec $
+ * $FreeBSD: releng/11.0/sys/net/bridgestp.h 234488 2012-04-20 10:06:28Z thompsa $
  */
 
 /*
@@ -326,6 +326,7 @@ struct bstp_port {
 	uint8_t			bp_txcount;
 	struct task		bp_statetask;
 	struct task		bp_rtagetask;
+	struct task		bp_mediatask;
 };
 
 /*
@@ -369,8 +370,6 @@ struct bstp_state {
 
 extern const uint8_t bstp_etheraddr[];
 
-extern	void (*bstp_linkstate_p)(struct ifnet *ifp, int state);
-
 void	bstp_attach(struct bstp_state *, struct bstp_cb_ops *);
 void	bstp_detach(struct bstp_state *);
 void	bstp_init(struct bstp_state *);
@@ -379,7 +378,7 @@ int	bstp_create(struct bstp_state *, struct bstp_port *, struct ifnet *);
 int	bstp_enable(struct bstp_port *);
 void	bstp_disable(struct bstp_port *);
 void	bstp_destroy(struct bstp_port *);
-void	bstp_linkstate(struct ifnet *, int);
+void	bstp_linkstate(struct bstp_port *);
 int	bstp_set_htime(struct bstp_state *, int);
 int	bstp_set_fdelay(struct bstp_state *, int);
 int	bstp_set_maxage(struct bstp_state *, int);
@@ -392,6 +391,6 @@ int	bstp_set_edge(struct bstp_port *, int);
 int	bstp_set_autoedge(struct bstp_port *, int);
 int	bstp_set_ptp(struct bstp_port *, int);
 int	bstp_set_autoptp(struct bstp_port *, int);
-struct mbuf *bstp_input(struct bstp_port *, struct ifnet *, struct mbuf *);
+void	bstp_input(struct bstp_port *, struct ifnet *, struct mbuf *);
 
 #endif /* _KERNEL */

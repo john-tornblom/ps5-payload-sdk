@@ -28,7 +28,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)udp.h	8.1 (Berkeley) 6/10/93
- * $FreeBSD: release/9.0.0/sys/netinet/udp.h 217126 2011-01-07 21:40:34Z jhb $
+ * $FreeBSD: releng/11.0/sys/netinet/udp.h 246210 2013-02-01 15:32:20Z jhb $
  */
 
 #ifndef _NETINET_UDP_H_
@@ -48,8 +48,10 @@ struct udphdr {
 /* 
  * User-settable options (used with setsockopt).
  */
-#define	UDP_ENCAP			0x01
+#define	UDP_ENCAP			1
 
+/* Start of reserved space for third-party user-settable options. */
+#define	UDP_VENDOR			SO_VENDOR
 
 /*
  * UDP Encapsulation of IPsec Packets options.

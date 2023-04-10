@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)msgbuf.h	8.1 (Berkeley) 6/2/93
- * $FreeBSD: release/9.0.0/sys/sys/msgbuf.h 222537 2011-05-31 17:29:58Z ken $
+ * $FreeBSD: releng/11.0/sys/sys/msgbuf.h 233135 2012-03-19 00:36:32Z eadler $
  */
 
 #ifndef _SYS_MSGBUF_H_
@@ -46,7 +46,8 @@ struct msgbuf {
 	u_int	   msg_cksum;		/* checksum of contents */
 	u_int	   msg_seqmod;		/* range for sequence numbers */
 	int	   msg_lastpri;		/* saved priority value */
-	int	   msg_needsnl;		/* set when newline needed */
+	u_int      msg_flags;
+#define MSGBUF_NEEDNL	0x01	/* set when newline needed */
 	struct mtx msg_lock;		/* mutex to protect the buffer */
 };
 
@@ -77,7 +78,7 @@ int	msgbuf_peekbytes(struct msgbuf *mbp, char *buf, int buflen,
 void	msgbuf_reinit(struct msgbuf *mbp, void *ptr, int size);
 
 #ifndef MSGBUF_SIZE
-#define	MSGBUF_SIZE	(32768 * 2)
+#define	MSGBUF_SIZE	(32768 * 3)
 #endif
 #endif /* KERNEL */
 

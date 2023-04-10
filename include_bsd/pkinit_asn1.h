@@ -25,9 +25,9 @@ typedef char *heim_general_string;
 
 typedef char *heim_utf8_string;
 
-typedef char *heim_printable_string;
+typedef struct heim_octet_string heim_printable_string;
 
-typedef char *heim_ia5_string;
+typedef struct heim_octet_string heim_ia5_string;
 
 typedef struct heim_bmp_string {
   size_t length;
@@ -70,6 +70,17 @@ typedef struct heim_octet_string heim_any_set;
     }                                                          \
   } while (0)
 
+#ifdef _WIN32
+#ifndef ASN1_LIB
+#define ASN1EXP  __declspec(dllimport)
+#else
+#define ASN1EXP
+#endif
+#define ASN1CALL __stdcall
+#else
+#define ASN1EXP
+#define ASN1CALL
+#endif
 struct units;
 
 #endif
@@ -79,31 +90,56 @@ struct units;
 #include <rfc2459_asn1.h>
 #include <heim_asn1.h>
 /* OBJECT IDENTIFIER id-pkinit ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) } */
-const heim_oid *oid_id_pkinit(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkinit;
+#define ASN1_OID_ID_PKINIT (&asn1_oid_id_pkinit)
 
 /* OBJECT IDENTIFIER id-pkauthdata ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(1) } */
-const heim_oid *oid_id_pkauthdata(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkauthdata;
+#define ASN1_OID_ID_PKAUTHDATA (&asn1_oid_id_pkauthdata)
 
 /* OBJECT IDENTIFIER id-pkdhkeydata ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(2) } */
-const heim_oid *oid_id_pkdhkeydata(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkdhkeydata;
+#define ASN1_OID_ID_PKDHKEYDATA (&asn1_oid_id_pkdhkeydata)
 
 /* OBJECT IDENTIFIER id-pkrkeydata ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(3) } */
-const heim_oid *oid_id_pkrkeydata(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkrkeydata;
+#define ASN1_OID_ID_PKRKEYDATA (&asn1_oid_id_pkrkeydata)
 
 /* OBJECT IDENTIFIER id-pkekuoid ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(4) } */
-const heim_oid *oid_id_pkekuoid(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkekuoid;
+#define ASN1_OID_ID_PKEKUOID (&asn1_oid_id_pkekuoid)
 
 /* OBJECT IDENTIFIER id-pkkdcekuoid ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(5) } */
-const heim_oid *oid_id_pkkdcekuoid(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkkdcekuoid;
+#define ASN1_OID_ID_PKKDCEKUOID (&asn1_oid_id_pkkdcekuoid)
+
+/* OBJECT IDENTIFIER id-pkinit-kdf ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(6) } */
+extern ASN1EXP const heim_oid asn1_oid_id_pkinit_kdf;
+#define ASN1_OID_ID_PKINIT_KDF (&asn1_oid_id_pkinit_kdf)
+
+/* OBJECT IDENTIFIER id-pkinit-kdf-ah-sha1 ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(6) label-less(1) } */
+extern ASN1EXP const heim_oid asn1_oid_id_pkinit_kdf_ah_sha1;
+#define ASN1_OID_ID_PKINIT_KDF_AH_SHA1 (&asn1_oid_id_pkinit_kdf_ah_sha1)
+
+/* OBJECT IDENTIFIER id-pkinit-kdf-ah-sha256 ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(6) label-less(2) } */
+extern ASN1EXP const heim_oid asn1_oid_id_pkinit_kdf_ah_sha256;
+#define ASN1_OID_ID_PKINIT_KDF_AH_SHA256 (&asn1_oid_id_pkinit_kdf_ah_sha256)
+
+/* OBJECT IDENTIFIER id-pkinit-kdf-ah-sha512 ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) pkinit(3) label-less(6) label-less(3) } */
+extern ASN1EXP const heim_oid asn1_oid_id_pkinit_kdf_ah_sha512;
+#define ASN1_OID_ID_PKINIT_KDF_AH_SHA512 (&asn1_oid_id_pkinit_kdf_ah_sha512)
 
 /* OBJECT IDENTIFIER id-pkinit-san ::= { iso(1) org(3) dod(6) internet(1) security(5) kerberosv5(2) x509-sanan(2) } */
-const heim_oid *oid_id_pkinit_san(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkinit_san;
+#define ASN1_OID_ID_PKINIT_SAN (&asn1_oid_id_pkinit_san)
 
 /* OBJECT IDENTIFIER id-pkinit-ms-eku ::= { iso(1) org(3) dod(6) internet(1) private(4) enterprise(1) microsoft(311) label-less(20) label-less(2) label-less(2) } */
-const heim_oid *oid_id_pkinit_ms_eku(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkinit_ms_eku;
+#define ASN1_OID_ID_PKINIT_MS_EKU (&asn1_oid_id_pkinit_ms_eku)
 
 /* OBJECT IDENTIFIER id-pkinit-ms-san ::= { iso(1) org(3) dod(6) internet(1) private(4) enterprise(1) microsoft(311) label-less(20) label-less(2) label-less(3) } */
-const heim_oid *oid_id_pkinit_ms_san(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkinit_ms_san;
+#define ASN1_OID_ID_PKINIT_MS_SAN (&asn1_oid_id_pkinit_ms_san)
 
 /*
 MS-UPN-SAN ::= UTF8String
@@ -111,11 +147,11 @@ MS-UPN-SAN ::= UTF8String
 
 typedef heim_utf8_string MS_UPN_SAN;
 
-int    encode_MS_UPN_SAN(unsigned char *, size_t, const MS_UPN_SAN *, size_t *);
-int    decode_MS_UPN_SAN(const unsigned char *, size_t, MS_UPN_SAN *, size_t *);
-void   free_MS_UPN_SAN  (MS_UPN_SAN *);
-size_t length_MS_UPN_SAN(const MS_UPN_SAN *);
-int    copy_MS_UPN_SAN  (const MS_UPN_SAN *, MS_UPN_SAN *);
+ASN1EXP int    ASN1CALL decode_MS_UPN_SAN(const unsigned char *, size_t, MS_UPN_SAN *, size_t *);
+ASN1EXP int    ASN1CALL encode_MS_UPN_SAN(unsigned char *, size_t, const MS_UPN_SAN *, size_t *);
+ASN1EXP size_t ASN1CALL length_MS_UPN_SAN(const MS_UPN_SAN *);
+ASN1EXP int    ASN1CALL copy_MS_UPN_SAN  (const MS_UPN_SAN *, MS_UPN_SAN *);
+ASN1EXP void   ASN1CALL free_MS_UPN_SAN  (MS_UPN_SAN *);
 
 
 enum { pa_pk_as_req = 16 };
@@ -134,11 +170,11 @@ DHNonce ::= OCTET STRING
 
 typedef heim_octet_string DHNonce;
 
-int    encode_DHNonce(unsigned char *, size_t, const DHNonce *, size_t *);
-int    decode_DHNonce(const unsigned char *, size_t, DHNonce *, size_t *);
-void   free_DHNonce  (DHNonce *);
-size_t length_DHNonce(const DHNonce *);
-int    copy_DHNonce  (const DHNonce *, DHNonce *);
+ASN1EXP int    ASN1CALL decode_DHNonce(const unsigned char *, size_t, DHNonce *, size_t *);
+ASN1EXP int    ASN1CALL encode_DHNonce(unsigned char *, size_t, const DHNonce *, size_t *);
+ASN1EXP size_t ASN1CALL length_DHNonce(const DHNonce *);
+ASN1EXP int    ASN1CALL copy_DHNonce  (const DHNonce *, DHNonce *);
+ASN1EXP void   ASN1CALL free_DHNonce  (DHNonce *);
 
 
 /*
@@ -152,11 +188,11 @@ typedef struct KDFAlgorithmId {
   heim_oid kdf_id;
 } KDFAlgorithmId;
 
-int    encode_KDFAlgorithmId(unsigned char *, size_t, const KDFAlgorithmId *, size_t *);
-int    decode_KDFAlgorithmId(const unsigned char *, size_t, KDFAlgorithmId *, size_t *);
-void   free_KDFAlgorithmId  (KDFAlgorithmId *);
-size_t length_KDFAlgorithmId(const KDFAlgorithmId *);
-int    copy_KDFAlgorithmId  (const KDFAlgorithmId *, KDFAlgorithmId *);
+ASN1EXP int    ASN1CALL decode_KDFAlgorithmId(const unsigned char *, size_t, KDFAlgorithmId *, size_t *);
+ASN1EXP int    ASN1CALL encode_KDFAlgorithmId(unsigned char *, size_t, const KDFAlgorithmId *, size_t *);
+ASN1EXP size_t ASN1CALL length_KDFAlgorithmId(const KDFAlgorithmId *);
+ASN1EXP int    ASN1CALL copy_KDFAlgorithmId  (const KDFAlgorithmId *, KDFAlgorithmId *);
+ASN1EXP void   ASN1CALL free_KDFAlgorithmId  (KDFAlgorithmId *);
 
 
 /*
@@ -174,11 +210,11 @@ typedef struct TrustedCA {
   heim_octet_string *subjectKeyIdentifier;
 } TrustedCA;
 
-int    encode_TrustedCA(unsigned char *, size_t, const TrustedCA *, size_t *);
-int    decode_TrustedCA(const unsigned char *, size_t, TrustedCA *, size_t *);
-void   free_TrustedCA  (TrustedCA *);
-size_t length_TrustedCA(const TrustedCA *);
-int    copy_TrustedCA  (const TrustedCA *, TrustedCA *);
+ASN1EXP int    ASN1CALL decode_TrustedCA(const unsigned char *, size_t, TrustedCA *, size_t *);
+ASN1EXP int    ASN1CALL encode_TrustedCA(unsigned char *, size_t, const TrustedCA *, size_t *);
+ASN1EXP size_t ASN1CALL length_TrustedCA(const TrustedCA *);
+ASN1EXP int    ASN1CALL copy_TrustedCA  (const TrustedCA *, TrustedCA *);
+ASN1EXP void   ASN1CALL free_TrustedCA  (TrustedCA *);
 
 
 /*
@@ -196,11 +232,11 @@ typedef struct ExternalPrincipalIdentifier {
   heim_octet_string *subjectKeyIdentifier;
 } ExternalPrincipalIdentifier;
 
-int    encode_ExternalPrincipalIdentifier(unsigned char *, size_t, const ExternalPrincipalIdentifier *, size_t *);
-int    decode_ExternalPrincipalIdentifier(const unsigned char *, size_t, ExternalPrincipalIdentifier *, size_t *);
-void   free_ExternalPrincipalIdentifier  (ExternalPrincipalIdentifier *);
-size_t length_ExternalPrincipalIdentifier(const ExternalPrincipalIdentifier *);
-int    copy_ExternalPrincipalIdentifier  (const ExternalPrincipalIdentifier *, ExternalPrincipalIdentifier *);
+ASN1EXP int    ASN1CALL decode_ExternalPrincipalIdentifier(const unsigned char *, size_t, ExternalPrincipalIdentifier *, size_t *);
+ASN1EXP int    ASN1CALL encode_ExternalPrincipalIdentifier(unsigned char *, size_t, const ExternalPrincipalIdentifier *, size_t *);
+ASN1EXP size_t ASN1CALL length_ExternalPrincipalIdentifier(const ExternalPrincipalIdentifier *);
+ASN1EXP int    ASN1CALL copy_ExternalPrincipalIdentifier  (const ExternalPrincipalIdentifier *, ExternalPrincipalIdentifier *);
+ASN1EXP void   ASN1CALL free_ExternalPrincipalIdentifier  (ExternalPrincipalIdentifier *);
 
 
 /*
@@ -212,11 +248,11 @@ typedef struct ExternalPrincipalIdentifiers {
   ExternalPrincipalIdentifier *val;
 } ExternalPrincipalIdentifiers;
 
-int    encode_ExternalPrincipalIdentifiers(unsigned char *, size_t, const ExternalPrincipalIdentifiers *, size_t *);
-int    decode_ExternalPrincipalIdentifiers(const unsigned char *, size_t, ExternalPrincipalIdentifiers *, size_t *);
-void   free_ExternalPrincipalIdentifiers  (ExternalPrincipalIdentifiers *);
-size_t length_ExternalPrincipalIdentifiers(const ExternalPrincipalIdentifiers *);
-int    copy_ExternalPrincipalIdentifiers  (const ExternalPrincipalIdentifiers *, ExternalPrincipalIdentifiers *);
+ASN1EXP int    ASN1CALL decode_ExternalPrincipalIdentifiers(const unsigned char *, size_t, ExternalPrincipalIdentifiers *, size_t *);
+ASN1EXP int    ASN1CALL encode_ExternalPrincipalIdentifiers(unsigned char *, size_t, const ExternalPrincipalIdentifiers *, size_t *);
+ASN1EXP size_t ASN1CALL length_ExternalPrincipalIdentifiers(const ExternalPrincipalIdentifiers *);
+ASN1EXP int    ASN1CALL copy_ExternalPrincipalIdentifiers  (const ExternalPrincipalIdentifiers *, ExternalPrincipalIdentifiers *);
+ASN1EXP void   ASN1CALL free_ExternalPrincipalIdentifiers  (ExternalPrincipalIdentifiers *);
 
 
 /*
@@ -234,11 +270,11 @@ typedef struct PA_PK_AS_REQ {
   heim_octet_string *kdcPkId;
 } PA_PK_AS_REQ;
 
-int    encode_PA_PK_AS_REQ(unsigned char *, size_t, const PA_PK_AS_REQ *, size_t *);
-int    decode_PA_PK_AS_REQ(const unsigned char *, size_t, PA_PK_AS_REQ *, size_t *);
-void   free_PA_PK_AS_REQ  (PA_PK_AS_REQ *);
-size_t length_PA_PK_AS_REQ(const PA_PK_AS_REQ *);
-int    copy_PA_PK_AS_REQ  (const PA_PK_AS_REQ *, PA_PK_AS_REQ *);
+ASN1EXP int    ASN1CALL decode_PA_PK_AS_REQ(const unsigned char *, size_t, PA_PK_AS_REQ *, size_t *);
+ASN1EXP int    ASN1CALL encode_PA_PK_AS_REQ(unsigned char *, size_t, const PA_PK_AS_REQ *, size_t *);
+ASN1EXP size_t ASN1CALL length_PA_PK_AS_REQ(const PA_PK_AS_REQ *);
+ASN1EXP int    ASN1CALL copy_PA_PK_AS_REQ  (const PA_PK_AS_REQ *, PA_PK_AS_REQ *);
+ASN1EXP void   ASN1CALL free_PA_PK_AS_REQ  (PA_PK_AS_REQ *);
 
 
 /*
@@ -258,11 +294,11 @@ typedef struct PKAuthenticator {
   heim_octet_string *paChecksum;
 } PKAuthenticator;
 
-int    encode_PKAuthenticator(unsigned char *, size_t, const PKAuthenticator *, size_t *);
-int    decode_PKAuthenticator(const unsigned char *, size_t, PKAuthenticator *, size_t *);
-void   free_PKAuthenticator  (PKAuthenticator *);
-size_t length_PKAuthenticator(const PKAuthenticator *);
-int    copy_PKAuthenticator  (const PKAuthenticator *, PKAuthenticator *);
+ASN1EXP int    ASN1CALL decode_PKAuthenticator(const unsigned char *, size_t, PKAuthenticator *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKAuthenticator(unsigned char *, size_t, const PKAuthenticator *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKAuthenticator(const PKAuthenticator *);
+ASN1EXP int    ASN1CALL copy_PKAuthenticator  (const PKAuthenticator *, PKAuthenticator *);
+ASN1EXP void   ASN1CALL free_PKAuthenticator  (PKAuthenticator *);
 
 
 /*
@@ -280,22 +316,22 @@ AuthPack ::= SEQUENCE {
 typedef struct AuthPack {
   PKAuthenticator pkAuthenticator;
   SubjectPublicKeyInfo *clientPublicValue;
-  struct  {
+  struct AuthPack_supportedCMSTypes {
     unsigned int len;
     AlgorithmIdentifier *val;
   } *supportedCMSTypes;
   DHNonce *clientDHNonce;
-  struct  {
+  struct AuthPack_supportedKDFs {
     unsigned int len;
     KDFAlgorithmId *val;
   } *supportedKDFs;
 } AuthPack;
 
-int    encode_AuthPack(unsigned char *, size_t, const AuthPack *, size_t *);
-int    decode_AuthPack(const unsigned char *, size_t, AuthPack *, size_t *);
-void   free_AuthPack  (AuthPack *);
-size_t length_AuthPack(const AuthPack *);
-int    copy_AuthPack  (const AuthPack *, AuthPack *);
+ASN1EXP int    ASN1CALL decode_AuthPack(const unsigned char *, size_t, AuthPack *, size_t *);
+ASN1EXP int    ASN1CALL encode_AuthPack(unsigned char *, size_t, const AuthPack *, size_t *);
+ASN1EXP size_t ASN1CALL length_AuthPack(const AuthPack *);
+ASN1EXP int    ASN1CALL copy_AuthPack  (const AuthPack *, AuthPack *);
+ASN1EXP void   ASN1CALL free_AuthPack  (AuthPack *);
 
 
 /*
@@ -304,11 +340,11 @@ TD-TRUSTED-CERTIFIERS ::= ExternalPrincipalIdentifiers
 
 typedef ExternalPrincipalIdentifiers TD_TRUSTED_CERTIFIERS;
 
-int    encode_TD_TRUSTED_CERTIFIERS(unsigned char *, size_t, const TD_TRUSTED_CERTIFIERS *, size_t *);
-int    decode_TD_TRUSTED_CERTIFIERS(const unsigned char *, size_t, TD_TRUSTED_CERTIFIERS *, size_t *);
-void   free_TD_TRUSTED_CERTIFIERS  (TD_TRUSTED_CERTIFIERS *);
-size_t length_TD_TRUSTED_CERTIFIERS(const TD_TRUSTED_CERTIFIERS *);
-int    copy_TD_TRUSTED_CERTIFIERS  (const TD_TRUSTED_CERTIFIERS *, TD_TRUSTED_CERTIFIERS *);
+ASN1EXP int    ASN1CALL decode_TD_TRUSTED_CERTIFIERS(const unsigned char *, size_t, TD_TRUSTED_CERTIFIERS *, size_t *);
+ASN1EXP int    ASN1CALL encode_TD_TRUSTED_CERTIFIERS(unsigned char *, size_t, const TD_TRUSTED_CERTIFIERS *, size_t *);
+ASN1EXP size_t ASN1CALL length_TD_TRUSTED_CERTIFIERS(const TD_TRUSTED_CERTIFIERS *);
+ASN1EXP int    ASN1CALL copy_TD_TRUSTED_CERTIFIERS  (const TD_TRUSTED_CERTIFIERS *, TD_TRUSTED_CERTIFIERS *);
+ASN1EXP void   ASN1CALL free_TD_TRUSTED_CERTIFIERS  (TD_TRUSTED_CERTIFIERS *);
 
 
 /*
@@ -317,11 +353,11 @@ TD-INVALID-CERTIFICATES ::= ExternalPrincipalIdentifiers
 
 typedef ExternalPrincipalIdentifiers TD_INVALID_CERTIFICATES;
 
-int    encode_TD_INVALID_CERTIFICATES(unsigned char *, size_t, const TD_INVALID_CERTIFICATES *, size_t *);
-int    decode_TD_INVALID_CERTIFICATES(const unsigned char *, size_t, TD_INVALID_CERTIFICATES *, size_t *);
-void   free_TD_INVALID_CERTIFICATES  (TD_INVALID_CERTIFICATES *);
-size_t length_TD_INVALID_CERTIFICATES(const TD_INVALID_CERTIFICATES *);
-int    copy_TD_INVALID_CERTIFICATES  (const TD_INVALID_CERTIFICATES *, TD_INVALID_CERTIFICATES *);
+ASN1EXP int    ASN1CALL decode_TD_INVALID_CERTIFICATES(const unsigned char *, size_t, TD_INVALID_CERTIFICATES *, size_t *);
+ASN1EXP int    ASN1CALL encode_TD_INVALID_CERTIFICATES(unsigned char *, size_t, const TD_INVALID_CERTIFICATES *, size_t *);
+ASN1EXP size_t ASN1CALL length_TD_INVALID_CERTIFICATES(const TD_INVALID_CERTIFICATES *);
+ASN1EXP int    ASN1CALL copy_TD_INVALID_CERTIFICATES  (const TD_INVALID_CERTIFICATES *, TD_INVALID_CERTIFICATES *);
+ASN1EXP void   ASN1CALL free_TD_INVALID_CERTIFICATES  (TD_INVALID_CERTIFICATES *);
 
 
 /*
@@ -336,11 +372,11 @@ typedef struct KRB5PrincipalName {
   PrincipalName principalName;
 } KRB5PrincipalName;
 
-int    encode_KRB5PrincipalName(unsigned char *, size_t, const KRB5PrincipalName *, size_t *);
-int    decode_KRB5PrincipalName(const unsigned char *, size_t, KRB5PrincipalName *, size_t *);
-void   free_KRB5PrincipalName  (KRB5PrincipalName *);
-size_t length_KRB5PrincipalName(const KRB5PrincipalName *);
-int    copy_KRB5PrincipalName  (const KRB5PrincipalName *, KRB5PrincipalName *);
+ASN1EXP int    ASN1CALL decode_KRB5PrincipalName(const unsigned char *, size_t, KRB5PrincipalName *, size_t *);
+ASN1EXP int    ASN1CALL encode_KRB5PrincipalName(unsigned char *, size_t, const KRB5PrincipalName *, size_t *);
+ASN1EXP size_t ASN1CALL length_KRB5PrincipalName(const KRB5PrincipalName *);
+ASN1EXP int    ASN1CALL copy_KRB5PrincipalName  (const KRB5PrincipalName *, KRB5PrincipalName *);
+ASN1EXP void   ASN1CALL free_KRB5PrincipalName  (KRB5PrincipalName *);
 
 
 /*
@@ -352,11 +388,11 @@ typedef struct AD_INITIAL_VERIFIED_CAS {
   ExternalPrincipalIdentifier *val;
 } AD_INITIAL_VERIFIED_CAS;
 
-int    encode_AD_INITIAL_VERIFIED_CAS(unsigned char *, size_t, const AD_INITIAL_VERIFIED_CAS *, size_t *);
-int    decode_AD_INITIAL_VERIFIED_CAS(const unsigned char *, size_t, AD_INITIAL_VERIFIED_CAS *, size_t *);
-void   free_AD_INITIAL_VERIFIED_CAS  (AD_INITIAL_VERIFIED_CAS *);
-size_t length_AD_INITIAL_VERIFIED_CAS(const AD_INITIAL_VERIFIED_CAS *);
-int    copy_AD_INITIAL_VERIFIED_CAS  (const AD_INITIAL_VERIFIED_CAS *, AD_INITIAL_VERIFIED_CAS *);
+ASN1EXP int    ASN1CALL decode_AD_INITIAL_VERIFIED_CAS(const unsigned char *, size_t, AD_INITIAL_VERIFIED_CAS *, size_t *);
+ASN1EXP int    ASN1CALL encode_AD_INITIAL_VERIFIED_CAS(unsigned char *, size_t, const AD_INITIAL_VERIFIED_CAS *, size_t *);
+ASN1EXP size_t ASN1CALL length_AD_INITIAL_VERIFIED_CAS(const AD_INITIAL_VERIFIED_CAS *);
+ASN1EXP int    ASN1CALL copy_AD_INITIAL_VERIFIED_CAS  (const AD_INITIAL_VERIFIED_CAS *, AD_INITIAL_VERIFIED_CAS *);
+ASN1EXP void   ASN1CALL free_AD_INITIAL_VERIFIED_CAS  (AD_INITIAL_VERIFIED_CAS *);
 
 
 /*
@@ -375,11 +411,11 @@ typedef struct DHRepInfo {
   KDFAlgorithmId *kdf;
 } DHRepInfo;
 
-int    encode_DHRepInfo(unsigned char *, size_t, const DHRepInfo *, size_t *);
-int    decode_DHRepInfo(const unsigned char *, size_t, DHRepInfo *, size_t *);
-void   free_DHRepInfo  (DHRepInfo *);
-size_t length_DHRepInfo(const DHRepInfo *);
-int    copy_DHRepInfo  (const DHRepInfo *, DHRepInfo *);
+ASN1EXP int    ASN1CALL decode_DHRepInfo(const unsigned char *, size_t, DHRepInfo *, size_t *);
+ASN1EXP int    ASN1CALL encode_DHRepInfo(unsigned char *, size_t, const DHRepInfo *, size_t *);
+ASN1EXP size_t ASN1CALL length_DHRepInfo(const DHRepInfo *);
+ASN1EXP int    ASN1CALL copy_DHRepInfo  (const DHRepInfo *, DHRepInfo *);
+ASN1EXP void   ASN1CALL free_DHRepInfo  (DHRepInfo *);
 
 
 /*
@@ -404,11 +440,11 @@ typedef struct PA_PK_AS_REP {
   } u;
 } PA_PK_AS_REP;
 
-int    encode_PA_PK_AS_REP(unsigned char *, size_t, const PA_PK_AS_REP *, size_t *);
-int    decode_PA_PK_AS_REP(const unsigned char *, size_t, PA_PK_AS_REP *, size_t *);
-void   free_PA_PK_AS_REP  (PA_PK_AS_REP *);
-size_t length_PA_PK_AS_REP(const PA_PK_AS_REP *);
-int    copy_PA_PK_AS_REP  (const PA_PK_AS_REP *, PA_PK_AS_REP *);
+ASN1EXP int    ASN1CALL decode_PA_PK_AS_REP(const unsigned char *, size_t, PA_PK_AS_REP *, size_t *);
+ASN1EXP int    ASN1CALL encode_PA_PK_AS_REP(unsigned char *, size_t, const PA_PK_AS_REP *, size_t *);
+ASN1EXP size_t ASN1CALL length_PA_PK_AS_REP(const PA_PK_AS_REP *);
+ASN1EXP int    ASN1CALL copy_PA_PK_AS_REP  (const PA_PK_AS_REP *, PA_PK_AS_REP *);
+ASN1EXP void   ASN1CALL free_PA_PK_AS_REP  (PA_PK_AS_REP *);
 
 
 /*
@@ -427,11 +463,11 @@ typedef struct KDCDHKeyInfo {
   KerberosTime *dhKeyExpiration;
 } KDCDHKeyInfo;
 
-int    encode_KDCDHKeyInfo(unsigned char *, size_t, const KDCDHKeyInfo *, size_t *);
-int    decode_KDCDHKeyInfo(const unsigned char *, size_t, KDCDHKeyInfo *, size_t *);
-void   free_KDCDHKeyInfo  (KDCDHKeyInfo *);
-size_t length_KDCDHKeyInfo(const KDCDHKeyInfo *);
-int    copy_KDCDHKeyInfo  (const KDCDHKeyInfo *, KDCDHKeyInfo *);
+ASN1EXP int    ASN1CALL decode_KDCDHKeyInfo(const unsigned char *, size_t, KDCDHKeyInfo *, size_t *);
+ASN1EXP int    ASN1CALL encode_KDCDHKeyInfo(unsigned char *, size_t, const KDCDHKeyInfo *, size_t *);
+ASN1EXP size_t ASN1CALL length_KDCDHKeyInfo(const KDCDHKeyInfo *);
+ASN1EXP int    ASN1CALL copy_KDCDHKeyInfo  (const KDCDHKeyInfo *, KDCDHKeyInfo *);
+ASN1EXP void   ASN1CALL free_KDCDHKeyInfo  (KDCDHKeyInfo *);
 
 
 /*
@@ -447,11 +483,11 @@ typedef struct ReplyKeyPack {
   Checksum asChecksum;
 } ReplyKeyPack;
 
-int    encode_ReplyKeyPack(unsigned char *, size_t, const ReplyKeyPack *, size_t *);
-int    decode_ReplyKeyPack(const unsigned char *, size_t, ReplyKeyPack *, size_t *);
-void   free_ReplyKeyPack  (ReplyKeyPack *);
-size_t length_ReplyKeyPack(const ReplyKeyPack *);
-int    copy_ReplyKeyPack  (const ReplyKeyPack *, ReplyKeyPack *);
+ASN1EXP int    ASN1CALL decode_ReplyKeyPack(const unsigned char *, size_t, ReplyKeyPack *, size_t *);
+ASN1EXP int    ASN1CALL encode_ReplyKeyPack(unsigned char *, size_t, const ReplyKeyPack *, size_t *);
+ASN1EXP size_t ASN1CALL length_ReplyKeyPack(const ReplyKeyPack *);
+ASN1EXP int    ASN1CALL copy_ReplyKeyPack  (const ReplyKeyPack *, ReplyKeyPack *);
+ASN1EXP void   ASN1CALL free_ReplyKeyPack  (ReplyKeyPack *);
 
 
 /*
@@ -463,11 +499,11 @@ typedef struct TD_DH_PARAMETERS {
   AlgorithmIdentifier *val;
 } TD_DH_PARAMETERS;
 
-int    encode_TD_DH_PARAMETERS(unsigned char *, size_t, const TD_DH_PARAMETERS *, size_t *);
-int    decode_TD_DH_PARAMETERS(const unsigned char *, size_t, TD_DH_PARAMETERS *, size_t *);
-void   free_TD_DH_PARAMETERS  (TD_DH_PARAMETERS *);
-size_t length_TD_DH_PARAMETERS(const TD_DH_PARAMETERS *);
-int    copy_TD_DH_PARAMETERS  (const TD_DH_PARAMETERS *, TD_DH_PARAMETERS *);
+ASN1EXP int    ASN1CALL decode_TD_DH_PARAMETERS(const unsigned char *, size_t, TD_DH_PARAMETERS *, size_t *);
+ASN1EXP int    ASN1CALL encode_TD_DH_PARAMETERS(unsigned char *, size_t, const TD_DH_PARAMETERS *, size_t *);
+ASN1EXP size_t ASN1CALL length_TD_DH_PARAMETERS(const TD_DH_PARAMETERS *);
+ASN1EXP int    ASN1CALL copy_TD_DH_PARAMETERS  (const TD_DH_PARAMETERS *, TD_DH_PARAMETERS *);
+ASN1EXP void   ASN1CALL free_TD_DH_PARAMETERS  (TD_DH_PARAMETERS *);
 
 
 /*
@@ -488,11 +524,11 @@ typedef struct PKAuthenticator_Win2k {
   int nonce;
 } PKAuthenticator_Win2k;
 
-int    encode_PKAuthenticator_Win2k(unsigned char *, size_t, const PKAuthenticator_Win2k *, size_t *);
-int    decode_PKAuthenticator_Win2k(const unsigned char *, size_t, PKAuthenticator_Win2k *, size_t *);
-void   free_PKAuthenticator_Win2k  (PKAuthenticator_Win2k *);
-size_t length_PKAuthenticator_Win2k(const PKAuthenticator_Win2k *);
-int    copy_PKAuthenticator_Win2k  (const PKAuthenticator_Win2k *, PKAuthenticator_Win2k *);
+ASN1EXP int    ASN1CALL decode_PKAuthenticator_Win2k(const unsigned char *, size_t, PKAuthenticator_Win2k *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKAuthenticator_Win2k(unsigned char *, size_t, const PKAuthenticator_Win2k *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKAuthenticator_Win2k(const PKAuthenticator_Win2k *);
+ASN1EXP int    ASN1CALL copy_PKAuthenticator_Win2k  (const PKAuthenticator_Win2k *, PKAuthenticator_Win2k *);
+ASN1EXP void   ASN1CALL free_PKAuthenticator_Win2k  (PKAuthenticator_Win2k *);
 
 
 /*
@@ -507,11 +543,11 @@ typedef struct AuthPack_Win2k {
   SubjectPublicKeyInfo *clientPublicValue;
 } AuthPack_Win2k;
 
-int    encode_AuthPack_Win2k(unsigned char *, size_t, const AuthPack_Win2k *, size_t *);
-int    decode_AuthPack_Win2k(const unsigned char *, size_t, AuthPack_Win2k *, size_t *);
-void   free_AuthPack_Win2k  (AuthPack_Win2k *);
-size_t length_AuthPack_Win2k(const AuthPack_Win2k *);
-int    copy_AuthPack_Win2k  (const AuthPack_Win2k *, AuthPack_Win2k *);
+ASN1EXP int    ASN1CALL decode_AuthPack_Win2k(const unsigned char *, size_t, AuthPack_Win2k *, size_t *);
+ASN1EXP int    ASN1CALL encode_AuthPack_Win2k(unsigned char *, size_t, const AuthPack_Win2k *, size_t *);
+ASN1EXP size_t ASN1CALL length_AuthPack_Win2k(const AuthPack_Win2k *);
+ASN1EXP int    ASN1CALL copy_AuthPack_Win2k  (const AuthPack_Win2k *, AuthPack_Win2k *);
+ASN1EXP void   ASN1CALL free_AuthPack_Win2k  (AuthPack_Win2k *);
 
 
 /*
@@ -532,11 +568,11 @@ typedef struct TrustedCA_Win2k {
   } u;
 } TrustedCA_Win2k;
 
-int    encode_TrustedCA_Win2k(unsigned char *, size_t, const TrustedCA_Win2k *, size_t *);
-int    decode_TrustedCA_Win2k(const unsigned char *, size_t, TrustedCA_Win2k *, size_t *);
-void   free_TrustedCA_Win2k  (TrustedCA_Win2k *);
-size_t length_TrustedCA_Win2k(const TrustedCA_Win2k *);
-int    copy_TrustedCA_Win2k  (const TrustedCA_Win2k *, TrustedCA_Win2k *);
+ASN1EXP int    ASN1CALL decode_TrustedCA_Win2k(const unsigned char *, size_t, TrustedCA_Win2k *, size_t *);
+ASN1EXP int    ASN1CALL encode_TrustedCA_Win2k(unsigned char *, size_t, const TrustedCA_Win2k *, size_t *);
+ASN1EXP size_t ASN1CALL length_TrustedCA_Win2k(const TrustedCA_Win2k *);
+ASN1EXP int    ASN1CALL copy_TrustedCA_Win2k  (const TrustedCA_Win2k *, TrustedCA_Win2k *);
+ASN1EXP void   ASN1CALL free_TrustedCA_Win2k  (TrustedCA_Win2k *);
 
 
 /*
@@ -550,7 +586,7 @@ PA-PK-AS-REQ-Win2k ::= SEQUENCE {
 
 typedef struct PA_PK_AS_REQ_Win2k {
   heim_octet_string signed_auth_pack;
-  struct  {
+  struct PA_PK_AS_REQ_Win2k_trusted_certifiers {
     unsigned int len;
     TrustedCA_Win2k *val;
   } *trusted_certifiers;
@@ -558,11 +594,11 @@ typedef struct PA_PK_AS_REQ_Win2k {
   heim_octet_string *encryption_cert;
 } PA_PK_AS_REQ_Win2k;
 
-int    encode_PA_PK_AS_REQ_Win2k(unsigned char *, size_t, const PA_PK_AS_REQ_Win2k *, size_t *);
-int    decode_PA_PK_AS_REQ_Win2k(const unsigned char *, size_t, PA_PK_AS_REQ_Win2k *, size_t *);
-void   free_PA_PK_AS_REQ_Win2k  (PA_PK_AS_REQ_Win2k *);
-size_t length_PA_PK_AS_REQ_Win2k(const PA_PK_AS_REQ_Win2k *);
-int    copy_PA_PK_AS_REQ_Win2k  (const PA_PK_AS_REQ_Win2k *, PA_PK_AS_REQ_Win2k *);
+ASN1EXP int    ASN1CALL decode_PA_PK_AS_REQ_Win2k(const unsigned char *, size_t, PA_PK_AS_REQ_Win2k *, size_t *);
+ASN1EXP int    ASN1CALL encode_PA_PK_AS_REQ_Win2k(unsigned char *, size_t, const PA_PK_AS_REQ_Win2k *, size_t *);
+ASN1EXP size_t ASN1CALL length_PA_PK_AS_REQ_Win2k(const PA_PK_AS_REQ_Win2k *);
+ASN1EXP int    ASN1CALL copy_PA_PK_AS_REQ_Win2k  (const PA_PK_AS_REQ_Win2k *, PA_PK_AS_REQ_Win2k *);
+ASN1EXP void   ASN1CALL free_PA_PK_AS_REQ_Win2k  (PA_PK_AS_REQ_Win2k *);
 
 
 /*
@@ -583,11 +619,11 @@ typedef struct PA_PK_AS_REP_Win2k {
   } u;
 } PA_PK_AS_REP_Win2k;
 
-int    encode_PA_PK_AS_REP_Win2k(unsigned char *, size_t, const PA_PK_AS_REP_Win2k *, size_t *);
-int    decode_PA_PK_AS_REP_Win2k(const unsigned char *, size_t, PA_PK_AS_REP_Win2k *, size_t *);
-void   free_PA_PK_AS_REP_Win2k  (PA_PK_AS_REP_Win2k *);
-size_t length_PA_PK_AS_REP_Win2k(const PA_PK_AS_REP_Win2k *);
-int    copy_PA_PK_AS_REP_Win2k  (const PA_PK_AS_REP_Win2k *, PA_PK_AS_REP_Win2k *);
+ASN1EXP int    ASN1CALL decode_PA_PK_AS_REP_Win2k(const unsigned char *, size_t, PA_PK_AS_REP_Win2k *, size_t *);
+ASN1EXP int    ASN1CALL encode_PA_PK_AS_REP_Win2k(unsigned char *, size_t, const PA_PK_AS_REP_Win2k *, size_t *);
+ASN1EXP size_t ASN1CALL length_PA_PK_AS_REP_Win2k(const PA_PK_AS_REP_Win2k *);
+ASN1EXP int    ASN1CALL copy_PA_PK_AS_REP_Win2k  (const PA_PK_AS_REP_Win2k *, PA_PK_AS_REP_Win2k *);
+ASN1EXP void   ASN1CALL free_PA_PK_AS_REP_Win2k  (PA_PK_AS_REP_Win2k *);
 
 
 /*
@@ -603,11 +639,11 @@ typedef struct KDCDHKeyInfo_Win2k {
   heim_bit_string subjectPublicKey;
 } KDCDHKeyInfo_Win2k;
 
-int    encode_KDCDHKeyInfo_Win2k(unsigned char *, size_t, const KDCDHKeyInfo_Win2k *, size_t *);
-int    decode_KDCDHKeyInfo_Win2k(const unsigned char *, size_t, KDCDHKeyInfo_Win2k *, size_t *);
-void   free_KDCDHKeyInfo_Win2k  (KDCDHKeyInfo_Win2k *);
-size_t length_KDCDHKeyInfo_Win2k(const KDCDHKeyInfo_Win2k *);
-int    copy_KDCDHKeyInfo_Win2k  (const KDCDHKeyInfo_Win2k *, KDCDHKeyInfo_Win2k *);
+ASN1EXP int    ASN1CALL decode_KDCDHKeyInfo_Win2k(const unsigned char *, size_t, KDCDHKeyInfo_Win2k *, size_t *);
+ASN1EXP int    ASN1CALL encode_KDCDHKeyInfo_Win2k(unsigned char *, size_t, const KDCDHKeyInfo_Win2k *, size_t *);
+ASN1EXP size_t ASN1CALL length_KDCDHKeyInfo_Win2k(const KDCDHKeyInfo_Win2k *);
+ASN1EXP int    ASN1CALL copy_KDCDHKeyInfo_Win2k  (const KDCDHKeyInfo_Win2k *, KDCDHKeyInfo_Win2k *);
+ASN1EXP void   ASN1CALL free_KDCDHKeyInfo_Win2k  (KDCDHKeyInfo_Win2k *);
 
 
 /*
@@ -623,11 +659,55 @@ typedef struct ReplyKeyPack_Win2k {
   int nonce;
 } ReplyKeyPack_Win2k;
 
-int    encode_ReplyKeyPack_Win2k(unsigned char *, size_t, const ReplyKeyPack_Win2k *, size_t *);
-int    decode_ReplyKeyPack_Win2k(const unsigned char *, size_t, ReplyKeyPack_Win2k *, size_t *);
-void   free_ReplyKeyPack_Win2k  (ReplyKeyPack_Win2k *);
-size_t length_ReplyKeyPack_Win2k(const ReplyKeyPack_Win2k *);
-int    copy_ReplyKeyPack_Win2k  (const ReplyKeyPack_Win2k *, ReplyKeyPack_Win2k *);
+ASN1EXP int    ASN1CALL decode_ReplyKeyPack_Win2k(const unsigned char *, size_t, ReplyKeyPack_Win2k *, size_t *);
+ASN1EXP int    ASN1CALL encode_ReplyKeyPack_Win2k(unsigned char *, size_t, const ReplyKeyPack_Win2k *, size_t *);
+ASN1EXP size_t ASN1CALL length_ReplyKeyPack_Win2k(const ReplyKeyPack_Win2k *);
+ASN1EXP int    ASN1CALL copy_ReplyKeyPack_Win2k  (const ReplyKeyPack_Win2k *, ReplyKeyPack_Win2k *);
+ASN1EXP void   ASN1CALL free_ReplyKeyPack_Win2k  (ReplyKeyPack_Win2k *);
+
+
+/*
+PA-PK-AS-REP-BTMM ::= SEQUENCE {
+  dhSignedData    [0] heim_any OPTIONAL,
+  encKeyPack      [1] heim_any OPTIONAL,
+}
+*/
+
+typedef struct PA_PK_AS_REP_BTMM {
+  heim_any *dhSignedData;
+  heim_any *encKeyPack;
+} PA_PK_AS_REP_BTMM;
+
+ASN1EXP int    ASN1CALL decode_PA_PK_AS_REP_BTMM(const unsigned char *, size_t, PA_PK_AS_REP_BTMM *, size_t *);
+ASN1EXP int    ASN1CALL encode_PA_PK_AS_REP_BTMM(unsigned char *, size_t, const PA_PK_AS_REP_BTMM *, size_t *);
+ASN1EXP size_t ASN1CALL length_PA_PK_AS_REP_BTMM(const PA_PK_AS_REP_BTMM *);
+ASN1EXP int    ASN1CALL copy_PA_PK_AS_REP_BTMM  (const PA_PK_AS_REP_BTMM *, PA_PK_AS_REP_BTMM *);
+ASN1EXP void   ASN1CALL free_PA_PK_AS_REP_BTMM  (PA_PK_AS_REP_BTMM *);
+
+
+/*
+PkinitSP80056AOtherInfo ::= SEQUENCE {
+  algorithmID     AlgorithmIdentifier,
+  partyUInfo      [0] OCTET STRING,
+  partyVInfo      [1] OCTET STRING,
+  suppPubInfo     [2] OCTET STRING OPTIONAL,
+  suppPrivInfo    [3] OCTET STRING OPTIONAL,
+}
+*/
+
+typedef struct PkinitSP80056AOtherInfo {
+  AlgorithmIdentifier algorithmID;
+  heim_octet_string partyUInfo;
+  heim_octet_string partyVInfo;
+  heim_octet_string *suppPubInfo;
+  heim_octet_string *suppPrivInfo;
+} PkinitSP80056AOtherInfo;
+
+ASN1EXP int    ASN1CALL decode_PkinitSP80056AOtherInfo(const unsigned char *, size_t, PkinitSP80056AOtherInfo *, size_t *);
+ASN1EXP int    ASN1CALL encode_PkinitSP80056AOtherInfo(unsigned char *, size_t, const PkinitSP80056AOtherInfo *, size_t *);
+ASN1EXP size_t ASN1CALL length_PkinitSP80056AOtherInfo(const PkinitSP80056AOtherInfo *);
+ASN1EXP int    ASN1CALL copy_PkinitSP80056AOtherInfo  (const PkinitSP80056AOtherInfo *, PkinitSP80056AOtherInfo *);
+ASN1EXP void   ASN1CALL free_PkinitSP80056AOtherInfo  (PkinitSP80056AOtherInfo *);
 
 
 /*
@@ -647,11 +727,11 @@ typedef struct PkinitSuppPubInfo {
   Ticket ticket;
 } PkinitSuppPubInfo;
 
-int    encode_PkinitSuppPubInfo(unsigned char *, size_t, const PkinitSuppPubInfo *, size_t *);
-int    decode_PkinitSuppPubInfo(const unsigned char *, size_t, PkinitSuppPubInfo *, size_t *);
-void   free_PkinitSuppPubInfo  (PkinitSuppPubInfo *);
-size_t length_PkinitSuppPubInfo(const PkinitSuppPubInfo *);
-int    copy_PkinitSuppPubInfo  (const PkinitSuppPubInfo *, PkinitSuppPubInfo *);
+ASN1EXP int    ASN1CALL decode_PkinitSuppPubInfo(const unsigned char *, size_t, PkinitSuppPubInfo *, size_t *);
+ASN1EXP int    ASN1CALL encode_PkinitSuppPubInfo(unsigned char *, size_t, const PkinitSuppPubInfo *, size_t *);
+ASN1EXP size_t ASN1CALL length_PkinitSuppPubInfo(const PkinitSuppPubInfo *);
+ASN1EXP int    ASN1CALL copy_PkinitSuppPubInfo  (const PkinitSuppPubInfo *, PkinitSuppPubInfo *);
+ASN1EXP void   ASN1CALL free_PkinitSuppPubInfo  (PkinitSuppPubInfo *);
 
 
 #endif /* __pkinit_asn1_h__ */

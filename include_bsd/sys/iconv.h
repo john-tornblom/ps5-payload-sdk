@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/iconv.h 206361 2010-04-07 16:50:38Z joel $
+ * $FreeBSD: releng/11.0/sys/sys/iconv.h 298981 2016-05-03 15:14:17Z pfg $
  */
 #ifndef _SYS_ICONV_H_
 #define _SYS_ICONV_H_
@@ -47,6 +47,7 @@
 #define	KICONV_FROM_UPPER	8	/* toupper source character, then convert */
 #define	KICONV_WCTYPE		16	/* towlower/towupper characters */
 
+#define	ENCODING_UNICODE	"UTF-16BE"
 #define	KICONV_WCTYPE_NAME	"_wctype"
 
 /*
@@ -64,7 +65,7 @@ struct iconv_cspair_info {
 };
 
 /*
- * Paramters for 'add' sysctl
+ * Parameters for 'add' sysctl
  */
 #define	ICONV_ADD_VER	1
 
@@ -85,7 +86,6 @@ struct iconv_add_out {
 
 __BEGIN_DECLS
 
-#define	ENCODING_UNICODE	"UTF-16BE"
 #define	KICONV_VENDOR_MICSFT	1	/* Microsoft Vendor Code for quirk */
 
 int   kiconv_add_xlat_table(const char *, const char *, const u_char *);
@@ -162,6 +162,7 @@ int iconv_convchr(void *handle, const char **inbuf,
 	size_t *inbytesleft, char **outbuf, size_t *outbytesleft);
 int iconv_convchr_case(void *handle, const char **inbuf,
 	size_t *inbytesleft, char **outbuf, size_t *outbytesleft, int casetype);
+int iconv_add(const char *converter, const char *to, const char *from);
 char* iconv_convstr(void *handle, char *dst, const char *src);
 void* iconv_convmem(void *handle, void *dst, const void *src, int size);
 int iconv_vfs_refcount(const char *fsname);
@@ -239,7 +240,7 @@ int iconv_converter_tolowerstub(int c, void *handle);
 int iconv_converter_handler(module_t mod, int type, void *data);
 
 #ifdef ICONV_DEBUG
-#define ICDEBUG(format, ...) printf("%s: "format, __func__ , __VA_ARGS__)
+#define ICDEBUG(format, ...) printf("%s: "format, __func__ , ## __VA_ARGS__)
 #else
 #define ICDEBUG(format, ...)
 #endif

@@ -15,7 +15,7 @@
  * 2.  Redistributions in binary form must reproduce the above copyright
  *     notice, this list of conditions and the following disclaimer in the
  *     documentation and/or other materials provided with the distribution.
- * 3.  Neither the name of Apple Computer, Inc. ("Apple") nor the names of
+ * 3.  Neither the name of Apple Inc. ("Apple") nor the names of
  *     its contributors may be used to endorse or promote products derived
  *     from this software without specific prior written permission.
  *
@@ -30,8 +30,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * P4: //depot/projects/trustedbsd/openbsm/sys/bsm/audit_internal.h#5
- * $FreeBSD: release/9.0.0/sys/bsm/audit_internal.h 187214 2009-01-14 10:44:16Z rwatson $
+ * $FreeBSD: releng/11.0/sys/bsm/audit_internal.h 292522 2015-12-20 23:22:04Z brueffer $
  */
 
 #ifndef _AUDIT_INTERNAL_H

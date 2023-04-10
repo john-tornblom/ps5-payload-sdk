@@ -1,6 +1,6 @@
-/* $FreeBSD: release/9.0.0/sys/dev/mpt/mpilib/mpi_targ.h 170251 2007-06-03 22:58:27Z scottl $ */
+/* $FreeBSD: releng/11.0/sys/dev/mpt/mpilib/mpi_targ.h 233425 2012-03-24 16:23:21Z marius $ */
 /*-
- * Copyright (c) 2000-2005, LSI Logic Corporation and its contributors.
+ * Copyright (c) 2000-2010, LSI Logic Corporation and its contributors.
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without

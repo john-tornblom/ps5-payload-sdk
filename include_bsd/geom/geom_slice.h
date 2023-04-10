@@ -32,7 +32,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/geom/geom_slice.h 155802 2006-02-18 11:21:17Z pjd $
+ * $FreeBSD: releng/11.0/sys/geom/geom_slice.h 243333 2012-11-20 12:32:18Z jh $
  */
 
 #ifndef _GEOM_GEOM_SLICE_H_
@@ -69,7 +69,7 @@ struct g_slicer {
 };
 
 g_dumpconf_t g_slice_dumpconf;
-int g_slice_config(struct g_geom *gp, u_int idx, int how, off_t offset, off_t length, u_int sectorsize, const char *fmt, ...);
+int g_slice_config(struct g_geom *gp, u_int idx, int how, off_t offset, off_t length, u_int sectorsize, const char *fmt, ...) __printflike(7, 8);
 void g_slice_spoiled(struct g_consumer *cp);
 void g_slice_orphan(struct g_consumer *cp);
 #define G_SLICE_CONFIG_CHECK	0

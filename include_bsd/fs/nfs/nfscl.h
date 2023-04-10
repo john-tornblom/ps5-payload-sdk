@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/fs/nfs/nfscl.h 191783 2009-05-04 15:23:58Z rmacklem $
+ * $FreeBSD: releng/11.0/sys/fs/nfs/nfscl.h 244042 2012-12-08 22:52:39Z rmacklem $
  */
 
 #ifndef	_NFS_NFSCL_H
@@ -49,7 +49,7 @@ struct nfsv4node {
  */
 #define	NFSCL_REQSTART(n, p, v) 					\
 	nfscl_reqstart((n), (p), VFSTONFS((v)->v_mount), 		\
-	    VTONFS(v)->n_fhp->nfh_fh, VTONFS(v)->n_fhp->nfh_len, NULL)
+	    VTONFS(v)->n_fhp->nfh_fh, VTONFS(v)->n_fhp->nfh_len, NULL, NULL)
 
 /*
  * These two macros convert between a lease duration and renew interval.
@@ -67,5 +67,11 @@ struct nfsv4node {
 #define	NFSSATTR_SIZE0		0x2
 #define	NFSSATTR_SIZENEG1	0x4
 #define	NFSSATTR_SIZERDEV	0x8
+
+/* Use this macro for debug printfs. */
+#define	NFSCL_DEBUG(level, ...)	do {					\
+		if (nfscl_debuglevel >= (level))			\
+			printf(__VA_ARGS__);				\
+	} while (0)
 
 #endif	/* _NFS_NFSCL_H */

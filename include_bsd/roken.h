@@ -6,7 +6,7 @@
 
 /* -*- C -*- */
 /*
- * Copyright (c) 1995-2005 Kungliga Tekniska Högskolan
+ * Copyright (c) 1995-2005 Kungliga Tekniska HÃ¶gskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
  * All rights reserved.
  * 
@@ -38,14 +38,37 @@
  * SUCH DAMAGE.
  */
 
-/* $Id: roken.h.in 18612 2006-10-19 16:35:16Z lha $ */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdint.h>
 #include <string.h>
 #include <signal.h>
+
+#define ROKEN_LIB_FUNCTION
+#define ROKEN_LIB_CALL
+#define ROKEN_LIB_VARIABLE
+
+
+typedef int rk_socket_t;
+
+#define rk_closesocket(x) close(x)
+#define rk_SOCK_IOCTL(s,c,a) ioctl((s),(c),(a))
+#define rk_IS_BAD_SOCKET(s) ((s) < 0)
+#define rk_IS_SOCKET_ERROR(rv) ((rv) < 0)
+#define rk_SOCK_ERRNO errno
+#define rk_INVALID_SOCKET (-1)
+
+#define rk_SOCK_INIT() 0
+#define rk_SOCK_EXIT() do { } while(0)
+
+
+#define IN_LOOPBACKNET 127
+
+
+#define UNREACHABLE(x)
+#define UNUSED_ARGUMENT(x)
+
 
 #include <sys/param.h>
 #include <inttypes.h>
@@ -68,9 +91,11 @@
 #include <sys/ioctl.h>
 #include <sys/time.h>
 #include <time.h>
-#include <strings.h>
 
 #include <paths.h>
+
+#include <dirent.h>
+
 
 
 #include <roken-common.h>
@@ -88,32 +113,39 @@ ROKEN_CPP_START
 
 
 
-int ROKEN_LIB_FUNCTION
-    asnprintf (char **, size_t, const char *, ...)
+
+
+#define asnprintf rk_asnprintf
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
+    rk_asnprintf (char **, size_t, const char *, ...)
      __attribute__ ((format (printf, 3, 4)));
 
-int ROKEN_LIB_FUNCTION
+#define vasnprintf rk_vasnprintf
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
     vasnprintf (char **, size_t, const char *, va_list)
      __attribute__((format (printf, 3, 0)));
 
 
-char * ROKEN_LIB_FUNCTION strndup(const char *, size_t);
 
-char * ROKEN_LIB_FUNCTION strlwr(char *);
-
-size_t ROKEN_LIB_FUNCTION strnlen(const char*, size_t);
-
-
-ssize_t ROKEN_LIB_FUNCTION strsep_copy(const char**, const char*, char*, size_t);
+#define strlwr rk_strlwr
+ROKEN_LIB_FUNCTION char * ROKEN_LIB_CALL strlwr(char *);
 
 
 
-
-char * ROKEN_LIB_FUNCTION strupr(char *);
+#define strsep_copy rk_strsep_copy
+ROKEN_LIB_FUNCTION ssize_t ROKEN_LIB_CALL strsep_copy(const char**, const char*, char*, size_t);
 
 
 
 
+#define strupr rk_strupr
+ROKEN_LIB_FUNCTION char * ROKEN_LIB_CALL strupr(char *);
+
+
+
+
+
+#define rk_strerror_r strerror_r
 
 
 
@@ -122,19 +154,10 @@ char * ROKEN_LIB_FUNCTION strupr(char *);
 
 
 #include <pwd.h>
-struct passwd * ROKEN_LIB_FUNCTION k_getpwnam (const char *);
-struct passwd * ROKEN_LIB_FUNCTION k_getpwuid (uid_t);
+ROKEN_LIB_FUNCTION struct passwd * ROKEN_LIB_CALL k_getpwnam (const char *);
+ROKEN_LIB_FUNCTION struct passwd * ROKEN_LIB_CALL k_getpwuid (uid_t);
 
-const char * ROKEN_LIB_FUNCTION get_default_username (void);
-
-
-
-
-
-
-
-
-int ROKEN_LIB_FUNCTION daemon(int, int);
+ROKEN_LIB_FUNCTION const char * ROKEN_LIB_CALL get_default_username (void);
 
 
 
@@ -143,45 +166,61 @@ int ROKEN_LIB_FUNCTION daemon(int, int);
 
 
 
+#define rk_rename(__rk_rn_from,__rk_rn_to) rename(__rk_rn_from,__rk_rn_to)
+
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL daemon(int, int);
 
 
-void ROKEN_LIB_FUNCTION pidfile (const char*);
-
-unsigned int ROKEN_LIB_FUNCTION bswap32(unsigned int);
-
-unsigned short ROKEN_LIB_FUNCTION bswap16(unsigned short);
 
 
-time_t ROKEN_LIB_FUNCTION tm2time (struct tm, int);
 
-int ROKEN_LIB_FUNCTION unix_verify_user(char *, char *);
 
-int ROKEN_LIB_FUNCTION roken_concat (char *, size_t, ...);
 
-size_t ROKEN_LIB_FUNCTION roken_mconcat (char **, size_t, ...);
 
-int ROKEN_LIB_FUNCTION roken_vconcat (char *, size_t, va_list);
+#define pidfile rk_pidfile
+ROKEN_LIB_FUNCTION void ROKEN_LIB_CALL pidfile (const char*);
 
-size_t ROKEN_LIB_FUNCTION
+#define bswap32 rk_bswap32
+ROKEN_LIB_FUNCTION unsigned int ROKEN_LIB_CALL bswap32(unsigned int);
+
+#define bswap16 rk_bswap16
+ROKEN_LIB_FUNCTION unsigned short ROKEN_LIB_CALL bswap16(unsigned short);
+
+
+
+ROKEN_LIB_FUNCTION time_t ROKEN_LIB_CALL tm2time (struct tm, int);
+
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL unix_verify_user(char *, char *);
+
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL roken_concat (char *, size_t, ...);
+
+ROKEN_LIB_FUNCTION size_t ROKEN_LIB_CALL roken_mconcat (char **, size_t, ...);
+
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL roken_vconcat (char *, size_t, va_list);
+
+ROKEN_LIB_FUNCTION size_t ROKEN_LIB_CALL
     roken_vmconcat (char **, size_t, va_list);
 
-ssize_t ROKEN_LIB_FUNCTION net_write (int, const void *, size_t);
+ROKEN_LIB_FUNCTION ssize_t ROKEN_LIB_CALL
+    net_write (rk_socket_t, const void *, size_t);
 
-ssize_t ROKEN_LIB_FUNCTION net_read (int, void *, size_t);
+ROKEN_LIB_FUNCTION ssize_t ROKEN_LIB_CALL
+    net_read (rk_socket_t, void *, size_t);
 
-int ROKEN_LIB_FUNCTION issuid(void);
-
-
-int ROKEN_LIB_FUNCTION get_window_size(int fd, struct winsize *);
-
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
+    issuid(void);
 
 
-extern char **environ;
-
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL get_window_size(int fd, int *, int *);
 
 
 
-struct hostent * ROKEN_LIB_FUNCTION
+
+
+
+
+#define copyhostent rk_copyhostent
+ROKEN_LIB_FUNCTION struct hostent * ROKEN_LIB_CALL
 copyhostent (const struct hostent *);
 
 
@@ -191,33 +230,39 @@ copyhostent (const struct hostent *);
 
 
 
-int ROKEN_LIB_FUNCTION
+
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
 getnameinfo_verified(const struct sockaddr *, socklen_t,
 		     char *, size_t,
 		     char *, size_t,
 		     int);
 
-int ROKEN_LIB_FUNCTION
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
 roken_getaddrinfo_hostspec(const char *, int, struct addrinfo **); 
-int ROKEN_LIB_FUNCTION
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
 roken_getaddrinfo_hostspec2(const char *, int, int, struct addrinfo **);
 
 
 
-void * ROKEN_LIB_FUNCTION emalloc (size_t);
-void * ROKEN_LIB_FUNCTION ecalloc(size_t, size_t);
-void * ROKEN_LIB_FUNCTION erealloc (void *, size_t);
-char * ROKEN_LIB_FUNCTION estrdup (const char *);
+
+#define emalloc rk_emalloc
+ROKEN_LIB_FUNCTION void * ROKEN_LIB_CALL emalloc (size_t);
+#define ecalloc rk_ecalloc
+ROKEN_LIB_FUNCTION void * ROKEN_LIB_CALL ecalloc(size_t, size_t);
+#define erealloc rk_erealloc
+ROKEN_LIB_FUNCTION void * ROKEN_LIB_CALL erealloc (void *, size_t);
+#define estrdup rk_estrdup
+ROKEN_LIB_FUNCTION char * ROKEN_LIB_CALL estrdup (const char *);
 
 /*
  * kludges and such
  */
 
-int ROKEN_LIB_FUNCTION
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
 roken_gethostby_setup(const char*, const char*);
-struct hostent* ROKEN_LIB_FUNCTION
+ROKEN_LIB_FUNCTION struct hostent* ROKEN_LIB_CALL
 roken_gethostbyname(const char*);
-struct hostent* ROKEN_LIB_FUNCTION 
+ROKEN_LIB_FUNCTION struct hostent* ROKEN_LIB_CALL 
 roken_gethostbyaddr(const void*, size_t, int);
 
 #define roken_getservbyname(x,y) getservbyname(x,y)
@@ -229,17 +274,26 @@ roken_gethostbyaddr(const void*, size_t, int);
 
 
 
-void ROKEN_LIB_FUNCTION mini_inetd_addrinfo (struct addrinfo*);
-void ROKEN_LIB_FUNCTION mini_inetd (int);
+ROKEN_LIB_FUNCTION void ROKEN_LIB_CALL
+mini_inetd_addrinfo (struct addrinfo*, rk_socket_t *);
+
+ROKEN_LIB_FUNCTION void ROKEN_LIB_CALL
+mini_inetd (int, rk_socket_t *);
 
 
-int ROKEN_LIB_FUNCTION
+#define strsvis rk_strsvis
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
 strsvis(char *, const char *, int, const char *);
 
+#define strsvisx rk_strsvisx
+ROKEN_LIB_FUNCTION int ROKEN_LIB_CALL
+strsvisx(char *, const char *, size_t, int, const char *);
 
 
 
-char * ROKEN_LIB_FUNCTION
+
+#define svis rk_svis
+ROKEN_LIB_FUNCTION char * ROKEN_LIB_CALL
 svis(char *, int, int, int, const char *);
 
 
@@ -247,7 +301,11 @@ svis(char *, int, int, int, const char *);
 
 
 
+#define rk_random() arc4random()
+
+
+
+
 ROKEN_CPP_END
-#define ROKEN_VERSION 1.1
 
 #endif /* __ROKEN_H__ */

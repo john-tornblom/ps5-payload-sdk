@@ -3,7 +3,7 @@
  * Garrett Wollman, September 1994.
  * This file is in the public domain.
  *
- * $FreeBSD: release/9.0.0/sys/amd64/include/clock.h 221703 2011-05-09 17:34:00Z jkim $
+ * $FreeBSD: releng/11.0/sys/amd64/include/clock.h 263008 2014-03-11 10:20:42Z royger $
  */
 
 #ifndef _MACHINE_CLOCK_H_
@@ -20,8 +20,13 @@ extern int	i8254_max_count;
 extern uint64_t	tsc_freq;
 extern int	tsc_is_invariant;
 extern int	tsc_perf_stat;
+#ifdef SMP
+extern int	smp_tsc;
+#endif
 
 void	i8254_init(void);
+void	i8254_delay(int);
+void	clock_init(void);
 
 /*
  * Driver to clock driver interface.

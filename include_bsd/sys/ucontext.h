@@ -25,7 +25,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/ucontext.h 158471 2006-05-12 05:04:46Z jhb $
+ * $FreeBSD: releng/11.0/sys/sys/ucontext.h 295561 2016-02-12 07:38:19Z kib $
  */
 
 #ifndef _SYS_UCONTEXT_H_
@@ -33,25 +33,9 @@
 
 #include <sys/signal.h>
 #include <machine/ucontext.h>
+#include <sys/_ucontext.h>
 
-typedef struct __ucontext {
-	/*
-	 * Keep the order of the first two fields. Also,
-	 * keep them the first two fields in the structure.
-	 * This way we can have a union with struct
-	 * sigcontext and ucontext_t. This allows us to
-	 * support them both at the same time.
-	 * note: the union is not defined, though.
-	 */
-	sigset_t	uc_sigmask;
-	mcontext_t	uc_mcontext;
-
-	struct __ucontext *uc_link;
-	stack_t		uc_stack;
-	int		uc_flags;
 #define	UCF_SWAPPED	0x00000001	/* Used by swapcontext(3). */
-	int		__spare__[4];
-} ucontext_t;
 
 #if defined(_KERNEL) && defined(COMPAT_FREEBSD4)
 #if defined(__i386__)
@@ -71,11 +55,18 @@ struct ucontext4 {
 
 __BEGIN_DECLS
 
-int	getcontext(ucontext_t *);
+int	getcontext(ucontext_t *) __returns_twice;
+ucontext_t *getcontextx(void);
 int	setcontext(const ucontext_t *);
 void	makecontext(ucontext_t *, void (*)(void), int, ...);
 int	signalcontext(ucontext_t *, int, __sighandler_t *);
 int	swapcontext(ucontext_t *, const ucontext_t *);
+
+#if __BSD_VISIBLE
+int __getcontextx_size(void);
+int __fillcontextx(char *ctx) __returns_twice;
+int __fillcontextx2(char *ctx);
+#endif
 
 __END_DECLS
 
@@ -92,7 +83,7 @@ struct thread;
 
 /* Machine-dependent functions: */
 int	get_mcontext(struct thread *, mcontext_t *, int);
-int	set_mcontext(struct thread *, const mcontext_t *);
+int	set_mcontext(struct thread *, mcontext_t *);
 
 #endif /* !_KERNEL */
 

@@ -30,7 +30,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)quota.h	8.3 (Berkeley) 8/19/94
- * $FreeBSD: release/9.0.0/sys/ufs/ufs/quota.h 222955 2011-06-10 22:19:44Z jeff $
+ * $FreeBSD: releng/11.0/sys/ufs/ufs/quota.h 262678 2014-03-02 02:52:34Z pfg $
  */
 
 #ifndef _UFS_UFS_QUOTA_H_
@@ -62,7 +62,7 @@
 /*
  * Definitions for the default names of the quotas files.
  */
-#define INITQFNAMES { \
+#define	INITQFNAMES { \
 	"user",		/* USRQUOTA */ \
 	"group",	/* GRPQUOTA */ \
 	"undefined", \
@@ -75,8 +75,8 @@
  * broken into a main command defined below and a subcommand that is used
  * to convey the type of quota that is being manipulated (see above).
  */
-#define SUBCMDMASK	0x00ff
-#define SUBCMDSHIFT	8
+#define	SUBCMDMASK	0x00ff
+#define	SUBCMDSHIFT	8
 #define	QCMD(cmd, type)	(((cmd) << SUBCMDSHIFT) | ((type) & SUBCMDMASK))
 
 #define	Q_QUOTAON	0x0100	/* enable quotas */
@@ -119,10 +119,10 @@ struct dqblk64 {
 	int64_t   dqb_itime;		/* time limit for excessive files */
 };
 
-#define dqblk dqblk64
+#define	dqblk dqblk64
 
-#define Q_DQHDR64_MAGIC "QUOTA64"
-#define Q_DQHDR64_VERSION 0x20081104
+#define	Q_DQHDR64_MAGIC "QUOTA64"
+#define	Q_DQHDR64_VERSION 0x20081104
 
 struct dqhdr64 {
 	char	  dqh_magic[8];		/* Q_DQHDR64_MAGIC */
@@ -227,9 +227,10 @@ void	dqinit(void);
 void	dqrele(struct vnode *, struct dquot *);
 void	dquninit(void);
 int	getinoquota(struct inode *);
-int	qsync(struct mount *mp);
-int	quotaoff(struct thread *td, struct mount *, int);
-int	quotaon(struct thread *td, struct mount *, int, void *);
+int	qsync(struct mount *);
+int	qsyncvp(struct vnode *);
+int	quotaoff(struct thread *, struct mount *, int);
+int	quotaon(struct thread *, struct mount *, int, void *);
 int	getquota32(struct thread *, struct mount *, u_long, int, void *);
 int	setquota32(struct thread *, struct mount *, u_long, int, void *);
 int	setuse32(struct thread *, struct mount *, u_long, int, void *);

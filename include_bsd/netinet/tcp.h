@@ -27,13 +27,14 @@
  * SUCH DAMAGE.
  *
  *	@(#)tcp.h	8.1 (Berkeley) 6/10/93
- * $FreeBSD: release/9.0.0/sys/netinet/tcp.h 215434 2010-11-17 18:55:12Z gnn $
+ * $FreeBSD: releng/11.0/sys/netinet/tcp.h 294540 2016-01-22 02:07:48Z glebius $
  */
 
 #ifndef _NETINET_TCP_H_
 #define _NETINET_TCP_H_
 
 #include <sys/cdefs.h>
+#include <sys/types.h>
 
 #if __BSD_VISIBLE
 
@@ -96,6 +97,10 @@ struct tcphdr {
 #define    TCPOLEN_TSTAMP_APPA		(TCPOLEN_TIMESTAMP+2) /* appendix A */
 #define	TCPOPT_SIGNATURE	19		/* Keyed MD5: RFC 2385 */
 #define	   TCPOLEN_SIGNATURE		18
+#define	TCPOPT_FAST_OPEN	34
+#define	   TCPOLEN_FAST_OPEN_EMPTY	2
+#define	   TCPOLEN_FAST_OPEN_MIN	6
+#define	   TCPOLEN_FAST_OPEN_MAX	18
 
 /* Miscellaneous constants */
 #define	MAX_SACK_BLKS	6	/* Max # SACK blocks stored at receiver side */
@@ -148,16 +153,29 @@ struct tcphdr {
 #endif /* __BSD_VISIBLE */
 
 /*
- * User-settable options (used with setsockopt).
+ * User-settable options (used with setsockopt).  These are discrete
+ * values and are not masked together.  Some values appear to be
+ * bitmasks for historical reasons.
  */
-#define	TCP_NODELAY	0x01	/* don't delay send to coalesce packets */
+#define	TCP_NODELAY	1	/* don't delay send to coalesce packets */
 #if __BSD_VISIBLE
-#define	TCP_MAXSEG	0x02	/* set maximum segment size */
-#define TCP_NOPUSH	0x04	/* don't push last block of write */
-#define TCP_NOOPT	0x08	/* don't use TCP options */
-#define TCP_MD5SIG	0x10	/* use MD5 digests (RFC2385) */
-#define	TCP_INFO	0x20	/* retrieve tcp_info structure */
-#define	TCP_CONGESTION	0x40	/* get/set congestion control algorithm */
+#define	TCP_MAXSEG	2	/* set maximum segment size */
+#define TCP_NOPUSH	4	/* don't push last block of write */
+#define TCP_NOOPT	8	/* don't use TCP options */
+#define TCP_MD5SIG	16	/* use MD5 digests (RFC2385) */
+#define	TCP_INFO	32	/* retrieve tcp_info structure */
+#define	TCP_CONGESTION	64	/* get/set congestion control algorithm */
+#define	TCP_CCALGOOPT	65	/* get/set cc algorithm specific options */
+#define	TCP_KEEPINIT	128	/* N, time to establish connection */
+#define	TCP_KEEPIDLE	256	/* L,N,X start keeplives after this period */
+#define	TCP_KEEPINTVL	512	/* L,N interval between keepalives */
+#define	TCP_KEEPCNT	1024	/* L,N number of keepalives before close */
+#define	TCP_FASTOPEN	1025	/* enable TFO / was created via TFO */
+#define	TCP_PCAP_OUT	2048	/* number of output packets to keep */
+#define	TCP_PCAP_IN	4096	/* number of input packets to keep */
+#define TCP_FUNCTION_BLK 8192	/* Set the tcp function pointers to the specified stack */
+/* Start of reserved space for third-party user-settable options. */
+#define	TCP_VENDOR	SO_VENDOR
 
 #define	TCP_CA_NAME_MAX	16	/* max congestion control name length */
 
@@ -233,5 +251,11 @@ struct tcp_info {
 	u_int32_t	__tcpi_pad[26];		/* Padding. */
 };
 #endif
+#define TCP_FUNCTION_NAME_LEN_MAX 32
+
+struct tcp_function_set {
+	char function_set_name[TCP_FUNCTION_NAME_LEN_MAX];
+	uint32_t pcbcnt;
+};
 
 #endif /* !_NETINET_TCP_H_ */

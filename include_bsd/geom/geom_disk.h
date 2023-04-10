@@ -31,7 +31,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/geom/geom_disk.h 223089 2011-06-14 17:10:32Z gibbs $
+ * $FreeBSD: releng/11.0/sys/geom/geom_disk.h 302150 2016-06-23 20:05:59Z ken $
  */
 
 #ifndef _GEOM_GEOM_DISK_H_
@@ -44,12 +44,15 @@
 #include <sys/_mutex.h>
 #include <sys/disk.h>
 
+#define G_DISK_CLASS_NAME	"DISK"
+
 struct disk;
 
 typedef	int	disk_open_t(struct disk *);
 typedef	int	disk_close_t(struct disk *);
 typedef	void	disk_strategy_t(struct bio *bp);
 typedef	int	disk_getattr_t(struct bio *bp);
+typedef	void	disk_gone_t(struct disk *);
 typedef	int	disk_ioctl_t(struct disk *, u_long cmd, void *data,
 			int fflag, struct thread *td);
 		/* NB: disk_ioctl_t SHALL be cast'able to d_ioctl_t */
@@ -57,11 +60,19 @@ typedef	int	disk_ioctl_t(struct disk *, u_long cmd, void *data,
 struct g_geom;
 struct devstat;
 
+typedef enum {
+	DISK_INIT_NONE,
+	DISK_INIT_START,
+	DISK_INIT_DONE
+} disk_init_level;
+
 struct disk {
 	/* Fields which are private to geom_disk */
 	struct g_geom		*d_geom;
 	struct devstat		*d_devstat;
+	int			d_goneflag;
 	int			d_destroyed;
+	disk_init_level		d_init_level;
 
 	/* Shared fields */
 	u_int			d_flags;
@@ -77,6 +88,7 @@ struct disk {
 	disk_ioctl_t		*d_ioctl;
 	dumper_t		*d_dump;
 	disk_getattr_t		*d_getattr;
+	disk_gone_t		*d_gone;
 
 	/* Info fields from driver to geom_disk.c. Valid when open */
 	u_int			d_sectorsize;
@@ -84,6 +96,7 @@ struct disk {
 	u_int			d_fwsectors;
 	u_int			d_fwheads;
 	u_int			d_maxsize;
+	off_t			d_delmaxsize;
 	u_int			d_stripeoffset;
 	u_int			d_stripesize;
 	char			d_ident[DISK_IDENT_SIZE];
@@ -92,25 +105,36 @@ struct disk {
 	uint16_t		d_hba_device;
 	uint16_t		d_hba_subvendor;
 	uint16_t		d_hba_subdevice;
+	uint16_t		d_rotation_rate;
 
 	/* Fields private to the driver */
 	void			*d_drv1;
 };
 
-#define DISKFLAG_NEEDSGIANT	0x1
+#define DISKFLAG_RESERVED	0x1	/* Was NEEDSGIANT */
 #define DISKFLAG_OPEN		0x2
 #define DISKFLAG_CANDELETE	0x4
 #define DISKFLAG_CANFLUSHCACHE	0x8
+#define	DISKFLAG_UNMAPPED_BIO	0x10
+#define	DISKFLAG_DIRECT_COMPLETION	0x20
+#define	DISKFLAG_CANZONE	0x80
 
 struct disk *disk_alloc(void);
 void disk_create(struct disk *disk, int version);
 void disk_destroy(struct disk *disk);
 void disk_gone(struct disk *disk);
 void disk_attr_changed(struct disk *dp, const char *attr, int flag);
+void disk_media_changed(struct disk *dp, int flag);
+void disk_media_gone(struct disk *dp, int flag);
+int disk_resize(struct disk *dp, int flag);
 
 #define DISK_VERSION_00		0x58561059
 #define DISK_VERSION_01		0x5856105a
-#define DISK_VERSION		DISK_VERSION_01
+#define DISK_VERSION_02		0x5856105b
+#define DISK_VERSION_03		0x5856105c
+#define DISK_VERSION_04		0x5856105d
+#define DISK_VERSION_05		0x5856105e
+#define DISK_VERSION		DISK_VERSION_05
 
 #endif /* _KERNEL */
 #endif /* _GEOM_GEOM_DISK_H_ */

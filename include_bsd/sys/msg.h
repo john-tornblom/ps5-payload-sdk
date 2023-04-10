@@ -1,4 +1,4 @@
-/* $FreeBSD: release/9.0.0/sys/sys/msg.h 220388 2011-04-06 16:59:54Z trasz $ */
+/* $FreeBSD: releng/11.0/sys/sys/msg.h 286088 2015-07-30 18:59:01Z rodrigc $ */
 /*	$NetBSD: msg.h,v 1.4 1994/06/29 06:44:43 cgd Exp $	*/
 
 /*-
@@ -163,8 +163,9 @@ struct msqid_kernel {
 	struct	ucred *cred;	/* creator's credentials */
 };
 
-#else /* !_KERNEL */
+#endif /* _KERNEL */
 
+#if !defined(_KERNEL) || defined(_WANT_MSG_PROTOTYPES)
 __BEGIN_DECLS
 int msgctl(int, int, struct msqid_ds *);
 int msgget(key_t, int);
@@ -176,6 +177,6 @@ int msgsys(int, ...);
 #endif
 __END_DECLS
 
-#endif /* _KERNEL */
+#endif /* !_KERNEL || _WANT_MSG_PROTOTYPES  */
 
 #endif /* !_SYS_MSG_H_ */

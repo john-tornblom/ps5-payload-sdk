@@ -25,9 +25,9 @@ typedef char *heim_general_string;
 
 typedef char *heim_utf8_string;
 
-typedef char *heim_printable_string;
+typedef struct heim_octet_string heim_printable_string;
 
-typedef char *heim_ia5_string;
+typedef struct heim_octet_string heim_ia5_string;
 
 typedef struct heim_bmp_string {
   size_t length;
@@ -70,6 +70,17 @@ typedef struct heim_octet_string heim_any_set;
     }                                                          \
   } while (0)
 
+#ifdef _WIN32
+#ifndef ASN1_LIB
+#define ASN1EXP  __declspec(dllimport)
+#else
+#define ASN1EXP
+#endif
+#define ASN1CALL __stdcall
+#else
+#define ASN1EXP
+#define ASN1CALL
+#endif
 struct units;
 
 #endif
@@ -78,49 +89,64 @@ struct units;
 #include <rfc2459_asn1.h>
 #include <heim_asn1.h>
 /* OBJECT IDENTIFIER id-pkcs-12 ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) } */
-const heim_oid *oid_id_pkcs_12(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs_12;
+#define ASN1_OID_ID_PKCS_12 (&asn1_oid_id_pkcs_12)
 
 /* OBJECT IDENTIFIER id-pkcs-12PbeIds ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(1) } */
-const heim_oid *oid_id_pkcs_12PbeIds(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs_12PbeIds;
+#define ASN1_OID_ID_PKCS_12PBEIDS (&asn1_oid_id_pkcs_12PbeIds)
 
 /* OBJECT IDENTIFIER id-pbeWithSHAAnd128BitRC4 ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(1) label-less(1) } */
-const heim_oid *oid_id_pbeWithSHAAnd128BitRC4(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pbeWithSHAAnd128BitRC4;
+#define ASN1_OID_ID_PBEWITHSHAAND128BITRC4 (&asn1_oid_id_pbeWithSHAAnd128BitRC4)
 
 /* OBJECT IDENTIFIER id-pbeWithSHAAnd40BitRC4 ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(1) label-less(2) } */
-const heim_oid *oid_id_pbeWithSHAAnd40BitRC4(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pbeWithSHAAnd40BitRC4;
+#define ASN1_OID_ID_PBEWITHSHAAND40BITRC4 (&asn1_oid_id_pbeWithSHAAnd40BitRC4)
 
 /* OBJECT IDENTIFIER id-pbeWithSHAAnd3-KeyTripleDES-CBC ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(1) label-less(3) } */
-const heim_oid *oid_id_pbeWithSHAAnd3_KeyTripleDES_CBC(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pbeWithSHAAnd3_KeyTripleDES_CBC;
+#define ASN1_OID_ID_PBEWITHSHAAND3_KEYTRIPLEDES_CBC (&asn1_oid_id_pbeWithSHAAnd3_KeyTripleDES_CBC)
 
 /* OBJECT IDENTIFIER id-pbeWithSHAAnd2-KeyTripleDES-CBC ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(1) label-less(4) } */
-const heim_oid *oid_id_pbeWithSHAAnd2_KeyTripleDES_CBC(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pbeWithSHAAnd2_KeyTripleDES_CBC;
+#define ASN1_OID_ID_PBEWITHSHAAND2_KEYTRIPLEDES_CBC (&asn1_oid_id_pbeWithSHAAnd2_KeyTripleDES_CBC)
 
 /* OBJECT IDENTIFIER id-pbeWithSHAAnd128BitRC2-CBC ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(1) label-less(5) } */
-const heim_oid *oid_id_pbeWithSHAAnd128BitRC2_CBC(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pbeWithSHAAnd128BitRC2_CBC;
+#define ASN1_OID_ID_PBEWITHSHAAND128BITRC2_CBC (&asn1_oid_id_pbeWithSHAAnd128BitRC2_CBC)
 
 /* OBJECT IDENTIFIER id-pbewithSHAAnd40BitRC2-CBC ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(1) label-less(6) } */
-const heim_oid *oid_id_pbewithSHAAnd40BitRC2_CBC(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pbewithSHAAnd40BitRC2_CBC;
+#define ASN1_OID_ID_PBEWITHSHAAND40BITRC2_CBC (&asn1_oid_id_pbewithSHAAnd40BitRC2_CBC)
 
 /* OBJECT IDENTIFIER id-pkcs12-bagtypes ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(10) label-less(1) } */
-const heim_oid *oid_id_pkcs12_bagtypes(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs12_bagtypes;
+#define ASN1_OID_ID_PKCS12_BAGTYPES (&asn1_oid_id_pkcs12_bagtypes)
 
 /* OBJECT IDENTIFIER id-pkcs12-keyBag ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(10) label-less(1) label-less(1) } */
-const heim_oid *oid_id_pkcs12_keyBag(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs12_keyBag;
+#define ASN1_OID_ID_PKCS12_KEYBAG (&asn1_oid_id_pkcs12_keyBag)
 
 /* OBJECT IDENTIFIER id-pkcs12-pkcs8ShroudedKeyBag ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(10) label-less(1) label-less(2) } */
-const heim_oid *oid_id_pkcs12_pkcs8ShroudedKeyBag(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs12_pkcs8ShroudedKeyBag;
+#define ASN1_OID_ID_PKCS12_PKCS8SHROUDEDKEYBAG (&asn1_oid_id_pkcs12_pkcs8ShroudedKeyBag)
 
 /* OBJECT IDENTIFIER id-pkcs12-certBag ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(10) label-less(1) label-less(3) } */
-const heim_oid *oid_id_pkcs12_certBag(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs12_certBag;
+#define ASN1_OID_ID_PKCS12_CERTBAG (&asn1_oid_id_pkcs12_certBag)
 
 /* OBJECT IDENTIFIER id-pkcs12-crlBag ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(10) label-less(1) label-less(4) } */
-const heim_oid *oid_id_pkcs12_crlBag(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs12_crlBag;
+#define ASN1_OID_ID_PKCS12_CRLBAG (&asn1_oid_id_pkcs12_crlBag)
 
 /* OBJECT IDENTIFIER id-pkcs12-secretBag ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(10) label-less(1) label-less(5) } */
-const heim_oid *oid_id_pkcs12_secretBag(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs12_secretBag;
+#define ASN1_OID_ID_PKCS12_SECRETBAG (&asn1_oid_id_pkcs12_secretBag)
 
 /* OBJECT IDENTIFIER id-pkcs12-safeContentsBag ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-12(12) label-less(10) label-less(1) label-less(6) } */
-const heim_oid *oid_id_pkcs12_safeContentsBag(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkcs12_safeContentsBag;
+#define ASN1_OID_ID_PKCS12_SAFECONTENTSBAG (&asn1_oid_id_pkcs12_safeContentsBag)
 
 /*
 PKCS12-MacData ::= SEQUENCE {
@@ -136,11 +162,11 @@ typedef struct PKCS12_MacData {
   heim_integer *iterations;
 } PKCS12_MacData;
 
-int    encode_PKCS12_MacData(unsigned char *, size_t, const PKCS12_MacData *, size_t *);
-int    decode_PKCS12_MacData(const unsigned char *, size_t, PKCS12_MacData *, size_t *);
-void   free_PKCS12_MacData  (PKCS12_MacData *);
-size_t length_PKCS12_MacData(const PKCS12_MacData *);
-int    copy_PKCS12_MacData  (const PKCS12_MacData *, PKCS12_MacData *);
+ASN1EXP int    ASN1CALL decode_PKCS12_MacData(const unsigned char *, size_t, PKCS12_MacData *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_MacData(unsigned char *, size_t, const PKCS12_MacData *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_MacData(const PKCS12_MacData *);
+ASN1EXP int    ASN1CALL copy_PKCS12_MacData  (const PKCS12_MacData *, PKCS12_MacData *);
+ASN1EXP void   ASN1CALL free_PKCS12_MacData  (PKCS12_MacData *);
 
 
 /*
@@ -157,11 +183,11 @@ typedef struct PKCS12_PFX {
   PKCS12_MacData *macData;
 } PKCS12_PFX;
 
-int    encode_PKCS12_PFX(unsigned char *, size_t, const PKCS12_PFX *, size_t *);
-int    decode_PKCS12_PFX(const unsigned char *, size_t, PKCS12_PFX *, size_t *);
-void   free_PKCS12_PFX  (PKCS12_PFX *);
-size_t length_PKCS12_PFX(const PKCS12_PFX *);
-int    copy_PKCS12_PFX  (const PKCS12_PFX *, PKCS12_PFX *);
+ASN1EXP int    ASN1CALL decode_PKCS12_PFX(const unsigned char *, size_t, PKCS12_PFX *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_PFX(unsigned char *, size_t, const PKCS12_PFX *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_PFX(const PKCS12_PFX *);
+ASN1EXP int    ASN1CALL copy_PKCS12_PFX  (const PKCS12_PFX *, PKCS12_PFX *);
+ASN1EXP void   ASN1CALL free_PKCS12_PFX  (PKCS12_PFX *);
 
 
 /*
@@ -173,11 +199,11 @@ typedef struct PKCS12_AuthenticatedSafe {
   ContentInfo *val;
 } PKCS12_AuthenticatedSafe;
 
-int    encode_PKCS12_AuthenticatedSafe(unsigned char *, size_t, const PKCS12_AuthenticatedSafe *, size_t *);
-int    decode_PKCS12_AuthenticatedSafe(const unsigned char *, size_t, PKCS12_AuthenticatedSafe *, size_t *);
-void   free_PKCS12_AuthenticatedSafe  (PKCS12_AuthenticatedSafe *);
-size_t length_PKCS12_AuthenticatedSafe(const PKCS12_AuthenticatedSafe *);
-int    copy_PKCS12_AuthenticatedSafe  (const PKCS12_AuthenticatedSafe *, PKCS12_AuthenticatedSafe *);
+ASN1EXP int    ASN1CALL decode_PKCS12_AuthenticatedSafe(const unsigned char *, size_t, PKCS12_AuthenticatedSafe *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_AuthenticatedSafe(unsigned char *, size_t, const PKCS12_AuthenticatedSafe *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_AuthenticatedSafe(const PKCS12_AuthenticatedSafe *);
+ASN1EXP int    ASN1CALL copy_PKCS12_AuthenticatedSafe  (const PKCS12_AuthenticatedSafe *, PKCS12_AuthenticatedSafe *);
+ASN1EXP void   ASN1CALL free_PKCS12_AuthenticatedSafe  (PKCS12_AuthenticatedSafe *);
 
 
 /*
@@ -192,11 +218,11 @@ typedef struct PKCS12_Attribute {
   heim_any_set attrValues;
 } PKCS12_Attribute;
 
-int    encode_PKCS12_Attribute(unsigned char *, size_t, const PKCS12_Attribute *, size_t *);
-int    decode_PKCS12_Attribute(const unsigned char *, size_t, PKCS12_Attribute *, size_t *);
-void   free_PKCS12_Attribute  (PKCS12_Attribute *);
-size_t length_PKCS12_Attribute(const PKCS12_Attribute *);
-int    copy_PKCS12_Attribute  (const PKCS12_Attribute *, PKCS12_Attribute *);
+ASN1EXP int    ASN1CALL decode_PKCS12_Attribute(const unsigned char *, size_t, PKCS12_Attribute *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_Attribute(unsigned char *, size_t, const PKCS12_Attribute *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_Attribute(const PKCS12_Attribute *);
+ASN1EXP int    ASN1CALL copy_PKCS12_Attribute  (const PKCS12_Attribute *, PKCS12_Attribute *);
+ASN1EXP void   ASN1CALL free_PKCS12_Attribute  (PKCS12_Attribute *);
 
 
 /*
@@ -208,11 +234,11 @@ typedef struct PKCS12_Attributes {
   PKCS12_Attribute *val;
 } PKCS12_Attributes;
 
-int    encode_PKCS12_Attributes(unsigned char *, size_t, const PKCS12_Attributes *, size_t *);
-int    decode_PKCS12_Attributes(const unsigned char *, size_t, PKCS12_Attributes *, size_t *);
-void   free_PKCS12_Attributes  (PKCS12_Attributes *);
-size_t length_PKCS12_Attributes(const PKCS12_Attributes *);
-int    copy_PKCS12_Attributes  (const PKCS12_Attributes *, PKCS12_Attributes *);
+ASN1EXP int    ASN1CALL decode_PKCS12_Attributes(const unsigned char *, size_t, PKCS12_Attributes *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_Attributes(unsigned char *, size_t, const PKCS12_Attributes *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_Attributes(const PKCS12_Attributes *);
+ASN1EXP int    ASN1CALL copy_PKCS12_Attributes  (const PKCS12_Attributes *, PKCS12_Attributes *);
+ASN1EXP void   ASN1CALL free_PKCS12_Attributes  (PKCS12_Attributes *);
 
 
 /*
@@ -229,11 +255,11 @@ typedef struct PKCS12_SafeBag {
   PKCS12_Attributes *bagAttributes;
 } PKCS12_SafeBag;
 
-int    encode_PKCS12_SafeBag(unsigned char *, size_t, const PKCS12_SafeBag *, size_t *);
-int    decode_PKCS12_SafeBag(const unsigned char *, size_t, PKCS12_SafeBag *, size_t *);
-void   free_PKCS12_SafeBag  (PKCS12_SafeBag *);
-size_t length_PKCS12_SafeBag(const PKCS12_SafeBag *);
-int    copy_PKCS12_SafeBag  (const PKCS12_SafeBag *, PKCS12_SafeBag *);
+ASN1EXP int    ASN1CALL decode_PKCS12_SafeBag(const unsigned char *, size_t, PKCS12_SafeBag *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_SafeBag(unsigned char *, size_t, const PKCS12_SafeBag *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_SafeBag(const PKCS12_SafeBag *);
+ASN1EXP int    ASN1CALL copy_PKCS12_SafeBag  (const PKCS12_SafeBag *, PKCS12_SafeBag *);
+ASN1EXP void   ASN1CALL free_PKCS12_SafeBag  (PKCS12_SafeBag *);
 
 
 /*
@@ -245,11 +271,11 @@ typedef struct PKCS12_SafeContents {
   PKCS12_SafeBag *val;
 } PKCS12_SafeContents;
 
-int    encode_PKCS12_SafeContents(unsigned char *, size_t, const PKCS12_SafeContents *, size_t *);
-int    decode_PKCS12_SafeContents(const unsigned char *, size_t, PKCS12_SafeContents *, size_t *);
-void   free_PKCS12_SafeContents  (PKCS12_SafeContents *);
-size_t length_PKCS12_SafeContents(const PKCS12_SafeContents *);
-int    copy_PKCS12_SafeContents  (const PKCS12_SafeContents *, PKCS12_SafeContents *);
+ASN1EXP int    ASN1CALL decode_PKCS12_SafeContents(const unsigned char *, size_t, PKCS12_SafeContents *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_SafeContents(unsigned char *, size_t, const PKCS12_SafeContents *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_SafeContents(const PKCS12_SafeContents *);
+ASN1EXP int    ASN1CALL copy_PKCS12_SafeContents  (const PKCS12_SafeContents *, PKCS12_SafeContents *);
+ASN1EXP void   ASN1CALL free_PKCS12_SafeContents  (PKCS12_SafeContents *);
 
 
 /*
@@ -264,11 +290,11 @@ typedef struct PKCS12_CertBag {
   heim_any certValue;
 } PKCS12_CertBag;
 
-int    encode_PKCS12_CertBag(unsigned char *, size_t, const PKCS12_CertBag *, size_t *);
-int    decode_PKCS12_CertBag(const unsigned char *, size_t, PKCS12_CertBag *, size_t *);
-void   free_PKCS12_CertBag  (PKCS12_CertBag *);
-size_t length_PKCS12_CertBag(const PKCS12_CertBag *);
-int    copy_PKCS12_CertBag  (const PKCS12_CertBag *, PKCS12_CertBag *);
+ASN1EXP int    ASN1CALL decode_PKCS12_CertBag(const unsigned char *, size_t, PKCS12_CertBag *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_CertBag(unsigned char *, size_t, const PKCS12_CertBag *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_CertBag(const PKCS12_CertBag *);
+ASN1EXP int    ASN1CALL copy_PKCS12_CertBag  (const PKCS12_CertBag *, PKCS12_CertBag *);
+ASN1EXP void   ASN1CALL free_PKCS12_CertBag  (PKCS12_CertBag *);
 
 
 /*
@@ -283,11 +309,11 @@ typedef struct PKCS12_PBEParams {
   unsigned int *iterations;
 } PKCS12_PBEParams;
 
-int    encode_PKCS12_PBEParams(unsigned char *, size_t, const PKCS12_PBEParams *, size_t *);
-int    decode_PKCS12_PBEParams(const unsigned char *, size_t, PKCS12_PBEParams *, size_t *);
-void   free_PKCS12_PBEParams  (PKCS12_PBEParams *);
-size_t length_PKCS12_PBEParams(const PKCS12_PBEParams *);
-int    copy_PKCS12_PBEParams  (const PKCS12_PBEParams *, PKCS12_PBEParams *);
+ASN1EXP int    ASN1CALL decode_PKCS12_PBEParams(const unsigned char *, size_t, PKCS12_PBEParams *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_PBEParams(unsigned char *, size_t, const PKCS12_PBEParams *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_PBEParams(const PKCS12_PBEParams *);
+ASN1EXP int    ASN1CALL copy_PKCS12_PBEParams  (const PKCS12_PBEParams *, PKCS12_PBEParams *);
+ASN1EXP void   ASN1CALL free_PKCS12_PBEParams  (PKCS12_PBEParams *);
 
 
 /*
@@ -296,11 +322,11 @@ PKCS12-OctetString ::= OCTET STRING
 
 typedef heim_octet_string PKCS12_OctetString;
 
-int    encode_PKCS12_OctetString(unsigned char *, size_t, const PKCS12_OctetString *, size_t *);
-int    decode_PKCS12_OctetString(const unsigned char *, size_t, PKCS12_OctetString *, size_t *);
-void   free_PKCS12_OctetString  (PKCS12_OctetString *);
-size_t length_PKCS12_OctetString(const PKCS12_OctetString *);
-int    copy_PKCS12_OctetString  (const PKCS12_OctetString *, PKCS12_OctetString *);
+ASN1EXP int    ASN1CALL decode_PKCS12_OctetString(const unsigned char *, size_t, PKCS12_OctetString *, size_t *);
+ASN1EXP int    ASN1CALL encode_PKCS12_OctetString(unsigned char *, size_t, const PKCS12_OctetString *, size_t *);
+ASN1EXP size_t ASN1CALL length_PKCS12_OctetString(const PKCS12_OctetString *);
+ASN1EXP int    ASN1CALL copy_PKCS12_OctetString  (const PKCS12_OctetString *, PKCS12_OctetString *);
+ASN1EXP void   ASN1CALL free_PKCS12_OctetString  (PKCS12_OctetString *);
 
 
 #endif /* __pkcs12_asn1_h__ */

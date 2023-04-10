@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)disklabel.h	8.2 (Berkeley) 7/10/94
- * $FreeBSD: release/9.0.0/sys/sys/diskmbr.h 223587 2011-06-27 10:42:06Z ae $
+ * $FreeBSD: releng/11.0/sys/sys/diskmbr.h 282465 2015-05-05 09:33:02Z ae $
  */
 
 #ifndef _SYS_DISKMBR_H_
@@ -45,14 +45,23 @@
 #define	DOSMAGIC	0xAA55
 
 #define	DOSPTYP_EXT	0x05	/* DOS extended partition */
+#define	DOSPTYP_FAT16	0x06	/* FAT16 partition */
 #define	DOSPTYP_NTFS	0x07	/* NTFS partition */
 #define	DOSPTYP_FAT32	0x0b	/* FAT32 partition */
 #define	DOSPTYP_EXTLBA	0x0f	/* DOS extended partition */
-#define	DOSPTYP_386BSD	0xa5	/* 386BSD partition type */
+#define	DOSPTYP_PPCBOOT	0x41	/* PReP/CHRP boot partition */
+#define	DOSPTYP_LDM	0x42	/* Win2k dynamic extended partition */
 #define	DOSPTYP_LINSWP	0x82	/* Linux swap partition */
 #define	DOSPTYP_LINUX	0x83	/* Linux partition */
 #define	DOSPTYP_LINLVM	0x8e	/* Linux LVM partition */
+#define	DOSPTYP_386BSD	0xa5	/* 386BSD partition type */
+#define	DOSPTYP_APPLE_UFS	0xa8	/* Apple Mac OS X boot */
+#define	DOSPTYP_APPLE_BOOT	0xab	/* Apple Mac OS X UFS */
+#define	DOSPTYP_HFS	0xaf	/* HFS/HFS+ partition type */
 #define	DOSPTYP_PMBR	0xee	/* GPT Protective MBR */
+#define	DOSPTYP_EFI	0xef	/* EFI FAT parition */
+#define	DOSPTYP_VMFS	0xfb	/* VMware VMFS partition */
+#define	DOSPTYP_VMKDIAG	0xfc	/* VMware vmkDiagnostic partition */
 #define	DOSPTYP_LINRAID	0xfd	/* Linux raid partition */
 
 struct dos_partition {

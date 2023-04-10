@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	$FreeBSD: release/9.0.0/sys/dev/ciss/cissvar.h 204648 2010-03-03 17:58:41Z mav $
+ *	$FreeBSD: releng/11.0/sys/dev/ciss/cissvar.h 298955 2016-05-03 03:41:25Z pfg $
  */
 
 /*
@@ -45,8 +45,11 @@ typedef STAILQ_HEAD(, ciss_request)	cr_qhead_t;
 
 /*
  * Maximum number of logical drives we support.
+ * If the controller does not indicate a maximum
+ * value.  This is a compatibiliy value to support
+ * older ciss controllers (e.g. model 6i)
  */
-#define CISS_MAX_LOGICAL	15
+#define CISS_MAX_LOGICAL	16
 
 /*
  * Maximum number of physical devices we support.
@@ -55,7 +58,7 @@ typedef STAILQ_HEAD(, ciss_request)	cr_qhead_t;
 
 /*
  * Interrupt reduction can be controlled by tuning the interrupt
- * coalesce delay and count paramters.  The delay (in microseconds)
+ * coalesce delay and count parameters.  The delay (in microseconds)
  * defers delivery of interrupts to increase the chance of there being
  * more than one completed command ready when the interrupt is
  * delivered.  The count expedites the delivery of the interrupt when
@@ -72,14 +75,6 @@ typedef STAILQ_HEAD(, ciss_request)	cr_qhead_t;
  * run very often.
  */
 #define CISS_HEARTBEAT_RATE		10
-
-/************************************************************************
- * Compatibility with older versions of FreeBSD
- */
-#if __FreeBSD_version < 440001
-#warning testing old-FreeBSD compat
-typedef struct proc	d_thread_t;
-#endif
 
 /************************************************************************
  * Driver version.  Only really significant to the ACU interface.
@@ -113,6 +108,7 @@ struct ciss_request
 #define CISS_REQ_DATAOUT	(1<<3)		/* data host->adapter */
 #define CISS_REQ_DATAIN		(1<<4)		/* data adapter->host */
 #define CISS_REQ_BUSY		(1<<5)		/* controller has req */
+#define CISS_REQ_CCB		(1<<6)		/* data is ccb */
 
     void			(* cr_complete)(struct ciss_request *);
     void			*cr_private;

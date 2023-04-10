@@ -1,4 +1,4 @@
-/*	$FreeBSD: release/9.0.0/sys/netinet/ip_encap.h 139823 2005-01-07 01:45:51Z imp $	*/
+/*	$FreeBSD: releng/11.0/sys/netinet/ip_encap.h 269699 2014-08-08 01:57:15Z kevlo $	*/
 /*	$KAME: ip_encap.h,v 1.7 2000/03/25 07:23:37 sumikawa Exp $	*/
 
 /*-
@@ -49,7 +49,7 @@ struct encaptab {
 };
 
 void	encap_init(void);
-void	encap4_input(struct mbuf *, int);
+int	encap4_input(struct mbuf **, int *, int);
 int	encap6_input(struct mbuf **, int *, int);
 const struct encaptab *encap_attach(int, int, const struct sockaddr *,
 	const struct sockaddr *, const struct sockaddr *,

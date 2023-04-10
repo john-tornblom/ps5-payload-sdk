@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)ttyent.h	8.1 (Berkeley) 6/2/93
- * $FreeBSD: release/9.0.0/include/ttyent.h 203964 2010-02-16 19:39:50Z imp $
+ * $FreeBSD: releng/11.0/include/ttyent.h 260913 2014-01-20 18:15:06Z nwhitehorn $
  */
 
 #ifndef	_TTYENT_H_
@@ -37,6 +37,7 @@
 
 #define	_TTYS_OFF	"off"
 #define	_TTYS_ON	"on"
+#define	_TTYS_ONIFCONSOLE "onifconsole"
 #define	_TTYS_SECURE	"secure"
 #define	_TTYS_INSECURE	"insecure"
 #define	_TTYS_WINDOW	"window"

@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)dirent.h	8.2 (Berkeley) 7/28/94
- * $FreeBSD: release/9.0.0/include/dirent.h 203964 2010-02-16 19:39:50Z imp $
+ * $FreeBSD: releng/11.0/include/dirent.h 300986 2016-05-30 07:50:57Z ed $
  */
 
 #ifndef _DIRENT_H_
@@ -38,15 +38,23 @@
  * the getdirentries(2) system call.
  */
 #include <sys/cdefs.h>
+#include <sys/_types.h>
 #include <sys/dirent.h>
 
-#if __BSD_VISIBLE || __XSI_VISIBLE
+#if __XSI_VISIBLE
+
+#ifndef _INO_T_DECLARED
+typedef	__ino_t		ino_t;
+#define	_INO_T_DECLARED
+#endif
+
 /*
  * XXX this is probably illegal in the __XSI_VISIBLE case, but brings us closer
  * to the specification.
  */
 #define	d_ino		d_fileno	/* backward and XSI compatibility */
-#endif
+
+#endif /* __XSI_VISIBLE */
 
 #if __BSD_VISIBLE
 
@@ -55,30 +63,15 @@
 /* definitions for library routines operating on directories. */
 #define	DIRBLKSIZ	1024
 
-struct _telldir;		/* see telldir.h */
-struct pthread_mutex;
-
-/* structure describing an open directory. */
-typedef struct _dirdesc {
-	int	dd_fd;		/* file descriptor associated with directory */
-	long	dd_loc;		/* offset in current buffer */
-	long	dd_size;	/* amount of data returned by getdirentries */
-	char	*dd_buf;	/* data buffer */
-	int	dd_len;		/* size of data buffer */
-	long	dd_seek;	/* magic cookie returned by getdirentries */
-	long	dd_rewind;	/* magic cookie for rewinding */
-	int	dd_flags;	/* flags for readdir */
-	struct pthread_mutex	*dd_lock;	/* lock */
-	struct _telldir *dd_td;	/* telldir position recording */
-} DIR;
-
-#define	dirfd(dirp)	((dirp)->dd_fd)
+struct _dirdesc;
+typedef struct _dirdesc DIR;
 
 /* flags for opendir2 */
 #define DTF_HIDEW	0x0001	/* hide whiteout entries */
 #define DTF_NODUP	0x0002	/* don't return duplicate names */
 #define DTF_REWIND	0x0004	/* rewind after reading union stack */
 #define __DTF_READALL	0x0008	/* everything has been read */
+#define	__DTF_SKIPREAD	0x0010  /* assume internal buffer is populated */
 
 #else /* !__BSD_VISIBLE */
 
@@ -91,9 +84,11 @@ typedef	void *	DIR;
 __BEGIN_DECLS
 #if __POSIX_VISIBLE >= 200809 || __XSI_VISIBLE >= 700
 int	 alphasort(const struct dirent **, const struct dirent **);
+int	 dirfd(DIR *);
 #endif
 #if __BSD_VISIBLE
 DIR	*__opendir2(const char *, int);
+int	 fdclosedir(DIR *);
 int	 getdents(int, char *, int);
 int	 getdirentries(int, char *, int, long *);
 #endif
@@ -109,6 +104,11 @@ void	 rewinddir(DIR *);
 int	 scandir(const char *, struct dirent ***,
 	    int (*)(const struct dirent *), int (*)(const struct dirent **,
 	    const struct dirent **));
+#ifdef __BLOCKS__
+int	 scandir_b(const char *, struct dirent ***,
+	    int (^)(const struct dirent *),
+	    int (^)(const struct dirent **, const struct dirent **));
+#endif
 #endif
 #if __XSI_VISIBLE
 void	 seekdir(DIR *, long);

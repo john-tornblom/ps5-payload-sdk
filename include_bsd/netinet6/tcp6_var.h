@@ -56,7 +56,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)tcp_var.h	8.4 (Berkeley) 5/24/95
- * $FreeBSD: release/9.0.0/sys/netinet6/tcp6_var.h 195727 2009-07-16 21:13:04Z rwatson $
+ * $FreeBSD: releng/11.0/sys/netinet6/tcp6_var.h 241916 2012-10-22 21:49:56Z delphij $
  */
 
 #ifndef _NETINET_TCP6_VAR_H_
@@ -71,9 +71,9 @@ VNET_DECLARE(int, tcp_v6mssdflt);	/* XXX */
 #endif
 
 struct	ip6_hdr;
-void	tcp6_ctlinput __P((int, struct sockaddr *, void *));
-void	tcp6_init __P((void));
-int	tcp6_input __P((struct mbuf **, int *, int));
+void	tcp6_ctlinput(int, struct sockaddr *, void *);
+void	tcp6_init(void);
+int	tcp6_input(struct mbuf **, int *, int);
 struct	rtentry *tcp_rtlookup6(struct in_conninfo *);
 
 extern struct	pr_usrreqs tcp6_usrreqs;

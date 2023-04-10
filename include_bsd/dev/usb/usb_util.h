@@ -1,4 +1,4 @@
-/* $FreeBSD: release/9.0.0/sys/dev/usb/usb_util.h 196219 2009-08-14 20:03:53Z jhb $ */
+/* $FreeBSD: releng/11.0/sys/dev/usb/usb_util.h 227701 2011-11-19 10:11:50Z hselasky $ */
 /*-
  * Copyright (c) 2008 Hans Petter Selasky. All rights reserved.
  *
@@ -27,7 +27,6 @@
 #ifndef _USB_UTIL_H_
 #define	_USB_UTIL_H_
 
-int	device_delete_all_children(device_t dev);
 uint8_t	usb_make_str_desc(void *ptr, uint16_t max_len, const char *s);
 void	usb_printbcd(char *p, uint16_t p_len, uint16_t bcd);
 void	usb_trim_spaces(char *p);

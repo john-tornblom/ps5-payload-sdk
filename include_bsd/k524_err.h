@@ -1,5 +1,5 @@
 /* Generated from /usr/src/kerberos5/lib/libkrb5/../../../crypto/heimdal/lib/krb5/k524_err.et */
-/* $Id: k524_err.et 10141 2001-06-20 02:45:58Z joda $ */
+/* $Id$ */
 
 #ifndef __k524_err_h__
 #define __k524_err_h__
@@ -23,5 +23,7 @@ typedef enum k524_error_number{
 } k524_error_number;
 
 #define ERROR_TABLE_BASE_k524 -1750206208
+
+#define COM_ERR_BINDDOMAIN_k524 "heim_com_err-1750206208"
 
 #endif /* __k524_err_h__ */

@@ -1,5 +1,5 @@
 /* Generated from /usr/src/kerberos5/lib/libkadm5clnt/../../../crypto/heimdal/lib/kadm5/kadm5_err.et */
-/* $Id: kadm5_err.et 16683 2006-02-02 13:11:47Z lha $ */
+/* $Id$ */
 
 #ifndef __kadm5_err_h__
 #define __kadm5_err_h__
@@ -64,5 +64,7 @@ typedef enum kadm5_error_number{
 } kadm5_error_number;
 
 #define ERROR_TABLE_BASE_kadm5 43787520
+
+#define COM_ERR_BINDDOMAIN_kadm5 "heim_com_err43787520"
 
 #endif /* __kadm5_err_h__ */

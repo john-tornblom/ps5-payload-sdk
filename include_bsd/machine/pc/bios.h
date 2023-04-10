@@ -24,22 +24,15 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/amd64/include/pc/bios.h 191111 2009-04-15 17:31:22Z jkim $
+ * $FreeBSD: releng/11.0/sys/amd64/include/pc/bios.h 270828 2014-08-29 21:25:47Z jhb $
  */
 
 #ifndef _MACHINE_PC_BIOS_H_
 #define _MACHINE_PC_BIOS_H_
 
-extern u_int32_t	bios_sigsearch(u_int32_t start, u_char *sig, int siglen, 
-					 int paralen, int sigofs);
-
-#define BIOS_PADDRTOVADDR(x)	((x) + KERNBASE)
-#define BIOS_VADDRTOPADDR(x)	((x) - KERNBASE)
-
 /*
  * Int 15:E820 'SMAP' structure
  */
-
 #define SMAP_SIG	0x534D4150			/* 'SMAP' */
 
 #define	SMAP_TYPE_MEMORY	1
@@ -58,22 +51,71 @@ struct bios_smap {
     u_int32_t	type;
 } __packed;
 
+/* Structure extended to include extended attribute field in ACPI 3.0. */
+struct bios_smap_xattr {
+    u_int64_t	base;
+    u_int64_t	length;
+    u_int32_t	type;
+    u_int32_t	xattr;
+} __packed;
+	
+/*
+ * System Management BIOS
+ */
+#define	SMBIOS_START	0xf0000
+#define	SMBIOS_STEP	0x10
+#define	SMBIOS_OFF	0
+#define	SMBIOS_LEN	4
+#define	SMBIOS_SIG	"_SM_"
+
+struct smbios_eps {
+	uint8_t		anchor_string[4];		/* '_SM_' */
+	uint8_t		checksum;
+	uint8_t		length;
+	uint8_t		major_version;
+	uint8_t		minor_version;
+	uint16_t	maximum_structure_size;
+	uint8_t		entry_point_revision;
+	uint8_t		formatted_area[5];
+	uint8_t		intermediate_anchor_string[5];	/* '_DMI_' */
+	uint8_t		intermediate_checksum;
+	uint16_t	structure_table_length;
+	uint32_t	structure_table_address;
+	uint16_t	number_structures;
+	uint8_t		BCD_revision;
+};
+
+struct smbios_structure_header {
+	uint8_t		type;
+	uint8_t		length;
+	uint16_t	handle;
+};
+
+#ifdef _KERNEL
+#define BIOS_PADDRTOVADDR(x)	((x) + KERNBASE)
+#define BIOS_VADDRTOPADDR(x)	((x) - KERNBASE)
+
 struct bios_oem_signature {
 	char * anchor;		/* search anchor string in BIOS memory */
 	size_t offset;		/* offset from anchor (may be negative) */
 	size_t totlen;		/* total length of BIOS string to copy */
 } __packed;
+
 struct bios_oem_range {
 	u_int from;		/* shouldn't be below 0xe0000 */
 	u_int to;		/* shouldn't be above 0xfffff */
 } __packed;
+
 struct bios_oem {
 	struct bios_oem_range range;
 	struct bios_oem_signature signature[];
 } __packed;
 
-extern int
-bios_oem_strings(struct bios_oem *oem, u_char *buffer, size_t maxlen);
-
+int	bios_oem_strings(struct bios_oem *oem, u_char *buffer, size_t maxlen);
+uint32_t bios_sigsearch(uint32_t start, u_char *sig, int siglen, int paralen,
+	    int sigofs);
+void bios_add_smap_entries(struct bios_smap *smapbase, u_int32_t smapsize,
+	    vm_paddr_t *physmap, int *physmap_idx);
+#endif
 
 #endif /* _MACHINE_PC_BIOS_H_ */

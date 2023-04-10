@@ -32,7 +32,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)errno.h	8.5 (Berkeley) 1/21/94
- * $FreeBSD: release/9.0.0/sys/sys/errno.h 220335 2011-04-04 17:39:30Z avg $
+ * $FreeBSD: releng/11.0/sys/sys/errno.h 296715 2016-03-12 07:54:42Z trasz $
  */
 
 #ifndef _SYS_ERRNO_H_
@@ -176,10 +176,12 @@ __END_DECLS
 #ifndef _POSIX_SOURCE
 #define	ENOTCAPABLE	93		/* Capabilities insufficient */
 #define	ECAPMODE	94		/* Not permitted in capability mode */
+#define	ENOTRECOVERABLE	95		/* State not recoverable */
+#define	EOWNERDEAD	96		/* Previous owner died */
 #endif /* _POSIX_SOURCE */
 
 #ifndef _POSIX_SOURCE
-#define	ELAST		94		/* Must be equal largest errno */
+#define	ELAST		96		/* Must be equal largest errno */
 #endif /* _POSIX_SOURCE */
 
 #ifdef _KERNEL
@@ -188,6 +190,7 @@ __END_DECLS
 #define	EJUSTRETURN	(-2)		/* don't modify regs, just return */
 #define	ENOIOCTL	(-3)		/* ioctl not handled by this layer */
 #define	EDIRIOCTL	(-4)		/* do direct ioctl in GEOM */
+#define	ERELOOKUP	(-5)		/* retry the directory lookup */
 #endif
 
 #endif

@@ -1,17 +1,17 @@
 /*-
  * Copyright (c) 2001-2008, by Cisco Systems, Inc. All rights reserved.
- * Copyright (c) 2008-2011, by Randall Stewart. All rights reserved.
- * Copyright (c) 2008-2011, by Michael Tuexen. All rights reserved.
+ * Copyright (c) 2008-2012, by Randall Stewart. All rights reserved.
+ * Copyright (c) 2008-2012, by Michael Tuexen. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
  * a) Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ *    this list of conditions and the following disclaimer.
  *
  * b) Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in
- *   the documentation and/or other materials provided with the distribution.
+ *    the documentation and/or other materials provided with the distribution.
  *
  * c) Neither the name of Cisco Systems, Inc. nor the names of its
  *    contributors may be used to endorse or promote products derived
@@ -30,24 +30,16 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/* $KAME: sctp_constants.h,v 1.17 2005/03/06 16:04:17 itojun Exp $	 */
-
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17 08:50:29Z tuexen $");
+__FBSDID("$FreeBSD: releng/11.0/sys/netinet/sctp_constants.h 303267 2016-07-24 14:50:16Z tuexen $");
 
-#ifndef __sctp_constants_h__
-#define __sctp_constants_h__
+#ifndef _NETINET_SCTP_CONSTANTS_H_
+#define _NETINET_SCTP_CONSTANTS_H_
+
 
 /* IANA assigned port number for SCTP over UDP encapsulation */
-/* For freebsd we cannot bind the port at
- * startup. Otherwise what will happen is
- * we really won't be bound. The user must
- * put it into the sysctl... or we need
- * to build a special timer for this to allow
- * us to wait 1 second or so after the system
- * comes up.
- */
-#define SCTP_OVER_UDP_TUNNELING_PORT 0
+#define SCTP_OVER_UDP_TUNNELING_PORT 9899
+
 /* Number of packets to get before sack sent by default */
 #define SCTP_DEFAULT_SACK_FREQ 2
 
@@ -74,6 +66,10 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
  */
 #define SCTP_LARGEST_INIT_ACCEPTED (65535 - 2048)
 
+/* Largest length of a chunk */
+#define SCTP_MAX_CHUNK_LENGTH 0xffff
+/* Largest length of an error cause */
+#define SCTP_MAX_CAUSE_LENGTH 0xffff
 /* Number of addresses where we just skip the counting */
 #define SCTP_COUNT_LIMIT 40
 
@@ -275,20 +271,11 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 /* how many addresses per assoc remote and local */
 #define SCTP_SCALE_FOR_ADDR	2
 
-/* default AUTO_ASCONF mode enable(1)/disable(0) value (sysctl) */
-#define SCTP_DEFAULT_AUTO_ASCONF	1
-
 /* default MULTIPLE_ASCONF mode enable(1)/disable(0) value (sysctl) */
 #define SCTP_DEFAULT_MULTIPLE_ASCONFS	0
 
-/* default MOBILITY_BASE mode enable(1)/disable(0) value (sysctl) */
-#define SCTP_DEFAULT_MOBILITY_BASE	0
-
-/* default MOBILITY_FASTHANDOFF mode enable(1)/disable(0) value (sysctl) */
-#define SCTP_DEFAULT_MOBILITY_FASTHANDOFF	0
-
 /*
- * Theshold for rwnd updates, we have to read (sb_hiwat >>
+ * Threshold for rwnd updates, we have to read (sb_hiwat >>
  * SCTP_RWND_HIWAT_SHIFT) before we will look to see if we need to send a
  * window update sack. When we look, we compare the last rwnd we sent vs the
  * current rwnd. It too must be greater than this value. Using 3 divdes the
@@ -348,7 +335,7 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_NO_FR_UNLESS_SEGMENT_SMALLER 1
 
 /* default max I can burst out after a fast retransmit, 0 disables it */
-#define SCTP_DEF_MAX_BURST 0
+#define SCTP_DEF_MAX_BURST 4
 #define SCTP_DEF_HBMAX_BURST 4
 #define SCTP_DEF_FRMAX_BURST 4
 
@@ -358,6 +345,7 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_RTT_FROM_NON_DATA 0
 #define SCTP_RTT_FROM_DATA     1
 
+#define PR_SCTP_UNORDERED_FLAG 0x0001
 
 /* IP hdr (20/40) + 12+2+2 (enet) + sctp common 12 */
 #define SCTP_FIRST_MBUF_RESV 68
@@ -372,6 +360,7 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_DATAGRAM_ACKED		10010
 #define SCTP_DATAGRAM_MARKED		20010
 #define SCTP_FORWARD_TSN_SKIP		30010
+#define SCTP_DATAGRAM_NR_ACKED		40010
 
 /* chunk output send from locations */
 #define SCTP_OUTPUT_FROM_USR_SEND       0
@@ -391,13 +380,15 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_OUTPUT_FROM_COOKIE_ACK     14
 #define SCTP_OUTPUT_FROM_DRAIN          15
 #define SCTP_OUTPUT_FROM_CLOSING        16
+#define SCTP_OUTPUT_FROM_SOCKOPT        17
+
 /* SCTP chunk types are moved sctp.h for application (NAT, FW) use */
 
 /* align to 32-bit sizes */
-#define SCTP_SIZE32(x)	((((x)+3) >> 2) << 2)
+#define SCTP_SIZE32(x)	((((x) + 3) >> 2) << 2)
 
-#define IS_SCTP_CONTROL(a) ((a)->chunk_type != SCTP_DATA)
-#define IS_SCTP_DATA(a) ((a)->chunk_type == SCTP_DATA)
+#define IS_SCTP_CONTROL(a) (((a)->chunk_type != SCTP_DATA) && ((a)->chunk_type != SCTP_IDATA))
+#define IS_SCTP_DATA(a) (((a)->chunk_type == SCTP_DATA) || ((a)->chunk_type == SCTP_IDATA))
 
 
 /* SCTP parameter types */
@@ -416,7 +407,8 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_STR_RESET_IN_REQUEST	0x000e
 #define SCTP_STR_RESET_TSN_REQUEST	0x000f
 #define SCTP_STR_RESET_RESPONSE		0x0010
-#define SCTP_STR_RESET_ADD_STREAMS	0x0011
+#define SCTP_STR_RESET_ADD_OUT_STREAMS	0x0011
+#define SCTP_STR_RESET_ADD_IN_STREAMS   0x0012
 
 #define SCTP_MAX_RESET_PARAMS 2
 #define SCTP_STREAM_RESET_TSN_DELTA    0x1000
@@ -457,18 +449,6 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_HAS_NAT_SUPPORT            0xc007
 #define SCTP_NAT_VTAGS                  0xc008
 
-/* Notification error codes */
-#define SCTP_NOTIFY_DATAGRAM_UNSENT	0x0001
-#define SCTP_NOTIFY_DATAGRAM_SENT	0x0002
-#define SCTP_FAILED_THRESHOLD		0x0004
-#define SCTP_HEARTBEAT_SUCCESS		0x0008
-#define SCTP_RESPONSE_TO_USER_REQ	0x0010
-#define SCTP_INTERNAL_ERROR		0x0020
-#define SCTP_SHUTDOWN_GUARD_EXPIRES	0x0040
-#define SCTP_RECEIVED_SACK		0x0080
-#define SCTP_PEER_FAULTY		0x0100
-#define SCTP_ICMP_REFUSED		0x0200
-
 /* bits for TOS field */
 #define SCTP_ECT0_BIT		0x02
 #define SCTP_ECT1_BIT		0x01
@@ -483,7 +463,7 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 
 
 /*
- * SCTP states for internal state machine XXX (should match "user" values)
+ * SCTP states for internal state machine
  */
 #define SCTP_STATE_EMPTY		0x0000
 #define SCTP_STATE_INUSE		0x0001
@@ -531,13 +511,10 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 /* How long a cookie lives in milli-seconds */
 #define SCTP_DEFAULT_COOKIE_LIFE	60000
 
-/* resource limit of streams */
-#define MAX_SCTP_STREAMS	2048
-
 /* Maximum the mapping array will  grow to (TSN mapping array) */
 #define SCTP_MAPPING_ARRAY	512
 
-/* size of the inital malloc on the mapping array */
+/* size of the initial malloc on the mapping array */
 #define SCTP_INITIAL_MAPPING_ARRAY  16
 /* how much we grow the mapping array each call */
 #define SCTP_MAPPING_ARRAY_INCR     32
@@ -640,10 +617,6 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 /* 30 seconds + RTO (in ms) */
 #define SCTP_HB_DEFAULT_MSEC	30000
 
-/* Max time I will wait for Shutdown to complete */
-#define SCTP_DEF_MAX_SHUTDOWN_SEC 180
-
-
 /*
  * This is how long a secret lives, NOT how long a cookie lives how many
  * ticks the current secret will live.
@@ -666,8 +639,9 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_DEF_PMTU_RAISE_SEC	600	/* 10 min between raise attempts */
 
 
-/* How many streams I request initally by default */
+/* How many streams I request initially by default */
 #define SCTP_OSTREAM_INITIAL 10
+#define SCTP_ISTREAM_INITIAL 2048
 
 /*
  * How many smallest_mtu's need to increase before a window update sack is
@@ -738,7 +712,6 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 /* small chunk store for looking at chunk_list in auth */
 #define SCTP_SMALL_CHUNK_STORE 260
 
-#define SCTP_DEFAULT_MINSEGMENT 512	/* MTU size ... if no mtu disc */
 #define SCTP_HOW_MANY_SECRETS	2	/* how many secrets I keep */
 
 #define SCTP_NUMBER_OF_SECRETS	8	/* or 8 * 4 = 32 octets */
@@ -752,35 +725,29 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_NOTIFY_ASSOC_DOWN                   2
 #define SCTP_NOTIFY_INTERFACE_DOWN               3
 #define SCTP_NOTIFY_INTERFACE_UP                 4
-#define SCTP_NOTIFY_DG_FAIL                      5
-#define SCTP_NOTIFY_STRDATA_ERR                  6
-#define SCTP_NOTIFY_ASSOC_ABORTED                7
-#define SCTP_NOTIFY_PEER_OPENED_STREAM           8
-#define SCTP_NOTIFY_STREAM_OPENED_OK             9
+#define SCTP_NOTIFY_SENT_DG_FAIL                 5
+#define SCTP_NOTIFY_UNSENT_DG_FAIL               6
+#define SCTP_NOTIFY_SPECIAL_SP_FAIL              7
+#define SCTP_NOTIFY_ASSOC_LOC_ABORTED            8
+#define SCTP_NOTIFY_ASSOC_REM_ABORTED            9
 #define SCTP_NOTIFY_ASSOC_RESTART               10
-#define SCTP_NOTIFY_HB_RESP                     11
-#define SCTP_NOTIFY_ASCONF_SUCCESS              12
-#define SCTP_NOTIFY_ASCONF_FAILED               13
-#define SCTP_NOTIFY_PEER_SHUTDOWN               14
-#define SCTP_NOTIFY_ASCONF_ADD_IP               15
-#define SCTP_NOTIFY_ASCONF_DELETE_IP            16
-#define SCTP_NOTIFY_ASCONF_SET_PRIMARY          17
-#define SCTP_NOTIFY_PARTIAL_DELVIERY_INDICATION 18
-#define SCTP_NOTIFY_INTERFACE_CONFIRMED         20
-#define SCTP_NOTIFY_STR_RESET_RECV              21
-#define SCTP_NOTIFY_STR_RESET_SEND              22
-#define SCTP_NOTIFY_STR_RESET_FAILED_OUT        23
-#define SCTP_NOTIFY_STR_RESET_FAILED_IN         24
-#define SCTP_NOTIFY_AUTH_NEW_KEY                25
-#define SCTP_NOTIFY_AUTH_FREE_KEY               26
-#define SCTP_NOTIFY_SPECIAL_SP_FAIL             27
-#define SCTP_NOTIFY_NO_PEER_AUTH                28
-#define SCTP_NOTIFY_SENDER_DRY                  29
-#define SCTP_NOTIFY_STR_RESET_ADD_OK            30
-#define SCTP_NOTIFY_STR_RESET_ADD_FAIL          31
-#define SCTP_NOTIFY_STR_RESET_INSTREAM_ADD_OK   32
-#define SCTP_NOTIFY_MAX                         32
-
+#define SCTP_NOTIFY_PEER_SHUTDOWN               11
+#define SCTP_NOTIFY_ASCONF_ADD_IP               12
+#define SCTP_NOTIFY_ASCONF_DELETE_IP            13
+#define SCTP_NOTIFY_ASCONF_SET_PRIMARY          14
+#define SCTP_NOTIFY_PARTIAL_DELVIERY_INDICATION 15
+#define SCTP_NOTIFY_INTERFACE_CONFIRMED         16
+#define SCTP_NOTIFY_STR_RESET_RECV              17
+#define SCTP_NOTIFY_STR_RESET_SEND              18
+#define SCTP_NOTIFY_STR_RESET_FAILED_OUT        19
+#define SCTP_NOTIFY_STR_RESET_FAILED_IN         20
+#define SCTP_NOTIFY_STR_RESET_DENIED_OUT        21
+#define SCTP_NOTIFY_STR_RESET_DENIED_IN         22
+#define SCTP_NOTIFY_AUTH_NEW_KEY                23
+#define SCTP_NOTIFY_AUTH_FREE_KEY               24
+#define SCTP_NOTIFY_NO_PEER_AUTH                25
+#define SCTP_NOTIFY_SENDER_DRY                  26
+#define SCTP_NOTIFY_REMOTE_ERROR                27
 
 /* This is the value for messages that are NOT completely
  * copied down where we will start to split the message.
@@ -790,24 +757,28 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
  */
 #define SCTP_DEFAULT_SPLIT_POINT_MIN 2904
 
+/* Maximum length of diagnostic information in error causes */
+#define SCTP_DIAG_INFO_LEN 64
+
 /* ABORT CODES and other tell-tale location
  * codes are generated by adding the below
  * to the instance id.
  */
 
 /* File defines */
-#define SCTP_FROM_SCTP_INPUT   0x10000000
-#define SCTP_FROM_SCTP_PCB     0x20000000
-#define SCTP_FROM_SCTP_INDATA  0x30000000
-#define SCTP_FROM_SCTP_TIMER   0x40000000
-#define SCTP_FROM_SCTP_USRREQ  0x50000000
-#define SCTP_FROM_SCTPUTIL     0x60000000
-#define SCTP_FROM_SCTP6_USRREQ 0x70000000
-#define SCTP_FROM_SCTP_ASCONF  0x80000000
-#define SCTP_FROM_SCTP_OUTPUT  0x90000000
-#define SCTP_FROM_SCTP_PEELOFF 0xa0000000
-#define SCTP_FROM_SCTP_PANDA   0xb0000000
-#define SCTP_FROM_SCTP_SYSCTL  0xc0000000
+#define SCTP_FROM_SCTP_INPUT        0x10000000
+#define SCTP_FROM_SCTP_PCB          0x20000000
+#define SCTP_FROM_SCTP_INDATA       0x30000000
+#define SCTP_FROM_SCTP_TIMER        0x40000000
+#define SCTP_FROM_SCTP_USRREQ       0x50000000
+#define SCTP_FROM_SCTPUTIL          0x60000000
+#define SCTP_FROM_SCTP6_USRREQ      0x70000000
+#define SCTP_FROM_SCTP_ASCONF       0x80000000
+#define SCTP_FROM_SCTP_OUTPUT       0x90000000
+#define SCTP_FROM_SCTP_PEELOFF      0xa0000000
+#define SCTP_FROM_SCTP_PANDA        0xb0000000
+#define SCTP_FROM_SCTP_SYSCTL       0xc0000000
+#define SCTP_FROM_SCTP_CC_FUNCTIONS 0xd0000000
 
 /* Location ID's */
 #define SCTP_LOC_1  0x00000001
@@ -843,6 +814,8 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 #define SCTP_LOC_31 0x0000001f
 #define SCTP_LOC_32 0x00000020
 #define SCTP_LOC_33 0x00000021
+#define SCTP_LOC_34 0x00000022
+#define SCTP_LOC_35 0x00000023
 
 
 /* Free assoc codes */
@@ -914,12 +887,19 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 
 /* modular comparison */
 /* See RFC 1982 for details. */
-#define SCTP_SSN_GT(a, b) (((a < b) && ((uint16_t)(b - a) > (1U<<15))) || \
-                           ((a > b) && ((uint16_t)(a - b) < (1U<<15))))
-#define SCTP_SSN_GE(a, b) (SCTP_SSN_GT(a, b) || (a == b))
-#define SCTP_TSN_GT(a, b) (((a < b) && ((uint32_t)(b - a) > (1U<<31))) || \
-                           ((a > b) && ((uint32_t)(a - b) < (1U<<31))))
-#define SCTP_TSN_GE(a, b) (SCTP_TSN_GT(a, b) || (a == b))
+#define SCTP_UINT16_GT(a, b) (((a < b) && ((uint16_t)(b - a) > (1U<<15))) || \
+                              ((a > b) && ((uint16_t)(a - b) < (1U<<15))))
+#define SCTP_UINT16_GE(a, b) (SCTP_UINT16_GT(a, b) || (a == b))
+#define SCTP_UINT32_GT(a, b) (((a < b) && ((uint32_t)(b - a) > (1U<<31))) || \
+                              ((a > b) && ((uint32_t)(a - b) < (1U<<31))))
+#define SCTP_UINT32_GE(a, b) (SCTP_UINT32_GT(a, b) || (a == b))
+
+#define SCTP_SSN_GT(a, b) SCTP_UINT16_GT(a, b)
+#define SCTP_SSN_GE(a, b) SCTP_UINT16_GE(a, b)
+#define SCTP_TSN_GT(a, b) SCTP_UINT32_GT(a, b)
+#define SCTP_TSN_GE(a, b) SCTP_UINT32_GE(a, b)
+#define SCTP_MSGID_GT(o, a, b) ((o == 1) ? SCTP_UINT16_GT((uint16_t)a, (uint16_t)b) : SCTP_UINT32_GT(a, b))
+#define SCTP_MSGID_GE(o, a, b) ((o == 1) ? SCTP_UINT16_GE((uint16_t)a, (uint16_t)b) : SCTP_UINT32_GE(a, b))
 
 /* Mapping array manipulation routines */
 #define SCTP_IS_TSN_PRESENT(arry, gap) ((arry[(gap >> 3)] >> (gap & 0x07)) & 0x01)
@@ -931,7 +911,7 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
 					} else { \
 						gap = (MAX_TSN - mapping_tsn) + tsn + 1; \
 					} \
-                  } while(0)
+                  } while (0)
 
 
 #define SCTP_RETRAN_DONE -1
@@ -942,7 +922,7 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
  * element.  Each entry will take 2 4 byte ints (and of course the overhead
  * of the next pointer as well). Using 15 as an example will yield * ((8 *
  * 15) + 8) or 128 bytes of overhead for each timewait block that gets
- * initialized. Increasing it to 31 would yeild 256 bytes per block.
+ * initialized. Increasing it to 31 would yield 256 bytes per block.
  */
 #define SCTP_NUMBER_IN_VTAG_BLOCK 15
 /*
@@ -1008,27 +988,17 @@ __FBSDID("$FreeBSD: release/9.0.0/sys/netinet/sctp_constants.h 225635 2011-09-17
      (((uint8_t *)&(a)->s_addr)[1] == 168)))
 
 #define IN4_ISLOOPBACK_ADDRESS(a) \
-    ((((uint8_t *)&(a)->s_addr)[0] == 127) && \
-     (((uint8_t *)&(a)->s_addr)[1] == 0) && \
-     (((uint8_t *)&(a)->s_addr)[2] == 0) && \
-     (((uint8_t *)&(a)->s_addr)[3] == 1))
+    (((uint8_t *)&(a)->s_addr)[0] == 127)
+
+#define IN4_ISLINKLOCAL_ADDRESS(a) \
+    ((((uint8_t *)&(a)->s_addr)[0] == 169) && \
+     (((uint8_t *)&(a)->s_addr)[1] == 254))
 
 
 #if defined(_KERNEL)
-
-#define SCTP_GETTIME_TIMESPEC(x) (getnanouptime(x))
-#define SCTP_GETTIME_TIMEVAL(x)	(getmicrouptime(x))
-#define SCTP_GETPTIME_TIMEVAL(x)	(microuptime(x))
+#define SCTP_GETTIME_TIMEVAL(x) (getmicrouptime(x))
+#define SCTP_GETPTIME_TIMEVAL(x) (microuptime(x))
 #endif
-/*#if defined(__FreeBSD__) || defined(__APPLE__)*/
-/*#define SCTP_GETTIME_TIMEVAL(x) { \*/
-/*	(x)->tv_sec = ticks / 1000; \*/
-/*	(x)->tv_usec = (ticks % 1000) * 1000; \*/
-/*}*/
-
-/*#else*/
-/*#define SCTP_GETTIME_TIMEVAL(x)	(microtime(x))*/
-/*#endif				 __FreeBSD__ */
 
 #if defined(_KERNEL) || defined(__Userspace__)
 #define sctp_sowwakeup(inp, so) \

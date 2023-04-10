@@ -31,12 +31,18 @@
  *
  *	@(#)null.h	8.3 (Berkeley) 8/20/94
  *
- * $FreeBSD: release/9.0.0/sys/fs/nullfs/null.h 143642 2005-03-15 13:49:33Z jeff $
+ * $FreeBSD: releng/11.0/sys/fs/nullfs/null.h 250505 2013-05-11 11:17:44Z kib $
  */
+
+#ifndef	FS_NULL_H
+#define	FS_NULL_H
+
+#define	NULLM_CACHE	0x0001
 
 struct null_mount {
 	struct mount	*nullm_vfs;
 	struct vnode	*nullm_rootvp;	/* Reference to root null_node */
+	uint64_t	nullm_flags;
 };
 
 #ifdef _KERNEL
@@ -47,7 +53,11 @@ struct null_node {
 	LIST_ENTRY(null_node)	null_hash;	/* Hash list */
 	struct vnode	        *null_lowervp;	/* VREFed once */
 	struct vnode		*null_vnode;	/* Back pointer */
+	u_int			null_flags;
 };
+
+#define	NULLV_NOUNLOCK	0x0001
+#define	NULLV_DROP	0x0002
 
 #define	MOUNTTONULLMOUNT(mp) ((struct null_mount *)((mp)->mnt_data))
 #define	VTONULL(vp) ((struct null_node *)(vp)->v_data)
@@ -56,6 +66,7 @@ struct null_node {
 int nullfs_init(struct vfsconf *vfsp);
 int nullfs_uninit(struct vfsconf *vfsp);
 int null_nodeget(struct mount *mp, struct vnode *target, struct vnode **vpp);
+struct vnode *null_hashget(struct mount *mp, struct vnode *lowervp);
 void null_hashrem(struct null_node *xp);
 int null_bypass(struct vop_generic_args *ap);
 
@@ -79,3 +90,5 @@ MALLOC_DECLARE(M_NULLFSNODE);
 #endif /* NULLFS_DEBUG */
 
 #endif /* _KERNEL */
+
+#endif

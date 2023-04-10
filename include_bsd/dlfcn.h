@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/include/dlfcn.h 205606 2010-03-24 15:59:51Z gahr $
+ * $FreeBSD: releng/11.0/include/dlfcn.h 229768 2012-01-07 10:33:01Z kib $
  */
 
 #ifndef _DLFCN_H_
@@ -118,6 +118,7 @@ void	*dlopen(const char *, int);
 void	*dlsym(void * __restrict, const char * __restrict);
 
 #if __BSD_VISIBLE
+void	*fdlopen(int, int);
 int	 dladdr(const void * __restrict, Dl_info * __restrict);
 dlfunc_t dlfunc(void * __restrict, const char * __restrict);
 int	 dlinfo(void * __restrict, int, void * __restrict);

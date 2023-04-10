@@ -30,7 +30,7 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)DEFS.h	5.1 (Berkeley) 4/23/90
- * $FreeBSD: release/9.0.0/sys/amd64/include/asm.h 171914 2007-08-22 04:26:07Z jkoshy $
+ * $FreeBSD: releng/11.0/sys/amd64/include/asm.h 275004 2014-11-25 03:50:31Z emaste $
  */
 
 #ifndef _MACHINE_ASM_H_
@@ -43,7 +43,6 @@
 #define	PIC_GOT(x)	x@GOTPCREL(%rip)
 #else
 #define	PIC_PLT(x)	x
-#define	PIC_GOT(x)	x
 #endif
 
 /*
@@ -78,6 +77,15 @@
 #endif
 
 #define	END(x)		.size x, . - x
+/*
+ * WEAK_REFERENCE(): create a weak reference alias from sym. 
+ * The macro is not a general asm macro that takes arbitrary names,
+ * but one that takes only C names. It does the non-null name
+ * translation inside the macro.
+ */
+#define	WEAK_REFERENCE(sym, alias)					\
+	.weak CNAME(alias);						\
+	.equ CNAME(alias),CNAME(sym)
 
 #define RCSID(x)	.text; .asciz x
 

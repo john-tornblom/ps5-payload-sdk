@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/dev/smbus/smb.h 162234 2006-09-11 20:52:41Z jhb $
+ * $FreeBSD: releng/11.0/sys/dev/smbus/smb.h 281985 2015-04-25 16:15:01Z grembo $
  *
  */
 #ifndef __SMB_H
@@ -32,27 +32,33 @@
 #include <sys/ioccom.h>
 
 struct smbcmd {
-	char cmd;
-	int count;
-	u_char slave;
+	u_char cmd;
+	u_char reserved;
+	u_short op;
 	union {
-		char byte;
-		short word;
-
-		char *byte_ptr;
-		short *word_ptr;
-
-		struct {
-			short sdata;
-			short *rdata;
-		} process;
-	} data;
+		char	byte;
+		char	buf[2];
+		short	word;
+	} wdata;
+	union {
+		char	byte;
+		char	buf[2];
+		short	word;
+	} rdata;
+	int  slave;
+	char *wbuf;	/* use wdata if NULL */
+	int  wcount;
+	char *rbuf;	/* use rdata if NULL */
+	int  rcount;
 };
 
 /*
  * SMBus spec 2.0 says block transfers may be at most 32 bytes.
+ * We use SMBus for i2c as well, make the size limit something more
+ * reasonable.  Keep in mind that a char buf array is declared on the
+ * kernel stack.
  */
-#define SMB_MAXBLOCKSIZE	32
+#define SMB_MAXBLOCKSIZE	1024
 
 #define SMB_QUICK_WRITE	_IOW('i', 1, struct smbcmd)
 #define SMB_QUICK_READ	_IOW('i', 2, struct smbcmd)
@@ -66,5 +72,6 @@ struct smbcmd {
 #define SMB_BWRITE	_IOW('i', 10, struct smbcmd)
 #define SMB_OLD_BREAD	_IOW('i', 11, struct smbcmd)
 #define SMB_BREAD	_IOWR('i', 11, struct smbcmd)
+#define SMB_TRANS	_IOWR('i', 12, struct smbcmd)
 
 #endif

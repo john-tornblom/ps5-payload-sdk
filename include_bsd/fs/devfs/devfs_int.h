@@ -22,7 +22,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/fs/devfs/devfs_int.h 213725 2010-10-12 15:58:52Z jh $
+ * $FreeBSD: releng/11.0/sys/fs/devfs/devfs_int.h 277391 2015-01-19 17:36:52Z kib $
  */
 
 /*
@@ -56,6 +56,7 @@ struct cdev_priv {
 	u_int			cdp_flags;
 #define CDP_ACTIVE		(1 << 0)
 #define CDP_SCHED_DTR		(1 << 1)
+#define	CDP_UNREF_DTR		(1 << 2)
 
 	u_int			cdp_inuse;
 	u_int			cdp_maxdirent;
@@ -69,7 +70,7 @@ struct cdev_priv {
 	LIST_HEAD(, cdev_privdata) cdp_fdpriv;
 };
 
-#define	cdev2priv(c)	member2struct(cdev_priv, cdp_c, c)
+#define	cdev2priv(c)	__containerof(c, struct cdev_priv, cdp_c)
 
 struct cdev	*devfs_alloc(int);
 int	devfs_dev_exists(const char *);

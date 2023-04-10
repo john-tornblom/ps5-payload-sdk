@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/tty.h 223722 2011-07-02 13:54:20Z ed $
+ * $FreeBSD: releng/11.0/sys/sys/tty.h 259549 2013-12-18 12:50:43Z glebius $
  */
 
 #ifndef _SYS_TTY_H_
@@ -166,12 +166,16 @@ void	tty_rel_gone(struct tty *tp);
 
 #define	tty_lock(tp)		mtx_lock((tp)->t_mtx)
 #define	tty_unlock(tp)		mtx_unlock((tp)->t_mtx)
+#define	tty_lock_owned(tp)	mtx_owned((tp)->t_mtx)
 #define	tty_lock_assert(tp,ma)	mtx_assert((tp)->t_mtx, (ma))
 #define	tty_getlock(tp)		((tp)->t_mtx)
 
 /* Device node creation. */
-void	tty_makedev(struct tty *tp, struct ucred *cred, const char *fmt, ...)
-    __printflike(3, 4);
+int	tty_makedevf(struct tty *tp, struct ucred *cred, int flags,
+    const char *fmt, ...) __printflike(4, 5);
+#define	TTYMK_CLONING		0x1
+#define	tty_makedev(tp, cred, fmt, ...) \
+	(void )tty_makedevf((tp), (cred), 0, (fmt), ## __VA_ARGS__)
 #define	tty_makealias(tp,fmt,...) \
 	make_dev_alias((tp)->t_dev, fmt, ## __VA_ARGS__)
 
@@ -180,6 +184,7 @@ void	tty_signal_sessleader(struct tty *tp, int signal);
 void	tty_signal_pgrp(struct tty *tp, int signal);
 /* Waking up readers/writers. */
 int	tty_wait(struct tty *tp, struct cv *cv);
+int	tty_wait_background(struct tty *tp, struct thread *td, int sig);
 int	tty_timedwait(struct tty *tp, struct cv *cv, int timo);
 void	tty_wakeup(struct tty *tp, int flags);
 
@@ -191,6 +196,7 @@ int	tty_ioctl(struct tty *tp, u_long cmd, void *data, int fflag,
     struct thread *td);
 int	tty_ioctl_compat(struct tty *tp, u_long cmd, caddr_t data,
     int fflag, struct thread *td);
+void	tty_set_winsize(struct tty *tp, const struct winsize *wsz);
 void	tty_init_console(struct tty *tp, speed_t speed);
 void	tty_flush(struct tty *tp, int flags);
 void	tty_hiwat_in_block(struct tty *tp);

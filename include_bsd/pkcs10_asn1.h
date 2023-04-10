@@ -25,9 +25,9 @@ typedef char *heim_general_string;
 
 typedef char *heim_utf8_string;
 
-typedef char *heim_printable_string;
+typedef struct heim_octet_string heim_printable_string;
 
-typedef char *heim_ia5_string;
+typedef struct heim_octet_string heim_ia5_string;
 
 typedef struct heim_bmp_string {
   size_t length;
@@ -70,6 +70,17 @@ typedef struct heim_octet_string heim_any_set;
     }                                                          \
   } while (0)
 
+#ifdef _WIN32
+#ifndef ASN1_LIB
+#define ASN1EXP  __declspec(dllimport)
+#else
+#define ASN1EXP
+#endif
+#define ASN1CALL __stdcall
+#else
+#define ASN1EXP
+#define ASN1CALL
+#endif
 struct units;
 
 #endif
@@ -87,22 +98,23 @@ CertificationRequestInfo ::= SEQUENCE {
 */
 
 typedef struct CertificationRequestInfo {
+  heim_octet_string _save;
   enum  {
     pkcs10_v1 = 0
 } version;
   Name subject;
   SubjectPublicKeyInfo subjectPKInfo;
-  struct  {
+  struct CertificationRequestInfo_attributes {
     unsigned int len;
     Attribute *val;
   } *attributes;
 } CertificationRequestInfo;
 
-int    encode_CertificationRequestInfo(unsigned char *, size_t, const CertificationRequestInfo *, size_t *);
-int    decode_CertificationRequestInfo(const unsigned char *, size_t, CertificationRequestInfo *, size_t *);
-void   free_CertificationRequestInfo  (CertificationRequestInfo *);
-size_t length_CertificationRequestInfo(const CertificationRequestInfo *);
-int    copy_CertificationRequestInfo  (const CertificationRequestInfo *, CertificationRequestInfo *);
+ASN1EXP int    ASN1CALL decode_CertificationRequestInfo(const unsigned char *, size_t, CertificationRequestInfo *, size_t *);
+ASN1EXP int    ASN1CALL encode_CertificationRequestInfo(unsigned char *, size_t, const CertificationRequestInfo *, size_t *);
+ASN1EXP size_t ASN1CALL length_CertificationRequestInfo(const CertificationRequestInfo *);
+ASN1EXP int    ASN1CALL copy_CertificationRequestInfo  (const CertificationRequestInfo *, CertificationRequestInfo *);
+ASN1EXP void   ASN1CALL free_CertificationRequestInfo  (CertificationRequestInfo *);
 
 
 /*
@@ -120,11 +132,11 @@ typedef struct CertificationRequest {
   heim_bit_string signature;
 } CertificationRequest;
 
-int    encode_CertificationRequest(unsigned char *, size_t, const CertificationRequest *, size_t *);
-int    decode_CertificationRequest(const unsigned char *, size_t, CertificationRequest *, size_t *);
-void   free_CertificationRequest  (CertificationRequest *);
-size_t length_CertificationRequest(const CertificationRequest *);
-int    copy_CertificationRequest  (const CertificationRequest *, CertificationRequest *);
+ASN1EXP int    ASN1CALL decode_CertificationRequest(const unsigned char *, size_t, CertificationRequest *, size_t *);
+ASN1EXP int    ASN1CALL encode_CertificationRequest(unsigned char *, size_t, const CertificationRequest *, size_t *);
+ASN1EXP size_t ASN1CALL length_CertificationRequest(const CertificationRequest *);
+ASN1EXP int    ASN1CALL copy_CertificationRequest  (const CertificationRequest *, CertificationRequest *);
+ASN1EXP void   ASN1CALL free_CertificationRequest  (CertificationRequest *);
 
 
 #endif /* __pkcs10_asn1_h__ */

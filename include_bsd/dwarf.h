@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/lib/libdwarf/dwarf.h 179187 2008-05-22 02:14:23Z jb $
+ * $Id: dwarf.h 3052 2014-05-26 20:36:24Z kaiwang27 $
  */
 
 #ifndef	_DWARF_H_
@@ -87,10 +87,24 @@
 #define DW_TAG_imported_unit            0x3d
 #define DW_TAG_condition                0x3f
 #define DW_TAG_shared_type              0x40
-
+#define DW_TAG_type_unit		0x41
+#define DW_TAG_rvalue_reference_type	0x42
+#define DW_TAG_template_alias		0x43
 #define DW_TAG_lo_user			0x4080
-
 #define DW_TAG_hi_user			0xffff
+
+/* GNU extensions. */
+#define	DW_TAG_format_label		0x4101
+#define	DW_TAG_function_template	0x4102
+#define	DW_TAG_class_template		0x4103
+#define	DW_TAG_GNU_BINCL		0x4104
+#define	DW_TAG_GNU_EINCL		0x4105
+#define	DW_TAG_GNU_template_template_parameter	0x4106
+#define	DW_TAG_GNU_template_template_param	0x4106
+#define	DW_TAG_GNU_template_parameter_pack	0x4107
+#define	DW_TAG_GNU_formal_parameter_pack	0x4108
+#define	DW_TAG_GNU_call_site			0x4109
+#define	DW_TAG_GNU_call_site_parameter		0x410a
 
 #define DW_CHILDREN_no			0x00
 #define DW_CHILDREN_yes			0x01
@@ -158,10 +172,67 @@
 #define DW_AT_variable_parameter	0x4b
 #define DW_AT_virtuality		0x4c
 #define DW_AT_vtable_elem_location	0x4d
-
+#define DW_AT_allocated			0x4e
+#define DW_AT_associated		0x4f
+#define DW_AT_data_location		0x50
+#define DW_AT_byte_stride		0x51
+#define DW_AT_entry_pc			0x52
+#define DW_AT_use_UTF8			0x53
+#define DW_AT_extension			0x54
+#define DW_AT_ranges			0x55
+#define DW_AT_trampoline		0x56
+#define DW_AT_call_column		0x57
+#define DW_AT_call_file			0x58
+#define DW_AT_call_line			0x59
+#define DW_AT_description		0x5a
+#define DW_AT_binary_scale		0x5b
+#define DW_AT_decimal_scale		0x5c
+#define DW_AT_small			0x5d
+#define DW_AT_decimal_sign		0x5e
+#define DW_AT_digit_count		0x5f
+#define DW_AT_picture_string		0x60
+#define DW_AT_mutable			0x61
+#define DW_AT_threads_scaled		0x62
+#define DW_AT_explicit			0x63
+#define DW_AT_object_pointer		0x64
+#define DW_AT_endianity			0x65
+#define DW_AT_elemental			0x66
+#define DW_AT_pure			0x67
+#define DW_AT_recursive			0x68
+#define DW_AT_signature			0x69
+#define DW_AT_main_subprogram		0x6a
+#define DW_AT_data_bit_offset		0x6b
+#define DW_AT_const_expr		0x6c
+#define DW_AT_enum_class		0x6d
+#define DW_AT_linkage_name		0x6e
 #define DW_AT_lo_user			0x2000
-
 #define DW_AT_hi_user			0x3fff
+
+/* GNU extensions. */
+#define	DW_AT_sf_names				0x2101
+#define	DW_AT_src_info				0x2102
+#define	DW_AT_mac_info				0x2103
+#define	DW_AT_src_coords			0x2104
+#define	DW_AT_body_begin			0x2105
+#define	DW_AT_body_end				0x2106
+#define	DW_AT_GNU_vector			0x2107
+#define	DW_AT_GNU_guarded_by			0x2108
+#define	DW_AT_GNU_pt_guarded_by			0x2109
+#define	DW_AT_GNU_guarded			0x210a
+#define	DW_AT_GNU_pt_guarded			0x210b
+#define	DW_AT_GNU_locks_excluded		0x210c
+#define	DW_AT_GNU_exclusive_locks_required	0x210d
+#define	DW_AT_GNU_shared_locks_required		0x210e
+#define	DW_AT_GNU_odr_signature			0x210f
+#define	DW_AT_GNU_template_name			0x2110
+#define	DW_AT_GNU_call_site_value		0x2111
+#define	DW_AT_GNU_call_site_data_value		0x2112
+#define	DW_AT_GNU_call_site_target		0x2113
+#define	DW_AT_GNU_call_site_target_clobbered	0x2114
+#define	DW_AT_GNU_tail_call			0x2115
+#define	DW_AT_GNU_all_tail_call_sites		0x2116
+#define	DW_AT_GNU_all_call_sites		0x2117
+#define	DW_AT_GNU_all_source_call_sites		0x2118
 
 #define DW_FORM_addr			0x01
 #define DW_FORM_block2			0x03
@@ -184,6 +255,12 @@
 #define DW_FORM_ref8			0x14
 #define DW_FORM_ref_udata		0x15
 #define DW_FORM_indirect		0x16
+#define DW_FORM_sec_offset		0x17
+#define DW_FORM_exprloc			0x18
+#define DW_FORM_flag_present		0x19
+#define DW_FORM_ref_sig8		0x20
+#define	DW_FORM_GNU_ref_alt		0x1f20
+#define	DW_FORM_GNU_strp_alt		0x1f21
 
 #define DW_OP_addr			0x03
 #define DW_OP_deref			0x06
@@ -330,10 +407,32 @@
 #define DW_OP_deref_size		0x94
 #define DW_OP_xderef_size		0x95
 #define DW_OP_nop			0x96
-
+#define DW_OP_push_object_address	0x97
+#define DW_OP_call2			0x98
+#define DW_OP_call4			0x99
+#define DW_OP_call_ref			0x9a
+#define DW_OP_form_tls_address		0x9b
+#define DW_OP_call_frame_cfa		0x9c
+#define DW_OP_bit_piece			0x9d
+#define DW_OP_implicit_value		0x9e
+#define DW_OP_stack_value		0x9f
 #define DW_OP_lo_user		 	0xe0
-
 #define DW_OP_hi_user		 	0xff
+
+/* GNU extensions. */
+#define	DW_OP_GNU_push_tls_address	0xe0
+#define	DW_OP_GNU_uninit		0xf0
+#define	DW_OP_GNU_encoded_addr		0xf1
+#define	DW_OP_GNU_implicit_pointer	0xf2
+#define	DW_OP_GNU_entry_value		0xf3
+#define	DW_OP_GNU_const_type		0xf4
+#define	DW_OP_GNU_regval_type		0xf5
+#define	DW_OP_GNU_deref_type		0xf6
+#define	DW_OP_GNU_convert		0xf7
+#define	DW_OP_GNU_reinterpret		0xf9
+#define	DW_OP_GNU_parameter_ref		0xfa
+#define	DW_OP_GNU_addr_index		0xfb
+#define	DW_OP_GNU_const_index		0xfc
 
 #define DW_ATE_address		 	0x1
 #define DW_ATE_boolean		 	0x2
@@ -350,14 +449,18 @@
 #define DW_ATE_signed_fixed	 	0xd
 #define DW_ATE_unsigned_fixed	 	0xe
 #define DW_ATE_decimal_float	 	0xf
-
 #define DW_ATE_lo_user		 	0x80
-
 #define DW_ATE_hi_user		 	0xff
 
 #define DW_ACCESS_public		0x01
 #define DW_ACCESS_protected	 	0x02
 #define DW_ACCESS_private	 	0x03
+
+#define	DW_END_default			0x00
+#define	DW_END_big			0x01
+#define	DW_END_little			0x02
+#define	DW_END_lo_user			0x40
+#define	DW_END_high_user		0xff
 
 #define DW_VIS_local		 	0x01
 #define DW_VIS_exported		 	0x02
@@ -386,9 +489,7 @@
 #define DW_LANG_ObjC_plus_plus	 	0x0011
 #define DW_LANG_UPC		 	0x0012
 #define DW_LANG_D		 	0x0013
-
 #define DW_LANG_lo_user		 	0x8000
-
 #define DW_LANG_hi_user		 	0xffff
 
 #define DW_ID_case_sensitive	 	0x00
@@ -399,9 +500,7 @@
 #define DW_CC_normal		 	0x01
 #define DW_CC_program		 	0x02
 #define DW_CC_nocall		 	0x03
-
 #define DW_CC_lo_user		 	0x40
-
 #define DW_CC_hi_user		 	0xff
 
 #define DW_INL_not_inlined	 	0x00
@@ -411,6 +510,12 @@
 
 #define DW_ORD_row_major		0x00
 #define DW_ORD_col_major		0x01
+
+#define	DW_DS_unsigned			0x01
+#define	DW_DS_leading_overpunch		0x02
+#define	DW_DS_trailing_overpunch	0x03
+#define	DW_DS_leading_separate		0x04
+#define	DW_DS_trailing_separate		0x05
 
 #define DW_DSC_label		 	0x00
 #define DW_DSC_range		 	0x01
@@ -431,9 +536,7 @@
 #define DW_LNE_end_sequence	 	0x01
 #define DW_LNE_set_address	 	0x02
 #define DW_LNE_define_file	 	0x03
-
 #define DW_LNE_lo_user		 	0x80
-
 #define DW_LNE_hi_user		 	0xff
 
 #define DW_MACINFO_define	 	0x01
@@ -464,15 +567,33 @@
 #define DW_CFA_def_cfa_offset 		0x0e
 #define DW_CFA_def_cfa_expression 	0x0f
 #define DW_CFA_expression 		0x10
-#define DW_CFA_cfa_offset_extended_sf 	0x11
+#define DW_CFA_offset_extended_sf 	0x11
 #define DW_CFA_def_cfa_sf 		0x12
 #define DW_CFA_def_cfa_offset_sf 	0x13
 #define DW_CFA_val_offset		0x14
 #define DW_CFA_val_offset_sf 		0x15
 #define DW_CFA_val_expression 		0x16
-
 #define DW_CFA_lo_user	 		0x1c
-
 #define DW_CFA_high_user	 	0x3f
+
+/*
+ * LSB(Linux Standard Base) extension to DWARF2.
+ */
+
+#define	DW_EH_PE_absptr			0x00
+#define	DW_EH_PE_uleb128		0x01
+#define	DW_EH_PE_udata2			0x02
+#define	DW_EH_PE_udata4			0x03
+#define	DW_EH_PE_udata8			0x04
+#define	DW_EH_PE_sleb128		0x09
+#define	DW_EH_PE_sdata2			0x0a
+#define	DW_EH_PE_sdata4			0x0b
+#define	DW_EH_PE_sdata8			0x0c
+#define	DW_EH_PE_pcrel			0x10
+#define	DW_EH_PE_textrel		0x20
+#define	DW_EH_PE_datarel		0x30
+#define	DW_EH_PE_funcrel		0x40
+#define	DW_EH_PE_aligned		0x50
+#define	DW_EH_PE_omit			0xff
 
 #endif /* !_DWARF_H_ */

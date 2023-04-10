@@ -5,8 +5,10 @@
  * This is an implementation of the algorithms posted above.
  * This file is placed in the public domain by Peter Wemm.
  *
- * $FreeBSD: release/9.0.0/sys/sys/fnv_hash.h 139825 2005-01-07 02:29:27Z imp $
+ * $FreeBSD: releng/11.0/sys/sys/fnv_hash.h 268351 2014-07-07 00:27:09Z marcel $
  */
+#ifndef _SYS_FNV_HASH_H_
+#define	_SYS_FNV_HASH_H_
 
 typedef u_int32_t Fnv32_t;
 typedef u_int64_t Fnv64_t;
@@ -58,7 +60,7 @@ static __inline Fnv64_t
 fnv_64_str(const char *str, Fnv64_t hval)
 {
 	const u_int8_t *s = (const u_int8_t *)str;
-	u_register_t c;		 /* 32 bit on i386, 64 bit on alpha,ia64 */
+	u_register_t c;		 /* 32 bit on i386, 64 bit on alpha */
 
 	while ((c = *s++) != 0) {
 		hval *= FNV_64_PRIME;
@@ -66,3 +68,4 @@ fnv_64_str(const char *str, Fnv64_t hval)
 	}
 	return hval;
 }
+#endif /* _SYS_FNV_HASH_H_ */

@@ -25,9 +25,9 @@ typedef char *heim_general_string;
 
 typedef char *heim_utf8_string;
 
-typedef char *heim_printable_string;
+typedef struct heim_octet_string heim_printable_string;
 
-typedef char *heim_ia5_string;
+typedef struct heim_octet_string heim_ia5_string;
 
 typedef struct heim_bmp_string {
   size_t length;
@@ -70,6 +70,17 @@ typedef struct heim_octet_string heim_any_set;
     }                                                          \
   } while (0)
 
+#ifdef _WIN32
+#ifndef ASN1_LIB
+#define ASN1EXP  __declspec(dllimport)
+#else
+#define ASN1EXP
+#endif
+#define ASN1CALL __stdcall
+#else
+#define ASN1EXP
+#define ASN1CALL
+#endif
 struct units;
 
 #endif
@@ -93,19 +104,43 @@ typedef struct DigestTypes {
   unsigned int digest_md5:1;
   unsigned int chap_md5:1;
   unsigned int ms_chap_v2:1;
+  unsigned int _unused6:1;
+  unsigned int _unused7:1;
+  unsigned int _unused8:1;
+  unsigned int _unused9:1;
+  unsigned int _unused10:1;
+  unsigned int _unused11:1;
+  unsigned int _unused12:1;
+  unsigned int _unused13:1;
+  unsigned int _unused14:1;
+  unsigned int _unused15:1;
+  unsigned int _unused16:1;
+  unsigned int _unused17:1;
+  unsigned int _unused18:1;
+  unsigned int _unused19:1;
+  unsigned int _unused20:1;
+  unsigned int _unused21:1;
+  unsigned int _unused22:1;
+  unsigned int _unused23:1;
+  unsigned int _unused24:1;
+  unsigned int _unused25:1;
+  unsigned int _unused26:1;
+  unsigned int _unused27:1;
+  unsigned int _unused28:1;
+  unsigned int _unused29:1;
+  unsigned int _unused30:1;
+  unsigned int _unused31:1;
 } DigestTypes;
 
 
-int    encode_DigestTypes(unsigned char *, size_t, const DigestTypes *, size_t *);
-int    decode_DigestTypes(const unsigned char *, size_t, DigestTypes *, size_t *);
-void   free_DigestTypes  (DigestTypes *);
-size_t length_DigestTypes(const DigestTypes *);
-int    copy_DigestTypes  (const DigestTypes *, DigestTypes *);
 unsigned DigestTypes2int(DigestTypes);
 DigestTypes int2DigestTypes(unsigned);
-#ifdef __PARSE_UNITS_H__
 const struct units * asn1_DigestTypes_units(void);
-#endif
+ASN1EXP int    ASN1CALL decode_DigestTypes(const unsigned char *, size_t, DigestTypes *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestTypes(unsigned char *, size_t, const DigestTypes *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestTypes(const DigestTypes *);
+ASN1EXP int    ASN1CALL copy_DigestTypes  (const DigestTypes *, DigestTypes *);
+ASN1EXP void   ASN1CALL free_DigestTypes  (DigestTypes *);
 
 
 /*
@@ -121,18 +156,18 @@ DigestInit ::= SEQUENCE {
 
 typedef struct DigestInit {
   heim_utf8_string type;
-  struct  {
+  struct DigestInit_channel {
     heim_utf8_string cb_type;
     heim_utf8_string cb_binding;
   } *channel;
   heim_utf8_string *hostname;
 } DigestInit;
 
-int    encode_DigestInit(unsigned char *, size_t, const DigestInit *, size_t *);
-int    decode_DigestInit(const unsigned char *, size_t, DigestInit *, size_t *);
-void   free_DigestInit  (DigestInit *);
-size_t length_DigestInit(const DigestInit *);
-int    copy_DigestInit  (const DigestInit *, DigestInit *);
+ASN1EXP int    ASN1CALL decode_DigestInit(const unsigned char *, size_t, DigestInit *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestInit(unsigned char *, size_t, const DigestInit *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestInit(const DigestInit *);
+ASN1EXP int    ASN1CALL copy_DigestInit  (const DigestInit *, DigestInit *);
+ASN1EXP void   ASN1CALL free_DigestInit  (DigestInit *);
 
 
 /*
@@ -149,11 +184,11 @@ typedef struct DigestInitReply {
   heim_utf8_string *identifier;
 } DigestInitReply;
 
-int    encode_DigestInitReply(unsigned char *, size_t, const DigestInitReply *, size_t *);
-int    decode_DigestInitReply(const unsigned char *, size_t, DigestInitReply *, size_t *);
-void   free_DigestInitReply  (DigestInitReply *);
-size_t length_DigestInitReply(const DigestInitReply *);
-int    copy_DigestInitReply  (const DigestInitReply *, DigestInitReply *);
+ASN1EXP int    ASN1CALL decode_DigestInitReply(const unsigned char *, size_t, DigestInitReply *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestInitReply(unsigned char *, size_t, const DigestInitReply *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestInitReply(const DigestInitReply *);
+ASN1EXP int    ASN1CALL copy_DigestInitReply  (const DigestInitReply *, DigestInitReply *);
+ASN1EXP void   ASN1CALL free_DigestInitReply  (DigestInitReply *);
 
 
 /*
@@ -196,11 +231,11 @@ typedef struct DigestRequest {
   heim_utf8_string opaque;
 } DigestRequest;
 
-int    encode_DigestRequest(unsigned char *, size_t, const DigestRequest *, size_t *);
-int    decode_DigestRequest(const unsigned char *, size_t, DigestRequest *, size_t *);
-void   free_DigestRequest  (DigestRequest *);
-size_t length_DigestRequest(const DigestRequest *);
-int    copy_DigestRequest  (const DigestRequest *, DigestRequest *);
+ASN1EXP int    ASN1CALL decode_DigestRequest(const unsigned char *, size_t, DigestRequest *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestRequest(unsigned char *, size_t, const DigestRequest *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestRequest(const DigestRequest *);
+ASN1EXP int    ASN1CALL copy_DigestRequest  (const DigestRequest *, DigestRequest *);
+ASN1EXP void   ASN1CALL free_DigestRequest  (DigestRequest *);
 
 
 /*
@@ -215,11 +250,11 @@ typedef struct DigestError {
   int code;
 } DigestError;
 
-int    encode_DigestError(unsigned char *, size_t, const DigestError *, size_t *);
-int    decode_DigestError(const unsigned char *, size_t, DigestError *, size_t *);
-void   free_DigestError  (DigestError *);
-size_t length_DigestError(const DigestError *);
-int    copy_DigestError  (const DigestError *, DigestError *);
+ASN1EXP int    ASN1CALL decode_DigestError(const unsigned char *, size_t, DigestError *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestError(unsigned char *, size_t, const DigestError *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestError(const DigestError *);
+ASN1EXP int    ASN1CALL copy_DigestError  (const DigestError *, DigestError *);
+ASN1EXP void   ASN1CALL free_DigestError  (DigestError *);
 
 
 /*
@@ -238,22 +273,22 @@ DigestResponse ::= SEQUENCE {
 typedef struct DigestResponse {
   int success;
   heim_utf8_string *rsp;
-  struct  {
+  struct DigestResponse_tickets {
     unsigned int len;
     heim_octet_string *val;
   } *tickets;
-  struct  {
+  struct DigestResponse_channel {
     heim_utf8_string cb_type;
     heim_utf8_string cb_binding;
   } *channel;
   heim_octet_string *session_key;
 } DigestResponse;
 
-int    encode_DigestResponse(unsigned char *, size_t, const DigestResponse *, size_t *);
-int    decode_DigestResponse(const unsigned char *, size_t, DigestResponse *, size_t *);
-void   free_DigestResponse  (DigestResponse *);
-size_t length_DigestResponse(const DigestResponse *);
-int    copy_DigestResponse  (const DigestResponse *, DigestResponse *);
+ASN1EXP int    ASN1CALL decode_DigestResponse(const unsigned char *, size_t, DigestResponse *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestResponse(unsigned char *, size_t, const DigestResponse *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestResponse(const DigestResponse *);
+ASN1EXP int    ASN1CALL copy_DigestResponse  (const DigestResponse *, DigestResponse *);
+ASN1EXP void   ASN1CALL free_DigestResponse  (DigestResponse *);
 
 
 /*
@@ -270,11 +305,11 @@ typedef struct NTLMInit {
   heim_utf8_string *domain;
 } NTLMInit;
 
-int    encode_NTLMInit(unsigned char *, size_t, const NTLMInit *, size_t *);
-int    decode_NTLMInit(const unsigned char *, size_t, NTLMInit *, size_t *);
-void   free_NTLMInit  (NTLMInit *);
-size_t length_NTLMInit(const NTLMInit *);
-int    copy_NTLMInit  (const NTLMInit *, NTLMInit *);
+ASN1EXP int    ASN1CALL decode_NTLMInit(const unsigned char *, size_t, NTLMInit *, size_t *);
+ASN1EXP int    ASN1CALL encode_NTLMInit(unsigned char *, size_t, const NTLMInit *, size_t *);
+ASN1EXP size_t ASN1CALL length_NTLMInit(const NTLMInit *);
+ASN1EXP int    ASN1CALL copy_NTLMInit  (const NTLMInit *, NTLMInit *);
+ASN1EXP void   ASN1CALL free_NTLMInit  (NTLMInit *);
 
 
 /*
@@ -295,11 +330,11 @@ typedef struct NTLMInitReply {
   heim_octet_string *targetinfo;
 } NTLMInitReply;
 
-int    encode_NTLMInitReply(unsigned char *, size_t, const NTLMInitReply *, size_t *);
-int    decode_NTLMInitReply(const unsigned char *, size_t, NTLMInitReply *, size_t *);
-void   free_NTLMInitReply  (NTLMInitReply *);
-size_t length_NTLMInitReply(const NTLMInitReply *);
-int    copy_NTLMInitReply  (const NTLMInitReply *, NTLMInitReply *);
+ASN1EXP int    ASN1CALL decode_NTLMInitReply(const unsigned char *, size_t, NTLMInitReply *, size_t *);
+ASN1EXP int    ASN1CALL encode_NTLMInitReply(unsigned char *, size_t, const NTLMInitReply *, size_t *);
+ASN1EXP size_t ASN1CALL length_NTLMInitReply(const NTLMInitReply *);
+ASN1EXP int    ASN1CALL copy_NTLMInitReply  (const NTLMInitReply *, NTLMInitReply *);
+ASN1EXP void   ASN1CALL free_NTLMInitReply  (NTLMInitReply *);
 
 
 /*
@@ -326,11 +361,11 @@ typedef struct NTLMRequest {
   heim_octet_string *sessionkey;
 } NTLMRequest;
 
-int    encode_NTLMRequest(unsigned char *, size_t, const NTLMRequest *, size_t *);
-int    decode_NTLMRequest(const unsigned char *, size_t, NTLMRequest *, size_t *);
-void   free_NTLMRequest  (NTLMRequest *);
-size_t length_NTLMRequest(const NTLMRequest *);
-int    copy_NTLMRequest  (const NTLMRequest *, NTLMRequest *);
+ASN1EXP int    ASN1CALL decode_NTLMRequest(const unsigned char *, size_t, NTLMRequest *, size_t *);
+ASN1EXP int    ASN1CALL encode_NTLMRequest(unsigned char *, size_t, const NTLMRequest *, size_t *);
+ASN1EXP size_t ASN1CALL length_NTLMRequest(const NTLMRequest *);
+ASN1EXP int    ASN1CALL copy_NTLMRequest  (const NTLMRequest *, NTLMRequest *);
+ASN1EXP void   ASN1CALL free_NTLMRequest  (NTLMRequest *);
 
 
 /*
@@ -346,17 +381,65 @@ typedef struct NTLMResponse {
   int success;
   unsigned int flags;
   heim_octet_string *sessionkey;
-  struct  {
+  struct NTLMResponse_tickets {
     unsigned int len;
     heim_octet_string *val;
   } *tickets;
 } NTLMResponse;
 
-int    encode_NTLMResponse(unsigned char *, size_t, const NTLMResponse *, size_t *);
-int    decode_NTLMResponse(const unsigned char *, size_t, NTLMResponse *, size_t *);
-void   free_NTLMResponse  (NTLMResponse *);
-size_t length_NTLMResponse(const NTLMResponse *);
-int    copy_NTLMResponse  (const NTLMResponse *, NTLMResponse *);
+ASN1EXP int    ASN1CALL decode_NTLMResponse(const unsigned char *, size_t, NTLMResponse *, size_t *);
+ASN1EXP int    ASN1CALL encode_NTLMResponse(unsigned char *, size_t, const NTLMResponse *, size_t *);
+ASN1EXP size_t ASN1CALL length_NTLMResponse(const NTLMResponse *);
+ASN1EXP int    ASN1CALL copy_NTLMResponse  (const NTLMResponse *, NTLMResponse *);
+ASN1EXP void   ASN1CALL free_NTLMResponse  (NTLMResponse *);
+
+
+/*
+NTLMRequest2 ::= SEQUENCE {
+  loginUserName         [0]   UTF8String,
+  loginDomainName       [1]   UTF8String,
+  flags                 [2] INTEGER (0..-1),
+  lmchallenge           [3] OCTET STRING,
+  ntChallengeResponce   [4] OCTET STRING,
+  lmChallengeResponce   [5] OCTET STRING,
+}
+*/
+
+typedef struct NTLMRequest2 {
+  heim_utf8_string loginUserName;
+  heim_utf8_string loginDomainName;
+  unsigned int flags;
+  heim_octet_string lmchallenge;
+  heim_octet_string ntChallengeResponce;
+  heim_octet_string lmChallengeResponce;
+} NTLMRequest2;
+
+ASN1EXP int    ASN1CALL decode_NTLMRequest2(const unsigned char *, size_t, NTLMRequest2 *, size_t *);
+ASN1EXP int    ASN1CALL encode_NTLMRequest2(unsigned char *, size_t, const NTLMRequest2 *, size_t *);
+ASN1EXP size_t ASN1CALL length_NTLMRequest2(const NTLMRequest2 *);
+ASN1EXP int    ASN1CALL copy_NTLMRequest2  (const NTLMRequest2 *, NTLMRequest2 *);
+ASN1EXP void   ASN1CALL free_NTLMRequest2  (NTLMRequest2 *);
+
+
+/*
+NTLMReply ::= SEQUENCE {
+  success         [0] BOOLEAN,
+  flags           [1] INTEGER (0..-1),
+  sessionkey      [2] OCTET STRING OPTIONAL,
+}
+*/
+
+typedef struct NTLMReply {
+  int success;
+  unsigned int flags;
+  heim_octet_string *sessionkey;
+} NTLMReply;
+
+ASN1EXP int    ASN1CALL decode_NTLMReply(const unsigned char *, size_t, NTLMReply *, size_t *);
+ASN1EXP int    ASN1CALL encode_NTLMReply(unsigned char *, size_t, const NTLMReply *, size_t *);
+ASN1EXP size_t ASN1CALL length_NTLMReply(const NTLMReply *);
+ASN1EXP int    ASN1CALL copy_NTLMReply  (const NTLMReply *, NTLMReply *);
+ASN1EXP void   ASN1CALL free_NTLMReply  (NTLMReply *);
 
 
 /*
@@ -386,11 +469,11 @@ typedef struct DigestReqInner {
   } u;
 } DigestReqInner;
 
-int    encode_DigestReqInner(unsigned char *, size_t, const DigestReqInner *, size_t *);
-int    decode_DigestReqInner(const unsigned char *, size_t, DigestReqInner *, size_t *);
-void   free_DigestReqInner  (DigestReqInner *);
-size_t length_DigestReqInner(const DigestReqInner *);
-int    copy_DigestReqInner  (const DigestReqInner *, DigestReqInner *);
+ASN1EXP int    ASN1CALL decode_DigestReqInner(const unsigned char *, size_t, DigestReqInner *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestReqInner(unsigned char *, size_t, const DigestReqInner *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestReqInner(const DigestReqInner *);
+ASN1EXP int    ASN1CALL copy_DigestReqInner  (const DigestReqInner *, DigestReqInner *);
+ASN1EXP void   ASN1CALL free_DigestReqInner  (DigestReqInner *);
 
 
 /*
@@ -405,11 +488,11 @@ typedef struct DigestREQ {
   EncryptedData innerReq;
 } DigestREQ;
 
-int    encode_DigestREQ(unsigned char *, size_t, const DigestREQ *, size_t *);
-int    decode_DigestREQ(const unsigned char *, size_t, DigestREQ *, size_t *);
-void   free_DigestREQ  (DigestREQ *);
-size_t length_DigestREQ(const DigestREQ *);
-int    copy_DigestREQ  (const DigestREQ *, DigestREQ *);
+ASN1EXP int    ASN1CALL decode_DigestREQ(const unsigned char *, size_t, DigestREQ *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestREQ(unsigned char *, size_t, const DigestREQ *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestREQ(const DigestREQ *);
+ASN1EXP int    ASN1CALL copy_DigestREQ  (const DigestREQ *, DigestREQ *);
+ASN1EXP void   ASN1CALL free_DigestREQ  (DigestREQ *);
 
 
 /*
@@ -446,11 +529,11 @@ typedef struct DigestRepInner {
   } u;
 } DigestRepInner;
 
-int    encode_DigestRepInner(unsigned char *, size_t, const DigestRepInner *, size_t *);
-int    decode_DigestRepInner(const unsigned char *, size_t, DigestRepInner *, size_t *);
-void   free_DigestRepInner  (DigestRepInner *);
-size_t length_DigestRepInner(const DigestRepInner *);
-int    copy_DigestRepInner  (const DigestRepInner *, DigestRepInner *);
+ASN1EXP int    ASN1CALL decode_DigestRepInner(const unsigned char *, size_t, DigestRepInner *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestRepInner(unsigned char *, size_t, const DigestRepInner *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestRepInner(const DigestRepInner *);
+ASN1EXP int    ASN1CALL copy_DigestRepInner  (const DigestRepInner *, DigestRepInner *);
+ASN1EXP void   ASN1CALL free_DigestRepInner  (DigestRepInner *);
 
 
 /*
@@ -465,11 +548,11 @@ typedef struct DigestREP {
   EncryptedData innerRep;
 } DigestREP;
 
-int    encode_DigestREP(unsigned char *, size_t, const DigestREP *, size_t *);
-int    decode_DigestREP(const unsigned char *, size_t, DigestREP *, size_t *);
-void   free_DigestREP  (DigestREP *);
-size_t length_DigestREP(const DigestREP *);
-int    copy_DigestREP  (const DigestREP *, DigestREP *);
+ASN1EXP int    ASN1CALL decode_DigestREP(const unsigned char *, size_t, DigestREP *, size_t *);
+ASN1EXP int    ASN1CALL encode_DigestREP(unsigned char *, size_t, const DigestREP *, size_t *);
+ASN1EXP size_t ASN1CALL length_DigestREP(const DigestREP *);
+ASN1EXP int    ASN1CALL copy_DigestREP  (const DigestREP *, DigestREP *);
+ASN1EXP void   ASN1CALL free_DigestREP  (DigestREP *);
 
 
 #endif /* __digest_asn1_h__ */

@@ -2,7 +2,7 @@
  * Copyright (c) 2007 Seccuris Inc.
  * All rights reserved.
  *
- * This sofware was developed by Robert N. M. Watson under contract to
+ * This software was developed by Robert N. M. Watson under contract to
  * Seccuris Inc.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/net/bpf_buffer.h 177548 2008-03-24 13:49:17Z csjp $
+ * $FreeBSD: releng/11.0/sys/net/bpf_buffer.h 235746 2012-05-21 22:19:19Z melifaro $
  */
 
 #ifndef _NET_BPF_BUFFER_H_
@@ -36,7 +36,6 @@
 #error "no user-serviceable parts inside"
 #endif
 
-void	bpf_buffer_alloc(struct bpf_d *d);
 void	bpf_buffer_append_bytes(struct bpf_d *d, caddr_t buf, u_int offset,
 	    void *src, u_int len);
 void	bpf_buffer_append_mbuf(struct bpf_d *d, caddr_t buf, u_int offset,

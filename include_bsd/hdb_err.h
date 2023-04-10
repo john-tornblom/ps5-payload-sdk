@@ -1,5 +1,5 @@
 /* Generated from /usr/src/kerberos5/lib/libhdb/../../../crypto/heimdal/lib/hdb/hdb_err.et */
-/* $Id: hdb_err.et 15878 2005-08-11 13:17:22Z lha $ */
+/* $Id$ */
 
 #ifndef __hdb_err_h__
 #define __hdb_err_h__
@@ -24,9 +24,13 @@ typedef enum hdb_error_number{
 	HDB_ERR_EXISTS = 36150282,
 	HDB_ERR_BADVERSION = 36150283,
 	HDB_ERR_NO_MKEY = 36150284,
-	HDB_ERR_MANDATORY_OPTION = 36150285
+	HDB_ERR_MANDATORY_OPTION = 36150285,
+	HDB_ERR_NO_WRITE_SUPPORT = 36150286,
+	HDB_ERR_NOT_FOUND_HERE = 36150287
 } hdb_error_number;
 
 #define ERROR_TABLE_BASE_hdb 36150272
+
+#define COM_ERR_BINDDOMAIN_hdb "heim_com_err36150272"
 
 #endif /* __hdb_err_h__ */

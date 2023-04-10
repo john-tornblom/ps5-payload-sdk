@@ -1,5 +1,5 @@
 /* Generated from /usr/src/kerberos5/lib/libasn1/../../../crypto/heimdal/lib/asn1/asn1_err.et */
-/* $Id: asn1_err.et 21394 2007-07-02 10:14:43Z lha $ */
+/* $Id$ */
 
 #ifndef __asn1_err_h__
 #define __asn1_err_h__
@@ -26,9 +26,15 @@ typedef enum asn1_error_number{
 	ASN1_BAD_CHARACTER = 1859794443,
 	ASN1_MIN_CONSTRAINT = 1859794444,
 	ASN1_MAX_CONSTRAINT = 1859794445,
-	ASN1_EXACT_CONSTRAINT = 1859794446
+	ASN1_EXACT_CONSTRAINT = 1859794446,
+	ASN1_INDEF_OVERRUN = 1859794447,
+	ASN1_INDEF_UNDERRUN = 1859794448,
+	ASN1_GOT_BER = 1859794449,
+	ASN1_INDEF_EXTRA_DATA = 1859794450
 } asn1_error_number;
 
 #define ERROR_TABLE_BASE_asn1 1859794432
+
+#define COM_ERR_BINDDOMAIN_asn1 "heim_com_err1859794432"
 
 #endif /* __asn1_err_h__ */

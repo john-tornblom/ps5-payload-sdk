@@ -36,7 +36,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)param.h	8.1 (Berkeley) 6/10/93
- * $FreeBSD: release/9.0.0/sys/amd64/include/param.h 224217 2011-07-19 13:00:30Z attilio $
+ * $FreeBSD: releng/11.0/sys/amd64/include/param.h 297877 2016-04-12 21:23:44Z jhb $
  */
 
 
@@ -65,10 +65,14 @@
 
 #if defined(SMP) || defined(KLD_MODULE)
 #ifndef MAXCPU
-#define MAXCPU		64
+#define MAXCPU		256
 #endif
 #else
 #define MAXCPU		1
+#endif
+
+#ifndef MAXMEMDOM
+#define	MAXMEMDOM	8
 #endif
 
 #define	ALIGNBYTES		_ALIGNBYTES
@@ -91,7 +95,7 @@
 /* Size of the level 1 page table units */
 #define NPTEPG		(PAGE_SIZE/(sizeof (pt_entry_t)))
 #define	NPTEPGSHIFT	9		/* LOG2(NPTEPG) */
-#define PAGE_SHIFT	14		/* LOG2(PAGE_SIZE) */
+#define PAGE_SHIFT	12		/* LOG2(PAGE_SIZE) */
 #define PAGE_SIZE	(1<<PAGE_SHIFT)	/* bytes/page */
 #define PAGE_MASK	(PAGE_SIZE-1)
 /* Size of the level 2 page directory units */
@@ -116,19 +120,17 @@
 #define	MAXPAGESIZES	3	/* maximum number of supported page sizes */
 
 #define IOPAGES	2		/* pages of i/o permission bitmap */
+/*
+ * I/O permission bitmap has a bit for each I/O port plus an additional
+ * byte at the end with all bits set. See section "I/O Permission Bit Map"
+ * in the Intel SDM for more details.
+ */
+#define	IOPERM_BITMAP_SIZE	(IOPAGES * PAGE_SIZE + 1)
 
 #ifndef	KSTACK_PAGES
 #define	KSTACK_PAGES	4	/* pages of kstack (with pcb) */
 #endif
 #define	KSTACK_GUARD_PAGES 1	/* pages of kstack guard; 0 disables */
-
-/*
- * Ceiling on amount of swblock kva space, can be changed via
- * the kern.maxswzone /boot/loader.conf variable.
- */
-#ifndef VM_SWZONE_SIZE_MAX
-#define	VM_SWZONE_SIZE_MAX	(32 * 1024 * 1024)
-#endif
 
 /*
  * Mach derived conversion macros
@@ -146,5 +148,8 @@
 #define	amd64_ptob(x)	((unsigned long)(x) << PAGE_SHIFT)
 
 #define	pgtok(x)	((unsigned long)(x) * (PAGE_SIZE / 1024)) 
+
+#define	INKERNEL(va) (((va) >= DMAP_MIN_ADDRESS && (va) < DMAP_MAX_ADDRESS) \
+    || ((va) >= VM_MIN_KERNEL_ADDRESS && (va) < VM_MAX_KERNEL_ADDRESS))
 
 #endif /* !_AMD64_INCLUDE_PARAM_H_ */

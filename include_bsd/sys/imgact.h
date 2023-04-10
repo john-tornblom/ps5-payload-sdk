@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/imgact.h 217151 2011-01-08 16:13:44Z kib $
+ * $FreeBSD: releng/11.0/sys/sys/imgact.h 300792 2016-05-26 23:18:54Z bdrewery $
  */
 
 #ifndef _SYS_IMGACT_H_
@@ -37,6 +37,8 @@
 #include <vm/vm.h>
 
 #define MAXSHELLCMDLEN	PAGE_SIZE
+
+struct ucred;
 
 struct image_args {
 	char *buf;		/* pointer to string buffer */
@@ -49,6 +51,7 @@ struct image_args {
 	int argc;		/* count of argument strings */
 	int envc;		/* count of environment strings */
 	int fd;			/* file descriptor of the executable */
+	struct filedesc *fdp;	/* new file descriptor table */
 };
 
 struct image_params {
@@ -61,7 +64,9 @@ struct image_params {
 	unsigned long entry_addr; /* entry address of target executable */
 	unsigned long reloc_base; /* load address of image */
 	char vmspace_destroyed;	/* flag - we've blown away original vm space */
-	char interpreted;	/* flag - this executable is interpreted */
+#define IMGACT_SHELL	0x1
+#define IMGACT_BINMISC	0x2
+	unsigned char interpreted;	/* mask of interpreters that have run */
 	char opened;		/* flag - we have opened executable vnode */
 	char *interpreter_name;	/* name of the interpreter */
 	void *auxargs;		/* ELF Auxinfo structure pointer */
@@ -78,11 +83,15 @@ struct image_params {
 	unsigned long pagesizes;
 	int pagesizeslen;
 	vm_prot_t stack_prot;
+	u_long stack_sz;
+	struct ucred *newcred;		/* new credentials if changing */
+	bool credential_setid;		/* true if becoming setid */
 };
 
 #ifdef _KERNEL
 struct sysentvec;
 struct thread;
+struct vmspace;
 
 #define IMGACT_CORE_COMPRESS	0x01
 
@@ -95,6 +104,10 @@ void	exec_setregs(struct thread *, struct image_params *, u_long);
 int	exec_shell_imgact(struct image_params *);
 int	exec_copyin_args(struct image_args *, char *, enum uio_seg,
 	char **, char **);
+int	exec_copyin_data_fds(struct thread *, struct image_args *, const void *,
+	size_t, const int *, size_t);
+int	pre_execve(struct thread *td, struct vmspace **oldvmspace);
+void	post_execve(struct thread *td, int error, struct vmspace *oldvmspace);
 #endif
 
 #endif /* !_SYS_IMGACT_H_ */

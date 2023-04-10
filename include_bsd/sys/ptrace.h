@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)ptrace.h	8.2 (Berkeley) 1/4/94
- * $FreeBSD: release/9.0.0/sys/sys/ptrace.h 217819 2011-01-25 10:59:21Z kib $
+ * $FreeBSD: releng/11.0/sys/sys/ptrace.h 292894 2015-12-29 23:25:26Z jhb $
  */
 
 #ifndef	_SYS_PTRACE_H_
@@ -64,6 +64,7 @@
 #define	PT_SYSCALL	22
 
 #define	PT_FOLLOW_FORK	23
+#define	PT_LWP_EVENTS	24	/* report LWP birth and exit */
 
 #define PT_GETREGS      33	/* get general-purpose registers */
 #define PT_SETREGS      34	/* set general-purpose registers */
@@ -107,11 +108,16 @@ struct ptrace_lwpinfo {
 #define	PL_FLAG_EXEC	0x10	/* exec(2) succeeded */
 #define	PL_FLAG_SI	0x20	/* siginfo is valid */
 #define	PL_FLAG_FORKED	0x40	/* new child */
+#define	PL_FLAG_CHILD	0x80	/* I am from child */
+#define	PL_FLAG_BORN	0x100	/* new LWP */
+#define	PL_FLAG_EXITED	0x200	/* exiting LWP */
 	sigset_t	pl_sigmask;	/* LWP signal mask */
 	sigset_t	pl_siglist;	/* LWP pending signal */
 	struct __siginfo pl_siginfo;	/* siginfo for signal */
 	char		pl_tdname[MAXCOMLEN + 1]; /* LWP name */
-	int		pl_child_pid;	/* New child pid */
+	pid_t		pl_child_pid;	/* New child pid */
+	u_int		pl_syscall_code;
+	u_int		pl_syscall_narg;
 };
 
 /* Argument structure for PT_VM_ENTRY. */
@@ -130,12 +136,6 @@ struct ptrace_vm_entry {
 
 #ifdef _KERNEL
 
-#define	PTRACESTOP_SC(p, td, flag)				\
-	if ((p)->p_flag & P_TRACED && (p)->p_stops & (flag)) {	\
-		PROC_LOCK(p);					\
-		ptracestop((td), SIGTRAP);			\
-		PROC_UNLOCK(p);					\
-	}
 /*
  * The flags below are used for ptrace(2) tracing and have no relation
  * to procfs.  They are stored in struct proc's p_stops member.
@@ -169,6 +169,10 @@ int	proc_read_dbregs(struct thread *_td, struct dbreg *_dbreg);
 int	proc_write_dbregs(struct thread *_td, struct dbreg *_dbreg);
 int	proc_sstep(struct thread *_td);
 int	proc_rwmem(struct proc *_p, struct uio *_uio);
+ssize_t	proc_readmem(struct thread *_td, struct proc *_p, vm_offset_t _va,
+	    void *_buf, size_t _len);
+ssize_t	proc_writemem(struct thread *_td, struct proc *_p, vm_offset_t _va,
+	    void *_buf, size_t _len);
 #ifdef COMPAT_FREEBSD32
 struct reg32;
 struct fpreg32;

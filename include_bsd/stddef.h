@@ -28,7 +28,7 @@
  *
  *	@(#)stddef.h	8.1 (Berkeley) 6/2/93
  *
- * $FreeBSD: release/9.0.0/include/stddef.h 203964 2010-02-16 19:39:50Z imp $
+ * $FreeBSD: releng/11.0/include/stddef.h 270277 2014-08-21 15:10:10Z kan $
  */
 
 #ifndef _STDDEF_H_
@@ -38,7 +38,10 @@
 #include <sys/_null.h>
 #include <sys/_types.h>
 
+#ifndef _PTRDIFF_T_DECLARED
 typedef	__ptrdiff_t	ptrdiff_t;
+#define	_PTRDIFF_T_DECLARED
+#endif
 
 #if __BSD_VISIBLE
 #ifndef _RUNE_T_DECLARED
@@ -54,13 +57,11 @@ typedef	__size_t	size_t;
 
 #ifndef	__cplusplus
 #ifndef _WCHAR_T_DECLARED
-typedef	__wchar_t	wchar_t;
+typedef	___wchar_t	wchar_t;
 #define	_WCHAR_T_DECLARED
 #endif
 #endif
 
-#ifndef offsetof
 #define	offsetof(type, member)	__offsetof(type, member)
-#endif
 
 #endif /* _STDDEF_H_ */

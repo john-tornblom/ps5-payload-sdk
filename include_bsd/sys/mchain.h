@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/mchain.h 206361 2010-04-07 16:50:38Z joel $
+ * $FreeBSD: releng/11.0/sys/sys/mchain.h 227650 2011-11-18 03:05:20Z kevlo $
  */
 #ifndef _SYS_MCHAIN_H_
 #define _SYS_MCHAIN_H_
@@ -67,6 +67,7 @@ struct mbuf *mb_detach(struct mbchain *mbp);
 int  mb_fixhdr(struct mbchain *mbp);
 caddr_t mb_reserve(struct mbchain *mbp, int size);
 
+int  mb_put_padbyte(struct mbchain *mbp);
 int  mb_put_uint8(struct mbchain *mbp, u_int8_t x);
 int  mb_put_uint16be(struct mbchain *mbp, u_int16_t x);
 int  mb_put_uint16le(struct mbchain *mbp, u_int16_t x);

@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/include/strings.h 201525 2010-01-04 18:46:54Z ed $
+ * $FreeBSD: releng/11.0/include/strings.h 272673 2014-10-07 04:54:11Z delphij $
  */
 
 #ifndef _STRINGS_H_
@@ -43,15 +43,18 @@ int	 bcmp(const void *, const void *, size_t) __pure;	/* LEGACY */
 void	 bcopy(const void *, void *, size_t);			/* LEGACY */
 void	 bzero(void *, size_t);					/* LEGACY */
 #endif
+#if __BSD_VISIBLE
+void	 explicit_bzero(void *, size_t);
+#endif
 #if __XSI_VISIBLE
 int	 ffs(int) __pure2;
 #endif
 #if __BSD_VISIBLE
-//int	 __pure2 ffsl(long) ;
-//int	 __pure2 ffsll(long long) ;
-//int	 __pure2 fls(int) ;
-//int	 __pure2 flsl(long) ;
-//int	 __pure2 flsll(long long);
+int	 ffsl(long) __pure2;
+int	 ffsll(long long) __pure2;
+int	 fls(int) __pure2;
+int	 flsl(long) __pure2;
+int	 flsll(long long) __pure2;
 #endif
 #if __BSD_VISIBLE || __POSIX_VISIBLE <= 200112
 char	*index(const char *, int) __pure;			/* LEGACY */
@@ -59,6 +62,10 @@ char	*rindex(const char *, int) __pure;			/* LEGACY */
 #endif
 int	 strcasecmp(const char *, const char *) __pure;
 int	 strncasecmp(const char *, const char *, size_t) __pure;
+
+#if __POSIX_VISIBLE >= 200809 || defined(_XLOCALE_H_)
+#include <xlocale/_strings.h>
+#endif
 __END_DECLS
 
 #endif /* _STRINGS_H_ */

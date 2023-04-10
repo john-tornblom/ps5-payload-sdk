@@ -32,7 +32,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)param.h	8.3 (Berkeley) 4/4/95
- * $FreeBSD: release/9.0.0/sys/sys/param.h 226199 2011-10-10 12:07:04Z kib $
+ * $FreeBSD: releng/11.0/sys/sys/param.h 304610 2016-08-22 16:04:25Z bdrewery $
  */
 
 #ifndef _SYS_PARAM_H_
@@ -48,9 +48,9 @@
  * __FreeBSD_version numbers are documented in the Porter's Handbook.
  * If you bump the version for any reason, you should update the documentation
  * there.
- * Currently this lives here:
+ * Currently this lives here in the doc/ repository:
  *
- *	doc/en_US.ISO8859-1/books/porters-handbook/book.sgml
+ *	head/en_US.ISO8859-1/books/porters-handbook/versions/chapter.xml
  *
  * scheme is:  <major><two digit minor>Rxx
  *		'R' is in the range 0 to 4 if this is a release branch or
@@ -58,12 +58,32 @@
  *		in the range 5 to 9.
  */
 #undef __FreeBSD_version
-#define __FreeBSD_version 900044	/* Master, propagated to newvers */
+#define __FreeBSD_version 1100122	/* Master, propagated to newvers */
+
+/*
+ * __FreeBSD_kernel__ indicates that this system uses the kernel of FreeBSD,
+ * which by definition is always true on FreeBSD. This macro is also defined
+ * on other systems that use the kernel of FreeBSD, such as GNU/kFreeBSD.
+ *
+ * It is tempting to use this macro in userland code when we want to enable
+ * kernel-specific routines, and in fact it's fine to do this in code that
+ * is part of FreeBSD itself.  However, be aware that as presence of this
+ * macro is still not widespread (e.g. older FreeBSD versions, 3rd party
+ * compilers, etc), it is STRONGLY DISCOURAGED to check for this macro in
+ * external applications without also checking for __FreeBSD__ as an
+ * alternative.
+ */
+#undef __FreeBSD_kernel__
+#define __FreeBSD_kernel__
 
 #ifdef _KERNEL
-#define	P_OSREL_SIGWAIT		700000
-#define	P_OSREL_SIGSEGV		700004
-#define	P_OSREL_MAP_ANON	800104
+#define	P_OSREL_SIGWAIT			700000
+#define	P_OSREL_SIGSEGV			700004
+#define	P_OSREL_MAP_ANON		800104
+#define	P_OSREL_MAP_FSTRICT		1100036
+#define	P_OSREL_SHUTDOWN_ENOTCONN	1100077
+
+#define	P_OSREL_MAJOR(x)		((x) / 100000)
 #endif
 
 #ifndef LOCORE
@@ -80,7 +100,7 @@
 
 #define	MAXCOMLEN	19		/* max command name remembered */
 #define	MAXINTERP	PATH_MAX	/* max interpreter file name length */
-#define	MAXLOGNAME	17		/* max login name length (incl. NUL) */
+#define	MAXLOGNAME	33		/* max login name length (incl. NUL) */
 #define	MAXUPRC		CHILD_MAX	/* max simultaneous processes */
 #define	NCARGS		ARG_MAX		/* max bytes for an exec function */
 #define	NGROUPS		(NGROUPS_MAX+1)	/* max number groups */
@@ -140,8 +160,8 @@
  * MCLBYTES must be no larger than PAGE_SIZE.
  */
 #ifndef	MSIZE
-#define MSIZE		256		/* size of an mbuf */
-#endif	/* MSIZE */
+#define	MSIZE		256		/* size of an mbuf */
+#endif
 
 #ifndef	MCLSHIFT
 #define MCLSHIFT	11		/* convert bytes to mbuf clusters */
@@ -195,7 +215,6 @@
 #define	PRIMASK	0x0ff
 #define	PCATCH	0x100		/* OR'd with pri for tsleep to check signals */
 #define	PDROP	0x200	/* OR'd with pri to stop re-entry of interlock mutex */
-#define	PBDRY	0x400	/* for PCATCH stop is done on the user boundary */
 
 #define	NZERO	0		/* default "nice" */
 
@@ -215,10 +234,19 @@
  *		and may be made smaller at the risk of not being able to use
  *		filesystems which require a block size exceeding MAXBSIZE.
  *
+ * MAXBCACHEBUF - Maximum size of a buffer in the buffer cache.  This must
+ *		be >= MAXBSIZE and can be set differently for different
+ *		architectures by defining it in <machine/param.h>.
+ *		Making this larger allows NFS to do larger reads/writes.
+ *
  * BKVASIZE -	Nominal buffer space per buffer, in bytes.  BKVASIZE is the
  *		minimum KVM memory reservation the kernel is willing to make.
  *		Filesystems can of course request smaller chunks.  Actual 
  *		backing memory uses a chunk size of a page (PAGE_SIZE).
+ *		The default value here can be overridden on a per-architecture
+ *		basis by defining it in <machine/param.h>.  This should
+ *		probably be done to increase its value, when MAXBCACHEBUF is
+ *		defined as a larger value in <machine/param.h>.
  *
  *		If you make BKVASIZE too small you risk seriously fragmenting
  *		the buffer KVM map which may slow things down a bit.  If you
@@ -230,7 +258,12 @@
  *		normal UFS filesystem.
  */
 #define MAXBSIZE	65536	/* must be power of 2 */
+#ifndef	MAXBCACHEBUF
+#define	MAXBCACHEBUF	MAXBSIZE /* must be a power of 2 >= MAXBSIZE */
+#endif
+#ifndef	BKVASIZE
 #define BKVASIZE	16384	/* must be power of 2 */
+#endif
 #define BKVAMASK	(BKVASIZE-1)
 
 /*
@@ -257,7 +290,9 @@
 #ifndef howmany
 #define	howmany(x, y)	(((x)+((y)-1))/(y))
 #endif
+#define	nitems(x)	(sizeof((x)) / sizeof((x)[0]))
 #define	rounddown(x, y)	(((x)/(y))*(y))
+#define	rounddown2(x, y) ((x)&(~((y)-1)))          /* if y is power of two */
 #define	roundup(x, y)	((((x)+((y)-1))/(y))*(y))  /* to any y */
 #define	roundup2(x, y)	(((x)+((y)-1))&(~((y)-1))) /* if y is powers of two */
 #define powerof2(x)	((((x)-1)&(x))==0)
@@ -314,8 +349,7 @@ __END_DECLS
 	((db) << (PAGE_SHIFT - DEV_BSHIFT))
 
 /*
- * Given the pointer x to the member m of the struct s, return
- * a pointer to the containing structure.
+ * Old spelling of __containerof().
  */
 #define	member2struct(s, m, x)						\
 	((struct s *)(void *)((char *)(x) - offsetof(struct s, m)))
@@ -324,6 +358,6 @@ __END_DECLS
  * Access a variable length array that has been declared as a fixed
  * length array.
  */
-#define __PAST_END(array, offset) (((typeof(*(array)) *)(array))[offset])
+#define __PAST_END(array, offset) (((__typeof__(*(array)) *)(array))[offset])
 
 #endif	/* _SYS_PARAM_H_ */

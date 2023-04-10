@@ -25,7 +25,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/devicestat.h 139825 2005-01-07 02:29:27Z imp $
+ * $FreeBSD: releng/11.0/sys/sys/devicestat.h 256603 2013-10-16 09:12:40Z mav $
  */
 
 #ifndef _DEVICESTAT_H
@@ -199,6 +199,8 @@ void devstat_end_transaction(struct devstat *ds, u_int32_t bytes,
 			     devstat_trans_flags flags,
 			     struct bintime *now, struct bintime *then);
 void devstat_end_transaction_bio(struct devstat *ds, struct bio *bp);
+void devstat_end_transaction_bio_bt(struct devstat *ds, struct bio *bp,
+			     struct bintime *now);
 #endif
 
 #endif /* _DEVICESTAT_H */

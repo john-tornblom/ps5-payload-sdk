@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/include/langinfo.h 197764 2009-10-05 07:11:19Z edwin $
+ * $FreeBSD: releng/11.0/include/langinfo.h 264676 2014-04-19 12:38:01Z jilles $
  */
 
 #ifndef _LANGINFO_H_
@@ -103,7 +103,7 @@ typedef	__nl_item	nl_item;
 #define	YESEXPR		52	/* affirmative response expression */
 #define	NOEXPR		53	/* negative response expression */
 
-#if __BSD_VISIBLE || __XSI_VISIBLE <= 500
+#if __BSD_VISIBLE || (__XSI_VISIBLE && __XSI_VISIBLE <= 500)
 #define	YESSTR		54	/* affirmative response for yes/no queries */
 #define	NOSTR		55	/* negative response for yes/no queries */
 #endif
@@ -130,6 +130,10 @@ typedef	__nl_item	nl_item;
 
 __BEGIN_DECLS
 char	*nl_langinfo(nl_item);
+
+#if __POSIX_VISIBLE >= 200809 || defined(_XLOCALE_H_)
+#include <xlocale/_langinfo.h>
+#endif
 __END_DECLS
 
 #endif /* !_LANGINFO_H_ */

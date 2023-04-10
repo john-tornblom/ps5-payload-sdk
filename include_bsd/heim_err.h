@@ -1,5 +1,5 @@
 /* Generated from /usr/src/kerberos5/lib/libkrb5/../../../crypto/heimdal/lib/krb5/heim_err.et */
-/* $Id: heim_err.et 13352 2004-02-13 16:23:40Z lha $ */
+/* $Id$ */
 
 #ifndef __heim_err_h__
 #define __heim_err_h__
@@ -20,6 +20,9 @@ typedef enum heim_error_number{
 	HEIM_ERR_EOF = -1980176635,
 	HEIM_ERR_BAD_MKEY = -1980176634,
 	HEIM_ERR_SERVICE_NOMATCH = -1980176633,
+	HEIM_ERR_NOT_SEEKABLE = -1980176632,
+	HEIM_ERR_TOO_BIG = -1980176631,
+	HEIM_ERR_BAD_HDBENT_ENCODING = -1980176630,
 	HEIM_PKINIT_NO_CERTIFICATE = -1980176576,
 	HEIM_PKINIT_NO_PRIVATE_KEY = -1980176575,
 	HEIM_PKINIT_NO_VALID_CA = -1980176574,
@@ -40,5 +43,7 @@ typedef enum heim_error_number{
 } heim_error_number;
 
 #define ERROR_TABLE_BASE_heim -1980176640
+
+#define COM_ERR_BINDDOMAIN_heim "heim_com_err-1980176640"
 
 #endif /* __heim_err_h__ */

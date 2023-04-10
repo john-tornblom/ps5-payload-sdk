@@ -31,7 +31,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/security/mac_lomac/mac_lomac.h 140661 2005-01-23 14:26:09Z rwatson $
+ * $FreeBSD: releng/11.0/sys/security/mac_lomac/mac_lomac.h 299187 2016-05-06 16:59:04Z pfg $
  */
 /*
  * Definitions for the TrustedBSD LOMAC integrity policy module.
@@ -56,7 +56,7 @@
 					 * MAC_LOMAC_TYPE_LABEL. */
 #define	MAC_LOMAC_TYPE_HIGH	3	/* Dominates any
 					 * MAC_LOMAC_TYPE_LABEL. */
-#define	MAC_LOMAC_TYPE_EQUAL	4	/* Equivilent to any
+#define	MAC_LOMAC_TYPE_EQUAL	4	/* Equivalent to any
 					 * MAC_LOMAC_TYPE_LABEL. */
 
 /*

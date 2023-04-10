@@ -25,7 +25,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/cam/cam_sim.h 186396 2008-12-22 16:58:47Z scottl $
+ * $FreeBSD: releng/11.0/sys/cam/cam_sim.h 256843 2013-10-21 12:00:26Z mav $
  */
 
 #ifndef _CAM_CAM_SIM_H
@@ -104,25 +104,13 @@ struct cam_sim {
 	u_int32_t		flags;
 #define	CAM_SIM_REL_TIMEOUT_PENDING	0x01
 #define	CAM_SIM_MPSAFE			0x02
-#define CAM_SIM_ON_DONEQ		0x04
 	struct callout		callout;
 	struct cam_devq 	*devq;	/* Device Queue to use for this SIM */
 	int			refcount; /* References to the SIM. */
-
-	/* "Pool" of inactive ccbs managed by xpt_get_ccb and xpt_release_ccb */
-	SLIST_HEAD(,ccb_hdr)	ccb_freeq;
-	/*
-	 * Maximum size of ccb pool.  Modified as devices are added/removed
-	 * or have their * opening counts changed.
-	 */
-	u_int			max_ccbs;
-	/* Current count of allocated ccbs */
-	u_int			ccb_count;
-
 };
 
-#define CAM_SIM_LOCK(sim)	mtx_lock((sim)->mtx);
-#define CAM_SIM_UNLOCK(sim)	mtx_unlock((sim)->mtx);
+#define CAM_SIM_LOCK(sim)	mtx_lock((sim)->mtx)
+#define CAM_SIM_UNLOCK(sim)	mtx_unlock((sim)->mtx)
 
 static __inline u_int32_t
 cam_sim_path(struct cam_sim *sim)

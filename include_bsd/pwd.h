@@ -32,7 +32,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)pwd.h	8.2 (Berkeley) 1/21/94
- * $FreeBSD: release/9.0.0/include/pwd.h 203964 2010-02-16 19:39:50Z imp $
+ * $FreeBSD: releng/11.0/include/pwd.h 241731 2012-10-19 12:44:22Z brooks $
  */
 
 #ifndef _PWD_H_
@@ -165,6 +165,10 @@ int		 getpwuid_r(uid_t, struct passwd *, char *, size_t,
 int		 getpwent_r(struct passwd *, char *, size_t, struct passwd **);
 int		 setpassent(int);
 const char	*user_from_uid(uid_t, int);
+int		 uid_from_user(const char *, uid_t *);
+int		 pwcache_userdb(int (*)(int), void (*)(void),
+		    struct passwd * (*)(const char *),
+		    struct passwd * (*)(uid_t));
 #endif
 __END_DECLS
 

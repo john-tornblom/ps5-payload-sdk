@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/cam/cam_xpt_periph.h 203108 2010-01-28 08:41:30Z mav $
+ * $FreeBSD: releng/11.0/sys/cam/cam_xpt_periph.h 256552 2013-10-15 17:59:41Z mav $
  */
 
 #ifndef _CAM_CAM_XPT_PERIPH_H
@@ -45,6 +45,9 @@ int32_t		xpt_add_periph(struct cam_periph *periph);
 void		xpt_remove_periph(struct cam_periph *periph);
 void		xpt_announce_periph(struct cam_periph *periph,
 				    char *announce_string);
+void		xpt_announce_quirks(struct cam_periph *periph,
+				    int quirks, char *bit_string);
+void		xpt_denounce_periph(struct cam_periph *periph);
 #endif
 
 #endif /* _CAM_CAM_XPT_PERIPH_H */

@@ -10,9 +10,6 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- * 3. Neither the name of the author nor the names of any co-contributors
- *    may be used to endorse or promote products derived from this software
- *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -26,12 +23,13 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/refcount.h 180763 2008-07-23 16:44:20Z des $
+ * $FreeBSD: releng/11.0/sys/sys/refcount.h 261520 2014-02-05 18:13:27Z jhb $
  */
 
 #ifndef __SYS_REFCOUNT_H__
 #define __SYS_REFCOUNT_H__
 
+#include <sys/limits.h>
 #include <machine/atomic.h>
 
 #ifdef _KERNEL
@@ -51,6 +49,7 @@ static __inline void
 refcount_acquire(volatile u_int *count)
 {
 
+	KASSERT(*count < UINT_MAX, ("refcount %p overflowed", count));
 	atomic_add_acq_int(count, 1);	
 }
 

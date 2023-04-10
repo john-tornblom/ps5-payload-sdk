@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/dev/ppbus/ppbconf.h 188093 2009-02-03 19:49:21Z jhb $
+ * $FreeBSD: releng/11.0/sys/dev/ppbus/ppbconf.h 188093 2009-02-03 19:49:21Z jhb $
  *
  */
 #ifndef __PPBCONF_H

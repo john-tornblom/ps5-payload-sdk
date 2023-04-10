@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)unistd.h	8.2 (Berkeley) 1/7/94
- * $FreeBSD: release/9.0.0/sys/sys/unistd.h 224987 2011-08-18 22:51:30Z jonathan $
+ * $FreeBSD: releng/11.0/sys/sys/unistd.h 296572 2016-03-09 19:05:11Z jhb $
  */
 
 #ifndef _SYS_UNISTD_H_
@@ -49,37 +49,37 @@
  * the POSIX standard; however, if the relevant sysconf() function
  * returns -1, the functions may be stubbed out.
  */
-#define	_POSIX_ADVISORY_INFO		-1
-#define	_POSIX_ASYNCHRONOUS_IO		0
+#define	_POSIX_ADVISORY_INFO		200112L
+#define	_POSIX_ASYNCHRONOUS_IO		200112L
 #define	_POSIX_CHOWN_RESTRICTED		1
-#define	_POSIX_CLOCK_SELECTION		-1
-#define	_POSIX_CPUTIME			-1
+#define	_POSIX_CLOCK_SELECTION		(-1)
+#define	_POSIX_CPUTIME			200112L
 #define	_POSIX_FSYNC			200112L
 #define	_POSIX_IPV6			0
 #define	_POSIX_JOB_CONTROL		1
 #define	_POSIX_MAPPED_FILES		200112L
-#define	_POSIX_MEMLOCK			-1
+#define	_POSIX_MEMLOCK			(-1)
 #define	_POSIX_MEMLOCK_RANGE		200112L
 #define	_POSIX_MEMORY_PROTECTION	200112L
 #define	_POSIX_MESSAGE_PASSING		200112L
 #define	_POSIX_MONOTONIC_CLOCK		200112L
 #define	_POSIX_NO_TRUNC			1
-#define	_POSIX_PRIORITIZED_IO		-1
+#define	_POSIX_PRIORITIZED_IO		(-1)
 #define	_POSIX_PRIORITY_SCHEDULING	200112L
 #define	_POSIX_RAW_SOCKETS		200112L
 #define	_POSIX_REALTIME_SIGNALS		200112L
 #define	_POSIX_SEMAPHORES		200112L
 #define	_POSIX_SHARED_MEMORY_OBJECTS	200112L
-#define	_POSIX_SPORADIC_SERVER		-1
-#define	_POSIX_SYNCHRONIZED_IO		-1
+#define	_POSIX_SPORADIC_SERVER		(-1)
+#define	_POSIX_SYNCHRONIZED_IO		(-1)
 #define	_POSIX_TIMEOUTS			200112L
 #define	_POSIX_TIMERS			200112L
-#define	_POSIX_TYPED_MEMORY_OBJECTS	-1
+#define	_POSIX_TYPED_MEMORY_OBJECTS	(-1)
 #define	_POSIX_VDISABLE			0xff
 
 #if __XSI_VISIBLE
 #define	_XOPEN_SHM			1
-#define	_XOPEN_STREAMS			-1
+#define	_XOPEN_STREAMS			(-1)
 #endif
 
 /*

@@ -26,8 +26,7 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE. 
  *
- * P4: //depot/projects/trustedbsd/openbsm/sys/bsm/audit_domain.h#2
- * $FreeBSD: release/9.0.0/sys/bsm/audit_domain.h 191273 2009-04-19 16:17:13Z rwatson $
+ * $FreeBSD: releng/11.0/sys/bsm/audit_domain.h 292522 2015-12-20 23:22:04Z brueffer $
  */
 
 #ifndef _BSM_AUDIT_DOMAIN_H_

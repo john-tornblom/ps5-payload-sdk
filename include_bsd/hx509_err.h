@@ -1,5 +1,5 @@
 /* Generated from /usr/src/kerberos5/lib/libhx509/../../../crypto/heimdal/lib/hx509/hx509_err.et */
-/* $Id: hx509_err.et 22329 2007-12-15 05:13:14Z lha $ */
+/* $Id$ */
 
 #ifndef __hx509_err_h__
 #define __hx509_err_h__
@@ -60,6 +60,8 @@ typedef enum hx_error_number{
 	HX509_CRYPTO_RSA_PRIVATE_ENCRYPT = 569930,
 	HX509_CRYPTO_RSA_PUBLIC_DECRYPT = 569931,
 	HX509_CRYPTO_RSA_PRIVATE_DECRYPT = 569932,
+	HX509_CRYPTO_ALGORITHM_BEST_BEFORE = 569933,
+	HX509_CRYPTO_KEY_FORMAT_UNSUPPORTED = 569934,
 	HX509_CRL_USED_BEFORE_TIME = 569952,
 	HX509_CRL_USED_AFTER_TIME = 569953,
 	HX509_CRL_INVALID_FORMAT = 569954,
@@ -84,5 +86,7 @@ typedef enum hx_error_number{
 } hx_error_number;
 
 #define ERROR_TABLE_BASE_hx 569856
+
+#define COM_ERR_BINDDOMAIN_hx "heim_com_err569856"
 
 #endif /* __hx509_err_h__ */

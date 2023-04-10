@@ -20,7 +20,7 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/mouse.h 165335 2006-12-18 18:48:28Z keramida $
+ * $FreeBSD: releng/11.0/sys/sys/mouse.h 282734 2015-05-10 20:36:57Z rpaulo $
  */
 
 #ifndef _SYS_MOUSE_H_
@@ -86,7 +86,7 @@ typedef struct mousehw {
 	int type;		/* mouse/track ball/pad... */
 	int model;		/* I/F dependent model ID: MOUSE_MODEL_XXX */
 	int hwid;		/* I/F dependent hardware ID
-				 * for the PS/2 mouse, it will be PSM_XXX_ID 
+				 * for the PS/2 mouse, it will be PSM_XXX_ID
 				 */
 } mousehw_t;
 
@@ -107,6 +107,34 @@ typedef struct synapticshw {
 	int capMultiFinger;
 	int capPalmDetect;
 	int capPassthrough;
+	int capMiddle;
+	int capLowPower;
+	int capMultiFingerReport;
+	int capBallistics;
+	int nExtendedButtons;
+	int nExtendedQueries;
+	int capClickPad;
+	int capDeluxeLEDs;
+	int noAbsoluteFilter;
+	int capReportsV;
+	int capUniformClickPad;
+	int capReportsMin;
+	int capInterTouch;
+	int capReportsMax;
+	int capClearPad;
+	int capAdvancedGestures;
+	int multiFingerMode;
+	int capCoveredPad;
+	int verticalScroll;
+	int horizontalScroll;
+	int verticalWheel;
+	int capEWmode;
+	int minimumXCoord;
+	int minimumYCoord;
+	int maximumXCoord;
+	int maximumYCoord;
+	int infoXupmm;
+	int infoYupmm;
 } synapticshw_t;
 
 /* iftype */
@@ -141,6 +169,7 @@ typedef struct synapticshw {
 #define MOUSE_MODEL_4D			11
 #define MOUSE_MODEL_4DPLUS		12
 #define MOUSE_MODEL_SYNAPTICS		13
+#define	MOUSE_MODEL_TRACKPOINT		14
 
 typedef struct mousemode {
 	int protocol;		/* MOUSE_PROTO_XXX */
@@ -265,7 +294,7 @@ typedef struct mousevar {
 #define MOUSE_PS2_BUTTON2DOWN	0x04	/* middle */
 #define MOUSE_PS2_BUTTON3DOWN	0x02	/* right */
 #define MOUSE_PS2_TAP		MOUSE_PS2_SYNC /* GlidePoint (PS/2) `tapping'
-					        * Yes! this is the same bit 
+					        * Yes! this is the same bit
 						* as SYNC!
 					 	*/
 
@@ -320,11 +349,11 @@ typedef struct mousevar {
 #define MOUSE_PS2VERSA_TAP		0x02
 
 /* A4 Tech 4D Mouse (PS/2) data packet */
-#define MOUSE_4D_PACKETSIZE		3	
+#define MOUSE_4D_PACKETSIZE		3
 #define MOUSE_4D_WHEELBITS		0xf0
 
 /* A4 Tech 4D+ Mouse (PS/2) data packet */
-#define MOUSE_4DPLUS_PACKETSIZE		3	
+#define MOUSE_4DPLUS_PACKETSIZE		3
 #define MOUSE_4DPLUS_ZNEG		0x04	/* sign bit */
 #define MOUSE_4DPLUS_BUTTON4DOWN	0x08
 
@@ -336,7 +365,7 @@ typedef struct mousevar {
  * as at the level 0.  There are additional three bytes which shows
  * `dz' and the states of additional buttons.  `dz' is expressed as the
  * sum of the byte 5 and 6 which contain signed seven bit values.
- * The states of the button 4 though 10 are in the bit 0 though 6 in 
+ * The states of the button 4 though 10 are in the bit 0 though 6 in
  * the byte 7 respectively: 1 indicates the button is up.
  */
 #define MOUSE_SYS_PACKETSIZE	8

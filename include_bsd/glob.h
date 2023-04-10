@@ -30,7 +30,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)glob.h	8.1 (Berkeley) 6/2/93
- * $FreeBSD: release/9.0.0/include/glob.h 203964 2010-02-16 19:39:50Z imp $
+ * $FreeBSD: releng/11.0/include/glob.h 228754 2011-12-20 22:56:13Z eadler $
  */
 
 #ifndef _GLOB_H_
@@ -98,7 +98,8 @@ typedef struct {
 #endif /* __BSD_VISIBLE */
 
 __BEGIN_DECLS
-int	glob(const char *, int, int (*)(const char *, int), glob_t *);
+int	glob(const char * __restrict, int,
+	int (*)(const char *, int), glob_t * __restrict);
 void	globfree(glob_t *);
 __END_DECLS
 

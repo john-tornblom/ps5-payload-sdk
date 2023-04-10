@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)termios.h	8.3 (Berkeley) 3/28/94
- * $FreeBSD: release/9.0.0/include/termios.h 214680 2010-11-02 17:00:56Z ed $
+ * $FreeBSD: releng/11.0/include/termios.h 265878 2014-05-11 13:48:21Z jilles $
  */
 
 #ifndef _TERMIOS_H_
@@ -81,7 +81,7 @@ int	tcflow(int, int);
 int	tcflush(int, int);
 int	tcsendbreak(int, int);
 
-#if __POSIX_VISIBLE >= 200112 || __BSD_VISIBLE
+#if __POSIX_VISIBLE >= 200112
 pid_t	tcgetsid(int);
 #endif
 #if __BSD_VISIBLE

@@ -32,7 +32,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)grp.h	8.2 (Berkeley) 1/21/94
- * $FreeBSD: release/9.0.0/include/grp.h 203964 2010-02-16 19:39:50Z imp $
+ * $FreeBSD: releng/11.0/include/grp.h 265878 2014-05-11 13:48:21Z jilles $
  */
 
 #ifndef _GRP_H_
@@ -61,7 +61,7 @@ struct group {
 };
 
 __BEGIN_DECLS
-#if __BSD_VISIBLE || __POSIX_VISIBLE >= 200112 || __XSI_VISIBLE
+#if __POSIX_VISIBLE >= 200112 || __XSI_VISIBLE
 void		 endgrent(void);
 struct group	*getgrent(void);
 #endif
@@ -69,12 +69,16 @@ struct group	*getgrgid(gid_t);
 struct group	*getgrnam(const char *);
 #if __BSD_VISIBLE
 const char	*group_from_gid(gid_t, int);
+int		 gid_from_group(const char *, gid_t *);
+int		 pwcache_groupdb(int (*)(int), void (*)(void),
+		    struct group * (*)(const char *),
+		    struct group * (*)(gid_t));
 #endif
-#if __BSD_VISIBLE || __XSI_VISIBLE
+#if __XSI_VISIBLE
 /* XXX IEEE Std 1003.1, 2003 specifies `void setgrent(void)' */
 int		 setgrent(void);
 #endif
-#if __BSD_VISIBLE || __POSIX_VISIBLE >= 200112 || __XSI_VISIBLE
+#if __POSIX_VISIBLE >= 200112 || __XSI_VISIBLE
 int		 getgrgid_r(gid_t, struct group *, char *, size_t,
 		    struct group **);
 int		 getgrnam_r(const char *, struct group *, char *, size_t,

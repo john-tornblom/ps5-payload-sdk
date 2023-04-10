@@ -35,7 +35,7 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)param.h	5.8 (Berkeley) 6/28/91
- * $FreeBSD: release/9.0.0/sys/x86/include/_align.h 215856 2010-11-26 10:59:20Z tijl $
+ * $FreeBSD: releng/11.0/sys/x86/include/_align.h 301037 2016-05-31 13:31:19Z ed $
  */
 
 #ifndef _X86_INCLUDE__ALIGN_H_
@@ -46,7 +46,7 @@
  * for all data types (int, long, ...).   The result is unsigned int
  * and must be cast to any desired pointer type.
  */
-#define	_ALIGNBYTES	(sizeof(register_t) - 1)
-#define	_ALIGN(p)	(((uintptr_t)(p) + _ALIGNBYTES) & ~_ALIGNBYTES)
+#define	_ALIGNBYTES	(sizeof(__register_t) - 1)
+#define	_ALIGN(p)	(((__uintptr_t)(p) + _ALIGNBYTES) & ~_ALIGNBYTES)
 
 #endif /* !_X86_INCLUDE__ALIGN_H_ */

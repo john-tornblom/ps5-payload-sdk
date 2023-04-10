@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/include/wchar.h 203963 2010-02-16 19:28:10Z imp $
+ * $FreeBSD: releng/11.0/include/wchar.h 300998 2016-05-30 16:26:34Z ed $
  */
 
 /*-
@@ -76,9 +76,16 @@ typedef	__size_t	size_t;
 #define	_SIZE_T_DECLARED
 #endif
 
+#if __POSIX_VISIBLE >= 200809 || __XSI_VISIBLE
+#ifndef _VA_LIST_DECLARED
+typedef	__va_list	va_list;
+#define	_VA_LIST_DECLARED
+#endif
+#endif
+
 #ifndef	__cplusplus
 #ifndef _WCHAR_T_DECLARED
-typedef	__wchar_t	wchar_t;
+typedef	___wchar_t	wchar_t;
 #define	_WCHAR_T_DECLARED
 #endif
 #endif
@@ -88,29 +95,30 @@ typedef	__wint_t	wint_t;
 #define	_WINT_T_DECLARED
 #endif
 
-#ifndef	WCHAR_MIN 
-#define	WCHAR_MIN	__INT_MIN
-#define	WCHAR_MAX	__INT_MAX
-#endif
+#define	WCHAR_MIN	__WCHAR_MIN
+#define	WCHAR_MAX	__WCHAR_MAX
 
 #ifndef WEOF
 #define	WEOF 	((wint_t)-1)
 #endif
 
-struct __sFILE;
+#ifndef _STDFILE_DECLARED
+#define _STDFILE_DECLARED
+typedef struct __sFILE FILE;
+#endif
 struct tm;
 
 __BEGIN_DECLS
 wint_t	btowc(int);
-wint_t	fgetwc(struct __sFILE *);
+wint_t	fgetwc(FILE *);
 wchar_t	*
-	fgetws(wchar_t * __restrict, int, struct __sFILE * __restrict);
-wint_t	fputwc(wchar_t, struct __sFILE *);
-int	fputws(const wchar_t * __restrict, struct __sFILE * __restrict);
-int	fwide(struct __sFILE *, int);
-int	fwprintf(struct __sFILE * __restrict, const wchar_t * __restrict, ...);
-int	fwscanf(struct __sFILE * __restrict, const wchar_t * __restrict, ...);
-wint_t	getwc(struct __sFILE *);
+	fgetws(wchar_t * __restrict, int, FILE * __restrict);
+wint_t	fputwc(wchar_t, FILE *);
+int	fputws(const wchar_t * __restrict, FILE * __restrict);
+int	fwide(FILE *, int);
+int	fwprintf(FILE * __restrict, const wchar_t * __restrict, ...);
+int	fwscanf(FILE * __restrict, const wchar_t * __restrict, ...);
+wint_t	getwc(FILE *);
 wint_t	getwchar(void);
 size_t	mbrlen(const char * __restrict, size_t, mbstate_t * __restrict);
 size_t	mbrtowc(wchar_t * __restrict, const char * __restrict, size_t,
@@ -118,13 +126,13 @@ size_t	mbrtowc(wchar_t * __restrict, const char * __restrict, size_t,
 int	mbsinit(const mbstate_t *);
 size_t	mbsrtowcs(wchar_t * __restrict, const char ** __restrict, size_t,
 	    mbstate_t * __restrict);
-wint_t	putwc(wchar_t, struct __sFILE *);
+wint_t	putwc(wchar_t, FILE *);
 wint_t	putwchar(wchar_t);
 int	swprintf(wchar_t * __restrict, size_t n, const wchar_t * __restrict,
 	    ...);
 int	swscanf(const wchar_t * __restrict, const wchar_t * __restrict, ...);
-wint_t	ungetwc(wint_t, struct __sFILE *);
-int	vfwprintf(struct __sFILE * __restrict, const wchar_t * __restrict,
+wint_t	ungetwc(wint_t, FILE *);
+int	vfwprintf(FILE * __restrict, const wchar_t * __restrict,
 	    __va_list);
 int	vswprintf(wchar_t * __restrict, size_t n, const wchar_t * __restrict,
 	    __va_list);
@@ -167,9 +175,9 @@ int	wprintf(const wchar_t * __restrict, ...);
 int	wscanf(const wchar_t * __restrict, ...);
 
 #ifndef _STDSTREAM_DECLARED
-extern struct __sFILE *__stdinp;
-extern struct __sFILE *__stdoutp;
-extern struct __sFILE *__stderrp;
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
 #define	_STDSTREAM_DECLARED
 #endif
 
@@ -179,7 +187,7 @@ extern struct __sFILE *__stderrp;
 #define	putwchar(wc)	fputwc(wc, __stdoutp)
 
 #if __ISO_C_VISIBLE >= 1999
-int	vfwscanf(struct __sFILE * __restrict, const wchar_t * __restrict,
+int	vfwscanf(FILE * __restrict, const wchar_t * __restrict,
 	    __va_list);
 int	vswscanf(const wchar_t * __restrict, const wchar_t * __restrict,
 	    __va_list);
@@ -203,9 +211,10 @@ int	wcwidth(wchar_t);
 #define	wcwidth(_c)	__wcwidth(_c)
 #endif
 
-#if __POSIX_VISIBLE >= 200809 || __BSD_VISIBLE
+#if __POSIX_VISIBLE >= 200809
 size_t	mbsnrtowcs(wchar_t * __restrict, const char ** __restrict, size_t,
 	    size_t, mbstate_t * __restrict);
+FILE	*open_wmemstream(wchar_t **, size_t *);
 wchar_t	*wcpcpy(wchar_t * __restrict, const wchar_t * __restrict);
 wchar_t	*wcpncpy(wchar_t * __restrict, const wchar_t * __restrict, size_t);
 wchar_t	*wcsdup(const wchar_t *) __malloc_like;
@@ -217,9 +226,13 @@ size_t	wcsnrtombs(char * __restrict, const wchar_t ** __restrict, size_t,
 #endif
 
 #if __BSD_VISIBLE
-wchar_t	*fgetwln(struct __sFILE * __restrict, size_t * __restrict);
+wchar_t	*fgetwln(FILE * __restrict, size_t * __restrict);
 size_t	wcslcat(wchar_t *, const wchar_t *, size_t);
 size_t	wcslcpy(wchar_t *, const wchar_t *, size_t);
+#endif
+
+#if __POSIX_VISIBLE >= 200809 || defined(_XLOCALE_H_)
+#include <xlocale/_wchar.h>
 #endif
 __END_DECLS
 

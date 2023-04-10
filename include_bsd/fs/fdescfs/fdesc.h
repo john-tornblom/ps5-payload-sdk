@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- * 4. Neither the name of the University nor the names of its contributors
+ * 3. Neither the name of the University nor the names of its contributors
  *    may be used to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
@@ -31,7 +31,7 @@
  *
  *	@(#)fdesc.h	8.5 (Berkeley) 1/21/94
  *
- * $FreeBSD: release/9.0.0/sys/fs/fdescfs/fdesc.h 191990 2009-05-11 15:33:26Z attilio $
+ * $FreeBSD: releng/11.0/sys/fs/fdescfs/fdesc.h 298853 2016-04-30 16:01:37Z emaste $
  */
 
 #ifdef _KERNEL

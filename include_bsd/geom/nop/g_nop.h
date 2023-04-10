@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/geom/nop/g_nop.h 162834 2006-09-30 08:16:49Z pjd $
+ * $FreeBSD: releng/11.0/sys/geom/nop/g_nop.h 289110 2015-10-10 09:03:31Z trasz $
  */
 
 #ifndef	_G_NOP_H_
@@ -44,9 +44,10 @@
 		printf("\n");						\
 	}								\
 } while (0)
-#define	G_NOP_LOGREQ(bp, ...)	do {					\
-	if (g_nop_debug >= 2) {						\
-		printf("GEOM_NOP[2]: ");				\
+#define	G_NOP_LOGREQ(bp, ...)	G_NOP_LOGREQLVL(2, bp, __VA_ARGS__)
+#define G_NOP_LOGREQLVL(lvl, bp, ...) do {				\
+	if (g_nop_debug >= (lvl)) {					\
+		printf("GEOM_NOP[%d]: ", (lvl));			\
 		printf(__VA_ARGS__);					\
 		printf(" ");						\
 		g_print_bio(bp);					\
@@ -57,12 +58,22 @@
 struct g_nop_softc {
 	int		sc_error;
 	off_t		sc_offset;
+	off_t		sc_explicitsize;
+	off_t		sc_stripesize;
+	off_t		sc_stripeoffset;
 	u_int		sc_rfailprob;
 	u_int		sc_wfailprob;
 	uintmax_t	sc_reads;
 	uintmax_t	sc_writes;
+	uintmax_t	sc_deletes;
+	uintmax_t	sc_getattrs;
+	uintmax_t	sc_flushes;
+	uintmax_t	sc_cmd0s;
+	uintmax_t	sc_cmd1s;
+	uintmax_t	sc_cmd2s;
 	uintmax_t	sc_readbytes;
 	uintmax_t	sc_wrotebytes;
+	struct mtx	sc_lock;
 };
 #endif	/* _KERNEL */
 

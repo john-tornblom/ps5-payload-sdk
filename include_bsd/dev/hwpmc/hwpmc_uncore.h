@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/dev/hwpmc/hwpmc_uncore.h 206089 2010-04-02 13:23:49Z fabient $
+ * $FreeBSD: releng/11.0/sys/dev/hwpmc/hwpmc_uncore.h 266195 2014-05-15 21:19:13Z markj $
  */
 
 #ifndef _DEV_HWPMC_UNCORE_H_
@@ -68,6 +68,7 @@ struct pmc_md_ucp_op_pmcallocate {
 #define	UCF_CTR0				0x394
 
 #define	UCF_OFFSET				32
+#define UCF_OFFSET_SB				29
 #define	UCF_CTRL				0x395
 
 /*
@@ -77,6 +78,7 @@ struct pmc_md_ucp_op_pmcallocate {
 #define	UCP_PMC0				0x3B0
 #define	UCP_EVSEL0				0x3C0
 #define UCP_OPCODE_MATCH			0x396
+#define UCP_CB0_EVSEL0				0x700
 
 /*
  * Simplified programming interface in Intel Performance Architecture
@@ -92,6 +94,12 @@ struct pmc_md_ucp_op_pmcallocate {
 #define	UC_GLOBAL_CTRL_FLAG_FRZ			(1ULL << 63)
 #define	UC_GLOBAL_CTRL_FLAG_ENPMICORE0		(1ULL << 48)
 
+/*
+ * Model specific registers.
+ */
+
+#define MSR_GQ_SNOOP_MESF			0x301
+
 struct pmc_md_ucf_pmc {
 	uint64_t	pm_ucf_ctrl;
 };
@@ -106,8 +114,6 @@ struct pmc_md_ucp_pmc {
 
 int	pmc_uncore_initialize(struct pmc_mdep *_md, int _maxcpu);
 void	pmc_uncore_finalize(struct pmc_mdep *_md);
-
-void	pmc_uncore_mark_started(int _cpu, int _pmc);
 
 int	pmc_ucf_initialize(struct pmc_mdep *_md, int _maxcpu, int _npmc, int _width);
 void	pmc_ucf_finalize(struct pmc_mdep *_md);

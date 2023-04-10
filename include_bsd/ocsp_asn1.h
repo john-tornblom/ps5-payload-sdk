@@ -25,9 +25,9 @@ typedef char *heim_general_string;
 
 typedef char *heim_utf8_string;
 
-typedef char *heim_printable_string;
+typedef struct heim_octet_string heim_printable_string;
 
-typedef char *heim_ia5_string;
+typedef struct heim_octet_string heim_ia5_string;
 
 typedef struct heim_bmp_string {
   size_t length;
@@ -70,6 +70,17 @@ typedef struct heim_octet_string heim_any_set;
     }                                                          \
   } while (0)
 
+#ifdef _WIN32
+#ifndef ASN1_LIB
+#define ASN1EXP  __declspec(dllimport)
+#else
+#define ASN1EXP
+#endif
+#define ASN1CALL __stdcall
+#else
+#define ASN1EXP
+#define ASN1CALL
+#endif
 struct units;
 
 #endif
@@ -85,11 +96,11 @@ typedef enum OCSPVersion {
   ocsp_v1 = 0
 } OCSPVersion;
 
-int    encode_OCSPVersion(unsigned char *, size_t, const OCSPVersion *, size_t *);
-int    decode_OCSPVersion(const unsigned char *, size_t, OCSPVersion *, size_t *);
-void   free_OCSPVersion  (OCSPVersion *);
-size_t length_OCSPVersion(const OCSPVersion *);
-int    copy_OCSPVersion  (const OCSPVersion *, OCSPVersion *);
+ASN1EXP int    ASN1CALL decode_OCSPVersion(const unsigned char *, size_t, OCSPVersion *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPVersion(unsigned char *, size_t, const OCSPVersion *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPVersion(const OCSPVersion *);
+ASN1EXP int    ASN1CALL copy_OCSPVersion  (const OCSPVersion *, OCSPVersion *);
+ASN1EXP void   ASN1CALL free_OCSPVersion  (OCSPVersion *);
 
 
 /*
@@ -111,7 +122,7 @@ typedef struct OCSPCertStatus {
   } element;
   union {
     int good;
-    struct  {
+    struct OCSPCertStatus_revoked {
       time_t revocationTime;
       CRLReason *revocationReason;
     } revoked;
@@ -119,11 +130,11 @@ typedef struct OCSPCertStatus {
   } u;
 } OCSPCertStatus;
 
-int    encode_OCSPCertStatus(unsigned char *, size_t, const OCSPCertStatus *, size_t *);
-int    decode_OCSPCertStatus(const unsigned char *, size_t, OCSPCertStatus *, size_t *);
-void   free_OCSPCertStatus  (OCSPCertStatus *);
-size_t length_OCSPCertStatus(const OCSPCertStatus *);
-int    copy_OCSPCertStatus  (const OCSPCertStatus *, OCSPCertStatus *);
+ASN1EXP int    ASN1CALL decode_OCSPCertStatus(const unsigned char *, size_t, OCSPCertStatus *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPCertStatus(unsigned char *, size_t, const OCSPCertStatus *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPCertStatus(const OCSPCertStatus *);
+ASN1EXP int    ASN1CALL copy_OCSPCertStatus  (const OCSPCertStatus *, OCSPCertStatus *);
+ASN1EXP void   ASN1CALL free_OCSPCertStatus  (OCSPCertStatus *);
 
 
 /*
@@ -142,11 +153,11 @@ typedef struct OCSPCertID {
   CertificateSerialNumber serialNumber;
 } OCSPCertID;
 
-int    encode_OCSPCertID(unsigned char *, size_t, const OCSPCertID *, size_t *);
-int    decode_OCSPCertID(const unsigned char *, size_t, OCSPCertID *, size_t *);
-void   free_OCSPCertID  (OCSPCertID *);
-size_t length_OCSPCertID(const OCSPCertID *);
-int    copy_OCSPCertID  (const OCSPCertID *, OCSPCertID *);
+ASN1EXP int    ASN1CALL decode_OCSPCertID(const unsigned char *, size_t, OCSPCertID *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPCertID(unsigned char *, size_t, const OCSPCertID *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPCertID(const OCSPCertID *);
+ASN1EXP int    ASN1CALL copy_OCSPCertID  (const OCSPCertID *, OCSPCertID *);
+ASN1EXP void   ASN1CALL free_OCSPCertID  (OCSPCertID *);
 
 
 /*
@@ -167,11 +178,11 @@ typedef struct OCSPSingleResponse {
   Extensions *singleExtensions;
 } OCSPSingleResponse;
 
-int    encode_OCSPSingleResponse(unsigned char *, size_t, const OCSPSingleResponse *, size_t *);
-int    decode_OCSPSingleResponse(const unsigned char *, size_t, OCSPSingleResponse *, size_t *);
-void   free_OCSPSingleResponse  (OCSPSingleResponse *);
-size_t length_OCSPSingleResponse(const OCSPSingleResponse *);
-int    copy_OCSPSingleResponse  (const OCSPSingleResponse *, OCSPSingleResponse *);
+ASN1EXP int    ASN1CALL decode_OCSPSingleResponse(const unsigned char *, size_t, OCSPSingleResponse *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPSingleResponse(unsigned char *, size_t, const OCSPSingleResponse *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPSingleResponse(const OCSPSingleResponse *);
+ASN1EXP int    ASN1CALL copy_OCSPSingleResponse  (const OCSPSingleResponse *, OCSPSingleResponse *);
+ASN1EXP void   ASN1CALL free_OCSPSingleResponse  (OCSPSingleResponse *);
 
 
 /*
@@ -186,11 +197,11 @@ typedef struct OCSPInnerRequest {
   Extensions *singleRequestExtensions;
 } OCSPInnerRequest;
 
-int    encode_OCSPInnerRequest(unsigned char *, size_t, const OCSPInnerRequest *, size_t *);
-int    decode_OCSPInnerRequest(const unsigned char *, size_t, OCSPInnerRequest *, size_t *);
-void   free_OCSPInnerRequest  (OCSPInnerRequest *);
-size_t length_OCSPInnerRequest(const OCSPInnerRequest *);
-int    copy_OCSPInnerRequest  (const OCSPInnerRequest *, OCSPInnerRequest *);
+ASN1EXP int    ASN1CALL decode_OCSPInnerRequest(const unsigned char *, size_t, OCSPInnerRequest *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPInnerRequest(unsigned char *, size_t, const OCSPInnerRequest *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPInnerRequest(const OCSPInnerRequest *);
+ASN1EXP int    ASN1CALL copy_OCSPInnerRequest  (const OCSPInnerRequest *, OCSPInnerRequest *);
+ASN1EXP void   ASN1CALL free_OCSPInnerRequest  (OCSPInnerRequest *);
 
 
 /*
@@ -206,18 +217,18 @@ typedef struct OCSPTBSRequest {
   heim_octet_string _save;
   OCSPVersion *version;
   GeneralName *requestorName;
-  struct  {
+  struct OCSPTBSRequest_requestList {
     unsigned int len;
     OCSPInnerRequest *val;
   } requestList;
   Extensions *requestExtensions;
 } OCSPTBSRequest;
 
-int    encode_OCSPTBSRequest(unsigned char *, size_t, const OCSPTBSRequest *, size_t *);
-int    decode_OCSPTBSRequest(const unsigned char *, size_t, OCSPTBSRequest *, size_t *);
-void   free_OCSPTBSRequest  (OCSPTBSRequest *);
-size_t length_OCSPTBSRequest(const OCSPTBSRequest *);
-int    copy_OCSPTBSRequest  (const OCSPTBSRequest *, OCSPTBSRequest *);
+ASN1EXP int    ASN1CALL decode_OCSPTBSRequest(const unsigned char *, size_t, OCSPTBSRequest *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPTBSRequest(unsigned char *, size_t, const OCSPTBSRequest *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPTBSRequest(const OCSPTBSRequest *);
+ASN1EXP int    ASN1CALL copy_OCSPTBSRequest  (const OCSPTBSRequest *, OCSPTBSRequest *);
+ASN1EXP void   ASN1CALL free_OCSPTBSRequest  (OCSPTBSRequest *);
 
 
 /*
@@ -232,17 +243,17 @@ OCSPSignature ::= SEQUENCE {
 typedef struct OCSPSignature {
   AlgorithmIdentifier signatureAlgorithm;
   heim_bit_string signature;
-  struct  {
+  struct OCSPSignature_certs {
     unsigned int len;
     Certificate *val;
   } *certs;
 } OCSPSignature;
 
-int    encode_OCSPSignature(unsigned char *, size_t, const OCSPSignature *, size_t *);
-int    decode_OCSPSignature(const unsigned char *, size_t, OCSPSignature *, size_t *);
-void   free_OCSPSignature  (OCSPSignature *);
-size_t length_OCSPSignature(const OCSPSignature *);
-int    copy_OCSPSignature  (const OCSPSignature *, OCSPSignature *);
+ASN1EXP int    ASN1CALL decode_OCSPSignature(const unsigned char *, size_t, OCSPSignature *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPSignature(unsigned char *, size_t, const OCSPSignature *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPSignature(const OCSPSignature *);
+ASN1EXP int    ASN1CALL copy_OCSPSignature  (const OCSPSignature *, OCSPSignature *);
+ASN1EXP void   ASN1CALL free_OCSPSignature  (OCSPSignature *);
 
 
 /*
@@ -257,11 +268,11 @@ typedef struct OCSPRequest {
   OCSPSignature *optionalSignature;
 } OCSPRequest;
 
-int    encode_OCSPRequest(unsigned char *, size_t, const OCSPRequest *, size_t *);
-int    decode_OCSPRequest(const unsigned char *, size_t, OCSPRequest *, size_t *);
-void   free_OCSPRequest  (OCSPRequest *);
-size_t length_OCSPRequest(const OCSPRequest *);
-int    copy_OCSPRequest  (const OCSPRequest *, OCSPRequest *);
+ASN1EXP int    ASN1CALL decode_OCSPRequest(const unsigned char *, size_t, OCSPRequest *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPRequest(unsigned char *, size_t, const OCSPRequest *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPRequest(const OCSPRequest *);
+ASN1EXP int    ASN1CALL copy_OCSPRequest  (const OCSPRequest *, OCSPRequest *);
+ASN1EXP void   ASN1CALL free_OCSPRequest  (OCSPRequest *);
 
 
 /*
@@ -276,11 +287,11 @@ typedef struct OCSPResponseBytes {
   heim_octet_string response;
 } OCSPResponseBytes;
 
-int    encode_OCSPResponseBytes(unsigned char *, size_t, const OCSPResponseBytes *, size_t *);
-int    decode_OCSPResponseBytes(const unsigned char *, size_t, OCSPResponseBytes *, size_t *);
-void   free_OCSPResponseBytes  (OCSPResponseBytes *);
-size_t length_OCSPResponseBytes(const OCSPResponseBytes *);
-int    copy_OCSPResponseBytes  (const OCSPResponseBytes *, OCSPResponseBytes *);
+ASN1EXP int    ASN1CALL decode_OCSPResponseBytes(const unsigned char *, size_t, OCSPResponseBytes *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPResponseBytes(unsigned char *, size_t, const OCSPResponseBytes *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPResponseBytes(const OCSPResponseBytes *);
+ASN1EXP int    ASN1CALL copy_OCSPResponseBytes  (const OCSPResponseBytes *, OCSPResponseBytes *);
+ASN1EXP void   ASN1CALL free_OCSPResponseBytes  (OCSPResponseBytes *);
 
 
 /*
@@ -303,11 +314,11 @@ typedef enum OCSPResponseStatus {
   unauthorized = 6
 } OCSPResponseStatus;
 
-int    encode_OCSPResponseStatus(unsigned char *, size_t, const OCSPResponseStatus *, size_t *);
-int    decode_OCSPResponseStatus(const unsigned char *, size_t, OCSPResponseStatus *, size_t *);
-void   free_OCSPResponseStatus  (OCSPResponseStatus *);
-size_t length_OCSPResponseStatus(const OCSPResponseStatus *);
-int    copy_OCSPResponseStatus  (const OCSPResponseStatus *, OCSPResponseStatus *);
+ASN1EXP int    ASN1CALL decode_OCSPResponseStatus(const unsigned char *, size_t, OCSPResponseStatus *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPResponseStatus(unsigned char *, size_t, const OCSPResponseStatus *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPResponseStatus(const OCSPResponseStatus *);
+ASN1EXP int    ASN1CALL copy_OCSPResponseStatus  (const OCSPResponseStatus *, OCSPResponseStatus *);
+ASN1EXP void   ASN1CALL free_OCSPResponseStatus  (OCSPResponseStatus *);
 
 
 /*
@@ -322,11 +333,11 @@ typedef struct OCSPResponse {
   OCSPResponseBytes *responseBytes;
 } OCSPResponse;
 
-int    encode_OCSPResponse(unsigned char *, size_t, const OCSPResponse *, size_t *);
-int    decode_OCSPResponse(const unsigned char *, size_t, OCSPResponse *, size_t *);
-void   free_OCSPResponse  (OCSPResponse *);
-size_t length_OCSPResponse(const OCSPResponse *);
-int    copy_OCSPResponse  (const OCSPResponse *, OCSPResponse *);
+ASN1EXP int    ASN1CALL decode_OCSPResponse(const unsigned char *, size_t, OCSPResponse *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPResponse(unsigned char *, size_t, const OCSPResponse *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPResponse(const OCSPResponse *);
+ASN1EXP int    ASN1CALL copy_OCSPResponse  (const OCSPResponse *, OCSPResponse *);
+ASN1EXP void   ASN1CALL free_OCSPResponse  (OCSPResponse *);
 
 
 /*
@@ -335,11 +346,11 @@ OCSPKeyHash ::= OCTET STRING
 
 typedef heim_octet_string OCSPKeyHash;
 
-int    encode_OCSPKeyHash(unsigned char *, size_t, const OCSPKeyHash *, size_t *);
-int    decode_OCSPKeyHash(const unsigned char *, size_t, OCSPKeyHash *, size_t *);
-void   free_OCSPKeyHash  (OCSPKeyHash *);
-size_t length_OCSPKeyHash(const OCSPKeyHash *);
-int    copy_OCSPKeyHash  (const OCSPKeyHash *, OCSPKeyHash *);
+ASN1EXP int    ASN1CALL decode_OCSPKeyHash(const unsigned char *, size_t, OCSPKeyHash *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPKeyHash(unsigned char *, size_t, const OCSPKeyHash *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPKeyHash(const OCSPKeyHash *);
+ASN1EXP int    ASN1CALL copy_OCSPKeyHash  (const OCSPKeyHash *, OCSPKeyHash *);
+ASN1EXP void   ASN1CALL free_OCSPKeyHash  (OCSPKeyHash *);
 
 
 /*
@@ -360,11 +371,11 @@ typedef struct OCSPResponderID {
   } u;
 } OCSPResponderID;
 
-int    encode_OCSPResponderID(unsigned char *, size_t, const OCSPResponderID *, size_t *);
-int    decode_OCSPResponderID(const unsigned char *, size_t, OCSPResponderID *, size_t *);
-void   free_OCSPResponderID  (OCSPResponderID *);
-size_t length_OCSPResponderID(const OCSPResponderID *);
-int    copy_OCSPResponderID  (const OCSPResponderID *, OCSPResponderID *);
+ASN1EXP int    ASN1CALL decode_OCSPResponderID(const unsigned char *, size_t, OCSPResponderID *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPResponderID(unsigned char *, size_t, const OCSPResponderID *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPResponderID(const OCSPResponderID *);
+ASN1EXP int    ASN1CALL copy_OCSPResponderID  (const OCSPResponderID *, OCSPResponderID *);
+ASN1EXP void   ASN1CALL free_OCSPResponderID  (OCSPResponderID *);
 
 
 /*
@@ -382,18 +393,18 @@ typedef struct OCSPResponseData {
   OCSPVersion *version;
   OCSPResponderID responderID;
   time_t producedAt;
-  struct  {
+  struct OCSPResponseData_responses {
     unsigned int len;
     OCSPSingleResponse *val;
   } responses;
   Extensions *responseExtensions;
 } OCSPResponseData;
 
-int    encode_OCSPResponseData(unsigned char *, size_t, const OCSPResponseData *, size_t *);
-int    decode_OCSPResponseData(const unsigned char *, size_t, OCSPResponseData *, size_t *);
-void   free_OCSPResponseData  (OCSPResponseData *);
-size_t length_OCSPResponseData(const OCSPResponseData *);
-int    copy_OCSPResponseData  (const OCSPResponseData *, OCSPResponseData *);
+ASN1EXP int    ASN1CALL decode_OCSPResponseData(const unsigned char *, size_t, OCSPResponseData *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPResponseData(unsigned char *, size_t, const OCSPResponseData *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPResponseData(const OCSPResponseData *);
+ASN1EXP int    ASN1CALL copy_OCSPResponseData  (const OCSPResponseData *, OCSPResponseData *);
+ASN1EXP void   ASN1CALL free_OCSPResponseData  (OCSPResponseData *);
 
 
 /*
@@ -410,26 +421,29 @@ typedef struct OCSPBasicOCSPResponse {
   OCSPResponseData tbsResponseData;
   AlgorithmIdentifier signatureAlgorithm;
   heim_bit_string signature;
-  struct  {
+  struct OCSPBasicOCSPResponse_certs {
     unsigned int len;
     Certificate *val;
   } *certs;
 } OCSPBasicOCSPResponse;
 
-int    encode_OCSPBasicOCSPResponse(unsigned char *, size_t, const OCSPBasicOCSPResponse *, size_t *);
-int    decode_OCSPBasicOCSPResponse(const unsigned char *, size_t, OCSPBasicOCSPResponse *, size_t *);
-void   free_OCSPBasicOCSPResponse  (OCSPBasicOCSPResponse *);
-size_t length_OCSPBasicOCSPResponse(const OCSPBasicOCSPResponse *);
-int    copy_OCSPBasicOCSPResponse  (const OCSPBasicOCSPResponse *, OCSPBasicOCSPResponse *);
+ASN1EXP int    ASN1CALL decode_OCSPBasicOCSPResponse(const unsigned char *, size_t, OCSPBasicOCSPResponse *, size_t *);
+ASN1EXP int    ASN1CALL encode_OCSPBasicOCSPResponse(unsigned char *, size_t, const OCSPBasicOCSPResponse *, size_t *);
+ASN1EXP size_t ASN1CALL length_OCSPBasicOCSPResponse(const OCSPBasicOCSPResponse *);
+ASN1EXP int    ASN1CALL copy_OCSPBasicOCSPResponse  (const OCSPBasicOCSPResponse *, OCSPBasicOCSPResponse *);
+ASN1EXP void   ASN1CALL free_OCSPBasicOCSPResponse  (OCSPBasicOCSPResponse *);
 
 
 /* OBJECT IDENTIFIER id-pkix-ocsp ::= { iso(1) identified-organization(3) dod(6) internet(1) security(5) mechanisms(5) pkix(7) pkix-ad(48) label-less(1) } */
-const heim_oid *oid_id_pkix_ocsp(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkix_ocsp;
+#define ASN1_OID_ID_PKIX_OCSP (&asn1_oid_id_pkix_ocsp)
 
 /* OBJECT IDENTIFIER id-pkix-ocsp-basic ::= { iso(1) identified-organization(3) dod(6) internet(1) security(5) mechanisms(5) pkix(7) pkix-ad(48) label-less(1) label-less(1) } */
-const heim_oid *oid_id_pkix_ocsp_basic(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkix_ocsp_basic;
+#define ASN1_OID_ID_PKIX_OCSP_BASIC (&asn1_oid_id_pkix_ocsp_basic)
 
 /* OBJECT IDENTIFIER id-pkix-ocsp-nonce ::= { iso(1) identified-organization(3) dod(6) internet(1) security(5) mechanisms(5) pkix(7) pkix-ad(48) label-less(1) label-less(2) } */
-const heim_oid *oid_id_pkix_ocsp_nonce(void);
+extern ASN1EXP const heim_oid asn1_oid_id_pkix_ocsp_nonce;
+#define ASN1_OID_ID_PKIX_OCSP_NONCE (&asn1_oid_id_pkix_ocsp_nonce)
 
 #endif /* __ocsp_asn1_h__ */

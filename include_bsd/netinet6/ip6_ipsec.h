@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/netinet6/ip6_ipsec.h 177166 2008-03-14 11:44:30Z bz $
+ * $FreeBSD: releng/11.0/sys/netinet6/ip6_ipsec.h 275710 2014-12-11 18:35:34Z ae $
  */
 
 #ifndef _NETINET_IP6_IPSEC_H_
@@ -35,8 +35,7 @@
 int	ip6_ipsec_filtertunnel(struct mbuf *);
 int	ip6_ipsec_fwd(struct mbuf *);
 int	ip6_ipsec_input(struct mbuf *, int);
-int	ip6_ipsec_output(struct mbuf **, struct inpcb *, int *, int *,
-	    struct ifnet **, struct secpolicy **sp);
+int	ip6_ipsec_output(struct mbuf **, struct inpcb *, int *);
 #if 0
 int	ip6_ipsec_mtu(struct mbuf *);
 #endif

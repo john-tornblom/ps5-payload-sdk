@@ -24,11 +24,13 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/amd64/include/cputypes.h 186797 2009-01-05 21:51:49Z jkim $
+ * $FreeBSD: releng/11.0/sys/amd64/include/cputypes.h 292668 2015-12-23 21:41:42Z jhb $
  */
 
 #ifndef _MACHINE_CPUTYPES_H_
 #define	_MACHINE_CPUTYPES_H_
+
+#include <x86/cputypes.h>
 
 /*
  * Classes of processor.
@@ -42,18 +44,5 @@
 #define	CPU_X86			0	/* Intel */
 #define	CPU_CLAWHAMMER		1	/* AMD Clawhammer */
 #define	CPU_SLEDGEHAMMER	2	/* AMD Sledgehammer */
-
-/*
- * Vendors of processor.
- */
-#define	CPU_VENDOR_AMD		0x1022		/* AMD */
-#define	CPU_VENDOR_IDT		0x111d		/* Centaur/IDT/VIA */
-#define	CPU_VENDOR_INTEL	0x8086		/* Intel */
-#define	CPU_VENDOR_CENTAUR	CPU_VENDOR_IDT
-
-#ifndef LOCORE
-extern int	cpu;
-extern int	cpu_class;
-#endif
 
 #endif /* !_MACHINE_CPUTYPES_H_ */

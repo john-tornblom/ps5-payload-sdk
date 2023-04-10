@@ -23,11 +23,19 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/dev/hwpmc/hwpmc_core.h 210621 2010-07-29 17:52:23Z gnn $
+ * $FreeBSD: releng/11.0/sys/dev/hwpmc/hwpmc_core.h 298955 2016-05-03 03:41:25Z pfg $
  */
 
 #ifndef _DEV_HWPMC_CORE_H_
 #define	_DEV_HWPMC_CORE_H_ 1
+
+#define	IA32_PERF_CAPABILITIES		0x345
+#define	PERFCAP_LBR_FORMAT		0x003f
+#define	PERFCAP_PEBS_TRAP		0x0040
+#define	PERFCAP_PEBS_SAVEARCH		0x0080
+#define	PERFCAP_PEBS_RECFORMAT		0x0f00
+#define	PERFCAP_SMM_FREEZE		0x1000
+#define	PERFCAP_FW_WRITE		0x2000	/* full width write aliases */
 
 /*
  * Fixed-function PMCs.
@@ -46,7 +54,7 @@ struct pmc_md_iaf_op_pmcallocate {
  */
 struct pmc_md_iap_op_pmcallocate {
 	uint32_t	pm_iap_config;
-	uint32_t	pm_iap_rsp;
+	uint64_t	pm_iap_rsp;
 };
 
 #define	IAP_EVSEL(C)	((C) & 0xFF)
@@ -60,7 +68,8 @@ struct pmc_md_iap_op_pmcallocate {
 #define	IAP_INV		(1 << 23)
 #define	IAP_CMASK(C)	(((C) & 0xFF) << 24)
 
-#define	IA_OFFCORE_RSP_MASK	0xF7FF
+#define	IA_OFFCORE_RSP_MASK_I7WM	0x000000F7FF
+#define	IA_OFFCORE_RSP_MASK_SBIB	0x3F807F8FFF
 
 #ifdef	_KERNEL
 
@@ -100,6 +109,7 @@ struct pmc_md_iap_op_pmcallocate {
  */
 
 #define	IAP_PMC0				0x0C1
+#define	IAP_A_PMC0				0x4C1
 
 /*
  * IAP_EVSEL(n) is laid out in the following way.
@@ -131,7 +141,7 @@ struct pmc_md_iap_op_pmcallocate {
 #define	IA_GLOBAL_CTRL				0x38F
 
 /*
- * IA_GLOBAL_CTRL is layed out in the following way.
+ * IA_GLOBAL_CTRL is laid out in the following way.
  * 
  * Bit Position    Use
  * 63-35           Reserved (do not touch)
@@ -167,17 +177,16 @@ struct pmc_md_iaf_pmc {
 
 struct pmc_md_iap_pmc {
 	uint32_t	pm_iap_evsel;
-	uint32_t	pm_iap_rsp;
+	uint64_t	pm_iap_rsp;
 };
 
 /*
  * Prototypes.
  */
 
-int	pmc_core_initialize(struct pmc_mdep *_md, int _maxcpu);
+int	pmc_core_initialize(struct pmc_mdep *_md, int _maxcpu,
+	    int _version_override);
 void	pmc_core_finalize(struct pmc_mdep *_md);
-
-void	pmc_core_mark_started(int _cpu, int _pmc);
 
 int	pmc_iaf_initialize(struct pmc_mdep *_md, int _maxcpu, int _npmc, int _width);
 void	pmc_iaf_finalize(struct pmc_mdep *_md);

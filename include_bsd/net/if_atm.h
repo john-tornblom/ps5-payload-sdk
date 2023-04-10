@@ -1,5 +1,5 @@
 /*      $NetBSD: if_atm.h,v 1.7 1996/11/09 23:02:27 chuck Exp $       */
-/* $FreeBSD: release/9.0.0/sys/net/if_atm.h 191148 2009-04-16 20:30:28Z kmacy $ */
+/* $FreeBSD: releng/11.0/sys/net/if_atm.h 298995 2016-05-03 18:05:43Z pfg $ */
 
 /*-
  *
@@ -96,7 +96,7 @@ struct ifatm_mib {
 
 /*
  * Traffic parameters for ATM connections. This contains all parameters
- * to accomodate UBR, UBR+MCR, CBR, VBR and ABR connections.
+ * to accommodate UBR, UBR+MCR, CBR, VBR and ABR connections.
  *
  * Keep in sync with ng_atm.h
  */
@@ -292,7 +292,7 @@ void	atm_ifattach(struct ifnet *);
 void	atm_ifdetach(struct ifnet *);
 void	atm_input(struct ifnet *, struct atm_pseudohdr *,
 	    struct mbuf *, void *);
-int	atm_output(struct ifnet *, struct mbuf *, struct sockaddr *, 
+int	atm_output(struct ifnet *, struct mbuf *, const struct sockaddr *, 
 	    struct route *);
 struct atmio_vcctable *atm_getvccs(struct atmio_vcc **, u_int, u_int,
 	    struct mtx *, int);

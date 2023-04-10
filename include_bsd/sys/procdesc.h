@@ -26,13 +26,14 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: release/9.0.0/sys/sys/procdesc.h 224987 2011-08-18 22:51:30Z jonathan $
+ * $FreeBSD: releng/11.0/sys/sys/procdesc.h 301573 2016-06-08 02:09:14Z oshogbo $
  */
 
 #ifndef _SYS_PROCDESC_H_
 #define	_SYS_PROCDESC_H_
 
 #ifdef _KERNEL
+
 #include <sys/selinfo.h>	/* struct selinfo */
 #include <sys/_lock.h>
 #include <sys/_mutex.h>
@@ -47,7 +48,7 @@
  * Locking key:
  * (c) - Constant after initial setup.
  * (p) - Protected by the process descriptor mutex.
- * (r) - Atomic eference count.
+ * (r) - Atomic reference count.
  * (s) - Protected by selinfo.
  * (t) - Protected by the proctree_lock
  */
@@ -67,6 +68,7 @@ struct procdesc {
 	 * In-flight data and notification of events.
 	 */
 	int		 pd_flags;		/* (p) PD_ flags. */
+	u_short		 pd_xstat;		/* (p) Exit status. */
 	struct selinfo	 pd_selinfo;		/* (p) Event notification. */
 	struct mtx	 pd_lock;		/* Protect data + events. */
 };
@@ -92,22 +94,35 @@ struct procdesc {
  * In-kernel interfaces to process descriptors.
  */
 int	 procdesc_exit(struct proc *);
-int	 procdesc_find(struct thread *, int fd, cap_rights_t, struct proc **);
-int	 kern_pdgetpid(struct thread *, int fd, cap_rights_t, pid_t *pidp);
+int	 procdesc_find(struct thread *, int fd, cap_rights_t *, struct proc **);
+int	 kern_pdgetpid(struct thread *, int fd, cap_rights_t *, pid_t *pidp);
 void	 procdesc_new(struct proc *, int);
 void	 procdesc_finit(struct procdesc *, struct file *);
 pid_t	 procdesc_pid(struct file *);
 void	 procdesc_reap(struct proc *);
 
+int	 procdesc_falloc(struct thread *, struct file **, int *, int,
+	    struct filecaps *);
+
 #else /* !_KERNEL */
+
+#include <sys/_types.h>
+
+#ifndef _PID_T_DECLARED
+typedef	__pid_t		pid_t;
+#define	_PID_T_DECLARED
+#endif
+
+struct rusage;
 
 /*
  * Process descriptor system calls.
  */
-struct rusage;
-int	 pdfork(int *, int);
+__BEGIN_DECLS
+pid_t	 pdfork(int *, int);
 int	 pdkill(int, int);
 int	 pdgetpid(int, pid_t *);
+__END_DECLS
 
 #endif /* _KERNEL */
 
@@ -115,5 +130,8 @@ int	 pdgetpid(int, pid_t *);
  * Flags which can be passed to pdfork(2).
  */
 #define	PD_DAEMON	0x00000001	/* Don't exit when procdesc closes. */
+#define	PD_CLOEXEC	0x00000002	/* Close file descriptor on exec. */
+
+#define	PD_ALLOWED_AT_FORK	(PD_DAEMON | PD_CLOEXEC)
 
 #endif /* !_SYS_PROCDESC_H_ */

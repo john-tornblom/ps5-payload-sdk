@@ -30,7 +30,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)nfsmount.h	8.3 (Berkeley) 3/30/95
- * $FreeBSD: release/9.0.0/sys/nfsclient/nfsmount.h 216931 2011-01-03 20:37:31Z rmacklem $
+ * $FreeBSD: releng/11.0/sys/nfsclient/nfsmount.h 248255 2013-03-13 21:06:03Z jhb $
  */
 
 #ifndef _NFSCLIENT_NFSMOUNT_H_
@@ -83,6 +83,7 @@ struct	nfsmount {
 	struct rpc_timers nm_timers[NFS_MAX_TIMER]; /* RTT Timers for rpcs */
 	char	nm_principal[MNAMELEN];	/* GSS-API principal of server */
 	gss_OID	nm_mech_oid;		/* OID of selected GSS-API mechanism */
+	int	nm_nametimeo;		/* timeout for +ve entries (sec) */
 	int	nm_negnametimeo;	/* timeout for -ve entries (sec) */
 
 	/* NFSv4 */
@@ -116,11 +117,13 @@ struct	nfsmount {
 #define NFS_TPRINTF_DELAY               30
 #endif
 
+#ifndef NFS_DEFAULT_NAMETIMEO
+#define NFS_DEFAULT_NAMETIMEO		60
+#endif
+
 #ifndef NFS_DEFAULT_NEGNAMETIMEO
 #define NFS_DEFAULT_NEGNAMETIMEO	60
 #endif
-
-#define	NFS_PCATCH	(PCATCH | PBDRY)
 
 #endif
 

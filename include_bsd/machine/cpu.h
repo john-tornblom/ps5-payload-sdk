@@ -30,7 +30,7 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)cpu.h	5.4 (Berkeley) 5/9/91
- * $FreeBSD: release/9.0.0/sys/amd64/include/cpu.h 219673 2011-03-15 17:19:52Z jkim $
+ * $FreeBSD: releng/11.0/sys/amd64/include/cpu.h 267526 2014-06-16 08:43:03Z royger $
  */
 
 #ifndef _MACHINE_CPU_H_
@@ -54,8 +54,23 @@
 #define	TRAPF_PC(framep)	((framep)->tf_rip)
 
 #ifdef _KERNEL
+/*
+ * Struct containing pointers to CPU management functions whose
+ * implementation is run time selectable.  Selection can be made,
+ * for example, based on detection of a particular CPU variant or
+ * hypervisor environment.
+ */
+struct cpu_ops {
+	void (*cpu_init)(void);
+	void (*cpu_resume)(void);
+};
+
+extern struct	cpu_ops cpu_ops;
 extern char	btext[];
 extern char	etext[];
+
+/* Resume hook for VMM. */
+extern	void (*vmm_resume_p)(void);
 
 void	cpu_halt(void);
 void	cpu_reset(void);

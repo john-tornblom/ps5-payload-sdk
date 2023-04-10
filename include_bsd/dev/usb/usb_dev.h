@@ -1,4 +1,4 @@
-/* $FreeBSD: release/9.0.0/sys/dev/usb/usb_dev.h 196219 2009-08-14 20:03:53Z jhb $ */
+/* $FreeBSD: releng/11.0/sys/dev/usb/usb_dev.h 246759 2013-02-13 12:35:17Z hselasky $ */
 /*-
  * Copyright (c) 2008 Hans Petter Selasky. All rights reserved.
  *
@@ -27,11 +27,13 @@
 #ifndef _USB_DEV_H_
 #define	_USB_DEV_H_
 
+#ifndef USB_GLOBAL_INCLUDE_FILE
 #include <sys/file.h>
 #include <sys/selinfo.h>
 #include <sys/poll.h>
 #include <sys/signalvar.h>
 #include <sys/proc.h>
+#endif
 
 struct usb_fifo;
 struct usb_mbuf;
@@ -82,6 +84,7 @@ struct usb_cdev_refdata {
 	uint8_t			is_write;	/* location has write access */
 	uint8_t			is_uref;	/* USB refcount decr. needed */
 	uint8_t			is_usbfs;	/* USB-FS is active */
+	uint8_t			do_unlock;	/* USB enum unlock needed */
 };
 
 struct usb_fs_privdata {
