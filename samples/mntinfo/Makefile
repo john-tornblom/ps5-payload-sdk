@@ -10,7 +10,7 @@ ELF := mntinfo.elf
 CC ?= cc
 LD ?= ld
 
-CFLAGS := -isysroot $(PS5_PAYLOAD_SDK) -static
+CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -static
 LDADD  := -lkernel_sys -lSceLibcInternal
 
 all: $(ELF)
