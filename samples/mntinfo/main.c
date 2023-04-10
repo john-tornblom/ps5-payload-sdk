@@ -53,7 +53,7 @@ main(void) {
   }
 
   for(int i=0; i<nitems; i++) {
-    printf("%s on %s (%s, flags=0x%llx)\n",
+    printf("%s on %s (%s, flags=0x%lx)\n",
 	   buf[i].f_mntfromname,
 	   buf[i].f_mntonname,
 	   buf[i].f_fstypename,
