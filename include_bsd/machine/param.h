@@ -95,7 +95,7 @@
 /* Size of the level 1 page table units */
 #define NPTEPG		(PAGE_SIZE/(sizeof (pt_entry_t)))
 #define	NPTEPGSHIFT	9		/* LOG2(NPTEPG) */
-#define PAGE_SHIFT	12		/* LOG2(PAGE_SIZE) */
+#define PAGE_SHIFT	14		/* LOG2(PAGE_SIZE) */
 #define PAGE_SIZE	(1<<PAGE_SHIFT)	/* bytes/page */
 #define PAGE_MASK	(PAGE_SIZE-1)
 /* Size of the level 2 page directory units */
