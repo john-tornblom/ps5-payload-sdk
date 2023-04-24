@@ -18,6 +18,17 @@ along with this program; see the file COPYING. If not, see
 
 
 /**
+ *
+ **/
+static __attribute__ ((used)) void* sceKernelDlsym_addr = 0;
+asm(".intel_syntax noprefix\n"
+    ".global sceKernelDlsym\n"
+    ".type sceKernelDlsym @function\n"
+    "sceKernelDlsym:\n"
+    "jmp qword ptr [rip + sceKernelDlsym_addr]\n");
+
+
+/**
  * Symbols provided by the ELF linker.
  **/
 extern int (*__init_array_start[])(const payload_args_t *) __attribute__((weak));
@@ -40,7 +51,9 @@ long _start(payload_args_t *args) {
   unsigned long array_addr = 0;
   unsigned long count = 0;
   int error = 0;
-  
+
+  sceKernelDlsym_addr = args->sceKernelDlsym;
+
   // run module constructors
   array_addr = base_addr + (unsigned long)__init_array_start;
   count = __init_array_end - __init_array_start;
