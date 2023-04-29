@@ -27,8 +27,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___Ux86_64_setcontext]\n");
 
 void __load_and_call___Ux86_64_setcontext();
-static __attribute__ ((used)) void*
-__ptr___Ux86_64_setcontext = (void*)(0x926100000l + (long)__load_and_call___Ux86_64_setcontext);
+void* __ptr___Ux86_64_setcontext = &__load_and_call___Ux86_64_setcontext;
 
 static void
 __load___Ux86_64_setcontext() {
@@ -60,8 +59,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___elf_phdr_match_addr]\n");
 
 void __load_and_call___elf_phdr_match_addr();
-static __attribute__ ((used)) void*
-__ptr___elf_phdr_match_addr = (void*)(0x926100000l + (long)__load_and_call___elf_phdr_match_addr);
+void* __ptr___elf_phdr_match_addr = &__load_and_call___elf_phdr_match_addr;
 
 static void
 __load___elf_phdr_match_addr() {
@@ -93,8 +91,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___error]\n");
 
 void __load_and_call___error();
-static __attribute__ ((used)) void*
-__ptr___error = (void*)(0x926100000l + (long)__load_and_call___error);
+void* __ptr___error = &__load_and_call___error;
 
 static void
 __load___error() {
@@ -126,8 +123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___freeze]\n");
 
 void __load_and_call___freeze();
-static __attribute__ ((used)) void*
-__ptr___freeze = (void*)(0x926100000l + (long)__load_and_call___freeze);
+void* __ptr___freeze = &__load_and_call___freeze;
 
 static void
 __load___freeze() {
@@ -159,8 +155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___inet_ntop]\n");
 
 void __load_and_call___inet_ntop();
-static __attribute__ ((used)) void*
-__ptr___inet_ntop = (void*)(0x926100000l + (long)__load_and_call___inet_ntop);
+void* __ptr___inet_ntop = &__load_and_call___inet_ntop;
 
 static void
 __load___inet_ntop() {
@@ -192,8 +187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___inet_pton]\n");
 
 void __load_and_call___inet_pton();
-static __attribute__ ((used)) void*
-__ptr___inet_pton = (void*)(0x926100000l + (long)__load_and_call___inet_pton);
+void* __ptr___inet_pton = &__load_and_call___inet_pton;
 
 static void
 __load___inet_pton() {
@@ -225,8 +219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___pthread_cleanup_pop_imp]\n");
 
 void __load_and_call___pthread_cleanup_pop_imp();
-static __attribute__ ((used)) void*
-__ptr___pthread_cleanup_pop_imp = (void*)(0x926100000l + (long)__load_and_call___pthread_cleanup_pop_imp);
+void* __ptr___pthread_cleanup_pop_imp = &__load_and_call___pthread_cleanup_pop_imp;
 
 static void
 __load___pthread_cleanup_pop_imp() {
@@ -258,8 +251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___pthread_cleanup_push_imp]\n");
 
 void __load_and_call___pthread_cleanup_push_imp();
-static __attribute__ ((used)) void*
-__ptr___pthread_cleanup_push_imp = (void*)(0x926100000l + (long)__load_and_call___pthread_cleanup_push_imp);
+void* __ptr___pthread_cleanup_push_imp = &__load_and_call___pthread_cleanup_push_imp;
 
 static void
 __load___pthread_cleanup_push_imp() {
@@ -291,8 +283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___pthread_cxa_finalize]\n");
 
 void __load_and_call___pthread_cxa_finalize();
-static __attribute__ ((used)) void*
-__ptr___pthread_cxa_finalize = (void*)(0x926100000l + (long)__load_and_call___pthread_cxa_finalize);
+void* __ptr___pthread_cxa_finalize = &__load_and_call___pthread_cxa_finalize;
 
 static void
 __load___pthread_cxa_finalize() {
@@ -324,8 +315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sceKernelGetGPI]\n");
 
 void __load_and_call___sceKernelGetGPI();
-static __attribute__ ((used)) void*
-__ptr___sceKernelGetGPI = (void*)(0x926100000l + (long)__load_and_call___sceKernelGetGPI);
+void* __ptr___sceKernelGetGPI = &__load_and_call___sceKernelGetGPI;
 
 static void
 __load___sceKernelGetGPI() {
@@ -357,8 +347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___stack_chk_fail]\n");
 
 void __load_and_call___stack_chk_fail();
-static __attribute__ ((used)) void*
-__ptr___stack_chk_fail = (void*)(0x926100000l + (long)__load_and_call___stack_chk_fail);
+void* __ptr___stack_chk_fail = &__load_and_call___stack_chk_fail;
 
 static void
 __load___stack_chk_fail() {
@@ -390,8 +379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_debug_init]\n");
 
 void __load_and_call___sys_debug_init();
-static __attribute__ ((used)) void*
-__ptr___sys_debug_init = (void*)(0x926100000l + (long)__load_and_call___sys_debug_init);
+void* __ptr___sys_debug_init = &__load_and_call___sys_debug_init;
 
 static void
 __load___sys_debug_init() {
@@ -423,8 +411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dl_get_info]\n");
 
 void __load_and_call___sys_dl_get_info();
-static __attribute__ ((used)) void*
-__ptr___sys_dl_get_info = (void*)(0x926100000l + (long)__load_and_call___sys_dl_get_info);
+void* __ptr___sys_dl_get_info = &__load_and_call___sys_dl_get_info;
 
 static void
 __load___sys_dl_get_info() {
@@ -456,8 +443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dl_get_info_2]\n");
 
 void __load_and_call___sys_dl_get_info_2();
-static __attribute__ ((used)) void*
-__ptr___sys_dl_get_info_2 = (void*)(0x926100000l + (long)__load_and_call___sys_dl_get_info_2);
+void* __ptr___sys_dl_get_info_2 = &__load_and_call___sys_dl_get_info_2;
 
 static void
 __load___sys_dl_get_info_2() {
@@ -489,8 +475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dl_get_list]\n");
 
 void __load_and_call___sys_dl_get_list();
-static __attribute__ ((used)) void*
-__ptr___sys_dl_get_list = (void*)(0x926100000l + (long)__load_and_call___sys_dl_get_list);
+void* __ptr___sys_dl_get_list = &__load_and_call___sys_dl_get_list;
 
 static void
 __load___sys_dl_get_list() {
@@ -522,8 +507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dl_get_metadata]\n");
 
 void __load_and_call___sys_dl_get_metadata();
-static __attribute__ ((used)) void*
-__ptr___sys_dl_get_metadata = (void*)(0x926100000l + (long)__load_and_call___sys_dl_get_metadata);
+void* __ptr___sys_dl_get_metadata = &__load_and_call___sys_dl_get_metadata;
 
 static void
 __load___sys_dl_get_metadata() {
@@ -555,8 +539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_get_info2]\n");
 
 void __load_and_call___sys_dynlib_get_info2();
-static __attribute__ ((used)) void*
-__ptr___sys_dynlib_get_info2 = (void*)(0x926100000l + (long)__load_and_call___sys_dynlib_get_info2);
+void* __ptr___sys_dynlib_get_info2 = &__load_and_call___sys_dynlib_get_info2;
 
 static void
 __load___sys_dynlib_get_info2() {
@@ -588,8 +571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_get_info_for_libdbg]\n");
 
 void __load_and_call___sys_dynlib_get_info_for_libdbg();
-static __attribute__ ((used)) void*
-__ptr___sys_dynlib_get_info_for_libdbg = (void*)(0x926100000l + (long)__load_and_call___sys_dynlib_get_info_for_libdbg);
+void* __ptr___sys_dynlib_get_info_for_libdbg = &__load_and_call___sys_dynlib_get_info_for_libdbg;
 
 static void
 __load___sys_dynlib_get_info_for_libdbg() {
@@ -621,8 +603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_get_list2]\n");
 
 void __load_and_call___sys_dynlib_get_list2();
-static __attribute__ ((used)) void*
-__ptr___sys_dynlib_get_list2 = (void*)(0x926100000l + (long)__load_and_call___sys_dynlib_get_list2);
+void* __ptr___sys_dynlib_get_list2 = &__load_and_call___sys_dynlib_get_list2;
 
 static void
 __load___sys_dynlib_get_list2() {
@@ -654,8 +635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_get_list_for_libdbg]\n");
 
 void __load_and_call___sys_dynlib_get_list_for_libdbg();
-static __attribute__ ((used)) void*
-__ptr___sys_dynlib_get_list_for_libdbg = (void*)(0x926100000l + (long)__load_and_call___sys_dynlib_get_list_for_libdbg);
+void* __ptr___sys_dynlib_get_list_for_libdbg = &__load_and_call___sys_dynlib_get_list_for_libdbg;
 
 static void
 __load___sys_dynlib_get_list_for_libdbg() {
@@ -687,8 +667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_load_prx]\n");
 
 void __load_and_call___sys_dynlib_load_prx();
-static __attribute__ ((used)) void*
-__ptr___sys_dynlib_load_prx = (void*)(0x926100000l + (long)__load_and_call___sys_dynlib_load_prx);
+void* __ptr___sys_dynlib_load_prx = &__load_and_call___sys_dynlib_load_prx;
 
 static void
 __load___sys_dynlib_load_prx() {
@@ -720,8 +699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_get_proc_type_info]\n");
 
 void __load_and_call___sys_get_proc_type_info();
-static __attribute__ ((used)) void*
-__ptr___sys_get_proc_type_info = (void*)(0x926100000l + (long)__load_and_call___sys_get_proc_type_info);
+void* __ptr___sys_get_proc_type_info = &__load_and_call___sys_get_proc_type_info;
 
 static void
 __load___sys_get_proc_type_info() {
@@ -753,8 +731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_is_development_mode]\n");
 
 void __load_and_call___sys_is_development_mode();
-static __attribute__ ((used)) void*
-__ptr___sys_is_development_mode = (void*)(0x926100000l + (long)__load_and_call___sys_is_development_mode);
+void* __ptr___sys_is_development_mode = &__load_and_call___sys_is_development_mode;
 
 static void
 __load___sys_is_development_mode() {
@@ -786,8 +763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_kqueueex]\n");
 
 void __load_and_call___sys_kqueueex();
-static __attribute__ ((used)) void*
-__ptr___sys_kqueueex = (void*)(0x926100000l + (long)__load_and_call___sys_kqueueex);
+void* __ptr___sys_kqueueex = &__load_and_call___sys_kqueueex;
 
 static void
 __load___sys_kqueueex() {
@@ -819,8 +795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_namedobj_create]\n");
 
 void __load_and_call___sys_namedobj_create();
-static __attribute__ ((used)) void*
-__ptr___sys_namedobj_create = (void*)(0x926100000l + (long)__load_and_call___sys_namedobj_create);
+void* __ptr___sys_namedobj_create = &__load_and_call___sys_namedobj_create;
 
 static void
 __load___sys_namedobj_create() {
@@ -852,8 +827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_namedobj_delete]\n");
 
 void __load_and_call___sys_namedobj_delete();
-static __attribute__ ((used)) void*
-__ptr___sys_namedobj_delete = (void*)(0x926100000l + (long)__load_and_call___sys_namedobj_delete);
+void* __ptr___sys_namedobj_delete = &__load_and_call___sys_namedobj_delete;
 
 static void
 __load___sys_namedobj_delete() {
@@ -885,8 +859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_netabort]\n");
 
 void __load_and_call___sys_netabort();
-static __attribute__ ((used)) void*
-__ptr___sys_netabort = (void*)(0x926100000l + (long)__load_and_call___sys_netabort);
+void* __ptr___sys_netabort = &__load_and_call___sys_netabort;
 
 static void
 __load___sys_netabort() {
@@ -918,8 +891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_netcontrol]\n");
 
 void __load_and_call___sys_netcontrol();
-static __attribute__ ((used)) void*
-__ptr___sys_netcontrol = (void*)(0x926100000l + (long)__load_and_call___sys_netcontrol);
+void* __ptr___sys_netcontrol = &__load_and_call___sys_netcontrol;
 
 static void
 __load___sys_netcontrol() {
@@ -951,8 +923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_netgetiflist]\n");
 
 void __load_and_call___sys_netgetiflist();
-static __attribute__ ((used)) void*
-__ptr___sys_netgetiflist = (void*)(0x926100000l + (long)__load_and_call___sys_netgetiflist);
+void* __ptr___sys_netgetiflist = &__load_and_call___sys_netgetiflist;
 
 static void
 __load___sys_netgetiflist() {
@@ -984,8 +955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_netgetsockinfo]\n");
 
 void __load_and_call___sys_netgetsockinfo();
-static __attribute__ ((used)) void*
-__ptr___sys_netgetsockinfo = (void*)(0x926100000l + (long)__load_and_call___sys_netgetsockinfo);
+void* __ptr___sys_netgetsockinfo = &__load_and_call___sys_netgetsockinfo;
 
 static void
 __load___sys_netgetsockinfo() {
@@ -1017,8 +987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_disable]\n");
 
 void __load_and_call___sys_opmc_disable();
-static __attribute__ ((used)) void*
-__ptr___sys_opmc_disable = (void*)(0x926100000l + (long)__load_and_call___sys_opmc_disable);
+void* __ptr___sys_opmc_disable = &__load_and_call___sys_opmc_disable;
 
 static void
 __load___sys_opmc_disable() {
@@ -1050,8 +1019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_enable]\n");
 
 void __load_and_call___sys_opmc_enable();
-static __attribute__ ((used)) void*
-__ptr___sys_opmc_enable = (void*)(0x926100000l + (long)__load_and_call___sys_opmc_enable);
+void* __ptr___sys_opmc_enable = &__load_and_call___sys_opmc_enable;
 
 static void
 __load___sys_opmc_enable() {
@@ -1083,8 +1051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_get_ctr]\n");
 
 void __load_and_call___sys_opmc_get_ctr();
-static __attribute__ ((used)) void*
-__ptr___sys_opmc_get_ctr = (void*)(0x926100000l + (long)__load_and_call___sys_opmc_get_ctr);
+void* __ptr___sys_opmc_get_ctr = &__load_and_call___sys_opmc_get_ctr;
 
 static void
 __load___sys_opmc_get_ctr() {
@@ -1116,8 +1083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_get_hw]\n");
 
 void __load_and_call___sys_opmc_get_hw();
-static __attribute__ ((used)) void*
-__ptr___sys_opmc_get_hw = (void*)(0x926100000l + (long)__load_and_call___sys_opmc_get_hw);
+void* __ptr___sys_opmc_get_hw = &__load_and_call___sys_opmc_get_hw;
 
 static void
 __load___sys_opmc_get_hw() {
@@ -1149,8 +1115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_set_ctl]\n");
 
 void __load_and_call___sys_opmc_set_ctl();
-static __attribute__ ((used)) void*
-__ptr___sys_opmc_set_ctl = (void*)(0x926100000l + (long)__load_and_call___sys_opmc_set_ctl);
+void* __ptr___sys_opmc_set_ctl = &__load_and_call___sys_opmc_set_ctl;
 
 static void
 __load___sys_opmc_set_ctl() {
@@ -1182,8 +1147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_set_ctr]\n");
 
 void __load_and_call___sys_opmc_set_ctr();
-static __attribute__ ((used)) void*
-__ptr___sys_opmc_set_ctr = (void*)(0x926100000l + (long)__load_and_call___sys_opmc_set_ctr);
+void* __ptr___sys_opmc_set_ctr = &__load_and_call___sys_opmc_set_ctr;
 
 static void
 __load___sys_opmc_set_ctr() {
@@ -1215,8 +1179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_set_hw]\n");
 
 void __load_and_call___sys_opmc_set_hw();
-static __attribute__ ((used)) void*
-__ptr___sys_opmc_set_hw = (void*)(0x926100000l + (long)__load_and_call___sys_opmc_set_hw);
+void* __ptr___sys_opmc_set_hw = &__load_and_call___sys_opmc_set_hw;
 
 static void
 __load___sys_opmc_set_hw() {
@@ -1248,8 +1211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_osem_close]\n");
 
 void __load_and_call___sys_osem_close();
-static __attribute__ ((used)) void*
-__ptr___sys_osem_close = (void*)(0x926100000l + (long)__load_and_call___sys_osem_close);
+void* __ptr___sys_osem_close = &__load_and_call___sys_osem_close;
 
 static void
 __load___sys_osem_close() {
@@ -1281,8 +1243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_osem_open]\n");
 
 void __load_and_call___sys_osem_open();
-static __attribute__ ((used)) void*
-__ptr___sys_osem_open = (void*)(0x926100000l + (long)__load_and_call___sys_osem_open);
+void* __ptr___sys_osem_open = &__load_and_call___sys_osem_open;
 
 static void
 __load___sys_osem_open() {
@@ -1314,8 +1275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_randomized_path]\n");
 
 void __load_and_call___sys_randomized_path();
-static __attribute__ ((used)) void*
-__ptr___sys_randomized_path = (void*)(0x926100000l + (long)__load_and_call___sys_randomized_path);
+void* __ptr___sys_randomized_path = &__load_and_call___sys_randomized_path;
 
 static void
 __load___sys_randomized_path() {
@@ -1347,8 +1307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_rdup]\n");
 
 void __load_and_call___sys_rdup();
-static __attribute__ ((used)) void*
-__ptr___sys_rdup = (void*)(0x926100000l + (long)__load_and_call___sys_rdup);
+void* __ptr___sys_rdup = &__load_and_call___sys_rdup;
 
 static void
 __load___sys_rdup() {
@@ -1380,8 +1339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_regmgr_call]\n");
 
 void __load_and_call___sys_regmgr_call();
-static __attribute__ ((used)) void*
-__ptr___sys_regmgr_call = (void*)(0x926100000l + (long)__load_and_call___sys_regmgr_call);
+void* __ptr___sys_regmgr_call = &__load_and_call___sys_regmgr_call;
 
 static void
 __load___sys_regmgr_call() {
@@ -1413,8 +1371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_set_uevt]\n");
 
 void __load_and_call___sys_set_uevt();
-static __attribute__ ((used)) void*
-__ptr___sys_set_uevt = (void*)(0x926100000l + (long)__load_and_call___sys_set_uevt);
+void* __ptr___sys_set_uevt = &__load_and_call___sys_set_uevt;
 
 static void
 __load___sys_set_uevt() {
@@ -1446,8 +1403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_socketclose]\n");
 
 void __load_and_call___sys_socketclose();
-static __attribute__ ((used)) void*
-__ptr___sys_socketclose = (void*)(0x926100000l + (long)__load_and_call___sys_socketclose);
+void* __ptr___sys_socketclose = &__load_and_call___sys_socketclose;
 
 static void
 __load___sys_socketclose() {
@@ -1479,8 +1435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_socketex]\n");
 
 void __load_and_call___sys_socketex();
-static __attribute__ ((used)) void*
-__ptr___sys_socketex = (void*)(0x926100000l + (long)__load_and_call___sys_socketex);
+void* __ptr___sys_socketex = &__load_and_call___sys_socketex;
 
 static void
 __load___sys_socketex() {
@@ -1512,8 +1467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_test_debug_rwmem]\n");
 
 void __load_and_call___sys_test_debug_rwmem();
-static __attribute__ ((used)) void*
-__ptr___sys_test_debug_rwmem = (void*)(0x926100000l + (long)__load_and_call___sys_test_debug_rwmem);
+void* __ptr___sys_test_debug_rwmem = &__load_and_call___sys_test_debug_rwmem;
 
 static void
 __load___sys_test_debug_rwmem() {
@@ -1545,8 +1499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_workaround8849]\n");
 
 void __load_and_call___sys_workaround8849();
-static __attribute__ ((used)) void*
-__ptr___sys_workaround8849 = (void*)(0x926100000l + (long)__load_and_call___sys_workaround8849);
+void* __ptr___sys_workaround8849 = &__load_and_call___sys_workaround8849;
 
 static void
 __load___sys_workaround8849() {
@@ -1578,8 +1531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___tls_get_addr]\n");
 
 void __load_and_call___tls_get_addr();
-static __attribute__ ((used)) void*
-__ptr___tls_get_addr = (void*)(0x926100000l + (long)__load_and_call___tls_get_addr);
+void* __ptr___tls_get_addr = &__load_and_call___tls_get_addr;
 
 static void
 __load___tls_get_addr() {
@@ -1611,8 +1563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__accept]\n");
 
 void __load_and_call__accept();
-static __attribute__ ((used)) void*
-__ptr__accept = (void*)(0x926100000l + (long)__load_and_call__accept);
+void* __ptr__accept = &__load_and_call__accept;
 
 static void
 __load__accept() {
@@ -1644,8 +1595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__bind]\n");
 
 void __load_and_call__bind();
-static __attribute__ ((used)) void*
-__ptr__bind = (void*)(0x926100000l + (long)__load_and_call__bind);
+void* __ptr__bind = &__load_and_call__bind;
 
 static void
 __load__bind() {
@@ -1677,8 +1627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__close]\n");
 
 void __load_and_call__close();
-static __attribute__ ((used)) void*
-__ptr__close = (void*)(0x926100000l + (long)__load_and_call__close);
+void* __ptr__close = &__load_and_call__close;
 
 static void
 __load__close() {
@@ -1710,8 +1659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__connect]\n");
 
 void __load_and_call__connect();
-static __attribute__ ((used)) void*
-__ptr__connect = (void*)(0x926100000l + (long)__load_and_call__connect);
+void* __ptr__connect = &__load_and_call__connect;
 
 static void
 __load__connect() {
@@ -1743,8 +1691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__dup2]\n");
 
 void __load_and_call__dup2();
-static __attribute__ ((used)) void*
-__ptr__dup2 = (void*)(0x926100000l + (long)__load_and_call__dup2);
+void* __ptr__dup2 = &__load_and_call__dup2;
 
 static void
 __load__dup2() {
@@ -1776,8 +1723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__execve]\n");
 
 void __load_and_call__execve();
-static __attribute__ ((used)) void*
-__ptr__execve = (void*)(0x926100000l + (long)__load_and_call__execve);
+void* __ptr__execve = &__load_and_call__execve;
 
 static void
 __load__execve() {
@@ -1809,8 +1755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__execvpe]\n");
 
 void __load_and_call__execvpe();
-static __attribute__ ((used)) void*
-__ptr__execvpe = (void*)(0x926100000l + (long)__load_and_call__execvpe);
+void* __ptr__execvpe = &__load_and_call__execvpe;
 
 static void
 __load__execvpe() {
@@ -1842,8 +1787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__exit]\n");
 
 void __load_and_call__exit();
-static __attribute__ ((used)) void*
-__ptr__exit = (void*)(0x926100000l + (long)__load_and_call__exit);
+void* __ptr__exit = &__load_and_call__exit;
 
 static void
 __load__exit() {
@@ -1875,8 +1819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__fcntl]\n");
 
 void __load_and_call__fcntl();
-static __attribute__ ((used)) void*
-__ptr__fcntl = (void*)(0x926100000l + (long)__load_and_call__fcntl);
+void* __ptr__fcntl = &__load_and_call__fcntl;
 
 static void
 __load__fcntl() {
@@ -1908,8 +1851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__fpathconf]\n");
 
 void __load_and_call__fpathconf();
-static __attribute__ ((used)) void*
-__ptr__fpathconf = (void*)(0x926100000l + (long)__load_and_call__fpathconf);
+void* __ptr__fpathconf = &__load_and_call__fpathconf;
 
 static void
 __load__fpathconf() {
@@ -1941,8 +1883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__fstat]\n");
 
 void __load_and_call__fstat();
-static __attribute__ ((used)) void*
-__ptr__fstat = (void*)(0x926100000l + (long)__load_and_call__fstat);
+void* __ptr__fstat = &__load_and_call__fstat;
 
 static void
 __load__fstat() {
@@ -1974,8 +1915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__fstatfs]\n");
 
 void __load_and_call__fstatfs();
-static __attribute__ ((used)) void*
-__ptr__fstatfs = (void*)(0x926100000l + (long)__load_and_call__fstatfs);
+void* __ptr__fstatfs = &__load_and_call__fstatfs;
 
 static void
 __load__fstatfs() {
@@ -2007,8 +1947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getdirentries]\n");
 
 void __load_and_call__getdirentries();
-static __attribute__ ((used)) void*
-__ptr__getdirentries = (void*)(0x926100000l + (long)__load_and_call__getdirentries);
+void* __ptr__getdirentries = &__load_and_call__getdirentries;
 
 static void
 __load__getdirentries() {
@@ -2040,8 +1979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getpeername]\n");
 
 void __load_and_call__getpeername();
-static __attribute__ ((used)) void*
-__ptr__getpeername = (void*)(0x926100000l + (long)__load_and_call__getpeername);
+void* __ptr__getpeername = &__load_and_call__getpeername;
 
 static void
 __load__getpeername() {
@@ -2073,8 +2011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getsockname]\n");
 
 void __load_and_call__getsockname();
-static __attribute__ ((used)) void*
-__ptr__getsockname = (void*)(0x926100000l + (long)__load_and_call__getsockname);
+void* __ptr__getsockname = &__load_and_call__getsockname;
 
 static void
 __load__getsockname() {
@@ -2106,8 +2043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getsockopt]\n");
 
 void __load_and_call__getsockopt();
-static __attribute__ ((used)) void*
-__ptr__getsockopt = (void*)(0x926100000l + (long)__load_and_call__getsockopt);
+void* __ptr__getsockopt = &__load_and_call__getsockopt;
 
 static void
 __load__getsockopt() {
@@ -2139,8 +2075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ioctl]\n");
 
 void __load_and_call__ioctl();
-static __attribute__ ((used)) void*
-__ptr__ioctl = (void*)(0x926100000l + (long)__load_and_call__ioctl);
+void* __ptr__ioctl = &__load_and_call__ioctl;
 
 static void
 __load__ioctl() {
@@ -2172,8 +2107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__is_signal_return]\n");
 
 void __load_and_call__is_signal_return();
-static __attribute__ ((used)) void*
-__ptr__is_signal_return = (void*)(0x926100000l + (long)__load_and_call__is_signal_return);
+void* __ptr__is_signal_return = &__load_and_call__is_signal_return;
 
 static void
 __load__is_signal_return() {
@@ -2205,8 +2139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__listen]\n");
 
 void __load_and_call__listen();
-static __attribute__ ((used)) void*
-__ptr__listen = (void*)(0x926100000l + (long)__load_and_call__listen);
+void* __ptr__listen = &__load_and_call__listen;
 
 static void
 __load__listen() {
@@ -2238,8 +2171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__nanosleep]\n");
 
 void __load_and_call__nanosleep();
-static __attribute__ ((used)) void*
-__ptr__nanosleep = (void*)(0x926100000l + (long)__load_and_call__nanosleep);
+void* __ptr__nanosleep = &__load_and_call__nanosleep;
 
 static void
 __load__nanosleep() {
@@ -2271,8 +2203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__open]\n");
 
 void __load_and_call__open();
-static __attribute__ ((used)) void*
-__ptr__open = (void*)(0x926100000l + (long)__load_and_call__open);
+void* __ptr__open = &__load_and_call__open;
 
 static void
 __load__open() {
@@ -2304,8 +2235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__openat]\n");
 
 void __load_and_call__openat();
-static __attribute__ ((used)) void*
-__ptr__openat = (void*)(0x926100000l + (long)__load_and_call__openat);
+void* __ptr__openat = &__load_and_call__openat;
 
 static void
 __load__openat() {
@@ -2337,8 +2267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__read]\n");
 
 void __load_and_call__read();
-static __attribute__ ((used)) void*
-__ptr__read = (void*)(0x926100000l + (long)__load_and_call__read);
+void* __ptr__read = &__load_and_call__read;
 
 static void
 __load__read() {
@@ -2370,8 +2299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__readv]\n");
 
 void __load_and_call__readv();
-static __attribute__ ((used)) void*
-__ptr__readv = (void*)(0x926100000l + (long)__load_and_call__readv);
+void* __ptr__readv = &__load_and_call__readv;
 
 static void
 __load__readv() {
@@ -2403,8 +2331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__recvfrom]\n");
 
 void __load_and_call__recvfrom();
-static __attribute__ ((used)) void*
-__ptr__recvfrom = (void*)(0x926100000l + (long)__load_and_call__recvfrom);
+void* __ptr__recvfrom = &__load_and_call__recvfrom;
 
 static void
 __load__recvfrom() {
@@ -2436,8 +2363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__recvmsg]\n");
 
 void __load_and_call__recvmsg();
-static __attribute__ ((used)) void*
-__ptr__recvmsg = (void*)(0x926100000l + (long)__load_and_call__recvmsg);
+void* __ptr__recvmsg = &__load_and_call__recvmsg;
 
 static void
 __load__recvmsg() {
@@ -2469,8 +2395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelRtldSetApplicationHeapAPI]\n");
 
 void __load_and_call__sceKernelRtldSetApplicationHeapAPI();
-static __attribute__ ((used)) void*
-__ptr__sceKernelRtldSetApplicationHeapAPI = (void*)(0x926100000l + (long)__load_and_call__sceKernelRtldSetApplicationHeapAPI);
+void* __ptr__sceKernelRtldSetApplicationHeapAPI = &__load_and_call__sceKernelRtldSetApplicationHeapAPI;
 
 static void
 __load__sceKernelRtldSetApplicationHeapAPI() {
@@ -2502,8 +2427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelRtldThreadAtexitDecrement]\n");
 
 void __load_and_call__sceKernelRtldThreadAtexitDecrement();
-static __attribute__ ((used)) void*
-__ptr__sceKernelRtldThreadAtexitDecrement = (void*)(0x926100000l + (long)__load_and_call__sceKernelRtldThreadAtexitDecrement);
+void* __ptr__sceKernelRtldThreadAtexitDecrement = &__load_and_call__sceKernelRtldThreadAtexitDecrement;
 
 static void
 __load__sceKernelRtldThreadAtexitDecrement() {
@@ -2535,8 +2459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelRtldThreadAtexitIncrement]\n");
 
 void __load_and_call__sceKernelRtldThreadAtexitIncrement();
-static __attribute__ ((used)) void*
-__ptr__sceKernelRtldThreadAtexitIncrement = (void*)(0x926100000l + (long)__load_and_call__sceKernelRtldThreadAtexitIncrement);
+void* __ptr__sceKernelRtldThreadAtexitIncrement = &__load_and_call__sceKernelRtldThreadAtexitIncrement;
 
 static void
 __load__sceKernelRtldThreadAtexitIncrement() {
@@ -2568,8 +2491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelSetThreadAtexitCount]\n");
 
 void __load_and_call__sceKernelSetThreadAtexitCount();
-static __attribute__ ((used)) void*
-__ptr__sceKernelSetThreadAtexitCount = (void*)(0x926100000l + (long)__load_and_call__sceKernelSetThreadAtexitCount);
+void* __ptr__sceKernelSetThreadAtexitCount = &__load_and_call__sceKernelSetThreadAtexitCount;
 
 static void
 __load__sceKernelSetThreadAtexitCount() {
@@ -2601,8 +2523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelSetThreadAtexitReport]\n");
 
 void __load_and_call__sceKernelSetThreadAtexitReport();
-static __attribute__ ((used)) void*
-__ptr__sceKernelSetThreadAtexitReport = (void*)(0x926100000l + (long)__load_and_call__sceKernelSetThreadAtexitReport);
+void* __ptr__sceKernelSetThreadAtexitReport = &__load_and_call__sceKernelSetThreadAtexitReport;
 
 static void
 __load__sceKernelSetThreadAtexitReport() {
@@ -2634,8 +2555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelSetThreadDtors]\n");
 
 void __load_and_call__sceKernelSetThreadDtors();
-static __attribute__ ((used)) void*
-__ptr__sceKernelSetThreadDtors = (void*)(0x926100000l + (long)__load_and_call__sceKernelSetThreadDtors);
+void* __ptr__sceKernelSetThreadDtors = &__load_and_call__sceKernelSetThreadDtors;
 
 static void
 __load__sceKernelSetThreadDtors() {
@@ -2667,8 +2587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sendmsg]\n");
 
 void __load_and_call__sendmsg();
-static __attribute__ ((used)) void*
-__ptr__sendmsg = (void*)(0x926100000l + (long)__load_and_call__sendmsg);
+void* __ptr__sendmsg = &__load_and_call__sendmsg;
 
 static void
 __load__sendmsg() {
@@ -2700,8 +2619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sendto]\n");
 
 void __load_and_call__sendto();
-static __attribute__ ((used)) void*
-__ptr__sendto = (void*)(0x926100000l + (long)__load_and_call__sendto);
+void* __ptr__sendto = &__load_and_call__sendto;
 
 static void
 __load__sendto() {
@@ -2733,8 +2651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__setsockopt]\n");
 
 void __load_and_call__setsockopt();
-static __attribute__ ((used)) void*
-__ptr__setsockopt = (void*)(0x926100000l + (long)__load_and_call__setsockopt);
+void* __ptr__setsockopt = &__load_and_call__setsockopt;
 
 static void
 __load__setsockopt() {
@@ -2766,8 +2683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sigaction]\n");
 
 void __load_and_call__sigaction();
-static __attribute__ ((used)) void*
-__ptr__sigaction = (void*)(0x926100000l + (long)__load_and_call__sigaction);
+void* __ptr__sigaction = &__load_and_call__sigaction;
 
 static void
 __load__sigaction() {
@@ -2799,8 +2715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sigprocmask]\n");
 
 void __load_and_call__sigprocmask();
-static __attribute__ ((used)) void*
-__ptr__sigprocmask = (void*)(0x926100000l + (long)__load_and_call__sigprocmask);
+void* __ptr__sigprocmask = &__load_and_call__sigprocmask;
 
 static void
 __load__sigprocmask() {
@@ -2832,8 +2747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sigsuspend]\n");
 
 void __load_and_call__sigsuspend();
-static __attribute__ ((used)) void*
-__ptr__sigsuspend = (void*)(0x926100000l + (long)__load_and_call__sigsuspend);
+void* __ptr__sigsuspend = &__load_and_call__sigsuspend;
 
 static void
 __load__sigsuspend() {
@@ -2865,8 +2779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__umtx_op]\n");
 
 void __load_and_call__umtx_op();
-static __attribute__ ((used)) void*
-__ptr__umtx_op = (void*)(0x926100000l + (long)__load_and_call__umtx_op);
+void* __ptr__umtx_op = &__load_and_call__umtx_op;
 
 static void
 __load__umtx_op() {
@@ -2898,8 +2811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__wait4]\n");
 
 void __load_and_call__wait4();
-static __attribute__ ((used)) void*
-__ptr__wait4 = (void*)(0x926100000l + (long)__load_and_call__wait4);
+void* __ptr__wait4 = &__load_and_call__wait4;
 
 static void
 __load__wait4() {
@@ -2931,8 +2843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__write]\n");
 
 void __load_and_call__write();
-static __attribute__ ((used)) void*
-__ptr__write = (void*)(0x926100000l + (long)__load_and_call__write);
+void* __ptr__write = &__load_and_call__write;
 
 static void
 __load__write() {
@@ -2964,8 +2875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__writev]\n");
 
 void __load_and_call__writev();
-static __attribute__ ((used)) void*
-__ptr__writev = (void*)(0x926100000l + (long)__load_and_call__writev);
+void* __ptr__writev = &__load_and_call__writev;
 
 static void
 __load__writev() {
@@ -2997,8 +2907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_accept]\n");
 
 void __load_and_call_accept();
-static __attribute__ ((used)) void*
-__ptr_accept = (void*)(0x926100000l + (long)__load_and_call_accept);
+void* __ptr_accept = &__load_and_call_accept;
 
 static void
 __load_accept() {
@@ -3030,8 +2939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_access]\n");
 
 void __load_and_call_access();
-static __attribute__ ((used)) void*
-__ptr_access = (void*)(0x926100000l + (long)__load_and_call_access);
+void* __ptr_access = &__load_and_call_access;
 
 static void
 __load_access() {
@@ -3063,8 +2971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_amd64_set_fsbase]\n");
 
 void __load_and_call_amd64_set_fsbase();
-static __attribute__ ((used)) void*
-__ptr_amd64_set_fsbase = (void*)(0x926100000l + (long)__load_and_call_amd64_set_fsbase);
+void* __ptr_amd64_set_fsbase = &__load_and_call_amd64_set_fsbase;
 
 static void
 __load_amd64_set_fsbase() {
@@ -3096,8 +3003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_bind]\n");
 
 void __load_and_call_bind();
-static __attribute__ ((used)) void*
-__ptr_bind = (void*)(0x926100000l + (long)__load_and_call_bind);
+void* __ptr_bind = &__load_and_call_bind;
 
 static void
 __load_bind() {
@@ -3129,8 +3035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_blockpool_batch]\n");
 
 void __load_and_call_blockpool_batch();
-static __attribute__ ((used)) void*
-__ptr_blockpool_batch = (void*)(0x926100000l + (long)__load_and_call_blockpool_batch);
+void* __ptr_blockpool_batch = &__load_and_call_blockpool_batch;
 
 static void
 __load_blockpool_batch() {
@@ -3162,8 +3067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_blockpool_map]\n");
 
 void __load_and_call_blockpool_map();
-static __attribute__ ((used)) void*
-__ptr_blockpool_map = (void*)(0x926100000l + (long)__load_and_call_blockpool_map);
+void* __ptr_blockpool_map = &__load_and_call_blockpool_map;
 
 static void
 __load_blockpool_map() {
@@ -3195,8 +3099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_blockpool_open]\n");
 
 void __load_and_call_blockpool_open();
-static __attribute__ ((used)) void*
-__ptr_blockpool_open = (void*)(0x926100000l + (long)__load_and_call_blockpool_open);
+void* __ptr_blockpool_open = &__load_and_call_blockpool_open;
 
 static void
 __load_blockpool_open() {
@@ -3228,8 +3131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_blockpool_unmap]\n");
 
 void __load_and_call_blockpool_unmap();
-static __attribute__ ((used)) void*
-__ptr_blockpool_unmap = (void*)(0x926100000l + (long)__load_and_call_blockpool_unmap);
+void* __ptr_blockpool_unmap = &__load_and_call_blockpool_unmap;
 
 static void
 __load_blockpool_unmap() {
@@ -3261,8 +3163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_chdir]\n");
 
 void __load_and_call_chdir();
-static __attribute__ ((used)) void*
-__ptr_chdir = (void*)(0x926100000l + (long)__load_and_call_chdir);
+void* __ptr_chdir = &__load_and_call_chdir;
 
 static void
 __load_chdir() {
@@ -3294,8 +3195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_chflags]\n");
 
 void __load_and_call_chflags();
-static __attribute__ ((used)) void*
-__ptr_chflags = (void*)(0x926100000l + (long)__load_and_call_chflags);
+void* __ptr_chflags = &__load_and_call_chflags;
 
 static void
 __load_chflags() {
@@ -3327,8 +3227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_chmod]\n");
 
 void __load_and_call_chmod();
-static __attribute__ ((used)) void*
-__ptr_chmod = (void*)(0x926100000l + (long)__load_and_call_chmod);
+void* __ptr_chmod = &__load_and_call_chmod;
 
 static void
 __load_chmod() {
@@ -3360,8 +3259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clock_getres]\n");
 
 void __load_and_call_clock_getres();
-static __attribute__ ((used)) void*
-__ptr_clock_getres = (void*)(0x926100000l + (long)__load_and_call_clock_getres);
+void* __ptr_clock_getres = &__load_and_call_clock_getres;
 
 static void
 __load_clock_getres() {
@@ -3393,8 +3291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clock_gettime]\n");
 
 void __load_and_call_clock_gettime();
-static __attribute__ ((used)) void*
-__ptr_clock_gettime = (void*)(0x926100000l + (long)__load_and_call_clock_gettime);
+void* __ptr_clock_gettime = &__load_and_call_clock_gettime;
 
 static void
 __load_clock_gettime() {
@@ -3426,8 +3323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clock_settime]\n");
 
 void __load_and_call_clock_settime();
-static __attribute__ ((used)) void*
-__ptr_clock_settime = (void*)(0x926100000l + (long)__load_and_call_clock_settime);
+void* __ptr_clock_settime = &__load_and_call_clock_settime;
 
 static void
 __load_clock_settime() {
@@ -3459,8 +3355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_close]\n");
 
 void __load_and_call_close();
-static __attribute__ ((used)) void*
-__ptr_close = (void*)(0x926100000l + (long)__load_and_call_close);
+void* __ptr_close = &__load_and_call_close;
 
 static void
 __load_close() {
@@ -3492,8 +3387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_connect]\n");
 
 void __load_and_call_connect();
-static __attribute__ ((used)) void*
-__ptr_connect = (void*)(0x926100000l + (long)__load_and_call_connect);
+void* __ptr_connect = &__load_and_call_connect;
 
 static void
 __load_connect() {
@@ -3525,8 +3419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cpuset_getaffinity]\n");
 
 void __load_and_call_cpuset_getaffinity();
-static __attribute__ ((used)) void*
-__ptr_cpuset_getaffinity = (void*)(0x926100000l + (long)__load_and_call_cpuset_getaffinity);
+void* __ptr_cpuset_getaffinity = &__load_and_call_cpuset_getaffinity;
 
 static void
 __load_cpuset_getaffinity() {
@@ -3558,8 +3451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cpuset_getid]\n");
 
 void __load_and_call_cpuset_getid();
-static __attribute__ ((used)) void*
-__ptr_cpuset_getid = (void*)(0x926100000l + (long)__load_and_call_cpuset_getid);
+void* __ptr_cpuset_getid = &__load_and_call_cpuset_getid;
 
 static void
 __load_cpuset_getid() {
@@ -3591,8 +3483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cpuset_setaffinity]\n");
 
 void __load_and_call_cpuset_setaffinity();
-static __attribute__ ((used)) void*
-__ptr_cpuset_setaffinity = (void*)(0x926100000l + (long)__load_and_call_cpuset_setaffinity);
+void* __ptr_cpuset_setaffinity = &__load_and_call_cpuset_setaffinity;
 
 static void
 __load_cpuset_setaffinity() {
@@ -3624,8 +3515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_creat]\n");
 
 void __load_and_call_creat();
-static __attribute__ ((used)) void*
-__ptr_creat = (void*)(0x926100000l + (long)__load_and_call_creat);
+void* __ptr_creat = &__load_and_call_creat;
 
 static void
 __load_creat() {
@@ -3657,8 +3547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dlclose]\n");
 
 void __load_and_call_dlclose();
-static __attribute__ ((used)) void*
-__ptr_dlclose = (void*)(0x926100000l + (long)__load_and_call_dlclose);
+void* __ptr_dlclose = &__load_and_call_dlclose;
 
 static void
 __load_dlclose() {
@@ -3690,8 +3579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dlerror]\n");
 
 void __load_and_call_dlerror();
-static __attribute__ ((used)) void*
-__ptr_dlerror = (void*)(0x926100000l + (long)__load_and_call_dlerror);
+void* __ptr_dlerror = &__load_and_call_dlerror;
 
 static void
 __load_dlerror() {
@@ -3723,8 +3611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dlopen]\n");
 
 void __load_and_call_dlopen();
-static __attribute__ ((used)) void*
-__ptr_dlopen = (void*)(0x926100000l + (long)__load_and_call_dlopen);
+void* __ptr_dlopen = &__load_and_call_dlopen;
 
 static void
 __load_dlopen() {
@@ -3756,8 +3643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dlsym]\n");
 
 void __load_and_call_dlsym();
-static __attribute__ ((used)) void*
-__ptr_dlsym = (void*)(0x926100000l + (long)__load_and_call_dlsym);
+void* __ptr_dlsym = &__load_and_call_dlsym;
 
 static void
 __load_dlsym() {
@@ -3789,8 +3675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dup]\n");
 
 void __load_and_call_dup();
-static __attribute__ ((used)) void*
-__ptr_dup = (void*)(0x926100000l + (long)__load_and_call_dup);
+void* __ptr_dup = &__load_and_call_dup;
 
 static void
 __load_dup() {
@@ -3822,8 +3707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dup2]\n");
 
 void __load_and_call_dup2();
-static __attribute__ ((used)) void*
-__ptr_dup2 = (void*)(0x926100000l + (long)__load_and_call_dup2);
+void* __ptr_dup2 = &__load_and_call_dup2;
 
 static void
 __load_dup2() {
@@ -3855,8 +3739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dynlib_get_obj_member]\n");
 
 void __load_and_call_dynlib_get_obj_member();
-static __attribute__ ((used)) void*
-__ptr_dynlib_get_obj_member = (void*)(0x926100000l + (long)__load_and_call_dynlib_get_obj_member);
+void* __ptr_dynlib_get_obj_member = &__load_and_call_dynlib_get_obj_member;
 
 static void
 __load_dynlib_get_obj_member() {
@@ -3888,8 +3771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_execv]\n");
 
 void __load_and_call_execv();
-static __attribute__ ((used)) void*
-__ptr_execv = (void*)(0x926100000l + (long)__load_and_call_execv);
+void* __ptr_execv = &__load_and_call_execv;
 
 static void
 __load_execv() {
@@ -3921,8 +3803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_execve]\n");
 
 void __load_and_call_execve();
-static __attribute__ ((used)) void*
-__ptr_execve = (void*)(0x926100000l + (long)__load_and_call_execve);
+void* __ptr_execve = &__load_and_call_execve;
 
 static void
 __load_execve() {
@@ -3954,8 +3835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_execvp]\n");
 
 void __load_and_call_execvp();
-static __attribute__ ((used)) void*
-__ptr_execvp = (void*)(0x926100000l + (long)__load_and_call_execvp);
+void* __ptr_execvp = &__load_and_call_execvp;
 
 static void
 __load_execvp() {
@@ -3987,8 +3867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fchflags]\n");
 
 void __load_and_call_fchflags();
-static __attribute__ ((used)) void*
-__ptr_fchflags = (void*)(0x926100000l + (long)__load_and_call_fchflags);
+void* __ptr_fchflags = &__load_and_call_fchflags;
 
 static void
 __load_fchflags() {
@@ -4020,8 +3899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fchmod]\n");
 
 void __load_and_call_fchmod();
-static __attribute__ ((used)) void*
-__ptr_fchmod = (void*)(0x926100000l + (long)__load_and_call_fchmod);
+void* __ptr_fchmod = &__load_and_call_fchmod;
 
 static void
 __load_fchmod() {
@@ -4053,8 +3931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fcntl]\n");
 
 void __load_and_call_fcntl();
-static __attribute__ ((used)) void*
-__ptr_fcntl = (void*)(0x926100000l + (long)__load_and_call_fcntl);
+void* __ptr_fcntl = &__load_and_call_fcntl;
 
 static void
 __load_fcntl() {
@@ -4086,8 +3963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fdatasync]\n");
 
 void __load_and_call_fdatasync();
-static __attribute__ ((used)) void*
-__ptr_fdatasync = (void*)(0x926100000l + (long)__load_and_call_fdatasync);
+void* __ptr_fdatasync = &__load_and_call_fdatasync;
 
 static void
 __load_fdatasync() {
@@ -4119,8 +3995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_flock]\n");
 
 void __load_and_call_flock();
-static __attribute__ ((used)) void*
-__ptr_flock = (void*)(0x926100000l + (long)__load_and_call_flock);
+void* __ptr_flock = &__load_and_call_flock;
 
 static void
 __load_flock() {
@@ -4152,8 +4027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fstat]\n");
 
 void __load_and_call_fstat();
-static __attribute__ ((used)) void*
-__ptr_fstat = (void*)(0x926100000l + (long)__load_and_call_fstat);
+void* __ptr_fstat = &__load_and_call_fstat;
 
 static void
 __load_fstat() {
@@ -4185,8 +4059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fsync]\n");
 
 void __load_and_call_fsync();
-static __attribute__ ((used)) void*
-__ptr_fsync = (void*)(0x926100000l + (long)__load_and_call_fsync);
+void* __ptr_fsync = &__load_and_call_fsync;
 
 static void
 __load_fsync() {
@@ -4218,8 +4091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ftruncate]\n");
 
 void __load_and_call_ftruncate();
-static __attribute__ ((used)) void*
-__ptr_ftruncate = (void*)(0x926100000l + (long)__load_and_call_ftruncate);
+void* __ptr_ftruncate = &__load_and_call_ftruncate;
 
 static void
 __load_ftruncate() {
@@ -4251,8 +4123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_futimes]\n");
 
 void __load_and_call_futimes();
-static __attribute__ ((used)) void*
-__ptr_futimes = (void*)(0x926100000l + (long)__load_and_call_futimes);
+void* __ptr_futimes = &__load_and_call_futimes;
 
 static void
 __load_futimes() {
@@ -4284,8 +4155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_authinfo]\n");
 
 void __load_and_call_get_authinfo();
-static __attribute__ ((used)) void*
-__ptr_get_authinfo = (void*)(0x926100000l + (long)__load_and_call_get_authinfo);
+void* __ptr_get_authinfo = &__load_and_call_get_authinfo;
 
 static void
 __load_get_authinfo() {
@@ -4317,8 +4187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_module_info_list]\n");
 
 void __load_and_call_get_module_info_list();
-static __attribute__ ((used)) void*
-__ptr_get_module_info_list = (void*)(0x926100000l + (long)__load_and_call_get_module_info_list);
+void* __ptr_get_module_info_list = &__load_and_call_get_module_info_list;
 
 static void
 __load_get_module_info_list() {
@@ -4350,8 +4219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_page_table_stats]\n");
 
 void __load_and_call_get_page_table_stats();
-static __attribute__ ((used)) void*
-__ptr_get_page_table_stats = (void*)(0x926100000l + (long)__load_and_call_get_page_table_stats);
+void* __ptr_get_page_table_stats = &__load_and_call_get_page_table_stats;
 
 static void
 __load_get_page_table_stats() {
@@ -4383,8 +4251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_sdk_compiled_version]\n");
 
 void __load_and_call_get_sdk_compiled_version();
-static __attribute__ ((used)) void*
-__ptr_get_sdk_compiled_version = (void*)(0x926100000l + (long)__load_and_call_get_sdk_compiled_version);
+void* __ptr_get_sdk_compiled_version = &__load_and_call_get_sdk_compiled_version;
 
 static void
 __load_get_sdk_compiled_version() {
@@ -4416,8 +4283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_self_auth_info]\n");
 
 void __load_and_call_get_self_auth_info();
-static __attribute__ ((used)) void*
-__ptr_get_self_auth_info = (void*)(0x926100000l + (long)__load_and_call_get_self_auth_info);
+void* __ptr_get_self_auth_info = &__load_and_call_get_self_auth_info;
 
 static void
 __load_get_self_auth_info() {
@@ -4449,8 +4315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_vm_map_timestamp]\n");
 
 void __load_and_call_get_vm_map_timestamp();
-static __attribute__ ((used)) void*
-__ptr_get_vm_map_timestamp = (void*)(0x926100000l + (long)__load_and_call_get_vm_map_timestamp);
+void* __ptr_get_vm_map_timestamp = &__load_and_call_get_vm_map_timestamp;
 
 static void
 __load_get_vm_map_timestamp() {
@@ -4482,8 +4347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getargc]\n");
 
 void __load_and_call_getargc();
-static __attribute__ ((used)) void*
-__ptr_getargc = (void*)(0x926100000l + (long)__load_and_call_getargc);
+void* __ptr_getargc = &__load_and_call_getargc;
 
 static void
 __load_getargc() {
@@ -4515,8 +4379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getargv]\n");
 
 void __load_and_call_getargv();
-static __attribute__ ((used)) void*
-__ptr_getargv = (void*)(0x926100000l + (long)__load_and_call_getargv);
+void* __ptr_getargv = &__load_and_call_getargv;
 
 static void
 __load_getargv() {
@@ -4548,8 +4411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getcontext]\n");
 
 void __load_and_call_getcontext();
-static __attribute__ ((used)) void*
-__ptr_getcontext = (void*)(0x926100000l + (long)__load_and_call_getcontext);
+void* __ptr_getcontext = &__load_and_call_getcontext;
 
 static void
 __load_getcontext() {
@@ -4581,8 +4443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getdents]\n");
 
 void __load_and_call_getdents();
-static __attribute__ ((used)) void*
-__ptr_getdents = (void*)(0x926100000l + (long)__load_and_call_getdents);
+void* __ptr_getdents = &__load_and_call_getdents;
 
 static void
 __load_getdents() {
@@ -4614,8 +4475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getdirentries]\n");
 
 void __load_and_call_getdirentries();
-static __attribute__ ((used)) void*
-__ptr_getdirentries = (void*)(0x926100000l + (long)__load_and_call_getdirentries);
+void* __ptr_getdirentries = &__load_and_call_getdirentries;
 
 static void
 __load_getdirentries() {
@@ -4647,8 +4507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getdtablesize]\n");
 
 void __load_and_call_getdtablesize();
-static __attribute__ ((used)) void*
-__ptr_getdtablesize = (void*)(0x926100000l + (long)__load_and_call_getdtablesize);
+void* __ptr_getdtablesize = &__load_and_call_getdtablesize;
 
 static void
 __load_getdtablesize() {
@@ -4680,8 +4539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getegid]\n");
 
 void __load_and_call_getegid();
-static __attribute__ ((used)) void*
-__ptr_getegid = (void*)(0x926100000l + (long)__load_and_call_getegid);
+void* __ptr_getegid = &__load_and_call_getegid;
 
 static void
 __load_getegid() {
@@ -4713,8 +4571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_geteuid]\n");
 
 void __load_and_call_geteuid();
-static __attribute__ ((used)) void*
-__ptr_geteuid = (void*)(0x926100000l + (long)__load_and_call_geteuid);
+void* __ptr_geteuid = &__load_and_call_geteuid;
 
 static void
 __load_geteuid() {
@@ -4746,8 +4603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getgid]\n");
 
 void __load_and_call_getgid();
-static __attribute__ ((used)) void*
-__ptr_getgid = (void*)(0x926100000l + (long)__load_and_call_getgid);
+void* __ptr_getgid = &__load_and_call_getgid;
 
 static void
 __load_getgid() {
@@ -4779,8 +4635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getgroups]\n");
 
 void __load_and_call_getgroups();
-static __attribute__ ((used)) void*
-__ptr_getgroups = (void*)(0x926100000l + (long)__load_and_call_getgroups);
+void* __ptr_getgroups = &__load_and_call_getgroups;
 
 static void
 __load_getgroups() {
@@ -4812,8 +4667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getitimer]\n");
 
 void __load_and_call_getitimer();
-static __attribute__ ((used)) void*
-__ptr_getitimer = (void*)(0x926100000l + (long)__load_and_call_getitimer);
+void* __ptr_getitimer = &__load_and_call_getitimer;
 
 static void
 __load_getitimer() {
@@ -4845,8 +4699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getlogin]\n");
 
 void __load_and_call_getlogin();
-static __attribute__ ((used)) void*
-__ptr_getlogin = (void*)(0x926100000l + (long)__load_and_call_getlogin);
+void* __ptr_getlogin = &__load_and_call_getlogin;
 
 static void
 __load_getlogin() {
@@ -4878,8 +4731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getlogin_r]\n");
 
 void __load_and_call_getlogin_r();
-static __attribute__ ((used)) void*
-__ptr_getlogin_r = (void*)(0x926100000l + (long)__load_and_call_getlogin_r);
+void* __ptr_getlogin_r = &__load_and_call_getlogin_r;
 
 static void
 __load_getlogin_r() {
@@ -4911,8 +4763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getpagesize]\n");
 
 void __load_and_call_getpagesize();
-static __attribute__ ((used)) void*
-__ptr_getpagesize = (void*)(0x926100000l + (long)__load_and_call_getpagesize);
+void* __ptr_getpagesize = &__load_and_call_getpagesize;
 
 static void
 __load_getpagesize() {
@@ -4944,8 +4795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getpeername]\n");
 
 void __load_and_call_getpeername();
-static __attribute__ ((used)) void*
-__ptr_getpeername = (void*)(0x926100000l + (long)__load_and_call_getpeername);
+void* __ptr_getpeername = &__load_and_call_getpeername;
 
 static void
 __load_getpeername() {
@@ -4977,8 +4827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getpid]\n");
 
 void __load_and_call_getpid();
-static __attribute__ ((used)) void*
-__ptr_getpid = (void*)(0x926100000l + (long)__load_and_call_getpid);
+void* __ptr_getpid = &__load_and_call_getpid;
 
 static void
 __load_getpid() {
@@ -5010,8 +4859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getppid]\n");
 
 void __load_and_call_getppid();
-static __attribute__ ((used)) void*
-__ptr_getppid = (void*)(0x926100000l + (long)__load_and_call_getppid);
+void* __ptr_getppid = &__load_and_call_getppid;
 
 static void
 __load_getppid() {
@@ -5043,8 +4891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getpriority]\n");
 
 void __load_and_call_getpriority();
-static __attribute__ ((used)) void*
-__ptr_getpriority = (void*)(0x926100000l + (long)__load_and_call_getpriority);
+void* __ptr_getpriority = &__load_and_call_getpriority;
 
 static void
 __load_getpriority() {
@@ -5076,8 +4923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getrlimit]\n");
 
 void __load_and_call_getrlimit();
-static __attribute__ ((used)) void*
-__ptr_getrlimit = (void*)(0x926100000l + (long)__load_and_call_getrlimit);
+void* __ptr_getrlimit = &__load_and_call_getrlimit;
 
 static void
 __load_getrlimit() {
@@ -5109,8 +4955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getrusage]\n");
 
 void __load_and_call_getrusage();
-static __attribute__ ((used)) void*
-__ptr_getrusage = (void*)(0x926100000l + (long)__load_and_call_getrusage);
+void* __ptr_getrusage = &__load_and_call_getrusage;
 
 static void
 __load_getrusage() {
@@ -5142,8 +4987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getsid]\n");
 
 void __load_and_call_getsid();
-static __attribute__ ((used)) void*
-__ptr_getsid = (void*)(0x926100000l + (long)__load_and_call_getsid);
+void* __ptr_getsid = &__load_and_call_getsid;
 
 static void
 __load_getsid() {
@@ -5175,8 +5019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getsockname]\n");
 
 void __load_and_call_getsockname();
-static __attribute__ ((used)) void*
-__ptr_getsockname = (void*)(0x926100000l + (long)__load_and_call_getsockname);
+void* __ptr_getsockname = &__load_and_call_getsockname;
 
 static void
 __load_getsockname() {
@@ -5208,8 +5051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getsockopt]\n");
 
 void __load_and_call_getsockopt();
-static __attribute__ ((used)) void*
-__ptr_getsockopt = (void*)(0x926100000l + (long)__load_and_call_getsockopt);
+void* __ptr_getsockopt = &__load_and_call_getsockopt;
 
 static void
 __load_getsockopt() {
@@ -5241,8 +5083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gettimeofday]\n");
 
 void __load_and_call_gettimeofday();
-static __attribute__ ((used)) void*
-__ptr_gettimeofday = (void*)(0x926100000l + (long)__load_and_call_gettimeofday);
+void* __ptr_gettimeofday = &__load_and_call_gettimeofday;
 
 static void
 __load_gettimeofday() {
@@ -5274,8 +5115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getuid]\n");
 
 void __load_and_call_getuid();
-static __attribute__ ((used)) void*
-__ptr_getuid = (void*)(0x926100000l + (long)__load_and_call_getuid);
+void* __ptr_getuid = &__load_and_call_getuid;
 
 static void
 __load_getuid() {
@@ -5307,8 +5147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_htonl]\n");
 
 void __load_and_call_htonl();
-static __attribute__ ((used)) void*
-__ptr_htonl = (void*)(0x926100000l + (long)__load_and_call_htonl);
+void* __ptr_htonl = &__load_and_call_htonl;
 
 static void
 __load_htonl() {
@@ -5340,8 +5179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_htons]\n");
 
 void __load_and_call_htons();
-static __attribute__ ((used)) void*
-__ptr_htons = (void*)(0x926100000l + (long)__load_and_call_htons);
+void* __ptr_htons = &__load_and_call_htons;
 
 static void
 __load_htons() {
@@ -5373,8 +5211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_inet_ntop]\n");
 
 void __load_and_call_inet_ntop();
-static __attribute__ ((used)) void*
-__ptr_inet_ntop = (void*)(0x926100000l + (long)__load_and_call_inet_ntop);
+void* __ptr_inet_ntop = &__load_and_call_inet_ntop;
 
 static void
 __load_inet_ntop() {
@@ -5406,8 +5243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_inet_pton]\n");
 
 void __load_and_call_inet_pton();
-static __attribute__ ((used)) void*
-__ptr_inet_pton = (void*)(0x926100000l + (long)__load_and_call_inet_pton);
+void* __ptr_inet_pton = &__load_and_call_inet_pton;
 
 static void
 __load_inet_pton() {
@@ -5439,8 +5275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ioctl]\n");
 
 void __load_and_call_ioctl();
-static __attribute__ ((used)) void*
-__ptr_ioctl = (void*)(0x926100000l + (long)__load_and_call_ioctl);
+void* __ptr_ioctl = &__load_and_call_ioctl;
 
 static void
 __load_ioctl() {
@@ -5472,8 +5307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ipmimgr_call]\n");
 
 void __load_and_call_ipmimgr_call();
-static __attribute__ ((used)) void*
-__ptr_ipmimgr_call = (void*)(0x926100000l + (long)__load_and_call_ipmimgr_call);
+void* __ptr_ipmimgr_call = &__load_and_call_ipmimgr_call;
 
 static void
 __load_ipmimgr_call() {
@@ -5505,8 +5339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_is_in_sandbox]\n");
 
 void __load_and_call_is_in_sandbox();
-static __attribute__ ((used)) void*
-__ptr_is_in_sandbox = (void*)(0x926100000l + (long)__load_and_call_is_in_sandbox);
+void* __ptr_is_in_sandbox = &__load_and_call_is_in_sandbox;
 
 static void
 __load_is_in_sandbox() {
@@ -5538,8 +5371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_issetugid]\n");
 
 void __load_and_call_issetugid();
-static __attribute__ ((used)) void*
-__ptr_issetugid = (void*)(0x926100000l + (long)__load_and_call_issetugid);
+void* __ptr_issetugid = &__load_and_call_issetugid;
 
 static void
 __load_issetugid() {
@@ -5571,8 +5403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_kevent]\n");
 
 void __load_and_call_kevent();
-static __attribute__ ((used)) void*
-__ptr_kevent = (void*)(0x926100000l + (long)__load_and_call_kevent);
+void* __ptr_kevent = &__load_and_call_kevent;
 
 static void
 __load_kevent() {
@@ -5604,8 +5435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_kill]\n");
 
 void __load_and_call_kill();
-static __attribute__ ((used)) void*
-__ptr_kill = (void*)(0x926100000l + (long)__load_and_call_kill);
+void* __ptr_kill = &__load_and_call_kill;
 
 static void
 __load_kill() {
@@ -5637,8 +5467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_kqueue]\n");
 
 void __load_and_call_kqueue();
-static __attribute__ ((used)) void*
-__ptr_kqueue = (void*)(0x926100000l + (long)__load_and_call_kqueue);
+void* __ptr_kqueue = &__load_and_call_kqueue;
 
 static void
 __load_kqueue() {
@@ -5670,8 +5499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_close]\n");
 
 void __load_and_call_ksem_close();
-static __attribute__ ((used)) void*
-__ptr_ksem_close = (void*)(0x926100000l + (long)__load_and_call_ksem_close);
+void* __ptr_ksem_close = &__load_and_call_ksem_close;
 
 static void
 __load_ksem_close() {
@@ -5703,8 +5531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_destroy]\n");
 
 void __load_and_call_ksem_destroy();
-static __attribute__ ((used)) void*
-__ptr_ksem_destroy = (void*)(0x926100000l + (long)__load_and_call_ksem_destroy);
+void* __ptr_ksem_destroy = &__load_and_call_ksem_destroy;
 
 static void
 __load_ksem_destroy() {
@@ -5736,8 +5563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_getvalue]\n");
 
 void __load_and_call_ksem_getvalue();
-static __attribute__ ((used)) void*
-__ptr_ksem_getvalue = (void*)(0x926100000l + (long)__load_and_call_ksem_getvalue);
+void* __ptr_ksem_getvalue = &__load_and_call_ksem_getvalue;
 
 static void
 __load_ksem_getvalue() {
@@ -5769,8 +5595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_init]\n");
 
 void __load_and_call_ksem_init();
-static __attribute__ ((used)) void*
-__ptr_ksem_init = (void*)(0x926100000l + (long)__load_and_call_ksem_init);
+void* __ptr_ksem_init = &__load_and_call_ksem_init;
 
 static void
 __load_ksem_init() {
@@ -5802,8 +5627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_open]\n");
 
 void __load_and_call_ksem_open();
-static __attribute__ ((used)) void*
-__ptr_ksem_open = (void*)(0x926100000l + (long)__load_and_call_ksem_open);
+void* __ptr_ksem_open = &__load_and_call_ksem_open;
 
 static void
 __load_ksem_open() {
@@ -5835,8 +5659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_post]\n");
 
 void __load_and_call_ksem_post();
-static __attribute__ ((used)) void*
-__ptr_ksem_post = (void*)(0x926100000l + (long)__load_and_call_ksem_post);
+void* __ptr_ksem_post = &__load_and_call_ksem_post;
 
 static void
 __load_ksem_post() {
@@ -5868,8 +5691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_timedwait]\n");
 
 void __load_and_call_ksem_timedwait();
-static __attribute__ ((used)) void*
-__ptr_ksem_timedwait = (void*)(0x926100000l + (long)__load_and_call_ksem_timedwait);
+void* __ptr_ksem_timedwait = &__load_and_call_ksem_timedwait;
 
 static void
 __load_ksem_timedwait() {
@@ -5901,8 +5723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_trywait]\n");
 
 void __load_and_call_ksem_trywait();
-static __attribute__ ((used)) void*
-__ptr_ksem_trywait = (void*)(0x926100000l + (long)__load_and_call_ksem_trywait);
+void* __ptr_ksem_trywait = &__load_and_call_ksem_trywait;
 
 static void
 __load_ksem_trywait() {
@@ -5934,8 +5755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_unlink]\n");
 
 void __load_and_call_ksem_unlink();
-static __attribute__ ((used)) void*
-__ptr_ksem_unlink = (void*)(0x926100000l + (long)__load_and_call_ksem_unlink);
+void* __ptr_ksem_unlink = &__load_and_call_ksem_unlink;
 
 static void
 __load_ksem_unlink() {
@@ -5967,8 +5787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_wait]\n");
 
 void __load_and_call_ksem_wait();
-static __attribute__ ((used)) void*
-__ptr_ksem_wait = (void*)(0x926100000l + (long)__load_and_call_ksem_wait);
+void* __ptr_ksem_wait = &__load_and_call_ksem_wait;
 
 static void
 __load_ksem_wait() {
@@ -6000,8 +5819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_create]\n");
 
 void __load_and_call_ktimer_create();
-static __attribute__ ((used)) void*
-__ptr_ktimer_create = (void*)(0x926100000l + (long)__load_and_call_ktimer_create);
+void* __ptr_ktimer_create = &__load_and_call_ktimer_create;
 
 static void
 __load_ktimer_create() {
@@ -6033,8 +5851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_delete]\n");
 
 void __load_and_call_ktimer_delete();
-static __attribute__ ((used)) void*
-__ptr_ktimer_delete = (void*)(0x926100000l + (long)__load_and_call_ktimer_delete);
+void* __ptr_ktimer_delete = &__load_and_call_ktimer_delete;
 
 static void
 __load_ktimer_delete() {
@@ -6066,8 +5883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_getoverrun]\n");
 
 void __load_and_call_ktimer_getoverrun();
-static __attribute__ ((used)) void*
-__ptr_ktimer_getoverrun = (void*)(0x926100000l + (long)__load_and_call_ktimer_getoverrun);
+void* __ptr_ktimer_getoverrun = &__load_and_call_ktimer_getoverrun;
 
 static void
 __load_ktimer_getoverrun() {
@@ -6099,8 +5915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_gettime]\n");
 
 void __load_and_call_ktimer_gettime();
-static __attribute__ ((used)) void*
-__ptr_ktimer_gettime = (void*)(0x926100000l + (long)__load_and_call_ktimer_gettime);
+void* __ptr_ktimer_gettime = &__load_and_call_ktimer_gettime;
 
 static void
 __load_ktimer_gettime() {
@@ -6132,8 +5947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_settime]\n");
 
 void __load_and_call_ktimer_settime();
-static __attribute__ ((used)) void*
-__ptr_ktimer_settime = (void*)(0x926100000l + (long)__load_and_call_ktimer_settime);
+void* __ptr_ktimer_settime = &__load_and_call_ktimer_settime;
 
 static void
 __load_ktimer_settime() {
@@ -6165,8 +5979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_listen]\n");
 
 void __load_and_call_listen();
-static __attribute__ ((used)) void*
-__ptr_listen = (void*)(0x926100000l + (long)__load_and_call_listen);
+void* __ptr_listen = &__load_and_call_listen;
 
 static void
 __load_listen() {
@@ -6198,8 +6011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lseek]\n");
 
 void __load_and_call_lseek();
-static __attribute__ ((used)) void*
-__ptr_lseek = (void*)(0x926100000l + (long)__load_and_call_lseek);
+void* __ptr_lseek = &__load_and_call_lseek;
 
 static void
 __load_lseek() {
@@ -6231,8 +6043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lstat]\n");
 
 void __load_and_call_lstat();
-static __attribute__ ((used)) void*
-__ptr_lstat = (void*)(0x926100000l + (long)__load_and_call_lstat);
+void* __ptr_lstat = &__load_and_call_lstat;
 
 static void
 __load_lstat() {
@@ -6264,8 +6075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_madvise]\n");
 
 void __load_and_call_madvise();
-static __attribute__ ((used)) void*
-__ptr_madvise = (void*)(0x926100000l + (long)__load_and_call_madvise);
+void* __ptr_madvise = &__load_and_call_madvise;
 
 static void
 __load_madvise() {
@@ -6297,8 +6107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mdbg_service]\n");
 
 void __load_and_call_mdbg_service();
-static __attribute__ ((used)) void*
-__ptr_mdbg_service = (void*)(0x926100000l + (long)__load_and_call_mdbg_service);
+void* __ptr_mdbg_service = &__load_and_call_mdbg_service;
 
 static void
 __load_mdbg_service() {
@@ -6330,8 +6139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mincore]\n");
 
 void __load_and_call_mincore();
-static __attribute__ ((used)) void*
-__ptr_mincore = (void*)(0x926100000l + (long)__load_and_call_mincore);
+void* __ptr_mincore = &__load_and_call_mincore;
 
 static void
 __load_mincore() {
@@ -6363,8 +6171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mkdir]\n");
 
 void __load_and_call_mkdir();
-static __attribute__ ((used)) void*
-__ptr_mkdir = (void*)(0x926100000l + (long)__load_and_call_mkdir);
+void* __ptr_mkdir = &__load_and_call_mkdir;
 
 static void
 __load_mkdir() {
@@ -6396,8 +6203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mlock]\n");
 
 void __load_and_call_mlock();
-static __attribute__ ((used)) void*
-__ptr_mlock = (void*)(0x926100000l + (long)__load_and_call_mlock);
+void* __ptr_mlock = &__load_and_call_mlock;
 
 static void
 __load_mlock() {
@@ -6429,8 +6235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mlockall]\n");
 
 void __load_and_call_mlockall();
-static __attribute__ ((used)) void*
-__ptr_mlockall = (void*)(0x926100000l + (long)__load_and_call_mlockall);
+void* __ptr_mlockall = &__load_and_call_mlockall;
 
 static void
 __load_mlockall() {
@@ -6462,8 +6267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mmap]\n");
 
 void __load_and_call_mmap();
-static __attribute__ ((used)) void*
-__ptr_mmap = (void*)(0x926100000l + (long)__load_and_call_mmap);
+void* __ptr_mmap = &__load_and_call_mmap;
 
 static void
 __load_mmap() {
@@ -6495,8 +6299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mprotect]\n");
 
 void __load_and_call_mprotect();
-static __attribute__ ((used)) void*
-__ptr_mprotect = (void*)(0x926100000l + (long)__load_and_call_mprotect);
+void* __ptr_mprotect = &__load_and_call_mprotect;
 
 static void
 __load_mprotect() {
@@ -6528,8 +6331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_msync]\n");
 
 void __load_and_call_msync();
-static __attribute__ ((used)) void*
-__ptr_msync = (void*)(0x926100000l + (long)__load_and_call_msync);
+void* __ptr_msync = &__load_and_call_msync;
 
 static void
 __load_msync() {
@@ -6561,8 +6363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_munlock]\n");
 
 void __load_and_call_munlock();
-static __attribute__ ((used)) void*
-__ptr_munlock = (void*)(0x926100000l + (long)__load_and_call_munlock);
+void* __ptr_munlock = &__load_and_call_munlock;
 
 static void
 __load_munlock() {
@@ -6594,8 +6395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_munlockall]\n");
 
 void __load_and_call_munlockall();
-static __attribute__ ((used)) void*
-__ptr_munlockall = (void*)(0x926100000l + (long)__load_and_call_munlockall);
+void* __ptr_munlockall = &__load_and_call_munlockall;
 
 static void
 __load_munlockall() {
@@ -6627,8 +6427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_munmap]\n");
 
 void __load_and_call_munmap();
-static __attribute__ ((used)) void*
-__ptr_munmap = (void*)(0x926100000l + (long)__load_and_call_munmap);
+void* __ptr_munmap = &__load_and_call_munmap;
 
 static void
 __load_munmap() {
@@ -6660,8 +6459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nanosleep]\n");
 
 void __load_and_call_nanosleep();
-static __attribute__ ((used)) void*
-__ptr_nanosleep = (void*)(0x926100000l + (long)__load_and_call_nanosleep);
+void* __ptr_nanosleep = &__load_and_call_nanosleep;
 
 static void
 __load_nanosleep() {
@@ -6693,8 +6491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ntohl]\n");
 
 void __load_and_call_ntohl();
-static __attribute__ ((used)) void*
-__ptr_ntohl = (void*)(0x926100000l + (long)__load_and_call_ntohl);
+void* __ptr_ntohl = &__load_and_call_ntohl;
 
 static void
 __load_ntohl() {
@@ -6726,8 +6523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ntohs]\n");
 
 void __load_and_call_ntohs();
-static __attribute__ ((used)) void*
-__ptr_ntohs = (void*)(0x926100000l + (long)__load_and_call_ntohs);
+void* __ptr_ntohs = &__load_and_call_ntohs;
 
 static void
 __load_ntohs() {
@@ -6759,8 +6555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_open]\n");
 
 void __load_and_call_open();
-static __attribute__ ((used)) void*
-__ptr_open = (void*)(0x926100000l + (long)__load_and_call_open);
+void* __ptr_open = &__load_and_call_open;
 
 static void
 __load_open() {
@@ -6792,8 +6587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_openintr]\n");
 
 void __load_and_call_openintr();
-static __attribute__ ((used)) void*
-__ptr_openintr = (void*)(0x926100000l + (long)__load_and_call_openintr);
+void* __ptr_openintr = &__load_and_call_openintr;
 
 static void
 __load_openintr() {
@@ -6825,8 +6619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pause]\n");
 
 void __load_and_call_pause();
-static __attribute__ ((used)) void*
-__ptr_pause = (void*)(0x926100000l + (long)__load_and_call_pause);
+void* __ptr_pause = &__load_and_call_pause;
 
 static void
 __load_pause() {
@@ -6858,8 +6651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_physhm_open]\n");
 
 void __load_and_call_physhm_open();
-static __attribute__ ((used)) void*
-__ptr_physhm_open = (void*)(0x926100000l + (long)__load_and_call_physhm_open);
+void* __ptr_physhm_open = &__load_and_call_physhm_open;
 
 static void
 __load_physhm_open() {
@@ -6891,8 +6683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_physhm_unlink]\n");
 
 void __load_and_call_physhm_unlink();
-static __attribute__ ((used)) void*
-__ptr_physhm_unlink = (void*)(0x926100000l + (long)__load_and_call_physhm_unlink);
+void* __ptr_physhm_unlink = &__load_and_call_physhm_unlink;
 
 static void
 __load_physhm_unlink() {
@@ -6924,8 +6715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pipe]\n");
 
 void __load_and_call_pipe();
-static __attribute__ ((used)) void*
-__ptr_pipe = (void*)(0x926100000l + (long)__load_and_call_pipe);
+void* __ptr_pipe = &__load_and_call_pipe;
 
 static void
 __load_pipe() {
@@ -6957,8 +6747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_poll]\n");
 
 void __load_and_call_poll();
-static __attribute__ ((used)) void*
-__ptr_poll = (void*)(0x926100000l + (long)__load_and_call_poll);
+void* __ptr_poll = &__load_and_call_poll;
 
 static void
 __load_poll() {
@@ -6990,8 +6779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pread]\n");
 
 void __load_and_call_pread();
-static __attribute__ ((used)) void*
-__ptr_pread = (void*)(0x926100000l + (long)__load_and_call_pread);
+void* __ptr_pread = &__load_and_call_pread;
 
 static void
 __load_pread() {
@@ -7023,8 +6811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_preadv]\n");
 
 void __load_and_call_preadv();
-static __attribute__ ((used)) void*
-__ptr_preadv = (void*)(0x926100000l + (long)__load_and_call_preadv);
+void* __ptr_preadv = &__load_and_call_preadv;
 
 static void
 __load_preadv() {
@@ -7056,8 +6843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_profil]\n");
 
 void __load_and_call_profil();
-static __attribute__ ((used)) void*
-__ptr_profil = (void*)(0x926100000l + (long)__load_and_call_profil);
+void* __ptr_profil = &__load_and_call_profil;
 
 static void
 __load_profil() {
@@ -7089,8 +6875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pselect]\n");
 
 void __load_and_call_pselect();
-static __attribute__ ((used)) void*
-__ptr_pselect = (void*)(0x926100000l + (long)__load_and_call_pselect);
+void* __ptr_pselect = &__load_and_call_pselect;
 
 static void
 __load_pselect() {
@@ -7122,8 +6907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_atfork]\n");
 
 void __load_and_call_pthread_atfork();
-static __attribute__ ((used)) void*
-__ptr_pthread_atfork = (void*)(0x926100000l + (long)__load_and_call_pthread_atfork);
+void* __ptr_pthread_atfork = &__load_and_call_pthread_atfork;
 
 static void
 __load_pthread_atfork() {
@@ -7155,8 +6939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_destroy]\n");
 
 void __load_and_call_pthread_attr_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_destroy);
+void* __ptr_pthread_attr_destroy = &__load_and_call_pthread_attr_destroy;
 
 static void
 __load_pthread_attr_destroy() {
@@ -7188,8 +6971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_get_np]\n");
 
 void __load_and_call_pthread_attr_get_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_get_np = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_get_np);
+void* __ptr_pthread_attr_get_np = &__load_and_call_pthread_attr_get_np;
 
 static void
 __load_pthread_attr_get_np() {
@@ -7221,8 +7003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getaffinity_np]\n");
 
 void __load_and_call_pthread_attr_getaffinity_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getaffinity_np = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getaffinity_np);
+void* __ptr_pthread_attr_getaffinity_np = &__load_and_call_pthread_attr_getaffinity_np;
 
 static void
 __load_pthread_attr_getaffinity_np() {
@@ -7254,8 +7035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getdetachstate]\n");
 
 void __load_and_call_pthread_attr_getdetachstate();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getdetachstate = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getdetachstate);
+void* __ptr_pthread_attr_getdetachstate = &__load_and_call_pthread_attr_getdetachstate;
 
 static void
 __load_pthread_attr_getdetachstate() {
@@ -7287,8 +7067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getguardsize]\n");
 
 void __load_and_call_pthread_attr_getguardsize();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getguardsize = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getguardsize);
+void* __ptr_pthread_attr_getguardsize = &__load_and_call_pthread_attr_getguardsize;
 
 static void
 __load_pthread_attr_getguardsize() {
@@ -7320,8 +7099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getinheritsched]\n");
 
 void __load_and_call_pthread_attr_getinheritsched();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getinheritsched = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getinheritsched);
+void* __ptr_pthread_attr_getinheritsched = &__load_and_call_pthread_attr_getinheritsched;
 
 static void
 __load_pthread_attr_getinheritsched() {
@@ -7353,8 +7131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getschedparam]\n");
 
 void __load_and_call_pthread_attr_getschedparam();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getschedparam = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getschedparam);
+void* __ptr_pthread_attr_getschedparam = &__load_and_call_pthread_attr_getschedparam;
 
 static void
 __load_pthread_attr_getschedparam() {
@@ -7386,8 +7163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getschedpolicy]\n");
 
 void __load_and_call_pthread_attr_getschedpolicy();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getschedpolicy = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getschedpolicy);
+void* __ptr_pthread_attr_getschedpolicy = &__load_and_call_pthread_attr_getschedpolicy;
 
 static void
 __load_pthread_attr_getschedpolicy() {
@@ -7419,8 +7195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getscope]\n");
 
 void __load_and_call_pthread_attr_getscope();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getscope = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getscope);
+void* __ptr_pthread_attr_getscope = &__load_and_call_pthread_attr_getscope;
 
 static void
 __load_pthread_attr_getscope() {
@@ -7452,8 +7227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getsolosched_np]\n");
 
 void __load_and_call_pthread_attr_getsolosched_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getsolosched_np = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getsolosched_np);
+void* __ptr_pthread_attr_getsolosched_np = &__load_and_call_pthread_attr_getsolosched_np;
 
 static void
 __load_pthread_attr_getsolosched_np() {
@@ -7485,8 +7259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getstack]\n");
 
 void __load_and_call_pthread_attr_getstack();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getstack = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getstack);
+void* __ptr_pthread_attr_getstack = &__load_and_call_pthread_attr_getstack;
 
 static void
 __load_pthread_attr_getstack() {
@@ -7518,8 +7291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getstackaddr]\n");
 
 void __load_and_call_pthread_attr_getstackaddr();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getstackaddr = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getstackaddr);
+void* __ptr_pthread_attr_getstackaddr = &__load_and_call_pthread_attr_getstackaddr;
 
 static void
 __load_pthread_attr_getstackaddr() {
@@ -7551,8 +7323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getstacksize]\n");
 
 void __load_and_call_pthread_attr_getstacksize();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_getstacksize = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_getstacksize);
+void* __ptr_pthread_attr_getstacksize = &__load_and_call_pthread_attr_getstacksize;
 
 static void
 __load_pthread_attr_getstacksize() {
@@ -7584,8 +7355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_init]\n");
 
 void __load_and_call_pthread_attr_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_init = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_init);
+void* __ptr_pthread_attr_init = &__load_and_call_pthread_attr_init;
 
 static void
 __load_pthread_attr_init() {
@@ -7617,8 +7387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setaffinity_np]\n");
 
 void __load_and_call_pthread_attr_setaffinity_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setaffinity_np = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setaffinity_np);
+void* __ptr_pthread_attr_setaffinity_np = &__load_and_call_pthread_attr_setaffinity_np;
 
 static void
 __load_pthread_attr_setaffinity_np() {
@@ -7650,8 +7419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setcreatesuspend_np]\n");
 
 void __load_and_call_pthread_attr_setcreatesuspend_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setcreatesuspend_np = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setcreatesuspend_np);
+void* __ptr_pthread_attr_setcreatesuspend_np = &__load_and_call_pthread_attr_setcreatesuspend_np;
 
 static void
 __load_pthread_attr_setcreatesuspend_np() {
@@ -7683,8 +7451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setdetachstate]\n");
 
 void __load_and_call_pthread_attr_setdetachstate();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setdetachstate = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setdetachstate);
+void* __ptr_pthread_attr_setdetachstate = &__load_and_call_pthread_attr_setdetachstate;
 
 static void
 __load_pthread_attr_setdetachstate() {
@@ -7716,8 +7483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setguardsize]\n");
 
 void __load_and_call_pthread_attr_setguardsize();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setguardsize = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setguardsize);
+void* __ptr_pthread_attr_setguardsize = &__load_and_call_pthread_attr_setguardsize;
 
 static void
 __load_pthread_attr_setguardsize() {
@@ -7749,8 +7515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setinheritsched]\n");
 
 void __load_and_call_pthread_attr_setinheritsched();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setinheritsched = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setinheritsched);
+void* __ptr_pthread_attr_setinheritsched = &__load_and_call_pthread_attr_setinheritsched;
 
 static void
 __load_pthread_attr_setinheritsched() {
@@ -7782,8 +7547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setschedparam]\n");
 
 void __load_and_call_pthread_attr_setschedparam();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setschedparam = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setschedparam);
+void* __ptr_pthread_attr_setschedparam = &__load_and_call_pthread_attr_setschedparam;
 
 static void
 __load_pthread_attr_setschedparam() {
@@ -7815,8 +7579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setschedpolicy]\n");
 
 void __load_and_call_pthread_attr_setschedpolicy();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setschedpolicy = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setschedpolicy);
+void* __ptr_pthread_attr_setschedpolicy = &__load_and_call_pthread_attr_setschedpolicy;
 
 static void
 __load_pthread_attr_setschedpolicy() {
@@ -7848,8 +7611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setscope]\n");
 
 void __load_and_call_pthread_attr_setscope();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setscope = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setscope);
+void* __ptr_pthread_attr_setscope = &__load_and_call_pthread_attr_setscope;
 
 static void
 __load_pthread_attr_setscope() {
@@ -7881,8 +7643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setsolosched_np]\n");
 
 void __load_and_call_pthread_attr_setsolosched_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setsolosched_np = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setsolosched_np);
+void* __ptr_pthread_attr_setsolosched_np = &__load_and_call_pthread_attr_setsolosched_np;
 
 static void
 __load_pthread_attr_setsolosched_np() {
@@ -7914,8 +7675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setstack]\n");
 
 void __load_and_call_pthread_attr_setstack();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setstack = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setstack);
+void* __ptr_pthread_attr_setstack = &__load_and_call_pthread_attr_setstack;
 
 static void
 __load_pthread_attr_setstack() {
@@ -7947,8 +7707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setstackaddr]\n");
 
 void __load_and_call_pthread_attr_setstackaddr();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setstackaddr = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setstackaddr);
+void* __ptr_pthread_attr_setstackaddr = &__load_and_call_pthread_attr_setstackaddr;
 
 static void
 __load_pthread_attr_setstackaddr() {
@@ -7980,8 +7739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setstacksize]\n");
 
 void __load_and_call_pthread_attr_setstacksize();
-static __attribute__ ((used)) void*
-__ptr_pthread_attr_setstacksize = (void*)(0x926100000l + (long)__load_and_call_pthread_attr_setstacksize);
+void* __ptr_pthread_attr_setstacksize = &__load_and_call_pthread_attr_setstacksize;
 
 static void
 __load_pthread_attr_setstacksize() {
@@ -8013,8 +7771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrier_destroy]\n");
 
 void __load_and_call_pthread_barrier_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_barrier_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_barrier_destroy);
+void* __ptr_pthread_barrier_destroy = &__load_and_call_pthread_barrier_destroy;
 
 static void
 __load_pthread_barrier_destroy() {
@@ -8046,8 +7803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrier_init]\n");
 
 void __load_and_call_pthread_barrier_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_barrier_init = (void*)(0x926100000l + (long)__load_and_call_pthread_barrier_init);
+void* __ptr_pthread_barrier_init = &__load_and_call_pthread_barrier_init;
 
 static void
 __load_pthread_barrier_init() {
@@ -8079,8 +7835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrier_setname_np]\n");
 
 void __load_and_call_pthread_barrier_setname_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_barrier_setname_np = (void*)(0x926100000l + (long)__load_and_call_pthread_barrier_setname_np);
+void* __ptr_pthread_barrier_setname_np = &__load_and_call_pthread_barrier_setname_np;
 
 static void
 __load_pthread_barrier_setname_np() {
@@ -8112,8 +7867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrier_wait]\n");
 
 void __load_and_call_pthread_barrier_wait();
-static __attribute__ ((used)) void*
-__ptr_pthread_barrier_wait = (void*)(0x926100000l + (long)__load_and_call_pthread_barrier_wait);
+void* __ptr_pthread_barrier_wait = &__load_and_call_pthread_barrier_wait;
 
 static void
 __load_pthread_barrier_wait() {
@@ -8145,8 +7899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrierattr_destroy]\n");
 
 void __load_and_call_pthread_barrierattr_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_barrierattr_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_barrierattr_destroy);
+void* __ptr_pthread_barrierattr_destroy = &__load_and_call_pthread_barrierattr_destroy;
 
 static void
 __load_pthread_barrierattr_destroy() {
@@ -8178,8 +7931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrierattr_getpshared]\n");
 
 void __load_and_call_pthread_barrierattr_getpshared();
-static __attribute__ ((used)) void*
-__ptr_pthread_barrierattr_getpshared = (void*)(0x926100000l + (long)__load_and_call_pthread_barrierattr_getpshared);
+void* __ptr_pthread_barrierattr_getpshared = &__load_and_call_pthread_barrierattr_getpshared;
 
 static void
 __load_pthread_barrierattr_getpshared() {
@@ -8211,8 +7963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrierattr_init]\n");
 
 void __load_and_call_pthread_barrierattr_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_barrierattr_init = (void*)(0x926100000l + (long)__load_and_call_pthread_barrierattr_init);
+void* __ptr_pthread_barrierattr_init = &__load_and_call_pthread_barrierattr_init;
 
 static void
 __load_pthread_barrierattr_init() {
@@ -8244,8 +7995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrierattr_setpshared]\n");
 
 void __load_and_call_pthread_barrierattr_setpshared();
-static __attribute__ ((used)) void*
-__ptr_pthread_barrierattr_setpshared = (void*)(0x926100000l + (long)__load_and_call_pthread_barrierattr_setpshared);
+void* __ptr_pthread_barrierattr_setpshared = &__load_and_call_pthread_barrierattr_setpshared;
 
 static void
 __load_pthread_barrierattr_setpshared() {
@@ -8277,8 +8027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cancel]\n");
 
 void __load_and_call_pthread_cancel();
-static __attribute__ ((used)) void*
-__ptr_pthread_cancel = (void*)(0x926100000l + (long)__load_and_call_pthread_cancel);
+void* __ptr_pthread_cancel = &__load_and_call_pthread_cancel;
 
 static void
 __load_pthread_cancel() {
@@ -8310,8 +8059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cleanup_pop]\n");
 
 void __load_and_call_pthread_cleanup_pop();
-static __attribute__ ((used)) void*
-__ptr_pthread_cleanup_pop = (void*)(0x926100000l + (long)__load_and_call_pthread_cleanup_pop);
+void* __ptr_pthread_cleanup_pop = &__load_and_call_pthread_cleanup_pop;
 
 static void
 __load_pthread_cleanup_pop() {
@@ -8343,8 +8091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cleanup_push]\n");
 
 void __load_and_call_pthread_cleanup_push();
-static __attribute__ ((used)) void*
-__ptr_pthread_cleanup_push = (void*)(0x926100000l + (long)__load_and_call_pthread_cleanup_push);
+void* __ptr_pthread_cleanup_push = &__load_and_call_pthread_cleanup_push;
 
 static void
 __load_pthread_cleanup_push() {
@@ -8376,8 +8123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_broadcast]\n");
 
 void __load_and_call_pthread_cond_broadcast();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_broadcast = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_broadcast);
+void* __ptr_pthread_cond_broadcast = &__load_and_call_pthread_cond_broadcast;
 
 static void
 __load_pthread_cond_broadcast() {
@@ -8409,8 +8155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_destroy]\n");
 
 void __load_and_call_pthread_cond_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_destroy);
+void* __ptr_pthread_cond_destroy = &__load_and_call_pthread_cond_destroy;
 
 static void
 __load_pthread_cond_destroy() {
@@ -8442,8 +8187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_init]\n");
 
 void __load_and_call_pthread_cond_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_init = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_init);
+void* __ptr_pthread_cond_init = &__load_and_call_pthread_cond_init;
 
 static void
 __load_pthread_cond_init() {
@@ -8475,8 +8219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_reltimedwait_np]\n");
 
 void __load_and_call_pthread_cond_reltimedwait_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_reltimedwait_np = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_reltimedwait_np);
+void* __ptr_pthread_cond_reltimedwait_np = &__load_and_call_pthread_cond_reltimedwait_np;
 
 static void
 __load_pthread_cond_reltimedwait_np() {
@@ -8508,8 +8251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_setname_np]\n");
 
 void __load_and_call_pthread_cond_setname_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_setname_np = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_setname_np);
+void* __ptr_pthread_cond_setname_np = &__load_and_call_pthread_cond_setname_np;
 
 static void
 __load_pthread_cond_setname_np() {
@@ -8541,8 +8283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_signal]\n");
 
 void __load_and_call_pthread_cond_signal();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_signal = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_signal);
+void* __ptr_pthread_cond_signal = &__load_and_call_pthread_cond_signal;
 
 static void
 __load_pthread_cond_signal() {
@@ -8574,8 +8315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_signalto_np]\n");
 
 void __load_and_call_pthread_cond_signalto_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_signalto_np = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_signalto_np);
+void* __ptr_pthread_cond_signalto_np = &__load_and_call_pthread_cond_signalto_np;
 
 static void
 __load_pthread_cond_signalto_np() {
@@ -8607,8 +8347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_timedwait]\n");
 
 void __load_and_call_pthread_cond_timedwait();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_timedwait = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_timedwait);
+void* __ptr_pthread_cond_timedwait = &__load_and_call_pthread_cond_timedwait;
 
 static void
 __load_pthread_cond_timedwait() {
@@ -8640,8 +8379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_wait]\n");
 
 void __load_and_call_pthread_cond_wait();
-static __attribute__ ((used)) void*
-__ptr_pthread_cond_wait = (void*)(0x926100000l + (long)__load_and_call_pthread_cond_wait);
+void* __ptr_pthread_cond_wait = &__load_and_call_pthread_cond_wait;
 
 static void
 __load_pthread_cond_wait() {
@@ -8673,8 +8411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_destroy]\n");
 
 void __load_and_call_pthread_condattr_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_condattr_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_condattr_destroy);
+void* __ptr_pthread_condattr_destroy = &__load_and_call_pthread_condattr_destroy;
 
 static void
 __load_pthread_condattr_destroy() {
@@ -8706,8 +8443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_getclock]\n");
 
 void __load_and_call_pthread_condattr_getclock();
-static __attribute__ ((used)) void*
-__ptr_pthread_condattr_getclock = (void*)(0x926100000l + (long)__load_and_call_pthread_condattr_getclock);
+void* __ptr_pthread_condattr_getclock = &__load_and_call_pthread_condattr_getclock;
 
 static void
 __load_pthread_condattr_getclock() {
@@ -8739,8 +8475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_getpshared]\n");
 
 void __load_and_call_pthread_condattr_getpshared();
-static __attribute__ ((used)) void*
-__ptr_pthread_condattr_getpshared = (void*)(0x926100000l + (long)__load_and_call_pthread_condattr_getpshared);
+void* __ptr_pthread_condattr_getpshared = &__load_and_call_pthread_condattr_getpshared;
 
 static void
 __load_pthread_condattr_getpshared() {
@@ -8772,8 +8507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_init]\n");
 
 void __load_and_call_pthread_condattr_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_condattr_init = (void*)(0x926100000l + (long)__load_and_call_pthread_condattr_init);
+void* __ptr_pthread_condattr_init = &__load_and_call_pthread_condattr_init;
 
 static void
 __load_pthread_condattr_init() {
@@ -8805,8 +8539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_setclock]\n");
 
 void __load_and_call_pthread_condattr_setclock();
-static __attribute__ ((used)) void*
-__ptr_pthread_condattr_setclock = (void*)(0x926100000l + (long)__load_and_call_pthread_condattr_setclock);
+void* __ptr_pthread_condattr_setclock = &__load_and_call_pthread_condattr_setclock;
 
 static void
 __load_pthread_condattr_setclock() {
@@ -8838,8 +8571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_setpshared]\n");
 
 void __load_and_call_pthread_condattr_setpshared();
-static __attribute__ ((used)) void*
-__ptr_pthread_condattr_setpshared = (void*)(0x926100000l + (long)__load_and_call_pthread_condattr_setpshared);
+void* __ptr_pthread_condattr_setpshared = &__load_and_call_pthread_condattr_setpshared;
 
 static void
 __load_pthread_condattr_setpshared() {
@@ -8871,8 +8603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_create]\n");
 
 void __load_and_call_pthread_create();
-static __attribute__ ((used)) void*
-__ptr_pthread_create = (void*)(0x926100000l + (long)__load_and_call_pthread_create);
+void* __ptr_pthread_create = &__load_and_call_pthread_create;
 
 static void
 __load_pthread_create() {
@@ -8904,8 +8635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_create_name_np]\n");
 
 void __load_and_call_pthread_create_name_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_create_name_np = (void*)(0x926100000l + (long)__load_and_call_pthread_create_name_np);
+void* __ptr_pthread_create_name_np = &__load_and_call_pthread_create_name_np;
 
 static void
 __load_pthread_create_name_np() {
@@ -8937,8 +8667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_detach]\n");
 
 void __load_and_call_pthread_detach();
-static __attribute__ ((used)) void*
-__ptr_pthread_detach = (void*)(0x926100000l + (long)__load_and_call_pthread_detach);
+void* __ptr_pthread_detach = &__load_and_call_pthread_detach;
 
 static void
 __load_pthread_detach() {
@@ -8970,8 +8699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_equal]\n");
 
 void __load_and_call_pthread_equal();
-static __attribute__ ((used)) void*
-__ptr_pthread_equal = (void*)(0x926100000l + (long)__load_and_call_pthread_equal);
+void* __ptr_pthread_equal = &__load_and_call_pthread_equal;
 
 static void
 __load_pthread_equal() {
@@ -9003,8 +8731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_exit]\n");
 
 void __load_and_call_pthread_exit();
-static __attribute__ ((used)) void*
-__ptr_pthread_exit = (void*)(0x926100000l + (long)__load_and_call_pthread_exit);
+void* __ptr_pthread_exit = &__load_and_call_pthread_exit;
 
 static void
 __load_pthread_exit() {
@@ -9036,8 +8763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_get_specificarray_np]\n");
 
 void __load_and_call_pthread_get_specificarray_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_get_specificarray_np = (void*)(0x926100000l + (long)__load_and_call_pthread_get_specificarray_np);
+void* __ptr_pthread_get_specificarray_np = &__load_and_call_pthread_get_specificarray_np;
 
 static void
 __load_pthread_get_specificarray_np() {
@@ -9069,8 +8795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_get_user_context_np]\n");
 
 void __load_and_call_pthread_get_user_context_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_get_user_context_np = (void*)(0x926100000l + (long)__load_and_call_pthread_get_user_context_np);
+void* __ptr_pthread_get_user_context_np = &__load_and_call_pthread_get_user_context_np;
 
 static void
 __load_pthread_get_user_context_np() {
@@ -9102,8 +8827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getaffinity_np]\n");
 
 void __load_and_call_pthread_getaffinity_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_getaffinity_np = (void*)(0x926100000l + (long)__load_and_call_pthread_getaffinity_np);
+void* __ptr_pthread_getaffinity_np = &__load_and_call_pthread_getaffinity_np;
 
 static void
 __load_pthread_getaffinity_np() {
@@ -9135,8 +8859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getconcurrency]\n");
 
 void __load_and_call_pthread_getconcurrency();
-static __attribute__ ((used)) void*
-__ptr_pthread_getconcurrency = (void*)(0x926100000l + (long)__load_and_call_pthread_getconcurrency);
+void* __ptr_pthread_getconcurrency = &__load_and_call_pthread_getconcurrency;
 
 static void
 __load_pthread_getconcurrency() {
@@ -9168,8 +8891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getcpuclockid]\n");
 
 void __load_and_call_pthread_getcpuclockid();
-static __attribute__ ((used)) void*
-__ptr_pthread_getcpuclockid = (void*)(0x926100000l + (long)__load_and_call_pthread_getcpuclockid);
+void* __ptr_pthread_getcpuclockid = &__load_and_call_pthread_getcpuclockid;
 
 static void
 __load_pthread_getcpuclockid() {
@@ -9201,8 +8923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getname_np]\n");
 
 void __load_and_call_pthread_getname_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_getname_np = (void*)(0x926100000l + (long)__load_and_call_pthread_getname_np);
+void* __ptr_pthread_getname_np = &__load_and_call_pthread_getname_np;
 
 static void
 __load_pthread_getname_np() {
@@ -9234,8 +8955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getprio]\n");
 
 void __load_and_call_pthread_getprio();
-static __attribute__ ((used)) void*
-__ptr_pthread_getprio = (void*)(0x926100000l + (long)__load_and_call_pthread_getprio);
+void* __ptr_pthread_getprio = &__load_and_call_pthread_getprio;
 
 static void
 __load_pthread_getprio() {
@@ -9267,8 +8987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getschedparam]\n");
 
 void __load_and_call_pthread_getschedparam();
-static __attribute__ ((used)) void*
-__ptr_pthread_getschedparam = (void*)(0x926100000l + (long)__load_and_call_pthread_getschedparam);
+void* __ptr_pthread_getschedparam = &__load_and_call_pthread_getschedparam;
 
 static void
 __load_pthread_getschedparam() {
@@ -9300,8 +9019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getspecific]\n");
 
 void __load_and_call_pthread_getspecific();
-static __attribute__ ((used)) void*
-__ptr_pthread_getspecific = (void*)(0x926100000l + (long)__load_and_call_pthread_getspecific);
+void* __ptr_pthread_getspecific = &__load_and_call_pthread_getspecific;
 
 static void
 __load_pthread_getspecific() {
@@ -9333,8 +9051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getstack_np]\n");
 
 void __load_and_call_pthread_getstack_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_getstack_np = (void*)(0x926100000l + (long)__load_and_call_pthread_getstack_np);
+void* __ptr_pthread_getstack_np = &__load_and_call_pthread_getstack_np;
 
 static void
 __load_pthread_getstack_np() {
@@ -9366,8 +9083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getthreadid_np]\n");
 
 void __load_and_call_pthread_getthreadid_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_getthreadid_np = (void*)(0x926100000l + (long)__load_and_call_pthread_getthreadid_np);
+void* __ptr_pthread_getthreadid_np = &__load_and_call_pthread_getthreadid_np;
 
 static void
 __load_pthread_getthreadid_np() {
@@ -9399,8 +9115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_join]\n");
 
 void __load_and_call_pthread_join();
-static __attribute__ ((used)) void*
-__ptr_pthread_join = (void*)(0x926100000l + (long)__load_and_call_pthread_join);
+void* __ptr_pthread_join = &__load_and_call_pthread_join;
 
 static void
 __load_pthread_join() {
@@ -9432,8 +9147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_key_create]\n");
 
 void __load_and_call_pthread_key_create();
-static __attribute__ ((used)) void*
-__ptr_pthread_key_create = (void*)(0x926100000l + (long)__load_and_call_pthread_key_create);
+void* __ptr_pthread_key_create = &__load_and_call_pthread_key_create;
 
 static void
 __load_pthread_key_create() {
@@ -9465,8 +9179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_key_delete]\n");
 
 void __load_and_call_pthread_key_delete();
-static __attribute__ ((used)) void*
-__ptr_pthread_key_delete = (void*)(0x926100000l + (long)__load_and_call_pthread_key_delete);
+void* __ptr_pthread_key_delete = &__load_and_call_pthread_key_delete;
 
 static void
 __load_pthread_key_delete() {
@@ -9498,8 +9211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_kill]\n");
 
 void __load_and_call_pthread_kill();
-static __attribute__ ((used)) void*
-__ptr_pthread_kill = (void*)(0x926100000l + (long)__load_and_call_pthread_kill);
+void* __ptr_pthread_kill = &__load_and_call_pthread_kill;
 
 static void
 __load_pthread_kill() {
@@ -9531,8 +9243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_main_np]\n");
 
 void __load_and_call_pthread_main_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_main_np = (void*)(0x926100000l + (long)__load_and_call_pthread_main_np);
+void* __ptr_pthread_main_np = &__load_and_call_pthread_main_np;
 
 static void
 __load_pthread_main_np() {
@@ -9564,8 +9275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_multi_np]\n");
 
 void __load_and_call_pthread_multi_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_multi_np = (void*)(0x926100000l + (long)__load_and_call_pthread_multi_np);
+void* __ptr_pthread_multi_np = &__load_and_call_pthread_multi_np;
 
 static void
 __load_pthread_multi_np() {
@@ -9597,8 +9307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_destroy]\n");
 
 void __load_and_call_pthread_mutex_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_destroy);
+void* __ptr_pthread_mutex_destroy = &__load_and_call_pthread_mutex_destroy;
 
 static void
 __load_pthread_mutex_destroy() {
@@ -9630,8 +9339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_getprioceiling]\n");
 
 void __load_and_call_pthread_mutex_getprioceiling();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_getprioceiling = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_getprioceiling);
+void* __ptr_pthread_mutex_getprioceiling = &__load_and_call_pthread_mutex_getprioceiling;
 
 static void
 __load_pthread_mutex_getprioceiling() {
@@ -9663,8 +9371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_getspinloops_np]\n");
 
 void __load_and_call_pthread_mutex_getspinloops_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_getspinloops_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_getspinloops_np);
+void* __ptr_pthread_mutex_getspinloops_np = &__load_and_call_pthread_mutex_getspinloops_np;
 
 static void
 __load_pthread_mutex_getspinloops_np() {
@@ -9696,8 +9403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_getyieldloops_np]\n");
 
 void __load_and_call_pthread_mutex_getyieldloops_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_getyieldloops_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_getyieldloops_np);
+void* __ptr_pthread_mutex_getyieldloops_np = &__load_and_call_pthread_mutex_getyieldloops_np;
 
 static void
 __load_pthread_mutex_getyieldloops_np() {
@@ -9729,8 +9435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_init]\n");
 
 void __load_and_call_pthread_mutex_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_init = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_init);
+void* __ptr_pthread_mutex_init = &__load_and_call_pthread_mutex_init;
 
 static void
 __load_pthread_mutex_init() {
@@ -9762,8 +9467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_init_for_mono]\n");
 
 void __load_and_call_pthread_mutex_init_for_mono();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_init_for_mono = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_init_for_mono);
+void* __ptr_pthread_mutex_init_for_mono = &__load_and_call_pthread_mutex_init_for_mono;
 
 static void
 __load_pthread_mutex_init_for_mono() {
@@ -9795,8 +9499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_isowned_np]\n");
 
 void __load_and_call_pthread_mutex_isowned_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_isowned_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_isowned_np);
+void* __ptr_pthread_mutex_isowned_np = &__load_and_call_pthread_mutex_isowned_np;
 
 static void
 __load_pthread_mutex_isowned_np() {
@@ -9828,8 +9531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_lock]\n");
 
 void __load_and_call_pthread_mutex_lock();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_lock = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_lock);
+void* __ptr_pthread_mutex_lock = &__load_and_call_pthread_mutex_lock;
 
 static void
 __load_pthread_mutex_lock() {
@@ -9861,8 +9563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_reltimedlock_np]\n");
 
 void __load_and_call_pthread_mutex_reltimedlock_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_reltimedlock_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_reltimedlock_np);
+void* __ptr_pthread_mutex_reltimedlock_np = &__load_and_call_pthread_mutex_reltimedlock_np;
 
 static void
 __load_pthread_mutex_reltimedlock_np() {
@@ -9894,8 +9595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_setname_np]\n");
 
 void __load_and_call_pthread_mutex_setname_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_setname_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_setname_np);
+void* __ptr_pthread_mutex_setname_np = &__load_and_call_pthread_mutex_setname_np;
 
 static void
 __load_pthread_mutex_setname_np() {
@@ -9927,8 +9627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_setprioceiling]\n");
 
 void __load_and_call_pthread_mutex_setprioceiling();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_setprioceiling = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_setprioceiling);
+void* __ptr_pthread_mutex_setprioceiling = &__load_and_call_pthread_mutex_setprioceiling;
 
 static void
 __load_pthread_mutex_setprioceiling() {
@@ -9960,8 +9659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_setspinloops_np]\n");
 
 void __load_and_call_pthread_mutex_setspinloops_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_setspinloops_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_setspinloops_np);
+void* __ptr_pthread_mutex_setspinloops_np = &__load_and_call_pthread_mutex_setspinloops_np;
 
 static void
 __load_pthread_mutex_setspinloops_np() {
@@ -9993,8 +9691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_setyieldloops_np]\n");
 
 void __load_and_call_pthread_mutex_setyieldloops_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_setyieldloops_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_setyieldloops_np);
+void* __ptr_pthread_mutex_setyieldloops_np = &__load_and_call_pthread_mutex_setyieldloops_np;
 
 static void
 __load_pthread_mutex_setyieldloops_np() {
@@ -10026,8 +9723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_timedlock]\n");
 
 void __load_and_call_pthread_mutex_timedlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_timedlock = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_timedlock);
+void* __ptr_pthread_mutex_timedlock = &__load_and_call_pthread_mutex_timedlock;
 
 static void
 __load_pthread_mutex_timedlock() {
@@ -10059,8 +9755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_trylock]\n");
 
 void __load_and_call_pthread_mutex_trylock();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_trylock = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_trylock);
+void* __ptr_pthread_mutex_trylock = &__load_and_call_pthread_mutex_trylock;
 
 static void
 __load_pthread_mutex_trylock() {
@@ -10092,8 +9787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_unlock]\n");
 
 void __load_and_call_pthread_mutex_unlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutex_unlock = (void*)(0x926100000l + (long)__load_and_call_pthread_mutex_unlock);
+void* __ptr_pthread_mutex_unlock = &__load_and_call_pthread_mutex_unlock;
 
 static void
 __load_pthread_mutex_unlock() {
@@ -10125,8 +9819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_destroy]\n");
 
 void __load_and_call_pthread_mutexattr_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_destroy);
+void* __ptr_pthread_mutexattr_destroy = &__load_and_call_pthread_mutexattr_destroy;
 
 static void
 __load_pthread_mutexattr_destroy() {
@@ -10158,8 +9851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getgen_np]\n");
 
 void __load_and_call_pthread_mutexattr_getgen_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_getgen_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_getgen_np);
+void* __ptr_pthread_mutexattr_getgen_np = &__load_and_call_pthread_mutexattr_getgen_np;
 
 static void
 __load_pthread_mutexattr_getgen_np() {
@@ -10191,8 +9883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getkind_np]\n");
 
 void __load_and_call_pthread_mutexattr_getkind_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_getkind_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_getkind_np);
+void* __ptr_pthread_mutexattr_getkind_np = &__load_and_call_pthread_mutexattr_getkind_np;
 
 static void
 __load_pthread_mutexattr_getkind_np() {
@@ -10224,8 +9915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getprioceiling]\n");
 
 void __load_and_call_pthread_mutexattr_getprioceiling();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_getprioceiling = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_getprioceiling);
+void* __ptr_pthread_mutexattr_getprioceiling = &__load_and_call_pthread_mutexattr_getprioceiling;
 
 static void
 __load_pthread_mutexattr_getprioceiling() {
@@ -10257,8 +9947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getprotocol]\n");
 
 void __load_and_call_pthread_mutexattr_getprotocol();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_getprotocol = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_getprotocol);
+void* __ptr_pthread_mutexattr_getprotocol = &__load_and_call_pthread_mutexattr_getprotocol;
 
 static void
 __load_pthread_mutexattr_getprotocol() {
@@ -10290,8 +9979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getpshared]\n");
 
 void __load_and_call_pthread_mutexattr_getpshared();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_getpshared = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_getpshared);
+void* __ptr_pthread_mutexattr_getpshared = &__load_and_call_pthread_mutexattr_getpshared;
 
 static void
 __load_pthread_mutexattr_getpshared() {
@@ -10323,8 +10011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_gettype]\n");
 
 void __load_and_call_pthread_mutexattr_gettype();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_gettype = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_gettype);
+void* __ptr_pthread_mutexattr_gettype = &__load_and_call_pthread_mutexattr_gettype;
 
 static void
 __load_pthread_mutexattr_gettype() {
@@ -10356,8 +10043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_init]\n");
 
 void __load_and_call_pthread_mutexattr_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_init = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_init);
+void* __ptr_pthread_mutexattr_init = &__load_and_call_pthread_mutexattr_init;
 
 static void
 __load_pthread_mutexattr_init() {
@@ -10389,8 +10075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setgen_np]\n");
 
 void __load_and_call_pthread_mutexattr_setgen_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_setgen_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_setgen_np);
+void* __ptr_pthread_mutexattr_setgen_np = &__load_and_call_pthread_mutexattr_setgen_np;
 
 static void
 __load_pthread_mutexattr_setgen_np() {
@@ -10422,8 +10107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setkind_np]\n");
 
 void __load_and_call_pthread_mutexattr_setkind_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_setkind_np = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_setkind_np);
+void* __ptr_pthread_mutexattr_setkind_np = &__load_and_call_pthread_mutexattr_setkind_np;
 
 static void
 __load_pthread_mutexattr_setkind_np() {
@@ -10455,8 +10139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setprioceiling]\n");
 
 void __load_and_call_pthread_mutexattr_setprioceiling();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_setprioceiling = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_setprioceiling);
+void* __ptr_pthread_mutexattr_setprioceiling = &__load_and_call_pthread_mutexattr_setprioceiling;
 
 static void
 __load_pthread_mutexattr_setprioceiling() {
@@ -10488,8 +10171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setprotocol]\n");
 
 void __load_and_call_pthread_mutexattr_setprotocol();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_setprotocol = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_setprotocol);
+void* __ptr_pthread_mutexattr_setprotocol = &__load_and_call_pthread_mutexattr_setprotocol;
 
 static void
 __load_pthread_mutexattr_setprotocol() {
@@ -10521,8 +10203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setpshared]\n");
 
 void __load_and_call_pthread_mutexattr_setpshared();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_setpshared = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_setpshared);
+void* __ptr_pthread_mutexattr_setpshared = &__load_and_call_pthread_mutexattr_setpshared;
 
 static void
 __load_pthread_mutexattr_setpshared() {
@@ -10554,8 +10235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_settype]\n");
 
 void __load_and_call_pthread_mutexattr_settype();
-static __attribute__ ((used)) void*
-__ptr_pthread_mutexattr_settype = (void*)(0x926100000l + (long)__load_and_call_pthread_mutexattr_settype);
+void* __ptr_pthread_mutexattr_settype = &__load_and_call_pthread_mutexattr_settype;
 
 static void
 __load_pthread_mutexattr_settype() {
@@ -10587,8 +10267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_once]\n");
 
 void __load_and_call_pthread_once();
-static __attribute__ ((used)) void*
-__ptr_pthread_once = (void*)(0x926100000l + (long)__load_and_call_pthread_once);
+void* __ptr_pthread_once = &__load_and_call_pthread_once;
 
 static void
 __load_pthread_once() {
@@ -10620,8 +10299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rename_np]\n");
 
 void __load_and_call_pthread_rename_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_rename_np = (void*)(0x926100000l + (long)__load_and_call_pthread_rename_np);
+void* __ptr_pthread_rename_np = &__load_and_call_pthread_rename_np;
 
 static void
 __load_pthread_rename_np() {
@@ -10653,8 +10331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_resume_all_np]\n");
 
 void __load_and_call_pthread_resume_all_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_resume_all_np = (void*)(0x926100000l + (long)__load_and_call_pthread_resume_all_np);
+void* __ptr_pthread_resume_all_np = &__load_and_call_pthread_resume_all_np;
 
 static void
 __load_pthread_resume_all_np() {
@@ -10686,8 +10363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_resume_np]\n");
 
 void __load_and_call_pthread_resume_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_resume_np = (void*)(0x926100000l + (long)__load_and_call_pthread_resume_np);
+void* __ptr_pthread_resume_np = &__load_and_call_pthread_resume_np;
 
 static void
 __load_pthread_resume_np() {
@@ -10719,8 +10395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_resume_user_context_np]\n");
 
 void __load_and_call_pthread_resume_user_context_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_resume_user_context_np = (void*)(0x926100000l + (long)__load_and_call_pthread_resume_user_context_np);
+void* __ptr_pthread_resume_user_context_np = &__load_and_call_pthread_resume_user_context_np;
 
 static void
 __load_pthread_resume_user_context_np() {
@@ -10752,8 +10427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_destroy]\n");
 
 void __load_and_call_pthread_rwlock_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_destroy);
+void* __ptr_pthread_rwlock_destroy = &__load_and_call_pthread_rwlock_destroy;
 
 static void
 __load_pthread_rwlock_destroy() {
@@ -10785,8 +10459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_init]\n");
 
 void __load_and_call_pthread_rwlock_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_init = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_init);
+void* __ptr_pthread_rwlock_init = &__load_and_call_pthread_rwlock_init;
 
 static void
 __load_pthread_rwlock_init() {
@@ -10818,8 +10491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_rdlock]\n");
 
 void __load_and_call_pthread_rwlock_rdlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_rdlock = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_rdlock);
+void* __ptr_pthread_rwlock_rdlock = &__load_and_call_pthread_rwlock_rdlock;
 
 static void
 __load_pthread_rwlock_rdlock() {
@@ -10851,8 +10523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_reltimedrdlock_np]\n");
 
 void __load_and_call_pthread_rwlock_reltimedrdlock_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_reltimedrdlock_np = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_reltimedrdlock_np);
+void* __ptr_pthread_rwlock_reltimedrdlock_np = &__load_and_call_pthread_rwlock_reltimedrdlock_np;
 
 static void
 __load_pthread_rwlock_reltimedrdlock_np() {
@@ -10884,8 +10555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_reltimedwrlock_np]\n");
 
 void __load_and_call_pthread_rwlock_reltimedwrlock_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_reltimedwrlock_np = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_reltimedwrlock_np);
+void* __ptr_pthread_rwlock_reltimedwrlock_np = &__load_and_call_pthread_rwlock_reltimedwrlock_np;
 
 static void
 __load_pthread_rwlock_reltimedwrlock_np() {
@@ -10917,8 +10587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_setname_np]\n");
 
 void __load_and_call_pthread_rwlock_setname_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_setname_np = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_setname_np);
+void* __ptr_pthread_rwlock_setname_np = &__load_and_call_pthread_rwlock_setname_np;
 
 static void
 __load_pthread_rwlock_setname_np() {
@@ -10950,8 +10619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_timedrdlock]\n");
 
 void __load_and_call_pthread_rwlock_timedrdlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_timedrdlock = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_timedrdlock);
+void* __ptr_pthread_rwlock_timedrdlock = &__load_and_call_pthread_rwlock_timedrdlock;
 
 static void
 __load_pthread_rwlock_timedrdlock() {
@@ -10983,8 +10651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_timedwrlock]\n");
 
 void __load_and_call_pthread_rwlock_timedwrlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_timedwrlock = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_timedwrlock);
+void* __ptr_pthread_rwlock_timedwrlock = &__load_and_call_pthread_rwlock_timedwrlock;
 
 static void
 __load_pthread_rwlock_timedwrlock() {
@@ -11016,8 +10683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_tryrdlock]\n");
 
 void __load_and_call_pthread_rwlock_tryrdlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_tryrdlock = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_tryrdlock);
+void* __ptr_pthread_rwlock_tryrdlock = &__load_and_call_pthread_rwlock_tryrdlock;
 
 static void
 __load_pthread_rwlock_tryrdlock() {
@@ -11049,8 +10715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_trywrlock]\n");
 
 void __load_and_call_pthread_rwlock_trywrlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_trywrlock = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_trywrlock);
+void* __ptr_pthread_rwlock_trywrlock = &__load_and_call_pthread_rwlock_trywrlock;
 
 static void
 __load_pthread_rwlock_trywrlock() {
@@ -11082,8 +10747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_unlock]\n");
 
 void __load_and_call_pthread_rwlock_unlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_unlock = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_unlock);
+void* __ptr_pthread_rwlock_unlock = &__load_and_call_pthread_rwlock_unlock;
 
 static void
 __load_pthread_rwlock_unlock() {
@@ -11115,8 +10779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_wrlock]\n");
 
 void __load_and_call_pthread_rwlock_wrlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlock_wrlock = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlock_wrlock);
+void* __ptr_pthread_rwlock_wrlock = &__load_and_call_pthread_rwlock_wrlock;
 
 static void
 __load_pthread_rwlock_wrlock() {
@@ -11148,8 +10811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_destroy]\n");
 
 void __load_and_call_pthread_rwlockattr_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlockattr_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlockattr_destroy);
+void* __ptr_pthread_rwlockattr_destroy = &__load_and_call_pthread_rwlockattr_destroy;
 
 static void
 __load_pthread_rwlockattr_destroy() {
@@ -11181,8 +10843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_getpshared]\n");
 
 void __load_and_call_pthread_rwlockattr_getpshared();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlockattr_getpshared = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlockattr_getpshared);
+void* __ptr_pthread_rwlockattr_getpshared = &__load_and_call_pthread_rwlockattr_getpshared;
 
 static void
 __load_pthread_rwlockattr_getpshared() {
@@ -11214,8 +10875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_gettype_np]\n");
 
 void __load_and_call_pthread_rwlockattr_gettype_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlockattr_gettype_np = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlockattr_gettype_np);
+void* __ptr_pthread_rwlockattr_gettype_np = &__load_and_call_pthread_rwlockattr_gettype_np;
 
 static void
 __load_pthread_rwlockattr_gettype_np() {
@@ -11247,8 +10907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_init]\n");
 
 void __load_and_call_pthread_rwlockattr_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlockattr_init = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlockattr_init);
+void* __ptr_pthread_rwlockattr_init = &__load_and_call_pthread_rwlockattr_init;
 
 static void
 __load_pthread_rwlockattr_init() {
@@ -11280,8 +10939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_setpshared]\n");
 
 void __load_and_call_pthread_rwlockattr_setpshared();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlockattr_setpshared = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlockattr_setpshared);
+void* __ptr_pthread_rwlockattr_setpshared = &__load_and_call_pthread_rwlockattr_setpshared;
 
 static void
 __load_pthread_rwlockattr_setpshared() {
@@ -11313,8 +10971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_settype_np]\n");
 
 void __load_and_call_pthread_rwlockattr_settype_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_rwlockattr_settype_np = (void*)(0x926100000l + (long)__load_and_call_pthread_rwlockattr_settype_np);
+void* __ptr_pthread_rwlockattr_settype_np = &__load_and_call_pthread_rwlockattr_settype_np;
 
 static void
 __load_pthread_rwlockattr_settype_np() {
@@ -11346,8 +11003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_self]\n");
 
 void __load_and_call_pthread_self();
-static __attribute__ ((used)) void*
-__ptr_pthread_self = (void*)(0x926100000l + (long)__load_and_call_pthread_self);
+void* __ptr_pthread_self = &__load_and_call_pthread_self;
 
 static void
 __load_pthread_self() {
@@ -11379,8 +11035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_set_defaultstacksize_np]\n");
 
 void __load_and_call_pthread_set_defaultstacksize_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_set_defaultstacksize_np = (void*)(0x926100000l + (long)__load_and_call_pthread_set_defaultstacksize_np);
+void* __ptr_pthread_set_defaultstacksize_np = &__load_and_call_pthread_set_defaultstacksize_np;
 
 static void
 __load_pthread_set_defaultstacksize_np() {
@@ -11412,8 +11067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_set_name_np]\n");
 
 void __load_and_call_pthread_set_name_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_set_name_np = (void*)(0x926100000l + (long)__load_and_call_pthread_set_name_np);
+void* __ptr_pthread_set_name_np = &__load_and_call_pthread_set_name_np;
 
 static void
 __load_pthread_set_name_np() {
@@ -11445,8 +11099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_set_user_context_np]\n");
 
 void __load_and_call_pthread_set_user_context_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_set_user_context_np = (void*)(0x926100000l + (long)__load_and_call_pthread_set_user_context_np);
+void* __ptr_pthread_set_user_context_np = &__load_and_call_pthread_set_user_context_np;
 
 static void
 __load_pthread_set_user_context_np() {
@@ -11478,8 +11131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setaffinity_np]\n");
 
 void __load_and_call_pthread_setaffinity_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_setaffinity_np = (void*)(0x926100000l + (long)__load_and_call_pthread_setaffinity_np);
+void* __ptr_pthread_setaffinity_np = &__load_and_call_pthread_setaffinity_np;
 
 static void
 __load_pthread_setaffinity_np() {
@@ -11511,8 +11163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setcancelstate]\n");
 
 void __load_and_call_pthread_setcancelstate();
-static __attribute__ ((used)) void*
-__ptr_pthread_setcancelstate = (void*)(0x926100000l + (long)__load_and_call_pthread_setcancelstate);
+void* __ptr_pthread_setcancelstate = &__load_and_call_pthread_setcancelstate;
 
 static void
 __load_pthread_setcancelstate() {
@@ -11544,8 +11195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setcanceltype]\n");
 
 void __load_and_call_pthread_setcanceltype();
-static __attribute__ ((used)) void*
-__ptr_pthread_setcanceltype = (void*)(0x926100000l + (long)__load_and_call_pthread_setcanceltype);
+void* __ptr_pthread_setcanceltype = &__load_and_call_pthread_setcanceltype;
 
 static void
 __load_pthread_setcanceltype() {
@@ -11577,8 +11227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setconcurrency]\n");
 
 void __load_and_call_pthread_setconcurrency();
-static __attribute__ ((used)) void*
-__ptr_pthread_setconcurrency = (void*)(0x926100000l + (long)__load_and_call_pthread_setconcurrency);
+void* __ptr_pthread_setconcurrency = &__load_and_call_pthread_setconcurrency;
 
 static void
 __load_pthread_setconcurrency() {
@@ -11610,8 +11259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setprio]\n");
 
 void __load_and_call_pthread_setprio();
-static __attribute__ ((used)) void*
-__ptr_pthread_setprio = (void*)(0x926100000l + (long)__load_and_call_pthread_setprio);
+void* __ptr_pthread_setprio = &__load_and_call_pthread_setprio;
 
 static void
 __load_pthread_setprio() {
@@ -11643,8 +11291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setschedparam]\n");
 
 void __load_and_call_pthread_setschedparam();
-static __attribute__ ((used)) void*
-__ptr_pthread_setschedparam = (void*)(0x926100000l + (long)__load_and_call_pthread_setschedparam);
+void* __ptr_pthread_setschedparam = &__load_and_call_pthread_setschedparam;
 
 static void
 __load_pthread_setschedparam() {
@@ -11676,8 +11323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setspecific]\n");
 
 void __load_and_call_pthread_setspecific();
-static __attribute__ ((used)) void*
-__ptr_pthread_setspecific = (void*)(0x926100000l + (long)__load_and_call_pthread_setspecific);
+void* __ptr_pthread_setspecific = &__load_and_call_pthread_setspecific;
 
 static void
 __load_pthread_setspecific() {
@@ -11709,8 +11355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_sigmask]\n");
 
 void __load_and_call_pthread_sigmask();
-static __attribute__ ((used)) void*
-__ptr_pthread_sigmask = (void*)(0x926100000l + (long)__load_and_call_pthread_sigmask);
+void* __ptr_pthread_sigmask = &__load_and_call_pthread_sigmask;
 
 static void
 __load_pthread_sigmask() {
@@ -11742,8 +11387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_single_np]\n");
 
 void __load_and_call_pthread_single_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_single_np = (void*)(0x926100000l + (long)__load_and_call_pthread_single_np);
+void* __ptr_pthread_single_np = &__load_and_call_pthread_single_np;
 
 static void
 __load_pthread_single_np() {
@@ -11775,8 +11419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_destroy]\n");
 
 void __load_and_call_pthread_spin_destroy();
-static __attribute__ ((used)) void*
-__ptr_pthread_spin_destroy = (void*)(0x926100000l + (long)__load_and_call_pthread_spin_destroy);
+void* __ptr_pthread_spin_destroy = &__load_and_call_pthread_spin_destroy;
 
 static void
 __load_pthread_spin_destroy() {
@@ -11808,8 +11451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_init]\n");
 
 void __load_and_call_pthread_spin_init();
-static __attribute__ ((used)) void*
-__ptr_pthread_spin_init = (void*)(0x926100000l + (long)__load_and_call_pthread_spin_init);
+void* __ptr_pthread_spin_init = &__load_and_call_pthread_spin_init;
 
 static void
 __load_pthread_spin_init() {
@@ -11841,8 +11483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_lock]\n");
 
 void __load_and_call_pthread_spin_lock();
-static __attribute__ ((used)) void*
-__ptr_pthread_spin_lock = (void*)(0x926100000l + (long)__load_and_call_pthread_spin_lock);
+void* __ptr_pthread_spin_lock = &__load_and_call_pthread_spin_lock;
 
 static void
 __load_pthread_spin_lock() {
@@ -11874,8 +11515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_trylock]\n");
 
 void __load_and_call_pthread_spin_trylock();
-static __attribute__ ((used)) void*
-__ptr_pthread_spin_trylock = (void*)(0x926100000l + (long)__load_and_call_pthread_spin_trylock);
+void* __ptr_pthread_spin_trylock = &__load_and_call_pthread_spin_trylock;
 
 static void
 __load_pthread_spin_trylock() {
@@ -11907,8 +11547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_unlock]\n");
 
 void __load_and_call_pthread_spin_unlock();
-static __attribute__ ((used)) void*
-__ptr_pthread_spin_unlock = (void*)(0x926100000l + (long)__load_and_call_pthread_spin_unlock);
+void* __ptr_pthread_spin_unlock = &__load_and_call_pthread_spin_unlock;
 
 static void
 __load_pthread_spin_unlock() {
@@ -11940,8 +11579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_suspend_all_np]\n");
 
 void __load_and_call_pthread_suspend_all_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_suspend_all_np = (void*)(0x926100000l + (long)__load_and_call_pthread_suspend_all_np);
+void* __ptr_pthread_suspend_all_np = &__load_and_call_pthread_suspend_all_np;
 
 static void
 __load_pthread_suspend_all_np() {
@@ -11973,8 +11611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_suspend_np]\n");
 
 void __load_and_call_pthread_suspend_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_suspend_np = (void*)(0x926100000l + (long)__load_and_call_pthread_suspend_np);
+void* __ptr_pthread_suspend_np = &__load_and_call_pthread_suspend_np;
 
 static void
 __load_pthread_suspend_np() {
@@ -12006,8 +11643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_suspend_user_context_np]\n");
 
 void __load_and_call_pthread_suspend_user_context_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_suspend_user_context_np = (void*)(0x926100000l + (long)__load_and_call_pthread_suspend_user_context_np);
+void* __ptr_pthread_suspend_user_context_np = &__load_and_call_pthread_suspend_user_context_np;
 
 static void
 __load_pthread_suspend_user_context_np() {
@@ -12039,8 +11675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_switch_add_np]\n");
 
 void __load_and_call_pthread_switch_add_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_switch_add_np = (void*)(0x926100000l + (long)__load_and_call_pthread_switch_add_np);
+void* __ptr_pthread_switch_add_np = &__load_and_call_pthread_switch_add_np;
 
 static void
 __load_pthread_switch_add_np() {
@@ -12072,8 +11707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_switch_delete_np]\n");
 
 void __load_and_call_pthread_switch_delete_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_switch_delete_np = (void*)(0x926100000l + (long)__load_and_call_pthread_switch_delete_np);
+void* __ptr_pthread_switch_delete_np = &__load_and_call_pthread_switch_delete_np;
 
 static void
 __load_pthread_switch_delete_np() {
@@ -12105,8 +11739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_testcancel]\n");
 
 void __load_and_call_pthread_testcancel();
-static __attribute__ ((used)) void*
-__ptr_pthread_testcancel = (void*)(0x926100000l + (long)__load_and_call_pthread_testcancel);
+void* __ptr_pthread_testcancel = &__load_and_call_pthread_testcancel;
 
 static void
 __load_pthread_testcancel() {
@@ -12138,8 +11771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_timedjoin_np]\n");
 
 void __load_and_call_pthread_timedjoin_np();
-static __attribute__ ((used)) void*
-__ptr_pthread_timedjoin_np = (void*)(0x926100000l + (long)__load_and_call_pthread_timedjoin_np);
+void* __ptr_pthread_timedjoin_np = &__load_and_call_pthread_timedjoin_np;
 
 static void
 __load_pthread_timedjoin_np() {
@@ -12171,8 +11803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_yield]\n");
 
 void __load_and_call_pthread_yield();
-static __attribute__ ((used)) void*
-__ptr_pthread_yield = (void*)(0x926100000l + (long)__load_and_call_pthread_yield);
+void* __ptr_pthread_yield = &__load_and_call_pthread_yield;
 
 static void
 __load_pthread_yield() {
@@ -12204,8 +11835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pwrite]\n");
 
 void __load_and_call_pwrite();
-static __attribute__ ((used)) void*
-__ptr_pwrite = (void*)(0x926100000l + (long)__load_and_call_pwrite);
+void* __ptr_pwrite = &__load_and_call_pwrite;
 
 static void
 __load_pwrite() {
@@ -12237,8 +11867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pwritev]\n");
 
 void __load_and_call_pwritev();
-static __attribute__ ((used)) void*
-__ptr_pwritev = (void*)(0x926100000l + (long)__load_and_call_pwritev);
+void* __ptr_pwritev = &__load_and_call_pwritev;
 
 static void
 __load_pwritev() {
@@ -12270,8 +11899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_raise]\n");
 
 void __load_and_call_raise();
-static __attribute__ ((used)) void*
-__ptr_raise = (void*)(0x926100000l + (long)__load_and_call_raise);
+void* __ptr_raise = &__load_and_call_raise;
 
 static void
 __load_raise() {
@@ -12303,8 +11931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_read]\n");
 
 void __load_and_call_read();
-static __attribute__ ((used)) void*
-__ptr_read = (void*)(0x926100000l + (long)__load_and_call_read);
+void* __ptr_read = &__load_and_call_read;
 
 static void
 __load_read() {
@@ -12336,8 +11963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_readv]\n");
 
 void __load_and_call_readv();
-static __attribute__ ((used)) void*
-__ptr_readv = (void*)(0x926100000l + (long)__load_and_call_readv);
+void* __ptr_readv = &__load_and_call_readv;
 
 static void
 __load_readv() {
@@ -12369,8 +11995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_recv]\n");
 
 void __load_and_call_recv();
-static __attribute__ ((used)) void*
-__ptr_recv = (void*)(0x926100000l + (long)__load_and_call_recv);
+void* __ptr_recv = &__load_and_call_recv;
 
 static void
 __load_recv() {
@@ -12402,8 +12027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_recvfrom]\n");
 
 void __load_and_call_recvfrom();
-static __attribute__ ((used)) void*
-__ptr_recvfrom = (void*)(0x926100000l + (long)__load_and_call_recvfrom);
+void* __ptr_recvfrom = &__load_and_call_recvfrom;
 
 static void
 __load_recvfrom() {
@@ -12435,8 +12059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_recvmsg]\n");
 
 void __load_and_call_recvmsg();
-static __attribute__ ((used)) void*
-__ptr_recvmsg = (void*)(0x926100000l + (long)__load_and_call_recvmsg);
+void* __ptr_recvmsg = &__load_and_call_recvmsg;
 
 static void
 __load_recvmsg() {
@@ -12468,8 +12091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rename]\n");
 
 void __load_and_call_rename();
-static __attribute__ ((used)) void*
-__ptr_rename = (void*)(0x926100000l + (long)__load_and_call_rename);
+void* __ptr_rename = &__load_and_call_rename;
 
 static void
 __load_rename() {
@@ -12501,8 +12123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rfork_thread]\n");
 
 void __load_and_call_rfork_thread();
-static __attribute__ ((used)) void*
-__ptr_rfork_thread = (void*)(0x926100000l + (long)__load_and_call_rfork_thread);
+void* __ptr_rfork_thread = &__load_and_call_rfork_thread;
 
 static void
 __load_rfork_thread() {
@@ -12534,8 +12155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rmdir]\n");
 
 void __load_and_call_rmdir();
-static __attribute__ ((used)) void*
-__ptr_rmdir = (void*)(0x926100000l + (long)__load_and_call_rmdir);
+void* __ptr_rmdir = &__load_and_call_rmdir;
 
 static void
 __load_rmdir() {
@@ -12567,8 +12187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rtld_printf]\n");
 
 void __load_and_call_rtld_printf();
-static __attribute__ ((used)) void*
-__ptr_rtld_printf = (void*)(0x926100000l + (long)__load_and_call_rtld_printf);
+void* __ptr_rtld_printf = &__load_and_call_rtld_printf;
 
 static void
 __load_rtld_printf() {
@@ -12600,8 +12219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rtprio_thread]\n");
 
 void __load_and_call_rtprio_thread();
-static __attribute__ ((used)) void*
-__ptr_rtprio_thread = (void*)(0x926100000l + (long)__load_and_call_rtprio_thread);
+void* __ptr_rtprio_thread = &__load_and_call_rtprio_thread;
 
 static void
 __load_rtprio_thread() {
@@ -12633,8 +12251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddAmprEvent]\n");
 
 void __load_and_call_sceKernelAddAmprEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddAmprEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddAmprEvent);
+void* __ptr_sceKernelAddAmprEvent = &__load_and_call_sceKernelAddAmprEvent;
 
 static void
 __load_sceKernelAddAmprEvent() {
@@ -12666,8 +12283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddCpumodeEvent]\n");
 
 void __load_and_call_sceKernelAddCpumodeEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddCpumodeEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddCpumodeEvent);
+void* __ptr_sceKernelAddCpumodeEvent = &__load_and_call_sceKernelAddCpumodeEvent;
 
 static void
 __load_sceKernelAddCpumodeEvent() {
@@ -12699,8 +12315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddFileEvent]\n");
 
 void __load_and_call_sceKernelAddFileEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddFileEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddFileEvent);
+void* __ptr_sceKernelAddFileEvent = &__load_and_call_sceKernelAddFileEvent;
 
 static void
 __load_sceKernelAddFileEvent() {
@@ -12732,8 +12347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddGpuExceptionEvent]\n");
 
 void __load_and_call_sceKernelAddGpuExceptionEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddGpuExceptionEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddGpuExceptionEvent);
+void* __ptr_sceKernelAddGpuExceptionEvent = &__load_and_call_sceKernelAddGpuExceptionEvent;
 
 static void
 __load_sceKernelAddGpuExceptionEvent() {
@@ -12765,8 +12379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddHRTimerEvent]\n");
 
 void __load_and_call_sceKernelAddHRTimerEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddHRTimerEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddHRTimerEvent);
+void* __ptr_sceKernelAddHRTimerEvent = &__load_and_call_sceKernelAddHRTimerEvent;
 
 static void
 __load_sceKernelAddHRTimerEvent() {
@@ -12798,8 +12411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddProcessToCanvasMap]\n");
 
 void __load_and_call_sceKernelAddProcessToCanvasMap();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddProcessToCanvasMap = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddProcessToCanvasMap);
+void* __ptr_sceKernelAddProcessToCanvasMap = &__load_and_call_sceKernelAddProcessToCanvasMap;
 
 static void
 __load_sceKernelAddProcessToCanvasMap() {
@@ -12831,8 +12443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddReadEvent]\n");
 
 void __load_and_call_sceKernelAddReadEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddReadEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddReadEvent);
+void* __ptr_sceKernelAddReadEvent = &__load_and_call_sceKernelAddReadEvent;
 
 static void
 __load_sceKernelAddReadEvent() {
@@ -12864,8 +12475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddTimerEvent]\n");
 
 void __load_and_call_sceKernelAddTimerEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddTimerEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddTimerEvent);
+void* __ptr_sceKernelAddTimerEvent = &__load_and_call_sceKernelAddTimerEvent;
 
 static void
 __load_sceKernelAddTimerEvent() {
@@ -12897,8 +12507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddUserEvent]\n");
 
 void __load_and_call_sceKernelAddUserEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddUserEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddUserEvent);
+void* __ptr_sceKernelAddUserEvent = &__load_and_call_sceKernelAddUserEvent;
 
 static void
 __load_sceKernelAddUserEvent() {
@@ -12930,8 +12539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddUserEventEdge]\n");
 
 void __load_and_call_sceKernelAddUserEventEdge();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddUserEventEdge = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddUserEventEdge);
+void* __ptr_sceKernelAddUserEventEdge = &__load_and_call_sceKernelAddUserEventEdge;
 
 static void
 __load_sceKernelAddUserEventEdge() {
@@ -12963,8 +12571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddWriteEvent]\n");
 
 void __load_and_call_sceKernelAddWriteEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAddWriteEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelAddWriteEvent);
+void* __ptr_sceKernelAddWriteEvent = &__load_and_call_sceKernelAddWriteEvent;
 
 static void
 __load_sceKernelAddWriteEvent() {
@@ -12996,8 +12603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioCancelRequest]\n");
 
 void __load_and_call_sceKernelAioCancelRequest();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioCancelRequest = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioCancelRequest);
+void* __ptr_sceKernelAioCancelRequest = &__load_and_call_sceKernelAioCancelRequest;
 
 static void
 __load_sceKernelAioCancelRequest() {
@@ -13029,8 +12635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioCancelRequests]\n");
 
 void __load_and_call_sceKernelAioCancelRequests();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioCancelRequests = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioCancelRequests);
+void* __ptr_sceKernelAioCancelRequests = &__load_and_call_sceKernelAioCancelRequests;
 
 static void
 __load_sceKernelAioCancelRequests() {
@@ -13062,8 +12667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioDeleteRequest]\n");
 
 void __load_and_call_sceKernelAioDeleteRequest();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioDeleteRequest = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioDeleteRequest);
+void* __ptr_sceKernelAioDeleteRequest = &__load_and_call_sceKernelAioDeleteRequest;
 
 static void
 __load_sceKernelAioDeleteRequest() {
@@ -13095,8 +12699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioDeleteRequests]\n");
 
 void __load_and_call_sceKernelAioDeleteRequests();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioDeleteRequests = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioDeleteRequests);
+void* __ptr_sceKernelAioDeleteRequests = &__load_and_call_sceKernelAioDeleteRequests;
 
 static void
 __load_sceKernelAioDeleteRequests() {
@@ -13128,8 +12731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioInitializeImpl]\n");
 
 void __load_and_call_sceKernelAioInitializeImpl();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioInitializeImpl = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioInitializeImpl);
+void* __ptr_sceKernelAioInitializeImpl = &__load_and_call_sceKernelAioInitializeImpl;
 
 static void
 __load_sceKernelAioInitializeImpl() {
@@ -13161,8 +12763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioInitializeParam]\n");
 
 void __load_and_call_sceKernelAioInitializeParam();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioInitializeParam = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioInitializeParam);
+void* __ptr_sceKernelAioInitializeParam = &__load_and_call_sceKernelAioInitializeParam;
 
 static void
 __load_sceKernelAioInitializeParam() {
@@ -13194,8 +12795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioPollRequest]\n");
 
 void __load_and_call_sceKernelAioPollRequest();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioPollRequest = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioPollRequest);
+void* __ptr_sceKernelAioPollRequest = &__load_and_call_sceKernelAioPollRequest;
 
 static void
 __load_sceKernelAioPollRequest() {
@@ -13227,8 +12827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioPollRequests]\n");
 
 void __load_and_call_sceKernelAioPollRequests();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioPollRequests = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioPollRequests);
+void* __ptr_sceKernelAioPollRequests = &__load_and_call_sceKernelAioPollRequests;
 
 static void
 __load_sceKernelAioPollRequests() {
@@ -13260,8 +12859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSetParam]\n");
 
 void __load_and_call_sceKernelAioSetParam();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioSetParam = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioSetParam);
+void* __ptr_sceKernelAioSetParam = &__load_and_call_sceKernelAioSetParam;
 
 static void
 __load_sceKernelAioSetParam() {
@@ -13293,8 +12891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSubmitReadCommands]\n");
 
 void __load_and_call_sceKernelAioSubmitReadCommands();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioSubmitReadCommands = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioSubmitReadCommands);
+void* __ptr_sceKernelAioSubmitReadCommands = &__load_and_call_sceKernelAioSubmitReadCommands;
 
 static void
 __load_sceKernelAioSubmitReadCommands() {
@@ -13326,8 +12923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSubmitReadCommandsMultiple]\n");
 
 void __load_and_call_sceKernelAioSubmitReadCommandsMultiple();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioSubmitReadCommandsMultiple = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioSubmitReadCommandsMultiple);
+void* __ptr_sceKernelAioSubmitReadCommandsMultiple = &__load_and_call_sceKernelAioSubmitReadCommandsMultiple;
 
 static void
 __load_sceKernelAioSubmitReadCommandsMultiple() {
@@ -13359,8 +12955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSubmitWriteCommands]\n");
 
 void __load_and_call_sceKernelAioSubmitWriteCommands();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioSubmitWriteCommands = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioSubmitWriteCommands);
+void* __ptr_sceKernelAioSubmitWriteCommands = &__load_and_call_sceKernelAioSubmitWriteCommands;
 
 static void
 __load_sceKernelAioSubmitWriteCommands() {
@@ -13392,8 +12987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSubmitWriteCommandsMultiple]\n");
 
 void __load_and_call_sceKernelAioSubmitWriteCommandsMultiple();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioSubmitWriteCommandsMultiple = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioSubmitWriteCommandsMultiple);
+void* __ptr_sceKernelAioSubmitWriteCommandsMultiple = &__load_and_call_sceKernelAioSubmitWriteCommandsMultiple;
 
 static void
 __load_sceKernelAioSubmitWriteCommandsMultiple() {
@@ -13425,8 +13019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioWaitRequest]\n");
 
 void __load_and_call_sceKernelAioWaitRequest();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioWaitRequest = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioWaitRequest);
+void* __ptr_sceKernelAioWaitRequest = &__load_and_call_sceKernelAioWaitRequest;
 
 static void
 __load_sceKernelAioWaitRequest() {
@@ -13458,8 +13051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioWaitRequests]\n");
 
 void __load_and_call_sceKernelAioWaitRequests();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAioWaitRequests = (void*)(0x926100000l + (long)__load_and_call_sceKernelAioWaitRequests);
+void* __ptr_sceKernelAioWaitRequests = &__load_and_call_sceKernelAioWaitRequests;
 
 static void
 __load_sceKernelAioWaitRequests() {
@@ -13491,8 +13083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateDirectMemory]\n");
 
 void __load_and_call_sceKernelAllocateDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAllocateDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelAllocateDirectMemory);
+void* __ptr_sceKernelAllocateDirectMemory = &__load_and_call_sceKernelAllocateDirectMemory;
 
 static void
 __load_sceKernelAllocateDirectMemory() {
@@ -13524,8 +13115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateDirectMemory2]\n");
 
 void __load_and_call_sceKernelAllocateDirectMemory2();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAllocateDirectMemory2 = (void*)(0x926100000l + (long)__load_and_call_sceKernelAllocateDirectMemory2);
+void* __ptr_sceKernelAllocateDirectMemory2 = &__load_and_call_sceKernelAllocateDirectMemory2;
 
 static void
 __load_sceKernelAllocateDirectMemory2() {
@@ -13557,8 +13147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateDirectMemoryForApp]\n");
 
 void __load_and_call_sceKernelAllocateDirectMemoryForApp();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAllocateDirectMemoryForApp = (void*)(0x926100000l + (long)__load_and_call_sceKernelAllocateDirectMemoryForApp);
+void* __ptr_sceKernelAllocateDirectMemoryForApp = &__load_and_call_sceKernelAllocateDirectMemoryForApp;
 
 static void
 __load_sceKernelAllocateDirectMemoryForApp() {
@@ -13590,8 +13179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateDirectMemoryForMiniApp]\n");
 
 void __load_and_call_sceKernelAllocateDirectMemoryForMiniApp();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAllocateDirectMemoryForMiniApp = (void*)(0x926100000l + (long)__load_and_call_sceKernelAllocateDirectMemoryForMiniApp);
+void* __ptr_sceKernelAllocateDirectMemoryForMiniApp = &__load_and_call_sceKernelAllocateDirectMemoryForMiniApp;
 
 static void
 __load_sceKernelAllocateDirectMemoryForMiniApp() {
@@ -13623,8 +13211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateMainDirectMemory]\n");
 
 void __load_and_call_sceKernelAllocateMainDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAllocateMainDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelAllocateMainDirectMemory);
+void* __ptr_sceKernelAllocateMainDirectMemory = &__load_and_call_sceKernelAllocateMainDirectMemory;
 
 static void
 __load_sceKernelAllocateMainDirectMemory() {
@@ -13656,8 +13243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateToolMemory]\n");
 
 void __load_and_call_sceKernelAllocateToolMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAllocateToolMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelAllocateToolMemory);
+void* __ptr_sceKernelAllocateToolMemory = &__load_and_call_sceKernelAllocateToolMemory;
 
 static void
 __load_sceKernelAllocateToolMemory() {
@@ -13689,8 +13275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateTraceDirectMemory]\n");
 
 void __load_and_call_sceKernelAllocateTraceDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAllocateTraceDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelAllocateTraceDirectMemory);
+void* __ptr_sceKernelAllocateTraceDirectMemory = &__load_and_call_sceKernelAllocateTraceDirectMemory;
 
 static void
 __load_sceKernelAllocateTraceDirectMemory() {
@@ -13722,8 +13307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAvailableDirectMemorySize]\n");
 
 void __load_and_call_sceKernelAvailableDirectMemorySize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAvailableDirectMemorySize = (void*)(0x926100000l + (long)__load_and_call_sceKernelAvailableDirectMemorySize);
+void* __ptr_sceKernelAvailableDirectMemorySize = &__load_and_call_sceKernelAvailableDirectMemorySize;
 
 static void
 __load_sceKernelAvailableDirectMemorySize() {
@@ -13755,8 +13339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAvailableFlexibleMemorySize]\n");
 
 void __load_and_call_sceKernelAvailableFlexibleMemorySize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAvailableFlexibleMemorySize = (void*)(0x926100000l + (long)__load_and_call_sceKernelAvailableFlexibleMemorySize);
+void* __ptr_sceKernelAvailableFlexibleMemorySize = &__load_and_call_sceKernelAvailableFlexibleMemorySize;
 
 static void
 __load_sceKernelAvailableFlexibleMemorySize() {
@@ -13788,8 +13371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAvailableToolMemorySize]\n");
 
 void __load_and_call_sceKernelAvailableToolMemorySize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelAvailableToolMemorySize = (void*)(0x926100000l + (long)__load_and_call_sceKernelAvailableToolMemorySize);
+void* __ptr_sceKernelAvailableToolMemorySize = &__load_and_call_sceKernelAvailableToolMemorySize;
 
 static void
 __load_sceKernelAvailableToolMemorySize() {
@@ -13821,8 +13403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelBacktraceSelf]\n");
 
 void __load_and_call_sceKernelBacktraceSelf();
-static __attribute__ ((used)) void*
-__ptr_sceKernelBacktraceSelf = (void*)(0x926100000l + (long)__load_and_call_sceKernelBacktraceSelf);
+void* __ptr_sceKernelBacktraceSelf = &__load_and_call_sceKernelBacktraceSelf;
 
 static void
 __load_sceKernelBacktraceSelf() {
@@ -13854,8 +13435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelBatchMap]\n");
 
 void __load_and_call_sceKernelBatchMap();
-static __attribute__ ((used)) void*
-__ptr_sceKernelBatchMap = (void*)(0x926100000l + (long)__load_and_call_sceKernelBatchMap);
+void* __ptr_sceKernelBatchMap = &__load_and_call_sceKernelBatchMap;
 
 static void
 __load_sceKernelBatchMap() {
@@ -13887,8 +13467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelBatchMap2]\n");
 
 void __load_and_call_sceKernelBatchMap2();
-static __attribute__ ((used)) void*
-__ptr_sceKernelBatchMap2 = (void*)(0x926100000l + (long)__load_and_call_sceKernelBatchMap2);
+void* __ptr_sceKernelBatchMap2 = &__load_and_call_sceKernelBatchMap2;
 
 static void
 __load_sceKernelBatchMap2() {
@@ -13920,8 +13499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCallIndirectBuffer]\n");
 
 void __load_and_call_sceKernelCallIndirectBuffer();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCallIndirectBuffer = (void*)(0x926100000l + (long)__load_and_call_sceKernelCallIndirectBuffer);
+void* __ptr_sceKernelCallIndirectBuffer = &__load_and_call_sceKernelCallIndirectBuffer;
 
 static void
 __load_sceKernelCallIndirectBuffer() {
@@ -13953,8 +13531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCallIndirectBuffer2]\n");
 
 void __load_and_call_sceKernelCallIndirectBuffer2();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCallIndirectBuffer2 = (void*)(0x926100000l + (long)__load_and_call_sceKernelCallIndirectBuffer2);
+void* __ptr_sceKernelCallIndirectBuffer2 = &__load_and_call_sceKernelCallIndirectBuffer2;
 
 static void
 __load_sceKernelCallIndirectBuffer2() {
@@ -13986,8 +13563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCancelEventFlag]\n");
 
 void __load_and_call_sceKernelCancelEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCancelEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelCancelEventFlag);
+void* __ptr_sceKernelCancelEventFlag = &__load_and_call_sceKernelCancelEventFlag;
 
 static void
 __load_sceKernelCancelEventFlag() {
@@ -14019,8 +13595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCancelSema]\n");
 
 void __load_and_call_sceKernelCancelSema();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCancelSema = (void*)(0x926100000l + (long)__load_and_call_sceKernelCancelSema);
+void* __ptr_sceKernelCancelSema = &__load_and_call_sceKernelCancelSema;
 
 static void
 __load_sceKernelCancelSema() {
@@ -14052,8 +13627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCheckReachability]\n");
 
 void __load_and_call_sceKernelCheckReachability();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCheckReachability = (void*)(0x926100000l + (long)__load_and_call_sceKernelCheckReachability);
+void* __ptr_sceKernelCheckReachability = &__load_and_call_sceKernelCheckReachability;
 
 static void
 __load_sceKernelCheckReachability() {
@@ -14085,8 +13659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCheckedReleaseDirectMemory]\n");
 
 void __load_and_call_sceKernelCheckedReleaseDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCheckedReleaseDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelCheckedReleaseDirectMemory);
+void* __ptr_sceKernelCheckedReleaseDirectMemory = &__load_and_call_sceKernelCheckedReleaseDirectMemory;
 
 static void
 __load_sceKernelCheckedReleaseDirectMemory() {
@@ -14118,8 +13691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelChmod]\n");
 
 void __load_and_call_sceKernelChmod();
-static __attribute__ ((used)) void*
-__ptr_sceKernelChmod = (void*)(0x926100000l + (long)__load_and_call_sceKernelChmod);
+void* __ptr_sceKernelChmod = &__load_and_call_sceKernelChmod;
 
 static void
 __load_sceKernelChmod() {
@@ -14151,8 +13723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClearBootReqNotifyCount]\n");
 
 void __load_and_call_sceKernelClearBootReqNotifyCount();
-static __attribute__ ((used)) void*
-__ptr_sceKernelClearBootReqNotifyCount = (void*)(0x926100000l + (long)__load_and_call_sceKernelClearBootReqNotifyCount);
+void* __ptr_sceKernelClearBootReqNotifyCount = &__load_and_call_sceKernelClearBootReqNotifyCount;
 
 static void
 __load_sceKernelClearBootReqNotifyCount() {
@@ -14184,8 +13755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClearEventFlag]\n");
 
 void __load_and_call_sceKernelClearEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelClearEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelClearEventFlag);
+void* __ptr_sceKernelClearEventFlag = &__load_and_call_sceKernelClearEventFlag;
 
 static void
 __load_sceKernelClearEventFlag() {
@@ -14217,8 +13787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClearGameDirectMemory]\n");
 
 void __load_and_call_sceKernelClearGameDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelClearGameDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelClearGameDirectMemory);
+void* __ptr_sceKernelClearGameDirectMemory = &__load_and_call_sceKernelClearGameDirectMemory;
 
 static void
 __load_sceKernelClearGameDirectMemory() {
@@ -14250,8 +13819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClockGetres]\n");
 
 void __load_and_call_sceKernelClockGetres();
-static __attribute__ ((used)) void*
-__ptr_sceKernelClockGetres = (void*)(0x926100000l + (long)__load_and_call_sceKernelClockGetres);
+void* __ptr_sceKernelClockGetres = &__load_and_call_sceKernelClockGetres;
 
 static void
 __load_sceKernelClockGetres() {
@@ -14283,8 +13851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClockGettime]\n");
 
 void __load_and_call_sceKernelClockGettime();
-static __attribute__ ((used)) void*
-__ptr_sceKernelClockGettime = (void*)(0x926100000l + (long)__load_and_call_sceKernelClockGettime);
+void* __ptr_sceKernelClockGettime = &__load_and_call_sceKernelClockGettime;
 
 static void
 __load_sceKernelClockGettime() {
@@ -14316,8 +13883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClose]\n");
 
 void __load_and_call_sceKernelClose();
-static __attribute__ ((used)) void*
-__ptr_sceKernelClose = (void*)(0x926100000l + (long)__load_and_call_sceKernelClose);
+void* __ptr_sceKernelClose = &__load_and_call_sceKernelClose;
 
 static void
 __load_sceKernelClose() {
@@ -14349,8 +13915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCloseEport]\n");
 
 void __load_and_call_sceKernelCloseEport();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCloseEport = (void*)(0x926100000l + (long)__load_and_call_sceKernelCloseEport);
+void* __ptr_sceKernelCloseEport = &__load_and_call_sceKernelCloseEport;
 
 static void
 __load_sceKernelCloseEport() {
@@ -14382,8 +13947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCloseEventFlag]\n");
 
 void __load_and_call_sceKernelCloseEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCloseEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelCloseEventFlag);
+void* __ptr_sceKernelCloseEventFlag = &__load_and_call_sceKernelCloseEventFlag;
 
 static void
 __load_sceKernelCloseEventFlag() {
@@ -14415,8 +13979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCloseSema]\n");
 
 void __load_and_call_sceKernelCloseSema();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCloseSema = (void*)(0x926100000l + (long)__load_and_call_sceKernelCloseSema);
+void* __ptr_sceKernelCloseSema = &__load_and_call_sceKernelCloseSema;
 
 static void
 __load_sceKernelCloseSema() {
@@ -14448,8 +14011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelConfiguredFlexibleMemorySize]\n");
 
 void __load_and_call_sceKernelConfiguredFlexibleMemorySize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelConfiguredFlexibleMemorySize = (void*)(0x926100000l + (long)__load_and_call_sceKernelConfiguredFlexibleMemorySize);
+void* __ptr_sceKernelConfiguredFlexibleMemorySize = &__load_and_call_sceKernelConfiguredFlexibleMemorySize;
 
 static void
 __load_sceKernelConfiguredFlexibleMemorySize() {
@@ -14481,8 +14043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelConvertLocaltimeToUtc]\n");
 
 void __load_and_call_sceKernelConvertLocaltimeToUtc();
-static __attribute__ ((used)) void*
-__ptr_sceKernelConvertLocaltimeToUtc = (void*)(0x926100000l + (long)__load_and_call_sceKernelConvertLocaltimeToUtc);
+void* __ptr_sceKernelConvertLocaltimeToUtc = &__load_and_call_sceKernelConvertLocaltimeToUtc;
 
 static void
 __load_sceKernelConvertLocaltimeToUtc() {
@@ -14514,8 +14075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelConvertUtcToLocaltime]\n");
 
 void __load_and_call_sceKernelConvertUtcToLocaltime();
-static __attribute__ ((used)) void*
-__ptr_sceKernelConvertUtcToLocaltime = (void*)(0x926100000l + (long)__load_and_call_sceKernelConvertUtcToLocaltime);
+void* __ptr_sceKernelConvertUtcToLocaltime = &__load_and_call_sceKernelConvertUtcToLocaltime;
 
 static void
 __load_sceKernelConvertUtcToLocaltime() {
@@ -14547,8 +14107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCreateEport]\n");
 
 void __load_and_call_sceKernelCreateEport();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCreateEport = (void*)(0x926100000l + (long)__load_and_call_sceKernelCreateEport);
+void* __ptr_sceKernelCreateEport = &__load_and_call_sceKernelCreateEport;
 
 static void
 __load_sceKernelCreateEport() {
@@ -14580,8 +14139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCreateEqueue]\n");
 
 void __load_and_call_sceKernelCreateEqueue();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCreateEqueue = (void*)(0x926100000l + (long)__load_and_call_sceKernelCreateEqueue);
+void* __ptr_sceKernelCreateEqueue = &__load_and_call_sceKernelCreateEqueue;
 
 static void
 __load_sceKernelCreateEqueue() {
@@ -14613,8 +14171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCreateEventFlag]\n");
 
 void __load_and_call_sceKernelCreateEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCreateEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelCreateEventFlag);
+void* __ptr_sceKernelCreateEventFlag = &__load_and_call_sceKernelCreateEventFlag;
 
 static void
 __load_sceKernelCreateEventFlag() {
@@ -14646,8 +14203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCreateSema]\n");
 
 void __load_and_call_sceKernelCreateSema();
-static __attribute__ ((used)) void*
-__ptr_sceKernelCreateSema = (void*)(0x926100000l + (long)__load_and_call_sceKernelCreateSema);
+void* __ptr_sceKernelCreateSema = &__load_and_call_sceKernelCreateSema;
 
 static void
 __load_sceKernelCreateSema() {
@@ -14679,8 +14235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugAcquireAndUpdateDebugRegister]\n");
 
 void __load_and_call_sceKernelDebugAcquireAndUpdateDebugRegister();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugAcquireAndUpdateDebugRegister = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugAcquireAndUpdateDebugRegister);
+void* __ptr_sceKernelDebugAcquireAndUpdateDebugRegister = &__load_and_call_sceKernelDebugAcquireAndUpdateDebugRegister;
 
 static void
 __load_sceKernelDebugAcquireAndUpdateDebugRegister() {
@@ -14712,8 +14267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugGetAppStatus]\n");
 
 void __load_and_call_sceKernelDebugGetAppStatus();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugGetAppStatus = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugGetAppStatus);
+void* __ptr_sceKernelDebugGetAppStatus = &__load_and_call_sceKernelDebugGetAppStatus;
 
 static void
 __load_sceKernelDebugGetAppStatus() {
@@ -14745,8 +14299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugGetPauseCount]\n");
 
 void __load_and_call_sceKernelDebugGetPauseCount();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugGetPauseCount = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugGetPauseCount);
+void* __ptr_sceKernelDebugGetPauseCount = &__load_and_call_sceKernelDebugGetPauseCount;
 
 static void
 __load_sceKernelDebugGetPauseCount() {
@@ -14778,8 +14331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugGpuPaDebugIsInProgress]\n");
 
 void __load_and_call_sceKernelDebugGpuPaDebugIsInProgress();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugGpuPaDebugIsInProgress = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugGpuPaDebugIsInProgress);
+void* __ptr_sceKernelDebugGpuPaDebugIsInProgress = &__load_and_call_sceKernelDebugGpuPaDebugIsInProgress;
 
 static void
 __load_sceKernelDebugGpuPaDebugIsInProgress() {
@@ -14811,8 +14363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugOutText]\n");
 
 void __load_and_call_sceKernelDebugOutText();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugOutText = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugOutText);
+void* __ptr_sceKernelDebugOutText = &__load_and_call_sceKernelDebugOutText;
 
 static void
 __load_sceKernelDebugOutText() {
@@ -14844,8 +14395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugRaiseException]\n");
 
 void __load_and_call_sceKernelDebugRaiseException();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugRaiseException = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugRaiseException);
+void* __ptr_sceKernelDebugRaiseException = &__load_and_call_sceKernelDebugRaiseException;
 
 static void
 __load_sceKernelDebugRaiseException() {
@@ -14877,8 +14427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugRaiseExceptionOnReleaseMode]\n");
 
 void __load_and_call_sceKernelDebugRaiseExceptionOnReleaseMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugRaiseExceptionOnReleaseMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugRaiseExceptionOnReleaseMode);
+void* __ptr_sceKernelDebugRaiseExceptionOnReleaseMode = &__load_and_call_sceKernelDebugRaiseExceptionOnReleaseMode;
 
 static void
 __load_sceKernelDebugRaiseExceptionOnReleaseMode() {
@@ -14910,8 +14459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugRaiseExceptionWithContext]\n");
 
 void __load_and_call_sceKernelDebugRaiseExceptionWithContext();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugRaiseExceptionWithContext = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugRaiseExceptionWithContext);
+void* __ptr_sceKernelDebugRaiseExceptionWithContext = &__load_and_call_sceKernelDebugRaiseExceptionWithContext;
 
 static void
 __load_sceKernelDebugRaiseExceptionWithContext() {
@@ -14943,8 +14491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugRaiseExceptionWithInfo]\n");
 
 void __load_and_call_sceKernelDebugRaiseExceptionWithInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugRaiseExceptionWithInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugRaiseExceptionWithInfo);
+void* __ptr_sceKernelDebugRaiseExceptionWithInfo = &__load_and_call_sceKernelDebugRaiseExceptionWithInfo;
 
 static void
 __load_sceKernelDebugRaiseExceptionWithInfo() {
@@ -14976,8 +14523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugReleaseDebugContext]\n");
 
 void __load_and_call_sceKernelDebugReleaseDebugContext();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDebugReleaseDebugContext = (void*)(0x926100000l + (long)__load_and_call_sceKernelDebugReleaseDebugContext);
+void* __ptr_sceKernelDebugReleaseDebugContext = &__load_and_call_sceKernelDebugReleaseDebugContext;
 
 static void
 __load_sceKernelDebugReleaseDebugContext() {
@@ -15009,8 +14555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteAmprEvent]\n");
 
 void __load_and_call_sceKernelDeleteAmprEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteAmprEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteAmprEvent);
+void* __ptr_sceKernelDeleteAmprEvent = &__load_and_call_sceKernelDeleteAmprEvent;
 
 static void
 __load_sceKernelDeleteAmprEvent() {
@@ -15042,8 +14587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteCpumodeEvent]\n");
 
 void __load_and_call_sceKernelDeleteCpumodeEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteCpumodeEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteCpumodeEvent);
+void* __ptr_sceKernelDeleteCpumodeEvent = &__load_and_call_sceKernelDeleteCpumodeEvent;
 
 static void
 __load_sceKernelDeleteCpumodeEvent() {
@@ -15075,8 +14619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteEport]\n");
 
 void __load_and_call_sceKernelDeleteEport();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteEport = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteEport);
+void* __ptr_sceKernelDeleteEport = &__load_and_call_sceKernelDeleteEport;
 
 static void
 __load_sceKernelDeleteEport() {
@@ -15108,8 +14651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteEqueue]\n");
 
 void __load_and_call_sceKernelDeleteEqueue();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteEqueue = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteEqueue);
+void* __ptr_sceKernelDeleteEqueue = &__load_and_call_sceKernelDeleteEqueue;
 
 static void
 __load_sceKernelDeleteEqueue() {
@@ -15141,8 +14683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteEventFlag]\n");
 
 void __load_and_call_sceKernelDeleteEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteEventFlag);
+void* __ptr_sceKernelDeleteEventFlag = &__load_and_call_sceKernelDeleteEventFlag;
 
 static void
 __load_sceKernelDeleteEventFlag() {
@@ -15174,8 +14715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteFileEvent]\n");
 
 void __load_and_call_sceKernelDeleteFileEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteFileEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteFileEvent);
+void* __ptr_sceKernelDeleteFileEvent = &__load_and_call_sceKernelDeleteFileEvent;
 
 static void
 __load_sceKernelDeleteFileEvent() {
@@ -15207,8 +14747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteGpuExceptionEvent]\n");
 
 void __load_and_call_sceKernelDeleteGpuExceptionEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteGpuExceptionEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteGpuExceptionEvent);
+void* __ptr_sceKernelDeleteGpuExceptionEvent = &__load_and_call_sceKernelDeleteGpuExceptionEvent;
 
 static void
 __load_sceKernelDeleteGpuExceptionEvent() {
@@ -15240,8 +14779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteHRTimerEvent]\n");
 
 void __load_and_call_sceKernelDeleteHRTimerEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteHRTimerEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteHRTimerEvent);
+void* __ptr_sceKernelDeleteHRTimerEvent = &__load_and_call_sceKernelDeleteHRTimerEvent;
 
 static void
 __load_sceKernelDeleteHRTimerEvent() {
@@ -15273,8 +14811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteProcessFromCanvasMap]\n");
 
 void __load_and_call_sceKernelDeleteProcessFromCanvasMap();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteProcessFromCanvasMap = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteProcessFromCanvasMap);
+void* __ptr_sceKernelDeleteProcessFromCanvasMap = &__load_and_call_sceKernelDeleteProcessFromCanvasMap;
 
 static void
 __load_sceKernelDeleteProcessFromCanvasMap() {
@@ -15306,8 +14843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteReadEvent]\n");
 
 void __load_and_call_sceKernelDeleteReadEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteReadEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteReadEvent);
+void* __ptr_sceKernelDeleteReadEvent = &__load_and_call_sceKernelDeleteReadEvent;
 
 static void
 __load_sceKernelDeleteReadEvent() {
@@ -15339,8 +14875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteSema]\n");
 
 void __load_and_call_sceKernelDeleteSema();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteSema = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteSema);
+void* __ptr_sceKernelDeleteSema = &__load_and_call_sceKernelDeleteSema;
 
 static void
 __load_sceKernelDeleteSema() {
@@ -15372,8 +14907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteTimerEvent]\n");
 
 void __load_and_call_sceKernelDeleteTimerEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteTimerEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteTimerEvent);
+void* __ptr_sceKernelDeleteTimerEvent = &__load_and_call_sceKernelDeleteTimerEvent;
 
 static void
 __load_sceKernelDeleteTimerEvent() {
@@ -15405,8 +14939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteUserEvent]\n");
 
 void __load_and_call_sceKernelDeleteUserEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteUserEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteUserEvent);
+void* __ptr_sceKernelDeleteUserEvent = &__load_and_call_sceKernelDeleteUserEvent;
 
 static void
 __load_sceKernelDeleteUserEvent() {
@@ -15438,8 +14971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteWriteEvent]\n");
 
 void __load_and_call_sceKernelDeleteWriteEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDeleteWriteEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelDeleteWriteEvent);
+void* __ptr_sceKernelDeleteWriteEvent = &__load_and_call_sceKernelDeleteWriteEvent;
 
 static void
 __load_sceKernelDeleteWriteEvent() {
@@ -15471,8 +15003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDirectMemoryQuery]\n");
 
 void __load_and_call_sceKernelDirectMemoryQuery();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDirectMemoryQuery = (void*)(0x926100000l + (long)__load_and_call_sceKernelDirectMemoryQuery);
+void* __ptr_sceKernelDirectMemoryQuery = &__load_and_call_sceKernelDirectMemoryQuery;
 
 static void
 __load_sceKernelDirectMemoryQuery() {
@@ -15504,8 +15035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDirectMemoryQueryForId]\n");
 
 void __load_and_call_sceKernelDirectMemoryQueryForId();
-static __attribute__ ((used)) void*
-__ptr_sceKernelDirectMemoryQueryForId = (void*)(0x926100000l + (long)__load_and_call_sceKernelDirectMemoryQueryForId);
+void* __ptr_sceKernelDirectMemoryQueryForId = &__load_and_call_sceKernelDirectMemoryQueryForId;
 
 static void
 __load_sceKernelDirectMemoryQueryForId() {
@@ -15537,8 +15067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEnableDmemAliasing]\n");
 
 void __load_and_call_sceKernelEnableDmemAliasing();
-static __attribute__ ((used)) void*
-__ptr_sceKernelEnableDmemAliasing = (void*)(0x926100000l + (long)__load_and_call_sceKernelEnableDmemAliasing);
+void* __ptr_sceKernelEnableDmemAliasing = &__load_and_call_sceKernelEnableDmemAliasing;
 
 static void
 __load_sceKernelEnableDmemAliasing() {
@@ -15570,8 +15099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEnableDmemAliasing2]\n");
 
 void __load_and_call_sceKernelEnableDmemAliasing2();
-static __attribute__ ((used)) void*
-__ptr_sceKernelEnableDmemAliasing2 = (void*)(0x926100000l + (long)__load_and_call_sceKernelEnableDmemAliasing2);
+void* __ptr_sceKernelEnableDmemAliasing2 = &__load_and_call_sceKernelEnableDmemAliasing2;
 
 static void
 __load_sceKernelEnableDmemAliasing2() {
@@ -15603,8 +15131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEnablePthreadObjectCheck]\n");
 
 void __load_and_call_sceKernelEnablePthreadObjectCheck();
-static __attribute__ ((used)) void*
-__ptr_sceKernelEnablePthreadObjectCheck = (void*)(0x926100000l + (long)__load_and_call_sceKernelEnablePthreadObjectCheck);
+void* __ptr_sceKernelEnablePthreadObjectCheck = &__load_and_call_sceKernelEnablePthreadObjectCheck;
 
 static void
 __load_sceKernelEnablePthreadObjectCheck() {
@@ -15636,8 +15163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelError]\n");
 
 void __load_and_call_sceKernelError();
-static __attribute__ ((used)) void*
-__ptr_sceKernelError = (void*)(0x926100000l + (long)__load_and_call_sceKernelError);
+void* __ptr_sceKernelError = &__load_and_call_sceKernelError;
 
 static void
 __load_sceKernelError() {
@@ -15669,8 +15195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEventLogInit]\n");
 
 void __load_and_call_sceKernelEventLogInit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelEventLogInit = (void*)(0x926100000l + (long)__load_and_call_sceKernelEventLogInit);
+void* __ptr_sceKernelEventLogInit = &__load_and_call_sceKernelEventLogInit;
 
 static void
 __load_sceKernelEventLogInit() {
@@ -15702,8 +15227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEventLogPread]\n");
 
 void __load_and_call_sceKernelEventLogPread();
-static __attribute__ ((used)) void*
-__ptr_sceKernelEventLogPread = (void*)(0x926100000l + (long)__load_and_call_sceKernelEventLogPread);
+void* __ptr_sceKernelEventLogPread = &__load_and_call_sceKernelEventLogPread;
 
 static void
 __load_sceKernelEventLogPread() {
@@ -15735,8 +15259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEventLogRead]\n");
 
 void __load_and_call_sceKernelEventLogRead();
-static __attribute__ ((used)) void*
-__ptr_sceKernelEventLogRead = (void*)(0x926100000l + (long)__load_and_call_sceKernelEventLogRead);
+void* __ptr_sceKernelEventLogRead = &__load_and_call_sceKernelEventLogRead;
 
 static void
 __load_sceKernelEventLogRead() {
@@ -15768,8 +15291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEventLogWrite]\n");
 
 void __load_and_call_sceKernelEventLogWrite();
-static __attribute__ ((used)) void*
-__ptr_sceKernelEventLogWrite = (void*)(0x926100000l + (long)__load_and_call_sceKernelEventLogWrite);
+void* __ptr_sceKernelEventLogWrite = &__load_and_call_sceKernelEventLogWrite;
 
 static void
 __load_sceKernelEventLogWrite() {
@@ -15801,8 +15323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFchmod]\n");
 
 void __load_and_call_sceKernelFchmod();
-static __attribute__ ((used)) void*
-__ptr_sceKernelFchmod = (void*)(0x926100000l + (long)__load_and_call_sceKernelFchmod);
+void* __ptr_sceKernelFchmod = &__load_and_call_sceKernelFchmod;
 
 static void
 __load_sceKernelFchmod() {
@@ -15834,8 +15355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFcntl]\n");
 
 void __load_and_call_sceKernelFcntl();
-static __attribute__ ((used)) void*
-__ptr_sceKernelFcntl = (void*)(0x926100000l + (long)__load_and_call_sceKernelFcntl);
+void* __ptr_sceKernelFcntl = &__load_and_call_sceKernelFcntl;
 
 static void
 __load_sceKernelFcntl() {
@@ -15867,8 +15387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFdatasync]\n");
 
 void __load_and_call_sceKernelFdatasync();
-static __attribute__ ((used)) void*
-__ptr_sceKernelFdatasync = (void*)(0x926100000l + (long)__load_and_call_sceKernelFdatasync);
+void* __ptr_sceKernelFdatasync = &__load_and_call_sceKernelFdatasync;
 
 static void
 __load_sceKernelFdatasync() {
@@ -15900,8 +15419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFlock]\n");
 
 void __load_and_call_sceKernelFlock();
-static __attribute__ ((used)) void*
-__ptr_sceKernelFlock = (void*)(0x926100000l + (long)__load_and_call_sceKernelFlock);
+void* __ptr_sceKernelFlock = &__load_and_call_sceKernelFlock;
 
 static void
 __load_sceKernelFlock() {
@@ -15933,8 +15451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFstat]\n");
 
 void __load_and_call_sceKernelFstat();
-static __attribute__ ((used)) void*
-__ptr_sceKernelFstat = (void*)(0x926100000l + (long)__load_and_call_sceKernelFstat);
+void* __ptr_sceKernelFstat = &__load_and_call_sceKernelFstat;
 
 static void
 __load_sceKernelFstat() {
@@ -15966,8 +15483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFsync]\n");
 
 void __load_and_call_sceKernelFsync();
-static __attribute__ ((used)) void*
-__ptr_sceKernelFsync = (void*)(0x926100000l + (long)__load_and_call_sceKernelFsync);
+void* __ptr_sceKernelFsync = &__load_and_call_sceKernelFsync;
 
 static void
 __load_sceKernelFsync() {
@@ -15999,8 +15515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFtruncate]\n");
 
 void __load_and_call_sceKernelFtruncate();
-static __attribute__ ((used)) void*
-__ptr_sceKernelFtruncate = (void*)(0x926100000l + (long)__load_and_call_sceKernelFtruncate);
+void* __ptr_sceKernelFtruncate = &__load_and_call_sceKernelFtruncate;
 
 static void
 __load_sceKernelFtruncate() {
@@ -16032,8 +15547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFutimes]\n");
 
 void __load_and_call_sceKernelFutimes();
-static __attribute__ ((used)) void*
-__ptr_sceKernelFutimes = (void*)(0x926100000l + (long)__load_and_call_sceKernelFutimes);
+void* __ptr_sceKernelFutimes = &__load_and_call_sceKernelFutimes;
 
 static void
 __load_sceKernelFutimes() {
@@ -16065,8 +15579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAllowedSdkVersionOnSystem]\n");
 
 void __load_and_call_sceKernelGetAllowedSdkVersionOnSystem();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetAllowedSdkVersionOnSystem = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetAllowedSdkVersionOnSystem);
+void* __ptr_sceKernelGetAllowedSdkVersionOnSystem = &__load_and_call_sceKernelGetAllowedSdkVersionOnSystem;
 
 static void
 __load_sceKernelGetAllowedSdkVersionOnSystem() {
@@ -16098,8 +15611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAppCategoryType]\n");
 
 void __load_and_call_sceKernelGetAppCategoryType();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetAppCategoryType = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetAppCategoryType);
+void* __ptr_sceKernelGetAppCategoryType = &__load_and_call_sceKernelGetAppCategoryType;
 
 static void
 __load_sceKernelGetAppCategoryType() {
@@ -16131,8 +15643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAppInfo]\n");
 
 void __load_and_call_sceKernelGetAppInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetAppInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetAppInfo);
+void* __ptr_sceKernelGetAppInfo = &__load_and_call_sceKernelGetAppInfo;
 
 static void
 __load_sceKernelGetAppInfo() {
@@ -16164,8 +15675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAslrStatus]\n");
 
 void __load_and_call_sceKernelGetAslrStatus();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetAslrStatus = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetAslrStatus);
+void* __ptr_sceKernelGetAslrStatus = &__load_and_call_sceKernelGetAslrStatus;
 
 static void
 __load_sceKernelGetAslrStatus() {
@@ -16197,8 +15707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAutoUpdateVersion]\n");
 
 void __load_and_call_sceKernelGetAutoUpdateVersion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetAutoUpdateVersion = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetAutoUpdateVersion);
+void* __ptr_sceKernelGetAutoUpdateVersion = &__load_and_call_sceKernelGetAutoUpdateVersion;
 
 static void
 __load_sceKernelGetAutoUpdateVersion() {
@@ -16230,8 +15739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBackupRestoreMode]\n");
 
 void __load_and_call_sceKernelGetBackupRestoreMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetBackupRestoreMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetBackupRestoreMode);
+void* __ptr_sceKernelGetBackupRestoreMode = &__load_and_call_sceKernelGetBackupRestoreMode;
 
 static void
 __load_sceKernelGetBackupRestoreMode() {
@@ -16263,8 +15771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBackupRestoreModeOfNextBoot]\n");
 
 void __load_and_call_sceKernelGetBackupRestoreModeOfNextBoot();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetBackupRestoreModeOfNextBoot = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetBackupRestoreModeOfNextBoot);
+void* __ptr_sceKernelGetBackupRestoreModeOfNextBoot = &__load_and_call_sceKernelGetBackupRestoreModeOfNextBoot;
 
 static void
 __load_sceKernelGetBackupRestoreModeOfNextBoot() {
@@ -16296,8 +15803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBasicProductShape]\n");
 
 void __load_and_call_sceKernelGetBasicProductShape();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetBasicProductShape = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetBasicProductShape);
+void* __ptr_sceKernelGetBasicProductShape = &__load_and_call_sceKernelGetBasicProductShape;
 
 static void
 __load_sceKernelGetBasicProductShape() {
@@ -16329,8 +15835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBetaUpdateTestForRcmgr]\n");
 
 void __load_and_call_sceKernelGetBetaUpdateTestForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetBetaUpdateTestForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetBetaUpdateTestForRcmgr);
+void* __ptr_sceKernelGetBetaUpdateTestForRcmgr = &__load_and_call_sceKernelGetBetaUpdateTestForRcmgr;
 
 static void
 __load_sceKernelGetBetaUpdateTestForRcmgr() {
@@ -16362,8 +15867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBioUsageAll]\n");
 
 void __load_and_call_sceKernelGetBioUsageAll();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetBioUsageAll = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetBioUsageAll);
+void* __ptr_sceKernelGetBioUsageAll = &__load_and_call_sceKernelGetBioUsageAll;
 
 static void
 __load_sceKernelGetBioUsageAll() {
@@ -16395,8 +15899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBootReqNotifyCount]\n");
 
 void __load_and_call_sceKernelGetBootReqNotifyCount();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetBootReqNotifyCount = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetBootReqNotifyCount);
+void* __ptr_sceKernelGetBootReqNotifyCount = &__load_and_call_sceKernelGetBootReqNotifyCount;
 
 static void
 __load_sceKernelGetBootReqNotifyCount() {
@@ -16428,8 +15931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBuildNumber]\n");
 
 void __load_and_call_sceKernelGetBuildNumber();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetBuildNumber = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetBuildNumber);
+void* __ptr_sceKernelGetBuildNumber = &__load_and_call_sceKernelGetBuildNumber;
 
 static void
 __load_sceKernelGetBuildNumber() {
@@ -16461,8 +15963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCallRecord]\n");
 
 void __load_and_call_sceKernelGetCallRecord();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCallRecord = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCallRecord);
+void* __ptr_sceKernelGetCallRecord = &__load_and_call_sceKernelGetCallRecord;
 
 static void
 __load_sceKernelGetCallRecord() {
@@ -16494,8 +15995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCompiledSdkVersion]\n");
 
 void __load_and_call_sceKernelGetCompiledSdkVersion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCompiledSdkVersion = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCompiledSdkVersion);
+void* __ptr_sceKernelGetCompiledSdkVersion = &__load_and_call_sceKernelGetCompiledSdkVersion;
 
 static void
 __load_sceKernelGetCompiledSdkVersion() {
@@ -16527,8 +16027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCompiledSdkVersionByPath]\n");
 
 void __load_and_call_sceKernelGetCompiledSdkVersionByPath();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCompiledSdkVersionByPath = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCompiledSdkVersionByPath);
+void* __ptr_sceKernelGetCompiledSdkVersionByPath = &__load_and_call_sceKernelGetCompiledSdkVersionByPath;
 
 static void
 __load_sceKernelGetCompiledSdkVersionByPath() {
@@ -16560,8 +16059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCompiledSdkVersionByPid]\n");
 
 void __load_and_call_sceKernelGetCompiledSdkVersionByPid();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCompiledSdkVersionByPid = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCompiledSdkVersionByPid);
+void* __ptr_sceKernelGetCompiledSdkVersionByPid = &__load_and_call_sceKernelGetCompiledSdkVersionByPid;
 
 static void
 __load_sceKernelGetCompiledSdkVersionByPid() {
@@ -16593,8 +16091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuFrequency]\n");
 
 void __load_and_call_sceKernelGetCpuFrequency();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpuFrequency = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpuFrequency);
+void* __ptr_sceKernelGetCpuFrequency = &__load_and_call_sceKernelGetCpuFrequency;
 
 static void
 __load_sceKernelGetCpuFrequency() {
@@ -16626,8 +16123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuTemperature]\n");
 
 void __load_and_call_sceKernelGetCpuTemperature();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpuTemperature = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpuTemperature);
+void* __ptr_sceKernelGetCpuTemperature = &__load_and_call_sceKernelGetCpuTemperature;
 
 static void
 __load_sceKernelGetCpuTemperature() {
@@ -16659,8 +16155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsage]\n");
 
 void __load_and_call_sceKernelGetCpuUsage();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpuUsage = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpuUsage);
+void* __ptr_sceKernelGetCpuUsage = &__load_and_call_sceKernelGetCpuUsage;
 
 static void
 __load_sceKernelGetCpuUsage() {
@@ -16692,8 +16187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsageAll]\n");
 
 void __load_and_call_sceKernelGetCpuUsageAll();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpuUsageAll = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpuUsageAll);
+void* __ptr_sceKernelGetCpuUsageAll = &__load_and_call_sceKernelGetCpuUsageAll;
 
 static void
 __load_sceKernelGetCpuUsageAll() {
@@ -16725,8 +16219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsageProc]\n");
 
 void __load_and_call_sceKernelGetCpuUsageProc();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpuUsageProc = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpuUsageProc);
+void* __ptr_sceKernelGetCpuUsageProc = &__load_and_call_sceKernelGetCpuUsageProc;
 
 static void
 __load_sceKernelGetCpuUsageProc() {
@@ -16758,8 +16251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsageProc2]\n");
 
 void __load_and_call_sceKernelGetCpuUsageProc2();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpuUsageProc2 = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpuUsageProc2);
+void* __ptr_sceKernelGetCpuUsageProc2 = &__load_and_call_sceKernelGetCpuUsageProc2;
 
 static void
 __load_sceKernelGetCpuUsageProc2() {
@@ -16791,8 +16283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsageThread]\n");
 
 void __load_and_call_sceKernelGetCpuUsageThread();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpuUsageThread = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpuUsageThread);
+void* __ptr_sceKernelGetCpuUsageThread = &__load_and_call_sceKernelGetCpuUsageThread;
 
 static void
 __load_sceKernelGetCpuUsageThread() {
@@ -16824,8 +16315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpumode]\n");
 
 void __load_and_call_sceKernelGetCpumode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpumode = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpumode);
+void* __ptr_sceKernelGetCpumode = &__load_and_call_sceKernelGetCpumode;
 
 static void
 __load_sceKernelGetCpumode() {
@@ -16857,8 +16347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpumodeGame]\n");
 
 void __load_and_call_sceKernelGetCpumodeGame();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCpumodeGame = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCpumodeGame);
+void* __ptr_sceKernelGetCpumodeGame = &__load_and_call_sceKernelGetCpumodeGame;
 
 static void
 __load_sceKernelGetCpumodeGame() {
@@ -16890,8 +16379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCurrentCpu]\n");
 
 void __load_and_call_sceKernelGetCurrentCpu();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetCurrentCpu = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetCurrentCpu);
+void* __ptr_sceKernelGetCurrentCpu = &__load_and_call_sceKernelGetCurrentCpu;
 
 static void
 __load_sceKernelGetCurrentCpu() {
@@ -16923,8 +16411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDataTransferMode]\n");
 
 void __load_and_call_sceKernelGetDataTransferMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetDataTransferMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetDataTransferMode);
+void* __ptr_sceKernelGetDataTransferMode = &__load_and_call_sceKernelGetDataTransferMode;
 
 static void
 __load_sceKernelGetDataTransferMode() {
@@ -16956,8 +16443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDebugMenuMiniModeForRcmgr]\n");
 
 void __load_and_call_sceKernelGetDebugMenuMiniModeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetDebugMenuMiniModeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetDebugMenuMiniModeForRcmgr);
+void* __ptr_sceKernelGetDebugMenuMiniModeForRcmgr = &__load_and_call_sceKernelGetDebugMenuMiniModeForRcmgr;
 
 static void
 __load_sceKernelGetDebugMenuMiniModeForRcmgr() {
@@ -16989,8 +16475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDebugMenuModeForPsmForRcmgr]\n");
 
 void __load_and_call_sceKernelGetDebugMenuModeForPsmForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetDebugMenuModeForPsmForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetDebugMenuModeForPsmForRcmgr);
+void* __ptr_sceKernelGetDebugMenuModeForPsmForRcmgr = &__load_and_call_sceKernelGetDebugMenuModeForPsmForRcmgr;
 
 static void
 __load_sceKernelGetDebugMenuModeForPsmForRcmgr() {
@@ -17022,8 +16507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDebugMenuModeForRcmgr]\n");
 
 void __load_and_call_sceKernelGetDebugMenuModeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetDebugMenuModeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetDebugMenuModeForRcmgr);
+void* __ptr_sceKernelGetDebugMenuModeForRcmgr = &__load_and_call_sceKernelGetDebugMenuModeForRcmgr;
 
 static void
 __load_sceKernelGetDebugMenuModeForRcmgr() {
@@ -17055,8 +16539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDefaultToolMemorySize]\n");
 
 void __load_and_call_sceKernelGetDefaultToolMemorySize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetDefaultToolMemorySize = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetDefaultToolMemorySize);
+void* __ptr_sceKernelGetDefaultToolMemorySize = &__load_and_call_sceKernelGetDefaultToolMemorySize;
 
 static void
 __load_sceKernelGetDefaultToolMemorySize() {
@@ -17088,8 +16571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDirectMemorySize]\n");
 
 void __load_and_call_sceKernelGetDirectMemorySize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetDirectMemorySize = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetDirectMemorySize);
+void* __ptr_sceKernelGetDirectMemorySize = &__load_and_call_sceKernelGetDirectMemorySize;
 
 static void
 __load_sceKernelGetDirectMemorySize() {
@@ -17121,8 +16603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDirectMemoryType]\n");
 
 void __load_and_call_sceKernelGetDirectMemoryType();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetDirectMemoryType = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetDirectMemoryType);
+void* __ptr_sceKernelGetDirectMemoryType = &__load_and_call_sceKernelGetDirectMemoryType;
 
 static void
 __load_sceKernelGetDirectMemoryType() {
@@ -17154,8 +16635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventData]\n");
 
 void __load_and_call_sceKernelGetEventData();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetEventData = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetEventData);
+void* __ptr_sceKernelGetEventData = &__load_and_call_sceKernelGetEventData;
 
 static void
 __load_sceKernelGetEventData() {
@@ -17187,8 +16667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventError]\n");
 
 void __load_and_call_sceKernelGetEventError();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetEventError = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetEventError);
+void* __ptr_sceKernelGetEventError = &__load_and_call_sceKernelGetEventError;
 
 static void
 __load_sceKernelGetEventError() {
@@ -17220,8 +16699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventFflags]\n");
 
 void __load_and_call_sceKernelGetEventFflags();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetEventFflags = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetEventFflags);
+void* __ptr_sceKernelGetEventFflags = &__load_and_call_sceKernelGetEventFflags;
 
 static void
 __load_sceKernelGetEventFflags() {
@@ -17253,8 +16731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventFilter]\n");
 
 void __load_and_call_sceKernelGetEventFilter();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetEventFilter = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetEventFilter);
+void* __ptr_sceKernelGetEventFilter = &__load_and_call_sceKernelGetEventFilter;
 
 static void
 __load_sceKernelGetEventFilter() {
@@ -17286,8 +16763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventId]\n");
 
 void __load_and_call_sceKernelGetEventId();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetEventId = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetEventId);
+void* __ptr_sceKernelGetEventId = &__load_and_call_sceKernelGetEventId;
 
 static void
 __load_sceKernelGetEventId() {
@@ -17319,8 +16795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventUserData]\n");
 
 void __load_and_call_sceKernelGetEventUserData();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetEventUserData = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetEventUserData);
+void* __ptr_sceKernelGetEventUserData = &__load_and_call_sceKernelGetEventUserData;
 
 static void
 __load_sceKernelGetEventUserData() {
@@ -17352,8 +16827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetExecutableModuleHandle]\n");
 
 void __load_and_call_sceKernelGetExecutableModuleHandle();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetExecutableModuleHandle = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetExecutableModuleHandle);
+void* __ptr_sceKernelGetExecutableModuleHandle = &__load_and_call_sceKernelGetExecutableModuleHandle;
 
 static void
 __load_sceKernelGetExecutableModuleHandle() {
@@ -17385,8 +16859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetExtLibcHandle]\n");
 
 void __load_and_call_sceKernelGetExtLibcHandle();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetExtLibcHandle = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetExtLibcHandle);
+void* __ptr_sceKernelGetExtLibcHandle = &__load_and_call_sceKernelGetExtLibcHandle;
 
 static void
 __load_sceKernelGetExtLibcHandle() {
@@ -17418,8 +16891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetFakeFinalizeMenuForRcmgr]\n");
 
 void __load_and_call_sceKernelGetFakeFinalizeMenuForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetFakeFinalizeMenuForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetFakeFinalizeMenuForRcmgr);
+void* __ptr_sceKernelGetFakeFinalizeMenuForRcmgr = &__load_and_call_sceKernelGetFakeFinalizeMenuForRcmgr;
 
 static void
 __load_sceKernelGetFakeFinalizeMenuForRcmgr() {
@@ -17451,8 +16923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetFlagedUpdaterForRcmgr]\n");
 
 void __load_and_call_sceKernelGetFlagedUpdaterForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetFlagedUpdaterForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetFlagedUpdaterForRcmgr);
+void* __ptr_sceKernelGetFlagedUpdaterForRcmgr = &__load_and_call_sceKernelGetFlagedUpdaterForRcmgr;
 
 static void
 __load_sceKernelGetFlagedUpdaterForRcmgr() {
@@ -17484,8 +16955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetForceUpdateModeForRcmgr]\n");
 
 void __load_and_call_sceKernelGetForceUpdateModeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetForceUpdateModeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetForceUpdateModeForRcmgr);
+void* __ptr_sceKernelGetForceUpdateModeForRcmgr = &__load_and_call_sceKernelGetForceUpdateModeForRcmgr;
 
 static void
 __load_sceKernelGetForceUpdateModeForRcmgr() {
@@ -17517,8 +16987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetFsSandboxRandomWord]\n");
 
 void __load_and_call_sceKernelGetFsSandboxRandomWord();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetFsSandboxRandomWord = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetFsSandboxRandomWord);
+void* __ptr_sceKernelGetFsSandboxRandomWord = &__load_and_call_sceKernelGetFsSandboxRandomWord;
 
 static void
 __load_sceKernelGetFsSandboxRandomWord() {
@@ -17550,8 +17019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetGPI]\n");
 
 void __load_and_call_sceKernelGetGPI();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetGPI = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetGPI);
+void* __ptr_sceKernelGetGPI = &__load_and_call_sceKernelGetGPI;
 
 static void
 __load_sceKernelGetGPI() {
@@ -17583,8 +17051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetGPO]\n");
 
 void __load_and_call_sceKernelGetGPO();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetGPO = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetGPO);
+void* __ptr_sceKernelGetGPO = &__load_and_call_sceKernelGetGPO;
 
 static void
 __load_sceKernelGetGPO() {
@@ -17616,8 +17083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetHwFeatureInfoForDecid]\n");
 
 void __load_and_call_sceKernelGetHwFeatureInfoForDecid();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetHwFeatureInfoForDecid = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetHwFeatureInfoForDecid);
+void* __ptr_sceKernelGetHwFeatureInfoForDecid = &__load_and_call_sceKernelGetHwFeatureInfoForDecid;
 
 static void
 __load_sceKernelGetHwFeatureInfoForDecid() {
@@ -17649,8 +17115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetIdPs]\n");
 
 void __load_and_call_sceKernelGetIdPs();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetIdPs = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetIdPs);
+void* __ptr_sceKernelGetIdPs = &__load_and_call_sceKernelGetIdPs;
 
 static void
 __load_sceKernelGetIdPs() {
@@ -17682,8 +17147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetIdTableCurrentCount]\n");
 
 void __load_and_call_sceKernelGetIdTableCurrentCount();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetIdTableCurrentCount = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetIdTableCurrentCount);
+void* __ptr_sceKernelGetIdTableCurrentCount = &__load_and_call_sceKernelGetIdTableCurrentCount;
 
 static void
 __load_sceKernelGetIdTableCurrentCount() {
@@ -17715,8 +17179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetIpcPath]\n");
 
 void __load_and_call_sceKernelGetIpcPath();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetIpcPath = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetIpcPath);
+void* __ptr_sceKernelGetIpcPath = &__load_and_call_sceKernelGetIpcPath;
 
 static void
 __load_sceKernelGetIpcPath() {
@@ -17748,8 +17211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetKnobs]\n");
 
 void __load_and_call_sceKernelGetKnobs();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetKnobs = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetKnobs);
+void* __ptr_sceKernelGetKnobs = &__load_and_call_sceKernelGetKnobs;
 
 static void
 __load_sceKernelGetKnobs() {
@@ -17781,8 +17243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetLibkernelTextLocation]\n");
 
 void __load_and_call_sceKernelGetLibkernelTextLocation();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetLibkernelTextLocation = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetLibkernelTextLocation);
+void* __ptr_sceKernelGetLibkernelTextLocation = &__load_and_call_sceKernelGetLibkernelTextLocation;
 
 static void
 __load_sceKernelGetLibkernelTextLocation() {
@@ -17814,8 +17275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetMainSocId]\n");
 
 void __load_and_call_sceKernelGetMainSocId();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetMainSocId = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetMainSocId);
+void* __ptr_sceKernelGetMainSocId = &__load_and_call_sceKernelGetMainSocId;
 
 static void
 __load_sceKernelGetMainSocId() {
@@ -17847,8 +17307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleInfo]\n");
 
 void __load_and_call_sceKernelGetModuleInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetModuleInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetModuleInfo);
+void* __ptr_sceKernelGetModuleInfo = &__load_and_call_sceKernelGetModuleInfo;
 
 static void
 __load_sceKernelGetModuleInfo() {
@@ -17880,8 +17339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleInfoForUnwind]\n");
 
 void __load_and_call_sceKernelGetModuleInfoForUnwind();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetModuleInfoForUnwind = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetModuleInfoForUnwind);
+void* __ptr_sceKernelGetModuleInfoForUnwind = &__load_and_call_sceKernelGetModuleInfoForUnwind;
 
 static void
 __load_sceKernelGetModuleInfoForUnwind() {
@@ -17913,8 +17371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleInfoFromAddr]\n");
 
 void __load_and_call_sceKernelGetModuleInfoFromAddr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetModuleInfoFromAddr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetModuleInfoFromAddr);
+void* __ptr_sceKernelGetModuleInfoFromAddr = &__load_and_call_sceKernelGetModuleInfoFromAddr;
 
 static void
 __load_sceKernelGetModuleInfoFromAddr() {
@@ -17946,8 +17403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleInfoInternal]\n");
 
 void __load_and_call_sceKernelGetModuleInfoInternal();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetModuleInfoInternal = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetModuleInfoInternal);
+void* __ptr_sceKernelGetModuleInfoInternal = &__load_and_call_sceKernelGetModuleInfoInternal;
 
 static void
 __load_sceKernelGetModuleInfoInternal() {
@@ -17979,8 +17435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleList]\n");
 
 void __load_and_call_sceKernelGetModuleList();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetModuleList = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetModuleList);
+void* __ptr_sceKernelGetModuleList = &__load_and_call_sceKernelGetModuleList;
 
 static void
 __load_sceKernelGetModuleList() {
@@ -18012,8 +17467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleListInternal]\n");
 
 void __load_and_call_sceKernelGetModuleListInternal();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetModuleListInternal = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetModuleListInternal);
+void* __ptr_sceKernelGetModuleListInternal = &__load_and_call_sceKernelGetModuleListInternal;
 
 static void
 __load_sceKernelGetModuleListInternal() {
@@ -18045,8 +17499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetOpenPsIdForSystem]\n");
 
 void __load_and_call_sceKernelGetOpenPsIdForSystem();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetOpenPsIdForSystem = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetOpenPsIdForSystem);
+void* __ptr_sceKernelGetOpenPsIdForSystem = &__load_and_call_sceKernelGetOpenPsIdForSystem;
 
 static void
 __load_sceKernelGetOpenPsIdForSystem() {
@@ -18078,8 +17531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPageTableStats]\n");
 
 void __load_and_call_sceKernelGetPageTableStats();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPageTableStats = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPageTableStats);
+void* __ptr_sceKernelGetPageTableStats = &__load_and_call_sceKernelGetPageTableStats;
 
 static void
 __load_sceKernelGetPageTableStats() {
@@ -18111,8 +17563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPagingStatsOfAllObjects]\n");
 
 void __load_and_call_sceKernelGetPagingStatsOfAllObjects();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPagingStatsOfAllObjects = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPagingStatsOfAllObjects);
+void* __ptr_sceKernelGetPagingStatsOfAllObjects = &__load_and_call_sceKernelGetPagingStatsOfAllObjects;
 
 static void
 __load_sceKernelGetPagingStatsOfAllObjects() {
@@ -18144,8 +17595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPagingStatsOfAllThreads]\n");
 
 void __load_and_call_sceKernelGetPagingStatsOfAllThreads();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPagingStatsOfAllThreads = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPagingStatsOfAllThreads);
+void* __ptr_sceKernelGetPagingStatsOfAllThreads = &__load_and_call_sceKernelGetPagingStatsOfAllThreads;
 
 static void
 __load_sceKernelGetPagingStatsOfAllThreads() {
@@ -18177,8 +17627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPhysPageSize]\n");
 
 void __load_and_call_sceKernelGetPhysPageSize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPhysPageSize = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPhysPageSize);
+void* __ptr_sceKernelGetPhysPageSize = &__load_and_call_sceKernelGetPhysPageSize;
 
 static void
 __load_sceKernelGetPhysPageSize() {
@@ -18210,8 +17659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPrefixVersion]\n");
 
 void __load_and_call_sceKernelGetPrefixVersion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPrefixVersion = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPrefixVersion);
+void* __ptr_sceKernelGetPrefixVersion = &__load_and_call_sceKernelGetPrefixVersion;
 
 static void
 __load_sceKernelGetPrefixVersion() {
@@ -18243,8 +17691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcParam]\n");
 
 void __load_and_call_sceKernelGetProcParam();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProcParam = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProcParam);
+void* __ptr_sceKernelGetProcParam = &__load_and_call_sceKernelGetProcParam;
 
 static void
 __load_sceKernelGetProcParam() {
@@ -18276,8 +17723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessAbiType]\n");
 
 void __load_and_call_sceKernelGetProcessAbiType();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProcessAbiType = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProcessAbiType);
+void* __ptr_sceKernelGetProcessAbiType = &__load_and_call_sceKernelGetProcessAbiType;
 
 static void
 __load_sceKernelGetProcessAbiType() {
@@ -18309,8 +17755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessName]\n");
 
 void __load_and_call_sceKernelGetProcessName();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProcessName = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProcessName);
+void* __ptr_sceKernelGetProcessName = &__load_and_call_sceKernelGetProcessName;
 
 static void
 __load_sceKernelGetProcessName() {
@@ -18342,8 +17787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessTime]\n");
 
 void __load_and_call_sceKernelGetProcessTime();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProcessTime = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProcessTime);
+void* __ptr_sceKernelGetProcessTime = &__load_and_call_sceKernelGetProcessTime;
 
 static void
 __load_sceKernelGetProcessTime() {
@@ -18375,8 +17819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessTimeCounter]\n");
 
 void __load_and_call_sceKernelGetProcessTimeCounter();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProcessTimeCounter = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProcessTimeCounter);
+void* __ptr_sceKernelGetProcessTimeCounter = &__load_and_call_sceKernelGetProcessTimeCounter;
 
 static void
 __load_sceKernelGetProcessTimeCounter() {
@@ -18408,8 +17851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessTimeCounterFrequency]\n");
 
 void __load_and_call_sceKernelGetProcessTimeCounterFrequency();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProcessTimeCounterFrequency = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProcessTimeCounterFrequency);
+void* __ptr_sceKernelGetProcessTimeCounterFrequency = &__load_and_call_sceKernelGetProcessTimeCounterFrequency;
 
 static void
 __load_sceKernelGetProcessTimeCounterFrequency() {
@@ -18441,8 +17883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessType]\n");
 
 void __load_and_call_sceKernelGetProcessType();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProcessType = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProcessType);
+void* __ptr_sceKernelGetProcessType = &__load_and_call_sceKernelGetProcessType;
 
 static void
 __load_sceKernelGetProcessType() {
@@ -18474,8 +17915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProductCode]\n");
 
 void __load_and_call_sceKernelGetProductCode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProductCode = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProductCode);
+void* __ptr_sceKernelGetProductCode = &__load_and_call_sceKernelGetProductCode;
 
 static void
 __load_sceKernelGetProductCode() {
@@ -18507,8 +17947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProductStr]\n");
 
 void __load_and_call_sceKernelGetProductStr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProductStr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProductStr);
+void* __ptr_sceKernelGetProductStr = &__load_and_call_sceKernelGetProductStr;
 
 static void
 __load_sceKernelGetProductStr() {
@@ -18540,8 +17979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProsperoSystemSwVersion]\n");
 
 void __load_and_call_sceKernelGetProsperoSystemSwVersion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetProsperoSystemSwVersion = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetProsperoSystemSwVersion);
+void* __ptr_sceKernelGetProsperoSystemSwVersion = &__load_and_call_sceKernelGetProsperoSystemSwVersion;
 
 static void
 __load_sceKernelGetProsperoSystemSwVersion() {
@@ -18573,8 +18011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPrtAperture]\n");
 
 void __load_and_call_sceKernelGetPrtAperture();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPrtAperture = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPrtAperture);
+void* __ptr_sceKernelGetPrtAperture = &__load_and_call_sceKernelGetPrtAperture;
 
 static void
 __load_sceKernelGetPrtAperture() {
@@ -18606,8 +18043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPs4SystemSwVersion]\n");
 
 void __load_and_call_sceKernelGetPs4SystemSwVersion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPs4SystemSwVersion = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPs4SystemSwVersion);
+void* __ptr_sceKernelGetPs4SystemSwVersion = &__load_and_call_sceKernelGetPs4SystemSwVersion;
 
 static void
 __load_sceKernelGetPs4SystemSwVersion() {
@@ -18639,8 +18075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPsmIntdevModeForRcmgr]\n");
 
 void __load_and_call_sceKernelGetPsmIntdevModeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPsmIntdevModeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPsmIntdevModeForRcmgr);
+void* __ptr_sceKernelGetPsmIntdevModeForRcmgr = &__load_and_call_sceKernelGetPsmIntdevModeForRcmgr;
 
 static void
 __load_sceKernelGetPsmIntdevModeForRcmgr() {
@@ -18672,8 +18107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPsnAccessTraceLogForRcmgr]\n");
 
 void __load_and_call_sceKernelGetPsnAccessTraceLogForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetPsnAccessTraceLogForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetPsnAccessTraceLogForRcmgr);
+void* __ptr_sceKernelGetPsnAccessTraceLogForRcmgr = &__load_and_call_sceKernelGetPsnAccessTraceLogForRcmgr;
 
 static void
 __load_sceKernelGetPsnAccessTraceLogForRcmgr() {
@@ -18705,8 +18139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetQafExpirationTimeNotafterForRcmgr]\n");
 
 void __load_and_call_sceKernelGetQafExpirationTimeNotafterForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetQafExpirationTimeNotafterForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetQafExpirationTimeNotafterForRcmgr);
+void* __ptr_sceKernelGetQafExpirationTimeNotafterForRcmgr = &__load_and_call_sceKernelGetQafExpirationTimeNotafterForRcmgr;
 
 static void
 __load_sceKernelGetQafExpirationTimeNotafterForRcmgr() {
@@ -18738,8 +18171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetQafExpirationTimeNotbeforeForRcmgr]\n");
 
 void __load_and_call_sceKernelGetQafExpirationTimeNotbeforeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetQafExpirationTimeNotbeforeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetQafExpirationTimeNotbeforeForRcmgr);
+void* __ptr_sceKernelGetQafExpirationTimeNotbeforeForRcmgr = &__load_and_call_sceKernelGetQafExpirationTimeNotbeforeForRcmgr;
 
 static void
 __load_sceKernelGetQafExpirationTimeNotbeforeForRcmgr() {
@@ -18771,8 +18203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetQafGenerationForRcmgr]\n");
 
 void __load_and_call_sceKernelGetQafGenerationForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetQafGenerationForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetQafGenerationForRcmgr);
+void* __ptr_sceKernelGetQafGenerationForRcmgr = &__load_and_call_sceKernelGetQafGenerationForRcmgr;
 
 static void
 __load_sceKernelGetQafGenerationForRcmgr() {
@@ -18804,8 +18235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetQafNameForRcmgr]\n");
 
 void __load_and_call_sceKernelGetQafNameForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetQafNameForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetQafNameForRcmgr);
+void* __ptr_sceKernelGetQafNameForRcmgr = &__load_and_call_sceKernelGetQafNameForRcmgr;
 
 static void
 __load_sceKernelGetQafNameForRcmgr() {
@@ -18837,8 +18267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetRenderingMode]\n");
 
 void __load_and_call_sceKernelGetRenderingMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetRenderingMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetRenderingMode);
+void* __ptr_sceKernelGetRenderingMode = &__load_and_call_sceKernelGetRenderingMode;
 
 static void
 __load_sceKernelGetRenderingMode() {
@@ -18870,8 +18299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetResidentCount]\n");
 
 void __load_and_call_sceKernelGetResidentCount();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetResidentCount = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetResidentCount);
+void* __ptr_sceKernelGetResidentCount = &__load_and_call_sceKernelGetResidentCount;
 
 static void
 __load_sceKernelGetResidentCount() {
@@ -18903,8 +18331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetResidentFmemCount]\n");
 
 void __load_and_call_sceKernelGetResidentFmemCount();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetResidentFmemCount = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetResidentFmemCount);
+void* __ptr_sceKernelGetResidentFmemCount = &__load_and_call_sceKernelGetResidentFmemCount;
 
 static void
 __load_sceKernelGetResidentFmemCount() {
@@ -18936,8 +18363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSafemode]\n");
 
 void __load_and_call_sceKernelGetSafemode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSafemode = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSafemode);
+void* __ptr_sceKernelGetSafemode = &__load_and_call_sceKernelGetSafemode;
 
 static void
 __load_sceKernelGetSafemode() {
@@ -18969,8 +18395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSanitizerMallocReplace]\n");
 
 void __load_and_call_sceKernelGetSanitizerMallocReplace();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSanitizerMallocReplace = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSanitizerMallocReplace);
+void* __ptr_sceKernelGetSanitizerMallocReplace = &__load_and_call_sceKernelGetSanitizerMallocReplace;
 
 static void
 __load_sceKernelGetSanitizerMallocReplace() {
@@ -19002,8 +18427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSanitizerMallocReplaceExternal]\n");
 
 void __load_and_call_sceKernelGetSanitizerMallocReplaceExternal();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSanitizerMallocReplaceExternal = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSanitizerMallocReplaceExternal);
+void* __ptr_sceKernelGetSanitizerMallocReplaceExternal = &__load_and_call_sceKernelGetSanitizerMallocReplaceExternal;
 
 static void
 __load_sceKernelGetSanitizerMallocReplaceExternal() {
@@ -19035,8 +18459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSanitizerNewReplace]\n");
 
 void __load_and_call_sceKernelGetSanitizerNewReplace();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSanitizerNewReplace = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSanitizerNewReplace);
+void* __ptr_sceKernelGetSanitizerNewReplace = &__load_and_call_sceKernelGetSanitizerNewReplace;
 
 static void
 __load_sceKernelGetSanitizerNewReplace() {
@@ -19068,8 +18491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSanitizerNewReplaceExternal]\n");
 
 void __load_and_call_sceKernelGetSanitizerNewReplaceExternal();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSanitizerNewReplaceExternal = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSanitizerNewReplaceExternal);
+void* __ptr_sceKernelGetSanitizerNewReplaceExternal = &__load_and_call_sceKernelGetSanitizerNewReplaceExternal;
 
 static void
 __load_sceKernelGetSanitizerNewReplaceExternal() {
@@ -19101,8 +18523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSocClock]\n");
 
 void __load_and_call_sceKernelGetSocClock();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSocClock = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSocClock);
+void* __ptr_sceKernelGetSocClock = &__load_and_call_sceKernelGetSocClock;
 
 static void
 __load_sceKernelGetSocClock() {
@@ -19134,8 +18555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSocPowerConsumption]\n");
 
 void __load_and_call_sceKernelGetSocPowerConsumption();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSocPowerConsumption = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSocPowerConsumption);
+void* __ptr_sceKernelGetSocPowerConsumption = &__load_and_call_sceKernelGetSocPowerConsumption;
 
 static void
 __load_sceKernelGetSocPowerConsumption() {
@@ -19167,8 +18587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSocSensorTemperature]\n");
 
 void __load_and_call_sceKernelGetSocSensorTemperature();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSocSensorTemperature = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSocSensorTemperature);
+void* __ptr_sceKernelGetSocSensorTemperature = &__load_and_call_sceKernelGetSocSensorTemperature;
 
 static void
 __load_sceKernelGetSocSensorTemperature() {
@@ -19200,8 +18619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSpecialIForRcmgr]\n");
 
 void __load_and_call_sceKernelGetSpecialIForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSpecialIForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSpecialIForRcmgr);
+void* __ptr_sceKernelGetSpecialIForRcmgr = &__load_and_call_sceKernelGetSpecialIForRcmgr;
 
 static void
 __load_sceKernelGetSpecialIForRcmgr() {
@@ -19233,8 +18651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSubsysId]\n");
 
 void __load_and_call_sceKernelGetSubsysId();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSubsysId = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSubsysId);
+void* __ptr_sceKernelGetSubsysId = &__load_and_call_sceKernelGetSubsysId;
 
 static void
 __load_sceKernelGetSubsysId() {
@@ -19266,8 +18683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSubsysSubId]\n");
 
 void __load_and_call_sceKernelGetSubsysSubId();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSubsysSubId = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSubsysSubId);
+void* __ptr_sceKernelGetSubsysSubId = &__load_and_call_sceKernelGetSubsysSubId;
 
 static void
 __load_sceKernelGetSubsysSubId() {
@@ -19299,8 +18715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSystemExVersion]\n");
 
 void __load_and_call_sceKernelGetSystemExVersion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSystemExVersion = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSystemExVersion);
+void* __ptr_sceKernelGetSystemExVersion = &__load_and_call_sceKernelGetSystemExVersion;
 
 static void
 __load_sceKernelGetSystemExVersion() {
@@ -19332,8 +18747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSystemLevelDebuggerModeForRcmgr]\n");
 
 void __load_and_call_sceKernelGetSystemLevelDebuggerModeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSystemLevelDebuggerModeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSystemLevelDebuggerModeForRcmgr);
+void* __ptr_sceKernelGetSystemLevelDebuggerModeForRcmgr = &__load_and_call_sceKernelGetSystemLevelDebuggerModeForRcmgr;
 
 static void
 __load_sceKernelGetSystemLevelDebuggerModeForRcmgr() {
@@ -19365,8 +18779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSystemSwBeta]\n");
 
 void __load_and_call_sceKernelGetSystemSwBeta();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSystemSwBeta = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSystemSwBeta);
+void* __ptr_sceKernelGetSystemSwBeta = &__load_and_call_sceKernelGetSystemSwBeta;
 
 static void
 __load_sceKernelGetSystemSwBeta() {
@@ -19398,8 +18811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSystemSwVersion]\n");
 
 void __load_and_call_sceKernelGetSystemSwVersion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetSystemSwVersion = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetSystemSwVersion);
+void* __ptr_sceKernelGetSystemSwVersion = &__load_and_call_sceKernelGetSystemSwVersion;
 
 static void
 __load_sceKernelGetSystemSwVersion() {
@@ -19431,8 +18843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetThreadName]\n");
 
 void __load_and_call_sceKernelGetThreadName();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetThreadName = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetThreadName);
+void* __ptr_sceKernelGetThreadName = &__load_and_call_sceKernelGetThreadName;
 
 static void
 __load_sceKernelGetThreadName() {
@@ -19464,8 +18875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetTraceMemoryStats]\n");
 
 void __load_and_call_sceKernelGetTraceMemoryStats();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetTraceMemoryStats = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetTraceMemoryStats);
+void* __ptr_sceKernelGetTraceMemoryStats = &__load_and_call_sceKernelGetTraceMemoryStats;
 
 static void
 __load_sceKernelGetTraceMemoryStats() {
@@ -19497,8 +18907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetTscFrequency]\n");
 
 void __load_and_call_sceKernelGetTscFrequency();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetTscFrequency = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetTscFrequency);
+void* __ptr_sceKernelGetTscFrequency = &__load_and_call_sceKernelGetTscFrequency;
 
 static void
 __load_sceKernelGetTscFrequency() {
@@ -19530,8 +18939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUniversalMode]\n");
 
 void __load_and_call_sceKernelGetUniversalMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUniversalMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUniversalMode);
+void* __ptr_sceKernelGetUniversalMode = &__load_and_call_sceKernelGetUniversalMode;
 
 static void
 __load_sceKernelGetUniversalMode() {
@@ -19563,8 +18971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUpdVersion]\n");
 
 void __load_and_call_sceKernelGetUpdVersion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUpdVersion = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUpdVersion);
+void* __ptr_sceKernelGetUpdVersion = &__load_and_call_sceKernelGetUpdVersion;
 
 static void
 __load_sceKernelGetUpdVersion() {
@@ -19596,8 +19003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenDataExecutionForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenDataExecutionForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenDataExecutionForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenDataExecutionForRcmgr);
+void* __ptr_sceKernelGetUtokenDataExecutionForRcmgr = &__load_and_call_sceKernelGetUtokenDataExecutionForRcmgr;
 
 static void
 __load_sceKernelGetUtokenDataExecutionForRcmgr() {
@@ -19629,8 +19035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenExpirationTimeNotafterForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenExpirationTimeNotafterForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenExpirationTimeNotafterForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenExpirationTimeNotafterForRcmgr);
+void* __ptr_sceKernelGetUtokenExpirationTimeNotafterForRcmgr = &__load_and_call_sceKernelGetUtokenExpirationTimeNotafterForRcmgr;
 
 static void
 __load_sceKernelGetUtokenExpirationTimeNotafterForRcmgr() {
@@ -19662,8 +19067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr);
+void* __ptr_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr = &__load_and_call_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr;
 
 static void
 __load_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr() {
@@ -19695,8 +19099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenFakeSharefactoryForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenFakeSharefactoryForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenFakeSharefactoryForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenFakeSharefactoryForRcmgr);
+void* __ptr_sceKernelGetUtokenFakeSharefactoryForRcmgr = &__load_and_call_sceKernelGetUtokenFakeSharefactoryForRcmgr;
 
 static void
 __load_sceKernelGetUtokenFakeSharefactoryForRcmgr() {
@@ -19728,8 +19131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenFlagedUpdaterForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenFlagedUpdaterForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenFlagedUpdaterForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenFlagedUpdaterForRcmgr);
+void* __ptr_sceKernelGetUtokenFlagedUpdaterForRcmgr = &__load_and_call_sceKernelGetUtokenFlagedUpdaterForRcmgr;
 
 static void
 __load_sceKernelGetUtokenFlagedUpdaterForRcmgr() {
@@ -19761,8 +19163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenNpEnvSwitchingForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenNpEnvSwitchingForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenNpEnvSwitchingForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenNpEnvSwitchingForRcmgr);
+void* __ptr_sceKernelGetUtokenNpEnvSwitchingForRcmgr = &__load_and_call_sceKernelGetUtokenNpEnvSwitchingForRcmgr;
 
 static void
 __load_sceKernelGetUtokenNpEnvSwitchingForRcmgr() {
@@ -19794,8 +19195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenSaveDataRepairForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenSaveDataRepairForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenSaveDataRepairForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenSaveDataRepairForRcmgr);
+void* __ptr_sceKernelGetUtokenSaveDataRepairForRcmgr = &__load_and_call_sceKernelGetUtokenSaveDataRepairForRcmgr;
 
 static void
 __load_sceKernelGetUtokenSaveDataRepairForRcmgr() {
@@ -19827,8 +19227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenStoreModeForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenStoreModeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenStoreModeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenStoreModeForRcmgr);
+void* __ptr_sceKernelGetUtokenStoreModeForRcmgr = &__load_and_call_sceKernelGetUtokenStoreModeForRcmgr;
 
 static void
 __load_sceKernelGetUtokenStoreModeForRcmgr() {
@@ -19860,8 +19259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenUseSoftwagnerForAcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenUseSoftwagnerForAcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenUseSoftwagnerForAcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenUseSoftwagnerForAcmgr);
+void* __ptr_sceKernelGetUtokenUseSoftwagnerForAcmgr = &__load_and_call_sceKernelGetUtokenUseSoftwagnerForAcmgr;
 
 static void
 __load_sceKernelGetUtokenUseSoftwagnerForAcmgr() {
@@ -19893,8 +19291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenUseSoftwagnerForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenUseSoftwagnerForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenUseSoftwagnerForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenUseSoftwagnerForRcmgr);
+void* __ptr_sceKernelGetUtokenUseSoftwagnerForRcmgr = &__load_and_call_sceKernelGetUtokenUseSoftwagnerForRcmgr;
 
 static void
 __load_sceKernelGetUtokenUseSoftwagnerForRcmgr() {
@@ -19926,8 +19323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr]\n");
 
 void __load_and_call_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr);
+void* __ptr_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr = &__load_and_call_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr;
 
 static void
 __load_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr() {
@@ -19959,8 +19355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetVrCaptureSize]\n");
 
 void __load_and_call_sceKernelGetVrCaptureSize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetVrCaptureSize = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetVrCaptureSize);
+void* __ptr_sceKernelGetVrCaptureSize = &__load_and_call_sceKernelGetVrCaptureSize;
 
 static void
 __load_sceKernelGetVrCaptureSize() {
@@ -19992,8 +19387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetdents]\n");
 
 void __load_and_call_sceKernelGetdents();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetdents = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetdents);
+void* __ptr_sceKernelGetdents = &__load_and_call_sceKernelGetdents;
 
 static void
 __load_sceKernelGetdents() {
@@ -20025,8 +19419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetdirentries]\n");
 
 void __load_and_call_sceKernelGetdirentries();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGetdirentries = (void*)(0x926100000l + (long)__load_and_call_sceKernelGetdirentries);
+void* __ptr_sceKernelGetdirentries = &__load_and_call_sceKernelGetdirentries;
 
 static void
 __load_sceKernelGetdirentries() {
@@ -20058,8 +19451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGettimeofday]\n");
 
 void __load_and_call_sceKernelGettimeofday();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGettimeofday = (void*)(0x926100000l + (long)__load_and_call_sceKernelGettimeofday);
+void* __ptr_sceKernelGettimeofday = &__load_and_call_sceKernelGettimeofday;
 
 static void
 __load_sceKernelGettimeofday() {
@@ -20091,8 +19483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGettimezone]\n");
 
 void __load_and_call_sceKernelGettimezone();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGettimezone = (void*)(0x926100000l + (long)__load_and_call_sceKernelGettimezone);
+void* __ptr_sceKernelGettimezone = &__load_and_call_sceKernelGettimezone;
 
 static void
 __load_sceKernelGettimezone() {
@@ -20124,8 +19515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGiveDirectMemoryToMapper]\n");
 
 void __load_and_call_sceKernelGiveDirectMemoryToMapper();
-static __attribute__ ((used)) void*
-__ptr_sceKernelGiveDirectMemoryToMapper = (void*)(0x926100000l + (long)__load_and_call_sceKernelGiveDirectMemoryToMapper);
+void* __ptr_sceKernelGiveDirectMemoryToMapper = &__load_and_call_sceKernelGiveDirectMemoryToMapper;
 
 static void
 __load_sceKernelGiveDirectMemoryToMapper() {
@@ -20157,8 +19547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelHasNeoMode]\n");
 
 void __load_and_call_sceKernelHasNeoMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelHasNeoMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelHasNeoMode);
+void* __ptr_sceKernelHasNeoMode = &__load_and_call_sceKernelHasNeoMode;
 
 static void
 __load_sceKernelHasNeoMode() {
@@ -20190,8 +19579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelHwGetBdDriveInfo]\n");
 
 void __load_and_call_sceKernelHwGetBdDriveInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelHwGetBdDriveInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelHwGetBdDriveInfo);
+void* __ptr_sceKernelHwGetBdDriveInfo = &__load_and_call_sceKernelHwGetBdDriveInfo;
 
 static void
 __load_sceKernelHwGetBdDriveInfo() {
@@ -20223,8 +19611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelHwHasOpticalOut]\n");
 
 void __load_and_call_sceKernelHwHasOpticalOut();
-static __attribute__ ((used)) void*
-__ptr_sceKernelHwHasOpticalOut = (void*)(0x926100000l + (long)__load_and_call_sceKernelHwHasOpticalOut);
+void* __ptr_sceKernelHwHasOpticalOut = &__load_and_call_sceKernelHwHasOpticalOut;
 
 static void
 __load_sceKernelHwHasOpticalOut() {
@@ -20256,8 +19643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelHwHasWlanBt]\n");
 
 void __load_and_call_sceKernelHwHasWlanBt();
-static __attribute__ ((used)) void*
-__ptr_sceKernelHwHasWlanBt = (void*)(0x926100000l + (long)__load_and_call_sceKernelHwHasWlanBt);
+void* __ptr_sceKernelHwHasWlanBt = &__load_and_call_sceKernelHwHasWlanBt;
 
 static void
 __load_sceKernelHwHasWlanBt() {
@@ -20289,8 +19675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccControlBDPowerState]\n");
 
 void __load_and_call_sceKernelIccControlBDPowerState();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccControlBDPowerState = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccControlBDPowerState);
+void* __ptr_sceKernelIccControlBDPowerState = &__load_and_call_sceKernelIccControlBDPowerState;
 
 static void
 __load_sceKernelIccControlBDPowerState() {
@@ -20322,8 +19707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccControlUSBPowerState]\n");
 
 void __load_and_call_sceKernelIccControlUSBPowerState();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccControlUSBPowerState = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccControlUSBPowerState);
+void* __ptr_sceKernelIccControlUSBPowerState = &__load_and_call_sceKernelIccControlUSBPowerState;
 
 static void
 __load_sceKernelIccControlUSBPowerState() {
@@ -20355,8 +19739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetBDPowerState]\n");
 
 void __load_and_call_sceKernelIccGetBDPowerState();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccGetBDPowerState = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccGetBDPowerState);
+void* __ptr_sceKernelIccGetBDPowerState = &__load_and_call_sceKernelIccGetBDPowerState;
 
 static void
 __load_sceKernelIccGetBDPowerState() {
@@ -20388,8 +19771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetCPMode]\n");
 
 void __load_and_call_sceKernelIccGetCPMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccGetCPMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccGetCPMode);
+void* __ptr_sceKernelIccGetCPMode = &__load_and_call_sceKernelIccGetCPMode;
 
 static void
 __load_sceKernelIccGetCPMode() {
@@ -20421,8 +19803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetCpuInfoBit]\n");
 
 void __load_and_call_sceKernelIccGetCpuInfoBit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccGetCpuInfoBit = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccGetCpuInfoBit);
+void* __ptr_sceKernelIccGetCpuInfoBit = &__load_and_call_sceKernelIccGetCpuInfoBit;
 
 static void
 __load_sceKernelIccGetCpuInfoBit() {
@@ -20454,8 +19835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetPowerNumberOfBootShutdown]\n");
 
 void __load_and_call_sceKernelIccGetPowerNumberOfBootShutdown();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccGetPowerNumberOfBootShutdown = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccGetPowerNumberOfBootShutdown);
+void* __ptr_sceKernelIccGetPowerNumberOfBootShutdown = &__load_and_call_sceKernelIccGetPowerNumberOfBootShutdown;
 
 static void
 __load_sceKernelIccGetPowerNumberOfBootShutdown() {
@@ -20487,8 +19867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetPowerOperatingTime]\n");
 
 void __load_and_call_sceKernelIccGetPowerOperatingTime();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccGetPowerOperatingTime = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccGetPowerOperatingTime);
+void* __ptr_sceKernelIccGetPowerOperatingTime = &__load_and_call_sceKernelIccGetPowerOperatingTime;
 
 static void
 __load_sceKernelIccGetPowerOperatingTime() {
@@ -20520,8 +19899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetPowerUpCause]\n");
 
 void __load_and_call_sceKernelIccGetPowerUpCause();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccGetPowerUpCause = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccGetPowerUpCause);
+void* __ptr_sceKernelIccGetPowerUpCause = &__load_and_call_sceKernelIccGetPowerUpCause;
 
 static void
 __load_sceKernelIccGetPowerUpCause() {
@@ -20553,8 +19931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetThermalAlert]\n");
 
 void __load_and_call_sceKernelIccGetThermalAlert();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccGetThermalAlert = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccGetThermalAlert);
+void* __ptr_sceKernelIccGetThermalAlert = &__load_and_call_sceKernelIccGetThermalAlert;
 
 static void
 __load_sceKernelIccGetThermalAlert() {
@@ -20586,8 +19963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetUSBPowerState]\n");
 
 void __load_and_call_sceKernelIccGetUSBPowerState();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccGetUSBPowerState = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccGetUSBPowerState);
+void* __ptr_sceKernelIccGetUSBPowerState = &__load_and_call_sceKernelIccGetUSBPowerState;
 
 static void
 __load_sceKernelIccGetUSBPowerState() {
@@ -20619,8 +19995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorBootDone]\n");
 
 void __load_and_call_sceKernelIccIndicatorBootDone();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccIndicatorBootDone = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccIndicatorBootDone);
+void* __ptr_sceKernelIccIndicatorBootDone = &__load_and_call_sceKernelIccIndicatorBootDone;
 
 static void
 __load_sceKernelIccIndicatorBootDone() {
@@ -20652,8 +20027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorShutdown]\n");
 
 void __load_and_call_sceKernelIccIndicatorShutdown();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccIndicatorShutdown = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccIndicatorShutdown);
+void* __ptr_sceKernelIccIndicatorShutdown = &__load_and_call_sceKernelIccIndicatorShutdown;
 
 static void
 __load_sceKernelIccIndicatorShutdown() {
@@ -20685,8 +20059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorStandby]\n");
 
 void __load_and_call_sceKernelIccIndicatorStandby();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccIndicatorStandby = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccIndicatorStandby);
+void* __ptr_sceKernelIccIndicatorStandby = &__load_and_call_sceKernelIccIndicatorStandby;
 
 static void
 __load_sceKernelIccIndicatorStandby() {
@@ -20718,8 +20091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorStandbyBoot]\n");
 
 void __load_and_call_sceKernelIccIndicatorStandbyBoot();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccIndicatorStandbyBoot = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccIndicatorStandbyBoot);
+void* __ptr_sceKernelIccIndicatorStandbyBoot = &__load_and_call_sceKernelIccIndicatorStandbyBoot;
 
 static void
 __load_sceKernelIccIndicatorStandbyBoot() {
@@ -20751,8 +20123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorStandbyShutdown]\n");
 
 void __load_and_call_sceKernelIccIndicatorStandbyShutdown();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccIndicatorStandbyShutdown = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccIndicatorStandbyShutdown);
+void* __ptr_sceKernelIccIndicatorStandbyShutdown = &__load_and_call_sceKernelIccIndicatorStandbyShutdown;
 
 static void
 __load_sceKernelIccIndicatorStandbyShutdown() {
@@ -20784,8 +20155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccNotifyBootStatus]\n");
 
 void __load_and_call_sceKernelIccNotifyBootStatus();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccNotifyBootStatus = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccNotifyBootStatus);
+void* __ptr_sceKernelIccNotifyBootStatus = &__load_and_call_sceKernelIccNotifyBootStatus;
 
 static void
 __load_sceKernelIccNotifyBootStatus() {
@@ -20817,8 +20187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccNvsFlush]\n");
 
 void __load_and_call_sceKernelIccNvsFlush();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccNvsFlush = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccNvsFlush);
+void* __ptr_sceKernelIccNvsFlush = &__load_and_call_sceKernelIccNvsFlush;
 
 static void
 __load_sceKernelIccNvsFlush() {
@@ -20850,8 +20219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccReadPowerBootMessage]\n");
 
 void __load_and_call_sceKernelIccReadPowerBootMessage();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccReadPowerBootMessage = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccReadPowerBootMessage);
+void* __ptr_sceKernelIccReadPowerBootMessage = &__load_and_call_sceKernelIccReadPowerBootMessage;
 
 static void
 __load_sceKernelIccReadPowerBootMessage() {
@@ -20883,8 +20251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccSetBuzzer]\n");
 
 void __load_and_call_sceKernelIccSetBuzzer();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccSetBuzzer = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccSetBuzzer);
+void* __ptr_sceKernelIccSetBuzzer = &__load_and_call_sceKernelIccSetBuzzer;
 
 static void
 __load_sceKernelIccSetBuzzer() {
@@ -20916,8 +20283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccSetCPMode]\n");
 
 void __load_and_call_sceKernelIccSetCPMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccSetCPMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccSetCPMode);
+void* __ptr_sceKernelIccSetCPMode = &__load_and_call_sceKernelIccSetCPMode;
 
 static void
 __load_sceKernelIccSetCPMode() {
@@ -20949,8 +20315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccSetCpuInfoBit]\n");
 
 void __load_and_call_sceKernelIccSetCpuInfoBit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccSetCpuInfoBit = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccSetCpuInfoBit);
+void* __ptr_sceKernelIccSetCpuInfoBit = &__load_and_call_sceKernelIccSetCpuInfoBit;
 
 static void
 __load_sceKernelIccSetCpuInfoBit() {
@@ -20982,8 +20347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccSetDownloadMode]\n");
 
 void __load_and_call_sceKernelIccSetDownloadMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIccSetDownloadMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelIccSetDownloadMode);
+void* __ptr_sceKernelIccSetDownloadMode = &__load_and_call_sceKernelIccSetDownloadMode;
 
 static void
 __load_sceKernelIccSetDownloadMode() {
@@ -21015,8 +20379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInstallExceptionHandler]\n");
 
 void __load_and_call_sceKernelInstallExceptionHandler();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInstallExceptionHandler = (void*)(0x926100000l + (long)__load_and_call_sceKernelInstallExceptionHandler);
+void* __ptr_sceKernelInstallExceptionHandler = &__load_and_call_sceKernelInstallExceptionHandler;
 
 static void
 __load_sceKernelInstallExceptionHandler() {
@@ -21048,8 +20411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalGetKmemStatistics]\n");
 
 void __load_and_call_sceKernelInternalGetKmemStatistics();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalGetKmemStatistics = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalGetKmemStatistics);
+void* __ptr_sceKernelInternalGetKmemStatistics = &__load_and_call_sceKernelInternalGetKmemStatistics;
 
 static void
 __load_sceKernelInternalGetKmemStatistics() {
@@ -21081,8 +20443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalGetMapStatistics]\n");
 
 void __load_and_call_sceKernelInternalGetMapStatistics();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalGetMapStatistics = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalGetMapStatistics);
+void* __ptr_sceKernelInternalGetMapStatistics = &__load_and_call_sceKernelInternalGetMapStatistics;
 
 static void
 __load_sceKernelInternalGetMapStatistics() {
@@ -21114,8 +20475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalHeapPrintBacktraceWithModuleInfo]\n");
 
 void __load_and_call_sceKernelInternalHeapPrintBacktraceWithModuleInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalHeapPrintBacktraceWithModuleInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalHeapPrintBacktraceWithModuleInfo);
+void* __ptr_sceKernelInternalHeapPrintBacktraceWithModuleInfo = &__load_and_call_sceKernelInternalHeapPrintBacktraceWithModuleInfo;
 
 static void
 __load_sceKernelInternalHeapPrintBacktraceWithModuleInfo() {
@@ -21147,8 +20507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalMapDirectMemory]\n");
 
 void __load_and_call_sceKernelInternalMapDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalMapDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalMapDirectMemory);
+void* __ptr_sceKernelInternalMapDirectMemory = &__load_and_call_sceKernelInternalMapDirectMemory;
 
 static void
 __load_sceKernelInternalMapDirectMemory() {
@@ -21180,8 +20539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalMapNamedDirectMemory]\n");
 
 void __load_and_call_sceKernelInternalMapNamedDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalMapNamedDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalMapNamedDirectMemory);
+void* __ptr_sceKernelInternalMapNamedDirectMemory = &__load_and_call_sceKernelInternalMapNamedDirectMemory;
 
 static void
 __load_sceKernelInternalMapNamedDirectMemory() {
@@ -21213,8 +20571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalMemoryGetAvailableSize]\n");
 
 void __load_and_call_sceKernelInternalMemoryGetAvailableSize();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalMemoryGetAvailableSize = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalMemoryGetAvailableSize);
+void* __ptr_sceKernelInternalMemoryGetAvailableSize = &__load_and_call_sceKernelInternalMemoryGetAvailableSize;
 
 static void
 __load_sceKernelInternalMemoryGetAvailableSize() {
@@ -21246,8 +20603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalMemoryGetModuleSegmentInfo]\n");
 
 void __load_and_call_sceKernelInternalMemoryGetModuleSegmentInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalMemoryGetModuleSegmentInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalMemoryGetModuleSegmentInfo);
+void* __ptr_sceKernelInternalMemoryGetModuleSegmentInfo = &__load_and_call_sceKernelInternalMemoryGetModuleSegmentInfo;
 
 static void
 __load_sceKernelInternalMemoryGetModuleSegmentInfo() {
@@ -21279,8 +20635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalResumeDirectMemoryRelease]\n");
 
 void __load_and_call_sceKernelInternalResumeDirectMemoryRelease();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalResumeDirectMemoryRelease = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalResumeDirectMemoryRelease);
+void* __ptr_sceKernelInternalResumeDirectMemoryRelease = &__load_and_call_sceKernelInternalResumeDirectMemoryRelease;
 
 static void
 __load_sceKernelInternalResumeDirectMemoryRelease() {
@@ -21312,8 +20667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalSuspendDirectMemoryRelease]\n");
 
 void __load_and_call_sceKernelInternalSuspendDirectMemoryRelease();
-static __attribute__ ((used)) void*
-__ptr_sceKernelInternalSuspendDirectMemoryRelease = (void*)(0x926100000l + (long)__load_and_call_sceKernelInternalSuspendDirectMemoryRelease);
+void* __ptr_sceKernelInternalSuspendDirectMemoryRelease = &__load_and_call_sceKernelInternalSuspendDirectMemoryRelease;
 
 static void
 __load_sceKernelInternalSuspendDirectMemoryRelease() {
@@ -21345,8 +20699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsAddressSanitizerEnabled]\n");
 
 void __load_and_call_sceKernelIsAddressSanitizerEnabled();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsAddressSanitizerEnabled = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsAddressSanitizerEnabled);
+void* __ptr_sceKernelIsAddressSanitizerEnabled = &__load_and_call_sceKernelIsAddressSanitizerEnabled;
 
 static void
 __load_sceKernelIsAddressSanitizerEnabled() {
@@ -21378,8 +20731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsAllowedToSelectDvdRegion]\n");
 
 void __load_and_call_sceKernelIsAllowedToSelectDvdRegion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsAllowedToSelectDvdRegion = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsAllowedToSelectDvdRegion);
+void* __ptr_sceKernelIsAllowedToSelectDvdRegion = &__load_and_call_sceKernelIsAllowedToSelectDvdRegion;
 
 static void
 __load_sceKernelIsAllowedToSelectDvdRegion() {
@@ -21411,8 +20763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsAuthenticNeo]\n");
 
 void __load_and_call_sceKernelIsAuthenticNeo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsAuthenticNeo = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsAuthenticNeo);
+void* __ptr_sceKernelIsAuthenticNeo = &__load_and_call_sceKernelIsAuthenticNeo;
 
 static void
 __load_sceKernelIsAuthenticNeo() {
@@ -21444,8 +20795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsCEX]\n");
 
 void __load_and_call_sceKernelIsCEX();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsCEX = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsCEX);
+void* __ptr_sceKernelIsCEX = &__load_and_call_sceKernelIsCEX;
 
 static void
 __load_sceKernelIsCEX() {
@@ -21477,8 +20827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsDebuggerAttached]\n");
 
 void __load_and_call_sceKernelIsDebuggerAttached();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsDebuggerAttached = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsDebuggerAttached);
+void* __ptr_sceKernelIsDebuggerAttached = &__load_and_call_sceKernelIsDebuggerAttached;
 
 static void
 __load_sceKernelIsDebuggerAttached() {
@@ -21510,8 +20859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsDevKit]\n");
 
 void __load_and_call_sceKernelIsDevKit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsDevKit = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsDevKit);
+void* __ptr_sceKernelIsDevKit = &__load_and_call_sceKernelIsDevKit;
 
 static void
 __load_sceKernelIsDevKit() {
@@ -21543,8 +20891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsExperimentalBeta]\n");
 
 void __load_and_call_sceKernelIsExperimentalBeta();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsExperimentalBeta = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsExperimentalBeta);
+void* __ptr_sceKernelIsExperimentalBeta = &__load_and_call_sceKernelIsExperimentalBeta;
 
 static void
 __load_sceKernelIsExperimentalBeta() {
@@ -21576,8 +20923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineCEX]\n");
 
 void __load_and_call_sceKernelIsGenuineCEX();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsGenuineCEX = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsGenuineCEX);
+void* __ptr_sceKernelIsGenuineCEX = &__load_and_call_sceKernelIsGenuineCEX;
 
 static void
 __load_sceKernelIsGenuineCEX() {
@@ -21609,8 +20955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineDevKit]\n");
 
 void __load_and_call_sceKernelIsGenuineDevKit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsGenuineDevKit = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsGenuineDevKit);
+void* __ptr_sceKernelIsGenuineDevKit = &__load_and_call_sceKernelIsGenuineDevKit;
 
 static void
 __load_sceKernelIsGenuineDevKit() {
@@ -21642,8 +20987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineKratosCex]\n");
 
 void __load_and_call_sceKernelIsGenuineKratosCex();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsGenuineKratosCex = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsGenuineKratosCex);
+void* __ptr_sceKernelIsGenuineKratosCex = &__load_and_call_sceKernelIsGenuineKratosCex;
 
 static void
 __load_sceKernelIsGenuineKratosCex() {
@@ -21675,8 +21019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineN]\n");
 
 void __load_and_call_sceKernelIsGenuineN();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsGenuineN = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsGenuineN);
+void* __ptr_sceKernelIsGenuineN = &__load_and_call_sceKernelIsGenuineN;
 
 static void
 __load_sceKernelIsGenuineN() {
@@ -21708,8 +21051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineTestKit]\n");
 
 void __load_and_call_sceKernelIsGenuineTestKit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsGenuineTestKit = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsGenuineTestKit);
+void* __ptr_sceKernelIsGenuineTestKit = &__load_and_call_sceKernelIsGenuineTestKit;
 
 static void
 __load_sceKernelIsGenuineTestKit() {
@@ -21741,8 +21083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsInSandbox]\n");
 
 void __load_and_call_sceKernelIsInSandbox();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsInSandbox = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsInSandbox);
+void* __ptr_sceKernelIsInSandbox = &__load_and_call_sceKernelIsInSandbox;
 
 static void
 __load_sceKernelIsInSandbox() {
@@ -21774,8 +21115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsKratos]\n");
 
 void __load_and_call_sceKernelIsKratos();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsKratos = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsKratos);
+void* __ptr_sceKernelIsKratos = &__load_and_call_sceKernelIsKratos;
 
 static void
 __load_sceKernelIsKratos() {
@@ -21807,8 +21147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsMainOnStanbyMode]\n");
 
 void __load_and_call_sceKernelIsMainOnStanbyMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsMainOnStanbyMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsMainOnStanbyMode);
+void* __ptr_sceKernelIsMainOnStanbyMode = &__load_and_call_sceKernelIsMainOnStanbyMode;
 
 static void
 __load_sceKernelIsMainOnStanbyMode() {
@@ -21840,8 +21179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsMainOnStandbyMode]\n");
 
 void __load_and_call_sceKernelIsMainOnStandbyMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsMainOnStandbyMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsMainOnStandbyMode);
+void* __ptr_sceKernelIsMainOnStandbyMode = &__load_and_call_sceKernelIsMainOnStandbyMode;
 
 static void
 __load_sceKernelIsMainOnStandbyMode() {
@@ -21873,8 +21211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsNeoMode]\n");
 
 void __load_and_call_sceKernelIsNeoMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsNeoMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsNeoMode);
+void* __ptr_sceKernelIsNeoMode = &__load_and_call_sceKernelIsNeoMode;
 
 static void
 __load_sceKernelIsNeoMode() {
@@ -21906,8 +21243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsPs4Process]\n");
 
 void __load_and_call_sceKernelIsPs4Process();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsPs4Process = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsPs4Process);
+void* __ptr_sceKernelIsPs4Process = &__load_and_call_sceKernelIsPs4Process;
 
 static void
 __load_sceKernelIsPs4Process() {
@@ -21939,8 +21275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsStack]\n");
 
 void __load_and_call_sceKernelIsStack();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsStack = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsStack);
+void* __ptr_sceKernelIsStack = &__load_and_call_sceKernelIsStack;
 
 static void
 __load_sceKernelIsStack() {
@@ -21972,8 +21307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsTestKit]\n");
 
 void __load_and_call_sceKernelIsTestKit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelIsTestKit = (void*)(0x926100000l + (long)__load_and_call_sceKernelIsTestKit);
+void* __ptr_sceKernelIsTestKit = &__load_and_call_sceKernelIsTestKit;
 
 static void
 __load_sceKernelIsTestKit() {
@@ -22005,8 +21339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelKernelHeapUsage]\n");
 
 void __load_and_call_sceKernelKernelHeapUsage();
-static __attribute__ ((used)) void*
-__ptr_sceKernelKernelHeapUsage = (void*)(0x926100000l + (long)__load_and_call_sceKernelKernelHeapUsage);
+void* __ptr_sceKernelKernelHeapUsage = &__load_and_call_sceKernelKernelHeapUsage;
 
 static void
 __load_sceKernelKernelHeapUsage() {
@@ -22038,8 +21371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLoadStartModule]\n");
 
 void __load_and_call_sceKernelLoadStartModule();
-static __attribute__ ((used)) void*
-__ptr_sceKernelLoadStartModule = (void*)(0x926100000l + (long)__load_and_call_sceKernelLoadStartModule);
+void* __ptr_sceKernelLoadStartModule = &__load_and_call_sceKernelLoadStartModule;
 
 static void
 __load_sceKernelLoadStartModule() {
@@ -22071,8 +21403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLoadStartModuleForSysmodule]\n");
 
 void __load_and_call_sceKernelLoadStartModuleForSysmodule();
-static __attribute__ ((used)) void*
-__ptr_sceKernelLoadStartModuleForSysmodule = (void*)(0x926100000l + (long)__load_and_call_sceKernelLoadStartModuleForSysmodule);
+void* __ptr_sceKernelLoadStartModuleForSysmodule = &__load_and_call_sceKernelLoadStartModuleForSysmodule;
 
 static void
 __load_sceKernelLoadStartModuleForSysmodule() {
@@ -22104,8 +21435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLseek]\n");
 
 void __load_and_call_sceKernelLseek();
-static __attribute__ ((used)) void*
-__ptr_sceKernelLseek = (void*)(0x926100000l + (long)__load_and_call_sceKernelLseek);
+void* __ptr_sceKernelLseek = &__load_and_call_sceKernelLseek;
 
 static void
 __load_sceKernelLseek() {
@@ -22137,8 +21467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsAllocateBlock]\n");
 
 void __load_and_call_sceKernelLwfsAllocateBlock();
-static __attribute__ ((used)) void*
-__ptr_sceKernelLwfsAllocateBlock = (void*)(0x926100000l + (long)__load_and_call_sceKernelLwfsAllocateBlock);
+void* __ptr_sceKernelLwfsAllocateBlock = &__load_and_call_sceKernelLwfsAllocateBlock;
 
 static void
 __load_sceKernelLwfsAllocateBlock() {
@@ -22170,8 +21499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsLseek]\n");
 
 void __load_and_call_sceKernelLwfsLseek();
-static __attribute__ ((used)) void*
-__ptr_sceKernelLwfsLseek = (void*)(0x926100000l + (long)__load_and_call_sceKernelLwfsLseek);
+void* __ptr_sceKernelLwfsLseek = &__load_and_call_sceKernelLwfsLseek;
 
 static void
 __load_sceKernelLwfsLseek() {
@@ -22203,8 +21531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsSetAttribute]\n");
 
 void __load_and_call_sceKernelLwfsSetAttribute();
-static __attribute__ ((used)) void*
-__ptr_sceKernelLwfsSetAttribute = (void*)(0x926100000l + (long)__load_and_call_sceKernelLwfsSetAttribute);
+void* __ptr_sceKernelLwfsSetAttribute = &__load_and_call_sceKernelLwfsSetAttribute;
 
 static void
 __load_sceKernelLwfsSetAttribute() {
@@ -22236,8 +21563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsTrimBlock]\n");
 
 void __load_and_call_sceKernelLwfsTrimBlock();
-static __attribute__ ((used)) void*
-__ptr_sceKernelLwfsTrimBlock = (void*)(0x926100000l + (long)__load_and_call_sceKernelLwfsTrimBlock);
+void* __ptr_sceKernelLwfsTrimBlock = &__load_and_call_sceKernelLwfsTrimBlock;
 
 static void
 __load_sceKernelLwfsTrimBlock() {
@@ -22269,8 +21595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsWrite]\n");
 
 void __load_and_call_sceKernelLwfsWrite();
-static __attribute__ ((used)) void*
-__ptr_sceKernelLwfsWrite = (void*)(0x926100000l + (long)__load_and_call_sceKernelLwfsWrite);
+void* __ptr_sceKernelLwfsWrite = &__load_and_call_sceKernelLwfsWrite;
 
 static void
 __load_sceKernelLwfsWrite() {
@@ -22302,8 +21627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapDirectMemory]\n");
 
 void __load_and_call_sceKernelMapDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapDirectMemory);
+void* __ptr_sceKernelMapDirectMemory = &__load_and_call_sceKernelMapDirectMemory;
 
 static void
 __load_sceKernelMapDirectMemory() {
@@ -22335,8 +21659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapDirectMemory2]\n");
 
 void __load_and_call_sceKernelMapDirectMemory2();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapDirectMemory2 = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapDirectMemory2);
+void* __ptr_sceKernelMapDirectMemory2 = &__load_and_call_sceKernelMapDirectMemory2;
 
 static void
 __load_sceKernelMapDirectMemory2() {
@@ -22368,8 +21691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapFlexibleMemory]\n");
 
 void __load_and_call_sceKernelMapFlexibleMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapFlexibleMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapFlexibleMemory);
+void* __ptr_sceKernelMapFlexibleMemory = &__load_and_call_sceKernelMapFlexibleMemory;
 
 static void
 __load_sceKernelMapFlexibleMemory() {
@@ -22401,8 +21723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapNamedDirectMemory]\n");
 
 void __load_and_call_sceKernelMapNamedDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapNamedDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapNamedDirectMemory);
+void* __ptr_sceKernelMapNamedDirectMemory = &__load_and_call_sceKernelMapNamedDirectMemory;
 
 static void
 __load_sceKernelMapNamedDirectMemory() {
@@ -22434,8 +21755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapNamedFlexibleMemory]\n");
 
 void __load_and_call_sceKernelMapNamedFlexibleMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapNamedFlexibleMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapNamedFlexibleMemory);
+void* __ptr_sceKernelMapNamedFlexibleMemory = &__load_and_call_sceKernelMapNamedFlexibleMemory;
 
 static void
 __load_sceKernelMapNamedFlexibleMemory() {
@@ -22467,8 +21787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapNamedSystemFlexibleMemory]\n");
 
 void __load_and_call_sceKernelMapNamedSystemFlexibleMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapNamedSystemFlexibleMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapNamedSystemFlexibleMemory);
+void* __ptr_sceKernelMapNamedSystemFlexibleMemory = &__load_and_call_sceKernelMapNamedSystemFlexibleMemory;
 
 static void
 __load_sceKernelMapNamedSystemFlexibleMemory() {
@@ -22500,8 +21819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapSanitizerShadowMemory]\n");
 
 void __load_and_call_sceKernelMapSanitizerShadowMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapSanitizerShadowMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapSanitizerShadowMemory);
+void* __ptr_sceKernelMapSanitizerShadowMemory = &__load_and_call_sceKernelMapSanitizerShadowMemory;
 
 static void
 __load_sceKernelMapSanitizerShadowMemory() {
@@ -22533,8 +21851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapToolMemory]\n");
 
 void __load_and_call_sceKernelMapToolMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapToolMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapToolMemory);
+void* __ptr_sceKernelMapToolMemory = &__load_and_call_sceKernelMapToolMemory;
 
 static void
 __load_sceKernelMapToolMemory() {
@@ -22566,8 +21883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapTraceMemory]\n");
 
 void __load_and_call_sceKernelMapTraceMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapTraceMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapTraceMemory);
+void* __ptr_sceKernelMapTraceMemory = &__load_and_call_sceKernelMapTraceMemory;
 
 static void
 __load_sceKernelMapTraceMemory() {
@@ -22599,8 +21915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapperGetParam]\n");
 
 void __load_and_call_sceKernelMapperGetParam();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMapperGetParam = (void*)(0x926100000l + (long)__load_and_call_sceKernelMapperGetParam);
+void* __ptr_sceKernelMapperGetParam = &__load_and_call_sceKernelMapperGetParam;
 
 static void
 __load_sceKernelMapperGetParam() {
@@ -22632,8 +21947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolBatch]\n");
 
 void __load_and_call_sceKernelMemoryPoolBatch();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMemoryPoolBatch = (void*)(0x926100000l + (long)__load_and_call_sceKernelMemoryPoolBatch);
+void* __ptr_sceKernelMemoryPoolBatch = &__load_and_call_sceKernelMemoryPoolBatch;
 
 static void
 __load_sceKernelMemoryPoolBatch() {
@@ -22665,8 +21979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolCommit]\n");
 
 void __load_and_call_sceKernelMemoryPoolCommit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMemoryPoolCommit = (void*)(0x926100000l + (long)__load_and_call_sceKernelMemoryPoolCommit);
+void* __ptr_sceKernelMemoryPoolCommit = &__load_and_call_sceKernelMemoryPoolCommit;
 
 static void
 __load_sceKernelMemoryPoolCommit() {
@@ -22698,8 +22011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolDecommit]\n");
 
 void __load_and_call_sceKernelMemoryPoolDecommit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMemoryPoolDecommit = (void*)(0x926100000l + (long)__load_and_call_sceKernelMemoryPoolDecommit);
+void* __ptr_sceKernelMemoryPoolDecommit = &__load_and_call_sceKernelMemoryPoolDecommit;
 
 static void
 __load_sceKernelMemoryPoolDecommit() {
@@ -22731,8 +22043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolExpand]\n");
 
 void __load_and_call_sceKernelMemoryPoolExpand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMemoryPoolExpand = (void*)(0x926100000l + (long)__load_and_call_sceKernelMemoryPoolExpand);
+void* __ptr_sceKernelMemoryPoolExpand = &__load_and_call_sceKernelMemoryPoolExpand;
 
 static void
 __load_sceKernelMemoryPoolExpand() {
@@ -22764,8 +22075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolGetBlockStats]\n");
 
 void __load_and_call_sceKernelMemoryPoolGetBlockStats();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMemoryPoolGetBlockStats = (void*)(0x926100000l + (long)__load_and_call_sceKernelMemoryPoolGetBlockStats);
+void* __ptr_sceKernelMemoryPoolGetBlockStats = &__load_and_call_sceKernelMemoryPoolGetBlockStats;
 
 static void
 __load_sceKernelMemoryPoolGetBlockStats() {
@@ -22797,8 +22107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolMove]\n");
 
 void __load_and_call_sceKernelMemoryPoolMove();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMemoryPoolMove = (void*)(0x926100000l + (long)__load_and_call_sceKernelMemoryPoolMove);
+void* __ptr_sceKernelMemoryPoolMove = &__load_and_call_sceKernelMemoryPoolMove;
 
 static void
 __load_sceKernelMemoryPoolMove() {
@@ -22830,8 +22139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolReserve]\n");
 
 void __load_and_call_sceKernelMemoryPoolReserve();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMemoryPoolReserve = (void*)(0x926100000l + (long)__load_and_call_sceKernelMemoryPoolReserve);
+void* __ptr_sceKernelMemoryPoolReserve = &__load_and_call_sceKernelMemoryPoolReserve;
 
 static void
 __load_sceKernelMemoryPoolReserve() {
@@ -22863,8 +22171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMkdir]\n");
 
 void __load_and_call_sceKernelMkdir();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMkdir = (void*)(0x926100000l + (long)__load_and_call_sceKernelMkdir);
+void* __ptr_sceKernelMkdir = &__load_and_call_sceKernelMkdir;
 
 static void
 __load_sceKernelMkdir() {
@@ -22896,8 +22203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMlock]\n");
 
 void __load_and_call_sceKernelMlock();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMlock = (void*)(0x926100000l + (long)__load_and_call_sceKernelMlock);
+void* __ptr_sceKernelMlock = &__load_and_call_sceKernelMlock;
 
 static void
 __load_sceKernelMlock() {
@@ -22929,8 +22235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMlockall]\n");
 
 void __load_and_call_sceKernelMlockall();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMlockall = (void*)(0x926100000l + (long)__load_and_call_sceKernelMlockall);
+void* __ptr_sceKernelMlockall = &__load_and_call_sceKernelMlockall;
 
 static void
 __load_sceKernelMlockall() {
@@ -22962,8 +22267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMmap]\n");
 
 void __load_and_call_sceKernelMmap();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMmap = (void*)(0x926100000l + (long)__load_and_call_sceKernelMmap);
+void* __ptr_sceKernelMmap = &__load_and_call_sceKernelMmap;
 
 static void
 __load_sceKernelMmap() {
@@ -22995,8 +22299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMprotect]\n");
 
 void __load_and_call_sceKernelMprotect();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMprotect = (void*)(0x926100000l + (long)__load_and_call_sceKernelMprotect);
+void* __ptr_sceKernelMprotect = &__load_and_call_sceKernelMprotect;
 
 static void
 __load_sceKernelMprotect() {
@@ -23028,8 +22331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMsync]\n");
 
 void __load_and_call_sceKernelMsync();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMsync = (void*)(0x926100000l + (long)__load_and_call_sceKernelMsync);
+void* __ptr_sceKernelMsync = &__load_and_call_sceKernelMsync;
 
 static void
 __load_sceKernelMsync() {
@@ -23061,8 +22363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMtypeprotect]\n");
 
 void __load_and_call_sceKernelMtypeprotect();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMtypeprotect = (void*)(0x926100000l + (long)__load_and_call_sceKernelMtypeprotect);
+void* __ptr_sceKernelMtypeprotect = &__load_and_call_sceKernelMtypeprotect;
 
 static void
 __load_sceKernelMtypeprotect() {
@@ -23094,8 +22395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMunlock]\n");
 
 void __load_and_call_sceKernelMunlock();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMunlock = (void*)(0x926100000l + (long)__load_and_call_sceKernelMunlock);
+void* __ptr_sceKernelMunlock = &__load_and_call_sceKernelMunlock;
 
 static void
 __load_sceKernelMunlock() {
@@ -23127,8 +22427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMunlockall]\n");
 
 void __load_and_call_sceKernelMunlockall();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMunlockall = (void*)(0x926100000l + (long)__load_and_call_sceKernelMunlockall);
+void* __ptr_sceKernelMunlockall = &__load_and_call_sceKernelMunlockall;
 
 static void
 __load_sceKernelMunlockall() {
@@ -23160,8 +22459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMunmap]\n");
 
 void __load_and_call_sceKernelMunmap();
-static __attribute__ ((used)) void*
-__ptr_sceKernelMunmap = (void*)(0x926100000l + (long)__load_and_call_sceKernelMunmap);
+void* __ptr_sceKernelMunmap = &__load_and_call_sceKernelMunmap;
 
 static void
 __load_sceKernelMunmap() {
@@ -23193,8 +22491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNanosleep]\n");
 
 void __load_and_call_sceKernelNanosleep();
-static __attribute__ ((used)) void*
-__ptr_sceKernelNanosleep = (void*)(0x926100000l + (long)__load_and_call_sceKernelNanosleep);
+void* __ptr_sceKernelNanosleep = &__load_and_call_sceKernelNanosleep;
 
 static void
 __load_sceKernelNanosleep() {
@@ -23226,8 +22523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNormalizePath]\n");
 
 void __load_and_call_sceKernelNormalizePath();
-static __attribute__ ((used)) void*
-__ptr_sceKernelNormalizePath = (void*)(0x926100000l + (long)__load_and_call_sceKernelNormalizePath);
+void* __ptr_sceKernelNormalizePath = &__load_and_call_sceKernelNormalizePath;
 
 static void
 __load_sceKernelNormalizePath() {
@@ -23259,8 +22555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNotifyAppStateChanged]\n");
 
 void __load_and_call_sceKernelNotifyAppStateChanged();
-static __attribute__ ((used)) void*
-__ptr_sceKernelNotifyAppStateChanged = (void*)(0x926100000l + (long)__load_and_call_sceKernelNotifyAppStateChanged);
+void* __ptr_sceKernelNotifyAppStateChanged = &__load_and_call_sceKernelNotifyAppStateChanged;
 
 static void
 __load_sceKernelNotifyAppStateChanged() {
@@ -23292,8 +22587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNotifySystemSuspendResumeProgress]\n");
 
 void __load_and_call_sceKernelNotifySystemSuspendResumeProgress();
-static __attribute__ ((used)) void*
-__ptr_sceKernelNotifySystemSuspendResumeProgress = (void*)(0x926100000l + (long)__load_and_call_sceKernelNotifySystemSuspendResumeProgress);
+void* __ptr_sceKernelNotifySystemSuspendResumeProgress = &__load_and_call_sceKernelNotifySystemSuspendResumeProgress;
 
 static void
 __load_sceKernelNotifySystemSuspendResumeProgress() {
@@ -23325,8 +22619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNotifySystemSuspendStart]\n");
 
 void __load_and_call_sceKernelNotifySystemSuspendStart();
-static __attribute__ ((used)) void*
-__ptr_sceKernelNotifySystemSuspendStart = (void*)(0x926100000l + (long)__load_and_call_sceKernelNotifySystemSuspendStart);
+void* __ptr_sceKernelNotifySystemSuspendStart = &__load_and_call_sceKernelNotifySystemSuspendStart;
 
 static void
 __load_sceKernelNotifySystemSuspendStart() {
@@ -23358,8 +22651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpen]\n");
 
 void __load_and_call_sceKernelOpen();
-static __attribute__ ((used)) void*
-__ptr_sceKernelOpen = (void*)(0x926100000l + (long)__load_and_call_sceKernelOpen);
+void* __ptr_sceKernelOpen = &__load_and_call_sceKernelOpen;
 
 static void
 __load_sceKernelOpen() {
@@ -23391,8 +22683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpenEport]\n");
 
 void __load_and_call_sceKernelOpenEport();
-static __attribute__ ((used)) void*
-__ptr_sceKernelOpenEport = (void*)(0x926100000l + (long)__load_and_call_sceKernelOpenEport);
+void* __ptr_sceKernelOpenEport = &__load_and_call_sceKernelOpenEport;
 
 static void
 __load_sceKernelOpenEport() {
@@ -23424,8 +22715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpenEventFlag]\n");
 
 void __load_and_call_sceKernelOpenEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelOpenEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelOpenEventFlag);
+void* __ptr_sceKernelOpenEventFlag = &__load_and_call_sceKernelOpenEventFlag;
 
 static void
 __load_sceKernelOpenEventFlag() {
@@ -23457,8 +22747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpenInternal]\n");
 
 void __load_and_call_sceKernelOpenInternal();
-static __attribute__ ((used)) void*
-__ptr_sceKernelOpenInternal = (void*)(0x926100000l + (long)__load_and_call_sceKernelOpenInternal);
+void* __ptr_sceKernelOpenInternal = &__load_and_call_sceKernelOpenInternal;
 
 static void
 __load_sceKernelOpenInternal() {
@@ -23490,8 +22779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpenSema]\n");
 
 void __load_and_call_sceKernelOpenSema();
-static __attribute__ ((used)) void*
-__ptr_sceKernelOpenSema = (void*)(0x926100000l + (long)__load_and_call_sceKernelOpenSema);
+void* __ptr_sceKernelOpenSema = &__load_and_call_sceKernelOpenSema;
 
 static void
 __load_sceKernelOpenSema() {
@@ -23523,8 +22811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPollEventFlag]\n");
 
 void __load_and_call_sceKernelPollEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelPollEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelPollEventFlag);
+void* __ptr_sceKernelPollEventFlag = &__load_and_call_sceKernelPollEventFlag;
 
 static void
 __load_sceKernelPollEventFlag() {
@@ -23556,8 +22843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPollSema]\n");
 
 void __load_and_call_sceKernelPollSema();
-static __attribute__ ((used)) void*
-__ptr_sceKernelPollSema = (void*)(0x926100000l + (long)__load_and_call_sceKernelPollSema);
+void* __ptr_sceKernelPollSema = &__load_and_call_sceKernelPollSema;
 
 static void
 __load_sceKernelPollSema() {
@@ -23589,8 +22875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPread]\n");
 
 void __load_and_call_sceKernelPread();
-static __attribute__ ((used)) void*
-__ptr_sceKernelPread = (void*)(0x926100000l + (long)__load_and_call_sceKernelPread);
+void* __ptr_sceKernelPread = &__load_and_call_sceKernelPread;
 
 static void
 __load_sceKernelPread() {
@@ -23622,8 +22907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPreadv]\n");
 
 void __load_and_call_sceKernelPreadv();
-static __attribute__ ((used)) void*
-__ptr_sceKernelPreadv = (void*)(0x926100000l + (long)__load_and_call_sceKernelPreadv);
+void* __ptr_sceKernelPreadv = &__load_and_call_sceKernelPreadv;
 
 static void
 __load_sceKernelPreadv() {
@@ -23655,8 +22939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPrintBacktraceWithModuleInfo]\n");
 
 void __load_and_call_sceKernelPrintBacktraceWithModuleInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelPrintBacktraceWithModuleInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelPrintBacktraceWithModuleInfo);
+void* __ptr_sceKernelPrintBacktraceWithModuleInfo = &__load_and_call_sceKernelPrintBacktraceWithModuleInfo;
 
 static void
 __load_sceKernelPrintBacktraceWithModuleInfo() {
@@ -23688,8 +22971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelProtectDirectMemory]\n");
 
 void __load_and_call_sceKernelProtectDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelProtectDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelProtectDirectMemory);
+void* __ptr_sceKernelProtectDirectMemory = &__load_and_call_sceKernelProtectDirectMemory;
 
 static void
 __load_sceKernelProtectDirectMemory() {
@@ -23721,8 +23003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelProtectDirectMemoryForPID]\n");
 
 void __load_and_call_sceKernelProtectDirectMemoryForPID();
-static __attribute__ ((used)) void*
-__ptr_sceKernelProtectDirectMemoryForPID = (void*)(0x926100000l + (long)__load_and_call_sceKernelProtectDirectMemoryForPID);
+void* __ptr_sceKernelProtectDirectMemoryForPID = &__load_and_call_sceKernelProtectDirectMemoryForPID;
 
 static void
 __load_sceKernelProtectDirectMemoryForPID() {
@@ -23754,8 +23035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPwrite]\n");
 
 void __load_and_call_sceKernelPwrite();
-static __attribute__ ((used)) void*
-__ptr_sceKernelPwrite = (void*)(0x926100000l + (long)__load_and_call_sceKernelPwrite);
+void* __ptr_sceKernelPwrite = &__load_and_call_sceKernelPwrite;
 
 static void
 __load_sceKernelPwrite() {
@@ -23787,8 +23067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPwritev]\n");
 
 void __load_and_call_sceKernelPwritev();
-static __attribute__ ((used)) void*
-__ptr_sceKernelPwritev = (void*)(0x926100000l + (long)__load_and_call_sceKernelPwritev);
+void* __ptr_sceKernelPwritev = &__load_and_call_sceKernelPwritev;
 
 static void
 __load_sceKernelPwritev() {
@@ -23820,8 +23099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelQueryMemoryProtection]\n");
 
 void __load_and_call_sceKernelQueryMemoryProtection();
-static __attribute__ ((used)) void*
-__ptr_sceKernelQueryMemoryProtection = (void*)(0x926100000l + (long)__load_and_call_sceKernelQueryMemoryProtection);
+void* __ptr_sceKernelQueryMemoryProtection = &__load_and_call_sceKernelQueryMemoryProtection;
 
 static void
 __load_sceKernelQueryMemoryProtection() {
@@ -23853,8 +23131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelQueryToolMemory]\n");
 
 void __load_and_call_sceKernelQueryToolMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelQueryToolMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelQueryToolMemory);
+void* __ptr_sceKernelQueryToolMemory = &__load_and_call_sceKernelQueryToolMemory;
 
 static void
 __load_sceKernelQueryToolMemory() {
@@ -23886,8 +23163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelQueryTraceMemory]\n");
 
 void __load_and_call_sceKernelQueryTraceMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelQueryTraceMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelQueryTraceMemory);
+void* __ptr_sceKernelQueryTraceMemory = &__load_and_call_sceKernelQueryTraceMemory;
 
 static void
 __load_sceKernelQueryTraceMemory() {
@@ -23919,8 +23195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRaiseException]\n");
 
 void __load_and_call_sceKernelRaiseException();
-static __attribute__ ((used)) void*
-__ptr_sceKernelRaiseException = (void*)(0x926100000l + (long)__load_and_call_sceKernelRaiseException);
+void* __ptr_sceKernelRaiseException = &__load_and_call_sceKernelRaiseException;
 
 static void
 __load_sceKernelRaiseException() {
@@ -23952,8 +23227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRandomizedPath]\n");
 
 void __load_and_call_sceKernelRandomizedPath();
-static __attribute__ ((used)) void*
-__ptr_sceKernelRandomizedPath = (void*)(0x926100000l + (long)__load_and_call_sceKernelRandomizedPath);
+void* __ptr_sceKernelRandomizedPath = &__load_and_call_sceKernelRandomizedPath;
 
 static void
 __load_sceKernelRandomizedPath() {
@@ -23985,8 +23259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRdup]\n");
 
 void __load_and_call_sceKernelRdup();
-static __attribute__ ((used)) void*
-__ptr_sceKernelRdup = (void*)(0x926100000l + (long)__load_and_call_sceKernelRdup);
+void* __ptr_sceKernelRdup = &__load_and_call_sceKernelRdup;
 
 static void
 __load_sceKernelRdup() {
@@ -24018,8 +23291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRead]\n");
 
 void __load_and_call_sceKernelRead();
-static __attribute__ ((used)) void*
-__ptr_sceKernelRead = (void*)(0x926100000l + (long)__load_and_call_sceKernelRead);
+void* __ptr_sceKernelRead = &__load_and_call_sceKernelRead;
 
 static void
 __load_sceKernelRead() {
@@ -24051,8 +23323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReadTsc]\n");
 
 void __load_and_call_sceKernelReadTsc();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReadTsc = (void*)(0x926100000l + (long)__load_and_call_sceKernelReadTsc);
+void* __ptr_sceKernelReadTsc = &__load_and_call_sceKernelReadTsc;
 
 static void
 __load_sceKernelReadTsc() {
@@ -24084,8 +23355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReadv]\n");
 
 void __load_and_call_sceKernelReadv();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReadv = (void*)(0x926100000l + (long)__load_and_call_sceKernelReadv);
+void* __ptr_sceKernelReadv = &__load_and_call_sceKernelReadv;
 
 static void
 __load_sceKernelReadv() {
@@ -24117,8 +23387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReboot]\n");
 
 void __load_and_call_sceKernelReboot();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReboot = (void*)(0x926100000l + (long)__load_and_call_sceKernelReboot);
+void* __ptr_sceKernelReboot = &__load_and_call_sceKernelReboot;
 
 static void
 __load_sceKernelReboot() {
@@ -24150,8 +23419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReleaseDirectMemory]\n");
 
 void __load_and_call_sceKernelReleaseDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReleaseDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelReleaseDirectMemory);
+void* __ptr_sceKernelReleaseDirectMemory = &__load_and_call_sceKernelReleaseDirectMemory;
 
 static void
 __load_sceKernelReleaseDirectMemory() {
@@ -24183,8 +23451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReleaseFlexibleMemory]\n");
 
 void __load_and_call_sceKernelReleaseFlexibleMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReleaseFlexibleMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelReleaseFlexibleMemory);
+void* __ptr_sceKernelReleaseFlexibleMemory = &__load_and_call_sceKernelReleaseFlexibleMemory;
 
 static void
 __load_sceKernelReleaseFlexibleMemory() {
@@ -24216,8 +23483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReleaseToolMemory]\n");
 
 void __load_and_call_sceKernelReleaseToolMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReleaseToolMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelReleaseToolMemory);
+void* __ptr_sceKernelReleaseToolMemory = &__load_and_call_sceKernelReleaseToolMemory;
 
 static void
 __load_sceKernelReleaseToolMemory() {
@@ -24249,8 +23515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReleaseTraceDirectMemory]\n");
 
 void __load_and_call_sceKernelReleaseTraceDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReleaseTraceDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelReleaseTraceDirectMemory);
+void* __ptr_sceKernelReleaseTraceDirectMemory = &__load_and_call_sceKernelReleaseTraceDirectMemory;
 
 static void
 __load_sceKernelReleaseTraceDirectMemory() {
@@ -24282,8 +23547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRemoveExceptionHandler]\n");
 
 void __load_and_call_sceKernelRemoveExceptionHandler();
-static __attribute__ ((used)) void*
-__ptr_sceKernelRemoveExceptionHandler = (void*)(0x926100000l + (long)__load_and_call_sceKernelRemoveExceptionHandler);
+void* __ptr_sceKernelRemoveExceptionHandler = &__load_and_call_sceKernelRemoveExceptionHandler;
 
 static void
 __load_sceKernelRemoveExceptionHandler() {
@@ -24315,8 +23579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRename]\n");
 
 void __load_and_call_sceKernelRename();
-static __attribute__ ((used)) void*
-__ptr_sceKernelRename = (void*)(0x926100000l + (long)__load_and_call_sceKernelRename);
+void* __ptr_sceKernelRename = &__load_and_call_sceKernelRename;
 
 static void
 __load_sceKernelRename() {
@@ -24348,8 +23611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReportUnpatchedFunctionCall]\n");
 
 void __load_and_call_sceKernelReportUnpatchedFunctionCall();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReportUnpatchedFunctionCall = (void*)(0x926100000l + (long)__load_and_call_sceKernelReportUnpatchedFunctionCall);
+void* __ptr_sceKernelReportUnpatchedFunctionCall = &__load_and_call_sceKernelReportUnpatchedFunctionCall;
 
 static void
 __load_sceKernelReportUnpatchedFunctionCall() {
@@ -24381,8 +23643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReserve2mbPage]\n");
 
 void __load_and_call_sceKernelReserve2mbPage();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReserve2mbPage = (void*)(0x926100000l + (long)__load_and_call_sceKernelReserve2mbPage);
+void* __ptr_sceKernelReserve2mbPage = &__load_and_call_sceKernelReserve2mbPage;
 
 static void
 __load_sceKernelReserve2mbPage() {
@@ -24414,8 +23675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReserveSystemDirectMemory]\n");
 
 void __load_and_call_sceKernelReserveSystemDirectMemory();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReserveSystemDirectMemory = (void*)(0x926100000l + (long)__load_and_call_sceKernelReserveSystemDirectMemory);
+void* __ptr_sceKernelReserveSystemDirectMemory = &__load_and_call_sceKernelReserveSystemDirectMemory;
 
 static void
 __load_sceKernelReserveSystemDirectMemory() {
@@ -24447,8 +23707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReserveVirtualRange]\n");
 
 void __load_and_call_sceKernelReserveVirtualRange();
-static __attribute__ ((used)) void*
-__ptr_sceKernelReserveVirtualRange = (void*)(0x926100000l + (long)__load_and_call_sceKernelReserveVirtualRange);
+void* __ptr_sceKernelReserveVirtualRange = &__load_and_call_sceKernelReserveVirtualRange;
 
 static void
 __load_sceKernelReserveVirtualRange() {
@@ -24480,8 +23739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelResumeDirectMemoryRelease]\n");
 
 void __load_and_call_sceKernelResumeDirectMemoryRelease();
-static __attribute__ ((used)) void*
-__ptr_sceKernelResumeDirectMemoryRelease = (void*)(0x926100000l + (long)__load_and_call_sceKernelResumeDirectMemoryRelease);
+void* __ptr_sceKernelResumeDirectMemoryRelease = &__load_and_call_sceKernelResumeDirectMemoryRelease;
 
 static void
 __load_sceKernelResumeDirectMemoryRelease() {
@@ -24513,8 +23771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRmdir]\n");
 
 void __load_and_call_sceKernelRmdir();
-static __attribute__ ((used)) void*
-__ptr_sceKernelRmdir = (void*)(0x926100000l + (long)__load_and_call_sceKernelRmdir);
+void* __ptr_sceKernelRmdir = &__load_and_call_sceKernelRmdir;
 
 static void
 __load_sceKernelRmdir() {
@@ -24546,8 +23803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRtldControl]\n");
 
 void __load_and_call_sceKernelRtldControl();
-static __attribute__ ((used)) void*
-__ptr_sceKernelRtldControl = (void*)(0x926100000l + (long)__load_and_call_sceKernelRtldControl);
+void* __ptr_sceKernelRtldControl = &__load_and_call_sceKernelRtldControl;
 
 static void
 __load_sceKernelRtldControl() {
@@ -24579,8 +23835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSandboxPath]\n");
 
 void __load_and_call_sceKernelSandboxPath();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSandboxPath = (void*)(0x926100000l + (long)__load_and_call_sceKernelSandboxPath);
+void* __ptr_sceKernelSandboxPath = &__load_and_call_sceKernelSandboxPath;
 
 static void
 __load_sceKernelSandboxPath() {
@@ -24612,8 +23867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSendNotificationRequest]\n");
 
 void __load_and_call_sceKernelSendNotificationRequest();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSendNotificationRequest = (void*)(0x926100000l + (long)__load_and_call_sceKernelSendNotificationRequest);
+void* __ptr_sceKernelSendNotificationRequest = &__load_and_call_sceKernelSendNotificationRequest;
 
 static void
 __load_sceKernelSendNotificationRequest() {
@@ -24645,8 +23899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetAppInfo]\n");
 
 void __load_and_call_sceKernelSetAppInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetAppInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetAppInfo);
+void* __ptr_sceKernelSetAppInfo = &__load_and_call_sceKernelSetAppInfo;
 
 static void
 __load_sceKernelSetAppInfo() {
@@ -24678,8 +23931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetBackupRestoreMode]\n");
 
 void __load_and_call_sceKernelSetBackupRestoreMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetBackupRestoreMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetBackupRestoreMode);
+void* __ptr_sceKernelSetBackupRestoreMode = &__load_and_call_sceKernelSetBackupRestoreMode;
 
 static void
 __load_sceKernelSetBackupRestoreMode() {
@@ -24711,8 +23963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetBaseModeClock]\n");
 
 void __load_and_call_sceKernelSetBaseModeClock();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetBaseModeClock = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetBaseModeClock);
+void* __ptr_sceKernelSetBaseModeClock = &__load_and_call_sceKernelSetBaseModeClock;
 
 static void
 __load_sceKernelSetBaseModeClock() {
@@ -24744,8 +23995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetBesteffort]\n");
 
 void __load_and_call_sceKernelSetBesteffort();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetBesteffort = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetBesteffort);
+void* __ptr_sceKernelSetBesteffort = &__load_and_call_sceKernelSetBesteffort;
 
 static void
 __load_sceKernelSetBesteffort() {
@@ -24777,8 +24027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetBootReqNotify]\n");
 
 void __load_and_call_sceKernelSetBootReqNotify();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetBootReqNotify = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetBootReqNotify);
+void* __ptr_sceKernelSetBootReqNotify = &__load_and_call_sceKernelSetBootReqNotify;
 
 static void
 __load_sceKernelSetBootReqNotify() {
@@ -24810,8 +24059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetCallRecord]\n");
 
 void __load_and_call_sceKernelSetCallRecord();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetCallRecord = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetCallRecord);
+void* __ptr_sceKernelSetCallRecord = &__load_and_call_sceKernelSetCallRecord;
 
 static void
 __load_sceKernelSetCallRecord() {
@@ -24843,8 +24091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetCompressionAttribute]\n");
 
 void __load_and_call_sceKernelSetCompressionAttribute();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetCompressionAttribute = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetCompressionAttribute);
+void* __ptr_sceKernelSetCompressionAttribute = &__load_and_call_sceKernelSetCompressionAttribute;
 
 static void
 __load_sceKernelSetCompressionAttribute() {
@@ -24876,8 +24123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetCpumodeGame]\n");
 
 void __load_and_call_sceKernelSetCpumodeGame();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetCpumodeGame = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetCpumodeGame);
+void* __ptr_sceKernelSetCpumodeGame = &__load_and_call_sceKernelSetCpumodeGame;
 
 static void
 __load_sceKernelSetCpumodeGame() {
@@ -24909,8 +24155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetDataTransferMode]\n");
 
 void __load_and_call_sceKernelSetDataTransferMode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetDataTransferMode = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetDataTransferMode);
+void* __ptr_sceKernelSetDataTransferMode = &__load_and_call_sceKernelSetDataTransferMode;
 
 static void
 __load_sceKernelSetDataTransferMode() {
@@ -24942,8 +24187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetEventFlag]\n");
 
 void __load_and_call_sceKernelSetEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetEventFlag);
+void* __ptr_sceKernelSetEventFlag = &__load_and_call_sceKernelSetEventFlag;
 
 static void
 __load_sceKernelSetEventFlag() {
@@ -24975,8 +24219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetFsstParam]\n");
 
 void __load_and_call_sceKernelSetFsstParam();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetFsstParam = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetFsstParam);
+void* __ptr_sceKernelSetFsstParam = &__load_and_call_sceKernelSetFsstParam;
 
 static void
 __load_sceKernelSetFsstParam() {
@@ -25008,8 +24251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetGPI]\n");
 
 void __load_and_call_sceKernelSetGPI();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetGPI = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetGPI);
+void* __ptr_sceKernelSetGPI = &__load_and_call_sceKernelSetGPI;
 
 static void
 __load_sceKernelSetGPI() {
@@ -25041,8 +24283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetGPO]\n");
 
 void __load_and_call_sceKernelSetGPO();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetGPO = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetGPO);
+void* __ptr_sceKernelSetGPO = &__load_and_call_sceKernelSetGPO;
 
 static void
 __load_sceKernelSetGPO() {
@@ -25074,8 +24315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetGameDirectMemoryLimit]\n");
 
 void __load_and_call_sceKernelSetGameDirectMemoryLimit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetGameDirectMemoryLimit = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetGameDirectMemoryLimit);
+void* __ptr_sceKernelSetGameDirectMemoryLimit = &__load_and_call_sceKernelSetGameDirectMemoryLimit;
 
 static void
 __load_sceKernelSetGameDirectMemoryLimit() {
@@ -25107,8 +24347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetGpuCu]\n");
 
 void __load_and_call_sceKernelSetGpuCu();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetGpuCu = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetGpuCu);
+void* __ptr_sceKernelSetGpuCu = &__load_and_call_sceKernelSetGpuCu;
 
 static void
 __load_sceKernelSetGpuCu() {
@@ -25140,8 +24379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetKnobs]\n");
 
 void __load_and_call_sceKernelSetKnobs();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetKnobs = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetKnobs);
+void* __ptr_sceKernelSetKnobs = &__load_and_call_sceKernelSetKnobs;
 
 static void
 __load_sceKernelSetKnobs() {
@@ -25173,8 +24411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetMemoryPstate]\n");
 
 void __load_and_call_sceKernelSetMemoryPstate();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetMemoryPstate = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetMemoryPstate);
+void* __ptr_sceKernelSetMemoryPstate = &__load_and_call_sceKernelSetMemoryPstate;
 
 static void
 __load_sceKernelSetMemoryPstate() {
@@ -25206,8 +24443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetNeoModeClock]\n");
 
 void __load_and_call_sceKernelSetNeoModeClock();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetNeoModeClock = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetNeoModeClock);
+void* __ptr_sceKernelSetNeoModeClock = &__load_and_call_sceKernelSetNeoModeClock;
 
 static void
 __load_sceKernelSetNeoModeClock() {
@@ -25239,8 +24475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetPhysFmemLimit]\n");
 
 void __load_and_call_sceKernelSetPhysFmemLimit();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetPhysFmemLimit = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetPhysFmemLimit);
+void* __ptr_sceKernelSetPhysFmemLimit = &__load_and_call_sceKernelSetPhysFmemLimit;
 
 static void
 __load_sceKernelSetPhysFmemLimit() {
@@ -25272,8 +24507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetProcessName]\n");
 
 void __load_and_call_sceKernelSetProcessName();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetProcessName = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetProcessName);
+void* __ptr_sceKernelSetProcessName = &__load_and_call_sceKernelSetProcessName;
 
 static void
 __load_sceKernelSetProcessName() {
@@ -25305,8 +24539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetProcessProperty]\n");
 
 void __load_and_call_sceKernelSetProcessProperty();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetProcessProperty = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetProcessProperty);
+void* __ptr_sceKernelSetProcessProperty = &__load_and_call_sceKernelSetProcessProperty;
 
 static void
 __load_sceKernelSetProcessProperty() {
@@ -25338,8 +24571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetProcessPropertyString]\n");
 
 void __load_and_call_sceKernelSetProcessPropertyString();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetProcessPropertyString = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetProcessPropertyString);
+void* __ptr_sceKernelSetProcessPropertyString = &__load_and_call_sceKernelSetProcessPropertyString;
 
 static void
 __load_sceKernelSetProcessPropertyString() {
@@ -25371,8 +24603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetPrtAperture]\n");
 
 void __load_and_call_sceKernelSetPrtAperture();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetPrtAperture = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetPrtAperture);
+void* __ptr_sceKernelSetPrtAperture = &__load_and_call_sceKernelSetPrtAperture;
 
 static void
 __load_sceKernelSetPrtAperture() {
@@ -25404,8 +24635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetSafemode]\n");
 
 void __load_and_call_sceKernelSetSafemode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetSafemode = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetSafemode);
+void* __ptr_sceKernelSetSafemode = &__load_and_call_sceKernelSetSafemode;
 
 static void
 __load_sceKernelSetSafemode() {
@@ -25437,8 +24667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetTimezoneInfo]\n");
 
 void __load_and_call_sceKernelSetTimezoneInfo();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetTimezoneInfo = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetTimezoneInfo);
+void* __ptr_sceKernelSetTimezoneInfo = &__load_and_call_sceKernelSetTimezoneInfo;
 
 static void
 __load_sceKernelSetTimezoneInfo() {
@@ -25470,8 +24699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetVirtualRangeName]\n");
 
 void __load_and_call_sceKernelSetVirtualRangeName();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetVirtualRangeName = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetVirtualRangeName);
+void* __ptr_sceKernelSetVirtualRangeName = &__load_and_call_sceKernelSetVirtualRangeName;
 
 static void
 __load_sceKernelSetVirtualRangeName() {
@@ -25503,8 +24731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetVmContainer]\n");
 
 void __load_and_call_sceKernelSetVmContainer();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSetVmContainer = (void*)(0x926100000l + (long)__load_and_call_sceKernelSetVmContainer);
+void* __ptr_sceKernelSetVmContainer = &__load_and_call_sceKernelSetVmContainer;
 
 static void
 __load_sceKernelSetVmContainer() {
@@ -25536,8 +24763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSettimeofday]\n");
 
 void __load_and_call_sceKernelSettimeofday();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSettimeofday = (void*)(0x926100000l + (long)__load_and_call_sceKernelSettimeofday);
+void* __ptr_sceKernelSettimeofday = &__load_and_call_sceKernelSettimeofday;
 
 static void
 __load_sceKernelSettimeofday() {
@@ -25569,8 +24795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSignalSema]\n");
 
 void __load_and_call_sceKernelSignalSema();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSignalSema = (void*)(0x926100000l + (long)__load_and_call_sceKernelSignalSema);
+void* __ptr_sceKernelSignalSema = &__load_and_call_sceKernelSignalSema;
 
 static void
 __load_sceKernelSignalSema() {
@@ -25602,8 +24827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSleep]\n");
 
 void __load_and_call_sceKernelSleep();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSleep = (void*)(0x926100000l + (long)__load_and_call_sceKernelSleep);
+void* __ptr_sceKernelSleep = &__load_and_call_sceKernelSleep;
 
 static void
 __load_sceKernelSleep() {
@@ -25635,8 +24859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSlvNotifyError]\n");
 
 void __load_and_call_sceKernelSlvNotifyError();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSlvNotifyError = (void*)(0x926100000l + (long)__load_and_call_sceKernelSlvNotifyError);
+void* __ptr_sceKernelSlvNotifyError = &__load_and_call_sceKernelSlvNotifyError;
 
 static void
 __load_sceKernelSlvNotifyError() {
@@ -25668,8 +24891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStat]\n");
 
 void __load_and_call_sceKernelStat();
-static __attribute__ ((used)) void*
-__ptr_sceKernelStat = (void*)(0x926100000l + (long)__load_and_call_sceKernelStat);
+void* __ptr_sceKernelStat = &__load_and_call_sceKernelStat;
 
 static void
 __load_sceKernelStat() {
@@ -25701,8 +24923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStopUnloadModule]\n");
 
 void __load_and_call_sceKernelStopUnloadModule();
-static __attribute__ ((used)) void*
-__ptr_sceKernelStopUnloadModule = (void*)(0x926100000l + (long)__load_and_call_sceKernelStopUnloadModule);
+void* __ptr_sceKernelStopUnloadModule = &__load_and_call_sceKernelStopUnloadModule;
 
 static void
 __load_sceKernelStopUnloadModule() {
@@ -25734,8 +24955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSuspendDirectMemoryRelease]\n");
 
 void __load_and_call_sceKernelSuspendDirectMemoryRelease();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSuspendDirectMemoryRelease = (void*)(0x926100000l + (long)__load_and_call_sceKernelSuspendDirectMemoryRelease);
+void* __ptr_sceKernelSuspendDirectMemoryRelease = &__load_and_call_sceKernelSuspendDirectMemoryRelease;
 
 static void
 __load_sceKernelSuspendDirectMemoryRelease() {
@@ -25767,8 +24987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSync]\n");
 
 void __load_and_call_sceKernelSync();
-static __attribute__ ((used)) void*
-__ptr_sceKernelSync = (void*)(0x926100000l + (long)__load_and_call_sceKernelSync);
+void* __ptr_sceKernelSync = &__load_and_call_sceKernelSync;
 
 static void
 __load_sceKernelSync() {
@@ -25800,8 +25019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTerminateSysCore]\n");
 
 void __load_and_call_sceKernelTerminateSysCore();
-static __attribute__ ((used)) void*
-__ptr_sceKernelTerminateSysCore = (void*)(0x926100000l + (long)__load_and_call_sceKernelTerminateSysCore);
+void* __ptr_sceKernelTerminateSysCore = &__load_and_call_sceKernelTerminateSysCore;
 
 static void
 __load_sceKernelTerminateSysCore() {
@@ -25833,8 +25051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTitleWorkaroundIsEnabled]\n");
 
 void __load_and_call_sceKernelTitleWorkaroundIsEnabled();
-static __attribute__ ((used)) void*
-__ptr_sceKernelTitleWorkaroundIsEnabled = (void*)(0x926100000l + (long)__load_and_call_sceKernelTitleWorkaroundIsEnabled);
+void* __ptr_sceKernelTitleWorkaroundIsEnabled = &__load_and_call_sceKernelTitleWorkaroundIsEnabled;
 
 static void
 __load_sceKernelTitleWorkaroundIsEnabled() {
@@ -25866,8 +25083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTitleWorkdaroundIsEnabled]\n");
 
 void __load_and_call_sceKernelTitleWorkdaroundIsEnabled();
-static __attribute__ ((used)) void*
-__ptr_sceKernelTitleWorkdaroundIsEnabled = (void*)(0x926100000l + (long)__load_and_call_sceKernelTitleWorkdaroundIsEnabled);
+void* __ptr_sceKernelTitleWorkdaroundIsEnabled = &__load_and_call_sceKernelTitleWorkdaroundIsEnabled;
 
 static void
 __load_sceKernelTitleWorkdaroundIsEnabled() {
@@ -25899,8 +25115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTraceMemoryTypeProtect]\n");
 
 void __load_and_call_sceKernelTraceMemoryTypeProtect();
-static __attribute__ ((used)) void*
-__ptr_sceKernelTraceMemoryTypeProtect = (void*)(0x926100000l + (long)__load_and_call_sceKernelTraceMemoryTypeProtect);
+void* __ptr_sceKernelTraceMemoryTypeProtect = &__load_and_call_sceKernelTraceMemoryTypeProtect;
 
 static void
 __load_sceKernelTraceMemoryTypeProtect() {
@@ -25932,8 +25147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTriggerEport]\n");
 
 void __load_and_call_sceKernelTriggerEport();
-static __attribute__ ((used)) void*
-__ptr_sceKernelTriggerEport = (void*)(0x926100000l + (long)__load_and_call_sceKernelTriggerEport);
+void* __ptr_sceKernelTriggerEport = &__load_and_call_sceKernelTriggerEport;
 
 static void
 __load_sceKernelTriggerEport() {
@@ -25965,8 +25179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTriggerUserEvent]\n");
 
 void __load_and_call_sceKernelTriggerUserEvent();
-static __attribute__ ((used)) void*
-__ptr_sceKernelTriggerUserEvent = (void*)(0x926100000l + (long)__load_and_call_sceKernelTriggerUserEvent);
+void* __ptr_sceKernelTriggerUserEvent = &__load_and_call_sceKernelTriggerUserEvent;
 
 static void
 __load_sceKernelTriggerUserEvent() {
@@ -25998,8 +25211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTruncate]\n");
 
 void __load_and_call_sceKernelTruncate();
-static __attribute__ ((used)) void*
-__ptr_sceKernelTruncate = (void*)(0x926100000l + (long)__load_and_call_sceKernelTruncate);
+void* __ptr_sceKernelTruncate = &__load_and_call_sceKernelTruncate;
 
 static void
 __load_sceKernelTruncate() {
@@ -26031,8 +25243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelUnlink]\n");
 
 void __load_and_call_sceKernelUnlink();
-static __attribute__ ((used)) void*
-__ptr_sceKernelUnlink = (void*)(0x926100000l + (long)__load_and_call_sceKernelUnlink);
+void* __ptr_sceKernelUnlink = &__load_and_call_sceKernelUnlink;
 
 static void
 __load_sceKernelUnlink() {
@@ -26064,8 +25275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelUsleep]\n");
 
 void __load_and_call_sceKernelUsleep();
-static __attribute__ ((used)) void*
-__ptr_sceKernelUsleep = (void*)(0x926100000l + (long)__load_and_call_sceKernelUsleep);
+void* __ptr_sceKernelUsleep = &__load_and_call_sceKernelUsleep;
 
 static void
 __load_sceKernelUsleep() {
@@ -26097,8 +25307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelUtimes]\n");
 
 void __load_and_call_sceKernelUtimes();
-static __attribute__ ((used)) void*
-__ptr_sceKernelUtimes = (void*)(0x926100000l + (long)__load_and_call_sceKernelUtimes);
+void* __ptr_sceKernelUtimes = &__load_and_call_sceKernelUtimes;
 
 static void
 __load_sceKernelUtimes() {
@@ -26130,8 +25339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelUuidCreate]\n");
 
 void __load_and_call_sceKernelUuidCreate();
-static __attribute__ ((used)) void*
-__ptr_sceKernelUuidCreate = (void*)(0x926100000l + (long)__load_and_call_sceKernelUuidCreate);
+void* __ptr_sceKernelUuidCreate = &__load_and_call_sceKernelUuidCreate;
 
 static void
 __load_sceKernelUuidCreate() {
@@ -26163,8 +25371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelVirtualQuery]\n");
 
 void __load_and_call_sceKernelVirtualQuery();
-static __attribute__ ((used)) void*
-__ptr_sceKernelVirtualQuery = (void*)(0x926100000l + (long)__load_and_call_sceKernelVirtualQuery);
+void* __ptr_sceKernelVirtualQuery = &__load_and_call_sceKernelVirtualQuery;
 
 static void
 __load_sceKernelVirtualQuery() {
@@ -26196,8 +25403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelVirtualQueryAll]\n");
 
 void __load_and_call_sceKernelVirtualQueryAll();
-static __attribute__ ((used)) void*
-__ptr_sceKernelVirtualQueryAll = (void*)(0x926100000l + (long)__load_and_call_sceKernelVirtualQueryAll);
+void* __ptr_sceKernelVirtualQueryAll = &__load_and_call_sceKernelVirtualQueryAll;
 
 static void
 __load_sceKernelVirtualQueryAll() {
@@ -26229,8 +25435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWaitCommandBufferCompletion]\n");
 
 void __load_and_call_sceKernelWaitCommandBufferCompletion();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWaitCommandBufferCompletion = (void*)(0x926100000l + (long)__load_and_call_sceKernelWaitCommandBufferCompletion);
+void* __ptr_sceKernelWaitCommandBufferCompletion = &__load_and_call_sceKernelWaitCommandBufferCompletion;
 
 static void
 __load_sceKernelWaitCommandBufferCompletion() {
@@ -26262,8 +25467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWaitEqueue]\n");
 
 void __load_and_call_sceKernelWaitEqueue();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWaitEqueue = (void*)(0x926100000l + (long)__load_and_call_sceKernelWaitEqueue);
+void* __ptr_sceKernelWaitEqueue = &__load_and_call_sceKernelWaitEqueue;
 
 static void
 __load_sceKernelWaitEqueue() {
@@ -26295,8 +25499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWaitEventFlag]\n");
 
 void __load_and_call_sceKernelWaitEventFlag();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWaitEventFlag = (void*)(0x926100000l + (long)__load_and_call_sceKernelWaitEventFlag);
+void* __ptr_sceKernelWaitEventFlag = &__load_and_call_sceKernelWaitEventFlag;
 
 static void
 __load_sceKernelWaitEventFlag() {
@@ -26328,8 +25531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWaitSema]\n");
 
 void __load_and_call_sceKernelWaitSema();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWaitSema = (void*)(0x926100000l + (long)__load_and_call_sceKernelWaitSema);
+void* __ptr_sceKernelWaitSema = &__load_and_call_sceKernelWaitSema;
 
 static void
 __load_sceKernelWaitSema() {
@@ -26361,8 +25563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWrite]\n");
 
 void __load_and_call_sceKernelWrite();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWrite = (void*)(0x926100000l + (long)__load_and_call_sceKernelWrite);
+void* __ptr_sceKernelWrite = &__load_and_call_sceKernelWrite;
 
 static void
 __load_sceKernelWrite() {
@@ -26394,8 +25595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteEventQueueOnCompletionCommand]\n");
 
 void __load_and_call_sceKernelWriteEventQueueOnCompletionCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteEventQueueOnCompletionCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteEventQueueOnCompletionCommand);
+void* __ptr_sceKernelWriteEventQueueOnCompletionCommand = &__load_and_call_sceKernelWriteEventQueueOnCompletionCommand;
 
 static void
 __load_sceKernelWriteEventQueueOnCompletionCommand() {
@@ -26427,8 +25627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapCommand]\n");
 
 void __load_and_call_sceKernelWriteMapCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteMapCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteMapCommand);
+void* __ptr_sceKernelWriteMapCommand = &__load_and_call_sceKernelWriteMapCommand;
 
 static void
 __load_sceKernelWriteMapCommand() {
@@ -26460,8 +25659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapCommand2]\n");
 
 void __load_and_call_sceKernelWriteMapCommand2();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteMapCommand2 = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteMapCommand2);
+void* __ptr_sceKernelWriteMapCommand2 = &__load_and_call_sceKernelWriteMapCommand2;
 
 static void
 __load_sceKernelWriteMapCommand2() {
@@ -26493,8 +25691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapDirectCommand]\n");
 
 void __load_and_call_sceKernelWriteMapDirectCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteMapDirectCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteMapDirectCommand);
+void* __ptr_sceKernelWriteMapDirectCommand = &__load_and_call_sceKernelWriteMapDirectCommand;
 
 static void
 __load_sceKernelWriteMapDirectCommand() {
@@ -26526,8 +25723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapDirectWithGpuMaskIdCommand]\n");
 
 void __load_and_call_sceKernelWriteMapDirectWithGpuMaskIdCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteMapDirectWithGpuMaskIdCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteMapDirectWithGpuMaskIdCommand);
+void* __ptr_sceKernelWriteMapDirectWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteMapDirectWithGpuMaskIdCommand;
 
 static void
 __load_sceKernelWriteMapDirectWithGpuMaskIdCommand() {
@@ -26559,8 +25755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapWithGpuMaskIdCommand]\n");
 
 void __load_and_call_sceKernelWriteMapWithGpuMaskIdCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteMapWithGpuMaskIdCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteMapWithGpuMaskIdCommand);
+void* __ptr_sceKernelWriteMapWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteMapWithGpuMaskIdCommand;
 
 static void
 __load_sceKernelWriteMapWithGpuMaskIdCommand() {
@@ -26592,8 +25787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteModifyMtypeProtectCommand]\n");
 
 void __load_and_call_sceKernelWriteModifyMtypeProtectCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteModifyMtypeProtectCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteModifyMtypeProtectCommand);
+void* __ptr_sceKernelWriteModifyMtypeProtectCommand = &__load_and_call_sceKernelWriteModifyMtypeProtectCommand;
 
 static void
 __load_sceKernelWriteModifyMtypeProtectCommand() {
@@ -26625,8 +25819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand]\n");
 
 void __load_and_call_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand);
+void* __ptr_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand;
 
 static void
 __load_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand() {
@@ -26658,8 +25851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteModifyProtectCommand]\n");
 
 void __load_and_call_sceKernelWriteModifyProtectCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteModifyProtectCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteModifyProtectCommand);
+void* __ptr_sceKernelWriteModifyProtectCommand = &__load_and_call_sceKernelWriteModifyProtectCommand;
 
 static void
 __load_sceKernelWriteModifyProtectCommand() {
@@ -26691,8 +25883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteModifyProtectWithGpuMaskIdCommand]\n");
 
 void __load_and_call_sceKernelWriteModifyProtectWithGpuMaskIdCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteModifyProtectWithGpuMaskIdCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteModifyProtectWithGpuMaskIdCommand);
+void* __ptr_sceKernelWriteModifyProtectWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteModifyProtectWithGpuMaskIdCommand;
 
 static void
 __load_sceKernelWriteModifyProtectWithGpuMaskIdCommand() {
@@ -26724,8 +25915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMultiMapCommand]\n");
 
 void __load_and_call_sceKernelWriteMultiMapCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteMultiMapCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteMultiMapCommand);
+void* __ptr_sceKernelWriteMultiMapCommand = &__load_and_call_sceKernelWriteMultiMapCommand;
 
 static void
 __load_sceKernelWriteMultiMapCommand() {
@@ -26757,8 +25947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMultiMapWithGpuMaskIdCommand]\n");
 
 void __load_and_call_sceKernelWriteMultiMapWithGpuMaskIdCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteMultiMapWithGpuMaskIdCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteMultiMapWithGpuMaskIdCommand);
+void* __ptr_sceKernelWriteMultiMapWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteMultiMapWithGpuMaskIdCommand;
 
 static void
 __load_sceKernelWriteMultiMapWithGpuMaskIdCommand() {
@@ -26790,8 +25979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteRemapCommand]\n");
 
 void __load_and_call_sceKernelWriteRemapCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteRemapCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteRemapCommand);
+void* __ptr_sceKernelWriteRemapCommand = &__load_and_call_sceKernelWriteRemapCommand;
 
 static void
 __load_sceKernelWriteRemapCommand() {
@@ -26823,8 +26011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteRemapWithGpuMaskIdCommand]\n");
 
 void __load_and_call_sceKernelWriteRemapWithGpuMaskIdCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteRemapWithGpuMaskIdCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteRemapWithGpuMaskIdCommand);
+void* __ptr_sceKernelWriteRemapWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteRemapWithGpuMaskIdCommand;
 
 static void
 __load_sceKernelWriteRemapWithGpuMaskIdCommand() {
@@ -26856,8 +26043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteSdkEventLog]\n");
 
 void __load_and_call_sceKernelWriteSdkEventLog();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteSdkEventLog = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteSdkEventLog);
+void* __ptr_sceKernelWriteSdkEventLog = &__load_and_call_sceKernelWriteSdkEventLog;
 
 static void
 __load_sceKernelWriteSdkEventLog() {
@@ -26889,8 +26075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteSdkEventLogV]\n");
 
 void __load_and_call_sceKernelWriteSdkEventLogV();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteSdkEventLogV = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteSdkEventLogV);
+void* __ptr_sceKernelWriteSdkEventLogV = &__load_and_call_sceKernelWriteSdkEventLogV;
 
 static void
 __load_sceKernelWriteSdkEventLogV() {
@@ -26922,8 +26107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteUnmapCommand]\n");
 
 void __load_and_call_sceKernelWriteUnmapCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteUnmapCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteUnmapCommand);
+void* __ptr_sceKernelWriteUnmapCommand = &__load_and_call_sceKernelWriteUnmapCommand;
 
 static void
 __load_sceKernelWriteUnmapCommand() {
@@ -26955,8 +26139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteWaitOnAddressCommand]\n");
 
 void __load_and_call_sceKernelWriteWaitOnAddressCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteWaitOnAddressCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteWaitOnAddressCommand);
+void* __ptr_sceKernelWriteWaitOnAddressCommand = &__load_and_call_sceKernelWriteWaitOnAddressCommand;
 
 static void
 __load_sceKernelWriteWaitOnAddressCommand() {
@@ -26988,8 +26171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteWaitOnCounterCommand]\n");
 
 void __load_and_call_sceKernelWriteWaitOnCounterCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteWaitOnCounterCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteWaitOnCounterCommand);
+void* __ptr_sceKernelWriteWaitOnCounterCommand = &__load_and_call_sceKernelWriteWaitOnCounterCommand;
 
 static void
 __load_sceKernelWriteWaitOnCounterCommand() {
@@ -27021,8 +26203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteWriteAddressCommand]\n");
 
 void __load_and_call_sceKernelWriteWriteAddressCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteWriteAddressCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteWriteAddressCommand);
+void* __ptr_sceKernelWriteWriteAddressCommand = &__load_and_call_sceKernelWriteWriteAddressCommand;
 
 static void
 __load_sceKernelWriteWriteAddressCommand() {
@@ -27054,8 +26235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteWriteCounterCommand]\n");
 
 void __load_and_call_sceKernelWriteWriteCounterCommand();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWriteWriteCounterCommand = (void*)(0x926100000l + (long)__load_and_call_sceKernelWriteWriteCounterCommand);
+void* __ptr_sceKernelWriteWriteCounterCommand = &__load_and_call_sceKernelWriteWriteCounterCommand;
 
 static void
 __load_sceKernelWriteWriteCounterCommand() {
@@ -27087,8 +26267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWritev]\n");
 
 void __load_and_call_sceKernelWritev();
-static __attribute__ ((used)) void*
-__ptr_sceKernelWritev = (void*)(0x926100000l + (long)__load_and_call_sceKernelWritev);
+void* __ptr_sceKernelWritev = &__load_and_call_sceKernelWritev;
 
 static void
 __load_sceKernelWritev() {
@@ -27120,8 +26299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelYieldCpumode]\n");
 
 void __load_and_call_sceKernelYieldCpumode();
-static __attribute__ ((used)) void*
-__ptr_sceKernelYieldCpumode = (void*)(0x926100000l + (long)__load_and_call_sceKernelYieldCpumode);
+void* __ptr_sceKernelYieldCpumode = &__load_and_call_sceKernelYieldCpumode;
 
 static void
 __load_sceKernelYieldCpumode() {
@@ -27153,8 +26331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceCreateForMonoMutex]\n");
 
 void __load_and_call_sceLibcMspaceCreateForMonoMutex();
-static __attribute__ ((used)) void*
-__ptr_sceLibcMspaceCreateForMonoMutex = (void*)(0x926100000l + (long)__load_and_call_sceLibcMspaceCreateForMonoMutex);
+void* __ptr_sceLibcMspaceCreateForMonoMutex = &__load_and_call_sceLibcMspaceCreateForMonoMutex;
 
 static void
 __load_sceLibcMspaceCreateForMonoMutex() {
@@ -27186,8 +26363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAtfork]\n");
 
 void __load_and_call_scePthreadAtfork();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAtfork = (void*)(0x926100000l + (long)__load_and_call_scePthreadAtfork);
+void* __ptr_scePthreadAtfork = &__load_and_call_scePthreadAtfork;
 
 static void
 __load_scePthreadAtfork() {
@@ -27219,8 +26395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrDestroy]\n");
 
 void __load_and_call_scePthreadAttrDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrDestroy);
+void* __ptr_scePthreadAttrDestroy = &__load_and_call_scePthreadAttrDestroy;
 
 static void
 __load_scePthreadAttrDestroy() {
@@ -27252,8 +26427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGet]\n");
 
 void __load_and_call_scePthreadAttrGet();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGet = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGet);
+void* __ptr_scePthreadAttrGet = &__load_and_call_scePthreadAttrGet;
 
 static void
 __load_scePthreadAttrGet() {
@@ -27285,8 +26459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetaffinity]\n");
 
 void __load_and_call_scePthreadAttrGetaffinity();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetaffinity = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetaffinity);
+void* __ptr_scePthreadAttrGetaffinity = &__load_and_call_scePthreadAttrGetaffinity;
 
 static void
 __load_scePthreadAttrGetaffinity() {
@@ -27318,8 +26491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetdetachstate]\n");
 
 void __load_and_call_scePthreadAttrGetdetachstate();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetdetachstate = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetdetachstate);
+void* __ptr_scePthreadAttrGetdetachstate = &__load_and_call_scePthreadAttrGetdetachstate;
 
 static void
 __load_scePthreadAttrGetdetachstate() {
@@ -27351,8 +26523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetguardsize]\n");
 
 void __load_and_call_scePthreadAttrGetguardsize();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetguardsize = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetguardsize);
+void* __ptr_scePthreadAttrGetguardsize = &__load_and_call_scePthreadAttrGetguardsize;
 
 static void
 __load_scePthreadAttrGetguardsize() {
@@ -27384,8 +26555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetinheritsched]\n");
 
 void __load_and_call_scePthreadAttrGetinheritsched();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetinheritsched = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetinheritsched);
+void* __ptr_scePthreadAttrGetinheritsched = &__load_and_call_scePthreadAttrGetinheritsched;
 
 static void
 __load_scePthreadAttrGetinheritsched() {
@@ -27417,8 +26587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetschedparam]\n");
 
 void __load_and_call_scePthreadAttrGetschedparam();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetschedparam = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetschedparam);
+void* __ptr_scePthreadAttrGetschedparam = &__load_and_call_scePthreadAttrGetschedparam;
 
 static void
 __load_scePthreadAttrGetschedparam() {
@@ -27450,8 +26619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetschedpolicy]\n");
 
 void __load_and_call_scePthreadAttrGetschedpolicy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetschedpolicy = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetschedpolicy);
+void* __ptr_scePthreadAttrGetschedpolicy = &__load_and_call_scePthreadAttrGetschedpolicy;
 
 static void
 __load_scePthreadAttrGetschedpolicy() {
@@ -27483,8 +26651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetscope]\n");
 
 void __load_and_call_scePthreadAttrGetscope();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetscope = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetscope);
+void* __ptr_scePthreadAttrGetscope = &__load_and_call_scePthreadAttrGetscope;
 
 static void
 __load_scePthreadAttrGetscope() {
@@ -27516,8 +26683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetsolosched]\n");
 
 void __load_and_call_scePthreadAttrGetsolosched();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetsolosched = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetsolosched);
+void* __ptr_scePthreadAttrGetsolosched = &__load_and_call_scePthreadAttrGetsolosched;
 
 static void
 __load_scePthreadAttrGetsolosched() {
@@ -27549,8 +26715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetstack]\n");
 
 void __load_and_call_scePthreadAttrGetstack();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetstack = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetstack);
+void* __ptr_scePthreadAttrGetstack = &__load_and_call_scePthreadAttrGetstack;
 
 static void
 __load_scePthreadAttrGetstack() {
@@ -27582,8 +26747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetstackaddr]\n");
 
 void __load_and_call_scePthreadAttrGetstackaddr();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetstackaddr = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetstackaddr);
+void* __ptr_scePthreadAttrGetstackaddr = &__load_and_call_scePthreadAttrGetstackaddr;
 
 static void
 __load_scePthreadAttrGetstackaddr() {
@@ -27615,8 +26779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetstacksize]\n");
 
 void __load_and_call_scePthreadAttrGetstacksize();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrGetstacksize = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrGetstacksize);
+void* __ptr_scePthreadAttrGetstacksize = &__load_and_call_scePthreadAttrGetstacksize;
 
 static void
 __load_scePthreadAttrGetstacksize() {
@@ -27648,8 +26811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrInit]\n");
 
 void __load_and_call_scePthreadAttrInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrInit);
+void* __ptr_scePthreadAttrInit = &__load_and_call_scePthreadAttrInit;
 
 static void
 __load_scePthreadAttrInit() {
@@ -27681,8 +26843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetaffinity]\n");
 
 void __load_and_call_scePthreadAttrSetaffinity();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetaffinity = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetaffinity);
+void* __ptr_scePthreadAttrSetaffinity = &__load_and_call_scePthreadAttrSetaffinity;
 
 static void
 __load_scePthreadAttrSetaffinity() {
@@ -27714,8 +26875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetcreatesuspend]\n");
 
 void __load_and_call_scePthreadAttrSetcreatesuspend();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetcreatesuspend = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetcreatesuspend);
+void* __ptr_scePthreadAttrSetcreatesuspend = &__load_and_call_scePthreadAttrSetcreatesuspend;
 
 static void
 __load_scePthreadAttrSetcreatesuspend() {
@@ -27747,8 +26907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetdetachstate]\n");
 
 void __load_and_call_scePthreadAttrSetdetachstate();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetdetachstate = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetdetachstate);
+void* __ptr_scePthreadAttrSetdetachstate = &__load_and_call_scePthreadAttrSetdetachstate;
 
 static void
 __load_scePthreadAttrSetdetachstate() {
@@ -27780,8 +26939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetguardsize]\n");
 
 void __load_and_call_scePthreadAttrSetguardsize();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetguardsize = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetguardsize);
+void* __ptr_scePthreadAttrSetguardsize = &__load_and_call_scePthreadAttrSetguardsize;
 
 static void
 __load_scePthreadAttrSetguardsize() {
@@ -27813,8 +26971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetinheritsched]\n");
 
 void __load_and_call_scePthreadAttrSetinheritsched();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetinheritsched = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetinheritsched);
+void* __ptr_scePthreadAttrSetinheritsched = &__load_and_call_scePthreadAttrSetinheritsched;
 
 static void
 __load_scePthreadAttrSetinheritsched() {
@@ -27846,8 +27003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetschedparam]\n");
 
 void __load_and_call_scePthreadAttrSetschedparam();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetschedparam = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetschedparam);
+void* __ptr_scePthreadAttrSetschedparam = &__load_and_call_scePthreadAttrSetschedparam;
 
 static void
 __load_scePthreadAttrSetschedparam() {
@@ -27879,8 +27035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetschedpolicy]\n");
 
 void __load_and_call_scePthreadAttrSetschedpolicy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetschedpolicy = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetschedpolicy);
+void* __ptr_scePthreadAttrSetschedpolicy = &__load_and_call_scePthreadAttrSetschedpolicy;
 
 static void
 __load_scePthreadAttrSetschedpolicy() {
@@ -27912,8 +27067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetscope]\n");
 
 void __load_and_call_scePthreadAttrSetscope();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetscope = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetscope);
+void* __ptr_scePthreadAttrSetscope = &__load_and_call_scePthreadAttrSetscope;
 
 static void
 __load_scePthreadAttrSetscope() {
@@ -27945,8 +27099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetsolosched]\n");
 
 void __load_and_call_scePthreadAttrSetsolosched();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetsolosched = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetsolosched);
+void* __ptr_scePthreadAttrSetsolosched = &__load_and_call_scePthreadAttrSetsolosched;
 
 static void
 __load_scePthreadAttrSetsolosched() {
@@ -27978,8 +27131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetstack]\n");
 
 void __load_and_call_scePthreadAttrSetstack();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetstack = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetstack);
+void* __ptr_scePthreadAttrSetstack = &__load_and_call_scePthreadAttrSetstack;
 
 static void
 __load_scePthreadAttrSetstack() {
@@ -28011,8 +27163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetstackaddr]\n");
 
 void __load_and_call_scePthreadAttrSetstackaddr();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetstackaddr = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetstackaddr);
+void* __ptr_scePthreadAttrSetstackaddr = &__load_and_call_scePthreadAttrSetstackaddr;
 
 static void
 __load_scePthreadAttrSetstackaddr() {
@@ -28044,8 +27195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetstacksize]\n");
 
 void __load_and_call_scePthreadAttrSetstacksize();
-static __attribute__ ((used)) void*
-__ptr_scePthreadAttrSetstacksize = (void*)(0x926100000l + (long)__load_and_call_scePthreadAttrSetstacksize);
+void* __ptr_scePthreadAttrSetstacksize = &__load_and_call_scePthreadAttrSetstacksize;
 
 static void
 __load_scePthreadAttrSetstacksize() {
@@ -28077,8 +27227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierDestroy]\n");
 
 void __load_and_call_scePthreadBarrierDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadBarrierDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadBarrierDestroy);
+void* __ptr_scePthreadBarrierDestroy = &__load_and_call_scePthreadBarrierDestroy;
 
 static void
 __load_scePthreadBarrierDestroy() {
@@ -28110,8 +27259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierInit]\n");
 
 void __load_and_call_scePthreadBarrierInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadBarrierInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadBarrierInit);
+void* __ptr_scePthreadBarrierInit = &__load_and_call_scePthreadBarrierInit;
 
 static void
 __load_scePthreadBarrierInit() {
@@ -28143,8 +27291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierWait]\n");
 
 void __load_and_call_scePthreadBarrierWait();
-static __attribute__ ((used)) void*
-__ptr_scePthreadBarrierWait = (void*)(0x926100000l + (long)__load_and_call_scePthreadBarrierWait);
+void* __ptr_scePthreadBarrierWait = &__load_and_call_scePthreadBarrierWait;
 
 static void
 __load_scePthreadBarrierWait() {
@@ -28176,8 +27323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierattrDestroy]\n");
 
 void __load_and_call_scePthreadBarrierattrDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadBarrierattrDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadBarrierattrDestroy);
+void* __ptr_scePthreadBarrierattrDestroy = &__load_and_call_scePthreadBarrierattrDestroy;
 
 static void
 __load_scePthreadBarrierattrDestroy() {
@@ -28209,8 +27355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierattrGetpshared]\n");
 
 void __load_and_call_scePthreadBarrierattrGetpshared();
-static __attribute__ ((used)) void*
-__ptr_scePthreadBarrierattrGetpshared = (void*)(0x926100000l + (long)__load_and_call_scePthreadBarrierattrGetpshared);
+void* __ptr_scePthreadBarrierattrGetpshared = &__load_and_call_scePthreadBarrierattrGetpshared;
 
 static void
 __load_scePthreadBarrierattrGetpshared() {
@@ -28242,8 +27387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierattrInit]\n");
 
 void __load_and_call_scePthreadBarrierattrInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadBarrierattrInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadBarrierattrInit);
+void* __ptr_scePthreadBarrierattrInit = &__load_and_call_scePthreadBarrierattrInit;
 
 static void
 __load_scePthreadBarrierattrInit() {
@@ -28275,8 +27419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierattrSetpshared]\n");
 
 void __load_and_call_scePthreadBarrierattrSetpshared();
-static __attribute__ ((used)) void*
-__ptr_scePthreadBarrierattrSetpshared = (void*)(0x926100000l + (long)__load_and_call_scePthreadBarrierattrSetpshared);
+void* __ptr_scePthreadBarrierattrSetpshared = &__load_and_call_scePthreadBarrierattrSetpshared;
 
 static void
 __load_scePthreadBarrierattrSetpshared() {
@@ -28308,8 +27451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCancel]\n");
 
 void __load_and_call_scePthreadCancel();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCancel = (void*)(0x926100000l + (long)__load_and_call_scePthreadCancel);
+void* __ptr_scePthreadCancel = &__load_and_call_scePthreadCancel;
 
 static void
 __load_scePthreadCancel() {
@@ -28341,8 +27483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondBroadcast]\n");
 
 void __load_and_call_scePthreadCondBroadcast();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondBroadcast = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondBroadcast);
+void* __ptr_scePthreadCondBroadcast = &__load_and_call_scePthreadCondBroadcast;
 
 static void
 __load_scePthreadCondBroadcast() {
@@ -28374,8 +27515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondDestroy]\n");
 
 void __load_and_call_scePthreadCondDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondDestroy);
+void* __ptr_scePthreadCondDestroy = &__load_and_call_scePthreadCondDestroy;
 
 static void
 __load_scePthreadCondDestroy() {
@@ -28407,8 +27547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondInit]\n");
 
 void __load_and_call_scePthreadCondInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondInit);
+void* __ptr_scePthreadCondInit = &__load_and_call_scePthreadCondInit;
 
 static void
 __load_scePthreadCondInit() {
@@ -28440,8 +27579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondSignal]\n");
 
 void __load_and_call_scePthreadCondSignal();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondSignal = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondSignal);
+void* __ptr_scePthreadCondSignal = &__load_and_call_scePthreadCondSignal;
 
 static void
 __load_scePthreadCondSignal() {
@@ -28473,8 +27611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondSignalto]\n");
 
 void __load_and_call_scePthreadCondSignalto();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondSignalto = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondSignalto);
+void* __ptr_scePthreadCondSignalto = &__load_and_call_scePthreadCondSignalto;
 
 static void
 __load_scePthreadCondSignalto() {
@@ -28506,8 +27643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondTimedwait]\n");
 
 void __load_and_call_scePthreadCondTimedwait();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondTimedwait = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondTimedwait);
+void* __ptr_scePthreadCondTimedwait = &__load_and_call_scePthreadCondTimedwait;
 
 static void
 __load_scePthreadCondTimedwait() {
@@ -28539,8 +27675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondWait]\n");
 
 void __load_and_call_scePthreadCondWait();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondWait = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondWait);
+void* __ptr_scePthreadCondWait = &__load_and_call_scePthreadCondWait;
 
 static void
 __load_scePthreadCondWait() {
@@ -28572,8 +27707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrDestroy]\n");
 
 void __load_and_call_scePthreadCondattrDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondattrDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondattrDestroy);
+void* __ptr_scePthreadCondattrDestroy = &__load_and_call_scePthreadCondattrDestroy;
 
 static void
 __load_scePthreadCondattrDestroy() {
@@ -28605,8 +27739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrGetclock]\n");
 
 void __load_and_call_scePthreadCondattrGetclock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondattrGetclock = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondattrGetclock);
+void* __ptr_scePthreadCondattrGetclock = &__load_and_call_scePthreadCondattrGetclock;
 
 static void
 __load_scePthreadCondattrGetclock() {
@@ -28638,8 +27771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrGetpshared]\n");
 
 void __load_and_call_scePthreadCondattrGetpshared();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondattrGetpshared = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondattrGetpshared);
+void* __ptr_scePthreadCondattrGetpshared = &__load_and_call_scePthreadCondattrGetpshared;
 
 static void
 __load_scePthreadCondattrGetpshared() {
@@ -28671,8 +27803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrInit]\n");
 
 void __load_and_call_scePthreadCondattrInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondattrInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondattrInit);
+void* __ptr_scePthreadCondattrInit = &__load_and_call_scePthreadCondattrInit;
 
 static void
 __load_scePthreadCondattrInit() {
@@ -28704,8 +27835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrSetclock]\n");
 
 void __load_and_call_scePthreadCondattrSetclock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondattrSetclock = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondattrSetclock);
+void* __ptr_scePthreadCondattrSetclock = &__load_and_call_scePthreadCondattrSetclock;
 
 static void
 __load_scePthreadCondattrSetclock() {
@@ -28737,8 +27867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrSetpshared]\n");
 
 void __load_and_call_scePthreadCondattrSetpshared();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCondattrSetpshared = (void*)(0x926100000l + (long)__load_and_call_scePthreadCondattrSetpshared);
+void* __ptr_scePthreadCondattrSetpshared = &__load_and_call_scePthreadCondattrSetpshared;
 
 static void
 __load_scePthreadCondattrSetpshared() {
@@ -28770,8 +27899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCreate]\n");
 
 void __load_and_call_scePthreadCreate();
-static __attribute__ ((used)) void*
-__ptr_scePthreadCreate = (void*)(0x926100000l + (long)__load_and_call_scePthreadCreate);
+void* __ptr_scePthreadCreate = &__load_and_call_scePthreadCreate;
 
 static void
 __load_scePthreadCreate() {
@@ -28803,8 +27931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadDetach]\n");
 
 void __load_and_call_scePthreadDetach();
-static __attribute__ ((used)) void*
-__ptr_scePthreadDetach = (void*)(0x926100000l + (long)__load_and_call_scePthreadDetach);
+void* __ptr_scePthreadDetach = &__load_and_call_scePthreadDetach;
 
 static void
 __load_scePthreadDetach() {
@@ -28836,8 +27963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadEqual]\n");
 
 void __load_and_call_scePthreadEqual();
-static __attribute__ ((used)) void*
-__ptr_scePthreadEqual = (void*)(0x926100000l + (long)__load_and_call_scePthreadEqual);
+void* __ptr_scePthreadEqual = &__load_and_call_scePthreadEqual;
 
 static void
 __load_scePthreadEqual() {
@@ -28869,8 +27995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadExit]\n");
 
 void __load_and_call_scePthreadExit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadExit = (void*)(0x926100000l + (long)__load_and_call_scePthreadExit);
+void* __ptr_scePthreadExit = &__load_and_call_scePthreadExit;
 
 static void
 __load_scePthreadExit() {
@@ -28902,8 +28027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetaffinity]\n");
 
 void __load_and_call_scePthreadGetaffinity();
-static __attribute__ ((used)) void*
-__ptr_scePthreadGetaffinity = (void*)(0x926100000l + (long)__load_and_call_scePthreadGetaffinity);
+void* __ptr_scePthreadGetaffinity = &__load_and_call_scePthreadGetaffinity;
 
 static void
 __load_scePthreadGetaffinity() {
@@ -28935,8 +28059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetconcurrency]\n");
 
 void __load_and_call_scePthreadGetconcurrency();
-static __attribute__ ((used)) void*
-__ptr_scePthreadGetconcurrency = (void*)(0x926100000l + (long)__load_and_call_scePthreadGetconcurrency);
+void* __ptr_scePthreadGetconcurrency = &__load_and_call_scePthreadGetconcurrency;
 
 static void
 __load_scePthreadGetconcurrency() {
@@ -28968,8 +28091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetcpuclockid]\n");
 
 void __load_and_call_scePthreadGetcpuclockid();
-static __attribute__ ((used)) void*
-__ptr_scePthreadGetcpuclockid = (void*)(0x926100000l + (long)__load_and_call_scePthreadGetcpuclockid);
+void* __ptr_scePthreadGetcpuclockid = &__load_and_call_scePthreadGetcpuclockid;
 
 static void
 __load_scePthreadGetcpuclockid() {
@@ -29001,8 +28123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetname]\n");
 
 void __load_and_call_scePthreadGetname();
-static __attribute__ ((used)) void*
-__ptr_scePthreadGetname = (void*)(0x926100000l + (long)__load_and_call_scePthreadGetname);
+void* __ptr_scePthreadGetname = &__load_and_call_scePthreadGetname;
 
 static void
 __load_scePthreadGetname() {
@@ -29034,8 +28155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetprio]\n");
 
 void __load_and_call_scePthreadGetprio();
-static __attribute__ ((used)) void*
-__ptr_scePthreadGetprio = (void*)(0x926100000l + (long)__load_and_call_scePthreadGetprio);
+void* __ptr_scePthreadGetprio = &__load_and_call_scePthreadGetprio;
 
 static void
 __load_scePthreadGetprio() {
@@ -29067,8 +28187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetschedparam]\n");
 
 void __load_and_call_scePthreadGetschedparam();
-static __attribute__ ((used)) void*
-__ptr_scePthreadGetschedparam = (void*)(0x926100000l + (long)__load_and_call_scePthreadGetschedparam);
+void* __ptr_scePthreadGetschedparam = &__load_and_call_scePthreadGetschedparam;
 
 static void
 __load_scePthreadGetschedparam() {
@@ -29100,8 +28219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetspecific]\n");
 
 void __load_and_call_scePthreadGetspecific();
-static __attribute__ ((used)) void*
-__ptr_scePthreadGetspecific = (void*)(0x926100000l + (long)__load_and_call_scePthreadGetspecific);
+void* __ptr_scePthreadGetspecific = &__load_and_call_scePthreadGetspecific;
 
 static void
 __load_scePthreadGetspecific() {
@@ -29133,8 +28251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetthreadid]\n");
 
 void __load_and_call_scePthreadGetthreadid();
-static __attribute__ ((used)) void*
-__ptr_scePthreadGetthreadid = (void*)(0x926100000l + (long)__load_and_call_scePthreadGetthreadid);
+void* __ptr_scePthreadGetthreadid = &__load_and_call_scePthreadGetthreadid;
 
 static void
 __load_scePthreadGetthreadid() {
@@ -29166,8 +28283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadJoin]\n");
 
 void __load_and_call_scePthreadJoin();
-static __attribute__ ((used)) void*
-__ptr_scePthreadJoin = (void*)(0x926100000l + (long)__load_and_call_scePthreadJoin);
+void* __ptr_scePthreadJoin = &__load_and_call_scePthreadJoin;
 
 static void
 __load_scePthreadJoin() {
@@ -29199,8 +28315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadKeyCreate]\n");
 
 void __load_and_call_scePthreadKeyCreate();
-static __attribute__ ((used)) void*
-__ptr_scePthreadKeyCreate = (void*)(0x926100000l + (long)__load_and_call_scePthreadKeyCreate);
+void* __ptr_scePthreadKeyCreate = &__load_and_call_scePthreadKeyCreate;
 
 static void
 __load_scePthreadKeyCreate() {
@@ -29232,8 +28347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadKeyDelete]\n");
 
 void __load_and_call_scePthreadKeyDelete();
-static __attribute__ ((used)) void*
-__ptr_scePthreadKeyDelete = (void*)(0x926100000l + (long)__load_and_call_scePthreadKeyDelete);
+void* __ptr_scePthreadKeyDelete = &__load_and_call_scePthreadKeyDelete;
 
 static void
 __load_scePthreadKeyDelete() {
@@ -29265,8 +28379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMain]\n");
 
 void __load_and_call_scePthreadMain();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMain = (void*)(0x926100000l + (long)__load_and_call_scePthreadMain);
+void* __ptr_scePthreadMain = &__load_and_call_scePthreadMain;
 
 static void
 __load_scePthreadMain() {
@@ -29298,8 +28411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMulti]\n");
 
 void __load_and_call_scePthreadMulti();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMulti = (void*)(0x926100000l + (long)__load_and_call_scePthreadMulti);
+void* __ptr_scePthreadMulti = &__load_and_call_scePthreadMulti;
 
 static void
 __load_scePthreadMulti() {
@@ -29331,8 +28443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexDestroy]\n");
 
 void __load_and_call_scePthreadMutexDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexDestroy);
+void* __ptr_scePthreadMutexDestroy = &__load_and_call_scePthreadMutexDestroy;
 
 static void
 __load_scePthreadMutexDestroy() {
@@ -29364,8 +28475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexGetprioceiling]\n");
 
 void __load_and_call_scePthreadMutexGetprioceiling();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexGetprioceiling = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexGetprioceiling);
+void* __ptr_scePthreadMutexGetprioceiling = &__load_and_call_scePthreadMutexGetprioceiling;
 
 static void
 __load_scePthreadMutexGetprioceiling() {
@@ -29397,8 +28507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexGetspinloops]\n");
 
 void __load_and_call_scePthreadMutexGetspinloops();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexGetspinloops = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexGetspinloops);
+void* __ptr_scePthreadMutexGetspinloops = &__load_and_call_scePthreadMutexGetspinloops;
 
 static void
 __load_scePthreadMutexGetspinloops() {
@@ -29430,8 +28539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexGetyieldloops]\n");
 
 void __load_and_call_scePthreadMutexGetyieldloops();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexGetyieldloops = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexGetyieldloops);
+void* __ptr_scePthreadMutexGetyieldloops = &__load_and_call_scePthreadMutexGetyieldloops;
 
 static void
 __load_scePthreadMutexGetyieldloops() {
@@ -29463,8 +28571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexInit]\n");
 
 void __load_and_call_scePthreadMutexInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexInit);
+void* __ptr_scePthreadMutexInit = &__load_and_call_scePthreadMutexInit;
 
 static void
 __load_scePthreadMutexInit() {
@@ -29496,8 +28603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexInitForInternalLibc]\n");
 
 void __load_and_call_scePthreadMutexInitForInternalLibc();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexInitForInternalLibc = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexInitForInternalLibc);
+void* __ptr_scePthreadMutexInitForInternalLibc = &__load_and_call_scePthreadMutexInitForInternalLibc;
 
 static void
 __load_scePthreadMutexInitForInternalLibc() {
@@ -29529,8 +28635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexIsowned]\n");
 
 void __load_and_call_scePthreadMutexIsowned();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexIsowned = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexIsowned);
+void* __ptr_scePthreadMutexIsowned = &__load_and_call_scePthreadMutexIsowned;
 
 static void
 __load_scePthreadMutexIsowned() {
@@ -29562,8 +28667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexLock]\n");
 
 void __load_and_call_scePthreadMutexLock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexLock = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexLock);
+void* __ptr_scePthreadMutexLock = &__load_and_call_scePthreadMutexLock;
 
 static void
 __load_scePthreadMutexLock() {
@@ -29595,8 +28699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexSetprioceiling]\n");
 
 void __load_and_call_scePthreadMutexSetprioceiling();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexSetprioceiling = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexSetprioceiling);
+void* __ptr_scePthreadMutexSetprioceiling = &__load_and_call_scePthreadMutexSetprioceiling;
 
 static void
 __load_scePthreadMutexSetprioceiling() {
@@ -29628,8 +28731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexSetspinloops]\n");
 
 void __load_and_call_scePthreadMutexSetspinloops();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexSetspinloops = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexSetspinloops);
+void* __ptr_scePthreadMutexSetspinloops = &__load_and_call_scePthreadMutexSetspinloops;
 
 static void
 __load_scePthreadMutexSetspinloops() {
@@ -29661,8 +28763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexSetyieldloops]\n");
 
 void __load_and_call_scePthreadMutexSetyieldloops();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexSetyieldloops = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexSetyieldloops);
+void* __ptr_scePthreadMutexSetyieldloops = &__load_and_call_scePthreadMutexSetyieldloops;
 
 static void
 __load_scePthreadMutexSetyieldloops() {
@@ -29694,8 +28795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexTimedlock]\n");
 
 void __load_and_call_scePthreadMutexTimedlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexTimedlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexTimedlock);
+void* __ptr_scePthreadMutexTimedlock = &__load_and_call_scePthreadMutexTimedlock;
 
 static void
 __load_scePthreadMutexTimedlock() {
@@ -29727,8 +28827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexTrylock]\n");
 
 void __load_and_call_scePthreadMutexTrylock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexTrylock = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexTrylock);
+void* __ptr_scePthreadMutexTrylock = &__load_and_call_scePthreadMutexTrylock;
 
 static void
 __load_scePthreadMutexTrylock() {
@@ -29760,8 +28859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexUnlock]\n");
 
 void __load_and_call_scePthreadMutexUnlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexUnlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexUnlock);
+void* __ptr_scePthreadMutexUnlock = &__load_and_call_scePthreadMutexUnlock;
 
 static void
 __load_scePthreadMutexUnlock() {
@@ -29793,8 +28891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrDestroy]\n");
 
 void __load_and_call_scePthreadMutexattrDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrDestroy);
+void* __ptr_scePthreadMutexattrDestroy = &__load_and_call_scePthreadMutexattrDestroy;
 
 static void
 __load_scePthreadMutexattrDestroy() {
@@ -29826,8 +28923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetgen]\n");
 
 void __load_and_call_scePthreadMutexattrGetgen();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrGetgen = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrGetgen);
+void* __ptr_scePthreadMutexattrGetgen = &__load_and_call_scePthreadMutexattrGetgen;
 
 static void
 __load_scePthreadMutexattrGetgen() {
@@ -29859,8 +28955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetkind]\n");
 
 void __load_and_call_scePthreadMutexattrGetkind();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrGetkind = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrGetkind);
+void* __ptr_scePthreadMutexattrGetkind = &__load_and_call_scePthreadMutexattrGetkind;
 
 static void
 __load_scePthreadMutexattrGetkind() {
@@ -29892,8 +28987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetprioceiling]\n");
 
 void __load_and_call_scePthreadMutexattrGetprioceiling();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrGetprioceiling = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrGetprioceiling);
+void* __ptr_scePthreadMutexattrGetprioceiling = &__load_and_call_scePthreadMutexattrGetprioceiling;
 
 static void
 __load_scePthreadMutexattrGetprioceiling() {
@@ -29925,8 +29019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetprotocol]\n");
 
 void __load_and_call_scePthreadMutexattrGetprotocol();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrGetprotocol = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrGetprotocol);
+void* __ptr_scePthreadMutexattrGetprotocol = &__load_and_call_scePthreadMutexattrGetprotocol;
 
 static void
 __load_scePthreadMutexattrGetprotocol() {
@@ -29958,8 +29051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetpshared]\n");
 
 void __load_and_call_scePthreadMutexattrGetpshared();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrGetpshared = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrGetpshared);
+void* __ptr_scePthreadMutexattrGetpshared = &__load_and_call_scePthreadMutexattrGetpshared;
 
 static void
 __load_scePthreadMutexattrGetpshared() {
@@ -29991,8 +29083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGettype]\n");
 
 void __load_and_call_scePthreadMutexattrGettype();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrGettype = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrGettype);
+void* __ptr_scePthreadMutexattrGettype = &__load_and_call_scePthreadMutexattrGettype;
 
 static void
 __load_scePthreadMutexattrGettype() {
@@ -30024,8 +29115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrInit]\n");
 
 void __load_and_call_scePthreadMutexattrInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrInit);
+void* __ptr_scePthreadMutexattrInit = &__load_and_call_scePthreadMutexattrInit;
 
 static void
 __load_scePthreadMutexattrInit() {
@@ -30057,8 +29147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrInitForInternalLibc]\n");
 
 void __load_and_call_scePthreadMutexattrInitForInternalLibc();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrInitForInternalLibc = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrInitForInternalLibc);
+void* __ptr_scePthreadMutexattrInitForInternalLibc = &__load_and_call_scePthreadMutexattrInitForInternalLibc;
 
 static void
 __load_scePthreadMutexattrInitForInternalLibc() {
@@ -30090,8 +29179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetgen]\n");
 
 void __load_and_call_scePthreadMutexattrSetgen();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrSetgen = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrSetgen);
+void* __ptr_scePthreadMutexattrSetgen = &__load_and_call_scePthreadMutexattrSetgen;
 
 static void
 __load_scePthreadMutexattrSetgen() {
@@ -30123,8 +29211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetkind]\n");
 
 void __load_and_call_scePthreadMutexattrSetkind();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrSetkind = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrSetkind);
+void* __ptr_scePthreadMutexattrSetkind = &__load_and_call_scePthreadMutexattrSetkind;
 
 static void
 __load_scePthreadMutexattrSetkind() {
@@ -30156,8 +29243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetprioceiling]\n");
 
 void __load_and_call_scePthreadMutexattrSetprioceiling();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrSetprioceiling = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrSetprioceiling);
+void* __ptr_scePthreadMutexattrSetprioceiling = &__load_and_call_scePthreadMutexattrSetprioceiling;
 
 static void
 __load_scePthreadMutexattrSetprioceiling() {
@@ -30189,8 +29275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetprotocol]\n");
 
 void __load_and_call_scePthreadMutexattrSetprotocol();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrSetprotocol = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrSetprotocol);
+void* __ptr_scePthreadMutexattrSetprotocol = &__load_and_call_scePthreadMutexattrSetprotocol;
 
 static void
 __load_scePthreadMutexattrSetprotocol() {
@@ -30222,8 +29307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetpshared]\n");
 
 void __load_and_call_scePthreadMutexattrSetpshared();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrSetpshared = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrSetpshared);
+void* __ptr_scePthreadMutexattrSetpshared = &__load_and_call_scePthreadMutexattrSetpshared;
 
 static void
 __load_scePthreadMutexattrSetpshared() {
@@ -30255,8 +29339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSettype]\n");
 
 void __load_and_call_scePthreadMutexattrSettype();
-static __attribute__ ((used)) void*
-__ptr_scePthreadMutexattrSettype = (void*)(0x926100000l + (long)__load_and_call_scePthreadMutexattrSettype);
+void* __ptr_scePthreadMutexattrSettype = &__load_and_call_scePthreadMutexattrSettype;
 
 static void
 __load_scePthreadMutexattrSettype() {
@@ -30288,8 +29371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadOnce]\n");
 
 void __load_and_call_scePthreadOnce();
-static __attribute__ ((used)) void*
-__ptr_scePthreadOnce = (void*)(0x926100000l + (long)__load_and_call_scePthreadOnce);
+void* __ptr_scePthreadOnce = &__load_and_call_scePthreadOnce;
 
 static void
 __load_scePthreadOnce() {
@@ -30321,8 +29403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRename]\n");
 
 void __load_and_call_scePthreadRename();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRename = (void*)(0x926100000l + (long)__load_and_call_scePthreadRename);
+void* __ptr_scePthreadRename = &__load_and_call_scePthreadRename;
 
 static void
 __load_scePthreadRename() {
@@ -30354,8 +29435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadResume]\n");
 
 void __load_and_call_scePthreadResume();
-static __attribute__ ((used)) void*
-__ptr_scePthreadResume = (void*)(0x926100000l + (long)__load_and_call_scePthreadResume);
+void* __ptr_scePthreadResume = &__load_and_call_scePthreadResume;
 
 static void
 __load_scePthreadResume() {
@@ -30387,8 +29467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadResumeAll]\n");
 
 void __load_and_call_scePthreadResumeAll();
-static __attribute__ ((used)) void*
-__ptr_scePthreadResumeAll = (void*)(0x926100000l + (long)__load_and_call_scePthreadResumeAll);
+void* __ptr_scePthreadResumeAll = &__load_and_call_scePthreadResumeAll;
 
 static void
 __load_scePthreadResumeAll() {
@@ -30420,8 +29499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockDestroy]\n");
 
 void __load_and_call_scePthreadRwlockDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockDestroy);
+void* __ptr_scePthreadRwlockDestroy = &__load_and_call_scePthreadRwlockDestroy;
 
 static void
 __load_scePthreadRwlockDestroy() {
@@ -30453,8 +29531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockInit]\n");
 
 void __load_and_call_scePthreadRwlockInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockInit);
+void* __ptr_scePthreadRwlockInit = &__load_and_call_scePthreadRwlockInit;
 
 static void
 __load_scePthreadRwlockInit() {
@@ -30486,8 +29563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockRdlock]\n");
 
 void __load_and_call_scePthreadRwlockRdlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockRdlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockRdlock);
+void* __ptr_scePthreadRwlockRdlock = &__load_and_call_scePthreadRwlockRdlock;
 
 static void
 __load_scePthreadRwlockRdlock() {
@@ -30519,8 +29595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockTimedrdlock]\n");
 
 void __load_and_call_scePthreadRwlockTimedrdlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockTimedrdlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockTimedrdlock);
+void* __ptr_scePthreadRwlockTimedrdlock = &__load_and_call_scePthreadRwlockTimedrdlock;
 
 static void
 __load_scePthreadRwlockTimedrdlock() {
@@ -30552,8 +29627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockTimedwrlock]\n");
 
 void __load_and_call_scePthreadRwlockTimedwrlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockTimedwrlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockTimedwrlock);
+void* __ptr_scePthreadRwlockTimedwrlock = &__load_and_call_scePthreadRwlockTimedwrlock;
 
 static void
 __load_scePthreadRwlockTimedwrlock() {
@@ -30585,8 +29659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockTryrdlock]\n");
 
 void __load_and_call_scePthreadRwlockTryrdlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockTryrdlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockTryrdlock);
+void* __ptr_scePthreadRwlockTryrdlock = &__load_and_call_scePthreadRwlockTryrdlock;
 
 static void
 __load_scePthreadRwlockTryrdlock() {
@@ -30618,8 +29691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockTrywrlock]\n");
 
 void __load_and_call_scePthreadRwlockTrywrlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockTrywrlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockTrywrlock);
+void* __ptr_scePthreadRwlockTrywrlock = &__load_and_call_scePthreadRwlockTrywrlock;
 
 static void
 __load_scePthreadRwlockTrywrlock() {
@@ -30651,8 +29723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockUnlock]\n");
 
 void __load_and_call_scePthreadRwlockUnlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockUnlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockUnlock);
+void* __ptr_scePthreadRwlockUnlock = &__load_and_call_scePthreadRwlockUnlock;
 
 static void
 __load_scePthreadRwlockUnlock() {
@@ -30684,8 +29755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockWrlock]\n");
 
 void __load_and_call_scePthreadRwlockWrlock();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockWrlock = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockWrlock);
+void* __ptr_scePthreadRwlockWrlock = &__load_and_call_scePthreadRwlockWrlock;
 
 static void
 __load_scePthreadRwlockWrlock() {
@@ -30717,8 +29787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrDestroy]\n");
 
 void __load_and_call_scePthreadRwlockattrDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockattrDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockattrDestroy);
+void* __ptr_scePthreadRwlockattrDestroy = &__load_and_call_scePthreadRwlockattrDestroy;
 
 static void
 __load_scePthreadRwlockattrDestroy() {
@@ -30750,8 +29819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrGetpshared]\n");
 
 void __load_and_call_scePthreadRwlockattrGetpshared();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockattrGetpshared = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockattrGetpshared);
+void* __ptr_scePthreadRwlockattrGetpshared = &__load_and_call_scePthreadRwlockattrGetpshared;
 
 static void
 __load_scePthreadRwlockattrGetpshared() {
@@ -30783,8 +29851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrGettype]\n");
 
 void __load_and_call_scePthreadRwlockattrGettype();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockattrGettype = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockattrGettype);
+void* __ptr_scePthreadRwlockattrGettype = &__load_and_call_scePthreadRwlockattrGettype;
 
 static void
 __load_scePthreadRwlockattrGettype() {
@@ -30816,8 +29883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrInit]\n");
 
 void __load_and_call_scePthreadRwlockattrInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockattrInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockattrInit);
+void* __ptr_scePthreadRwlockattrInit = &__load_and_call_scePthreadRwlockattrInit;
 
 static void
 __load_scePthreadRwlockattrInit() {
@@ -30849,8 +29915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrSetpshared]\n");
 
 void __load_and_call_scePthreadRwlockattrSetpshared();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockattrSetpshared = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockattrSetpshared);
+void* __ptr_scePthreadRwlockattrSetpshared = &__load_and_call_scePthreadRwlockattrSetpshared;
 
 static void
 __load_scePthreadRwlockattrSetpshared() {
@@ -30882,8 +29947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrSettype]\n");
 
 void __load_and_call_scePthreadRwlockattrSettype();
-static __attribute__ ((used)) void*
-__ptr_scePthreadRwlockattrSettype = (void*)(0x926100000l + (long)__load_and_call_scePthreadRwlockattrSettype);
+void* __ptr_scePthreadRwlockattrSettype = &__load_and_call_scePthreadRwlockattrSettype;
 
 static void
 __load_scePthreadRwlockattrSettype() {
@@ -30915,8 +29979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSelf]\n");
 
 void __load_and_call_scePthreadSelf();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSelf = (void*)(0x926100000l + (long)__load_and_call_scePthreadSelf);
+void* __ptr_scePthreadSelf = &__load_and_call_scePthreadSelf;
 
 static void
 __load_scePthreadSelf() {
@@ -30948,8 +30011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemDestroy]\n");
 
 void __load_and_call_scePthreadSemDestroy();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSemDestroy = (void*)(0x926100000l + (long)__load_and_call_scePthreadSemDestroy);
+void* __ptr_scePthreadSemDestroy = &__load_and_call_scePthreadSemDestroy;
 
 static void
 __load_scePthreadSemDestroy() {
@@ -30981,8 +30043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemGetvalue]\n");
 
 void __load_and_call_scePthreadSemGetvalue();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSemGetvalue = (void*)(0x926100000l + (long)__load_and_call_scePthreadSemGetvalue);
+void* __ptr_scePthreadSemGetvalue = &__load_and_call_scePthreadSemGetvalue;
 
 static void
 __load_scePthreadSemGetvalue() {
@@ -31014,8 +30075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemInit]\n");
 
 void __load_and_call_scePthreadSemInit();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSemInit = (void*)(0x926100000l + (long)__load_and_call_scePthreadSemInit);
+void* __ptr_scePthreadSemInit = &__load_and_call_scePthreadSemInit;
 
 static void
 __load_scePthreadSemInit() {
@@ -31047,8 +30107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemPost]\n");
 
 void __load_and_call_scePthreadSemPost();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSemPost = (void*)(0x926100000l + (long)__load_and_call_scePthreadSemPost);
+void* __ptr_scePthreadSemPost = &__load_and_call_scePthreadSemPost;
 
 static void
 __load_scePthreadSemPost() {
@@ -31080,8 +30139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemTimedwait]\n");
 
 void __load_and_call_scePthreadSemTimedwait();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSemTimedwait = (void*)(0x926100000l + (long)__load_and_call_scePthreadSemTimedwait);
+void* __ptr_scePthreadSemTimedwait = &__load_and_call_scePthreadSemTimedwait;
 
 static void
 __load_scePthreadSemTimedwait() {
@@ -31113,8 +30171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemTrywait]\n");
 
 void __load_and_call_scePthreadSemTrywait();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSemTrywait = (void*)(0x926100000l + (long)__load_and_call_scePthreadSemTrywait);
+void* __ptr_scePthreadSemTrywait = &__load_and_call_scePthreadSemTrywait;
 
 static void
 __load_scePthreadSemTrywait() {
@@ -31146,8 +30203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemWait]\n");
 
 void __load_and_call_scePthreadSemWait();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSemWait = (void*)(0x926100000l + (long)__load_and_call_scePthreadSemWait);
+void* __ptr_scePthreadSemWait = &__load_and_call_scePthreadSemWait;
 
 static void
 __load_scePthreadSemWait() {
@@ -31179,8 +30235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetBesteffort]\n");
 
 void __load_and_call_scePthreadSetBesteffort();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetBesteffort = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetBesteffort);
+void* __ptr_scePthreadSetBesteffort = &__load_and_call_scePthreadSetBesteffort;
 
 static void
 __load_scePthreadSetBesteffort() {
@@ -31212,8 +30267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetDefaultstacksize]\n");
 
 void __load_and_call_scePthreadSetDefaultstacksize();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetDefaultstacksize = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetDefaultstacksize);
+void* __ptr_scePthreadSetDefaultstacksize = &__load_and_call_scePthreadSetDefaultstacksize;
 
 static void
 __load_scePthreadSetDefaultstacksize() {
@@ -31245,8 +30299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetName]\n");
 
 void __load_and_call_scePthreadSetName();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetName = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetName);
+void* __ptr_scePthreadSetName = &__load_and_call_scePthreadSetName;
 
 static void
 __load_scePthreadSetName() {
@@ -31278,8 +30331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetaffinity]\n");
 
 void __load_and_call_scePthreadSetaffinity();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetaffinity = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetaffinity);
+void* __ptr_scePthreadSetaffinity = &__load_and_call_scePthreadSetaffinity;
 
 static void
 __load_scePthreadSetaffinity() {
@@ -31311,8 +30363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetcancelstate]\n");
 
 void __load_and_call_scePthreadSetcancelstate();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetcancelstate = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetcancelstate);
+void* __ptr_scePthreadSetcancelstate = &__load_and_call_scePthreadSetcancelstate;
 
 static void
 __load_scePthreadSetcancelstate() {
@@ -31344,8 +30395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetcanceltype]\n");
 
 void __load_and_call_scePthreadSetcanceltype();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetcanceltype = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetcanceltype);
+void* __ptr_scePthreadSetcanceltype = &__load_and_call_scePthreadSetcanceltype;
 
 static void
 __load_scePthreadSetcanceltype() {
@@ -31377,8 +30427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetconcurrency]\n");
 
 void __load_and_call_scePthreadSetconcurrency();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetconcurrency = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetconcurrency);
+void* __ptr_scePthreadSetconcurrency = &__load_and_call_scePthreadSetconcurrency;
 
 static void
 __load_scePthreadSetconcurrency() {
@@ -31410,8 +30459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetprio]\n");
 
 void __load_and_call_scePthreadSetprio();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetprio = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetprio);
+void* __ptr_scePthreadSetprio = &__load_and_call_scePthreadSetprio;
 
 static void
 __load_scePthreadSetprio() {
@@ -31443,8 +30491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetschedparam]\n");
 
 void __load_and_call_scePthreadSetschedparam();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetschedparam = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetschedparam);
+void* __ptr_scePthreadSetschedparam = &__load_and_call_scePthreadSetschedparam;
 
 static void
 __load_scePthreadSetschedparam() {
@@ -31476,8 +30523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetspecific]\n");
 
 void __load_and_call_scePthreadSetspecific();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSetspecific = (void*)(0x926100000l + (long)__load_and_call_scePthreadSetspecific);
+void* __ptr_scePthreadSetspecific = &__load_and_call_scePthreadSetspecific;
 
 static void
 __load_scePthreadSetspecific() {
@@ -31509,8 +30555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSingle]\n");
 
 void __load_and_call_scePthreadSingle();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSingle = (void*)(0x926100000l + (long)__load_and_call_scePthreadSingle);
+void* __ptr_scePthreadSingle = &__load_and_call_scePthreadSingle;
 
 static void
 __load_scePthreadSingle() {
@@ -31542,8 +30587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSuspend]\n");
 
 void __load_and_call_scePthreadSuspend();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSuspend = (void*)(0x926100000l + (long)__load_and_call_scePthreadSuspend);
+void* __ptr_scePthreadSuspend = &__load_and_call_scePthreadSuspend;
 
 static void
 __load_scePthreadSuspend() {
@@ -31575,8 +30619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSuspendAll]\n");
 
 void __load_and_call_scePthreadSuspendAll();
-static __attribute__ ((used)) void*
-__ptr_scePthreadSuspendAll = (void*)(0x926100000l + (long)__load_and_call_scePthreadSuspendAll);
+void* __ptr_scePthreadSuspendAll = &__load_and_call_scePthreadSuspendAll;
 
 static void
 __load_scePthreadSuspendAll() {
@@ -31608,8 +30651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadTestcancel]\n");
 
 void __load_and_call_scePthreadTestcancel();
-static __attribute__ ((used)) void*
-__ptr_scePthreadTestcancel = (void*)(0x926100000l + (long)__load_and_call_scePthreadTestcancel);
+void* __ptr_scePthreadTestcancel = &__load_and_call_scePthreadTestcancel;
 
 static void
 __load_scePthreadTestcancel() {
@@ -31641,8 +30683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadTimedjoin]\n");
 
 void __load_and_call_scePthreadTimedjoin();
-static __attribute__ ((used)) void*
-__ptr_scePthreadTimedjoin = (void*)(0x926100000l + (long)__load_and_call_scePthreadTimedjoin);
+void* __ptr_scePthreadTimedjoin = &__load_and_call_scePthreadTimedjoin;
 
 static void
 __load_scePthreadTimedjoin() {
@@ -31674,8 +30715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadYield]\n");
 
 void __load_and_call_scePthreadYield();
-static __attribute__ ((used)) void*
-__ptr_scePthreadYield = (void*)(0x926100000l + (long)__load_and_call_scePthreadYield);
+void* __ptr_scePthreadYield = &__load_and_call_scePthreadYield;
 
 static void
 __load_scePthreadYield() {
@@ -31707,8 +30747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_get_priority_max]\n");
 
 void __load_and_call_sched_get_priority_max();
-static __attribute__ ((used)) void*
-__ptr_sched_get_priority_max = (void*)(0x926100000l + (long)__load_and_call_sched_get_priority_max);
+void* __ptr_sched_get_priority_max = &__load_and_call_sched_get_priority_max;
 
 static void
 __load_sched_get_priority_max() {
@@ -31740,8 +30779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_get_priority_min]\n");
 
 void __load_and_call_sched_get_priority_min();
-static __attribute__ ((used)) void*
-__ptr_sched_get_priority_min = (void*)(0x926100000l + (long)__load_and_call_sched_get_priority_min);
+void* __ptr_sched_get_priority_min = &__load_and_call_sched_get_priority_min;
 
 static void
 __load_sched_get_priority_min() {
@@ -31773,8 +30811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_getparam]\n");
 
 void __load_and_call_sched_getparam();
-static __attribute__ ((used)) void*
-__ptr_sched_getparam = (void*)(0x926100000l + (long)__load_and_call_sched_getparam);
+void* __ptr_sched_getparam = &__load_and_call_sched_getparam;
 
 static void
 __load_sched_getparam() {
@@ -31806,8 +30843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_getscheduler]\n");
 
 void __load_and_call_sched_getscheduler();
-static __attribute__ ((used)) void*
-__ptr_sched_getscheduler = (void*)(0x926100000l + (long)__load_and_call_sched_getscheduler);
+void* __ptr_sched_getscheduler = &__load_and_call_sched_getscheduler;
 
 static void
 __load_sched_getscheduler() {
@@ -31839,8 +30875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_rr_get_interval]\n");
 
 void __load_and_call_sched_rr_get_interval();
-static __attribute__ ((used)) void*
-__ptr_sched_rr_get_interval = (void*)(0x926100000l + (long)__load_and_call_sched_rr_get_interval);
+void* __ptr_sched_rr_get_interval = &__load_and_call_sched_rr_get_interval;
 
 static void
 __load_sched_rr_get_interval() {
@@ -31872,8 +30907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_setparam]\n");
 
 void __load_and_call_sched_setparam();
-static __attribute__ ((used)) void*
-__ptr_sched_setparam = (void*)(0x926100000l + (long)__load_and_call_sched_setparam);
+void* __ptr_sched_setparam = &__load_and_call_sched_setparam;
 
 static void
 __load_sched_setparam() {
@@ -31905,8 +30939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_setscheduler]\n");
 
 void __load_and_call_sched_setscheduler();
-static __attribute__ ((used)) void*
-__ptr_sched_setscheduler = (void*)(0x926100000l + (long)__load_and_call_sched_setscheduler);
+void* __ptr_sched_setscheduler = &__load_and_call_sched_setscheduler;
 
 static void
 __load_sched_setscheduler() {
@@ -31938,8 +30971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_yield]\n");
 
 void __load_and_call_sched_yield();
-static __attribute__ ((used)) void*
-__ptr_sched_yield = (void*)(0x926100000l + (long)__load_and_call_sched_yield);
+void* __ptr_sched_yield = &__load_and_call_sched_yield;
 
 static void
 __load_sched_yield() {
@@ -31971,8 +31003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_select]\n");
 
 void __load_and_call_select();
-static __attribute__ ((used)) void*
-__ptr_select = (void*)(0x926100000l + (long)__load_and_call_select);
+void* __ptr_select = &__load_and_call_select;
 
 static void
 __load_select() {
@@ -32004,8 +31035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_close]\n");
 
 void __load_and_call_sem_close();
-static __attribute__ ((used)) void*
-__ptr_sem_close = (void*)(0x926100000l + (long)__load_and_call_sem_close);
+void* __ptr_sem_close = &__load_and_call_sem_close;
 
 static void
 __load_sem_close() {
@@ -32037,8 +31067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_destroy]\n");
 
 void __load_and_call_sem_destroy();
-static __attribute__ ((used)) void*
-__ptr_sem_destroy = (void*)(0x926100000l + (long)__load_and_call_sem_destroy);
+void* __ptr_sem_destroy = &__load_and_call_sem_destroy;
 
 static void
 __load_sem_destroy() {
@@ -32070,8 +31099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_getvalue]\n");
 
 void __load_and_call_sem_getvalue();
-static __attribute__ ((used)) void*
-__ptr_sem_getvalue = (void*)(0x926100000l + (long)__load_and_call_sem_getvalue);
+void* __ptr_sem_getvalue = &__load_and_call_sem_getvalue;
 
 static void
 __load_sem_getvalue() {
@@ -32103,8 +31131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_init]\n");
 
 void __load_and_call_sem_init();
-static __attribute__ ((used)) void*
-__ptr_sem_init = (void*)(0x926100000l + (long)__load_and_call_sem_init);
+void* __ptr_sem_init = &__load_and_call_sem_init;
 
 static void
 __load_sem_init() {
@@ -32136,8 +31163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_open]\n");
 
 void __load_and_call_sem_open();
-static __attribute__ ((used)) void*
-__ptr_sem_open = (void*)(0x926100000l + (long)__load_and_call_sem_open);
+void* __ptr_sem_open = &__load_and_call_sem_open;
 
 static void
 __load_sem_open() {
@@ -32169,8 +31195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_post]\n");
 
 void __load_and_call_sem_post();
-static __attribute__ ((used)) void*
-__ptr_sem_post = (void*)(0x926100000l + (long)__load_and_call_sem_post);
+void* __ptr_sem_post = &__load_and_call_sem_post;
 
 static void
 __load_sem_post() {
@@ -32202,8 +31227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_reltimedwait_np]\n");
 
 void __load_and_call_sem_reltimedwait_np();
-static __attribute__ ((used)) void*
-__ptr_sem_reltimedwait_np = (void*)(0x926100000l + (long)__load_and_call_sem_reltimedwait_np);
+void* __ptr_sem_reltimedwait_np = &__load_and_call_sem_reltimedwait_np;
 
 static void
 __load_sem_reltimedwait_np() {
@@ -32235,8 +31259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_setname]\n");
 
 void __load_and_call_sem_setname();
-static __attribute__ ((used)) void*
-__ptr_sem_setname = (void*)(0x926100000l + (long)__load_and_call_sem_setname);
+void* __ptr_sem_setname = &__load_and_call_sem_setname;
 
 static void
 __load_sem_setname() {
@@ -32268,8 +31291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_timedwait]\n");
 
 void __load_and_call_sem_timedwait();
-static __attribute__ ((used)) void*
-__ptr_sem_timedwait = (void*)(0x926100000l + (long)__load_and_call_sem_timedwait);
+void* __ptr_sem_timedwait = &__load_and_call_sem_timedwait;
 
 static void
 __load_sem_timedwait() {
@@ -32301,8 +31323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_trywait]\n");
 
 void __load_and_call_sem_trywait();
-static __attribute__ ((used)) void*
-__ptr_sem_trywait = (void*)(0x926100000l + (long)__load_and_call_sem_trywait);
+void* __ptr_sem_trywait = &__load_and_call_sem_trywait;
 
 static void
 __load_sem_trywait() {
@@ -32334,8 +31355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_unlink]\n");
 
 void __load_and_call_sem_unlink();
-static __attribute__ ((used)) void*
-__ptr_sem_unlink = (void*)(0x926100000l + (long)__load_and_call_sem_unlink);
+void* __ptr_sem_unlink = &__load_and_call_sem_unlink;
 
 static void
 __load_sem_unlink() {
@@ -32367,8 +31387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_wait]\n");
 
 void __load_and_call_sem_wait();
-static __attribute__ ((used)) void*
-__ptr_sem_wait = (void*)(0x926100000l + (long)__load_and_call_sem_wait);
+void* __ptr_sem_wait = &__load_and_call_sem_wait;
 
 static void
 __load_sem_wait() {
@@ -32400,8 +31419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_send]\n");
 
 void __load_and_call_send();
-static __attribute__ ((used)) void*
-__ptr_send = (void*)(0x926100000l + (long)__load_and_call_send);
+void* __ptr_send = &__load_and_call_send;
 
 static void
 __load_send() {
@@ -32433,8 +31451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sendfile]\n");
 
 void __load_and_call_sendfile();
-static __attribute__ ((used)) void*
-__ptr_sendfile = (void*)(0x926100000l + (long)__load_and_call_sendfile);
+void* __ptr_sendfile = &__load_and_call_sendfile;
 
 static void
 __load_sendfile() {
@@ -32466,8 +31483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sendmsg]\n");
 
 void __load_and_call_sendmsg();
-static __attribute__ ((used)) void*
-__ptr_sendmsg = (void*)(0x926100000l + (long)__load_and_call_sendmsg);
+void* __ptr_sendmsg = &__load_and_call_sendmsg;
 
 static void
 __load_sendmsg() {
@@ -32499,8 +31515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sendto]\n");
 
 void __load_and_call_sendto();
-static __attribute__ ((used)) void*
-__ptr_sendto = (void*)(0x926100000l + (long)__load_and_call_sendto);
+void* __ptr_sendto = &__load_and_call_sendto;
 
 static void
 __load_sendto() {
@@ -32532,8 +31547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_set_phys_fmem_limit]\n");
 
 void __load_and_call_set_phys_fmem_limit();
-static __attribute__ ((used)) void*
-__ptr_set_phys_fmem_limit = (void*)(0x926100000l + (long)__load_and_call_set_phys_fmem_limit);
+void* __ptr_set_phys_fmem_limit = &__load_and_call_set_phys_fmem_limit;
 
 static void
 __load_set_phys_fmem_limit() {
@@ -32565,8 +31579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setcontext]\n");
 
 void __load_and_call_setcontext();
-static __attribute__ ((used)) void*
-__ptr_setcontext = (void*)(0x926100000l + (long)__load_and_call_setcontext);
+void* __ptr_setcontext = &__load_and_call_setcontext;
 
 static void
 __load_setcontext() {
@@ -32598,8 +31611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setegid]\n");
 
 void __load_and_call_setegid();
-static __attribute__ ((used)) void*
-__ptr_setegid = (void*)(0x926100000l + (long)__load_and_call_setegid);
+void* __ptr_setegid = &__load_and_call_setegid;
 
 static void
 __load_setegid() {
@@ -32631,8 +31643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_seteuid]\n");
 
 void __load_and_call_seteuid();
-static __attribute__ ((used)) void*
-__ptr_seteuid = (void*)(0x926100000l + (long)__load_and_call_seteuid);
+void* __ptr_seteuid = &__load_and_call_seteuid;
 
 static void
 __load_seteuid() {
@@ -32664,8 +31675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setgroups]\n");
 
 void __load_and_call_setgroups();
-static __attribute__ ((used)) void*
-__ptr_setgroups = (void*)(0x926100000l + (long)__load_and_call_setgroups);
+void* __ptr_setgroups = &__load_and_call_setgroups;
 
 static void
 __load_setgroups() {
@@ -32697,8 +31707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setitimer]\n");
 
 void __load_and_call_setitimer();
-static __attribute__ ((used)) void*
-__ptr_setitimer = (void*)(0x926100000l + (long)__load_and_call_setitimer);
+void* __ptr_setitimer = &__load_and_call_setitimer;
 
 static void
 __load_setitimer() {
@@ -32730,8 +31739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setpriority]\n");
 
 void __load_and_call_setpriority();
-static __attribute__ ((used)) void*
-__ptr_setpriority = (void*)(0x926100000l + (long)__load_and_call_setpriority);
+void* __ptr_setpriority = &__load_and_call_setpriority;
 
 static void
 __load_setpriority() {
@@ -32763,8 +31771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setregid]\n");
 
 void __load_and_call_setregid();
-static __attribute__ ((used)) void*
-__ptr_setregid = (void*)(0x926100000l + (long)__load_and_call_setregid);
+void* __ptr_setregid = &__load_and_call_setregid;
 
 static void
 __load_setregid() {
@@ -32796,8 +31803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setreuid]\n");
 
 void __load_and_call_setreuid();
-static __attribute__ ((used)) void*
-__ptr_setreuid = (void*)(0x926100000l + (long)__load_and_call_setreuid);
+void* __ptr_setreuid = &__load_and_call_setreuid;
 
 static void
 __load_setreuid() {
@@ -32829,8 +31835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setrlimit]\n");
 
 void __load_and_call_setrlimit();
-static __attribute__ ((used)) void*
-__ptr_setrlimit = (void*)(0x926100000l + (long)__load_and_call_setrlimit);
+void* __ptr_setrlimit = &__load_and_call_setrlimit;
 
 static void
 __load_setrlimit() {
@@ -32862,8 +31867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setsockopt]\n");
 
 void __load_and_call_setsockopt();
-static __attribute__ ((used)) void*
-__ptr_setsockopt = (void*)(0x926100000l + (long)__load_and_call_setsockopt);
+void* __ptr_setsockopt = &__load_and_call_setsockopt;
 
 static void
 __load_setsockopt() {
@@ -32895,8 +31899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_settimeofday]\n");
 
 void __load_and_call_settimeofday();
-static __attribute__ ((used)) void*
-__ptr_settimeofday = (void*)(0x926100000l + (long)__load_and_call_settimeofday);
+void* __ptr_settimeofday = &__load_and_call_settimeofday;
 
 static void
 __load_settimeofday() {
@@ -32928,8 +31931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setuid]\n");
 
 void __load_and_call_setuid();
-static __attribute__ ((used)) void*
-__ptr_setuid = (void*)(0x926100000l + (long)__load_and_call_setuid);
+void* __ptr_setuid = &__load_and_call_setuid;
 
 static void
 __load_setuid() {
@@ -32961,8 +31963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_shm_open]\n");
 
 void __load_and_call_shm_open();
-static __attribute__ ((used)) void*
-__ptr_shm_open = (void*)(0x926100000l + (long)__load_and_call_shm_open);
+void* __ptr_shm_open = &__load_and_call_shm_open;
 
 static void
 __load_shm_open() {
@@ -32994,8 +31995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_shm_unlink]\n");
 
 void __load_and_call_shm_unlink();
-static __attribute__ ((used)) void*
-__ptr_shm_unlink = (void*)(0x926100000l + (long)__load_and_call_shm_unlink);
+void* __ptr_shm_unlink = &__load_and_call_shm_unlink;
 
 static void
 __load_shm_unlink() {
@@ -33027,8 +32027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_shutdown]\n");
 
 void __load_and_call_shutdown();
-static __attribute__ ((used)) void*
-__ptr_shutdown = (void*)(0x926100000l + (long)__load_and_call_shutdown);
+void* __ptr_shutdown = &__load_and_call_shutdown;
 
 static void
 __load_shutdown() {
@@ -33060,8 +32059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigaction]\n");
 
 void __load_and_call_sigaction();
-static __attribute__ ((used)) void*
-__ptr_sigaction = (void*)(0x926100000l + (long)__load_and_call_sigaction);
+void* __ptr_sigaction = &__load_and_call_sigaction;
 
 static void
 __load_sigaction() {
@@ -33093,8 +32091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigaddset]\n");
 
 void __load_and_call_sigaddset();
-static __attribute__ ((used)) void*
-__ptr_sigaddset = (void*)(0x926100000l + (long)__load_and_call_sigaddset);
+void* __ptr_sigaddset = &__load_and_call_sigaddset;
 
 static void
 __load_sigaddset() {
@@ -33126,8 +32123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigaltstack]\n");
 
 void __load_and_call_sigaltstack();
-static __attribute__ ((used)) void*
-__ptr_sigaltstack = (void*)(0x926100000l + (long)__load_and_call_sigaltstack);
+void* __ptr_sigaltstack = &__load_and_call_sigaltstack;
 
 static void
 __load_sigaltstack() {
@@ -33159,8 +32155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigdelset]\n");
 
 void __load_and_call_sigdelset();
-static __attribute__ ((used)) void*
-__ptr_sigdelset = (void*)(0x926100000l + (long)__load_and_call_sigdelset);
+void* __ptr_sigdelset = &__load_and_call_sigdelset;
 
 static void
 __load_sigdelset() {
@@ -33192,8 +32187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigemptyset]\n");
 
 void __load_and_call_sigemptyset();
-static __attribute__ ((used)) void*
-__ptr_sigemptyset = (void*)(0x926100000l + (long)__load_and_call_sigemptyset);
+void* __ptr_sigemptyset = &__load_and_call_sigemptyset;
 
 static void
 __load_sigemptyset() {
@@ -33225,8 +32219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigfillset]\n");
 
 void __load_and_call_sigfillset();
-static __attribute__ ((used)) void*
-__ptr_sigfillset = (void*)(0x926100000l + (long)__load_and_call_sigfillset);
+void* __ptr_sigfillset = &__load_and_call_sigfillset;
 
 static void
 __load_sigfillset() {
@@ -33258,8 +32251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigismember]\n");
 
 void __load_and_call_sigismember();
-static __attribute__ ((used)) void*
-__ptr_sigismember = (void*)(0x926100000l + (long)__load_and_call_sigismember);
+void* __ptr_sigismember = &__load_and_call_sigismember;
 
 static void
 __load_sigismember() {
@@ -33291,8 +32283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_siglongjmp]\n");
 
 void __load_and_call_siglongjmp();
-static __attribute__ ((used)) void*
-__ptr_siglongjmp = (void*)(0x926100000l + (long)__load_and_call_siglongjmp);
+void* __ptr_siglongjmp = &__load_and_call_siglongjmp;
 
 static void
 __load_siglongjmp() {
@@ -33324,8 +32315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_signal]\n");
 
 void __load_and_call_signal();
-static __attribute__ ((used)) void*
-__ptr_signal = (void*)(0x926100000l + (long)__load_and_call_signal);
+void* __ptr_signal = &__load_and_call_signal;
 
 static void
 __load_signal() {
@@ -33357,8 +32347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigpending]\n");
 
 void __load_and_call_sigpending();
-static __attribute__ ((used)) void*
-__ptr_sigpending = (void*)(0x926100000l + (long)__load_and_call_sigpending);
+void* __ptr_sigpending = &__load_and_call_sigpending;
 
 static void
 __load_sigpending() {
@@ -33390,8 +32379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigprocmask]\n");
 
 void __load_and_call_sigprocmask();
-static __attribute__ ((used)) void*
-__ptr_sigprocmask = (void*)(0x926100000l + (long)__load_and_call_sigprocmask);
+void* __ptr_sigprocmask = &__load_and_call_sigprocmask;
 
 static void
 __load_sigprocmask() {
@@ -33423,8 +32411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigqueue]\n");
 
 void __load_and_call_sigqueue();
-static __attribute__ ((used)) void*
-__ptr_sigqueue = (void*)(0x926100000l + (long)__load_and_call_sigqueue);
+void* __ptr_sigqueue = &__load_and_call_sigqueue;
 
 static void
 __load_sigqueue() {
@@ -33456,8 +32443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigreturn]\n");
 
 void __load_and_call_sigreturn();
-static __attribute__ ((used)) void*
-__ptr_sigreturn = (void*)(0x926100000l + (long)__load_and_call_sigreturn);
+void* __ptr_sigreturn = &__load_and_call_sigreturn;
 
 static void
 __load_sigreturn() {
@@ -33489,8 +32475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigsetjmp]\n");
 
 void __load_and_call_sigsetjmp();
-static __attribute__ ((used)) void*
-__ptr_sigsetjmp = (void*)(0x926100000l + (long)__load_and_call_sigsetjmp);
+void* __ptr_sigsetjmp = &__load_and_call_sigsetjmp;
 
 static void
 __load_sigsetjmp() {
@@ -33522,8 +32507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigsuspend]\n");
 
 void __load_and_call_sigsuspend();
-static __attribute__ ((used)) void*
-__ptr_sigsuspend = (void*)(0x926100000l + (long)__load_and_call_sigsuspend);
+void* __ptr_sigsuspend = &__load_and_call_sigsuspend;
 
 static void
 __load_sigsuspend() {
@@ -33555,8 +32539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigtimedwait]\n");
 
 void __load_and_call_sigtimedwait();
-static __attribute__ ((used)) void*
-__ptr_sigtimedwait = (void*)(0x926100000l + (long)__load_and_call_sigtimedwait);
+void* __ptr_sigtimedwait = &__load_and_call_sigtimedwait;
 
 static void
 __load_sigtimedwait() {
@@ -33588,8 +32571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigwait]\n");
 
 void __load_and_call_sigwait();
-static __attribute__ ((used)) void*
-__ptr_sigwait = (void*)(0x926100000l + (long)__load_and_call_sigwait);
+void* __ptr_sigwait = &__load_and_call_sigwait;
 
 static void
 __load_sigwait() {
@@ -33621,8 +32603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigwaitinfo]\n");
 
 void __load_and_call_sigwaitinfo();
-static __attribute__ ((used)) void*
-__ptr_sigwaitinfo = (void*)(0x926100000l + (long)__load_and_call_sigwaitinfo);
+void* __ptr_sigwaitinfo = &__load_and_call_sigwaitinfo;
 
 static void
 __load_sigwaitinfo() {
@@ -33654,8 +32635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sleep]\n");
 
 void __load_and_call_sleep();
-static __attribute__ ((used)) void*
-__ptr_sleep = (void*)(0x926100000l + (long)__load_and_call_sleep);
+void* __ptr_sleep = &__load_and_call_sleep;
 
 static void
 __load_sleep() {
@@ -33687,8 +32667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_socket]\n");
 
 void __load_and_call_socket();
-static __attribute__ ((used)) void*
-__ptr_socket = (void*)(0x926100000l + (long)__load_and_call_socket);
+void* __ptr_socket = &__load_and_call_socket;
 
 static void
 __load_socket() {
@@ -33720,8 +32699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_socketpair]\n");
 
 void __load_and_call_socketpair();
-static __attribute__ ((used)) void*
-__ptr_socketpair = (void*)(0x926100000l + (long)__load_and_call_socketpair);
+void* __ptr_socketpair = &__load_and_call_socketpair;
 
 static void
 __load_socketpair() {
@@ -33753,8 +32731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_stat]\n");
 
 void __load_and_call_stat();
-static __attribute__ ((used)) void*
-__ptr_stat = (void*)(0x926100000l + (long)__load_and_call_stat);
+void* __ptr_stat = &__load_and_call_stat;
 
 static void
 __load_stat() {
@@ -33786,8 +32763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_swapcontext]\n");
 
 void __load_and_call_swapcontext();
-static __attribute__ ((used)) void*
-__ptr_swapcontext = (void*)(0x926100000l + (long)__load_and_call_swapcontext);
+void* __ptr_swapcontext = &__load_and_call_swapcontext;
 
 static void
 __load_swapcontext() {
@@ -33819,8 +32795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sync]\n");
 
 void __load_and_call_sync();
-static __attribute__ ((used)) void*
-__ptr_sync = (void*)(0x926100000l + (long)__load_and_call_sync);
+void* __ptr_sync = &__load_and_call_sync;
 
 static void
 __load_sync() {
@@ -33852,8 +32827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetIntdevModeForInternalLibc]\n");
 
 void __load_and_call_sysKernelGetIntdevModeForInternalLibc();
-static __attribute__ ((used)) void*
-__ptr_sysKernelGetIntdevModeForInternalLibc = (void*)(0x926100000l + (long)__load_and_call_sysKernelGetIntdevModeForInternalLibc);
+void* __ptr_sysKernelGetIntdevModeForInternalLibc = &__load_and_call_sysKernelGetIntdevModeForInternalLibc;
 
 static void
 __load_sysKernelGetIntdevModeForInternalLibc() {
@@ -33885,8 +32859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetIntdevModeForRcmgr]\n");
 
 void __load_and_call_sysKernelGetIntdevModeForRcmgr();
-static __attribute__ ((used)) void*
-__ptr_sysKernelGetIntdevModeForRcmgr = (void*)(0x926100000l + (long)__load_and_call_sysKernelGetIntdevModeForRcmgr);
+void* __ptr_sysKernelGetIntdevModeForRcmgr = &__load_and_call_sysKernelGetIntdevModeForRcmgr;
 
 static void
 __load_sysKernelGetIntdevModeForRcmgr() {
@@ -33918,8 +32891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetLowerLimitSysexVersion]\n");
 
 void __load_and_call_sysKernelGetLowerLimitSysexVersion();
-static __attribute__ ((used)) void*
-__ptr_sysKernelGetLowerLimitSysexVersion = (void*)(0x926100000l + (long)__load_and_call_sysKernelGetLowerLimitSysexVersion);
+void* __ptr_sysKernelGetLowerLimitSysexVersion = &__load_and_call_sysKernelGetLowerLimitSysexVersion;
 
 static void
 __load_sysKernelGetLowerLimitSysexVersion() {
@@ -33951,8 +32923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetLowerLimitUpdVersion]\n");
 
 void __load_and_call_sysKernelGetLowerLimitUpdVersion();
-static __attribute__ ((used)) void*
-__ptr_sysKernelGetLowerLimitUpdVersion = (void*)(0x926100000l + (long)__load_and_call_sysKernelGetLowerLimitUpdVersion);
+void* __ptr_sysKernelGetLowerLimitUpdVersion = &__load_and_call_sysKernelGetLowerLimitUpdVersion;
 
 static void
 __load_sysKernelGetLowerLimitUpdVersion() {
@@ -33984,8 +32955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetManufacturingMode]\n");
 
 void __load_and_call_sysKernelGetManufacturingMode();
-static __attribute__ ((used)) void*
-__ptr_sysKernelGetManufacturingMode = (void*)(0x926100000l + (long)__load_and_call_sysKernelGetManufacturingMode);
+void* __ptr_sysKernelGetManufacturingMode = &__load_and_call_sysKernelGetManufacturingMode;
 
 static void
 __load_sysKernelGetManufacturingMode() {
@@ -34017,8 +32987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetUpdVersion]\n");
 
 void __load_and_call_sysKernelGetUpdVersion();
-static __attribute__ ((used)) void*
-__ptr_sysKernelGetUpdVersion = (void*)(0x926100000l + (long)__load_and_call_sysKernelGetUpdVersion);
+void* __ptr_sysKernelGetUpdVersion = &__load_and_call_sysKernelGetUpdVersion;
 
 static void
 __load_sysKernelGetUpdVersion() {
@@ -34050,8 +33019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysarch]\n");
 
 void __load_and_call_sysarch();
-static __attribute__ ((used)) void*
-__ptr_sysarch = (void*)(0x926100000l + (long)__load_and_call_sysarch);
+void* __ptr_sysarch = &__load_and_call_sysarch;
 
 static void
 __load_sysarch() {
@@ -34083,8 +33051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysconf]\n");
 
 void __load_and_call_sysconf();
-static __attribute__ ((used)) void*
-__ptr_sysconf = (void*)(0x926100000l + (long)__load_and_call_sysconf);
+void* __ptr_sysconf = &__load_and_call_sysconf;
 
 static void
 __load_sysconf() {
@@ -34116,8 +33083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysctl]\n");
 
 void __load_and_call_sysctl();
-static __attribute__ ((used)) void*
-__ptr_sysctl = (void*)(0x926100000l + (long)__load_and_call_sysctl);
+void* __ptr_sysctl = &__load_and_call_sysctl;
 
 static void
 __load_sysctl() {
@@ -34149,8 +33115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysctlbyname]\n");
 
 void __load_and_call_sysctlbyname();
-static __attribute__ ((used)) void*
-__ptr_sysctlbyname = (void*)(0x926100000l + (long)__load_and_call_sysctlbyname);
+void* __ptr_sysctlbyname = &__load_and_call_sysctlbyname;
 
 static void
 __load_sysctlbyname() {
@@ -34182,8 +33147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysctlnametomib]\n");
 
 void __load_and_call_sysctlnametomib();
-static __attribute__ ((used)) void*
-__ptr_sysctlnametomib = (void*)(0x926100000l + (long)__load_and_call_sysctlnametomib);
+void* __ptr_sysctlnametomib = &__load_and_call_sysctlnametomib;
 
 static void
 __load_sysctlnametomib() {
@@ -34215,8 +33179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_system]\n");
 
 void __load_and_call_system();
-static __attribute__ ((used)) void*
-__ptr_system = (void*)(0x926100000l + (long)__load_and_call_system);
+void* __ptr_system = &__load_and_call_system;
 
 static void
 __load_system() {
@@ -34248,8 +33211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcdrain]\n");
 
 void __load_and_call_tcdrain();
-static __attribute__ ((used)) void*
-__ptr_tcdrain = (void*)(0x926100000l + (long)__load_and_call_tcdrain);
+void* __ptr_tcdrain = &__load_and_call_tcdrain;
 
 static void
 __load_tcdrain() {
@@ -34281,8 +33243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcflow]\n");
 
 void __load_and_call_tcflow();
-static __attribute__ ((used)) void*
-__ptr_tcflow = (void*)(0x926100000l + (long)__load_and_call_tcflow);
+void* __ptr_tcflow = &__load_and_call_tcflow;
 
 static void
 __load_tcflow() {
@@ -34314,8 +33275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcflush]\n");
 
 void __load_and_call_tcflush();
-static __attribute__ ((used)) void*
-__ptr_tcflush = (void*)(0x926100000l + (long)__load_and_call_tcflush);
+void* __ptr_tcflush = &__load_and_call_tcflush;
 
 static void
 __load_tcflush() {
@@ -34347,8 +33307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcgetattr]\n");
 
 void __load_and_call_tcgetattr();
-static __attribute__ ((used)) void*
-__ptr_tcgetattr = (void*)(0x926100000l + (long)__load_and_call_tcgetattr);
+void* __ptr_tcgetattr = &__load_and_call_tcgetattr;
 
 static void
 __load_tcgetattr() {
@@ -34380,8 +33339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcgetpgrp]\n");
 
 void __load_and_call_tcgetpgrp();
-static __attribute__ ((used)) void*
-__ptr_tcgetpgrp = (void*)(0x926100000l + (long)__load_and_call_tcgetpgrp);
+void* __ptr_tcgetpgrp = &__load_and_call_tcgetpgrp;
 
 static void
 __load_tcgetpgrp() {
@@ -34413,8 +33371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcgetsid]\n");
 
 void __load_and_call_tcgetsid();
-static __attribute__ ((used)) void*
-__ptr_tcgetsid = (void*)(0x926100000l + (long)__load_and_call_tcgetsid);
+void* __ptr_tcgetsid = &__load_and_call_tcgetsid;
 
 static void
 __load_tcgetsid() {
@@ -34446,8 +33403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcsendbreak]\n");
 
 void __load_and_call_tcsendbreak();
-static __attribute__ ((used)) void*
-__ptr_tcsendbreak = (void*)(0x926100000l + (long)__load_and_call_tcsendbreak);
+void* __ptr_tcsendbreak = &__load_and_call_tcsendbreak;
 
 static void
 __load_tcsendbreak() {
@@ -34479,8 +33435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcsetattr]\n");
 
 void __load_and_call_tcsetattr();
-static __attribute__ ((used)) void*
-__ptr_tcsetattr = (void*)(0x926100000l + (long)__load_and_call_tcsetattr);
+void* __ptr_tcsetattr = &__load_and_call_tcsetattr;
 
 static void
 __load_tcsetattr() {
@@ -34512,8 +33467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcsetpgrp]\n");
 
 void __load_and_call_tcsetpgrp();
-static __attribute__ ((used)) void*
-__ptr_tcsetpgrp = (void*)(0x926100000l + (long)__load_and_call_tcsetpgrp);
+void* __ptr_tcsetpgrp = &__load_and_call_tcsetpgrp;
 
 static void
 __load_tcsetpgrp() {
@@ -34545,8 +33499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcsetsid]\n");
 
 void __load_and_call_tcsetsid();
-static __attribute__ ((used)) void*
-__ptr_tcsetsid = (void*)(0x926100000l + (long)__load_and_call_tcsetsid);
+void* __ptr_tcsetsid = &__load_and_call_tcsetsid;
 
 static void
 __load_tcsetsid() {
@@ -34578,8 +33531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_truncate]\n");
 
 void __load_and_call_truncate();
-static __attribute__ ((used)) void*
-__ptr_truncate = (void*)(0x926100000l + (long)__load_and_call_truncate);
+void* __ptr_truncate = &__load_and_call_truncate;
 
 static void
 __load_truncate() {
@@ -34611,8 +33563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_unlink]\n");
 
 void __load_and_call_unlink();
-static __attribute__ ((used)) void*
-__ptr_unlink = (void*)(0x926100000l + (long)__load_and_call_unlink);
+void* __ptr_unlink = &__load_and_call_unlink;
 
 static void
 __load_unlink() {
@@ -34644,8 +33595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_usleep]\n");
 
 void __load_and_call_usleep();
-static __attribute__ ((used)) void*
-__ptr_usleep = (void*)(0x926100000l + (long)__load_and_call_usleep);
+void* __ptr_usleep = &__load_and_call_usleep;
 
 static void
 __load_usleep() {
@@ -34677,8 +33627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_utimes]\n");
 
 void __load_and_call_utimes();
-static __attribute__ ((used)) void*
-__ptr_utimes = (void*)(0x926100000l + (long)__load_and_call_utimes);
+void* __ptr_utimes = &__load_and_call_utimes;
 
 static void
 __load_utimes() {
@@ -34710,8 +33659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_uuidgen]\n");
 
 void __load_and_call_uuidgen();
-static __attribute__ ((used)) void*
-__ptr_uuidgen = (void*)(0x926100000l + (long)__load_and_call_uuidgen);
+void* __ptr_uuidgen = &__load_and_call_uuidgen;
 
 static void
 __load_uuidgen() {
@@ -34743,8 +33691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wait]\n");
 
 void __load_and_call_wait();
-static __attribute__ ((used)) void*
-__ptr_wait = (void*)(0x926100000l + (long)__load_and_call_wait);
+void* __ptr_wait = &__load_and_call_wait;
 
 static void
 __load_wait() {
@@ -34776,8 +33723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wait3]\n");
 
 void __load_and_call_wait3();
-static __attribute__ ((used)) void*
-__ptr_wait3 = (void*)(0x926100000l + (long)__load_and_call_wait3);
+void* __ptr_wait3 = &__load_and_call_wait3;
 
 static void
 __load_wait3() {
@@ -34809,8 +33755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_waitpid]\n");
 
 void __load_and_call_waitpid();
-static __attribute__ ((used)) void*
-__ptr_waitpid = (void*)(0x926100000l + (long)__load_and_call_waitpid);
+void* __ptr_waitpid = &__load_and_call_waitpid;
 
 static void
 __load_waitpid() {
@@ -34842,8 +33787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_write]\n");
 
 void __load_and_call_write();
-static __attribute__ ((used)) void*
-__ptr_write = (void*)(0x926100000l + (long)__load_and_call_write);
+void* __ptr_write = &__load_and_call_write;
 
 static void
 __load_write() {
@@ -34875,8 +33819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_writev]\n");
 
 void __load_and_call_writev();
-static __attribute__ ((used)) void*
-__ptr_writev = (void*)(0x926100000l + (long)__load_and_call_writev);
+void* __ptr_writev = &__load_and_call_writev;
 
 static void
 __load_writev() {

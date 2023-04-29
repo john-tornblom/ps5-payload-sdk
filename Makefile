@@ -47,13 +47,13 @@ libSceLibcInternal.c:
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
-libkernel.a: libkernel.o kernel.o
+libkernel.a: libkernel.o
 	ar rcs $@ $^
 
-libkernel_web.a: libkernel_web.o kernel.o
+libkernel_web.a: libkernel_web.o
 	ar rcs $@ $^
 
-libkernel_sys.a: libkernel_sys.o kernel.o
+libkernel_sys.a: libkernel_sys.o
 	ar rcs $@ $^
 
 %.a: %.o

@@ -16,11 +16,12 @@ along with this program; see the file COPYING. If not, see
 
 #include "payload.h"
 
+#include "kernel.c"
 
 /**
- *
+ * sceKernelDlsym()
  **/
-static __attribute__ ((used)) void* sceKernelDlsym_addr = 0;
+static void* sceKernelDlsym_addr = 0;
 asm(".intel_syntax noprefix\n"
     ".global sceKernelDlsym\n"
     ".type sceKernelDlsym @function\n"
@@ -29,60 +30,25 @@ asm(".intel_syntax noprefix\n"
 
 
 /**
- * Symbols provided by the ELF linker.
- **/
-extern int (*__init_array_start[])(const payload_args_t *) __attribute__((weak));
-extern int (*__init_array_end[])(const payload_args_t *) __attribute__((weak));
-extern void (*__fini_array_start[])(void) __attribute__((weak));
-extern void (*__fini_array_end[])(void) __attribute__((weak));
-
-
-/**
  * Entry point to the actual payload.
  **/
 extern int main(int argc, char* argv[]);
 
 
+
+
 /**
  * Entry-point used by the ELF loader.
  **/
-long _start(payload_args_t *args) {
-  unsigned long base_addr = 0x926100000l; //FIXME: this should be parameterized.
-  unsigned long array_addr = 0;
-  unsigned long count = 0;
-  int error = 0;
-
-  sceKernelDlsym_addr = args->sceKernelDlsym;
-
-  // run module constructors
-  array_addr = base_addr + (unsigned long)__init_array_start;
-  count = __init_array_end - __init_array_start;
-  for(int i=0; i<count; i++) {
-    unsigned long *init_module_ptr = (unsigned long*)(array_addr + (i * sizeof(init_module_t*)));
-    unsigned long init_module_addr = *init_module_ptr + base_addr;
-    init_module_t init_module = (init_module_t)init_module_addr;
-    if((error=init_module(args))) {
-      break;
-    }
-  }
-
-  // run payload
+void
+_start(payload_args_t *args) {
+  int error = kernel_init_rw(args);
+  
   if(!error) {
+    sceKernelDlsym_addr = args->sceKernelDlsym;
     *args->payloadout = main(0, 0);
   } else {
     *args->payloadout = error;
   }
-  
-  // run module destructors
-  array_addr = base_addr + (unsigned long)__fini_array_start;
-  count = __fini_array_end - __fini_array_start;
-  for(int i=0; i<count; i++) {
-    unsigned long *fini_module_ptr = (unsigned long*)(array_addr + (i * sizeof(fini_module_t*)));
-    unsigned long fini_module_addr = *fini_module_ptr + base_addr;
-    fini_module_t fini_module = (fini_module_t)fini_module_addr;
-    fini_module();
-  }
-  
-  return *args->payloadout;
 }
 
