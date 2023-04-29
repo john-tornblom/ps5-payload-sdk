@@ -66,7 +66,7 @@ kernel_get_fw_version(void) {
 }
 
 
-int
+__attribute__((constructor(101))) static int
 kernel_init_rw(const payload_args_t *args) {
   int error = 0;
 

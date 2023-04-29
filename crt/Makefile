@@ -14,19 +14,21 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-MAKE ?= make
-SUBDIRS := crt sce_stubs
-TOPTARGETS := all clean install
+CC      ?= cc
+CFLAGS  := -ffreestanding -fno-builtin -nostdlib -static -masm=intel
+DESTDIR ?= /opt/ps5-payload-sdk
 
-$(TOPTARGETS): $(SUBDIRS)
-$(SUBDIRS):
-	$(MAKE) -C $@ $(MAKECMDGOALS)
+all: crt1.o
 
-.PHONY: $(TOPTARGETS) $(SUBDIRS)
+crt1.o: crt.o kernel.o
+	$(LD) -o $@ -r $^
 
-install: elf_x86_64.x
-	install -d $(DESTDIR)/ldscripts
-	install elf_x86_64.x $(DESTDIR)/ldscripts
-	cp -r include_bsd/. $(DESTDIR)/usr/include
-	cp -r include_ps5/. $(DESTDIR)/usr/include/ps5
-	cp -r samples/. $(DESTDIR)/samples
+%.o: %.c
+	$(CC) -c $(CFLAGS) -o $@ $^
+
+clean:
+	rm -f *.o
+
+install: crt1.o
+	install -d $(DESTDIR)/usr/lib
+	install crt1.o $(DESTDIR)/usr/lib

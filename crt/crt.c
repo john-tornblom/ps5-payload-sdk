@@ -16,7 +16,15 @@ along with this program; see the file COPYING. If not, see
 
 #include "payload.h"
 
-#include "kernel.c"
+
+/**
+ * Symbols provided by the ELF linker.
+ **/
+extern int (*__init_array_start[])(const payload_args_t *) __attribute__((weak));
+extern int (*__init_array_end[])(const payload_args_t *) __attribute__((weak));
+extern void (*__fini_array_start[])(void) __attribute__((weak));
+extern void (*__fini_array_end[])(void) __attribute__((weak));
+
 
 /**
  * sceKernelDlsym()
@@ -30,11 +38,9 @@ asm(".intel_syntax noprefix\n"
 
 
 /**
- * Entry point to the actual payload.
+ * Entry point to the main program.
  **/
 extern int main(int argc, char* argv[]);
-
-
 
 
 /**
@@ -42,13 +48,23 @@ extern int main(int argc, char* argv[]);
  **/
 void
 _start(payload_args_t *args) {
-  int error = kernel_init_rw(args);
-  
-  if(!error) {
-    sceKernelDlsym_addr = args->sceKernelDlsym;
-    *args->payloadout = main(0, 0);
-  } else {
-    *args->payloadout = error;
+  unsigned long count;
+
+  sceKernelDlsym_addr = args->sceKernelDlsym;
+
+  // run module constructors
+  count = __init_array_end - __init_array_start;
+  for(int i=0; i<count; i++) {
+    __init_array_start[i](args);
+  }
+
+  // run payload
+  *args->payloadout = main(0, 0);
+
+  // run module destructors
+  count = __fini_array_end - __fini_array_start;
+  for(int i=0; i<count; i++) {
+    __fini_array_start[i]();
   }
 }
 

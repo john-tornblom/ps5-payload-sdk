@@ -14,16 +14,4 @@ typedef struct payload_args {
 } payload_args_t;
 
 
-/**
- * Prototype for module constructors.
- **/
-typedef int (*init_module_t)(const payload_args_t*);
-
-
-/**
- * Prototype for module destructors.
- **/
-typedef void (*fini_module_t)(void);
-
-
 #endif // PS5SDK_PAYLOAD_H

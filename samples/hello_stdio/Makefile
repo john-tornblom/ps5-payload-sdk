@@ -5,13 +5,13 @@ endif
 PS5_HOST ?= ps5
 PS5_PORT ?= 9020
 
-ELF := ps.elf
+ELF := hello_stdio.elf
 
 CC ?= cc
 LD ?= ld
 
 CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -static
-LDADD  := -lkernel_web -lSceLibcInternal
+LDADD  := -lSceLibcInternal
 
 all: $(ELF)
 
@@ -19,7 +19,7 @@ all: $(ELF)
 	$(CC) -c $(CFLAGS) -o $@ $^
 
 $(ELF): main.o
-	$(LD) -o $@ \
+	$(LD) -static -o $@ \
 	      -T $(PS5_PAYLOAD_SDK)/ldscripts/elf_x86_64.x \
 	      -L$(PS5_PAYLOAD_SDK)/usr/lib \
 	      $^ $(PS5_PAYLOAD_SDK)/usr/lib/crt1.o \

@@ -20,7 +20,7 @@ all: $(ELF)
 
 $(ELF): main.o
 	$(LD) -o $@ \
-	      -T $(PS5_PAYLOAD_SDK)/linker.x \
+	      -T $(PS5_PAYLOAD_SDK)/ldscripts/elf_x86_64.x \
 	      -L$(PS5_PAYLOAD_SDK)/usr/lib \
 	      $^ $(PS5_PAYLOAD_SDK)/usr/lib/crt1.o \
 	      $(LDADD)
