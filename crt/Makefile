@@ -15,7 +15,7 @@
 # <http://www.gnu.org/licenses/>.
 
 CC      ?= cc
-CFLAGS  := -ffreestanding -fno-builtin -nostdlib -static -masm=intel
+CFLAGS  := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -static -masm=intel
 DESTDIR ?= /opt/ps5-payload-sdk
 
 all: crt1.o

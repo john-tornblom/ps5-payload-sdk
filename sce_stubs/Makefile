@@ -16,7 +16,7 @@
 
 PYTHON ?= python3
 CC     ?= cc
-CFLAGS := -ffreestanding -fno-builtin -nostdlib -static -masm=intel
+CFLAGS := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -static -masm=intel
 
 SOURCES  := libkernel.c libkernel_sys.c libkernel_web.c \
             libSceLibcInternal.c
