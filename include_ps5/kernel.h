@@ -25,10 +25,11 @@ uint32_t kernel_get_fw_version(void);
 int32_t  kernel_copyin(const void *udaddr, intptr_t kaddr, size_t len);
 int32_t  kernel_copyout(const intptr_t kaddr, void *udaddr, size_t  len);
 
-int32_t  kernel_set_authid(pid_t pid, uint64_t authid);
-uint64_t kernel_get_authid(pid_t pid);
 
 intptr_t kernel_get_ucred(pid_t pid);
 intptr_t kernel_get_proc(pid_t pid);
+
+uint64_t kernel_get_proc_authid(pid_t pid);
+int32_t  kernel_set_proc_authid(pid_t pid, uint64_t authid);
 
 #endif // PS5SDK_KERNEL_H

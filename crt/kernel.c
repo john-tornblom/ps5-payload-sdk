@@ -301,12 +301,11 @@ kernel_get_ucred(unsigned int pid) {
 }
 
 
-
 /**
  *
  **/
 unsigned long
-kernel_get_authid(unsigned int pid) {
+kernel_get_proc_authid(unsigned int pid) {
   unsigned long authid = 0;
   unsigned long ucred = 0;
 
@@ -327,7 +326,7 @@ kernel_get_authid(unsigned int pid) {
  *
  **/
 int
-kernel_set_authid(unsigned int pid, unsigned long authid) {
+kernel_set_proc_authid(unsigned int pid, unsigned long authid) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_ucred(pid))) {
