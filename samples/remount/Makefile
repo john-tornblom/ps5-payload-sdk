@@ -10,7 +10,7 @@ ELF := remount.elf
 CC ?= cc
 LD ?= ld
 
-CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -static
+CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -static -mcmodel=large
 LDADD  := -lkernel_sys -lSceLibcInternal
 
 all: $(ELF)
