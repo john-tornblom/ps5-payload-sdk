@@ -27,7 +27,7 @@ extern void (*__fini_array_end[])(void) __attribute__((weak));
 
 
 /**
- * sceKernelDlsym()
+ * Expose sceKernelDlsym() to statically linked SCE stubs.
  **/
 static void* sceKernelDlsym_addr = 0;
 asm(".intel_syntax noprefix\n"
