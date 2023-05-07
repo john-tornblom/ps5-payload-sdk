@@ -38,6 +38,28 @@ asm(".intel_syntax noprefix\n"
 
 
 /**
+ * Expose sceKernelLoadStartModule() to statically linked SCE stubs.
+ **/
+static void* sceKernelLoadStartModule_addr = 0;
+asm(".intel_syntax noprefix\n"
+    ".global sceKernelLoadStartModule\n"
+    ".type sceKernelLoadStartModule @function\n"
+    "sceKernelLoadStartModule:\n"
+    "jmp qword ptr [rip + sceKernelLoadStartModule_addr]\n");
+
+
+/**
+ * Expose sceKernelStopUnloadModule() to statically linked SCE stubs.
+ **/
+static void* sceKernelStopUnloadModule_addr = 0;
+asm(".intel_syntax noprefix\n"
+    ".global sceKernelStopUnloadModule\n"
+    ".type sceKernelStopUnloadModule @function\n"
+    "sceKernelStopUnloadModule:\n"
+    "jmp qword ptr [rip + sceKernelStopUnloadModule_addr]\n");
+
+
+/**
  * Entry point to the main program.
  **/
 extern int main(int argc, char* argv[]);
@@ -50,7 +72,18 @@ void
 _start(payload_args_t *args) {
   unsigned long count;
 
-  sceKernelDlsym_addr = args->sceKernelDlsym;
+  // init trampolines
+  if(!(sceKernelDlsym_addr=args->sceKernelDlsym)) {
+    return;
+  }
+  if(args->sceKernelDlsym(0x2001, "sceKernelLoadStartModule",
+			  &sceKernelLoadStartModule_addr)) {
+    return;
+  }
+  if(args->sceKernelDlsym(0x2001, "sceKernelStopUnloadModule",
+			  &sceKernelStopUnloadModule_addr)) {
+    return;
+  }
 
   // run module constructors
   count = __init_array_end - __init_array_start;
