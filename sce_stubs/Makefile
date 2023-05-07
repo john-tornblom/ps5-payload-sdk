@@ -18,30 +18,26 @@ PYTHON ?= python3
 CC     ?= cc
 CFLAGS := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -static -masm=intel
 
-SOURCES  := libkernel.c libkernel_sys.c libkernel_web.c \
-            libSceLibcInternal.c
-ARCHIVES := $(SOURCES:.c=.a)
+SPRXS := $(wildcard *.sprx)
+STUBS := $(SPRXS:.sprx=.c)
+
+SOURCES   := $(wildcard *.c)
+ARCHIVES  := $(SOURCES:.c=.a)
 
 NID_DB_URL  := https://raw.githubusercontent.com/astrelsky/GhidraOrbis/master/data/nid_db.xml
 
 DESTDIR ?= /opt/ps5-payload-sdk
 
-all: $(ARCHIVES)
+
+all: $(SOURCES) $(ARCHIVES)
+stubs: nid_db.xml $(STUBS)
+
 
 nid_db.xml:
-	wget $(NID_DB_URL)
+	wget -O $@ $(NID_DB_URL)
 
-libkernel.c:
-	$(PYTHON) trampgen.py --library-index I --prx libkernel.sprx > $@
-
-libkernel_sys.c:
-	$(PYTHON) trampgen.py --library-index I --prx libkernel_sys.sprx > $@
-
-libkernel_web.c:
-	$(PYTHON) trampgen.py --library-index I --prx libkernel_web.sprx > $@
-
-libSceLibcInternal.c:
-	$(PYTHON) trampgen.py --library-index C --prx libSceLibcInternal.sprx > $@
+%.c: %.sprx
+	$(PYTHON) trampgen.py $*.sprx > $@
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
@@ -50,7 +46,7 @@ libSceLibcInternal.c:
 	ar rcs $@ $^
 
 clean:
-	rm -f $(ARCHIVES) nid_db.xml
+	rm -f *.o *.a nid_db.xml
 
 install: $(ARCHIVES)
 	install -d $(DESTDIR)/usr/lib
