@@ -18,45 +18,12 @@ along with this program; see the file COPYING. If not, see
 
 
 /**
- * Symbols provided by the ELF linker.
+ * Dependencies provided by the ELF linker.
  **/
-extern int (*__init_array_start[])(const payload_args_t *) __attribute__((weak));
-extern int (*__init_array_end[])(const payload_args_t *) __attribute__((weak));
+extern void (*__init_array_start[])(payload_args_t*) __attribute__((weak));
+extern void (*__init_array_end[])(payload_args_t*) __attribute__((weak));
 extern void (*__fini_array_start[])(void) __attribute__((weak));
 extern void (*__fini_array_end[])(void) __attribute__((weak));
-
-
-/**
- * Expose sceKernelDlsym() to statically linked SCE stubs.
- **/
-static void* sceKernelDlsym_addr = 0;
-asm(".intel_syntax noprefix\n"
-    ".global sceKernelDlsym\n"
-    ".type sceKernelDlsym @function\n"
-    "sceKernelDlsym:\n"
-    "jmp qword ptr [rip + sceKernelDlsym_addr]\n");
-
-
-/**
- * Expose sceKernelLoadStartModule() to statically linked SCE stubs.
- **/
-static void* sceKernelLoadStartModule_addr = 0;
-asm(".intel_syntax noprefix\n"
-    ".global sceKernelLoadStartModule\n"
-    ".type sceKernelLoadStartModule @function\n"
-    "sceKernelLoadStartModule:\n"
-    "jmp qword ptr [rip + sceKernelLoadStartModule_addr]\n");
-
-
-/**
- * Expose sceKernelStopUnloadModule() to statically linked SCE stubs.
- **/
-static void* sceKernelStopUnloadModule_addr = 0;
-asm(".intel_syntax noprefix\n"
-    ".global sceKernelStopUnloadModule\n"
-    ".type sceKernelStopUnloadModule @function\n"
-    "sceKernelStopUnloadModule:\n"
-    "jmp qword ptr [rip + sceKernelStopUnloadModule_addr]\n");
 
 
 /**
@@ -72,18 +39,7 @@ void
 _start(payload_args_t *args) {
   unsigned long count;
 
-  // init trampolines
-  if(!(sceKernelDlsym_addr=args->sceKernelDlsym)) {
-    return;
-  }
-  if(args->sceKernelDlsym(0x2001, "sceKernelLoadStartModule",
-			  &sceKernelLoadStartModule_addr)) {
-    return;
-  }
-  if(args->sceKernelDlsym(0x2001, "sceKernelStopUnloadModule",
-			  &sceKernelStopUnloadModule_addr)) {
-    return;
-  }
+  *args->payloadout = 0;
 
   // run module constructors
   count = __init_array_end - __init_array_start;
@@ -91,8 +47,10 @@ _start(payload_args_t *args) {
     __init_array_start[i](args);
   }
 
-  // run payload
-  *args->payloadout = main(0, 0);
+  // run payload if module constructors ran without error
+  if(!*args->payloadout) {
+    *args->payloadout = main(0, 0);
+  }
 
   // run module destructors
   count = __fini_array_end - __fini_array_start;
@@ -100,4 +58,3 @@ _start(payload_args_t *args) {
     __fini_array_start[i]();
   }
 }
-

@@ -1,4 +1,21 @@
+/* Copyright (C) 2023 John Törnblom
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 3, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; see the file COPYING. If not, see
+<http://www.gnu.org/licenses/>.  */
+
 #include "payload.h"
+
 
 /**
  * standard macros.
@@ -66,56 +83,68 @@ kernel_get_fw_version(void) {
 }
 
 
-__attribute__((constructor(101))) static int
-kernel_init_rw(const payload_args_t *args) {
+__attribute__((constructor(101))) static void
+kernel_constructor(const payload_args_t *args) {
   int error = 0;
 
   if((error=args->sceKernelDlsym(0x2001, "getpid", &getpid))) {
-    return error;
+    *args->payloadout = error;
+    return;
   }
 
   if((error=args->sceKernelDlsym(0x2001, "_read", &_read))) {
-    return error;
+    *args->payloadout = error;
+    return;
   }
 
   if((error=args->sceKernelDlsym(0x2001, "_write", &_write))) {
-    return error;
+    *args->payloadout = error;
+    return;
   }
 
   if((error=args->sceKernelDlsym(0x2001, "_setsockopt", &_setsockopt))) {
-    return error;
+    *args->payloadout = error;
+    return;
   }
 
   if((error=args->sceKernelDlsym(0x2001, "_getsockopt", &_getsockopt))) {
-    return error;
+    *args->payloadout = error;
+    return;
   }
 
   if((error=args->sceKernelDlsym(0x2001, "sysctlbyname", &sysctlbyname))) {
-    return error;
+    *args->payloadout = error;
+    return;
   }
 
   if((master_sock=args->rwpair[0]) < 0) {
-    return -1;
+    *args->payloadout = -1;
+    return;
   }
 
   if((victim_sock=args->rwpair[1]) < 0) {
-    return -1;
+    *args->payloadout = -1;
+    return;
   }
 
   if((rw_pipe[0]=args->rwpipe[0]) < 0) {
-    return -1;
+    *args->payloadout = -1;
+    return;
   }
 
   if((rw_pipe[1]=args->rwpipe[1]) < 0) {
-    return -1;
+    *args->payloadout = -1;
+    return;
   }
 
   if(!(pipe_addr=args->kpipe_addr)) {
-    return -1;
+    *args->payloadout = -1;
+    return;
   }
 
   if(!(KERNEL_ADDRESS_DATA_BASE=args->kdata_base_addr)) {
-    return -1;
+    *args->payloadout = -1;
+    return;
   }
 
   switch(kernel_get_fw_version() & 0xffff0000) {
@@ -152,10 +181,9 @@ kernel_init_rw(const payload_args_t *args) {
     break;
 
   default:
-    return -1;
+    *args->payloadout = -1;
+    return;
   }
-
-  return 0;
 }
 
 

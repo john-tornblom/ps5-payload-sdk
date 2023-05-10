@@ -7,10 +7,10 @@ PS5_PORT ?= 9020
 
 ELF := list_files.elf
 
-CC ?= cc
-LD ?= ld
+CC := clang
+LD := ld.lld
 
-CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -static -mcmodel=large
+CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -fPIC -mcmodel=large
 LDADD  := -lkernel_web -lSceLibcInternal
 
 all: $(ELF)
@@ -19,7 +19,7 @@ all: $(ELF)
 	$(CC) -c $(CFLAGS) -o $@ $^
 
 $(ELF): main.o
-	$(LD) -o $@ -static \
+	$(LD) -static -o $@ -static \
 	      -T $(PS5_PAYLOAD_SDK)/ldscripts/elf_x86_64.x \
 	      -L$(PS5_PAYLOAD_SDK)/usr/lib \
 	      $^ $(PS5_PAYLOAD_SDK)/usr/lib/crt1.o \

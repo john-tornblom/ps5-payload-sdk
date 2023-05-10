@@ -15,8 +15,8 @@
 # <http://www.gnu.org/licenses/>.
 
 PYTHON ?= python3
-CC     ?= cc
-CFLAGS := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -static -masm=intel
+CC     := clang
+CFLAGS := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -fPIC -masm=intel
 
 SPRXS := $(wildcard *.sprx)
 STUBS := $(SPRXS:.sprx=.c)

@@ -5,13 +5,13 @@ endif
 PS5_HOST ?= ps5
 PS5_PORT ?= 9020
 
-ELF := klog.elf
+ELF := hello_sprx.elf
 
 CC := clang
 LD := ld.lld
 
 CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -fPIC -mcmodel=large
-LDADD  := -lkernel_web -lSceLibcInternal
+LDADD  := -lSceLibcInternal -lkernel_web -lSceRandom
 
 all: $(ELF)
 

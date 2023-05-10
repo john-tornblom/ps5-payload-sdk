@@ -39,8 +39,8 @@ main() {
     printf("CPU temp:\t %d °C\n", temp);
   }
 
-  printf("CPU freq:\t %2.2f MHz\n",
-	 sceKernelGetCpuFrequency() / (double)(1000*1000));
+  printf("CPU freq:\t %2.2ld MHz\n",
+	 sceKernelGetCpuFrequency() / (1000*1000));
 
   return 0;
 }

@@ -14,14 +14,15 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-CC      ?= cc
-CFLAGS  := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -static -masm=intel
+CC      := clang
+LD      := ld.lld
+CFLAGS  := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -fPIC -masm=intel
 DESTDIR ?= /opt/ps5-payload-sdk
 
 all: crt1.o
 
-crt1.o: crt.o kernel.o
-	$(LD) -o $@ -r $^
+crt1.o: crt.o kernel.o sprx.o
+	$(LD) -r -o $@ $^
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^

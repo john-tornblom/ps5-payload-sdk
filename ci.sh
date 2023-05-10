@@ -3,11 +3,11 @@
 export DESTDIR=$(mktemp -d)
 trap 'rm -rf -- "$DESTDIR"' EXIT
 
-CC=gcc LD=ld make clean install || exit 1
-CC=clang LD=ld.lld make clean install || exit 1
+make clean install || exit 1
 
-SAMPLES=("hello_world"
+SAMPLES=("hello_sprx"
 	 "hello_stdio"
+	 "hello_world"
 	 "hwinfo"
 	 "klog"
 	 "list_files"
@@ -18,7 +18,6 @@ SAMPLES=("hello_world"
 
 export PS5_PAYLOAD_SDK=$DESTDIR
 for SAMPLE in "${SAMPLES[@]}"; do
-    CC=gcc LD=ld make -C samples/$SAMPLE clean all || exit 1
-    CC=clang make LD=ld.lld -C samples/$SAMPLE clean all || exit 1
+    make -C samples/$SAMPLE clean all || exit 1
 done
 

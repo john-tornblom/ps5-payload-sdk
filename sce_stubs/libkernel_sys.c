@@ -3,12 +3,12 @@
 */
 
 
-int sceKernelDlsym();
-int sceKernelLoadStartModule();
-int sceKernelStopUnloadModule();
+int sprx_dlsym(unsigned int handle, const char *symname, void *addr);
+int sprx_dlopen(const char* libname, unsigned short *handle);
+int sprx_dlclose(unsigned short handle);
 
 
-static const int __module_id = 0x2001;
+static unsigned short __handle = 0x2001;
 
 
 asm(".intel_syntax noprefix\n"
@@ -39,10 +39,8 @@ void __load_and_call___Ux86_64_setcontext();
 static __attribute__ ((used)) void* __ptr___Ux86_64_setcontext = &__load_and_call___Ux86_64_setcontext;
 
 static __attribute__ ((used)) void
-__load___Ux86_64_setcontext() {
-  if(sceKernelDlsym(__module_id, "__Ux86_64_setcontext", &__ptr___Ux86_64_setcontext)) {
-    __builtin_trap();
-  }
+__load___Ux86_64_setcontext(void) {
+  sprx_dlsym(__handle, "__Ux86_64_setcontext", &__ptr___Ux86_64_setcontext);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -73,10 +71,8 @@ void __load_and_call___elf_phdr_match_addr();
 static __attribute__ ((used)) void* __ptr___elf_phdr_match_addr = &__load_and_call___elf_phdr_match_addr;
 
 static __attribute__ ((used)) void
-__load___elf_phdr_match_addr() {
-  if(sceKernelDlsym(__module_id, "__elf_phdr_match_addr", &__ptr___elf_phdr_match_addr)) {
-    __builtin_trap();
-  }
+__load___elf_phdr_match_addr(void) {
+  sprx_dlsym(__handle, "__elf_phdr_match_addr", &__ptr___elf_phdr_match_addr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -107,10 +103,8 @@ void __load_and_call___error();
 static __attribute__ ((used)) void* __ptr___error = &__load_and_call___error;
 
 static __attribute__ ((used)) void
-__load___error() {
-  if(sceKernelDlsym(__module_id, "__error", &__ptr___error)) {
-    __builtin_trap();
-  }
+__load___error(void) {
+  sprx_dlsym(__handle, "__error", &__ptr___error);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -141,10 +135,8 @@ void __load_and_call___freeze();
 static __attribute__ ((used)) void* __ptr___freeze = &__load_and_call___freeze;
 
 static __attribute__ ((used)) void
-__load___freeze() {
-  if(sceKernelDlsym(__module_id, "__freeze", &__ptr___freeze)) {
-    __builtin_trap();
-  }
+__load___freeze(void) {
+  sprx_dlsym(__handle, "__freeze", &__ptr___freeze);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -175,10 +167,8 @@ void __load_and_call___getcwd();
 static __attribute__ ((used)) void* __ptr___getcwd = &__load_and_call___getcwd;
 
 static __attribute__ ((used)) void
-__load___getcwd() {
-  if(sceKernelDlsym(__module_id, "__getcwd", &__ptr___getcwd)) {
-    __builtin_trap();
-  }
+__load___getcwd(void) {
+  sprx_dlsym(__handle, "__getcwd", &__ptr___getcwd);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -209,10 +199,8 @@ void __load_and_call___inet_ntop();
 static __attribute__ ((used)) void* __ptr___inet_ntop = &__load_and_call___inet_ntop;
 
 static __attribute__ ((used)) void
-__load___inet_ntop() {
-  if(sceKernelDlsym(__module_id, "__inet_ntop", &__ptr___inet_ntop)) {
-    __builtin_trap();
-  }
+__load___inet_ntop(void) {
+  sprx_dlsym(__handle, "__inet_ntop", &__ptr___inet_ntop);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -243,10 +231,8 @@ void __load_and_call___inet_pton();
 static __attribute__ ((used)) void* __ptr___inet_pton = &__load_and_call___inet_pton;
 
 static __attribute__ ((used)) void
-__load___inet_pton() {
-  if(sceKernelDlsym(__module_id, "__inet_pton", &__ptr___inet_pton)) {
-    __builtin_trap();
-  }
+__load___inet_pton(void) {
+  sprx_dlsym(__handle, "__inet_pton", &__ptr___inet_pton);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -277,10 +263,8 @@ void __load_and_call___pthread_cleanup_pop_imp();
 static __attribute__ ((used)) void* __ptr___pthread_cleanup_pop_imp = &__load_and_call___pthread_cleanup_pop_imp;
 
 static __attribute__ ((used)) void
-__load___pthread_cleanup_pop_imp() {
-  if(sceKernelDlsym(__module_id, "__pthread_cleanup_pop_imp", &__ptr___pthread_cleanup_pop_imp)) {
-    __builtin_trap();
-  }
+__load___pthread_cleanup_pop_imp(void) {
+  sprx_dlsym(__handle, "__pthread_cleanup_pop_imp", &__ptr___pthread_cleanup_pop_imp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -311,10 +295,8 @@ void __load_and_call___pthread_cleanup_push_imp();
 static __attribute__ ((used)) void* __ptr___pthread_cleanup_push_imp = &__load_and_call___pthread_cleanup_push_imp;
 
 static __attribute__ ((used)) void
-__load___pthread_cleanup_push_imp() {
-  if(sceKernelDlsym(__module_id, "__pthread_cleanup_push_imp", &__ptr___pthread_cleanup_push_imp)) {
-    __builtin_trap();
-  }
+__load___pthread_cleanup_push_imp(void) {
+  sprx_dlsym(__handle, "__pthread_cleanup_push_imp", &__ptr___pthread_cleanup_push_imp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -345,10 +327,8 @@ void __load_and_call___pthread_cxa_finalize();
 static __attribute__ ((used)) void* __ptr___pthread_cxa_finalize = &__load_and_call___pthread_cxa_finalize;
 
 static __attribute__ ((used)) void
-__load___pthread_cxa_finalize() {
-  if(sceKernelDlsym(__module_id, "__pthread_cxa_finalize", &__ptr___pthread_cxa_finalize)) {
-    __builtin_trap();
-  }
+__load___pthread_cxa_finalize(void) {
+  sprx_dlsym(__handle, "__pthread_cxa_finalize", &__ptr___pthread_cxa_finalize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -379,10 +359,8 @@ void __load_and_call___sceKernelGetGPI();
 static __attribute__ ((used)) void* __ptr___sceKernelGetGPI = &__load_and_call___sceKernelGetGPI;
 
 static __attribute__ ((used)) void
-__load___sceKernelGetGPI() {
-  if(sceKernelDlsym(__module_id, "__sceKernelGetGPI", &__ptr___sceKernelGetGPI)) {
-    __builtin_trap();
-  }
+__load___sceKernelGetGPI(void) {
+  sprx_dlsym(__handle, "__sceKernelGetGPI", &__ptr___sceKernelGetGPI);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -413,10 +391,8 @@ void __load_and_call___stack_chk_fail();
 static __attribute__ ((used)) void* __ptr___stack_chk_fail = &__load_and_call___stack_chk_fail;
 
 static __attribute__ ((used)) void
-__load___stack_chk_fail() {
-  if(sceKernelDlsym(__module_id, "__stack_chk_fail", &__ptr___stack_chk_fail)) {
-    __builtin_trap();
-  }
+__load___stack_chk_fail(void) {
+  sprx_dlsym(__handle, "__stack_chk_fail", &__ptr___stack_chk_fail);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -447,10 +423,8 @@ void __load_and_call___sys_debug_init();
 static __attribute__ ((used)) void* __ptr___sys_debug_init = &__load_and_call___sys_debug_init;
 
 static __attribute__ ((used)) void
-__load___sys_debug_init() {
-  if(sceKernelDlsym(__module_id, "__sys_debug_init", &__ptr___sys_debug_init)) {
-    __builtin_trap();
-  }
+__load___sys_debug_init(void) {
+  sprx_dlsym(__handle, "__sys_debug_init", &__ptr___sys_debug_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -481,10 +455,8 @@ void __load_and_call___sys_dl_get_info();
 static __attribute__ ((used)) void* __ptr___sys_dl_get_info = &__load_and_call___sys_dl_get_info;
 
 static __attribute__ ((used)) void
-__load___sys_dl_get_info() {
-  if(sceKernelDlsym(__module_id, "__sys_dl_get_info", &__ptr___sys_dl_get_info)) {
-    __builtin_trap();
-  }
+__load___sys_dl_get_info(void) {
+  sprx_dlsym(__handle, "__sys_dl_get_info", &__ptr___sys_dl_get_info);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -515,10 +487,8 @@ void __load_and_call___sys_dl_get_info_2();
 static __attribute__ ((used)) void* __ptr___sys_dl_get_info_2 = &__load_and_call___sys_dl_get_info_2;
 
 static __attribute__ ((used)) void
-__load___sys_dl_get_info_2() {
-  if(sceKernelDlsym(__module_id, "__sys_dl_get_info_2", &__ptr___sys_dl_get_info_2)) {
-    __builtin_trap();
-  }
+__load___sys_dl_get_info_2(void) {
+  sprx_dlsym(__handle, "__sys_dl_get_info_2", &__ptr___sys_dl_get_info_2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -549,10 +519,8 @@ void __load_and_call___sys_dl_get_list();
 static __attribute__ ((used)) void* __ptr___sys_dl_get_list = &__load_and_call___sys_dl_get_list;
 
 static __attribute__ ((used)) void
-__load___sys_dl_get_list() {
-  if(sceKernelDlsym(__module_id, "__sys_dl_get_list", &__ptr___sys_dl_get_list)) {
-    __builtin_trap();
-  }
+__load___sys_dl_get_list(void) {
+  sprx_dlsym(__handle, "__sys_dl_get_list", &__ptr___sys_dl_get_list);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -583,10 +551,8 @@ void __load_and_call___sys_dl_get_metadata();
 static __attribute__ ((used)) void* __ptr___sys_dl_get_metadata = &__load_and_call___sys_dl_get_metadata;
 
 static __attribute__ ((used)) void
-__load___sys_dl_get_metadata() {
-  if(sceKernelDlsym(__module_id, "__sys_dl_get_metadata", &__ptr___sys_dl_get_metadata)) {
-    __builtin_trap();
-  }
+__load___sys_dl_get_metadata(void) {
+  sprx_dlsym(__handle, "__sys_dl_get_metadata", &__ptr___sys_dl_get_metadata);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -617,10 +583,8 @@ void __load_and_call___sys_dynlib_get_info2();
 static __attribute__ ((used)) void* __ptr___sys_dynlib_get_info2 = &__load_and_call___sys_dynlib_get_info2;
 
 static __attribute__ ((used)) void
-__load___sys_dynlib_get_info2() {
-  if(sceKernelDlsym(__module_id, "__sys_dynlib_get_info2", &__ptr___sys_dynlib_get_info2)) {
-    __builtin_trap();
-  }
+__load___sys_dynlib_get_info2(void) {
+  sprx_dlsym(__handle, "__sys_dynlib_get_info2", &__ptr___sys_dynlib_get_info2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -651,10 +615,8 @@ void __load_and_call___sys_dynlib_get_info_for_libdbg();
 static __attribute__ ((used)) void* __ptr___sys_dynlib_get_info_for_libdbg = &__load_and_call___sys_dynlib_get_info_for_libdbg;
 
 static __attribute__ ((used)) void
-__load___sys_dynlib_get_info_for_libdbg() {
-  if(sceKernelDlsym(__module_id, "__sys_dynlib_get_info_for_libdbg", &__ptr___sys_dynlib_get_info_for_libdbg)) {
-    __builtin_trap();
-  }
+__load___sys_dynlib_get_info_for_libdbg(void) {
+  sprx_dlsym(__handle, "__sys_dynlib_get_info_for_libdbg", &__ptr___sys_dynlib_get_info_for_libdbg);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -685,10 +647,8 @@ void __load_and_call___sys_dynlib_get_list2();
 static __attribute__ ((used)) void* __ptr___sys_dynlib_get_list2 = &__load_and_call___sys_dynlib_get_list2;
 
 static __attribute__ ((used)) void
-__load___sys_dynlib_get_list2() {
-  if(sceKernelDlsym(__module_id, "__sys_dynlib_get_list2", &__ptr___sys_dynlib_get_list2)) {
-    __builtin_trap();
-  }
+__load___sys_dynlib_get_list2(void) {
+  sprx_dlsym(__handle, "__sys_dynlib_get_list2", &__ptr___sys_dynlib_get_list2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -719,10 +679,8 @@ void __load_and_call___sys_dynlib_get_list_for_libdbg();
 static __attribute__ ((used)) void* __ptr___sys_dynlib_get_list_for_libdbg = &__load_and_call___sys_dynlib_get_list_for_libdbg;
 
 static __attribute__ ((used)) void
-__load___sys_dynlib_get_list_for_libdbg() {
-  if(sceKernelDlsym(__module_id, "__sys_dynlib_get_list_for_libdbg", &__ptr___sys_dynlib_get_list_for_libdbg)) {
-    __builtin_trap();
-  }
+__load___sys_dynlib_get_list_for_libdbg(void) {
+  sprx_dlsym(__handle, "__sys_dynlib_get_list_for_libdbg", &__ptr___sys_dynlib_get_list_for_libdbg);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -753,10 +711,8 @@ void __load_and_call___sys_dynlib_load_prx();
 static __attribute__ ((used)) void* __ptr___sys_dynlib_load_prx = &__load_and_call___sys_dynlib_load_prx;
 
 static __attribute__ ((used)) void
-__load___sys_dynlib_load_prx() {
-  if(sceKernelDlsym(__module_id, "__sys_dynlib_load_prx", &__ptr___sys_dynlib_load_prx)) {
-    __builtin_trap();
-  }
+__load___sys_dynlib_load_prx(void) {
+  sprx_dlsym(__handle, "__sys_dynlib_load_prx", &__ptr___sys_dynlib_load_prx);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -787,10 +743,8 @@ void __load_and_call___sys_get_proc_type_info();
 static __attribute__ ((used)) void* __ptr___sys_get_proc_type_info = &__load_and_call___sys_get_proc_type_info;
 
 static __attribute__ ((used)) void
-__load___sys_get_proc_type_info() {
-  if(sceKernelDlsym(__module_id, "__sys_get_proc_type_info", &__ptr___sys_get_proc_type_info)) {
-    __builtin_trap();
-  }
+__load___sys_get_proc_type_info(void) {
+  sprx_dlsym(__handle, "__sys_get_proc_type_info", &__ptr___sys_get_proc_type_info);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -821,10 +775,8 @@ void __load_and_call___sys_is_development_mode();
 static __attribute__ ((used)) void* __ptr___sys_is_development_mode = &__load_and_call___sys_is_development_mode;
 
 static __attribute__ ((used)) void
-__load___sys_is_development_mode() {
-  if(sceKernelDlsym(__module_id, "__sys_is_development_mode", &__ptr___sys_is_development_mode)) {
-    __builtin_trap();
-  }
+__load___sys_is_development_mode(void) {
+  sprx_dlsym(__handle, "__sys_is_development_mode", &__ptr___sys_is_development_mode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -855,10 +807,8 @@ void __load_and_call___sys_kqueueex();
 static __attribute__ ((used)) void* __ptr___sys_kqueueex = &__load_and_call___sys_kqueueex;
 
 static __attribute__ ((used)) void
-__load___sys_kqueueex() {
-  if(sceKernelDlsym(__module_id, "__sys_kqueueex", &__ptr___sys_kqueueex)) {
-    __builtin_trap();
-  }
+__load___sys_kqueueex(void) {
+  sprx_dlsym(__handle, "__sys_kqueueex", &__ptr___sys_kqueueex);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -889,10 +839,8 @@ void __load_and_call___sys_namedobj_create();
 static __attribute__ ((used)) void* __ptr___sys_namedobj_create = &__load_and_call___sys_namedobj_create;
 
 static __attribute__ ((used)) void
-__load___sys_namedobj_create() {
-  if(sceKernelDlsym(__module_id, "__sys_namedobj_create", &__ptr___sys_namedobj_create)) {
-    __builtin_trap();
-  }
+__load___sys_namedobj_create(void) {
+  sprx_dlsym(__handle, "__sys_namedobj_create", &__ptr___sys_namedobj_create);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -923,10 +871,8 @@ void __load_and_call___sys_namedobj_delete();
 static __attribute__ ((used)) void* __ptr___sys_namedobj_delete = &__load_and_call___sys_namedobj_delete;
 
 static __attribute__ ((used)) void
-__load___sys_namedobj_delete() {
-  if(sceKernelDlsym(__module_id, "__sys_namedobj_delete", &__ptr___sys_namedobj_delete)) {
-    __builtin_trap();
-  }
+__load___sys_namedobj_delete(void) {
+  sprx_dlsym(__handle, "__sys_namedobj_delete", &__ptr___sys_namedobj_delete);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -957,10 +903,8 @@ void __load_and_call___sys_nanosleep();
 static __attribute__ ((used)) void* __ptr___sys_nanosleep = &__load_and_call___sys_nanosleep;
 
 static __attribute__ ((used)) void
-__load___sys_nanosleep() {
-  if(sceKernelDlsym(__module_id, "__sys_nanosleep", &__ptr___sys_nanosleep)) {
-    __builtin_trap();
-  }
+__load___sys_nanosleep(void) {
+  sprx_dlsym(__handle, "__sys_nanosleep", &__ptr___sys_nanosleep);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -991,10 +935,8 @@ void __load_and_call___sys_netabort();
 static __attribute__ ((used)) void* __ptr___sys_netabort = &__load_and_call___sys_netabort;
 
 static __attribute__ ((used)) void
-__load___sys_netabort() {
-  if(sceKernelDlsym(__module_id, "__sys_netabort", &__ptr___sys_netabort)) {
-    __builtin_trap();
-  }
+__load___sys_netabort(void) {
+  sprx_dlsym(__handle, "__sys_netabort", &__ptr___sys_netabort);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1025,10 +967,8 @@ void __load_and_call___sys_netcontrol();
 static __attribute__ ((used)) void* __ptr___sys_netcontrol = &__load_and_call___sys_netcontrol;
 
 static __attribute__ ((used)) void
-__load___sys_netcontrol() {
-  if(sceKernelDlsym(__module_id, "__sys_netcontrol", &__ptr___sys_netcontrol)) {
-    __builtin_trap();
-  }
+__load___sys_netcontrol(void) {
+  sprx_dlsym(__handle, "__sys_netcontrol", &__ptr___sys_netcontrol);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1059,10 +999,8 @@ void __load_and_call___sys_netgetiflist();
 static __attribute__ ((used)) void* __ptr___sys_netgetiflist = &__load_and_call___sys_netgetiflist;
 
 static __attribute__ ((used)) void
-__load___sys_netgetiflist() {
-  if(sceKernelDlsym(__module_id, "__sys_netgetiflist", &__ptr___sys_netgetiflist)) {
-    __builtin_trap();
-  }
+__load___sys_netgetiflist(void) {
+  sprx_dlsym(__handle, "__sys_netgetiflist", &__ptr___sys_netgetiflist);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1093,10 +1031,8 @@ void __load_and_call___sys_netgetsockinfo();
 static __attribute__ ((used)) void* __ptr___sys_netgetsockinfo = &__load_and_call___sys_netgetsockinfo;
 
 static __attribute__ ((used)) void
-__load___sys_netgetsockinfo() {
-  if(sceKernelDlsym(__module_id, "__sys_netgetsockinfo", &__ptr___sys_netgetsockinfo)) {
-    __builtin_trap();
-  }
+__load___sys_netgetsockinfo(void) {
+  sprx_dlsym(__handle, "__sys_netgetsockinfo", &__ptr___sys_netgetsockinfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1127,10 +1063,8 @@ void __load_and_call___sys_opmc_disable();
 static __attribute__ ((used)) void* __ptr___sys_opmc_disable = &__load_and_call___sys_opmc_disable;
 
 static __attribute__ ((used)) void
-__load___sys_opmc_disable() {
-  if(sceKernelDlsym(__module_id, "__sys_opmc_disable", &__ptr___sys_opmc_disable)) {
-    __builtin_trap();
-  }
+__load___sys_opmc_disable(void) {
+  sprx_dlsym(__handle, "__sys_opmc_disable", &__ptr___sys_opmc_disable);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1161,10 +1095,8 @@ void __load_and_call___sys_opmc_enable();
 static __attribute__ ((used)) void* __ptr___sys_opmc_enable = &__load_and_call___sys_opmc_enable;
 
 static __attribute__ ((used)) void
-__load___sys_opmc_enable() {
-  if(sceKernelDlsym(__module_id, "__sys_opmc_enable", &__ptr___sys_opmc_enable)) {
-    __builtin_trap();
-  }
+__load___sys_opmc_enable(void) {
+  sprx_dlsym(__handle, "__sys_opmc_enable", &__ptr___sys_opmc_enable);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1195,10 +1127,8 @@ void __load_and_call___sys_opmc_get_ctr();
 static __attribute__ ((used)) void* __ptr___sys_opmc_get_ctr = &__load_and_call___sys_opmc_get_ctr;
 
 static __attribute__ ((used)) void
-__load___sys_opmc_get_ctr() {
-  if(sceKernelDlsym(__module_id, "__sys_opmc_get_ctr", &__ptr___sys_opmc_get_ctr)) {
-    __builtin_trap();
-  }
+__load___sys_opmc_get_ctr(void) {
+  sprx_dlsym(__handle, "__sys_opmc_get_ctr", &__ptr___sys_opmc_get_ctr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1229,10 +1159,8 @@ void __load_and_call___sys_opmc_get_hw();
 static __attribute__ ((used)) void* __ptr___sys_opmc_get_hw = &__load_and_call___sys_opmc_get_hw;
 
 static __attribute__ ((used)) void
-__load___sys_opmc_get_hw() {
-  if(sceKernelDlsym(__module_id, "__sys_opmc_get_hw", &__ptr___sys_opmc_get_hw)) {
-    __builtin_trap();
-  }
+__load___sys_opmc_get_hw(void) {
+  sprx_dlsym(__handle, "__sys_opmc_get_hw", &__ptr___sys_opmc_get_hw);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1263,10 +1191,8 @@ void __load_and_call___sys_opmc_set_ctl();
 static __attribute__ ((used)) void* __ptr___sys_opmc_set_ctl = &__load_and_call___sys_opmc_set_ctl;
 
 static __attribute__ ((used)) void
-__load___sys_opmc_set_ctl() {
-  if(sceKernelDlsym(__module_id, "__sys_opmc_set_ctl", &__ptr___sys_opmc_set_ctl)) {
-    __builtin_trap();
-  }
+__load___sys_opmc_set_ctl(void) {
+  sprx_dlsym(__handle, "__sys_opmc_set_ctl", &__ptr___sys_opmc_set_ctl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1297,10 +1223,8 @@ void __load_and_call___sys_opmc_set_ctr();
 static __attribute__ ((used)) void* __ptr___sys_opmc_set_ctr = &__load_and_call___sys_opmc_set_ctr;
 
 static __attribute__ ((used)) void
-__load___sys_opmc_set_ctr() {
-  if(sceKernelDlsym(__module_id, "__sys_opmc_set_ctr", &__ptr___sys_opmc_set_ctr)) {
-    __builtin_trap();
-  }
+__load___sys_opmc_set_ctr(void) {
+  sprx_dlsym(__handle, "__sys_opmc_set_ctr", &__ptr___sys_opmc_set_ctr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1331,10 +1255,8 @@ void __load_and_call___sys_opmc_set_hw();
 static __attribute__ ((used)) void* __ptr___sys_opmc_set_hw = &__load_and_call___sys_opmc_set_hw;
 
 static __attribute__ ((used)) void
-__load___sys_opmc_set_hw() {
-  if(sceKernelDlsym(__module_id, "__sys_opmc_set_hw", &__ptr___sys_opmc_set_hw)) {
-    __builtin_trap();
-  }
+__load___sys_opmc_set_hw(void) {
+  sprx_dlsym(__handle, "__sys_opmc_set_hw", &__ptr___sys_opmc_set_hw);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1365,10 +1287,8 @@ void __load_and_call___sys_osem_close();
 static __attribute__ ((used)) void* __ptr___sys_osem_close = &__load_and_call___sys_osem_close;
 
 static __attribute__ ((used)) void
-__load___sys_osem_close() {
-  if(sceKernelDlsym(__module_id, "__sys_osem_close", &__ptr___sys_osem_close)) {
-    __builtin_trap();
-  }
+__load___sys_osem_close(void) {
+  sprx_dlsym(__handle, "__sys_osem_close", &__ptr___sys_osem_close);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1399,10 +1319,8 @@ void __load_and_call___sys_osem_open();
 static __attribute__ ((used)) void* __ptr___sys_osem_open = &__load_and_call___sys_osem_open;
 
 static __attribute__ ((used)) void
-__load___sys_osem_open() {
-  if(sceKernelDlsym(__module_id, "__sys_osem_open", &__ptr___sys_osem_open)) {
-    __builtin_trap();
-  }
+__load___sys_osem_open(void) {
+  sprx_dlsym(__handle, "__sys_osem_open", &__ptr___sys_osem_open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1433,10 +1351,8 @@ void __load_and_call___sys_randomized_path();
 static __attribute__ ((used)) void* __ptr___sys_randomized_path = &__load_and_call___sys_randomized_path;
 
 static __attribute__ ((used)) void
-__load___sys_randomized_path() {
-  if(sceKernelDlsym(__module_id, "__sys_randomized_path", &__ptr___sys_randomized_path)) {
-    __builtin_trap();
-  }
+__load___sys_randomized_path(void) {
+  sprx_dlsym(__handle, "__sys_randomized_path", &__ptr___sys_randomized_path);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1467,10 +1383,8 @@ void __load_and_call___sys_rdup();
 static __attribute__ ((used)) void* __ptr___sys_rdup = &__load_and_call___sys_rdup;
 
 static __attribute__ ((used)) void
-__load___sys_rdup() {
-  if(sceKernelDlsym(__module_id, "__sys_rdup", &__ptr___sys_rdup)) {
-    __builtin_trap();
-  }
+__load___sys_rdup(void) {
+  sprx_dlsym(__handle, "__sys_rdup", &__ptr___sys_rdup);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1501,10 +1415,8 @@ void __load_and_call___sys_regmgr_call();
 static __attribute__ ((used)) void* __ptr___sys_regmgr_call = &__load_and_call___sys_regmgr_call;
 
 static __attribute__ ((used)) void
-__load___sys_regmgr_call() {
-  if(sceKernelDlsym(__module_id, "__sys_regmgr_call", &__ptr___sys_regmgr_call)) {
-    __builtin_trap();
-  }
+__load___sys_regmgr_call(void) {
+  sprx_dlsym(__handle, "__sys_regmgr_call", &__ptr___sys_regmgr_call);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1535,10 +1447,8 @@ void __load_and_call___sys_resume_internal_hdd();
 static __attribute__ ((used)) void* __ptr___sys_resume_internal_hdd = &__load_and_call___sys_resume_internal_hdd;
 
 static __attribute__ ((used)) void
-__load___sys_resume_internal_hdd() {
-  if(sceKernelDlsym(__module_id, "__sys_resume_internal_hdd", &__ptr___sys_resume_internal_hdd)) {
-    __builtin_trap();
-  }
+__load___sys_resume_internal_hdd(void) {
+  sprx_dlsym(__handle, "__sys_resume_internal_hdd", &__ptr___sys_resume_internal_hdd);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1569,10 +1479,8 @@ void __load_and_call___sys_resume_process();
 static __attribute__ ((used)) void* __ptr___sys_resume_process = &__load_and_call___sys_resume_process;
 
 static __attribute__ ((used)) void
-__load___sys_resume_process() {
-  if(sceKernelDlsym(__module_id, "__sys_resume_process", &__ptr___sys_resume_process)) {
-    __builtin_trap();
-  }
+__load___sys_resume_process(void) {
+  sprx_dlsym(__handle, "__sys_resume_process", &__ptr___sys_resume_process);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1603,10 +1511,8 @@ void __load_and_call___sys_set_uevt();
 static __attribute__ ((used)) void* __ptr___sys_set_uevt = &__load_and_call___sys_set_uevt;
 
 static __attribute__ ((used)) void
-__load___sys_set_uevt() {
-  if(sceKernelDlsym(__module_id, "__sys_set_uevt", &__ptr___sys_set_uevt)) {
-    __builtin_trap();
-  }
+__load___sys_set_uevt(void) {
+  sprx_dlsym(__handle, "__sys_set_uevt", &__ptr___sys_set_uevt);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1637,10 +1543,8 @@ void __load_and_call___sys_socketclose();
 static __attribute__ ((used)) void* __ptr___sys_socketclose = &__load_and_call___sys_socketclose;
 
 static __attribute__ ((used)) void
-__load___sys_socketclose() {
-  if(sceKernelDlsym(__module_id, "__sys_socketclose", &__ptr___sys_socketclose)) {
-    __builtin_trap();
-  }
+__load___sys_socketclose(void) {
+  sprx_dlsym(__handle, "__sys_socketclose", &__ptr___sys_socketclose);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1671,10 +1575,8 @@ void __load_and_call___sys_socketex();
 static __attribute__ ((used)) void* __ptr___sys_socketex = &__load_and_call___sys_socketex;
 
 static __attribute__ ((used)) void
-__load___sys_socketex() {
-  if(sceKernelDlsym(__module_id, "__sys_socketex", &__ptr___sys_socketex)) {
-    __builtin_trap();
-  }
+__load___sys_socketex(void) {
+  sprx_dlsym(__handle, "__sys_socketex", &__ptr___sys_socketex);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1705,10 +1607,8 @@ void __load_and_call___sys_suspend_process();
 static __attribute__ ((used)) void* __ptr___sys_suspend_process = &__load_and_call___sys_suspend_process;
 
 static __attribute__ ((used)) void
-__load___sys_suspend_process() {
-  if(sceKernelDlsym(__module_id, "__sys_suspend_process", &__ptr___sys_suspend_process)) {
-    __builtin_trap();
-  }
+__load___sys_suspend_process(void) {
+  sprx_dlsym(__handle, "__sys_suspend_process", &__ptr___sys_suspend_process);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1739,10 +1639,8 @@ void __load_and_call___sys_test_debug_rwmem();
 static __attribute__ ((used)) void* __ptr___sys_test_debug_rwmem = &__load_and_call___sys_test_debug_rwmem;
 
 static __attribute__ ((used)) void
-__load___sys_test_debug_rwmem() {
-  if(sceKernelDlsym(__module_id, "__sys_test_debug_rwmem", &__ptr___sys_test_debug_rwmem)) {
-    __builtin_trap();
-  }
+__load___sys_test_debug_rwmem(void) {
+  sprx_dlsym(__handle, "__sys_test_debug_rwmem", &__ptr___sys_test_debug_rwmem);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1773,10 +1671,8 @@ void __load_and_call___sys_workaround8849();
 static __attribute__ ((used)) void* __ptr___sys_workaround8849 = &__load_and_call___sys_workaround8849;
 
 static __attribute__ ((used)) void
-__load___sys_workaround8849() {
-  if(sceKernelDlsym(__module_id, "__sys_workaround8849", &__ptr___sys_workaround8849)) {
-    __builtin_trap();
-  }
+__load___sys_workaround8849(void) {
+  sprx_dlsym(__handle, "__sys_workaround8849", &__ptr___sys_workaround8849);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1807,10 +1703,8 @@ void __load_and_call___tls_get_addr();
 static __attribute__ ((used)) void* __ptr___tls_get_addr = &__load_and_call___tls_get_addr;
 
 static __attribute__ ((used)) void
-__load___tls_get_addr() {
-  if(sceKernelDlsym(__module_id, "__tls_get_addr", &__ptr___tls_get_addr)) {
-    __builtin_trap();
-  }
+__load___tls_get_addr(void) {
+  sprx_dlsym(__handle, "__tls_get_addr", &__ptr___tls_get_addr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1841,10 +1735,8 @@ void __load_and_call__accept();
 static __attribute__ ((used)) void* __ptr__accept = &__load_and_call__accept;
 
 static __attribute__ ((used)) void
-__load__accept() {
-  if(sceKernelDlsym(__module_id, "_accept", &__ptr__accept)) {
-    __builtin_trap();
-  }
+__load__accept(void) {
+  sprx_dlsym(__handle, "_accept", &__ptr__accept);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1875,10 +1767,8 @@ void __load_and_call__bind();
 static __attribute__ ((used)) void* __ptr__bind = &__load_and_call__bind;
 
 static __attribute__ ((used)) void
-__load__bind() {
-  if(sceKernelDlsym(__module_id, "_bind", &__ptr__bind)) {
-    __builtin_trap();
-  }
+__load__bind(void) {
+  sprx_dlsym(__handle, "_bind", &__ptr__bind);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1909,10 +1799,8 @@ void __load_and_call__close();
 static __attribute__ ((used)) void* __ptr__close = &__load_and_call__close;
 
 static __attribute__ ((used)) void
-__load__close() {
-  if(sceKernelDlsym(__module_id, "_close", &__ptr__close)) {
-    __builtin_trap();
-  }
+__load__close(void) {
+  sprx_dlsym(__handle, "_close", &__ptr__close);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1943,10 +1831,8 @@ void __load_and_call__connect();
 static __attribute__ ((used)) void* __ptr__connect = &__load_and_call__connect;
 
 static __attribute__ ((used)) void
-__load__connect() {
-  if(sceKernelDlsym(__module_id, "_connect", &__ptr__connect)) {
-    __builtin_trap();
-  }
+__load__connect(void) {
+  sprx_dlsym(__handle, "_connect", &__ptr__connect);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -1977,10 +1863,8 @@ void __load_and_call__dup2();
 static __attribute__ ((used)) void* __ptr__dup2 = &__load_and_call__dup2;
 
 static __attribute__ ((used)) void
-__load__dup2() {
-  if(sceKernelDlsym(__module_id, "_dup2", &__ptr__dup2)) {
-    __builtin_trap();
-  }
+__load__dup2(void) {
+  sprx_dlsym(__handle, "_dup2", &__ptr__dup2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2011,10 +1895,8 @@ void __load_and_call__execve();
 static __attribute__ ((used)) void* __ptr__execve = &__load_and_call__execve;
 
 static __attribute__ ((used)) void
-__load__execve() {
-  if(sceKernelDlsym(__module_id, "_execve", &__ptr__execve)) {
-    __builtin_trap();
-  }
+__load__execve(void) {
+  sprx_dlsym(__handle, "_execve", &__ptr__execve);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2045,10 +1927,8 @@ void __load_and_call__execvpe();
 static __attribute__ ((used)) void* __ptr__execvpe = &__load_and_call__execvpe;
 
 static __attribute__ ((used)) void
-__load__execvpe() {
-  if(sceKernelDlsym(__module_id, "_execvpe", &__ptr__execvpe)) {
-    __builtin_trap();
-  }
+__load__execvpe(void) {
+  sprx_dlsym(__handle, "_execvpe", &__ptr__execvpe);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2079,10 +1959,8 @@ void __load_and_call__exit();
 static __attribute__ ((used)) void* __ptr__exit = &__load_and_call__exit;
 
 static __attribute__ ((used)) void
-__load__exit() {
-  if(sceKernelDlsym(__module_id, "_exit", &__ptr__exit)) {
-    __builtin_trap();
-  }
+__load__exit(void) {
+  sprx_dlsym(__handle, "_exit", &__ptr__exit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2113,10 +1991,8 @@ void __load_and_call__fcntl();
 static __attribute__ ((used)) void* __ptr__fcntl = &__load_and_call__fcntl;
 
 static __attribute__ ((used)) void
-__load__fcntl() {
-  if(sceKernelDlsym(__module_id, "_fcntl", &__ptr__fcntl)) {
-    __builtin_trap();
-  }
+__load__fcntl(void) {
+  sprx_dlsym(__handle, "_fcntl", &__ptr__fcntl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2147,10 +2023,8 @@ void __load_and_call__fpathconf();
 static __attribute__ ((used)) void* __ptr__fpathconf = &__load_and_call__fpathconf;
 
 static __attribute__ ((used)) void
-__load__fpathconf() {
-  if(sceKernelDlsym(__module_id, "_fpathconf", &__ptr__fpathconf)) {
-    __builtin_trap();
-  }
+__load__fpathconf(void) {
+  sprx_dlsym(__handle, "_fpathconf", &__ptr__fpathconf);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2181,10 +2055,8 @@ void __load_and_call__fstat();
 static __attribute__ ((used)) void* __ptr__fstat = &__load_and_call__fstat;
 
 static __attribute__ ((used)) void
-__load__fstat() {
-  if(sceKernelDlsym(__module_id, "_fstat", &__ptr__fstat)) {
-    __builtin_trap();
-  }
+__load__fstat(void) {
+  sprx_dlsym(__handle, "_fstat", &__ptr__fstat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2215,10 +2087,8 @@ void __load_and_call__fstatfs();
 static __attribute__ ((used)) void* __ptr__fstatfs = &__load_and_call__fstatfs;
 
 static __attribute__ ((used)) void
-__load__fstatfs() {
-  if(sceKernelDlsym(__module_id, "_fstatfs", &__ptr__fstatfs)) {
-    __builtin_trap();
-  }
+__load__fstatfs(void) {
+  sprx_dlsym(__handle, "_fstatfs", &__ptr__fstatfs);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2249,10 +2119,8 @@ void __load_and_call__getdirentries();
 static __attribute__ ((used)) void* __ptr__getdirentries = &__load_and_call__getdirentries;
 
 static __attribute__ ((used)) void
-__load__getdirentries() {
-  if(sceKernelDlsym(__module_id, "_getdirentries", &__ptr__getdirentries)) {
-    __builtin_trap();
-  }
+__load__getdirentries(void) {
+  sprx_dlsym(__handle, "_getdirentries", &__ptr__getdirentries);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2283,10 +2151,8 @@ void __load_and_call__getpeername();
 static __attribute__ ((used)) void* __ptr__getpeername = &__load_and_call__getpeername;
 
 static __attribute__ ((used)) void
-__load__getpeername() {
-  if(sceKernelDlsym(__module_id, "_getpeername", &__ptr__getpeername)) {
-    __builtin_trap();
-  }
+__load__getpeername(void) {
+  sprx_dlsym(__handle, "_getpeername", &__ptr__getpeername);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2317,10 +2183,8 @@ void __load_and_call__getsockname();
 static __attribute__ ((used)) void* __ptr__getsockname = &__load_and_call__getsockname;
 
 static __attribute__ ((used)) void
-__load__getsockname() {
-  if(sceKernelDlsym(__module_id, "_getsockname", &__ptr__getsockname)) {
-    __builtin_trap();
-  }
+__load__getsockname(void) {
+  sprx_dlsym(__handle, "_getsockname", &__ptr__getsockname);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2351,10 +2215,8 @@ void __load_and_call__getsockopt();
 static __attribute__ ((used)) void* __ptr__getsockopt = &__load_and_call__getsockopt;
 
 static __attribute__ ((used)) void
-__load__getsockopt() {
-  if(sceKernelDlsym(__module_id, "_getsockopt", &__ptr__getsockopt)) {
-    __builtin_trap();
-  }
+__load__getsockopt(void) {
+  sprx_dlsym(__handle, "_getsockopt", &__ptr__getsockopt);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2385,10 +2247,8 @@ void __load_and_call__ioctl();
 static __attribute__ ((used)) void* __ptr__ioctl = &__load_and_call__ioctl;
 
 static __attribute__ ((used)) void
-__load__ioctl() {
-  if(sceKernelDlsym(__module_id, "_ioctl", &__ptr__ioctl)) {
-    __builtin_trap();
-  }
+__load__ioctl(void) {
+  sprx_dlsym(__handle, "_ioctl", &__ptr__ioctl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2419,10 +2279,8 @@ void __load_and_call__is_signal_return();
 static __attribute__ ((used)) void* __ptr__is_signal_return = &__load_and_call__is_signal_return;
 
 static __attribute__ ((used)) void
-__load__is_signal_return() {
-  if(sceKernelDlsym(__module_id, "_is_signal_return", &__ptr__is_signal_return)) {
-    __builtin_trap();
-  }
+__load__is_signal_return(void) {
+  sprx_dlsym(__handle, "_is_signal_return", &__ptr__is_signal_return);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2453,10 +2311,8 @@ void __load_and_call__listen();
 static __attribute__ ((used)) void* __ptr__listen = &__load_and_call__listen;
 
 static __attribute__ ((used)) void
-__load__listen() {
-  if(sceKernelDlsym(__module_id, "_listen", &__ptr__listen)) {
-    __builtin_trap();
-  }
+__load__listen(void) {
+  sprx_dlsym(__handle, "_listen", &__ptr__listen);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2487,10 +2343,8 @@ void __load_and_call__nanosleep();
 static __attribute__ ((used)) void* __ptr__nanosleep = &__load_and_call__nanosleep;
 
 static __attribute__ ((used)) void
-__load__nanosleep() {
-  if(sceKernelDlsym(__module_id, "_nanosleep", &__ptr__nanosleep)) {
-    __builtin_trap();
-  }
+__load__nanosleep(void) {
+  sprx_dlsym(__handle, "_nanosleep", &__ptr__nanosleep);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2521,10 +2375,8 @@ void __load_and_call__open();
 static __attribute__ ((used)) void* __ptr__open = &__load_and_call__open;
 
 static __attribute__ ((used)) void
-__load__open() {
-  if(sceKernelDlsym(__module_id, "_open", &__ptr__open)) {
-    __builtin_trap();
-  }
+__load__open(void) {
+  sprx_dlsym(__handle, "_open", &__ptr__open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2555,10 +2407,8 @@ void __load_and_call__openat();
 static __attribute__ ((used)) void* __ptr__openat = &__load_and_call__openat;
 
 static __attribute__ ((used)) void
-__load__openat() {
-  if(sceKernelDlsym(__module_id, "_openat", &__ptr__openat)) {
-    __builtin_trap();
-  }
+__load__openat(void) {
+  sprx_dlsym(__handle, "_openat", &__ptr__openat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2589,10 +2439,8 @@ void __load_and_call__read();
 static __attribute__ ((used)) void* __ptr__read = &__load_and_call__read;
 
 static __attribute__ ((used)) void
-__load__read() {
-  if(sceKernelDlsym(__module_id, "_read", &__ptr__read)) {
-    __builtin_trap();
-  }
+__load__read(void) {
+  sprx_dlsym(__handle, "_read", &__ptr__read);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2623,10 +2471,8 @@ void __load_and_call__readv();
 static __attribute__ ((used)) void* __ptr__readv = &__load_and_call__readv;
 
 static __attribute__ ((used)) void
-__load__readv() {
-  if(sceKernelDlsym(__module_id, "_readv", &__ptr__readv)) {
-    __builtin_trap();
-  }
+__load__readv(void) {
+  sprx_dlsym(__handle, "_readv", &__ptr__readv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2657,10 +2503,8 @@ void __load_and_call__recvfrom();
 static __attribute__ ((used)) void* __ptr__recvfrom = &__load_and_call__recvfrom;
 
 static __attribute__ ((used)) void
-__load__recvfrom() {
-  if(sceKernelDlsym(__module_id, "_recvfrom", &__ptr__recvfrom)) {
-    __builtin_trap();
-  }
+__load__recvfrom(void) {
+  sprx_dlsym(__handle, "_recvfrom", &__ptr__recvfrom);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2691,10 +2535,8 @@ void __load_and_call__recvmsg();
 static __attribute__ ((used)) void* __ptr__recvmsg = &__load_and_call__recvmsg;
 
 static __attribute__ ((used)) void
-__load__recvmsg() {
-  if(sceKernelDlsym(__module_id, "_recvmsg", &__ptr__recvmsg)) {
-    __builtin_trap();
-  }
+__load__recvmsg(void) {
+  sprx_dlsym(__handle, "_recvmsg", &__ptr__recvmsg);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2725,10 +2567,8 @@ void __load_and_call__sceKernelRtldSetApplicationHeapAPI();
 static __attribute__ ((used)) void* __ptr__sceKernelRtldSetApplicationHeapAPI = &__load_and_call__sceKernelRtldSetApplicationHeapAPI;
 
 static __attribute__ ((used)) void
-__load__sceKernelRtldSetApplicationHeapAPI() {
-  if(sceKernelDlsym(__module_id, "_sceKernelRtldSetApplicationHeapAPI", &__ptr__sceKernelRtldSetApplicationHeapAPI)) {
-    __builtin_trap();
-  }
+__load__sceKernelRtldSetApplicationHeapAPI(void) {
+  sprx_dlsym(__handle, "_sceKernelRtldSetApplicationHeapAPI", &__ptr__sceKernelRtldSetApplicationHeapAPI);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2759,10 +2599,8 @@ void __load_and_call__sceKernelRtldThreadAtexitDecrement();
 static __attribute__ ((used)) void* __ptr__sceKernelRtldThreadAtexitDecrement = &__load_and_call__sceKernelRtldThreadAtexitDecrement;
 
 static __attribute__ ((used)) void
-__load__sceKernelRtldThreadAtexitDecrement() {
-  if(sceKernelDlsym(__module_id, "_sceKernelRtldThreadAtexitDecrement", &__ptr__sceKernelRtldThreadAtexitDecrement)) {
-    __builtin_trap();
-  }
+__load__sceKernelRtldThreadAtexitDecrement(void) {
+  sprx_dlsym(__handle, "_sceKernelRtldThreadAtexitDecrement", &__ptr__sceKernelRtldThreadAtexitDecrement);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2793,10 +2631,8 @@ void __load_and_call__sceKernelRtldThreadAtexitIncrement();
 static __attribute__ ((used)) void* __ptr__sceKernelRtldThreadAtexitIncrement = &__load_and_call__sceKernelRtldThreadAtexitIncrement;
 
 static __attribute__ ((used)) void
-__load__sceKernelRtldThreadAtexitIncrement() {
-  if(sceKernelDlsym(__module_id, "_sceKernelRtldThreadAtexitIncrement", &__ptr__sceKernelRtldThreadAtexitIncrement)) {
-    __builtin_trap();
-  }
+__load__sceKernelRtldThreadAtexitIncrement(void) {
+  sprx_dlsym(__handle, "_sceKernelRtldThreadAtexitIncrement", &__ptr__sceKernelRtldThreadAtexitIncrement);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2827,10 +2663,8 @@ void __load_and_call__sceKernelSetThreadAtexitCount();
 static __attribute__ ((used)) void* __ptr__sceKernelSetThreadAtexitCount = &__load_and_call__sceKernelSetThreadAtexitCount;
 
 static __attribute__ ((used)) void
-__load__sceKernelSetThreadAtexitCount() {
-  if(sceKernelDlsym(__module_id, "_sceKernelSetThreadAtexitCount", &__ptr__sceKernelSetThreadAtexitCount)) {
-    __builtin_trap();
-  }
+__load__sceKernelSetThreadAtexitCount(void) {
+  sprx_dlsym(__handle, "_sceKernelSetThreadAtexitCount", &__ptr__sceKernelSetThreadAtexitCount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2861,10 +2695,8 @@ void __load_and_call__sceKernelSetThreadAtexitReport();
 static __attribute__ ((used)) void* __ptr__sceKernelSetThreadAtexitReport = &__load_and_call__sceKernelSetThreadAtexitReport;
 
 static __attribute__ ((used)) void
-__load__sceKernelSetThreadAtexitReport() {
-  if(sceKernelDlsym(__module_id, "_sceKernelSetThreadAtexitReport", &__ptr__sceKernelSetThreadAtexitReport)) {
-    __builtin_trap();
-  }
+__load__sceKernelSetThreadAtexitReport(void) {
+  sprx_dlsym(__handle, "_sceKernelSetThreadAtexitReport", &__ptr__sceKernelSetThreadAtexitReport);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2895,10 +2727,8 @@ void __load_and_call__sceKernelSetThreadDtors();
 static __attribute__ ((used)) void* __ptr__sceKernelSetThreadDtors = &__load_and_call__sceKernelSetThreadDtors;
 
 static __attribute__ ((used)) void
-__load__sceKernelSetThreadDtors() {
-  if(sceKernelDlsym(__module_id, "_sceKernelSetThreadDtors", &__ptr__sceKernelSetThreadDtors)) {
-    __builtin_trap();
-  }
+__load__sceKernelSetThreadDtors(void) {
+  sprx_dlsym(__handle, "_sceKernelSetThreadDtors", &__ptr__sceKernelSetThreadDtors);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2929,10 +2759,8 @@ void __load_and_call__sendmsg();
 static __attribute__ ((used)) void* __ptr__sendmsg = &__load_and_call__sendmsg;
 
 static __attribute__ ((used)) void
-__load__sendmsg() {
-  if(sceKernelDlsym(__module_id, "_sendmsg", &__ptr__sendmsg)) {
-    __builtin_trap();
-  }
+__load__sendmsg(void) {
+  sprx_dlsym(__handle, "_sendmsg", &__ptr__sendmsg);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2963,10 +2791,8 @@ void __load_and_call__sendto();
 static __attribute__ ((used)) void* __ptr__sendto = &__load_and_call__sendto;
 
 static __attribute__ ((used)) void
-__load__sendto() {
-  if(sceKernelDlsym(__module_id, "_sendto", &__ptr__sendto)) {
-    __builtin_trap();
-  }
+__load__sendto(void) {
+  sprx_dlsym(__handle, "_sendto", &__ptr__sendto);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -2997,10 +2823,8 @@ void __load_and_call__setsockopt();
 static __attribute__ ((used)) void* __ptr__setsockopt = &__load_and_call__setsockopt;
 
 static __attribute__ ((used)) void
-__load__setsockopt() {
-  if(sceKernelDlsym(__module_id, "_setsockopt", &__ptr__setsockopt)) {
-    __builtin_trap();
-  }
+__load__setsockopt(void) {
+  sprx_dlsym(__handle, "_setsockopt", &__ptr__setsockopt);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3031,10 +2855,8 @@ void __load_and_call__sigaction();
 static __attribute__ ((used)) void* __ptr__sigaction = &__load_and_call__sigaction;
 
 static __attribute__ ((used)) void
-__load__sigaction() {
-  if(sceKernelDlsym(__module_id, "_sigaction", &__ptr__sigaction)) {
-    __builtin_trap();
-  }
+__load__sigaction(void) {
+  sprx_dlsym(__handle, "_sigaction", &__ptr__sigaction);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3065,10 +2887,8 @@ void __load_and_call__sigprocmask();
 static __attribute__ ((used)) void* __ptr__sigprocmask = &__load_and_call__sigprocmask;
 
 static __attribute__ ((used)) void
-__load__sigprocmask() {
-  if(sceKernelDlsym(__module_id, "_sigprocmask", &__ptr__sigprocmask)) {
-    __builtin_trap();
-  }
+__load__sigprocmask(void) {
+  sprx_dlsym(__handle, "_sigprocmask", &__ptr__sigprocmask);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3099,10 +2919,8 @@ void __load_and_call__sigsuspend();
 static __attribute__ ((used)) void* __ptr__sigsuspend = &__load_and_call__sigsuspend;
 
 static __attribute__ ((used)) void
-__load__sigsuspend() {
-  if(sceKernelDlsym(__module_id, "_sigsuspend", &__ptr__sigsuspend)) {
-    __builtin_trap();
-  }
+__load__sigsuspend(void) {
+  sprx_dlsym(__handle, "_sigsuspend", &__ptr__sigsuspend);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3133,10 +2951,8 @@ void __load_and_call__umtx_op();
 static __attribute__ ((used)) void* __ptr__umtx_op = &__load_and_call__umtx_op;
 
 static __attribute__ ((used)) void
-__load__umtx_op() {
-  if(sceKernelDlsym(__module_id, "_umtx_op", &__ptr__umtx_op)) {
-    __builtin_trap();
-  }
+__load__umtx_op(void) {
+  sprx_dlsym(__handle, "_umtx_op", &__ptr__umtx_op);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3167,10 +2983,8 @@ void __load_and_call__wait4();
 static __attribute__ ((used)) void* __ptr__wait4 = &__load_and_call__wait4;
 
 static __attribute__ ((used)) void
-__load__wait4() {
-  if(sceKernelDlsym(__module_id, "_wait4", &__ptr__wait4)) {
-    __builtin_trap();
-  }
+__load__wait4(void) {
+  sprx_dlsym(__handle, "_wait4", &__ptr__wait4);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3201,10 +3015,8 @@ void __load_and_call__write();
 static __attribute__ ((used)) void* __ptr__write = &__load_and_call__write;
 
 static __attribute__ ((used)) void
-__load__write() {
-  if(sceKernelDlsym(__module_id, "_write", &__ptr__write)) {
-    __builtin_trap();
-  }
+__load__write(void) {
+  sprx_dlsym(__handle, "_write", &__ptr__write);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3235,10 +3047,8 @@ void __load_and_call__writev();
 static __attribute__ ((used)) void* __ptr__writev = &__load_and_call__writev;
 
 static __attribute__ ((used)) void
-__load__writev() {
-  if(sceKernelDlsym(__module_id, "_writev", &__ptr__writev)) {
-    __builtin_trap();
-  }
+__load__writev(void) {
+  sprx_dlsym(__handle, "_writev", &__ptr__writev);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3269,10 +3079,8 @@ void __load_and_call_accept();
 static __attribute__ ((used)) void* __ptr_accept = &__load_and_call_accept;
 
 static __attribute__ ((used)) void
-__load_accept() {
-  if(sceKernelDlsym(__module_id, "accept", &__ptr_accept)) {
-    __builtin_trap();
-  }
+__load_accept(void) {
+  sprx_dlsym(__handle, "accept", &__ptr_accept);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3303,10 +3111,8 @@ void __load_and_call_access();
 static __attribute__ ((used)) void* __ptr_access = &__load_and_call_access;
 
 static __attribute__ ((used)) void
-__load_access() {
-  if(sceKernelDlsym(__module_id, "access", &__ptr_access)) {
-    __builtin_trap();
-  }
+__load_access(void) {
+  sprx_dlsym(__handle, "access", &__ptr_access);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3337,10 +3143,8 @@ void __load_and_call_aio_cancel();
 static __attribute__ ((used)) void* __ptr_aio_cancel = &__load_and_call_aio_cancel;
 
 static __attribute__ ((used)) void
-__load_aio_cancel() {
-  if(sceKernelDlsym(__module_id, "aio_cancel", &__ptr_aio_cancel)) {
-    __builtin_trap();
-  }
+__load_aio_cancel(void) {
+  sprx_dlsym(__handle, "aio_cancel", &__ptr_aio_cancel);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3371,10 +3175,8 @@ void __load_and_call_aio_error();
 static __attribute__ ((used)) void* __ptr_aio_error = &__load_and_call_aio_error;
 
 static __attribute__ ((used)) void
-__load_aio_error() {
-  if(sceKernelDlsym(__module_id, "aio_error", &__ptr_aio_error)) {
-    __builtin_trap();
-  }
+__load_aio_error(void) {
+  sprx_dlsym(__handle, "aio_error", &__ptr_aio_error);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3405,10 +3207,8 @@ void __load_and_call_aio_fsync();
 static __attribute__ ((used)) void* __ptr_aio_fsync = &__load_and_call_aio_fsync;
 
 static __attribute__ ((used)) void
-__load_aio_fsync() {
-  if(sceKernelDlsym(__module_id, "aio_fsync", &__ptr_aio_fsync)) {
-    __builtin_trap();
-  }
+__load_aio_fsync(void) {
+  sprx_dlsym(__handle, "aio_fsync", &__ptr_aio_fsync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3439,10 +3239,8 @@ void __load_and_call_aio_read();
 static __attribute__ ((used)) void* __ptr_aio_read = &__load_and_call_aio_read;
 
 static __attribute__ ((used)) void
-__load_aio_read() {
-  if(sceKernelDlsym(__module_id, "aio_read", &__ptr_aio_read)) {
-    __builtin_trap();
-  }
+__load_aio_read(void) {
+  sprx_dlsym(__handle, "aio_read", &__ptr_aio_read);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3473,10 +3271,8 @@ void __load_and_call_aio_return();
 static __attribute__ ((used)) void* __ptr_aio_return = &__load_and_call_aio_return;
 
 static __attribute__ ((used)) void
-__load_aio_return() {
-  if(sceKernelDlsym(__module_id, "aio_return", &__ptr_aio_return)) {
-    __builtin_trap();
-  }
+__load_aio_return(void) {
+  sprx_dlsym(__handle, "aio_return", &__ptr_aio_return);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3507,10 +3303,8 @@ void __load_and_call_aio_suspend();
 static __attribute__ ((used)) void* __ptr_aio_suspend = &__load_and_call_aio_suspend;
 
 static __attribute__ ((used)) void
-__load_aio_suspend() {
-  if(sceKernelDlsym(__module_id, "aio_suspend", &__ptr_aio_suspend)) {
-    __builtin_trap();
-  }
+__load_aio_suspend(void) {
+  sprx_dlsym(__handle, "aio_suspend", &__ptr_aio_suspend);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3541,10 +3335,8 @@ void __load_and_call_aio_waitcomplete();
 static __attribute__ ((used)) void* __ptr_aio_waitcomplete = &__load_and_call_aio_waitcomplete;
 
 static __attribute__ ((used)) void
-__load_aio_waitcomplete() {
-  if(sceKernelDlsym(__module_id, "aio_waitcomplete", &__ptr_aio_waitcomplete)) {
-    __builtin_trap();
-  }
+__load_aio_waitcomplete(void) {
+  sprx_dlsym(__handle, "aio_waitcomplete", &__ptr_aio_waitcomplete);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3575,10 +3367,8 @@ void __load_and_call_aio_write();
 static __attribute__ ((used)) void* __ptr_aio_write = &__load_and_call_aio_write;
 
 static __attribute__ ((used)) void
-__load_aio_write() {
-  if(sceKernelDlsym(__module_id, "aio_write", &__ptr_aio_write)) {
-    __builtin_trap();
-  }
+__load_aio_write(void) {
+  sprx_dlsym(__handle, "aio_write", &__ptr_aio_write);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3609,10 +3399,8 @@ void __load_and_call_amd64_set_fsbase();
 static __attribute__ ((used)) void* __ptr_amd64_set_fsbase = &__load_and_call_amd64_set_fsbase;
 
 static __attribute__ ((used)) void
-__load_amd64_set_fsbase() {
-  if(sceKernelDlsym(__module_id, "amd64_set_fsbase", &__ptr_amd64_set_fsbase)) {
-    __builtin_trap();
-  }
+__load_amd64_set_fsbase(void) {
+  sprx_dlsym(__handle, "amd64_set_fsbase", &__ptr_amd64_set_fsbase);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3643,10 +3431,8 @@ void __load_and_call_bind();
 static __attribute__ ((used)) void* __ptr_bind = &__load_and_call_bind;
 
 static __attribute__ ((used)) void
-__load_bind() {
-  if(sceKernelDlsym(__module_id, "bind", &__ptr_bind)) {
-    __builtin_trap();
-  }
+__load_bind(void) {
+  sprx_dlsym(__handle, "bind", &__ptr_bind);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3677,10 +3463,8 @@ void __load_and_call_blockpool_batch();
 static __attribute__ ((used)) void* __ptr_blockpool_batch = &__load_and_call_blockpool_batch;
 
 static __attribute__ ((used)) void
-__load_blockpool_batch() {
-  if(sceKernelDlsym(__module_id, "blockpool_batch", &__ptr_blockpool_batch)) {
-    __builtin_trap();
-  }
+__load_blockpool_batch(void) {
+  sprx_dlsym(__handle, "blockpool_batch", &__ptr_blockpool_batch);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3711,10 +3495,8 @@ void __load_and_call_blockpool_map();
 static __attribute__ ((used)) void* __ptr_blockpool_map = &__load_and_call_blockpool_map;
 
 static __attribute__ ((used)) void
-__load_blockpool_map() {
-  if(sceKernelDlsym(__module_id, "blockpool_map", &__ptr_blockpool_map)) {
-    __builtin_trap();
-  }
+__load_blockpool_map(void) {
+  sprx_dlsym(__handle, "blockpool_map", &__ptr_blockpool_map);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3745,10 +3527,8 @@ void __load_and_call_blockpool_open();
 static __attribute__ ((used)) void* __ptr_blockpool_open = &__load_and_call_blockpool_open;
 
 static __attribute__ ((used)) void
-__load_blockpool_open() {
-  if(sceKernelDlsym(__module_id, "blockpool_open", &__ptr_blockpool_open)) {
-    __builtin_trap();
-  }
+__load_blockpool_open(void) {
+  sprx_dlsym(__handle, "blockpool_open", &__ptr_blockpool_open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3779,10 +3559,8 @@ void __load_and_call_blockpool_unmap();
 static __attribute__ ((used)) void* __ptr_blockpool_unmap = &__load_and_call_blockpool_unmap;
 
 static __attribute__ ((used)) void
-__load_blockpool_unmap() {
-  if(sceKernelDlsym(__module_id, "blockpool_unmap", &__ptr_blockpool_unmap)) {
-    __builtin_trap();
-  }
+__load_blockpool_unmap(void) {
+  sprx_dlsym(__handle, "blockpool_unmap", &__ptr_blockpool_unmap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3813,10 +3591,8 @@ void __load_and_call_chdir();
 static __attribute__ ((used)) void* __ptr_chdir = &__load_and_call_chdir;
 
 static __attribute__ ((used)) void
-__load_chdir() {
-  if(sceKernelDlsym(__module_id, "chdir", &__ptr_chdir)) {
-    __builtin_trap();
-  }
+__load_chdir(void) {
+  sprx_dlsym(__handle, "chdir", &__ptr_chdir);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3847,10 +3623,8 @@ void __load_and_call_chflags();
 static __attribute__ ((used)) void* __ptr_chflags = &__load_and_call_chflags;
 
 static __attribute__ ((used)) void
-__load_chflags() {
-  if(sceKernelDlsym(__module_id, "chflags", &__ptr_chflags)) {
-    __builtin_trap();
-  }
+__load_chflags(void) {
+  sprx_dlsym(__handle, "chflags", &__ptr_chflags);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3881,10 +3655,8 @@ void __load_and_call_chmod();
 static __attribute__ ((used)) void* __ptr_chmod = &__load_and_call_chmod;
 
 static __attribute__ ((used)) void
-__load_chmod() {
-  if(sceKernelDlsym(__module_id, "chmod", &__ptr_chmod)) {
-    __builtin_trap();
-  }
+__load_chmod(void) {
+  sprx_dlsym(__handle, "chmod", &__ptr_chmod);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3915,10 +3687,8 @@ void __load_and_call_chown();
 static __attribute__ ((used)) void* __ptr_chown = &__load_and_call_chown;
 
 static __attribute__ ((used)) void
-__load_chown() {
-  if(sceKernelDlsym(__module_id, "chown", &__ptr_chown)) {
-    __builtin_trap();
-  }
+__load_chown(void) {
+  sprx_dlsym(__handle, "chown", &__ptr_chown);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3949,10 +3719,8 @@ void __load_and_call_chroot();
 static __attribute__ ((used)) void* __ptr_chroot = &__load_and_call_chroot;
 
 static __attribute__ ((used)) void
-__load_chroot() {
-  if(sceKernelDlsym(__module_id, "chroot", &__ptr_chroot)) {
-    __builtin_trap();
-  }
+__load_chroot(void) {
+  sprx_dlsym(__handle, "chroot", &__ptr_chroot);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -3983,10 +3751,8 @@ void __load_and_call_clock_getres();
 static __attribute__ ((used)) void* __ptr_clock_getres = &__load_and_call_clock_getres;
 
 static __attribute__ ((used)) void
-__load_clock_getres() {
-  if(sceKernelDlsym(__module_id, "clock_getres", &__ptr_clock_getres)) {
-    __builtin_trap();
-  }
+__load_clock_getres(void) {
+  sprx_dlsym(__handle, "clock_getres", &__ptr_clock_getres);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4017,10 +3783,8 @@ void __load_and_call_clock_gettime();
 static __attribute__ ((used)) void* __ptr_clock_gettime = &__load_and_call_clock_gettime;
 
 static __attribute__ ((used)) void
-__load_clock_gettime() {
-  if(sceKernelDlsym(__module_id, "clock_gettime", &__ptr_clock_gettime)) {
-    __builtin_trap();
-  }
+__load_clock_gettime(void) {
+  sprx_dlsym(__handle, "clock_gettime", &__ptr_clock_gettime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4051,10 +3815,8 @@ void __load_and_call_clock_settime();
 static __attribute__ ((used)) void* __ptr_clock_settime = &__load_and_call_clock_settime;
 
 static __attribute__ ((used)) void
-__load_clock_settime() {
-  if(sceKernelDlsym(__module_id, "clock_settime", &__ptr_clock_settime)) {
-    __builtin_trap();
-  }
+__load_clock_settime(void) {
+  sprx_dlsym(__handle, "clock_settime", &__ptr_clock_settime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4085,10 +3847,8 @@ void __load_and_call_close();
 static __attribute__ ((used)) void* __ptr_close = &__load_and_call_close;
 
 static __attribute__ ((used)) void
-__load_close() {
-  if(sceKernelDlsym(__module_id, "close", &__ptr_close)) {
-    __builtin_trap();
-  }
+__load_close(void) {
+  sprx_dlsym(__handle, "close", &__ptr_close);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4119,10 +3879,8 @@ void __load_and_call_connect();
 static __attribute__ ((used)) void* __ptr_connect = &__load_and_call_connect;
 
 static __attribute__ ((used)) void
-__load_connect() {
-  if(sceKernelDlsym(__module_id, "connect", &__ptr_connect)) {
-    __builtin_trap();
-  }
+__load_connect(void) {
+  sprx_dlsym(__handle, "connect", &__ptr_connect);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4153,10 +3911,8 @@ void __load_and_call_cpuset();
 static __attribute__ ((used)) void* __ptr_cpuset = &__load_and_call_cpuset;
 
 static __attribute__ ((used)) void
-__load_cpuset() {
-  if(sceKernelDlsym(__module_id, "cpuset", &__ptr_cpuset)) {
-    __builtin_trap();
-  }
+__load_cpuset(void) {
+  sprx_dlsym(__handle, "cpuset", &__ptr_cpuset);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4187,10 +3943,8 @@ void __load_and_call_cpuset_getaffinity();
 static __attribute__ ((used)) void* __ptr_cpuset_getaffinity = &__load_and_call_cpuset_getaffinity;
 
 static __attribute__ ((used)) void
-__load_cpuset_getaffinity() {
-  if(sceKernelDlsym(__module_id, "cpuset_getaffinity", &__ptr_cpuset_getaffinity)) {
-    __builtin_trap();
-  }
+__load_cpuset_getaffinity(void) {
+  sprx_dlsym(__handle, "cpuset_getaffinity", &__ptr_cpuset_getaffinity);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4221,10 +3975,8 @@ void __load_and_call_cpuset_getid();
 static __attribute__ ((used)) void* __ptr_cpuset_getid = &__load_and_call_cpuset_getid;
 
 static __attribute__ ((used)) void
-__load_cpuset_getid() {
-  if(sceKernelDlsym(__module_id, "cpuset_getid", &__ptr_cpuset_getid)) {
-    __builtin_trap();
-  }
+__load_cpuset_getid(void) {
+  sprx_dlsym(__handle, "cpuset_getid", &__ptr_cpuset_getid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4255,10 +4007,8 @@ void __load_and_call_cpuset_setaffinity();
 static __attribute__ ((used)) void* __ptr_cpuset_setaffinity = &__load_and_call_cpuset_setaffinity;
 
 static __attribute__ ((used)) void
-__load_cpuset_setaffinity() {
-  if(sceKernelDlsym(__module_id, "cpuset_setaffinity", &__ptr_cpuset_setaffinity)) {
-    __builtin_trap();
-  }
+__load_cpuset_setaffinity(void) {
+  sprx_dlsym(__handle, "cpuset_setaffinity", &__ptr_cpuset_setaffinity);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4289,10 +4039,8 @@ void __load_and_call_cpuset_setid();
 static __attribute__ ((used)) void* __ptr_cpuset_setid = &__load_and_call_cpuset_setid;
 
 static __attribute__ ((used)) void
-__load_cpuset_setid() {
-  if(sceKernelDlsym(__module_id, "cpuset_setid", &__ptr_cpuset_setid)) {
-    __builtin_trap();
-  }
+__load_cpuset_setid(void) {
+  sprx_dlsym(__handle, "cpuset_setid", &__ptr_cpuset_setid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4323,10 +4071,8 @@ void __load_and_call_creat();
 static __attribute__ ((used)) void* __ptr_creat = &__load_and_call_creat;
 
 static __attribute__ ((used)) void
-__load_creat() {
-  if(sceKernelDlsym(__module_id, "creat", &__ptr_creat)) {
-    __builtin_trap();
-  }
+__load_creat(void) {
+  sprx_dlsym(__handle, "creat", &__ptr_creat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4357,10 +4103,8 @@ void __load_and_call_dlclose();
 static __attribute__ ((used)) void* __ptr_dlclose = &__load_and_call_dlclose;
 
 static __attribute__ ((used)) void
-__load_dlclose() {
-  if(sceKernelDlsym(__module_id, "dlclose", &__ptr_dlclose)) {
-    __builtin_trap();
-  }
+__load_dlclose(void) {
+  sprx_dlsym(__handle, "dlclose", &__ptr_dlclose);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4391,10 +4135,8 @@ void __load_and_call_dlerror();
 static __attribute__ ((used)) void* __ptr_dlerror = &__load_and_call_dlerror;
 
 static __attribute__ ((used)) void
-__load_dlerror() {
-  if(sceKernelDlsym(__module_id, "dlerror", &__ptr_dlerror)) {
-    __builtin_trap();
-  }
+__load_dlerror(void) {
+  sprx_dlsym(__handle, "dlerror", &__ptr_dlerror);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4425,10 +4167,8 @@ void __load_and_call_dlopen();
 static __attribute__ ((used)) void* __ptr_dlopen = &__load_and_call_dlopen;
 
 static __attribute__ ((used)) void
-__load_dlopen() {
-  if(sceKernelDlsym(__module_id, "dlopen", &__ptr_dlopen)) {
-    __builtin_trap();
-  }
+__load_dlopen(void) {
+  sprx_dlsym(__handle, "dlopen", &__ptr_dlopen);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4459,10 +4199,8 @@ void __load_and_call_dlsym();
 static __attribute__ ((used)) void* __ptr_dlsym = &__load_and_call_dlsym;
 
 static __attribute__ ((used)) void
-__load_dlsym() {
-  if(sceKernelDlsym(__module_id, "dlsym", &__ptr_dlsym)) {
-    __builtin_trap();
-  }
+__load_dlsym(void) {
+  sprx_dlsym(__handle, "dlsym", &__ptr_dlsym);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4493,10 +4231,8 @@ void __load_and_call_dup();
 static __attribute__ ((used)) void* __ptr_dup = &__load_and_call_dup;
 
 static __attribute__ ((used)) void
-__load_dup() {
-  if(sceKernelDlsym(__module_id, "dup", &__ptr_dup)) {
-    __builtin_trap();
-  }
+__load_dup(void) {
+  sprx_dlsym(__handle, "dup", &__ptr_dup);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4527,10 +4263,8 @@ void __load_and_call_dup2();
 static __attribute__ ((used)) void* __ptr_dup2 = &__load_and_call_dup2;
 
 static __attribute__ ((used)) void
-__load_dup2() {
-  if(sceKernelDlsym(__module_id, "dup2", &__ptr_dup2)) {
-    __builtin_trap();
-  }
+__load_dup2(void) {
+  sprx_dlsym(__handle, "dup2", &__ptr_dup2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4561,10 +4295,8 @@ void __load_and_call_dynlib_get_obj_member();
 static __attribute__ ((used)) void* __ptr_dynlib_get_obj_member = &__load_and_call_dynlib_get_obj_member;
 
 static __attribute__ ((used)) void
-__load_dynlib_get_obj_member() {
-  if(sceKernelDlsym(__module_id, "dynlib_get_obj_member", &__ptr_dynlib_get_obj_member)) {
-    __builtin_trap();
-  }
+__load_dynlib_get_obj_member(void) {
+  sprx_dlsym(__handle, "dynlib_get_obj_member", &__ptr_dynlib_get_obj_member);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4595,10 +4327,8 @@ void __load_and_call_execv();
 static __attribute__ ((used)) void* __ptr_execv = &__load_and_call_execv;
 
 static __attribute__ ((used)) void
-__load_execv() {
-  if(sceKernelDlsym(__module_id, "execv", &__ptr_execv)) {
-    __builtin_trap();
-  }
+__load_execv(void) {
+  sprx_dlsym(__handle, "execv", &__ptr_execv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4629,10 +4359,8 @@ void __load_and_call_execve();
 static __attribute__ ((used)) void* __ptr_execve = &__load_and_call_execve;
 
 static __attribute__ ((used)) void
-__load_execve() {
-  if(sceKernelDlsym(__module_id, "execve", &__ptr_execve)) {
-    __builtin_trap();
-  }
+__load_execve(void) {
+  sprx_dlsym(__handle, "execve", &__ptr_execve);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4663,10 +4391,8 @@ void __load_and_call_execvp();
 static __attribute__ ((used)) void* __ptr_execvp = &__load_and_call_execvp;
 
 static __attribute__ ((used)) void
-__load_execvp() {
-  if(sceKernelDlsym(__module_id, "execvp", &__ptr_execvp)) {
-    __builtin_trap();
-  }
+__load_execvp(void) {
+  sprx_dlsym(__handle, "execvp", &__ptr_execvp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4697,10 +4423,8 @@ void __load_and_call_fchdir();
 static __attribute__ ((used)) void* __ptr_fchdir = &__load_and_call_fchdir;
 
 static __attribute__ ((used)) void
-__load_fchdir() {
-  if(sceKernelDlsym(__module_id, "fchdir", &__ptr_fchdir)) {
-    __builtin_trap();
-  }
+__load_fchdir(void) {
+  sprx_dlsym(__handle, "fchdir", &__ptr_fchdir);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4731,10 +4455,8 @@ void __load_and_call_fchflags();
 static __attribute__ ((used)) void* __ptr_fchflags = &__load_and_call_fchflags;
 
 static __attribute__ ((used)) void
-__load_fchflags() {
-  if(sceKernelDlsym(__module_id, "fchflags", &__ptr_fchflags)) {
-    __builtin_trap();
-  }
+__load_fchflags(void) {
+  sprx_dlsym(__handle, "fchflags", &__ptr_fchflags);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4765,10 +4487,8 @@ void __load_and_call_fchmod();
 static __attribute__ ((used)) void* __ptr_fchmod = &__load_and_call_fchmod;
 
 static __attribute__ ((used)) void
-__load_fchmod() {
-  if(sceKernelDlsym(__module_id, "fchmod", &__ptr_fchmod)) {
-    __builtin_trap();
-  }
+__load_fchmod(void) {
+  sprx_dlsym(__handle, "fchmod", &__ptr_fchmod);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4799,10 +4519,8 @@ void __load_and_call_fchmodat();
 static __attribute__ ((used)) void* __ptr_fchmodat = &__load_and_call_fchmodat;
 
 static __attribute__ ((used)) void
-__load_fchmodat() {
-  if(sceKernelDlsym(__module_id, "fchmodat", &__ptr_fchmodat)) {
-    __builtin_trap();
-  }
+__load_fchmodat(void) {
+  sprx_dlsym(__handle, "fchmodat", &__ptr_fchmodat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4833,10 +4551,8 @@ void __load_and_call_fchown();
 static __attribute__ ((used)) void* __ptr_fchown = &__load_and_call_fchown;
 
 static __attribute__ ((used)) void
-__load_fchown() {
-  if(sceKernelDlsym(__module_id, "fchown", &__ptr_fchown)) {
-    __builtin_trap();
-  }
+__load_fchown(void) {
+  sprx_dlsym(__handle, "fchown", &__ptr_fchown);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4867,10 +4583,8 @@ void __load_and_call_fchownat();
 static __attribute__ ((used)) void* __ptr_fchownat = &__load_and_call_fchownat;
 
 static __attribute__ ((used)) void
-__load_fchownat() {
-  if(sceKernelDlsym(__module_id, "fchownat", &__ptr_fchownat)) {
-    __builtin_trap();
-  }
+__load_fchownat(void) {
+  sprx_dlsym(__handle, "fchownat", &__ptr_fchownat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4901,10 +4615,8 @@ void __load_and_call_fcntl();
 static __attribute__ ((used)) void* __ptr_fcntl = &__load_and_call_fcntl;
 
 static __attribute__ ((used)) void
-__load_fcntl() {
-  if(sceKernelDlsym(__module_id, "fcntl", &__ptr_fcntl)) {
-    __builtin_trap();
-  }
+__load_fcntl(void) {
+  sprx_dlsym(__handle, "fcntl", &__ptr_fcntl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4935,10 +4647,8 @@ void __load_and_call_fdatasync();
 static __attribute__ ((used)) void* __ptr_fdatasync = &__load_and_call_fdatasync;
 
 static __attribute__ ((used)) void
-__load_fdatasync() {
-  if(sceKernelDlsym(__module_id, "fdatasync", &__ptr_fdatasync)) {
-    __builtin_trap();
-  }
+__load_fdatasync(void) {
+  sprx_dlsym(__handle, "fdatasync", &__ptr_fdatasync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -4969,10 +4679,8 @@ void __load_and_call_flock();
 static __attribute__ ((used)) void* __ptr_flock = &__load_and_call_flock;
 
 static __attribute__ ((used)) void
-__load_flock() {
-  if(sceKernelDlsym(__module_id, "flock", &__ptr_flock)) {
-    __builtin_trap();
-  }
+__load_flock(void) {
+  sprx_dlsym(__handle, "flock", &__ptr_flock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5003,10 +4711,8 @@ void __load_and_call_fork();
 static __attribute__ ((used)) void* __ptr_fork = &__load_and_call_fork;
 
 static __attribute__ ((used)) void
-__load_fork() {
-  if(sceKernelDlsym(__module_id, "fork", &__ptr_fork)) {
-    __builtin_trap();
-  }
+__load_fork(void) {
+  sprx_dlsym(__handle, "fork", &__ptr_fork);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5037,10 +4743,8 @@ void __load_and_call_fpathconf();
 static __attribute__ ((used)) void* __ptr_fpathconf = &__load_and_call_fpathconf;
 
 static __attribute__ ((used)) void
-__load_fpathconf() {
-  if(sceKernelDlsym(__module_id, "fpathconf", &__ptr_fpathconf)) {
-    __builtin_trap();
-  }
+__load_fpathconf(void) {
+  sprx_dlsym(__handle, "fpathconf", &__ptr_fpathconf);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5071,10 +4775,8 @@ void __load_and_call_fstat();
 static __attribute__ ((used)) void* __ptr_fstat = &__load_and_call_fstat;
 
 static __attribute__ ((used)) void
-__load_fstat() {
-  if(sceKernelDlsym(__module_id, "fstat", &__ptr_fstat)) {
-    __builtin_trap();
-  }
+__load_fstat(void) {
+  sprx_dlsym(__handle, "fstat", &__ptr_fstat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5105,10 +4807,8 @@ void __load_and_call_fstatat();
 static __attribute__ ((used)) void* __ptr_fstatat = &__load_and_call_fstatat;
 
 static __attribute__ ((used)) void
-__load_fstatat() {
-  if(sceKernelDlsym(__module_id, "fstatat", &__ptr_fstatat)) {
-    __builtin_trap();
-  }
+__load_fstatat(void) {
+  sprx_dlsym(__handle, "fstatat", &__ptr_fstatat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5139,10 +4839,8 @@ void __load_and_call_fstatfs();
 static __attribute__ ((used)) void* __ptr_fstatfs = &__load_and_call_fstatfs;
 
 static __attribute__ ((used)) void
-__load_fstatfs() {
-  if(sceKernelDlsym(__module_id, "fstatfs", &__ptr_fstatfs)) {
-    __builtin_trap();
-  }
+__load_fstatfs(void) {
+  sprx_dlsym(__handle, "fstatfs", &__ptr_fstatfs);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5173,10 +4871,8 @@ void __load_and_call_fsync();
 static __attribute__ ((used)) void* __ptr_fsync = &__load_and_call_fsync;
 
 static __attribute__ ((used)) void
-__load_fsync() {
-  if(sceKernelDlsym(__module_id, "fsync", &__ptr_fsync)) {
-    __builtin_trap();
-  }
+__load_fsync(void) {
+  sprx_dlsym(__handle, "fsync", &__ptr_fsync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5207,10 +4903,8 @@ void __load_and_call_ftruncate();
 static __attribute__ ((used)) void* __ptr_ftruncate = &__load_and_call_ftruncate;
 
 static __attribute__ ((used)) void
-__load_ftruncate() {
-  if(sceKernelDlsym(__module_id, "ftruncate", &__ptr_ftruncate)) {
-    __builtin_trap();
-  }
+__load_ftruncate(void) {
+  sprx_dlsym(__handle, "ftruncate", &__ptr_ftruncate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5241,10 +4935,8 @@ void __load_and_call_futimes();
 static __attribute__ ((used)) void* __ptr_futimes = &__load_and_call_futimes;
 
 static __attribute__ ((used)) void
-__load_futimes() {
-  if(sceKernelDlsym(__module_id, "futimes", &__ptr_futimes)) {
-    __builtin_trap();
-  }
+__load_futimes(void) {
+  sprx_dlsym(__handle, "futimes", &__ptr_futimes);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5275,10 +4967,8 @@ void __load_and_call_futimesat();
 static __attribute__ ((used)) void* __ptr_futimesat = &__load_and_call_futimesat;
 
 static __attribute__ ((used)) void
-__load_futimesat() {
-  if(sceKernelDlsym(__module_id, "futimesat", &__ptr_futimesat)) {
-    __builtin_trap();
-  }
+__load_futimesat(void) {
+  sprx_dlsym(__handle, "futimesat", &__ptr_futimesat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5309,10 +4999,8 @@ void __load_and_call_get_authinfo();
 static __attribute__ ((used)) void* __ptr_get_authinfo = &__load_and_call_get_authinfo;
 
 static __attribute__ ((used)) void
-__load_get_authinfo() {
-  if(sceKernelDlsym(__module_id, "get_authinfo", &__ptr_get_authinfo)) {
-    __builtin_trap();
-  }
+__load_get_authinfo(void) {
+  sprx_dlsym(__handle, "get_authinfo", &__ptr_get_authinfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5343,10 +5031,8 @@ void __load_and_call_get_module_info_list();
 static __attribute__ ((used)) void* __ptr_get_module_info_list = &__load_and_call_get_module_info_list;
 
 static __attribute__ ((used)) void
-__load_get_module_info_list() {
-  if(sceKernelDlsym(__module_id, "get_module_info_list", &__ptr_get_module_info_list)) {
-    __builtin_trap();
-  }
+__load_get_module_info_list(void) {
+  sprx_dlsym(__handle, "get_module_info_list", &__ptr_get_module_info_list);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5377,10 +5063,8 @@ void __load_and_call_get_page_table_stats();
 static __attribute__ ((used)) void* __ptr_get_page_table_stats = &__load_and_call_get_page_table_stats;
 
 static __attribute__ ((used)) void
-__load_get_page_table_stats() {
-  if(sceKernelDlsym(__module_id, "get_page_table_stats", &__ptr_get_page_table_stats)) {
-    __builtin_trap();
-  }
+__load_get_page_table_stats(void) {
+  sprx_dlsym(__handle, "get_page_table_stats", &__ptr_get_page_table_stats);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5411,10 +5095,8 @@ void __load_and_call_get_sdk_compiled_version();
 static __attribute__ ((used)) void* __ptr_get_sdk_compiled_version = &__load_and_call_get_sdk_compiled_version;
 
 static __attribute__ ((used)) void
-__load_get_sdk_compiled_version() {
-  if(sceKernelDlsym(__module_id, "get_sdk_compiled_version", &__ptr_get_sdk_compiled_version)) {
-    __builtin_trap();
-  }
+__load_get_sdk_compiled_version(void) {
+  sprx_dlsym(__handle, "get_sdk_compiled_version", &__ptr_get_sdk_compiled_version);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5445,10 +5127,8 @@ void __load_and_call_get_self_auth_info();
 static __attribute__ ((used)) void* __ptr_get_self_auth_info = &__load_and_call_get_self_auth_info;
 
 static __attribute__ ((used)) void
-__load_get_self_auth_info() {
-  if(sceKernelDlsym(__module_id, "get_self_auth_info", &__ptr_get_self_auth_info)) {
-    __builtin_trap();
-  }
+__load_get_self_auth_info(void) {
+  sprx_dlsym(__handle, "get_self_auth_info", &__ptr_get_self_auth_info);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5479,10 +5159,8 @@ void __load_and_call_get_vm_map_timestamp();
 static __attribute__ ((used)) void* __ptr_get_vm_map_timestamp = &__load_and_call_get_vm_map_timestamp;
 
 static __attribute__ ((used)) void
-__load_get_vm_map_timestamp() {
-  if(sceKernelDlsym(__module_id, "get_vm_map_timestamp", &__ptr_get_vm_map_timestamp)) {
-    __builtin_trap();
-  }
+__load_get_vm_map_timestamp(void) {
+  sprx_dlsym(__handle, "get_vm_map_timestamp", &__ptr_get_vm_map_timestamp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5513,10 +5191,8 @@ void __load_and_call_getargc();
 static __attribute__ ((used)) void* __ptr_getargc = &__load_and_call_getargc;
 
 static __attribute__ ((used)) void
-__load_getargc() {
-  if(sceKernelDlsym(__module_id, "getargc", &__ptr_getargc)) {
-    __builtin_trap();
-  }
+__load_getargc(void) {
+  sprx_dlsym(__handle, "getargc", &__ptr_getargc);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5547,10 +5223,8 @@ void __load_and_call_getargv();
 static __attribute__ ((used)) void* __ptr_getargv = &__load_and_call_getargv;
 
 static __attribute__ ((used)) void
-__load_getargv() {
-  if(sceKernelDlsym(__module_id, "getargv", &__ptr_getargv)) {
-    __builtin_trap();
-  }
+__load_getargv(void) {
+  sprx_dlsym(__handle, "getargv", &__ptr_getargv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5581,10 +5255,8 @@ void __load_and_call_getcontext();
 static __attribute__ ((used)) void* __ptr_getcontext = &__load_and_call_getcontext;
 
 static __attribute__ ((used)) void
-__load_getcontext() {
-  if(sceKernelDlsym(__module_id, "getcontext", &__ptr_getcontext)) {
-    __builtin_trap();
-  }
+__load_getcontext(void) {
+  sprx_dlsym(__handle, "getcontext", &__ptr_getcontext);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5615,10 +5287,8 @@ void __load_and_call_getdents();
 static __attribute__ ((used)) void* __ptr_getdents = &__load_and_call_getdents;
 
 static __attribute__ ((used)) void
-__load_getdents() {
-  if(sceKernelDlsym(__module_id, "getdents", &__ptr_getdents)) {
-    __builtin_trap();
-  }
+__load_getdents(void) {
+  sprx_dlsym(__handle, "getdents", &__ptr_getdents);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5649,10 +5319,8 @@ void __load_and_call_getdirentries();
 static __attribute__ ((used)) void* __ptr_getdirentries = &__load_and_call_getdirentries;
 
 static __attribute__ ((used)) void
-__load_getdirentries() {
-  if(sceKernelDlsym(__module_id, "getdirentries", &__ptr_getdirentries)) {
-    __builtin_trap();
-  }
+__load_getdirentries(void) {
+  sprx_dlsym(__handle, "getdirentries", &__ptr_getdirentries);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5683,10 +5351,8 @@ void __load_and_call_getdtablesize();
 static __attribute__ ((used)) void* __ptr_getdtablesize = &__load_and_call_getdtablesize;
 
 static __attribute__ ((used)) void
-__load_getdtablesize() {
-  if(sceKernelDlsym(__module_id, "getdtablesize", &__ptr_getdtablesize)) {
-    __builtin_trap();
-  }
+__load_getdtablesize(void) {
+  sprx_dlsym(__handle, "getdtablesize", &__ptr_getdtablesize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5717,10 +5383,8 @@ void __load_and_call_getegid();
 static __attribute__ ((used)) void* __ptr_getegid = &__load_and_call_getegid;
 
 static __attribute__ ((used)) void
-__load_getegid() {
-  if(sceKernelDlsym(__module_id, "getegid", &__ptr_getegid)) {
-    __builtin_trap();
-  }
+__load_getegid(void) {
+  sprx_dlsym(__handle, "getegid", &__ptr_getegid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5751,10 +5415,8 @@ void __load_and_call_geteuid();
 static __attribute__ ((used)) void* __ptr_geteuid = &__load_and_call_geteuid;
 
 static __attribute__ ((used)) void
-__load_geteuid() {
-  if(sceKernelDlsym(__module_id, "geteuid", &__ptr_geteuid)) {
-    __builtin_trap();
-  }
+__load_geteuid(void) {
+  sprx_dlsym(__handle, "geteuid", &__ptr_geteuid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5785,10 +5447,8 @@ void __load_and_call_getfsstat();
 static __attribute__ ((used)) void* __ptr_getfsstat = &__load_and_call_getfsstat;
 
 static __attribute__ ((used)) void
-__load_getfsstat() {
-  if(sceKernelDlsym(__module_id, "getfsstat", &__ptr_getfsstat)) {
-    __builtin_trap();
-  }
+__load_getfsstat(void) {
+  sprx_dlsym(__handle, "getfsstat", &__ptr_getfsstat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5819,10 +5479,8 @@ void __load_and_call_getgid();
 static __attribute__ ((used)) void* __ptr_getgid = &__load_and_call_getgid;
 
 static __attribute__ ((used)) void
-__load_getgid() {
-  if(sceKernelDlsym(__module_id, "getgid", &__ptr_getgid)) {
-    __builtin_trap();
-  }
+__load_getgid(void) {
+  sprx_dlsym(__handle, "getgid", &__ptr_getgid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5853,10 +5511,8 @@ void __load_and_call_getgroups();
 static __attribute__ ((used)) void* __ptr_getgroups = &__load_and_call_getgroups;
 
 static __attribute__ ((used)) void
-__load_getgroups() {
-  if(sceKernelDlsym(__module_id, "getgroups", &__ptr_getgroups)) {
-    __builtin_trap();
-  }
+__load_getgroups(void) {
+  sprx_dlsym(__handle, "getgroups", &__ptr_getgroups);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5887,10 +5543,8 @@ void __load_and_call_getitimer();
 static __attribute__ ((used)) void* __ptr_getitimer = &__load_and_call_getitimer;
 
 static __attribute__ ((used)) void
-__load_getitimer() {
-  if(sceKernelDlsym(__module_id, "getitimer", &__ptr_getitimer)) {
-    __builtin_trap();
-  }
+__load_getitimer(void) {
+  sprx_dlsym(__handle, "getitimer", &__ptr_getitimer);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5921,10 +5575,8 @@ void __load_and_call_getlogin();
 static __attribute__ ((used)) void* __ptr_getlogin = &__load_and_call_getlogin;
 
 static __attribute__ ((used)) void
-__load_getlogin() {
-  if(sceKernelDlsym(__module_id, "getlogin", &__ptr_getlogin)) {
-    __builtin_trap();
-  }
+__load_getlogin(void) {
+  sprx_dlsym(__handle, "getlogin", &__ptr_getlogin);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5955,10 +5607,8 @@ void __load_and_call_getlogin_r();
 static __attribute__ ((used)) void* __ptr_getlogin_r = &__load_and_call_getlogin_r;
 
 static __attribute__ ((used)) void
-__load_getlogin_r() {
-  if(sceKernelDlsym(__module_id, "getlogin_r", &__ptr_getlogin_r)) {
-    __builtin_trap();
-  }
+__load_getlogin_r(void) {
+  sprx_dlsym(__handle, "getlogin_r", &__ptr_getlogin_r);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -5989,10 +5639,8 @@ void __load_and_call_getpagesize();
 static __attribute__ ((used)) void* __ptr_getpagesize = &__load_and_call_getpagesize;
 
 static __attribute__ ((used)) void
-__load_getpagesize() {
-  if(sceKernelDlsym(__module_id, "getpagesize", &__ptr_getpagesize)) {
-    __builtin_trap();
-  }
+__load_getpagesize(void) {
+  sprx_dlsym(__handle, "getpagesize", &__ptr_getpagesize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6023,10 +5671,8 @@ void __load_and_call_getpeername();
 static __attribute__ ((used)) void* __ptr_getpeername = &__load_and_call_getpeername;
 
 static __attribute__ ((used)) void
-__load_getpeername() {
-  if(sceKernelDlsym(__module_id, "getpeername", &__ptr_getpeername)) {
-    __builtin_trap();
-  }
+__load_getpeername(void) {
+  sprx_dlsym(__handle, "getpeername", &__ptr_getpeername);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6057,10 +5703,8 @@ void __load_and_call_getpid();
 static __attribute__ ((used)) void* __ptr_getpid = &__load_and_call_getpid;
 
 static __attribute__ ((used)) void
-__load_getpid() {
-  if(sceKernelDlsym(__module_id, "getpid", &__ptr_getpid)) {
-    __builtin_trap();
-  }
+__load_getpid(void) {
+  sprx_dlsym(__handle, "getpid", &__ptr_getpid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6091,10 +5735,8 @@ void __load_and_call_getppid();
 static __attribute__ ((used)) void* __ptr_getppid = &__load_and_call_getppid;
 
 static __attribute__ ((used)) void
-__load_getppid() {
-  if(sceKernelDlsym(__module_id, "getppid", &__ptr_getppid)) {
-    __builtin_trap();
-  }
+__load_getppid(void) {
+  sprx_dlsym(__handle, "getppid", &__ptr_getppid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6125,10 +5767,8 @@ void __load_and_call_getpriority();
 static __attribute__ ((used)) void* __ptr_getpriority = &__load_and_call_getpriority;
 
 static __attribute__ ((used)) void
-__load_getpriority() {
-  if(sceKernelDlsym(__module_id, "getpriority", &__ptr_getpriority)) {
-    __builtin_trap();
-  }
+__load_getpriority(void) {
+  sprx_dlsym(__handle, "getpriority", &__ptr_getpriority);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6159,10 +5799,8 @@ void __load_and_call_getrlimit();
 static __attribute__ ((used)) void* __ptr_getrlimit = &__load_and_call_getrlimit;
 
 static __attribute__ ((used)) void
-__load_getrlimit() {
-  if(sceKernelDlsym(__module_id, "getrlimit", &__ptr_getrlimit)) {
-    __builtin_trap();
-  }
+__load_getrlimit(void) {
+  sprx_dlsym(__handle, "getrlimit", &__ptr_getrlimit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6193,10 +5831,8 @@ void __load_and_call_getrusage();
 static __attribute__ ((used)) void* __ptr_getrusage = &__load_and_call_getrusage;
 
 static __attribute__ ((used)) void
-__load_getrusage() {
-  if(sceKernelDlsym(__module_id, "getrusage", &__ptr_getrusage)) {
-    __builtin_trap();
-  }
+__load_getrusage(void) {
+  sprx_dlsym(__handle, "getrusage", &__ptr_getrusage);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6227,10 +5863,8 @@ void __load_and_call_getsid();
 static __attribute__ ((used)) void* __ptr_getsid = &__load_and_call_getsid;
 
 static __attribute__ ((used)) void
-__load_getsid() {
-  if(sceKernelDlsym(__module_id, "getsid", &__ptr_getsid)) {
-    __builtin_trap();
-  }
+__load_getsid(void) {
+  sprx_dlsym(__handle, "getsid", &__ptr_getsid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6261,10 +5895,8 @@ void __load_and_call_getsockname();
 static __attribute__ ((used)) void* __ptr_getsockname = &__load_and_call_getsockname;
 
 static __attribute__ ((used)) void
-__load_getsockname() {
-  if(sceKernelDlsym(__module_id, "getsockname", &__ptr_getsockname)) {
-    __builtin_trap();
-  }
+__load_getsockname(void) {
+  sprx_dlsym(__handle, "getsockname", &__ptr_getsockname);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6295,10 +5927,8 @@ void __load_and_call_getsockopt();
 static __attribute__ ((used)) void* __ptr_getsockopt = &__load_and_call_getsockopt;
 
 static __attribute__ ((used)) void
-__load_getsockopt() {
-  if(sceKernelDlsym(__module_id, "getsockopt", &__ptr_getsockopt)) {
-    __builtin_trap();
-  }
+__load_getsockopt(void) {
+  sprx_dlsym(__handle, "getsockopt", &__ptr_getsockopt);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6329,10 +5959,8 @@ void __load_and_call_gettimeofday();
 static __attribute__ ((used)) void* __ptr_gettimeofday = &__load_and_call_gettimeofday;
 
 static __attribute__ ((used)) void
-__load_gettimeofday() {
-  if(sceKernelDlsym(__module_id, "gettimeofday", &__ptr_gettimeofday)) {
-    __builtin_trap();
-  }
+__load_gettimeofday(void) {
+  sprx_dlsym(__handle, "gettimeofday", &__ptr_gettimeofday);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6363,10 +5991,8 @@ void __load_and_call_getuid();
 static __attribute__ ((used)) void* __ptr_getuid = &__load_and_call_getuid;
 
 static __attribute__ ((used)) void
-__load_getuid() {
-  if(sceKernelDlsym(__module_id, "getuid", &__ptr_getuid)) {
-    __builtin_trap();
-  }
+__load_getuid(void) {
+  sprx_dlsym(__handle, "getuid", &__ptr_getuid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6397,10 +6023,8 @@ void __load_and_call_htonl();
 static __attribute__ ((used)) void* __ptr_htonl = &__load_and_call_htonl;
 
 static __attribute__ ((used)) void
-__load_htonl() {
-  if(sceKernelDlsym(__module_id, "htonl", &__ptr_htonl)) {
-    __builtin_trap();
-  }
+__load_htonl(void) {
+  sprx_dlsym(__handle, "htonl", &__ptr_htonl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6431,10 +6055,8 @@ void __load_and_call_htons();
 static __attribute__ ((used)) void* __ptr_htons = &__load_and_call_htons;
 
 static __attribute__ ((used)) void
-__load_htons() {
-  if(sceKernelDlsym(__module_id, "htons", &__ptr_htons)) {
-    __builtin_trap();
-  }
+__load_htons(void) {
+  sprx_dlsym(__handle, "htons", &__ptr_htons);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6465,10 +6087,8 @@ void __load_and_call_inet_ntop();
 static __attribute__ ((used)) void* __ptr_inet_ntop = &__load_and_call_inet_ntop;
 
 static __attribute__ ((used)) void
-__load_inet_ntop() {
-  if(sceKernelDlsym(__module_id, "inet_ntop", &__ptr_inet_ntop)) {
-    __builtin_trap();
-  }
+__load_inet_ntop(void) {
+  sprx_dlsym(__handle, "inet_ntop", &__ptr_inet_ntop);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6499,10 +6119,8 @@ void __load_and_call_inet_pton();
 static __attribute__ ((used)) void* __ptr_inet_pton = &__load_and_call_inet_pton;
 
 static __attribute__ ((used)) void
-__load_inet_pton() {
-  if(sceKernelDlsym(__module_id, "inet_pton", &__ptr_inet_pton)) {
-    __builtin_trap();
-  }
+__load_inet_pton(void) {
+  sprx_dlsym(__handle, "inet_pton", &__ptr_inet_pton);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6533,10 +6151,8 @@ void __load_and_call_ioctl();
 static __attribute__ ((used)) void* __ptr_ioctl = &__load_and_call_ioctl;
 
 static __attribute__ ((used)) void
-__load_ioctl() {
-  if(sceKernelDlsym(__module_id, "ioctl", &__ptr_ioctl)) {
-    __builtin_trap();
-  }
+__load_ioctl(void) {
+  sprx_dlsym(__handle, "ioctl", &__ptr_ioctl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6567,10 +6183,8 @@ void __load_and_call_ipmimgr_call();
 static __attribute__ ((used)) void* __ptr_ipmimgr_call = &__load_and_call_ipmimgr_call;
 
 static __attribute__ ((used)) void
-__load_ipmimgr_call() {
-  if(sceKernelDlsym(__module_id, "ipmimgr_call", &__ptr_ipmimgr_call)) {
-    __builtin_trap();
-  }
+__load_ipmimgr_call(void) {
+  sprx_dlsym(__handle, "ipmimgr_call", &__ptr_ipmimgr_call);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6601,10 +6215,8 @@ void __load_and_call_is_in_sandbox();
 static __attribute__ ((used)) void* __ptr_is_in_sandbox = &__load_and_call_is_in_sandbox;
 
 static __attribute__ ((used)) void
-__load_is_in_sandbox() {
-  if(sceKernelDlsym(__module_id, "is_in_sandbox", &__ptr_is_in_sandbox)) {
-    __builtin_trap();
-  }
+__load_is_in_sandbox(void) {
+  sprx_dlsym(__handle, "is_in_sandbox", &__ptr_is_in_sandbox);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6635,10 +6247,8 @@ void __load_and_call_issetugid();
 static __attribute__ ((used)) void* __ptr_issetugid = &__load_and_call_issetugid;
 
 static __attribute__ ((used)) void
-__load_issetugid() {
-  if(sceKernelDlsym(__module_id, "issetugid", &__ptr_issetugid)) {
-    __builtin_trap();
-  }
+__load_issetugid(void) {
+  sprx_dlsym(__handle, "issetugid", &__ptr_issetugid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6669,10 +6279,8 @@ void __load_and_call_kenv();
 static __attribute__ ((used)) void* __ptr_kenv = &__load_and_call_kenv;
 
 static __attribute__ ((used)) void
-__load_kenv() {
-  if(sceKernelDlsym(__module_id, "kenv", &__ptr_kenv)) {
-    __builtin_trap();
-  }
+__load_kenv(void) {
+  sprx_dlsym(__handle, "kenv", &__ptr_kenv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6703,10 +6311,8 @@ void __load_and_call_kevent();
 static __attribute__ ((used)) void* __ptr_kevent = &__load_and_call_kevent;
 
 static __attribute__ ((used)) void
-__load_kevent() {
-  if(sceKernelDlsym(__module_id, "kevent", &__ptr_kevent)) {
-    __builtin_trap();
-  }
+__load_kevent(void) {
+  sprx_dlsym(__handle, "kevent", &__ptr_kevent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6737,10 +6343,8 @@ void __load_and_call_kill();
 static __attribute__ ((used)) void* __ptr_kill = &__load_and_call_kill;
 
 static __attribute__ ((used)) void
-__load_kill() {
-  if(sceKernelDlsym(__module_id, "kill", &__ptr_kill)) {
-    __builtin_trap();
-  }
+__load_kill(void) {
+  sprx_dlsym(__handle, "kill", &__ptr_kill);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6771,10 +6375,8 @@ void __load_and_call_kldfind();
 static __attribute__ ((used)) void* __ptr_kldfind = &__load_and_call_kldfind;
 
 static __attribute__ ((used)) void
-__load_kldfind() {
-  if(sceKernelDlsym(__module_id, "kldfind", &__ptr_kldfind)) {
-    __builtin_trap();
-  }
+__load_kldfind(void) {
+  sprx_dlsym(__handle, "kldfind", &__ptr_kldfind);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6805,10 +6407,8 @@ void __load_and_call_kldfirstmod();
 static __attribute__ ((used)) void* __ptr_kldfirstmod = &__load_and_call_kldfirstmod;
 
 static __attribute__ ((used)) void
-__load_kldfirstmod() {
-  if(sceKernelDlsym(__module_id, "kldfirstmod", &__ptr_kldfirstmod)) {
-    __builtin_trap();
-  }
+__load_kldfirstmod(void) {
+  sprx_dlsym(__handle, "kldfirstmod", &__ptr_kldfirstmod);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6839,10 +6439,8 @@ void __load_and_call_kldload();
 static __attribute__ ((used)) void* __ptr_kldload = &__load_and_call_kldload;
 
 static __attribute__ ((used)) void
-__load_kldload() {
-  if(sceKernelDlsym(__module_id, "kldload", &__ptr_kldload)) {
-    __builtin_trap();
-  }
+__load_kldload(void) {
+  sprx_dlsym(__handle, "kldload", &__ptr_kldload);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6873,10 +6471,8 @@ void __load_and_call_kldnext();
 static __attribute__ ((used)) void* __ptr_kldnext = &__load_and_call_kldnext;
 
 static __attribute__ ((used)) void
-__load_kldnext() {
-  if(sceKernelDlsym(__module_id, "kldnext", &__ptr_kldnext)) {
-    __builtin_trap();
-  }
+__load_kldnext(void) {
+  sprx_dlsym(__handle, "kldnext", &__ptr_kldnext);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6907,10 +6503,8 @@ void __load_and_call_kldstat();
 static __attribute__ ((used)) void* __ptr_kldstat = &__load_and_call_kldstat;
 
 static __attribute__ ((used)) void
-__load_kldstat() {
-  if(sceKernelDlsym(__module_id, "kldstat", &__ptr_kldstat)) {
-    __builtin_trap();
-  }
+__load_kldstat(void) {
+  sprx_dlsym(__handle, "kldstat", &__ptr_kldstat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6941,10 +6535,8 @@ void __load_and_call_kldsym();
 static __attribute__ ((used)) void* __ptr_kldsym = &__load_and_call_kldsym;
 
 static __attribute__ ((used)) void
-__load_kldsym() {
-  if(sceKernelDlsym(__module_id, "kldsym", &__ptr_kldsym)) {
-    __builtin_trap();
-  }
+__load_kldsym(void) {
+  sprx_dlsym(__handle, "kldsym", &__ptr_kldsym);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -6975,10 +6567,8 @@ void __load_and_call_kldunload();
 static __attribute__ ((used)) void* __ptr_kldunload = &__load_and_call_kldunload;
 
 static __attribute__ ((used)) void
-__load_kldunload() {
-  if(sceKernelDlsym(__module_id, "kldunload", &__ptr_kldunload)) {
-    __builtin_trap();
-  }
+__load_kldunload(void) {
+  sprx_dlsym(__handle, "kldunload", &__ptr_kldunload);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7009,10 +6599,8 @@ void __load_and_call_kmq_notify();
 static __attribute__ ((used)) void* __ptr_kmq_notify = &__load_and_call_kmq_notify;
 
 static __attribute__ ((used)) void
-__load_kmq_notify() {
-  if(sceKernelDlsym(__module_id, "kmq_notify", &__ptr_kmq_notify)) {
-    __builtin_trap();
-  }
+__load_kmq_notify(void) {
+  sprx_dlsym(__handle, "kmq_notify", &__ptr_kmq_notify);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7043,10 +6631,8 @@ void __load_and_call_kmq_open();
 static __attribute__ ((used)) void* __ptr_kmq_open = &__load_and_call_kmq_open;
 
 static __attribute__ ((used)) void
-__load_kmq_open() {
-  if(sceKernelDlsym(__module_id, "kmq_open", &__ptr_kmq_open)) {
-    __builtin_trap();
-  }
+__load_kmq_open(void) {
+  sprx_dlsym(__handle, "kmq_open", &__ptr_kmq_open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7077,10 +6663,8 @@ void __load_and_call_kmq_setattr();
 static __attribute__ ((used)) void* __ptr_kmq_setattr = &__load_and_call_kmq_setattr;
 
 static __attribute__ ((used)) void
-__load_kmq_setattr() {
-  if(sceKernelDlsym(__module_id, "kmq_setattr", &__ptr_kmq_setattr)) {
-    __builtin_trap();
-  }
+__load_kmq_setattr(void) {
+  sprx_dlsym(__handle, "kmq_setattr", &__ptr_kmq_setattr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7111,10 +6695,8 @@ void __load_and_call_kmq_timedreceive();
 static __attribute__ ((used)) void* __ptr_kmq_timedreceive = &__load_and_call_kmq_timedreceive;
 
 static __attribute__ ((used)) void
-__load_kmq_timedreceive() {
-  if(sceKernelDlsym(__module_id, "kmq_timedreceive", &__ptr_kmq_timedreceive)) {
-    __builtin_trap();
-  }
+__load_kmq_timedreceive(void) {
+  sprx_dlsym(__handle, "kmq_timedreceive", &__ptr_kmq_timedreceive);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7145,10 +6727,8 @@ void __load_and_call_kmq_timedsend();
 static __attribute__ ((used)) void* __ptr_kmq_timedsend = &__load_and_call_kmq_timedsend;
 
 static __attribute__ ((used)) void
-__load_kmq_timedsend() {
-  if(sceKernelDlsym(__module_id, "kmq_timedsend", &__ptr_kmq_timedsend)) {
-    __builtin_trap();
-  }
+__load_kmq_timedsend(void) {
+  sprx_dlsym(__handle, "kmq_timedsend", &__ptr_kmq_timedsend);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7179,10 +6759,8 @@ void __load_and_call_kmq_unlink();
 static __attribute__ ((used)) void* __ptr_kmq_unlink = &__load_and_call_kmq_unlink;
 
 static __attribute__ ((used)) void
-__load_kmq_unlink() {
-  if(sceKernelDlsym(__module_id, "kmq_unlink", &__ptr_kmq_unlink)) {
-    __builtin_trap();
-  }
+__load_kmq_unlink(void) {
+  sprx_dlsym(__handle, "kmq_unlink", &__ptr_kmq_unlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7213,10 +6791,8 @@ void __load_and_call_kqueue();
 static __attribute__ ((used)) void* __ptr_kqueue = &__load_and_call_kqueue;
 
 static __attribute__ ((used)) void
-__load_kqueue() {
-  if(sceKernelDlsym(__module_id, "kqueue", &__ptr_kqueue)) {
-    __builtin_trap();
-  }
+__load_kqueue(void) {
+  sprx_dlsym(__handle, "kqueue", &__ptr_kqueue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7247,10 +6823,8 @@ void __load_and_call_ksem_close();
 static __attribute__ ((used)) void* __ptr_ksem_close = &__load_and_call_ksem_close;
 
 static __attribute__ ((used)) void
-__load_ksem_close() {
-  if(sceKernelDlsym(__module_id, "ksem_close", &__ptr_ksem_close)) {
-    __builtin_trap();
-  }
+__load_ksem_close(void) {
+  sprx_dlsym(__handle, "ksem_close", &__ptr_ksem_close);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7281,10 +6855,8 @@ void __load_and_call_ksem_destroy();
 static __attribute__ ((used)) void* __ptr_ksem_destroy = &__load_and_call_ksem_destroy;
 
 static __attribute__ ((used)) void
-__load_ksem_destroy() {
-  if(sceKernelDlsym(__module_id, "ksem_destroy", &__ptr_ksem_destroy)) {
-    __builtin_trap();
-  }
+__load_ksem_destroy(void) {
+  sprx_dlsym(__handle, "ksem_destroy", &__ptr_ksem_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7315,10 +6887,8 @@ void __load_and_call_ksem_getvalue();
 static __attribute__ ((used)) void* __ptr_ksem_getvalue = &__load_and_call_ksem_getvalue;
 
 static __attribute__ ((used)) void
-__load_ksem_getvalue() {
-  if(sceKernelDlsym(__module_id, "ksem_getvalue", &__ptr_ksem_getvalue)) {
-    __builtin_trap();
-  }
+__load_ksem_getvalue(void) {
+  sprx_dlsym(__handle, "ksem_getvalue", &__ptr_ksem_getvalue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7349,10 +6919,8 @@ void __load_and_call_ksem_init();
 static __attribute__ ((used)) void* __ptr_ksem_init = &__load_and_call_ksem_init;
 
 static __attribute__ ((used)) void
-__load_ksem_init() {
-  if(sceKernelDlsym(__module_id, "ksem_init", &__ptr_ksem_init)) {
-    __builtin_trap();
-  }
+__load_ksem_init(void) {
+  sprx_dlsym(__handle, "ksem_init", &__ptr_ksem_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7383,10 +6951,8 @@ void __load_and_call_ksem_open();
 static __attribute__ ((used)) void* __ptr_ksem_open = &__load_and_call_ksem_open;
 
 static __attribute__ ((used)) void
-__load_ksem_open() {
-  if(sceKernelDlsym(__module_id, "ksem_open", &__ptr_ksem_open)) {
-    __builtin_trap();
-  }
+__load_ksem_open(void) {
+  sprx_dlsym(__handle, "ksem_open", &__ptr_ksem_open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7417,10 +6983,8 @@ void __load_and_call_ksem_post();
 static __attribute__ ((used)) void* __ptr_ksem_post = &__load_and_call_ksem_post;
 
 static __attribute__ ((used)) void
-__load_ksem_post() {
-  if(sceKernelDlsym(__module_id, "ksem_post", &__ptr_ksem_post)) {
-    __builtin_trap();
-  }
+__load_ksem_post(void) {
+  sprx_dlsym(__handle, "ksem_post", &__ptr_ksem_post);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7451,10 +7015,8 @@ void __load_and_call_ksem_timedwait();
 static __attribute__ ((used)) void* __ptr_ksem_timedwait = &__load_and_call_ksem_timedwait;
 
 static __attribute__ ((used)) void
-__load_ksem_timedwait() {
-  if(sceKernelDlsym(__module_id, "ksem_timedwait", &__ptr_ksem_timedwait)) {
-    __builtin_trap();
-  }
+__load_ksem_timedwait(void) {
+  sprx_dlsym(__handle, "ksem_timedwait", &__ptr_ksem_timedwait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7485,10 +7047,8 @@ void __load_and_call_ksem_trywait();
 static __attribute__ ((used)) void* __ptr_ksem_trywait = &__load_and_call_ksem_trywait;
 
 static __attribute__ ((used)) void
-__load_ksem_trywait() {
-  if(sceKernelDlsym(__module_id, "ksem_trywait", &__ptr_ksem_trywait)) {
-    __builtin_trap();
-  }
+__load_ksem_trywait(void) {
+  sprx_dlsym(__handle, "ksem_trywait", &__ptr_ksem_trywait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7519,10 +7079,8 @@ void __load_and_call_ksem_unlink();
 static __attribute__ ((used)) void* __ptr_ksem_unlink = &__load_and_call_ksem_unlink;
 
 static __attribute__ ((used)) void
-__load_ksem_unlink() {
-  if(sceKernelDlsym(__module_id, "ksem_unlink", &__ptr_ksem_unlink)) {
-    __builtin_trap();
-  }
+__load_ksem_unlink(void) {
+  sprx_dlsym(__handle, "ksem_unlink", &__ptr_ksem_unlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7553,10 +7111,8 @@ void __load_and_call_ksem_wait();
 static __attribute__ ((used)) void* __ptr_ksem_wait = &__load_and_call_ksem_wait;
 
 static __attribute__ ((used)) void
-__load_ksem_wait() {
-  if(sceKernelDlsym(__module_id, "ksem_wait", &__ptr_ksem_wait)) {
-    __builtin_trap();
-  }
+__load_ksem_wait(void) {
+  sprx_dlsym(__handle, "ksem_wait", &__ptr_ksem_wait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7587,10 +7143,8 @@ void __load_and_call_ktimer_create();
 static __attribute__ ((used)) void* __ptr_ktimer_create = &__load_and_call_ktimer_create;
 
 static __attribute__ ((used)) void
-__load_ktimer_create() {
-  if(sceKernelDlsym(__module_id, "ktimer_create", &__ptr_ktimer_create)) {
-    __builtin_trap();
-  }
+__load_ktimer_create(void) {
+  sprx_dlsym(__handle, "ktimer_create", &__ptr_ktimer_create);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7621,10 +7175,8 @@ void __load_and_call_ktimer_delete();
 static __attribute__ ((used)) void* __ptr_ktimer_delete = &__load_and_call_ktimer_delete;
 
 static __attribute__ ((used)) void
-__load_ktimer_delete() {
-  if(sceKernelDlsym(__module_id, "ktimer_delete", &__ptr_ktimer_delete)) {
-    __builtin_trap();
-  }
+__load_ktimer_delete(void) {
+  sprx_dlsym(__handle, "ktimer_delete", &__ptr_ktimer_delete);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7655,10 +7207,8 @@ void __load_and_call_ktimer_getoverrun();
 static __attribute__ ((used)) void* __ptr_ktimer_getoverrun = &__load_and_call_ktimer_getoverrun;
 
 static __attribute__ ((used)) void
-__load_ktimer_getoverrun() {
-  if(sceKernelDlsym(__module_id, "ktimer_getoverrun", &__ptr_ktimer_getoverrun)) {
-    __builtin_trap();
-  }
+__load_ktimer_getoverrun(void) {
+  sprx_dlsym(__handle, "ktimer_getoverrun", &__ptr_ktimer_getoverrun);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7689,10 +7239,8 @@ void __load_and_call_ktimer_gettime();
 static __attribute__ ((used)) void* __ptr_ktimer_gettime = &__load_and_call_ktimer_gettime;
 
 static __attribute__ ((used)) void
-__load_ktimer_gettime() {
-  if(sceKernelDlsym(__module_id, "ktimer_gettime", &__ptr_ktimer_gettime)) {
-    __builtin_trap();
-  }
+__load_ktimer_gettime(void) {
+  sprx_dlsym(__handle, "ktimer_gettime", &__ptr_ktimer_gettime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7723,10 +7271,8 @@ void __load_and_call_ktimer_settime();
 static __attribute__ ((used)) void* __ptr_ktimer_settime = &__load_and_call_ktimer_settime;
 
 static __attribute__ ((used)) void
-__load_ktimer_settime() {
-  if(sceKernelDlsym(__module_id, "ktimer_settime", &__ptr_ktimer_settime)) {
-    __builtin_trap();
-  }
+__load_ktimer_settime(void) {
+  sprx_dlsym(__handle, "ktimer_settime", &__ptr_ktimer_settime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7757,10 +7303,8 @@ void __load_and_call_ktrace();
 static __attribute__ ((used)) void* __ptr_ktrace = &__load_and_call_ktrace;
 
 static __attribute__ ((used)) void
-__load_ktrace() {
-  if(sceKernelDlsym(__module_id, "ktrace", &__ptr_ktrace)) {
-    __builtin_trap();
-  }
+__load_ktrace(void) {
+  sprx_dlsym(__handle, "ktrace", &__ptr_ktrace);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7791,10 +7335,8 @@ void __load_and_call_lchflags();
 static __attribute__ ((used)) void* __ptr_lchflags = &__load_and_call_lchflags;
 
 static __attribute__ ((used)) void
-__load_lchflags() {
-  if(sceKernelDlsym(__module_id, "lchflags", &__ptr_lchflags)) {
-    __builtin_trap();
-  }
+__load_lchflags(void) {
+  sprx_dlsym(__handle, "lchflags", &__ptr_lchflags);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7825,10 +7367,8 @@ void __load_and_call_lchmod();
 static __attribute__ ((used)) void* __ptr_lchmod = &__load_and_call_lchmod;
 
 static __attribute__ ((used)) void
-__load_lchmod() {
-  if(sceKernelDlsym(__module_id, "lchmod", &__ptr_lchmod)) {
-    __builtin_trap();
-  }
+__load_lchmod(void) {
+  sprx_dlsym(__handle, "lchmod", &__ptr_lchmod);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7859,10 +7399,8 @@ void __load_and_call_lchown();
 static __attribute__ ((used)) void* __ptr_lchown = &__load_and_call_lchown;
 
 static __attribute__ ((used)) void
-__load_lchown() {
-  if(sceKernelDlsym(__module_id, "lchown", &__ptr_lchown)) {
-    __builtin_trap();
-  }
+__load_lchown(void) {
+  sprx_dlsym(__handle, "lchown", &__ptr_lchown);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7893,10 +7431,8 @@ void __load_and_call_link();
 static __attribute__ ((used)) void* __ptr_link = &__load_and_call_link;
 
 static __attribute__ ((used)) void
-__load_link() {
-  if(sceKernelDlsym(__module_id, "link", &__ptr_link)) {
-    __builtin_trap();
-  }
+__load_link(void) {
+  sprx_dlsym(__handle, "link", &__ptr_link);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7927,10 +7463,8 @@ void __load_and_call_linkat();
 static __attribute__ ((used)) void* __ptr_linkat = &__load_and_call_linkat;
 
 static __attribute__ ((used)) void
-__load_linkat() {
-  if(sceKernelDlsym(__module_id, "linkat", &__ptr_linkat)) {
-    __builtin_trap();
-  }
+__load_linkat(void) {
+  sprx_dlsym(__handle, "linkat", &__ptr_linkat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7961,10 +7495,8 @@ void __load_and_call_listen();
 static __attribute__ ((used)) void* __ptr_listen = &__load_and_call_listen;
 
 static __attribute__ ((used)) void
-__load_listen() {
-  if(sceKernelDlsym(__module_id, "listen", &__ptr_listen)) {
-    __builtin_trap();
-  }
+__load_listen(void) {
+  sprx_dlsym(__handle, "listen", &__ptr_listen);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -7995,10 +7527,8 @@ void __load_and_call_lseek();
 static __attribute__ ((used)) void* __ptr_lseek = &__load_and_call_lseek;
 
 static __attribute__ ((used)) void
-__load_lseek() {
-  if(sceKernelDlsym(__module_id, "lseek", &__ptr_lseek)) {
-    __builtin_trap();
-  }
+__load_lseek(void) {
+  sprx_dlsym(__handle, "lseek", &__ptr_lseek);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8029,10 +7559,8 @@ void __load_and_call_lstat();
 static __attribute__ ((used)) void* __ptr_lstat = &__load_and_call_lstat;
 
 static __attribute__ ((used)) void
-__load_lstat() {
-  if(sceKernelDlsym(__module_id, "lstat", &__ptr_lstat)) {
-    __builtin_trap();
-  }
+__load_lstat(void) {
+  sprx_dlsym(__handle, "lstat", &__ptr_lstat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8063,10 +7591,8 @@ void __load_and_call_lutimes();
 static __attribute__ ((used)) void* __ptr_lutimes = &__load_and_call_lutimes;
 
 static __attribute__ ((used)) void
-__load_lutimes() {
-  if(sceKernelDlsym(__module_id, "lutimes", &__ptr_lutimes)) {
-    __builtin_trap();
-  }
+__load_lutimes(void) {
+  sprx_dlsym(__handle, "lutimes", &__ptr_lutimes);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8097,10 +7623,8 @@ void __load_and_call_madvise();
 static __attribute__ ((used)) void* __ptr_madvise = &__load_and_call_madvise;
 
 static __attribute__ ((used)) void
-__load_madvise() {
-  if(sceKernelDlsym(__module_id, "madvise", &__ptr_madvise)) {
-    __builtin_trap();
-  }
+__load_madvise(void) {
+  sprx_dlsym(__handle, "madvise", &__ptr_madvise);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8131,10 +7655,8 @@ void __load_and_call_mdbg_call();
 static __attribute__ ((used)) void* __ptr_mdbg_call = &__load_and_call_mdbg_call;
 
 static __attribute__ ((used)) void
-__load_mdbg_call() {
-  if(sceKernelDlsym(__module_id, "mdbg_call", &__ptr_mdbg_call)) {
-    __builtin_trap();
-  }
+__load_mdbg_call(void) {
+  sprx_dlsym(__handle, "mdbg_call", &__ptr_mdbg_call);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8165,10 +7687,8 @@ void __load_and_call_mdbg_service();
 static __attribute__ ((used)) void* __ptr_mdbg_service = &__load_and_call_mdbg_service;
 
 static __attribute__ ((used)) void
-__load_mdbg_service() {
-  if(sceKernelDlsym(__module_id, "mdbg_service", &__ptr_mdbg_service)) {
-    __builtin_trap();
-  }
+__load_mdbg_service(void) {
+  sprx_dlsym(__handle, "mdbg_service", &__ptr_mdbg_service);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8199,10 +7719,8 @@ void __load_and_call_mincore();
 static __attribute__ ((used)) void* __ptr_mincore = &__load_and_call_mincore;
 
 static __attribute__ ((used)) void
-__load_mincore() {
-  if(sceKernelDlsym(__module_id, "mincore", &__ptr_mincore)) {
-    __builtin_trap();
-  }
+__load_mincore(void) {
+  sprx_dlsym(__handle, "mincore", &__ptr_mincore);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8233,10 +7751,8 @@ void __load_and_call_mkdir();
 static __attribute__ ((used)) void* __ptr_mkdir = &__load_and_call_mkdir;
 
 static __attribute__ ((used)) void
-__load_mkdir() {
-  if(sceKernelDlsym(__module_id, "mkdir", &__ptr_mkdir)) {
-    __builtin_trap();
-  }
+__load_mkdir(void) {
+  sprx_dlsym(__handle, "mkdir", &__ptr_mkdir);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8267,10 +7783,8 @@ void __load_and_call_mkdirat();
 static __attribute__ ((used)) void* __ptr_mkdirat = &__load_and_call_mkdirat;
 
 static __attribute__ ((used)) void
-__load_mkdirat() {
-  if(sceKernelDlsym(__module_id, "mkdirat", &__ptr_mkdirat)) {
-    __builtin_trap();
-  }
+__load_mkdirat(void) {
+  sprx_dlsym(__handle, "mkdirat", &__ptr_mkdirat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8301,10 +7815,8 @@ void __load_and_call_mlock();
 static __attribute__ ((used)) void* __ptr_mlock = &__load_and_call_mlock;
 
 static __attribute__ ((used)) void
-__load_mlock() {
-  if(sceKernelDlsym(__module_id, "mlock", &__ptr_mlock)) {
-    __builtin_trap();
-  }
+__load_mlock(void) {
+  sprx_dlsym(__handle, "mlock", &__ptr_mlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8335,10 +7847,8 @@ void __load_and_call_mlockall();
 static __attribute__ ((used)) void* __ptr_mlockall = &__load_and_call_mlockall;
 
 static __attribute__ ((used)) void
-__load_mlockall() {
-  if(sceKernelDlsym(__module_id, "mlockall", &__ptr_mlockall)) {
-    __builtin_trap();
-  }
+__load_mlockall(void) {
+  sprx_dlsym(__handle, "mlockall", &__ptr_mlockall);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8369,10 +7879,8 @@ void __load_and_call_mmap();
 static __attribute__ ((used)) void* __ptr_mmap = &__load_and_call_mmap;
 
 static __attribute__ ((used)) void
-__load_mmap() {
-  if(sceKernelDlsym(__module_id, "mmap", &__ptr_mmap)) {
-    __builtin_trap();
-  }
+__load_mmap(void) {
+  sprx_dlsym(__handle, "mmap", &__ptr_mmap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8403,10 +7911,8 @@ void __load_and_call_mount();
 static __attribute__ ((used)) void* __ptr_mount = &__load_and_call_mount;
 
 static __attribute__ ((used)) void
-__load_mount() {
-  if(sceKernelDlsym(__module_id, "mount", &__ptr_mount)) {
-    __builtin_trap();
-  }
+__load_mount(void) {
+  sprx_dlsym(__handle, "mount", &__ptr_mount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8437,10 +7943,8 @@ void __load_and_call_mprotect();
 static __attribute__ ((used)) void* __ptr_mprotect = &__load_and_call_mprotect;
 
 static __attribute__ ((used)) void
-__load_mprotect() {
-  if(sceKernelDlsym(__module_id, "mprotect", &__ptr_mprotect)) {
-    __builtin_trap();
-  }
+__load_mprotect(void) {
+  sprx_dlsym(__handle, "mprotect", &__ptr_mprotect);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8471,10 +7975,8 @@ void __load_and_call_msync();
 static __attribute__ ((used)) void* __ptr_msync = &__load_and_call_msync;
 
 static __attribute__ ((used)) void
-__load_msync() {
-  if(sceKernelDlsym(__module_id, "msync", &__ptr_msync)) {
-    __builtin_trap();
-  }
+__load_msync(void) {
+  sprx_dlsym(__handle, "msync", &__ptr_msync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8505,10 +8007,8 @@ void __load_and_call_munlock();
 static __attribute__ ((used)) void* __ptr_munlock = &__load_and_call_munlock;
 
 static __attribute__ ((used)) void
-__load_munlock() {
-  if(sceKernelDlsym(__module_id, "munlock", &__ptr_munlock)) {
-    __builtin_trap();
-  }
+__load_munlock(void) {
+  sprx_dlsym(__handle, "munlock", &__ptr_munlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8539,10 +8039,8 @@ void __load_and_call_munlockall();
 static __attribute__ ((used)) void* __ptr_munlockall = &__load_and_call_munlockall;
 
 static __attribute__ ((used)) void
-__load_munlockall() {
-  if(sceKernelDlsym(__module_id, "munlockall", &__ptr_munlockall)) {
-    __builtin_trap();
-  }
+__load_munlockall(void) {
+  sprx_dlsym(__handle, "munlockall", &__ptr_munlockall);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8573,10 +8071,8 @@ void __load_and_call_munmap();
 static __attribute__ ((used)) void* __ptr_munmap = &__load_and_call_munmap;
 
 static __attribute__ ((used)) void
-__load_munmap() {
-  if(sceKernelDlsym(__module_id, "munmap", &__ptr_munmap)) {
-    __builtin_trap();
-  }
+__load_munmap(void) {
+  sprx_dlsym(__handle, "munmap", &__ptr_munmap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8607,10 +8103,8 @@ void __load_and_call_nanosleep();
 static __attribute__ ((used)) void* __ptr_nanosleep = &__load_and_call_nanosleep;
 
 static __attribute__ ((used)) void
-__load_nanosleep() {
-  if(sceKernelDlsym(__module_id, "nanosleep", &__ptr_nanosleep)) {
-    __builtin_trap();
-  }
+__load_nanosleep(void) {
+  sprx_dlsym(__handle, "nanosleep", &__ptr_nanosleep);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8641,10 +8135,8 @@ void __load_and_call_nmount();
 static __attribute__ ((used)) void* __ptr_nmount = &__load_and_call_nmount;
 
 static __attribute__ ((used)) void
-__load_nmount() {
-  if(sceKernelDlsym(__module_id, "nmount", &__ptr_nmount)) {
-    __builtin_trap();
-  }
+__load_nmount(void) {
+  sprx_dlsym(__handle, "nmount", &__ptr_nmount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8675,10 +8167,8 @@ void __load_and_call_ntohl();
 static __attribute__ ((used)) void* __ptr_ntohl = &__load_and_call_ntohl;
 
 static __attribute__ ((used)) void
-__load_ntohl() {
-  if(sceKernelDlsym(__module_id, "ntohl", &__ptr_ntohl)) {
-    __builtin_trap();
-  }
+__load_ntohl(void) {
+  sprx_dlsym(__handle, "ntohl", &__ptr_ntohl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8709,10 +8199,8 @@ void __load_and_call_ntohs();
 static __attribute__ ((used)) void* __ptr_ntohs = &__load_and_call_ntohs;
 
 static __attribute__ ((used)) void
-__load_ntohs() {
-  if(sceKernelDlsym(__module_id, "ntohs", &__ptr_ntohs)) {
-    __builtin_trap();
-  }
+__load_ntohs(void) {
+  sprx_dlsym(__handle, "ntohs", &__ptr_ntohs);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8743,10 +8231,8 @@ void __load_and_call_open();
 static __attribute__ ((used)) void* __ptr_open = &__load_and_call_open;
 
 static __attribute__ ((used)) void
-__load_open() {
-  if(sceKernelDlsym(__module_id, "open", &__ptr_open)) {
-    __builtin_trap();
-  }
+__load_open(void) {
+  sprx_dlsym(__handle, "open", &__ptr_open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8777,10 +8263,8 @@ void __load_and_call_openat();
 static __attribute__ ((used)) void* __ptr_openat = &__load_and_call_openat;
 
 static __attribute__ ((used)) void
-__load_openat() {
-  if(sceKernelDlsym(__module_id, "openat", &__ptr_openat)) {
-    __builtin_trap();
-  }
+__load_openat(void) {
+  sprx_dlsym(__handle, "openat", &__ptr_openat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8811,10 +8295,8 @@ void __load_and_call_openintr();
 static __attribute__ ((used)) void* __ptr_openintr = &__load_and_call_openintr;
 
 static __attribute__ ((used)) void
-__load_openintr() {
-  if(sceKernelDlsym(__module_id, "openintr", &__ptr_openintr)) {
-    __builtin_trap();
-  }
+__load_openintr(void) {
+  sprx_dlsym(__handle, "openintr", &__ptr_openintr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8845,10 +8327,8 @@ void __load_and_call_pathconf();
 static __attribute__ ((used)) void* __ptr_pathconf = &__load_and_call_pathconf;
 
 static __attribute__ ((used)) void
-__load_pathconf() {
-  if(sceKernelDlsym(__module_id, "pathconf", &__ptr_pathconf)) {
-    __builtin_trap();
-  }
+__load_pathconf(void) {
+  sprx_dlsym(__handle, "pathconf", &__ptr_pathconf);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8879,10 +8359,8 @@ void __load_and_call_pause();
 static __attribute__ ((used)) void* __ptr_pause = &__load_and_call_pause;
 
 static __attribute__ ((used)) void
-__load_pause() {
-  if(sceKernelDlsym(__module_id, "pause", &__ptr_pause)) {
-    __builtin_trap();
-  }
+__load_pause(void) {
+  sprx_dlsym(__handle, "pause", &__ptr_pause);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8913,10 +8391,8 @@ void __load_and_call_physhm_open();
 static __attribute__ ((used)) void* __ptr_physhm_open = &__load_and_call_physhm_open;
 
 static __attribute__ ((used)) void
-__load_physhm_open() {
-  if(sceKernelDlsym(__module_id, "physhm_open", &__ptr_physhm_open)) {
-    __builtin_trap();
-  }
+__load_physhm_open(void) {
+  sprx_dlsym(__handle, "physhm_open", &__ptr_physhm_open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8947,10 +8423,8 @@ void __load_and_call_physhm_unlink();
 static __attribute__ ((used)) void* __ptr_physhm_unlink = &__load_and_call_physhm_unlink;
 
 static __attribute__ ((used)) void
-__load_physhm_unlink() {
-  if(sceKernelDlsym(__module_id, "physhm_unlink", &__ptr_physhm_unlink)) {
-    __builtin_trap();
-  }
+__load_physhm_unlink(void) {
+  sprx_dlsym(__handle, "physhm_unlink", &__ptr_physhm_unlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -8981,10 +8455,8 @@ void __load_and_call_pipe();
 static __attribute__ ((used)) void* __ptr_pipe = &__load_and_call_pipe;
 
 static __attribute__ ((used)) void
-__load_pipe() {
-  if(sceKernelDlsym(__module_id, "pipe", &__ptr_pipe)) {
-    __builtin_trap();
-  }
+__load_pipe(void) {
+  sprx_dlsym(__handle, "pipe", &__ptr_pipe);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9015,10 +8487,8 @@ void __load_and_call_poll();
 static __attribute__ ((used)) void* __ptr_poll = &__load_and_call_poll;
 
 static __attribute__ ((used)) void
-__load_poll() {
-  if(sceKernelDlsym(__module_id, "poll", &__ptr_poll)) {
-    __builtin_trap();
-  }
+__load_poll(void) {
+  sprx_dlsym(__handle, "poll", &__ptr_poll);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9049,10 +8519,8 @@ void __load_and_call_pread();
 static __attribute__ ((used)) void* __ptr_pread = &__load_and_call_pread;
 
 static __attribute__ ((used)) void
-__load_pread() {
-  if(sceKernelDlsym(__module_id, "pread", &__ptr_pread)) {
-    __builtin_trap();
-  }
+__load_pread(void) {
+  sprx_dlsym(__handle, "pread", &__ptr_pread);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9083,10 +8551,8 @@ void __load_and_call_preadv();
 static __attribute__ ((used)) void* __ptr_preadv = &__load_and_call_preadv;
 
 static __attribute__ ((used)) void
-__load_preadv() {
-  if(sceKernelDlsym(__module_id, "preadv", &__ptr_preadv)) {
-    __builtin_trap();
-  }
+__load_preadv(void) {
+  sprx_dlsym(__handle, "preadv", &__ptr_preadv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9117,10 +8583,8 @@ void __load_and_call_profil();
 static __attribute__ ((used)) void* __ptr_profil = &__load_and_call_profil;
 
 static __attribute__ ((used)) void
-__load_profil() {
-  if(sceKernelDlsym(__module_id, "profil", &__ptr_profil)) {
-    __builtin_trap();
-  }
+__load_profil(void) {
+  sprx_dlsym(__handle, "profil", &__ptr_profil);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9151,10 +8615,8 @@ void __load_and_call_pselect();
 static __attribute__ ((used)) void* __ptr_pselect = &__load_and_call_pselect;
 
 static __attribute__ ((used)) void
-__load_pselect() {
-  if(sceKernelDlsym(__module_id, "pselect", &__ptr_pselect)) {
-    __builtin_trap();
-  }
+__load_pselect(void) {
+  sprx_dlsym(__handle, "pselect", &__ptr_pselect);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9185,10 +8647,8 @@ void __load_and_call_pthread_atfork();
 static __attribute__ ((used)) void* __ptr_pthread_atfork = &__load_and_call_pthread_atfork;
 
 static __attribute__ ((used)) void
-__load_pthread_atfork() {
-  if(sceKernelDlsym(__module_id, "pthread_atfork", &__ptr_pthread_atfork)) {
-    __builtin_trap();
-  }
+__load_pthread_atfork(void) {
+  sprx_dlsym(__handle, "pthread_atfork", &__ptr_pthread_atfork);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9219,10 +8679,8 @@ void __load_and_call_pthread_attr_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_attr_destroy = &__load_and_call_pthread_attr_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_destroy", &__ptr_pthread_attr_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_destroy(void) {
+  sprx_dlsym(__handle, "pthread_attr_destroy", &__ptr_pthread_attr_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9253,10 +8711,8 @@ void __load_and_call_pthread_attr_get_np();
 static __attribute__ ((used)) void* __ptr_pthread_attr_get_np = &__load_and_call_pthread_attr_get_np;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_get_np() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_get_np", &__ptr_pthread_attr_get_np)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_get_np(void) {
+  sprx_dlsym(__handle, "pthread_attr_get_np", &__ptr_pthread_attr_get_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9287,10 +8743,8 @@ void __load_and_call_pthread_attr_getaffinity_np();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getaffinity_np = &__load_and_call_pthread_attr_getaffinity_np;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getaffinity_np() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getaffinity_np", &__ptr_pthread_attr_getaffinity_np)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getaffinity_np(void) {
+  sprx_dlsym(__handle, "pthread_attr_getaffinity_np", &__ptr_pthread_attr_getaffinity_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9321,10 +8775,8 @@ void __load_and_call_pthread_attr_getdetachstate();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getdetachstate = &__load_and_call_pthread_attr_getdetachstate;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getdetachstate() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getdetachstate", &__ptr_pthread_attr_getdetachstate)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getdetachstate(void) {
+  sprx_dlsym(__handle, "pthread_attr_getdetachstate", &__ptr_pthread_attr_getdetachstate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9355,10 +8807,8 @@ void __load_and_call_pthread_attr_getguardsize();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getguardsize = &__load_and_call_pthread_attr_getguardsize;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getguardsize() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getguardsize", &__ptr_pthread_attr_getguardsize)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getguardsize(void) {
+  sprx_dlsym(__handle, "pthread_attr_getguardsize", &__ptr_pthread_attr_getguardsize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9389,10 +8839,8 @@ void __load_and_call_pthread_attr_getinheritsched();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getinheritsched = &__load_and_call_pthread_attr_getinheritsched;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getinheritsched() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getinheritsched", &__ptr_pthread_attr_getinheritsched)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getinheritsched(void) {
+  sprx_dlsym(__handle, "pthread_attr_getinheritsched", &__ptr_pthread_attr_getinheritsched);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9423,10 +8871,8 @@ void __load_and_call_pthread_attr_getschedparam();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getschedparam = &__load_and_call_pthread_attr_getschedparam;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getschedparam() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getschedparam", &__ptr_pthread_attr_getschedparam)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getschedparam(void) {
+  sprx_dlsym(__handle, "pthread_attr_getschedparam", &__ptr_pthread_attr_getschedparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9457,10 +8903,8 @@ void __load_and_call_pthread_attr_getschedpolicy();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getschedpolicy = &__load_and_call_pthread_attr_getschedpolicy;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getschedpolicy() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getschedpolicy", &__ptr_pthread_attr_getschedpolicy)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getschedpolicy(void) {
+  sprx_dlsym(__handle, "pthread_attr_getschedpolicy", &__ptr_pthread_attr_getschedpolicy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9491,10 +8935,8 @@ void __load_and_call_pthread_attr_getscope();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getscope = &__load_and_call_pthread_attr_getscope;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getscope() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getscope", &__ptr_pthread_attr_getscope)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getscope(void) {
+  sprx_dlsym(__handle, "pthread_attr_getscope", &__ptr_pthread_attr_getscope);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9525,10 +8967,8 @@ void __load_and_call_pthread_attr_getsolosched_np();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getsolosched_np = &__load_and_call_pthread_attr_getsolosched_np;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getsolosched_np() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getsolosched_np", &__ptr_pthread_attr_getsolosched_np)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getsolosched_np(void) {
+  sprx_dlsym(__handle, "pthread_attr_getsolosched_np", &__ptr_pthread_attr_getsolosched_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9559,10 +8999,8 @@ void __load_and_call_pthread_attr_getstack();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getstack = &__load_and_call_pthread_attr_getstack;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getstack() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getstack", &__ptr_pthread_attr_getstack)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getstack(void) {
+  sprx_dlsym(__handle, "pthread_attr_getstack", &__ptr_pthread_attr_getstack);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9593,10 +9031,8 @@ void __load_and_call_pthread_attr_getstackaddr();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getstackaddr = &__load_and_call_pthread_attr_getstackaddr;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getstackaddr() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getstackaddr", &__ptr_pthread_attr_getstackaddr)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getstackaddr(void) {
+  sprx_dlsym(__handle, "pthread_attr_getstackaddr", &__ptr_pthread_attr_getstackaddr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9627,10 +9063,8 @@ void __load_and_call_pthread_attr_getstacksize();
 static __attribute__ ((used)) void* __ptr_pthread_attr_getstacksize = &__load_and_call_pthread_attr_getstacksize;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_getstacksize() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_getstacksize", &__ptr_pthread_attr_getstacksize)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_getstacksize(void) {
+  sprx_dlsym(__handle, "pthread_attr_getstacksize", &__ptr_pthread_attr_getstacksize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9661,10 +9095,8 @@ void __load_and_call_pthread_attr_init();
 static __attribute__ ((used)) void* __ptr_pthread_attr_init = &__load_and_call_pthread_attr_init;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_init() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_init", &__ptr_pthread_attr_init)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_init(void) {
+  sprx_dlsym(__handle, "pthread_attr_init", &__ptr_pthread_attr_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9695,10 +9127,8 @@ void __load_and_call_pthread_attr_setaffinity_np();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setaffinity_np = &__load_and_call_pthread_attr_setaffinity_np;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setaffinity_np() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setaffinity_np", &__ptr_pthread_attr_setaffinity_np)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setaffinity_np(void) {
+  sprx_dlsym(__handle, "pthread_attr_setaffinity_np", &__ptr_pthread_attr_setaffinity_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9729,10 +9159,8 @@ void __load_and_call_pthread_attr_setcreatesuspend_np();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setcreatesuspend_np = &__load_and_call_pthread_attr_setcreatesuspend_np;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setcreatesuspend_np() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setcreatesuspend_np", &__ptr_pthread_attr_setcreatesuspend_np)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setcreatesuspend_np(void) {
+  sprx_dlsym(__handle, "pthread_attr_setcreatesuspend_np", &__ptr_pthread_attr_setcreatesuspend_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9763,10 +9191,8 @@ void __load_and_call_pthread_attr_setdetachstate();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setdetachstate = &__load_and_call_pthread_attr_setdetachstate;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setdetachstate() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setdetachstate", &__ptr_pthread_attr_setdetachstate)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setdetachstate(void) {
+  sprx_dlsym(__handle, "pthread_attr_setdetachstate", &__ptr_pthread_attr_setdetachstate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9797,10 +9223,8 @@ void __load_and_call_pthread_attr_setguardsize();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setguardsize = &__load_and_call_pthread_attr_setguardsize;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setguardsize() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setguardsize", &__ptr_pthread_attr_setguardsize)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setguardsize(void) {
+  sprx_dlsym(__handle, "pthread_attr_setguardsize", &__ptr_pthread_attr_setguardsize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9831,10 +9255,8 @@ void __load_and_call_pthread_attr_setinheritsched();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setinheritsched = &__load_and_call_pthread_attr_setinheritsched;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setinheritsched() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setinheritsched", &__ptr_pthread_attr_setinheritsched)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setinheritsched(void) {
+  sprx_dlsym(__handle, "pthread_attr_setinheritsched", &__ptr_pthread_attr_setinheritsched);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9865,10 +9287,8 @@ void __load_and_call_pthread_attr_setschedparam();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setschedparam = &__load_and_call_pthread_attr_setschedparam;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setschedparam() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setschedparam", &__ptr_pthread_attr_setschedparam)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setschedparam(void) {
+  sprx_dlsym(__handle, "pthread_attr_setschedparam", &__ptr_pthread_attr_setschedparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9899,10 +9319,8 @@ void __load_and_call_pthread_attr_setschedpolicy();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setschedpolicy = &__load_and_call_pthread_attr_setschedpolicy;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setschedpolicy() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setschedpolicy", &__ptr_pthread_attr_setschedpolicy)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setschedpolicy(void) {
+  sprx_dlsym(__handle, "pthread_attr_setschedpolicy", &__ptr_pthread_attr_setschedpolicy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9933,10 +9351,8 @@ void __load_and_call_pthread_attr_setscope();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setscope = &__load_and_call_pthread_attr_setscope;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setscope() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setscope", &__ptr_pthread_attr_setscope)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setscope(void) {
+  sprx_dlsym(__handle, "pthread_attr_setscope", &__ptr_pthread_attr_setscope);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -9967,10 +9383,8 @@ void __load_and_call_pthread_attr_setsolosched_np();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setsolosched_np = &__load_and_call_pthread_attr_setsolosched_np;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setsolosched_np() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setsolosched_np", &__ptr_pthread_attr_setsolosched_np)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setsolosched_np(void) {
+  sprx_dlsym(__handle, "pthread_attr_setsolosched_np", &__ptr_pthread_attr_setsolosched_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10001,10 +9415,8 @@ void __load_and_call_pthread_attr_setstack();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setstack = &__load_and_call_pthread_attr_setstack;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setstack() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setstack", &__ptr_pthread_attr_setstack)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setstack(void) {
+  sprx_dlsym(__handle, "pthread_attr_setstack", &__ptr_pthread_attr_setstack);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10035,10 +9447,8 @@ void __load_and_call_pthread_attr_setstackaddr();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setstackaddr = &__load_and_call_pthread_attr_setstackaddr;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setstackaddr() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setstackaddr", &__ptr_pthread_attr_setstackaddr)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setstackaddr(void) {
+  sprx_dlsym(__handle, "pthread_attr_setstackaddr", &__ptr_pthread_attr_setstackaddr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10069,10 +9479,8 @@ void __load_and_call_pthread_attr_setstacksize();
 static __attribute__ ((used)) void* __ptr_pthread_attr_setstacksize = &__load_and_call_pthread_attr_setstacksize;
 
 static __attribute__ ((used)) void
-__load_pthread_attr_setstacksize() {
-  if(sceKernelDlsym(__module_id, "pthread_attr_setstacksize", &__ptr_pthread_attr_setstacksize)) {
-    __builtin_trap();
-  }
+__load_pthread_attr_setstacksize(void) {
+  sprx_dlsym(__handle, "pthread_attr_setstacksize", &__ptr_pthread_attr_setstacksize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10103,10 +9511,8 @@ void __load_and_call_pthread_barrier_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_barrier_destroy = &__load_and_call_pthread_barrier_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_barrier_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_barrier_destroy", &__ptr_pthread_barrier_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_barrier_destroy(void) {
+  sprx_dlsym(__handle, "pthread_barrier_destroy", &__ptr_pthread_barrier_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10137,10 +9543,8 @@ void __load_and_call_pthread_barrier_init();
 static __attribute__ ((used)) void* __ptr_pthread_barrier_init = &__load_and_call_pthread_barrier_init;
 
 static __attribute__ ((used)) void
-__load_pthread_barrier_init() {
-  if(sceKernelDlsym(__module_id, "pthread_barrier_init", &__ptr_pthread_barrier_init)) {
-    __builtin_trap();
-  }
+__load_pthread_barrier_init(void) {
+  sprx_dlsym(__handle, "pthread_barrier_init", &__ptr_pthread_barrier_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10171,10 +9575,8 @@ void __load_and_call_pthread_barrier_setname_np();
 static __attribute__ ((used)) void* __ptr_pthread_barrier_setname_np = &__load_and_call_pthread_barrier_setname_np;
 
 static __attribute__ ((used)) void
-__load_pthread_barrier_setname_np() {
-  if(sceKernelDlsym(__module_id, "pthread_barrier_setname_np", &__ptr_pthread_barrier_setname_np)) {
-    __builtin_trap();
-  }
+__load_pthread_barrier_setname_np(void) {
+  sprx_dlsym(__handle, "pthread_barrier_setname_np", &__ptr_pthread_barrier_setname_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10205,10 +9607,8 @@ void __load_and_call_pthread_barrier_wait();
 static __attribute__ ((used)) void* __ptr_pthread_barrier_wait = &__load_and_call_pthread_barrier_wait;
 
 static __attribute__ ((used)) void
-__load_pthread_barrier_wait() {
-  if(sceKernelDlsym(__module_id, "pthread_barrier_wait", &__ptr_pthread_barrier_wait)) {
-    __builtin_trap();
-  }
+__load_pthread_barrier_wait(void) {
+  sprx_dlsym(__handle, "pthread_barrier_wait", &__ptr_pthread_barrier_wait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10239,10 +9639,8 @@ void __load_and_call_pthread_barrierattr_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_barrierattr_destroy = &__load_and_call_pthread_barrierattr_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_barrierattr_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_barrierattr_destroy", &__ptr_pthread_barrierattr_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_barrierattr_destroy(void) {
+  sprx_dlsym(__handle, "pthread_barrierattr_destroy", &__ptr_pthread_barrierattr_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10273,10 +9671,8 @@ void __load_and_call_pthread_barrierattr_getpshared();
 static __attribute__ ((used)) void* __ptr_pthread_barrierattr_getpshared = &__load_and_call_pthread_barrierattr_getpshared;
 
 static __attribute__ ((used)) void
-__load_pthread_barrierattr_getpshared() {
-  if(sceKernelDlsym(__module_id, "pthread_barrierattr_getpshared", &__ptr_pthread_barrierattr_getpshared)) {
-    __builtin_trap();
-  }
+__load_pthread_barrierattr_getpshared(void) {
+  sprx_dlsym(__handle, "pthread_barrierattr_getpshared", &__ptr_pthread_barrierattr_getpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10307,10 +9703,8 @@ void __load_and_call_pthread_barrierattr_init();
 static __attribute__ ((used)) void* __ptr_pthread_barrierattr_init = &__load_and_call_pthread_barrierattr_init;
 
 static __attribute__ ((used)) void
-__load_pthread_barrierattr_init() {
-  if(sceKernelDlsym(__module_id, "pthread_barrierattr_init", &__ptr_pthread_barrierattr_init)) {
-    __builtin_trap();
-  }
+__load_pthread_barrierattr_init(void) {
+  sprx_dlsym(__handle, "pthread_barrierattr_init", &__ptr_pthread_barrierattr_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10341,10 +9735,8 @@ void __load_and_call_pthread_barrierattr_setpshared();
 static __attribute__ ((used)) void* __ptr_pthread_barrierattr_setpshared = &__load_and_call_pthread_barrierattr_setpshared;
 
 static __attribute__ ((used)) void
-__load_pthread_barrierattr_setpshared() {
-  if(sceKernelDlsym(__module_id, "pthread_barrierattr_setpshared", &__ptr_pthread_barrierattr_setpshared)) {
-    __builtin_trap();
-  }
+__load_pthread_barrierattr_setpshared(void) {
+  sprx_dlsym(__handle, "pthread_barrierattr_setpshared", &__ptr_pthread_barrierattr_setpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10375,10 +9767,8 @@ void __load_and_call_pthread_cancel();
 static __attribute__ ((used)) void* __ptr_pthread_cancel = &__load_and_call_pthread_cancel;
 
 static __attribute__ ((used)) void
-__load_pthread_cancel() {
-  if(sceKernelDlsym(__module_id, "pthread_cancel", &__ptr_pthread_cancel)) {
-    __builtin_trap();
-  }
+__load_pthread_cancel(void) {
+  sprx_dlsym(__handle, "pthread_cancel", &__ptr_pthread_cancel);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10409,10 +9799,8 @@ void __load_and_call_pthread_cleanup_pop();
 static __attribute__ ((used)) void* __ptr_pthread_cleanup_pop = &__load_and_call_pthread_cleanup_pop;
 
 static __attribute__ ((used)) void
-__load_pthread_cleanup_pop() {
-  if(sceKernelDlsym(__module_id, "pthread_cleanup_pop", &__ptr_pthread_cleanup_pop)) {
-    __builtin_trap();
-  }
+__load_pthread_cleanup_pop(void) {
+  sprx_dlsym(__handle, "pthread_cleanup_pop", &__ptr_pthread_cleanup_pop);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10443,10 +9831,8 @@ void __load_and_call_pthread_cleanup_push();
 static __attribute__ ((used)) void* __ptr_pthread_cleanup_push = &__load_and_call_pthread_cleanup_push;
 
 static __attribute__ ((used)) void
-__load_pthread_cleanup_push() {
-  if(sceKernelDlsym(__module_id, "pthread_cleanup_push", &__ptr_pthread_cleanup_push)) {
-    __builtin_trap();
-  }
+__load_pthread_cleanup_push(void) {
+  sprx_dlsym(__handle, "pthread_cleanup_push", &__ptr_pthread_cleanup_push);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10477,10 +9863,8 @@ void __load_and_call_pthread_cond_broadcast();
 static __attribute__ ((used)) void* __ptr_pthread_cond_broadcast = &__load_and_call_pthread_cond_broadcast;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_broadcast() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_broadcast", &__ptr_pthread_cond_broadcast)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_broadcast(void) {
+  sprx_dlsym(__handle, "pthread_cond_broadcast", &__ptr_pthread_cond_broadcast);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10511,10 +9895,8 @@ void __load_and_call_pthread_cond_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_cond_destroy = &__load_and_call_pthread_cond_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_destroy", &__ptr_pthread_cond_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_destroy(void) {
+  sprx_dlsym(__handle, "pthread_cond_destroy", &__ptr_pthread_cond_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10545,10 +9927,8 @@ void __load_and_call_pthread_cond_init();
 static __attribute__ ((used)) void* __ptr_pthread_cond_init = &__load_and_call_pthread_cond_init;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_init() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_init", &__ptr_pthread_cond_init)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_init(void) {
+  sprx_dlsym(__handle, "pthread_cond_init", &__ptr_pthread_cond_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10579,10 +9959,8 @@ void __load_and_call_pthread_cond_reltimedwait_np();
 static __attribute__ ((used)) void* __ptr_pthread_cond_reltimedwait_np = &__load_and_call_pthread_cond_reltimedwait_np;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_reltimedwait_np() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_reltimedwait_np", &__ptr_pthread_cond_reltimedwait_np)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_reltimedwait_np(void) {
+  sprx_dlsym(__handle, "pthread_cond_reltimedwait_np", &__ptr_pthread_cond_reltimedwait_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10613,10 +9991,8 @@ void __load_and_call_pthread_cond_setname_np();
 static __attribute__ ((used)) void* __ptr_pthread_cond_setname_np = &__load_and_call_pthread_cond_setname_np;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_setname_np() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_setname_np", &__ptr_pthread_cond_setname_np)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_setname_np(void) {
+  sprx_dlsym(__handle, "pthread_cond_setname_np", &__ptr_pthread_cond_setname_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10647,10 +10023,8 @@ void __load_and_call_pthread_cond_signal();
 static __attribute__ ((used)) void* __ptr_pthread_cond_signal = &__load_and_call_pthread_cond_signal;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_signal() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_signal", &__ptr_pthread_cond_signal)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_signal(void) {
+  sprx_dlsym(__handle, "pthread_cond_signal", &__ptr_pthread_cond_signal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10681,10 +10055,8 @@ void __load_and_call_pthread_cond_signalto_np();
 static __attribute__ ((used)) void* __ptr_pthread_cond_signalto_np = &__load_and_call_pthread_cond_signalto_np;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_signalto_np() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_signalto_np", &__ptr_pthread_cond_signalto_np)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_signalto_np(void) {
+  sprx_dlsym(__handle, "pthread_cond_signalto_np", &__ptr_pthread_cond_signalto_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10715,10 +10087,8 @@ void __load_and_call_pthread_cond_timedwait();
 static __attribute__ ((used)) void* __ptr_pthread_cond_timedwait = &__load_and_call_pthread_cond_timedwait;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_timedwait() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_timedwait", &__ptr_pthread_cond_timedwait)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_timedwait(void) {
+  sprx_dlsym(__handle, "pthread_cond_timedwait", &__ptr_pthread_cond_timedwait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10749,10 +10119,8 @@ void __load_and_call_pthread_cond_wait();
 static __attribute__ ((used)) void* __ptr_pthread_cond_wait = &__load_and_call_pthread_cond_wait;
 
 static __attribute__ ((used)) void
-__load_pthread_cond_wait() {
-  if(sceKernelDlsym(__module_id, "pthread_cond_wait", &__ptr_pthread_cond_wait)) {
-    __builtin_trap();
-  }
+__load_pthread_cond_wait(void) {
+  sprx_dlsym(__handle, "pthread_cond_wait", &__ptr_pthread_cond_wait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10783,10 +10151,8 @@ void __load_and_call_pthread_condattr_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_condattr_destroy = &__load_and_call_pthread_condattr_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_condattr_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_condattr_destroy", &__ptr_pthread_condattr_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_condattr_destroy(void) {
+  sprx_dlsym(__handle, "pthread_condattr_destroy", &__ptr_pthread_condattr_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10817,10 +10183,8 @@ void __load_and_call_pthread_condattr_getclock();
 static __attribute__ ((used)) void* __ptr_pthread_condattr_getclock = &__load_and_call_pthread_condattr_getclock;
 
 static __attribute__ ((used)) void
-__load_pthread_condattr_getclock() {
-  if(sceKernelDlsym(__module_id, "pthread_condattr_getclock", &__ptr_pthread_condattr_getclock)) {
-    __builtin_trap();
-  }
+__load_pthread_condattr_getclock(void) {
+  sprx_dlsym(__handle, "pthread_condattr_getclock", &__ptr_pthread_condattr_getclock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10851,10 +10215,8 @@ void __load_and_call_pthread_condattr_getpshared();
 static __attribute__ ((used)) void* __ptr_pthread_condattr_getpshared = &__load_and_call_pthread_condattr_getpshared;
 
 static __attribute__ ((used)) void
-__load_pthread_condattr_getpshared() {
-  if(sceKernelDlsym(__module_id, "pthread_condattr_getpshared", &__ptr_pthread_condattr_getpshared)) {
-    __builtin_trap();
-  }
+__load_pthread_condattr_getpshared(void) {
+  sprx_dlsym(__handle, "pthread_condattr_getpshared", &__ptr_pthread_condattr_getpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10885,10 +10247,8 @@ void __load_and_call_pthread_condattr_init();
 static __attribute__ ((used)) void* __ptr_pthread_condattr_init = &__load_and_call_pthread_condattr_init;
 
 static __attribute__ ((used)) void
-__load_pthread_condattr_init() {
-  if(sceKernelDlsym(__module_id, "pthread_condattr_init", &__ptr_pthread_condattr_init)) {
-    __builtin_trap();
-  }
+__load_pthread_condattr_init(void) {
+  sprx_dlsym(__handle, "pthread_condattr_init", &__ptr_pthread_condattr_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10919,10 +10279,8 @@ void __load_and_call_pthread_condattr_setclock();
 static __attribute__ ((used)) void* __ptr_pthread_condattr_setclock = &__load_and_call_pthread_condattr_setclock;
 
 static __attribute__ ((used)) void
-__load_pthread_condattr_setclock() {
-  if(sceKernelDlsym(__module_id, "pthread_condattr_setclock", &__ptr_pthread_condattr_setclock)) {
-    __builtin_trap();
-  }
+__load_pthread_condattr_setclock(void) {
+  sprx_dlsym(__handle, "pthread_condattr_setclock", &__ptr_pthread_condattr_setclock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10953,10 +10311,8 @@ void __load_and_call_pthread_condattr_setpshared();
 static __attribute__ ((used)) void* __ptr_pthread_condattr_setpshared = &__load_and_call_pthread_condattr_setpshared;
 
 static __attribute__ ((used)) void
-__load_pthread_condattr_setpshared() {
-  if(sceKernelDlsym(__module_id, "pthread_condattr_setpshared", &__ptr_pthread_condattr_setpshared)) {
-    __builtin_trap();
-  }
+__load_pthread_condattr_setpshared(void) {
+  sprx_dlsym(__handle, "pthread_condattr_setpshared", &__ptr_pthread_condattr_setpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -10987,10 +10343,8 @@ void __load_and_call_pthread_create();
 static __attribute__ ((used)) void* __ptr_pthread_create = &__load_and_call_pthread_create;
 
 static __attribute__ ((used)) void
-__load_pthread_create() {
-  if(sceKernelDlsym(__module_id, "pthread_create", &__ptr_pthread_create)) {
-    __builtin_trap();
-  }
+__load_pthread_create(void) {
+  sprx_dlsym(__handle, "pthread_create", &__ptr_pthread_create);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11021,10 +10375,8 @@ void __load_and_call_pthread_create_name_np();
 static __attribute__ ((used)) void* __ptr_pthread_create_name_np = &__load_and_call_pthread_create_name_np;
 
 static __attribute__ ((used)) void
-__load_pthread_create_name_np() {
-  if(sceKernelDlsym(__module_id, "pthread_create_name_np", &__ptr_pthread_create_name_np)) {
-    __builtin_trap();
-  }
+__load_pthread_create_name_np(void) {
+  sprx_dlsym(__handle, "pthread_create_name_np", &__ptr_pthread_create_name_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11055,10 +10407,8 @@ void __load_and_call_pthread_detach();
 static __attribute__ ((used)) void* __ptr_pthread_detach = &__load_and_call_pthread_detach;
 
 static __attribute__ ((used)) void
-__load_pthread_detach() {
-  if(sceKernelDlsym(__module_id, "pthread_detach", &__ptr_pthread_detach)) {
-    __builtin_trap();
-  }
+__load_pthread_detach(void) {
+  sprx_dlsym(__handle, "pthread_detach", &__ptr_pthread_detach);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11089,10 +10439,8 @@ void __load_and_call_pthread_equal();
 static __attribute__ ((used)) void* __ptr_pthread_equal = &__load_and_call_pthread_equal;
 
 static __attribute__ ((used)) void
-__load_pthread_equal() {
-  if(sceKernelDlsym(__module_id, "pthread_equal", &__ptr_pthread_equal)) {
-    __builtin_trap();
-  }
+__load_pthread_equal(void) {
+  sprx_dlsym(__handle, "pthread_equal", &__ptr_pthread_equal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11123,10 +10471,8 @@ void __load_and_call_pthread_exit();
 static __attribute__ ((used)) void* __ptr_pthread_exit = &__load_and_call_pthread_exit;
 
 static __attribute__ ((used)) void
-__load_pthread_exit() {
-  if(sceKernelDlsym(__module_id, "pthread_exit", &__ptr_pthread_exit)) {
-    __builtin_trap();
-  }
+__load_pthread_exit(void) {
+  sprx_dlsym(__handle, "pthread_exit", &__ptr_pthread_exit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11157,10 +10503,8 @@ void __load_and_call_pthread_get_specificarray_np();
 static __attribute__ ((used)) void* __ptr_pthread_get_specificarray_np = &__load_and_call_pthread_get_specificarray_np;
 
 static __attribute__ ((used)) void
-__load_pthread_get_specificarray_np() {
-  if(sceKernelDlsym(__module_id, "pthread_get_specificarray_np", &__ptr_pthread_get_specificarray_np)) {
-    __builtin_trap();
-  }
+__load_pthread_get_specificarray_np(void) {
+  sprx_dlsym(__handle, "pthread_get_specificarray_np", &__ptr_pthread_get_specificarray_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11191,10 +10535,8 @@ void __load_and_call_pthread_get_user_context_np();
 static __attribute__ ((used)) void* __ptr_pthread_get_user_context_np = &__load_and_call_pthread_get_user_context_np;
 
 static __attribute__ ((used)) void
-__load_pthread_get_user_context_np() {
-  if(sceKernelDlsym(__module_id, "pthread_get_user_context_np", &__ptr_pthread_get_user_context_np)) {
-    __builtin_trap();
-  }
+__load_pthread_get_user_context_np(void) {
+  sprx_dlsym(__handle, "pthread_get_user_context_np", &__ptr_pthread_get_user_context_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11225,10 +10567,8 @@ void __load_and_call_pthread_getaffinity_np();
 static __attribute__ ((used)) void* __ptr_pthread_getaffinity_np = &__load_and_call_pthread_getaffinity_np;
 
 static __attribute__ ((used)) void
-__load_pthread_getaffinity_np() {
-  if(sceKernelDlsym(__module_id, "pthread_getaffinity_np", &__ptr_pthread_getaffinity_np)) {
-    __builtin_trap();
-  }
+__load_pthread_getaffinity_np(void) {
+  sprx_dlsym(__handle, "pthread_getaffinity_np", &__ptr_pthread_getaffinity_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11259,10 +10599,8 @@ void __load_and_call_pthread_getconcurrency();
 static __attribute__ ((used)) void* __ptr_pthread_getconcurrency = &__load_and_call_pthread_getconcurrency;
 
 static __attribute__ ((used)) void
-__load_pthread_getconcurrency() {
-  if(sceKernelDlsym(__module_id, "pthread_getconcurrency", &__ptr_pthread_getconcurrency)) {
-    __builtin_trap();
-  }
+__load_pthread_getconcurrency(void) {
+  sprx_dlsym(__handle, "pthread_getconcurrency", &__ptr_pthread_getconcurrency);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11293,10 +10631,8 @@ void __load_and_call_pthread_getcpuclockid();
 static __attribute__ ((used)) void* __ptr_pthread_getcpuclockid = &__load_and_call_pthread_getcpuclockid;
 
 static __attribute__ ((used)) void
-__load_pthread_getcpuclockid() {
-  if(sceKernelDlsym(__module_id, "pthread_getcpuclockid", &__ptr_pthread_getcpuclockid)) {
-    __builtin_trap();
-  }
+__load_pthread_getcpuclockid(void) {
+  sprx_dlsym(__handle, "pthread_getcpuclockid", &__ptr_pthread_getcpuclockid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11327,10 +10663,8 @@ void __load_and_call_pthread_getname_np();
 static __attribute__ ((used)) void* __ptr_pthread_getname_np = &__load_and_call_pthread_getname_np;
 
 static __attribute__ ((used)) void
-__load_pthread_getname_np() {
-  if(sceKernelDlsym(__module_id, "pthread_getname_np", &__ptr_pthread_getname_np)) {
-    __builtin_trap();
-  }
+__load_pthread_getname_np(void) {
+  sprx_dlsym(__handle, "pthread_getname_np", &__ptr_pthread_getname_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11361,10 +10695,8 @@ void __load_and_call_pthread_getprio();
 static __attribute__ ((used)) void* __ptr_pthread_getprio = &__load_and_call_pthread_getprio;
 
 static __attribute__ ((used)) void
-__load_pthread_getprio() {
-  if(sceKernelDlsym(__module_id, "pthread_getprio", &__ptr_pthread_getprio)) {
-    __builtin_trap();
-  }
+__load_pthread_getprio(void) {
+  sprx_dlsym(__handle, "pthread_getprio", &__ptr_pthread_getprio);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11395,10 +10727,8 @@ void __load_and_call_pthread_getschedparam();
 static __attribute__ ((used)) void* __ptr_pthread_getschedparam = &__load_and_call_pthread_getschedparam;
 
 static __attribute__ ((used)) void
-__load_pthread_getschedparam() {
-  if(sceKernelDlsym(__module_id, "pthread_getschedparam", &__ptr_pthread_getschedparam)) {
-    __builtin_trap();
-  }
+__load_pthread_getschedparam(void) {
+  sprx_dlsym(__handle, "pthread_getschedparam", &__ptr_pthread_getschedparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11429,10 +10759,8 @@ void __load_and_call_pthread_getspecific();
 static __attribute__ ((used)) void* __ptr_pthread_getspecific = &__load_and_call_pthread_getspecific;
 
 static __attribute__ ((used)) void
-__load_pthread_getspecific() {
-  if(sceKernelDlsym(__module_id, "pthread_getspecific", &__ptr_pthread_getspecific)) {
-    __builtin_trap();
-  }
+__load_pthread_getspecific(void) {
+  sprx_dlsym(__handle, "pthread_getspecific", &__ptr_pthread_getspecific);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11463,10 +10791,8 @@ void __load_and_call_pthread_getstack_np();
 static __attribute__ ((used)) void* __ptr_pthread_getstack_np = &__load_and_call_pthread_getstack_np;
 
 static __attribute__ ((used)) void
-__load_pthread_getstack_np() {
-  if(sceKernelDlsym(__module_id, "pthread_getstack_np", &__ptr_pthread_getstack_np)) {
-    __builtin_trap();
-  }
+__load_pthread_getstack_np(void) {
+  sprx_dlsym(__handle, "pthread_getstack_np", &__ptr_pthread_getstack_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11497,10 +10823,8 @@ void __load_and_call_pthread_getthreadid_np();
 static __attribute__ ((used)) void* __ptr_pthread_getthreadid_np = &__load_and_call_pthread_getthreadid_np;
 
 static __attribute__ ((used)) void
-__load_pthread_getthreadid_np() {
-  if(sceKernelDlsym(__module_id, "pthread_getthreadid_np", &__ptr_pthread_getthreadid_np)) {
-    __builtin_trap();
-  }
+__load_pthread_getthreadid_np(void) {
+  sprx_dlsym(__handle, "pthread_getthreadid_np", &__ptr_pthread_getthreadid_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11531,10 +10855,8 @@ void __load_and_call_pthread_join();
 static __attribute__ ((used)) void* __ptr_pthread_join = &__load_and_call_pthread_join;
 
 static __attribute__ ((used)) void
-__load_pthread_join() {
-  if(sceKernelDlsym(__module_id, "pthread_join", &__ptr_pthread_join)) {
-    __builtin_trap();
-  }
+__load_pthread_join(void) {
+  sprx_dlsym(__handle, "pthread_join", &__ptr_pthread_join);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11565,10 +10887,8 @@ void __load_and_call_pthread_key_create();
 static __attribute__ ((used)) void* __ptr_pthread_key_create = &__load_and_call_pthread_key_create;
 
 static __attribute__ ((used)) void
-__load_pthread_key_create() {
-  if(sceKernelDlsym(__module_id, "pthread_key_create", &__ptr_pthread_key_create)) {
-    __builtin_trap();
-  }
+__load_pthread_key_create(void) {
+  sprx_dlsym(__handle, "pthread_key_create", &__ptr_pthread_key_create);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11599,10 +10919,8 @@ void __load_and_call_pthread_key_delete();
 static __attribute__ ((used)) void* __ptr_pthread_key_delete = &__load_and_call_pthread_key_delete;
 
 static __attribute__ ((used)) void
-__load_pthread_key_delete() {
-  if(sceKernelDlsym(__module_id, "pthread_key_delete", &__ptr_pthread_key_delete)) {
-    __builtin_trap();
-  }
+__load_pthread_key_delete(void) {
+  sprx_dlsym(__handle, "pthread_key_delete", &__ptr_pthread_key_delete);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11633,10 +10951,8 @@ void __load_and_call_pthread_kill();
 static __attribute__ ((used)) void* __ptr_pthread_kill = &__load_and_call_pthread_kill;
 
 static __attribute__ ((used)) void
-__load_pthread_kill() {
-  if(sceKernelDlsym(__module_id, "pthread_kill", &__ptr_pthread_kill)) {
-    __builtin_trap();
-  }
+__load_pthread_kill(void) {
+  sprx_dlsym(__handle, "pthread_kill", &__ptr_pthread_kill);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11667,10 +10983,8 @@ void __load_and_call_pthread_main_np();
 static __attribute__ ((used)) void* __ptr_pthread_main_np = &__load_and_call_pthread_main_np;
 
 static __attribute__ ((used)) void
-__load_pthread_main_np() {
-  if(sceKernelDlsym(__module_id, "pthread_main_np", &__ptr_pthread_main_np)) {
-    __builtin_trap();
-  }
+__load_pthread_main_np(void) {
+  sprx_dlsym(__handle, "pthread_main_np", &__ptr_pthread_main_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11701,10 +11015,8 @@ void __load_and_call_pthread_multi_np();
 static __attribute__ ((used)) void* __ptr_pthread_multi_np = &__load_and_call_pthread_multi_np;
 
 static __attribute__ ((used)) void
-__load_pthread_multi_np() {
-  if(sceKernelDlsym(__module_id, "pthread_multi_np", &__ptr_pthread_multi_np)) {
-    __builtin_trap();
-  }
+__load_pthread_multi_np(void) {
+  sprx_dlsym(__handle, "pthread_multi_np", &__ptr_pthread_multi_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11735,10 +11047,8 @@ void __load_and_call_pthread_mutex_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_destroy = &__load_and_call_pthread_mutex_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_destroy", &__ptr_pthread_mutex_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_destroy(void) {
+  sprx_dlsym(__handle, "pthread_mutex_destroy", &__ptr_pthread_mutex_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11769,10 +11079,8 @@ void __load_and_call_pthread_mutex_getprioceiling();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_getprioceiling = &__load_and_call_pthread_mutex_getprioceiling;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_getprioceiling() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_getprioceiling", &__ptr_pthread_mutex_getprioceiling)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_getprioceiling(void) {
+  sprx_dlsym(__handle, "pthread_mutex_getprioceiling", &__ptr_pthread_mutex_getprioceiling);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11803,10 +11111,8 @@ void __load_and_call_pthread_mutex_getspinloops_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_getspinloops_np = &__load_and_call_pthread_mutex_getspinloops_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_getspinloops_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_getspinloops_np", &__ptr_pthread_mutex_getspinloops_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_getspinloops_np(void) {
+  sprx_dlsym(__handle, "pthread_mutex_getspinloops_np", &__ptr_pthread_mutex_getspinloops_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11837,10 +11143,8 @@ void __load_and_call_pthread_mutex_getyieldloops_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_getyieldloops_np = &__load_and_call_pthread_mutex_getyieldloops_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_getyieldloops_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_getyieldloops_np", &__ptr_pthread_mutex_getyieldloops_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_getyieldloops_np(void) {
+  sprx_dlsym(__handle, "pthread_mutex_getyieldloops_np", &__ptr_pthread_mutex_getyieldloops_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11871,10 +11175,8 @@ void __load_and_call_pthread_mutex_init();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_init = &__load_and_call_pthread_mutex_init;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_init() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_init", &__ptr_pthread_mutex_init)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_init(void) {
+  sprx_dlsym(__handle, "pthread_mutex_init", &__ptr_pthread_mutex_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11905,10 +11207,8 @@ void __load_and_call_pthread_mutex_init_for_mono();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_init_for_mono = &__load_and_call_pthread_mutex_init_for_mono;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_init_for_mono() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_init_for_mono", &__ptr_pthread_mutex_init_for_mono)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_init_for_mono(void) {
+  sprx_dlsym(__handle, "pthread_mutex_init_for_mono", &__ptr_pthread_mutex_init_for_mono);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11939,10 +11239,8 @@ void __load_and_call_pthread_mutex_isowned_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_isowned_np = &__load_and_call_pthread_mutex_isowned_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_isowned_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_isowned_np", &__ptr_pthread_mutex_isowned_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_isowned_np(void) {
+  sprx_dlsym(__handle, "pthread_mutex_isowned_np", &__ptr_pthread_mutex_isowned_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -11973,10 +11271,8 @@ void __load_and_call_pthread_mutex_lock();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_lock = &__load_and_call_pthread_mutex_lock;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_lock() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_lock", &__ptr_pthread_mutex_lock)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_lock(void) {
+  sprx_dlsym(__handle, "pthread_mutex_lock", &__ptr_pthread_mutex_lock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12007,10 +11303,8 @@ void __load_and_call_pthread_mutex_reltimedlock_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_reltimedlock_np = &__load_and_call_pthread_mutex_reltimedlock_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_reltimedlock_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_reltimedlock_np", &__ptr_pthread_mutex_reltimedlock_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_reltimedlock_np(void) {
+  sprx_dlsym(__handle, "pthread_mutex_reltimedlock_np", &__ptr_pthread_mutex_reltimedlock_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12041,10 +11335,8 @@ void __load_and_call_pthread_mutex_setname_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_setname_np = &__load_and_call_pthread_mutex_setname_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_setname_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_setname_np", &__ptr_pthread_mutex_setname_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_setname_np(void) {
+  sprx_dlsym(__handle, "pthread_mutex_setname_np", &__ptr_pthread_mutex_setname_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12075,10 +11367,8 @@ void __load_and_call_pthread_mutex_setprioceiling();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_setprioceiling = &__load_and_call_pthread_mutex_setprioceiling;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_setprioceiling() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_setprioceiling", &__ptr_pthread_mutex_setprioceiling)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_setprioceiling(void) {
+  sprx_dlsym(__handle, "pthread_mutex_setprioceiling", &__ptr_pthread_mutex_setprioceiling);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12109,10 +11399,8 @@ void __load_and_call_pthread_mutex_setspinloops_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_setspinloops_np = &__load_and_call_pthread_mutex_setspinloops_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_setspinloops_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_setspinloops_np", &__ptr_pthread_mutex_setspinloops_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_setspinloops_np(void) {
+  sprx_dlsym(__handle, "pthread_mutex_setspinloops_np", &__ptr_pthread_mutex_setspinloops_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12143,10 +11431,8 @@ void __load_and_call_pthread_mutex_setyieldloops_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_setyieldloops_np = &__load_and_call_pthread_mutex_setyieldloops_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_setyieldloops_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_setyieldloops_np", &__ptr_pthread_mutex_setyieldloops_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_setyieldloops_np(void) {
+  sprx_dlsym(__handle, "pthread_mutex_setyieldloops_np", &__ptr_pthread_mutex_setyieldloops_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12177,10 +11463,8 @@ void __load_and_call_pthread_mutex_timedlock();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_timedlock = &__load_and_call_pthread_mutex_timedlock;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_timedlock() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_timedlock", &__ptr_pthread_mutex_timedlock)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_timedlock(void) {
+  sprx_dlsym(__handle, "pthread_mutex_timedlock", &__ptr_pthread_mutex_timedlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12211,10 +11495,8 @@ void __load_and_call_pthread_mutex_trylock();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_trylock = &__load_and_call_pthread_mutex_trylock;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_trylock() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_trylock", &__ptr_pthread_mutex_trylock)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_trylock(void) {
+  sprx_dlsym(__handle, "pthread_mutex_trylock", &__ptr_pthread_mutex_trylock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12245,10 +11527,8 @@ void __load_and_call_pthread_mutex_unlock();
 static __attribute__ ((used)) void* __ptr_pthread_mutex_unlock = &__load_and_call_pthread_mutex_unlock;
 
 static __attribute__ ((used)) void
-__load_pthread_mutex_unlock() {
-  if(sceKernelDlsym(__module_id, "pthread_mutex_unlock", &__ptr_pthread_mutex_unlock)) {
-    __builtin_trap();
-  }
+__load_pthread_mutex_unlock(void) {
+  sprx_dlsym(__handle, "pthread_mutex_unlock", &__ptr_pthread_mutex_unlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12279,10 +11559,8 @@ void __load_and_call_pthread_mutexattr_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_destroy = &__load_and_call_pthread_mutexattr_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_destroy", &__ptr_pthread_mutexattr_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_destroy(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_destroy", &__ptr_pthread_mutexattr_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12313,10 +11591,8 @@ void __load_and_call_pthread_mutexattr_getgen_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_getgen_np = &__load_and_call_pthread_mutexattr_getgen_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_getgen_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_getgen_np", &__ptr_pthread_mutexattr_getgen_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_getgen_np(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_getgen_np", &__ptr_pthread_mutexattr_getgen_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12347,10 +11623,8 @@ void __load_and_call_pthread_mutexattr_getkind_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_getkind_np = &__load_and_call_pthread_mutexattr_getkind_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_getkind_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_getkind_np", &__ptr_pthread_mutexattr_getkind_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_getkind_np(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_getkind_np", &__ptr_pthread_mutexattr_getkind_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12381,10 +11655,8 @@ void __load_and_call_pthread_mutexattr_getprioceiling();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_getprioceiling = &__load_and_call_pthread_mutexattr_getprioceiling;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_getprioceiling() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_getprioceiling", &__ptr_pthread_mutexattr_getprioceiling)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_getprioceiling(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_getprioceiling", &__ptr_pthread_mutexattr_getprioceiling);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12415,10 +11687,8 @@ void __load_and_call_pthread_mutexattr_getprotocol();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_getprotocol = &__load_and_call_pthread_mutexattr_getprotocol;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_getprotocol() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_getprotocol", &__ptr_pthread_mutexattr_getprotocol)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_getprotocol(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_getprotocol", &__ptr_pthread_mutexattr_getprotocol);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12449,10 +11719,8 @@ void __load_and_call_pthread_mutexattr_getpshared();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_getpshared = &__load_and_call_pthread_mutexattr_getpshared;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_getpshared() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_getpshared", &__ptr_pthread_mutexattr_getpshared)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_getpshared(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_getpshared", &__ptr_pthread_mutexattr_getpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12483,10 +11751,8 @@ void __load_and_call_pthread_mutexattr_gettype();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_gettype = &__load_and_call_pthread_mutexattr_gettype;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_gettype() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_gettype", &__ptr_pthread_mutexattr_gettype)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_gettype(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_gettype", &__ptr_pthread_mutexattr_gettype);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12517,10 +11783,8 @@ void __load_and_call_pthread_mutexattr_init();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_init = &__load_and_call_pthread_mutexattr_init;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_init() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_init", &__ptr_pthread_mutexattr_init)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_init(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_init", &__ptr_pthread_mutexattr_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12551,10 +11815,8 @@ void __load_and_call_pthread_mutexattr_setgen_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_setgen_np = &__load_and_call_pthread_mutexattr_setgen_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_setgen_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_setgen_np", &__ptr_pthread_mutexattr_setgen_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_setgen_np(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_setgen_np", &__ptr_pthread_mutexattr_setgen_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12585,10 +11847,8 @@ void __load_and_call_pthread_mutexattr_setkind_np();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_setkind_np = &__load_and_call_pthread_mutexattr_setkind_np;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_setkind_np() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_setkind_np", &__ptr_pthread_mutexattr_setkind_np)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_setkind_np(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_setkind_np", &__ptr_pthread_mutexattr_setkind_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12619,10 +11879,8 @@ void __load_and_call_pthread_mutexattr_setprioceiling();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_setprioceiling = &__load_and_call_pthread_mutexattr_setprioceiling;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_setprioceiling() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_setprioceiling", &__ptr_pthread_mutexattr_setprioceiling)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_setprioceiling(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_setprioceiling", &__ptr_pthread_mutexattr_setprioceiling);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12653,10 +11911,8 @@ void __load_and_call_pthread_mutexattr_setprotocol();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_setprotocol = &__load_and_call_pthread_mutexattr_setprotocol;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_setprotocol() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_setprotocol", &__ptr_pthread_mutexattr_setprotocol)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_setprotocol(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_setprotocol", &__ptr_pthread_mutexattr_setprotocol);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12687,10 +11943,8 @@ void __load_and_call_pthread_mutexattr_setpshared();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_setpshared = &__load_and_call_pthread_mutexattr_setpshared;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_setpshared() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_setpshared", &__ptr_pthread_mutexattr_setpshared)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_setpshared(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_setpshared", &__ptr_pthread_mutexattr_setpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12721,10 +11975,8 @@ void __load_and_call_pthread_mutexattr_settype();
 static __attribute__ ((used)) void* __ptr_pthread_mutexattr_settype = &__load_and_call_pthread_mutexattr_settype;
 
 static __attribute__ ((used)) void
-__load_pthread_mutexattr_settype() {
-  if(sceKernelDlsym(__module_id, "pthread_mutexattr_settype", &__ptr_pthread_mutexattr_settype)) {
-    __builtin_trap();
-  }
+__load_pthread_mutexattr_settype(void) {
+  sprx_dlsym(__handle, "pthread_mutexattr_settype", &__ptr_pthread_mutexattr_settype);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12755,10 +12007,8 @@ void __load_and_call_pthread_once();
 static __attribute__ ((used)) void* __ptr_pthread_once = &__load_and_call_pthread_once;
 
 static __attribute__ ((used)) void
-__load_pthread_once() {
-  if(sceKernelDlsym(__module_id, "pthread_once", &__ptr_pthread_once)) {
-    __builtin_trap();
-  }
+__load_pthread_once(void) {
+  sprx_dlsym(__handle, "pthread_once", &__ptr_pthread_once);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12789,10 +12039,8 @@ void __load_and_call_pthread_rename_np();
 static __attribute__ ((used)) void* __ptr_pthread_rename_np = &__load_and_call_pthread_rename_np;
 
 static __attribute__ ((used)) void
-__load_pthread_rename_np() {
-  if(sceKernelDlsym(__module_id, "pthread_rename_np", &__ptr_pthread_rename_np)) {
-    __builtin_trap();
-  }
+__load_pthread_rename_np(void) {
+  sprx_dlsym(__handle, "pthread_rename_np", &__ptr_pthread_rename_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12823,10 +12071,8 @@ void __load_and_call_pthread_resume_all_np();
 static __attribute__ ((used)) void* __ptr_pthread_resume_all_np = &__load_and_call_pthread_resume_all_np;
 
 static __attribute__ ((used)) void
-__load_pthread_resume_all_np() {
-  if(sceKernelDlsym(__module_id, "pthread_resume_all_np", &__ptr_pthread_resume_all_np)) {
-    __builtin_trap();
-  }
+__load_pthread_resume_all_np(void) {
+  sprx_dlsym(__handle, "pthread_resume_all_np", &__ptr_pthread_resume_all_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12857,10 +12103,8 @@ void __load_and_call_pthread_resume_np();
 static __attribute__ ((used)) void* __ptr_pthread_resume_np = &__load_and_call_pthread_resume_np;
 
 static __attribute__ ((used)) void
-__load_pthread_resume_np() {
-  if(sceKernelDlsym(__module_id, "pthread_resume_np", &__ptr_pthread_resume_np)) {
-    __builtin_trap();
-  }
+__load_pthread_resume_np(void) {
+  sprx_dlsym(__handle, "pthread_resume_np", &__ptr_pthread_resume_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12891,10 +12135,8 @@ void __load_and_call_pthread_resume_user_context_np();
 static __attribute__ ((used)) void* __ptr_pthread_resume_user_context_np = &__load_and_call_pthread_resume_user_context_np;
 
 static __attribute__ ((used)) void
-__load_pthread_resume_user_context_np() {
-  if(sceKernelDlsym(__module_id, "pthread_resume_user_context_np", &__ptr_pthread_resume_user_context_np)) {
-    __builtin_trap();
-  }
+__load_pthread_resume_user_context_np(void) {
+  sprx_dlsym(__handle, "pthread_resume_user_context_np", &__ptr_pthread_resume_user_context_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12925,10 +12167,8 @@ void __load_and_call_pthread_rwlock_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_destroy = &__load_and_call_pthread_rwlock_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_destroy", &__ptr_pthread_rwlock_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_destroy(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_destroy", &__ptr_pthread_rwlock_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12959,10 +12199,8 @@ void __load_and_call_pthread_rwlock_init();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_init = &__load_and_call_pthread_rwlock_init;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_init() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_init", &__ptr_pthread_rwlock_init)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_init(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_init", &__ptr_pthread_rwlock_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -12993,10 +12231,8 @@ void __load_and_call_pthread_rwlock_rdlock();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_rdlock = &__load_and_call_pthread_rwlock_rdlock;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_rdlock() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_rdlock", &__ptr_pthread_rwlock_rdlock)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_rdlock(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_rdlock", &__ptr_pthread_rwlock_rdlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13027,10 +12263,8 @@ void __load_and_call_pthread_rwlock_reltimedrdlock_np();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_reltimedrdlock_np = &__load_and_call_pthread_rwlock_reltimedrdlock_np;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_reltimedrdlock_np() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_reltimedrdlock_np", &__ptr_pthread_rwlock_reltimedrdlock_np)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_reltimedrdlock_np(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_reltimedrdlock_np", &__ptr_pthread_rwlock_reltimedrdlock_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13061,10 +12295,8 @@ void __load_and_call_pthread_rwlock_reltimedwrlock_np();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_reltimedwrlock_np = &__load_and_call_pthread_rwlock_reltimedwrlock_np;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_reltimedwrlock_np() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_reltimedwrlock_np", &__ptr_pthread_rwlock_reltimedwrlock_np)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_reltimedwrlock_np(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_reltimedwrlock_np", &__ptr_pthread_rwlock_reltimedwrlock_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13095,10 +12327,8 @@ void __load_and_call_pthread_rwlock_setname_np();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_setname_np = &__load_and_call_pthread_rwlock_setname_np;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_setname_np() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_setname_np", &__ptr_pthread_rwlock_setname_np)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_setname_np(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_setname_np", &__ptr_pthread_rwlock_setname_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13129,10 +12359,8 @@ void __load_and_call_pthread_rwlock_timedrdlock();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_timedrdlock = &__load_and_call_pthread_rwlock_timedrdlock;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_timedrdlock() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_timedrdlock", &__ptr_pthread_rwlock_timedrdlock)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_timedrdlock(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_timedrdlock", &__ptr_pthread_rwlock_timedrdlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13163,10 +12391,8 @@ void __load_and_call_pthread_rwlock_timedwrlock();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_timedwrlock = &__load_and_call_pthread_rwlock_timedwrlock;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_timedwrlock() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_timedwrlock", &__ptr_pthread_rwlock_timedwrlock)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_timedwrlock(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_timedwrlock", &__ptr_pthread_rwlock_timedwrlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13197,10 +12423,8 @@ void __load_and_call_pthread_rwlock_tryrdlock();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_tryrdlock = &__load_and_call_pthread_rwlock_tryrdlock;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_tryrdlock() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_tryrdlock", &__ptr_pthread_rwlock_tryrdlock)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_tryrdlock(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_tryrdlock", &__ptr_pthread_rwlock_tryrdlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13231,10 +12455,8 @@ void __load_and_call_pthread_rwlock_trywrlock();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_trywrlock = &__load_and_call_pthread_rwlock_trywrlock;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_trywrlock() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_trywrlock", &__ptr_pthread_rwlock_trywrlock)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_trywrlock(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_trywrlock", &__ptr_pthread_rwlock_trywrlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13265,10 +12487,8 @@ void __load_and_call_pthread_rwlock_unlock();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_unlock = &__load_and_call_pthread_rwlock_unlock;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_unlock() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_unlock", &__ptr_pthread_rwlock_unlock)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_unlock(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_unlock", &__ptr_pthread_rwlock_unlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13299,10 +12519,8 @@ void __load_and_call_pthread_rwlock_wrlock();
 static __attribute__ ((used)) void* __ptr_pthread_rwlock_wrlock = &__load_and_call_pthread_rwlock_wrlock;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlock_wrlock() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlock_wrlock", &__ptr_pthread_rwlock_wrlock)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlock_wrlock(void) {
+  sprx_dlsym(__handle, "pthread_rwlock_wrlock", &__ptr_pthread_rwlock_wrlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13333,10 +12551,8 @@ void __load_and_call_pthread_rwlockattr_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_rwlockattr_destroy = &__load_and_call_pthread_rwlockattr_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlockattr_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlockattr_destroy", &__ptr_pthread_rwlockattr_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlockattr_destroy(void) {
+  sprx_dlsym(__handle, "pthread_rwlockattr_destroy", &__ptr_pthread_rwlockattr_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13367,10 +12583,8 @@ void __load_and_call_pthread_rwlockattr_getpshared();
 static __attribute__ ((used)) void* __ptr_pthread_rwlockattr_getpshared = &__load_and_call_pthread_rwlockattr_getpshared;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlockattr_getpshared() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlockattr_getpshared", &__ptr_pthread_rwlockattr_getpshared)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlockattr_getpshared(void) {
+  sprx_dlsym(__handle, "pthread_rwlockattr_getpshared", &__ptr_pthread_rwlockattr_getpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13401,10 +12615,8 @@ void __load_and_call_pthread_rwlockattr_gettype_np();
 static __attribute__ ((used)) void* __ptr_pthread_rwlockattr_gettype_np = &__load_and_call_pthread_rwlockattr_gettype_np;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlockattr_gettype_np() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlockattr_gettype_np", &__ptr_pthread_rwlockattr_gettype_np)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlockattr_gettype_np(void) {
+  sprx_dlsym(__handle, "pthread_rwlockattr_gettype_np", &__ptr_pthread_rwlockattr_gettype_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13435,10 +12647,8 @@ void __load_and_call_pthread_rwlockattr_init();
 static __attribute__ ((used)) void* __ptr_pthread_rwlockattr_init = &__load_and_call_pthread_rwlockattr_init;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlockattr_init() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlockattr_init", &__ptr_pthread_rwlockattr_init)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlockattr_init(void) {
+  sprx_dlsym(__handle, "pthread_rwlockattr_init", &__ptr_pthread_rwlockattr_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13469,10 +12679,8 @@ void __load_and_call_pthread_rwlockattr_setpshared();
 static __attribute__ ((used)) void* __ptr_pthread_rwlockattr_setpshared = &__load_and_call_pthread_rwlockattr_setpshared;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlockattr_setpshared() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlockattr_setpshared", &__ptr_pthread_rwlockattr_setpshared)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlockattr_setpshared(void) {
+  sprx_dlsym(__handle, "pthread_rwlockattr_setpshared", &__ptr_pthread_rwlockattr_setpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13503,10 +12711,8 @@ void __load_and_call_pthread_rwlockattr_settype_np();
 static __attribute__ ((used)) void* __ptr_pthread_rwlockattr_settype_np = &__load_and_call_pthread_rwlockattr_settype_np;
 
 static __attribute__ ((used)) void
-__load_pthread_rwlockattr_settype_np() {
-  if(sceKernelDlsym(__module_id, "pthread_rwlockattr_settype_np", &__ptr_pthread_rwlockattr_settype_np)) {
-    __builtin_trap();
-  }
+__load_pthread_rwlockattr_settype_np(void) {
+  sprx_dlsym(__handle, "pthread_rwlockattr_settype_np", &__ptr_pthread_rwlockattr_settype_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13537,10 +12743,8 @@ void __load_and_call_pthread_self();
 static __attribute__ ((used)) void* __ptr_pthread_self = &__load_and_call_pthread_self;
 
 static __attribute__ ((used)) void
-__load_pthread_self() {
-  if(sceKernelDlsym(__module_id, "pthread_self", &__ptr_pthread_self)) {
-    __builtin_trap();
-  }
+__load_pthread_self(void) {
+  sprx_dlsym(__handle, "pthread_self", &__ptr_pthread_self);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13571,10 +12775,8 @@ void __load_and_call_pthread_set_defaultstacksize_np();
 static __attribute__ ((used)) void* __ptr_pthread_set_defaultstacksize_np = &__load_and_call_pthread_set_defaultstacksize_np;
 
 static __attribute__ ((used)) void
-__load_pthread_set_defaultstacksize_np() {
-  if(sceKernelDlsym(__module_id, "pthread_set_defaultstacksize_np", &__ptr_pthread_set_defaultstacksize_np)) {
-    __builtin_trap();
-  }
+__load_pthread_set_defaultstacksize_np(void) {
+  sprx_dlsym(__handle, "pthread_set_defaultstacksize_np", &__ptr_pthread_set_defaultstacksize_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13605,10 +12807,8 @@ void __load_and_call_pthread_set_name_np();
 static __attribute__ ((used)) void* __ptr_pthread_set_name_np = &__load_and_call_pthread_set_name_np;
 
 static __attribute__ ((used)) void
-__load_pthread_set_name_np() {
-  if(sceKernelDlsym(__module_id, "pthread_set_name_np", &__ptr_pthread_set_name_np)) {
-    __builtin_trap();
-  }
+__load_pthread_set_name_np(void) {
+  sprx_dlsym(__handle, "pthread_set_name_np", &__ptr_pthread_set_name_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13639,10 +12839,8 @@ void __load_and_call_pthread_set_user_context_np();
 static __attribute__ ((used)) void* __ptr_pthread_set_user_context_np = &__load_and_call_pthread_set_user_context_np;
 
 static __attribute__ ((used)) void
-__load_pthread_set_user_context_np() {
-  if(sceKernelDlsym(__module_id, "pthread_set_user_context_np", &__ptr_pthread_set_user_context_np)) {
-    __builtin_trap();
-  }
+__load_pthread_set_user_context_np(void) {
+  sprx_dlsym(__handle, "pthread_set_user_context_np", &__ptr_pthread_set_user_context_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13673,10 +12871,8 @@ void __load_and_call_pthread_setaffinity_np();
 static __attribute__ ((used)) void* __ptr_pthread_setaffinity_np = &__load_and_call_pthread_setaffinity_np;
 
 static __attribute__ ((used)) void
-__load_pthread_setaffinity_np() {
-  if(sceKernelDlsym(__module_id, "pthread_setaffinity_np", &__ptr_pthread_setaffinity_np)) {
-    __builtin_trap();
-  }
+__load_pthread_setaffinity_np(void) {
+  sprx_dlsym(__handle, "pthread_setaffinity_np", &__ptr_pthread_setaffinity_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13707,10 +12903,8 @@ void __load_and_call_pthread_setcancelstate();
 static __attribute__ ((used)) void* __ptr_pthread_setcancelstate = &__load_and_call_pthread_setcancelstate;
 
 static __attribute__ ((used)) void
-__load_pthread_setcancelstate() {
-  if(sceKernelDlsym(__module_id, "pthread_setcancelstate", &__ptr_pthread_setcancelstate)) {
-    __builtin_trap();
-  }
+__load_pthread_setcancelstate(void) {
+  sprx_dlsym(__handle, "pthread_setcancelstate", &__ptr_pthread_setcancelstate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13741,10 +12935,8 @@ void __load_and_call_pthread_setcanceltype();
 static __attribute__ ((used)) void* __ptr_pthread_setcanceltype = &__load_and_call_pthread_setcanceltype;
 
 static __attribute__ ((used)) void
-__load_pthread_setcanceltype() {
-  if(sceKernelDlsym(__module_id, "pthread_setcanceltype", &__ptr_pthread_setcanceltype)) {
-    __builtin_trap();
-  }
+__load_pthread_setcanceltype(void) {
+  sprx_dlsym(__handle, "pthread_setcanceltype", &__ptr_pthread_setcanceltype);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13775,10 +12967,8 @@ void __load_and_call_pthread_setconcurrency();
 static __attribute__ ((used)) void* __ptr_pthread_setconcurrency = &__load_and_call_pthread_setconcurrency;
 
 static __attribute__ ((used)) void
-__load_pthread_setconcurrency() {
-  if(sceKernelDlsym(__module_id, "pthread_setconcurrency", &__ptr_pthread_setconcurrency)) {
-    __builtin_trap();
-  }
+__load_pthread_setconcurrency(void) {
+  sprx_dlsym(__handle, "pthread_setconcurrency", &__ptr_pthread_setconcurrency);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13809,10 +12999,8 @@ void __load_and_call_pthread_setprio();
 static __attribute__ ((used)) void* __ptr_pthread_setprio = &__load_and_call_pthread_setprio;
 
 static __attribute__ ((used)) void
-__load_pthread_setprio() {
-  if(sceKernelDlsym(__module_id, "pthread_setprio", &__ptr_pthread_setprio)) {
-    __builtin_trap();
-  }
+__load_pthread_setprio(void) {
+  sprx_dlsym(__handle, "pthread_setprio", &__ptr_pthread_setprio);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13843,10 +13031,8 @@ void __load_and_call_pthread_setschedparam();
 static __attribute__ ((used)) void* __ptr_pthread_setschedparam = &__load_and_call_pthread_setschedparam;
 
 static __attribute__ ((used)) void
-__load_pthread_setschedparam() {
-  if(sceKernelDlsym(__module_id, "pthread_setschedparam", &__ptr_pthread_setschedparam)) {
-    __builtin_trap();
-  }
+__load_pthread_setschedparam(void) {
+  sprx_dlsym(__handle, "pthread_setschedparam", &__ptr_pthread_setschedparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13877,10 +13063,8 @@ void __load_and_call_pthread_setspecific();
 static __attribute__ ((used)) void* __ptr_pthread_setspecific = &__load_and_call_pthread_setspecific;
 
 static __attribute__ ((used)) void
-__load_pthread_setspecific() {
-  if(sceKernelDlsym(__module_id, "pthread_setspecific", &__ptr_pthread_setspecific)) {
-    __builtin_trap();
-  }
+__load_pthread_setspecific(void) {
+  sprx_dlsym(__handle, "pthread_setspecific", &__ptr_pthread_setspecific);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13911,10 +13095,8 @@ void __load_and_call_pthread_sigmask();
 static __attribute__ ((used)) void* __ptr_pthread_sigmask = &__load_and_call_pthread_sigmask;
 
 static __attribute__ ((used)) void
-__load_pthread_sigmask() {
-  if(sceKernelDlsym(__module_id, "pthread_sigmask", &__ptr_pthread_sigmask)) {
-    __builtin_trap();
-  }
+__load_pthread_sigmask(void) {
+  sprx_dlsym(__handle, "pthread_sigmask", &__ptr_pthread_sigmask);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13945,10 +13127,8 @@ void __load_and_call_pthread_single_np();
 static __attribute__ ((used)) void* __ptr_pthread_single_np = &__load_and_call_pthread_single_np;
 
 static __attribute__ ((used)) void
-__load_pthread_single_np() {
-  if(sceKernelDlsym(__module_id, "pthread_single_np", &__ptr_pthread_single_np)) {
-    __builtin_trap();
-  }
+__load_pthread_single_np(void) {
+  sprx_dlsym(__handle, "pthread_single_np", &__ptr_pthread_single_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -13979,10 +13159,8 @@ void __load_and_call_pthread_spin_destroy();
 static __attribute__ ((used)) void* __ptr_pthread_spin_destroy = &__load_and_call_pthread_spin_destroy;
 
 static __attribute__ ((used)) void
-__load_pthread_spin_destroy() {
-  if(sceKernelDlsym(__module_id, "pthread_spin_destroy", &__ptr_pthread_spin_destroy)) {
-    __builtin_trap();
-  }
+__load_pthread_spin_destroy(void) {
+  sprx_dlsym(__handle, "pthread_spin_destroy", &__ptr_pthread_spin_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14013,10 +13191,8 @@ void __load_and_call_pthread_spin_init();
 static __attribute__ ((used)) void* __ptr_pthread_spin_init = &__load_and_call_pthread_spin_init;
 
 static __attribute__ ((used)) void
-__load_pthread_spin_init() {
-  if(sceKernelDlsym(__module_id, "pthread_spin_init", &__ptr_pthread_spin_init)) {
-    __builtin_trap();
-  }
+__load_pthread_spin_init(void) {
+  sprx_dlsym(__handle, "pthread_spin_init", &__ptr_pthread_spin_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14047,10 +13223,8 @@ void __load_and_call_pthread_spin_lock();
 static __attribute__ ((used)) void* __ptr_pthread_spin_lock = &__load_and_call_pthread_spin_lock;
 
 static __attribute__ ((used)) void
-__load_pthread_spin_lock() {
-  if(sceKernelDlsym(__module_id, "pthread_spin_lock", &__ptr_pthread_spin_lock)) {
-    __builtin_trap();
-  }
+__load_pthread_spin_lock(void) {
+  sprx_dlsym(__handle, "pthread_spin_lock", &__ptr_pthread_spin_lock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14081,10 +13255,8 @@ void __load_and_call_pthread_spin_trylock();
 static __attribute__ ((used)) void* __ptr_pthread_spin_trylock = &__load_and_call_pthread_spin_trylock;
 
 static __attribute__ ((used)) void
-__load_pthread_spin_trylock() {
-  if(sceKernelDlsym(__module_id, "pthread_spin_trylock", &__ptr_pthread_spin_trylock)) {
-    __builtin_trap();
-  }
+__load_pthread_spin_trylock(void) {
+  sprx_dlsym(__handle, "pthread_spin_trylock", &__ptr_pthread_spin_trylock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14115,10 +13287,8 @@ void __load_and_call_pthread_spin_unlock();
 static __attribute__ ((used)) void* __ptr_pthread_spin_unlock = &__load_and_call_pthread_spin_unlock;
 
 static __attribute__ ((used)) void
-__load_pthread_spin_unlock() {
-  if(sceKernelDlsym(__module_id, "pthread_spin_unlock", &__ptr_pthread_spin_unlock)) {
-    __builtin_trap();
-  }
+__load_pthread_spin_unlock(void) {
+  sprx_dlsym(__handle, "pthread_spin_unlock", &__ptr_pthread_spin_unlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14149,10 +13319,8 @@ void __load_and_call_pthread_suspend_all_np();
 static __attribute__ ((used)) void* __ptr_pthread_suspend_all_np = &__load_and_call_pthread_suspend_all_np;
 
 static __attribute__ ((used)) void
-__load_pthread_suspend_all_np() {
-  if(sceKernelDlsym(__module_id, "pthread_suspend_all_np", &__ptr_pthread_suspend_all_np)) {
-    __builtin_trap();
-  }
+__load_pthread_suspend_all_np(void) {
+  sprx_dlsym(__handle, "pthread_suspend_all_np", &__ptr_pthread_suspend_all_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14183,10 +13351,8 @@ void __load_and_call_pthread_suspend_np();
 static __attribute__ ((used)) void* __ptr_pthread_suspend_np = &__load_and_call_pthread_suspend_np;
 
 static __attribute__ ((used)) void
-__load_pthread_suspend_np() {
-  if(sceKernelDlsym(__module_id, "pthread_suspend_np", &__ptr_pthread_suspend_np)) {
-    __builtin_trap();
-  }
+__load_pthread_suspend_np(void) {
+  sprx_dlsym(__handle, "pthread_suspend_np", &__ptr_pthread_suspend_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14217,10 +13383,8 @@ void __load_and_call_pthread_suspend_user_context_np();
 static __attribute__ ((used)) void* __ptr_pthread_suspend_user_context_np = &__load_and_call_pthread_suspend_user_context_np;
 
 static __attribute__ ((used)) void
-__load_pthread_suspend_user_context_np() {
-  if(sceKernelDlsym(__module_id, "pthread_suspend_user_context_np", &__ptr_pthread_suspend_user_context_np)) {
-    __builtin_trap();
-  }
+__load_pthread_suspend_user_context_np(void) {
+  sprx_dlsym(__handle, "pthread_suspend_user_context_np", &__ptr_pthread_suspend_user_context_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14251,10 +13415,8 @@ void __load_and_call_pthread_switch_add_np();
 static __attribute__ ((used)) void* __ptr_pthread_switch_add_np = &__load_and_call_pthread_switch_add_np;
 
 static __attribute__ ((used)) void
-__load_pthread_switch_add_np() {
-  if(sceKernelDlsym(__module_id, "pthread_switch_add_np", &__ptr_pthread_switch_add_np)) {
-    __builtin_trap();
-  }
+__load_pthread_switch_add_np(void) {
+  sprx_dlsym(__handle, "pthread_switch_add_np", &__ptr_pthread_switch_add_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14285,10 +13447,8 @@ void __load_and_call_pthread_switch_delete_np();
 static __attribute__ ((used)) void* __ptr_pthread_switch_delete_np = &__load_and_call_pthread_switch_delete_np;
 
 static __attribute__ ((used)) void
-__load_pthread_switch_delete_np() {
-  if(sceKernelDlsym(__module_id, "pthread_switch_delete_np", &__ptr_pthread_switch_delete_np)) {
-    __builtin_trap();
-  }
+__load_pthread_switch_delete_np(void) {
+  sprx_dlsym(__handle, "pthread_switch_delete_np", &__ptr_pthread_switch_delete_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14319,10 +13479,8 @@ void __load_and_call_pthread_testcancel();
 static __attribute__ ((used)) void* __ptr_pthread_testcancel = &__load_and_call_pthread_testcancel;
 
 static __attribute__ ((used)) void
-__load_pthread_testcancel() {
-  if(sceKernelDlsym(__module_id, "pthread_testcancel", &__ptr_pthread_testcancel)) {
-    __builtin_trap();
-  }
+__load_pthread_testcancel(void) {
+  sprx_dlsym(__handle, "pthread_testcancel", &__ptr_pthread_testcancel);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14353,10 +13511,8 @@ void __load_and_call_pthread_timedjoin_np();
 static __attribute__ ((used)) void* __ptr_pthread_timedjoin_np = &__load_and_call_pthread_timedjoin_np;
 
 static __attribute__ ((used)) void
-__load_pthread_timedjoin_np() {
-  if(sceKernelDlsym(__module_id, "pthread_timedjoin_np", &__ptr_pthread_timedjoin_np)) {
-    __builtin_trap();
-  }
+__load_pthread_timedjoin_np(void) {
+  sprx_dlsym(__handle, "pthread_timedjoin_np", &__ptr_pthread_timedjoin_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14387,10 +13543,8 @@ void __load_and_call_pthread_yield();
 static __attribute__ ((used)) void* __ptr_pthread_yield = &__load_and_call_pthread_yield;
 
 static __attribute__ ((used)) void
-__load_pthread_yield() {
-  if(sceKernelDlsym(__module_id, "pthread_yield", &__ptr_pthread_yield)) {
-    __builtin_trap();
-  }
+__load_pthread_yield(void) {
+  sprx_dlsym(__handle, "pthread_yield", &__ptr_pthread_yield);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14421,10 +13575,8 @@ void __load_and_call_ptrace();
 static __attribute__ ((used)) void* __ptr_ptrace = &__load_and_call_ptrace;
 
 static __attribute__ ((used)) void
-__load_ptrace() {
-  if(sceKernelDlsym(__module_id, "ptrace", &__ptr_ptrace)) {
-    __builtin_trap();
-  }
+__load_ptrace(void) {
+  sprx_dlsym(__handle, "ptrace", &__ptr_ptrace);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14455,10 +13607,8 @@ void __load_and_call_pwrite();
 static __attribute__ ((used)) void* __ptr_pwrite = &__load_and_call_pwrite;
 
 static __attribute__ ((used)) void
-__load_pwrite() {
-  if(sceKernelDlsym(__module_id, "pwrite", &__ptr_pwrite)) {
-    __builtin_trap();
-  }
+__load_pwrite(void) {
+  sprx_dlsym(__handle, "pwrite", &__ptr_pwrite);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14489,10 +13639,8 @@ void __load_and_call_pwritev();
 static __attribute__ ((used)) void* __ptr_pwritev = &__load_and_call_pwritev;
 
 static __attribute__ ((used)) void
-__load_pwritev() {
-  if(sceKernelDlsym(__module_id, "pwritev", &__ptr_pwritev)) {
-    __builtin_trap();
-  }
+__load_pwritev(void) {
+  sprx_dlsym(__handle, "pwritev", &__ptr_pwritev);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14523,10 +13671,8 @@ void __load_and_call_raise();
 static __attribute__ ((used)) void* __ptr_raise = &__load_and_call_raise;
 
 static __attribute__ ((used)) void
-__load_raise() {
-  if(sceKernelDlsym(__module_id, "raise", &__ptr_raise)) {
-    __builtin_trap();
-  }
+__load_raise(void) {
+  sprx_dlsym(__handle, "raise", &__ptr_raise);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14557,10 +13703,8 @@ void __load_and_call_read();
 static __attribute__ ((used)) void* __ptr_read = &__load_and_call_read;
 
 static __attribute__ ((used)) void
-__load_read() {
-  if(sceKernelDlsym(__module_id, "read", &__ptr_read)) {
-    __builtin_trap();
-  }
+__load_read(void) {
+  sprx_dlsym(__handle, "read", &__ptr_read);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14591,10 +13735,8 @@ void __load_and_call_readlink();
 static __attribute__ ((used)) void* __ptr_readlink = &__load_and_call_readlink;
 
 static __attribute__ ((used)) void
-__load_readlink() {
-  if(sceKernelDlsym(__module_id, "readlink", &__ptr_readlink)) {
-    __builtin_trap();
-  }
+__load_readlink(void) {
+  sprx_dlsym(__handle, "readlink", &__ptr_readlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14625,10 +13767,8 @@ void __load_and_call_readv();
 static __attribute__ ((used)) void* __ptr_readv = &__load_and_call_readv;
 
 static __attribute__ ((used)) void
-__load_readv() {
-  if(sceKernelDlsym(__module_id, "readv", &__ptr_readv)) {
-    __builtin_trap();
-  }
+__load_readv(void) {
+  sprx_dlsym(__handle, "readv", &__ptr_readv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14659,10 +13799,8 @@ void __load_and_call_reboot();
 static __attribute__ ((used)) void* __ptr_reboot = &__load_and_call_reboot;
 
 static __attribute__ ((used)) void
-__load_reboot() {
-  if(sceKernelDlsym(__module_id, "reboot", &__ptr_reboot)) {
-    __builtin_trap();
-  }
+__load_reboot(void) {
+  sprx_dlsym(__handle, "reboot", &__ptr_reboot);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14693,10 +13831,8 @@ void __load_and_call_recv();
 static __attribute__ ((used)) void* __ptr_recv = &__load_and_call_recv;
 
 static __attribute__ ((used)) void
-__load_recv() {
-  if(sceKernelDlsym(__module_id, "recv", &__ptr_recv)) {
-    __builtin_trap();
-  }
+__load_recv(void) {
+  sprx_dlsym(__handle, "recv", &__ptr_recv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14727,10 +13863,8 @@ void __load_and_call_recvfrom();
 static __attribute__ ((used)) void* __ptr_recvfrom = &__load_and_call_recvfrom;
 
 static __attribute__ ((used)) void
-__load_recvfrom() {
-  if(sceKernelDlsym(__module_id, "recvfrom", &__ptr_recvfrom)) {
-    __builtin_trap();
-  }
+__load_recvfrom(void) {
+  sprx_dlsym(__handle, "recvfrom", &__ptr_recvfrom);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14761,10 +13895,8 @@ void __load_and_call_recvmsg();
 static __attribute__ ((used)) void* __ptr_recvmsg = &__load_and_call_recvmsg;
 
 static __attribute__ ((used)) void
-__load_recvmsg() {
-  if(sceKernelDlsym(__module_id, "recvmsg", &__ptr_recvmsg)) {
-    __builtin_trap();
-  }
+__load_recvmsg(void) {
+  sprx_dlsym(__handle, "recvmsg", &__ptr_recvmsg);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14795,10 +13927,8 @@ void __load_and_call_rename();
 static __attribute__ ((used)) void* __ptr_rename = &__load_and_call_rename;
 
 static __attribute__ ((used)) void
-__load_rename() {
-  if(sceKernelDlsym(__module_id, "rename", &__ptr_rename)) {
-    __builtin_trap();
-  }
+__load_rename(void) {
+  sprx_dlsym(__handle, "rename", &__ptr_rename);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14829,10 +13959,8 @@ void __load_and_call_renameat();
 static __attribute__ ((used)) void* __ptr_renameat = &__load_and_call_renameat;
 
 static __attribute__ ((used)) void
-__load_renameat() {
-  if(sceKernelDlsym(__module_id, "renameat", &__ptr_renameat)) {
-    __builtin_trap();
-  }
+__load_renameat(void) {
+  sprx_dlsym(__handle, "renameat", &__ptr_renameat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14863,10 +13991,8 @@ void __load_and_call_revoke();
 static __attribute__ ((used)) void* __ptr_revoke = &__load_and_call_revoke;
 
 static __attribute__ ((used)) void
-__load_revoke() {
-  if(sceKernelDlsym(__module_id, "revoke", &__ptr_revoke)) {
-    __builtin_trap();
-  }
+__load_revoke(void) {
+  sprx_dlsym(__handle, "revoke", &__ptr_revoke);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14897,10 +14023,8 @@ void __load_and_call_rfork_thread();
 static __attribute__ ((used)) void* __ptr_rfork_thread = &__load_and_call_rfork_thread;
 
 static __attribute__ ((used)) void
-__load_rfork_thread() {
-  if(sceKernelDlsym(__module_id, "rfork_thread", &__ptr_rfork_thread)) {
-    __builtin_trap();
-  }
+__load_rfork_thread(void) {
+  sprx_dlsym(__handle, "rfork_thread", &__ptr_rfork_thread);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14931,10 +14055,8 @@ void __load_and_call_rmdir();
 static __attribute__ ((used)) void* __ptr_rmdir = &__load_and_call_rmdir;
 
 static __attribute__ ((used)) void
-__load_rmdir() {
-  if(sceKernelDlsym(__module_id, "rmdir", &__ptr_rmdir)) {
-    __builtin_trap();
-  }
+__load_rmdir(void) {
+  sprx_dlsym(__handle, "rmdir", &__ptr_rmdir);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14965,10 +14087,8 @@ void __load_and_call_rtld_printf();
 static __attribute__ ((used)) void* __ptr_rtld_printf = &__load_and_call_rtld_printf;
 
 static __attribute__ ((used)) void
-__load_rtld_printf() {
-  if(sceKernelDlsym(__module_id, "rtld_printf", &__ptr_rtld_printf)) {
-    __builtin_trap();
-  }
+__load_rtld_printf(void) {
+  sprx_dlsym(__handle, "rtld_printf", &__ptr_rtld_printf);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -14999,10 +14119,8 @@ void __load_and_call_rtprio_thread();
 static __attribute__ ((used)) void* __ptr_rtprio_thread = &__load_and_call_rtprio_thread;
 
 static __attribute__ ((used)) void
-__load_rtprio_thread() {
-  if(sceKernelDlsym(__module_id, "rtprio_thread", &__ptr_rtprio_thread)) {
-    __builtin_trap();
-  }
+__load_rtprio_thread(void) {
+  sprx_dlsym(__handle, "rtprio_thread", &__ptr_rtprio_thread);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15033,10 +14151,8 @@ void __load_and_call_sceKernelAddACInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelAddACInfo = &__load_and_call_sceKernelAddACInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddACInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddACInfo", &__ptr_sceKernelAddACInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddACInfo(void) {
+  sprx_dlsym(__handle, "sceKernelAddACInfo", &__ptr_sceKernelAddACInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15067,10 +14183,8 @@ void __load_and_call_sceKernelAddAmprEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddAmprEvent = &__load_and_call_sceKernelAddAmprEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddAmprEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddAmprEvent", &__ptr_sceKernelAddAmprEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddAmprEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddAmprEvent", &__ptr_sceKernelAddAmprEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15101,10 +14215,8 @@ void __load_and_call_sceKernelAddCpumodeEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddCpumodeEvent = &__load_and_call_sceKernelAddCpumodeEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddCpumodeEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddCpumodeEvent", &__ptr_sceKernelAddCpumodeEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddCpumodeEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddCpumodeEvent", &__ptr_sceKernelAddCpumodeEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15135,10 +14247,8 @@ void __load_and_call_sceKernelAddFileEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddFileEvent = &__load_and_call_sceKernelAddFileEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddFileEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddFileEvent", &__ptr_sceKernelAddFileEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddFileEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddFileEvent", &__ptr_sceKernelAddFileEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15169,10 +14279,8 @@ void __load_and_call_sceKernelAddGpuExceptionEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddGpuExceptionEvent = &__load_and_call_sceKernelAddGpuExceptionEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddGpuExceptionEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddGpuExceptionEvent", &__ptr_sceKernelAddGpuExceptionEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddGpuExceptionEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddGpuExceptionEvent", &__ptr_sceKernelAddGpuExceptionEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15203,10 +14311,8 @@ void __load_and_call_sceKernelAddHRTimerEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddHRTimerEvent = &__load_and_call_sceKernelAddHRTimerEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddHRTimerEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddHRTimerEvent", &__ptr_sceKernelAddHRTimerEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddHRTimerEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddHRTimerEvent", &__ptr_sceKernelAddHRTimerEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15237,10 +14343,8 @@ void __load_and_call_sceKernelAddProcessToCanvasMap();
 static __attribute__ ((used)) void* __ptr_sceKernelAddProcessToCanvasMap = &__load_and_call_sceKernelAddProcessToCanvasMap;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddProcessToCanvasMap() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddProcessToCanvasMap", &__ptr_sceKernelAddProcessToCanvasMap)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddProcessToCanvasMap(void) {
+  sprx_dlsym(__handle, "sceKernelAddProcessToCanvasMap", &__ptr_sceKernelAddProcessToCanvasMap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15271,10 +14375,8 @@ void __load_and_call_sceKernelAddReadEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddReadEvent = &__load_and_call_sceKernelAddReadEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddReadEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddReadEvent", &__ptr_sceKernelAddReadEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddReadEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddReadEvent", &__ptr_sceKernelAddReadEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15305,10 +14407,8 @@ void __load_and_call_sceKernelAddResource();
 static __attribute__ ((used)) void* __ptr_sceKernelAddResource = &__load_and_call_sceKernelAddResource;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddResource() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddResource", &__ptr_sceKernelAddResource)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddResource(void) {
+  sprx_dlsym(__handle, "sceKernelAddResource", &__ptr_sceKernelAddResource);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15339,10 +14439,8 @@ void __load_and_call_sceKernelAddTimerEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddTimerEvent = &__load_and_call_sceKernelAddTimerEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddTimerEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddTimerEvent", &__ptr_sceKernelAddTimerEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddTimerEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddTimerEvent", &__ptr_sceKernelAddTimerEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15373,10 +14471,8 @@ void __load_and_call_sceKernelAddUserEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddUserEvent = &__load_and_call_sceKernelAddUserEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddUserEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddUserEvent", &__ptr_sceKernelAddUserEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddUserEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddUserEvent", &__ptr_sceKernelAddUserEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15407,10 +14503,8 @@ void __load_and_call_sceKernelAddUserEventEdge();
 static __attribute__ ((used)) void* __ptr_sceKernelAddUserEventEdge = &__load_and_call_sceKernelAddUserEventEdge;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddUserEventEdge() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddUserEventEdge", &__ptr_sceKernelAddUserEventEdge)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddUserEventEdge(void) {
+  sprx_dlsym(__handle, "sceKernelAddUserEventEdge", &__ptr_sceKernelAddUserEventEdge);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15441,10 +14535,8 @@ void __load_and_call_sceKernelAddWriteEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelAddWriteEvent = &__load_and_call_sceKernelAddWriteEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelAddWriteEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelAddWriteEvent", &__ptr_sceKernelAddWriteEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelAddWriteEvent(void) {
+  sprx_dlsym(__handle, "sceKernelAddWriteEvent", &__ptr_sceKernelAddWriteEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15475,10 +14567,8 @@ void __load_and_call_sceKernelAioCancelRequest();
 static __attribute__ ((used)) void* __ptr_sceKernelAioCancelRequest = &__load_and_call_sceKernelAioCancelRequest;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioCancelRequest() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioCancelRequest", &__ptr_sceKernelAioCancelRequest)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioCancelRequest(void) {
+  sprx_dlsym(__handle, "sceKernelAioCancelRequest", &__ptr_sceKernelAioCancelRequest);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15509,10 +14599,8 @@ void __load_and_call_sceKernelAioCancelRequests();
 static __attribute__ ((used)) void* __ptr_sceKernelAioCancelRequests = &__load_and_call_sceKernelAioCancelRequests;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioCancelRequests() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioCancelRequests", &__ptr_sceKernelAioCancelRequests)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioCancelRequests(void) {
+  sprx_dlsym(__handle, "sceKernelAioCancelRequests", &__ptr_sceKernelAioCancelRequests);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15543,10 +14631,8 @@ void __load_and_call_sceKernelAioDeleteRequest();
 static __attribute__ ((used)) void* __ptr_sceKernelAioDeleteRequest = &__load_and_call_sceKernelAioDeleteRequest;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioDeleteRequest() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioDeleteRequest", &__ptr_sceKernelAioDeleteRequest)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioDeleteRequest(void) {
+  sprx_dlsym(__handle, "sceKernelAioDeleteRequest", &__ptr_sceKernelAioDeleteRequest);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15577,10 +14663,8 @@ void __load_and_call_sceKernelAioDeleteRequests();
 static __attribute__ ((used)) void* __ptr_sceKernelAioDeleteRequests = &__load_and_call_sceKernelAioDeleteRequests;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioDeleteRequests() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioDeleteRequests", &__ptr_sceKernelAioDeleteRequests)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioDeleteRequests(void) {
+  sprx_dlsym(__handle, "sceKernelAioDeleteRequests", &__ptr_sceKernelAioDeleteRequests);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15611,10 +14695,8 @@ void __load_and_call_sceKernelAioInitializeImpl();
 static __attribute__ ((used)) void* __ptr_sceKernelAioInitializeImpl = &__load_and_call_sceKernelAioInitializeImpl;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioInitializeImpl() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioInitializeImpl", &__ptr_sceKernelAioInitializeImpl)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioInitializeImpl(void) {
+  sprx_dlsym(__handle, "sceKernelAioInitializeImpl", &__ptr_sceKernelAioInitializeImpl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15645,10 +14727,8 @@ void __load_and_call_sceKernelAioInitializeParam();
 static __attribute__ ((used)) void* __ptr_sceKernelAioInitializeParam = &__load_and_call_sceKernelAioInitializeParam;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioInitializeParam() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioInitializeParam", &__ptr_sceKernelAioInitializeParam)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioInitializeParam(void) {
+  sprx_dlsym(__handle, "sceKernelAioInitializeParam", &__ptr_sceKernelAioInitializeParam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15679,10 +14759,8 @@ void __load_and_call_sceKernelAioPollRequest();
 static __attribute__ ((used)) void* __ptr_sceKernelAioPollRequest = &__load_and_call_sceKernelAioPollRequest;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioPollRequest() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioPollRequest", &__ptr_sceKernelAioPollRequest)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioPollRequest(void) {
+  sprx_dlsym(__handle, "sceKernelAioPollRequest", &__ptr_sceKernelAioPollRequest);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15713,10 +14791,8 @@ void __load_and_call_sceKernelAioPollRequests();
 static __attribute__ ((used)) void* __ptr_sceKernelAioPollRequests = &__load_and_call_sceKernelAioPollRequests;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioPollRequests() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioPollRequests", &__ptr_sceKernelAioPollRequests)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioPollRequests(void) {
+  sprx_dlsym(__handle, "sceKernelAioPollRequests", &__ptr_sceKernelAioPollRequests);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15747,10 +14823,8 @@ void __load_and_call_sceKernelAioSetParam();
 static __attribute__ ((used)) void* __ptr_sceKernelAioSetParam = &__load_and_call_sceKernelAioSetParam;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioSetParam() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioSetParam", &__ptr_sceKernelAioSetParam)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioSetParam(void) {
+  sprx_dlsym(__handle, "sceKernelAioSetParam", &__ptr_sceKernelAioSetParam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15781,10 +14855,8 @@ void __load_and_call_sceKernelAioSubmitReadCommands();
 static __attribute__ ((used)) void* __ptr_sceKernelAioSubmitReadCommands = &__load_and_call_sceKernelAioSubmitReadCommands;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioSubmitReadCommands() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioSubmitReadCommands", &__ptr_sceKernelAioSubmitReadCommands)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioSubmitReadCommands(void) {
+  sprx_dlsym(__handle, "sceKernelAioSubmitReadCommands", &__ptr_sceKernelAioSubmitReadCommands);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15815,10 +14887,8 @@ void __load_and_call_sceKernelAioSubmitReadCommandsMultiple();
 static __attribute__ ((used)) void* __ptr_sceKernelAioSubmitReadCommandsMultiple = &__load_and_call_sceKernelAioSubmitReadCommandsMultiple;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioSubmitReadCommandsMultiple() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioSubmitReadCommandsMultiple", &__ptr_sceKernelAioSubmitReadCommandsMultiple)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioSubmitReadCommandsMultiple(void) {
+  sprx_dlsym(__handle, "sceKernelAioSubmitReadCommandsMultiple", &__ptr_sceKernelAioSubmitReadCommandsMultiple);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15849,10 +14919,8 @@ void __load_and_call_sceKernelAioSubmitWriteCommands();
 static __attribute__ ((used)) void* __ptr_sceKernelAioSubmitWriteCommands = &__load_and_call_sceKernelAioSubmitWriteCommands;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioSubmitWriteCommands() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioSubmitWriteCommands", &__ptr_sceKernelAioSubmitWriteCommands)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioSubmitWriteCommands(void) {
+  sprx_dlsym(__handle, "sceKernelAioSubmitWriteCommands", &__ptr_sceKernelAioSubmitWriteCommands);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15883,10 +14951,8 @@ void __load_and_call_sceKernelAioSubmitWriteCommandsMultiple();
 static __attribute__ ((used)) void* __ptr_sceKernelAioSubmitWriteCommandsMultiple = &__load_and_call_sceKernelAioSubmitWriteCommandsMultiple;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioSubmitWriteCommandsMultiple() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioSubmitWriteCommandsMultiple", &__ptr_sceKernelAioSubmitWriteCommandsMultiple)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioSubmitWriteCommandsMultiple(void) {
+  sprx_dlsym(__handle, "sceKernelAioSubmitWriteCommandsMultiple", &__ptr_sceKernelAioSubmitWriteCommandsMultiple);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15917,10 +14983,8 @@ void __load_and_call_sceKernelAioWaitRequest();
 static __attribute__ ((used)) void* __ptr_sceKernelAioWaitRequest = &__load_and_call_sceKernelAioWaitRequest;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioWaitRequest() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioWaitRequest", &__ptr_sceKernelAioWaitRequest)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioWaitRequest(void) {
+  sprx_dlsym(__handle, "sceKernelAioWaitRequest", &__ptr_sceKernelAioWaitRequest);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15951,10 +15015,8 @@ void __load_and_call_sceKernelAioWaitRequests();
 static __attribute__ ((used)) void* __ptr_sceKernelAioWaitRequests = &__load_and_call_sceKernelAioWaitRequests;
 
 static __attribute__ ((used)) void
-__load_sceKernelAioWaitRequests() {
-  if(sceKernelDlsym(__module_id, "sceKernelAioWaitRequests", &__ptr_sceKernelAioWaitRequests)) {
-    __builtin_trap();
-  }
+__load_sceKernelAioWaitRequests(void) {
+  sprx_dlsym(__handle, "sceKernelAioWaitRequests", &__ptr_sceKernelAioWaitRequests);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -15985,10 +15047,8 @@ void __load_and_call_sceKernelAllocateDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelAllocateDirectMemory = &__load_and_call_sceKernelAllocateDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelAllocateDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelAllocateDirectMemory", &__ptr_sceKernelAllocateDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelAllocateDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelAllocateDirectMemory", &__ptr_sceKernelAllocateDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16019,10 +15079,8 @@ void __load_and_call_sceKernelAllocateDirectMemory2();
 static __attribute__ ((used)) void* __ptr_sceKernelAllocateDirectMemory2 = &__load_and_call_sceKernelAllocateDirectMemory2;
 
 static __attribute__ ((used)) void
-__load_sceKernelAllocateDirectMemory2() {
-  if(sceKernelDlsym(__module_id, "sceKernelAllocateDirectMemory2", &__ptr_sceKernelAllocateDirectMemory2)) {
-    __builtin_trap();
-  }
+__load_sceKernelAllocateDirectMemory2(void) {
+  sprx_dlsym(__handle, "sceKernelAllocateDirectMemory2", &__ptr_sceKernelAllocateDirectMemory2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16053,10 +15111,8 @@ void __load_and_call_sceKernelAllocateDirectMemoryForApp();
 static __attribute__ ((used)) void* __ptr_sceKernelAllocateDirectMemoryForApp = &__load_and_call_sceKernelAllocateDirectMemoryForApp;
 
 static __attribute__ ((used)) void
-__load_sceKernelAllocateDirectMemoryForApp() {
-  if(sceKernelDlsym(__module_id, "sceKernelAllocateDirectMemoryForApp", &__ptr_sceKernelAllocateDirectMemoryForApp)) {
-    __builtin_trap();
-  }
+__load_sceKernelAllocateDirectMemoryForApp(void) {
+  sprx_dlsym(__handle, "sceKernelAllocateDirectMemoryForApp", &__ptr_sceKernelAllocateDirectMemoryForApp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16087,10 +15143,8 @@ void __load_and_call_sceKernelAllocateDirectMemoryForMiniApp();
 static __attribute__ ((used)) void* __ptr_sceKernelAllocateDirectMemoryForMiniApp = &__load_and_call_sceKernelAllocateDirectMemoryForMiniApp;
 
 static __attribute__ ((used)) void
-__load_sceKernelAllocateDirectMemoryForMiniApp() {
-  if(sceKernelDlsym(__module_id, "sceKernelAllocateDirectMemoryForMiniApp", &__ptr_sceKernelAllocateDirectMemoryForMiniApp)) {
-    __builtin_trap();
-  }
+__load_sceKernelAllocateDirectMemoryForMiniApp(void) {
+  sprx_dlsym(__handle, "sceKernelAllocateDirectMemoryForMiniApp", &__ptr_sceKernelAllocateDirectMemoryForMiniApp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16121,10 +15175,8 @@ void __load_and_call_sceKernelAllocateMainDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelAllocateMainDirectMemory = &__load_and_call_sceKernelAllocateMainDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelAllocateMainDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelAllocateMainDirectMemory", &__ptr_sceKernelAllocateMainDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelAllocateMainDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelAllocateMainDirectMemory", &__ptr_sceKernelAllocateMainDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16155,10 +15207,8 @@ void __load_and_call_sceKernelAllocateToolMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelAllocateToolMemory = &__load_and_call_sceKernelAllocateToolMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelAllocateToolMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelAllocateToolMemory", &__ptr_sceKernelAllocateToolMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelAllocateToolMemory(void) {
+  sprx_dlsym(__handle, "sceKernelAllocateToolMemory", &__ptr_sceKernelAllocateToolMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16189,10 +15239,8 @@ void __load_and_call_sceKernelAllocateTraceDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelAllocateTraceDirectMemory = &__load_and_call_sceKernelAllocateTraceDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelAllocateTraceDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelAllocateTraceDirectMemory", &__ptr_sceKernelAllocateTraceDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelAllocateTraceDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelAllocateTraceDirectMemory", &__ptr_sceKernelAllocateTraceDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16223,10 +15271,8 @@ void __load_and_call_sceKernelAprCtrl();
 static __attribute__ ((used)) void* __ptr_sceKernelAprCtrl = &__load_and_call_sceKernelAprCtrl;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprCtrl() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprCtrl", &__ptr_sceKernelAprCtrl)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprCtrl(void) {
+  sprx_dlsym(__handle, "sceKernelAprCtrl", &__ptr_sceKernelAprCtrl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16257,10 +15303,8 @@ void __load_and_call_sceKernelAprGetFileSize();
 static __attribute__ ((used)) void* __ptr_sceKernelAprGetFileSize = &__load_and_call_sceKernelAprGetFileSize;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprGetFileSize() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprGetFileSize", &__ptr_sceKernelAprGetFileSize)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprGetFileSize(void) {
+  sprx_dlsym(__handle, "sceKernelAprGetFileSize", &__ptr_sceKernelAprGetFileSize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16291,10 +15335,8 @@ void __load_and_call_sceKernelAprGetFileStat();
 static __attribute__ ((used)) void* __ptr_sceKernelAprGetFileStat = &__load_and_call_sceKernelAprGetFileStat;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprGetFileStat() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprGetFileStat", &__ptr_sceKernelAprGetFileStat)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprGetFileStat(void) {
+  sprx_dlsym(__handle, "sceKernelAprGetFileStat", &__ptr_sceKernelAprGetFileStat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16325,10 +15367,8 @@ void __load_and_call_sceKernelAprResolveFilepathsToIds();
 static __attribute__ ((used)) void* __ptr_sceKernelAprResolveFilepathsToIds = &__load_and_call_sceKernelAprResolveFilepathsToIds;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprResolveFilepathsToIds() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprResolveFilepathsToIds", &__ptr_sceKernelAprResolveFilepathsToIds)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprResolveFilepathsToIds(void) {
+  sprx_dlsym(__handle, "sceKernelAprResolveFilepathsToIds", &__ptr_sceKernelAprResolveFilepathsToIds);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16359,10 +15399,8 @@ void __load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizes();
 static __attribute__ ((used)) void* __ptr_sceKernelAprResolveFilepathsToIdsAndFileSizes = &__load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizes;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprResolveFilepathsToIdsAndFileSizes() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprResolveFilepathsToIdsAndFileSizes", &__ptr_sceKernelAprResolveFilepathsToIdsAndFileSizes)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprResolveFilepathsToIdsAndFileSizes(void) {
+  sprx_dlsym(__handle, "sceKernelAprResolveFilepathsToIdsAndFileSizes", &__ptr_sceKernelAprResolveFilepathsToIdsAndFileSizes);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16393,10 +15431,8 @@ void __load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach();
 static __attribute__ ((used)) void* __ptr_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach = &__load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprResolveFilepathsToIdsAndFileSizesForEach", &__ptr_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach(void) {
+  sprx_dlsym(__handle, "sceKernelAprResolveFilepathsToIdsAndFileSizesForEach", &__ptr_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16427,10 +15463,8 @@ void __load_and_call_sceKernelAprResolveFilepathsToIdsForEach();
 static __attribute__ ((used)) void* __ptr_sceKernelAprResolveFilepathsToIdsForEach = &__load_and_call_sceKernelAprResolveFilepathsToIdsForEach;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprResolveFilepathsToIdsForEach() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprResolveFilepathsToIdsForEach", &__ptr_sceKernelAprResolveFilepathsToIdsForEach)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprResolveFilepathsToIdsForEach(void) {
+  sprx_dlsym(__handle, "sceKernelAprResolveFilepathsToIdsForEach", &__ptr_sceKernelAprResolveFilepathsToIdsForEach);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16461,10 +15495,8 @@ void __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIds();
 static __attribute__ ((used)) void* __ptr_sceKernelAprResolveFilepathsWithPrefixToIds = &__load_and_call_sceKernelAprResolveFilepathsWithPrefixToIds;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprResolveFilepathsWithPrefixToIds() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprResolveFilepathsWithPrefixToIds", &__ptr_sceKernelAprResolveFilepathsWithPrefixToIds)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprResolveFilepathsWithPrefixToIds(void) {
+  sprx_dlsym(__handle, "sceKernelAprResolveFilepathsWithPrefixToIds", &__ptr_sceKernelAprResolveFilepathsWithPrefixToIds);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16495,10 +15527,8 @@ void __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes();
 static __attribute__ ((used)) void* __ptr_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes = &__load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes", &__ptr_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes(void) {
+  sprx_dlsym(__handle, "sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes", &__ptr_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16529,10 +15559,8 @@ void __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForE
 static __attribute__ ((used)) void* __ptr_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach = &__load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach", &__ptr_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach(void) {
+  sprx_dlsym(__handle, "sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach", &__ptr_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16563,10 +15591,8 @@ void __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsForEach();
 static __attribute__ ((used)) void* __ptr_sceKernelAprResolveFilepathsWithPrefixToIdsForEach = &__load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsForEach;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprResolveFilepathsWithPrefixToIdsForEach() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprResolveFilepathsWithPrefixToIdsForEach", &__ptr_sceKernelAprResolveFilepathsWithPrefixToIdsForEach)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprResolveFilepathsWithPrefixToIdsForEach(void) {
+  sprx_dlsym(__handle, "sceKernelAprResolveFilepathsWithPrefixToIdsForEach", &__ptr_sceKernelAprResolveFilepathsWithPrefixToIdsForEach);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16597,10 +15623,8 @@ void __load_and_call_sceKernelAprSubmitCommandBuffer();
 static __attribute__ ((used)) void* __ptr_sceKernelAprSubmitCommandBuffer = &__load_and_call_sceKernelAprSubmitCommandBuffer;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprSubmitCommandBuffer() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprSubmitCommandBuffer", &__ptr_sceKernelAprSubmitCommandBuffer)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprSubmitCommandBuffer(void) {
+  sprx_dlsym(__handle, "sceKernelAprSubmitCommandBuffer", &__ptr_sceKernelAprSubmitCommandBuffer);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16631,10 +15655,8 @@ void __load_and_call_sceKernelAprSubmitCommandBufferAndGetId();
 static __attribute__ ((used)) void* __ptr_sceKernelAprSubmitCommandBufferAndGetId = &__load_and_call_sceKernelAprSubmitCommandBufferAndGetId;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprSubmitCommandBufferAndGetId() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprSubmitCommandBufferAndGetId", &__ptr_sceKernelAprSubmitCommandBufferAndGetId)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprSubmitCommandBufferAndGetId(void) {
+  sprx_dlsym(__handle, "sceKernelAprSubmitCommandBufferAndGetId", &__ptr_sceKernelAprSubmitCommandBufferAndGetId);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16665,10 +15687,8 @@ void __load_and_call_sceKernelAprSubmitCommandBufferAndGetResult();
 static __attribute__ ((used)) void* __ptr_sceKernelAprSubmitCommandBufferAndGetResult = &__load_and_call_sceKernelAprSubmitCommandBufferAndGetResult;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprSubmitCommandBufferAndGetResult() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprSubmitCommandBufferAndGetResult", &__ptr_sceKernelAprSubmitCommandBufferAndGetResult)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprSubmitCommandBufferAndGetResult(void) {
+  sprx_dlsym(__handle, "sceKernelAprSubmitCommandBufferAndGetResult", &__ptr_sceKernelAprSubmitCommandBufferAndGetResult);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16699,10 +15719,8 @@ void __load_and_call_sceKernelAprSubmitCommandBufferAndGetResult_TEST();
 static __attribute__ ((used)) void* __ptr_sceKernelAprSubmitCommandBufferAndGetResult_TEST = &__load_and_call_sceKernelAprSubmitCommandBufferAndGetResult_TEST;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprSubmitCommandBufferAndGetResult_TEST() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprSubmitCommandBufferAndGetResult_TEST", &__ptr_sceKernelAprSubmitCommandBufferAndGetResult_TEST)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprSubmitCommandBufferAndGetResult_TEST(void) {
+  sprx_dlsym(__handle, "sceKernelAprSubmitCommandBufferAndGetResult_TEST", &__ptr_sceKernelAprSubmitCommandBufferAndGetResult_TEST);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16733,10 +15751,8 @@ void __load_and_call_sceKernelAprSubmitCommandBuffer_TEST();
 static __attribute__ ((used)) void* __ptr_sceKernelAprSubmitCommandBuffer_TEST = &__load_and_call_sceKernelAprSubmitCommandBuffer_TEST;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprSubmitCommandBuffer_TEST() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprSubmitCommandBuffer_TEST", &__ptr_sceKernelAprSubmitCommandBuffer_TEST)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprSubmitCommandBuffer_TEST(void) {
+  sprx_dlsym(__handle, "sceKernelAprSubmitCommandBuffer_TEST", &__ptr_sceKernelAprSubmitCommandBuffer_TEST);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16767,10 +15783,8 @@ void __load_and_call_sceKernelAprWaitCommandBuffer();
 static __attribute__ ((used)) void* __ptr_sceKernelAprWaitCommandBuffer = &__load_and_call_sceKernelAprWaitCommandBuffer;
 
 static __attribute__ ((used)) void
-__load_sceKernelAprWaitCommandBuffer() {
-  if(sceKernelDlsym(__module_id, "sceKernelAprWaitCommandBuffer", &__ptr_sceKernelAprWaitCommandBuffer)) {
-    __builtin_trap();
-  }
+__load_sceKernelAprWaitCommandBuffer(void) {
+  sprx_dlsym(__handle, "sceKernelAprWaitCommandBuffer", &__ptr_sceKernelAprWaitCommandBuffer);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16801,10 +15815,8 @@ void __load_and_call_sceKernelAvailableDirectMemorySize();
 static __attribute__ ((used)) void* __ptr_sceKernelAvailableDirectMemorySize = &__load_and_call_sceKernelAvailableDirectMemorySize;
 
 static __attribute__ ((used)) void
-__load_sceKernelAvailableDirectMemorySize() {
-  if(sceKernelDlsym(__module_id, "sceKernelAvailableDirectMemorySize", &__ptr_sceKernelAvailableDirectMemorySize)) {
-    __builtin_trap();
-  }
+__load_sceKernelAvailableDirectMemorySize(void) {
+  sprx_dlsym(__handle, "sceKernelAvailableDirectMemorySize", &__ptr_sceKernelAvailableDirectMemorySize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16835,10 +15847,8 @@ void __load_and_call_sceKernelAvailableFlexibleMemorySize();
 static __attribute__ ((used)) void* __ptr_sceKernelAvailableFlexibleMemorySize = &__load_and_call_sceKernelAvailableFlexibleMemorySize;
 
 static __attribute__ ((used)) void
-__load_sceKernelAvailableFlexibleMemorySize() {
-  if(sceKernelDlsym(__module_id, "sceKernelAvailableFlexibleMemorySize", &__ptr_sceKernelAvailableFlexibleMemorySize)) {
-    __builtin_trap();
-  }
+__load_sceKernelAvailableFlexibleMemorySize(void) {
+  sprx_dlsym(__handle, "sceKernelAvailableFlexibleMemorySize", &__ptr_sceKernelAvailableFlexibleMemorySize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16869,10 +15879,8 @@ void __load_and_call_sceKernelAvailableToolMemorySize();
 static __attribute__ ((used)) void* __ptr_sceKernelAvailableToolMemorySize = &__load_and_call_sceKernelAvailableToolMemorySize;
 
 static __attribute__ ((used)) void
-__load_sceKernelAvailableToolMemorySize() {
-  if(sceKernelDlsym(__module_id, "sceKernelAvailableToolMemorySize", &__ptr_sceKernelAvailableToolMemorySize)) {
-    __builtin_trap();
-  }
+__load_sceKernelAvailableToolMemorySize(void) {
+  sprx_dlsym(__handle, "sceKernelAvailableToolMemorySize", &__ptr_sceKernelAvailableToolMemorySize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16903,10 +15911,8 @@ void __load_and_call_sceKernelBacktraceSelf();
 static __attribute__ ((used)) void* __ptr_sceKernelBacktraceSelf = &__load_and_call_sceKernelBacktraceSelf;
 
 static __attribute__ ((used)) void
-__load_sceKernelBacktraceSelf() {
-  if(sceKernelDlsym(__module_id, "sceKernelBacktraceSelf", &__ptr_sceKernelBacktraceSelf)) {
-    __builtin_trap();
-  }
+__load_sceKernelBacktraceSelf(void) {
+  sprx_dlsym(__handle, "sceKernelBacktraceSelf", &__ptr_sceKernelBacktraceSelf);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16937,10 +15943,8 @@ void __load_and_call_sceKernelBatchMap();
 static __attribute__ ((used)) void* __ptr_sceKernelBatchMap = &__load_and_call_sceKernelBatchMap;
 
 static __attribute__ ((used)) void
-__load_sceKernelBatchMap() {
-  if(sceKernelDlsym(__module_id, "sceKernelBatchMap", &__ptr_sceKernelBatchMap)) {
-    __builtin_trap();
-  }
+__load_sceKernelBatchMap(void) {
+  sprx_dlsym(__handle, "sceKernelBatchMap", &__ptr_sceKernelBatchMap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -16971,10 +15975,8 @@ void __load_and_call_sceKernelBatchMap2();
 static __attribute__ ((used)) void* __ptr_sceKernelBatchMap2 = &__load_and_call_sceKernelBatchMap2;
 
 static __attribute__ ((used)) void
-__load_sceKernelBatchMap2() {
-  if(sceKernelDlsym(__module_id, "sceKernelBatchMap2", &__ptr_sceKernelBatchMap2)) {
-    __builtin_trap();
-  }
+__load_sceKernelBatchMap2(void) {
+  sprx_dlsym(__handle, "sceKernelBatchMap2", &__ptr_sceKernelBatchMap2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17005,10 +16007,8 @@ void __load_and_call_sceKernelBeginAppMount();
 static __attribute__ ((used)) void* __ptr_sceKernelBeginAppMount = &__load_and_call_sceKernelBeginAppMount;
 
 static __attribute__ ((used)) void
-__load_sceKernelBeginAppMount() {
-  if(sceKernelDlsym(__module_id, "sceKernelBeginAppMount", &__ptr_sceKernelBeginAppMount)) {
-    __builtin_trap();
-  }
+__load_sceKernelBeginAppMount(void) {
+  sprx_dlsym(__handle, "sceKernelBeginAppMount", &__ptr_sceKernelBeginAppMount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17039,10 +16039,8 @@ void __load_and_call_sceKernelBeginAppMount2();
 static __attribute__ ((used)) void* __ptr_sceKernelBeginAppMount2 = &__load_and_call_sceKernelBeginAppMount2;
 
 static __attribute__ ((used)) void
-__load_sceKernelBeginAppMount2() {
-  if(sceKernelDlsym(__module_id, "sceKernelBeginAppMount2", &__ptr_sceKernelBeginAppMount2)) {
-    __builtin_trap();
-  }
+__load_sceKernelBeginAppMount2(void) {
+  sprx_dlsym(__handle, "sceKernelBeginAppMount2", &__ptr_sceKernelBeginAppMount2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17073,10 +16071,8 @@ void __load_and_call_sceKernelCallIndirectBuffer();
 static __attribute__ ((used)) void* __ptr_sceKernelCallIndirectBuffer = &__load_and_call_sceKernelCallIndirectBuffer;
 
 static __attribute__ ((used)) void
-__load_sceKernelCallIndirectBuffer() {
-  if(sceKernelDlsym(__module_id, "sceKernelCallIndirectBuffer", &__ptr_sceKernelCallIndirectBuffer)) {
-    __builtin_trap();
-  }
+__load_sceKernelCallIndirectBuffer(void) {
+  sprx_dlsym(__handle, "sceKernelCallIndirectBuffer", &__ptr_sceKernelCallIndirectBuffer);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17107,10 +16103,8 @@ void __load_and_call_sceKernelCallIndirectBuffer2();
 static __attribute__ ((used)) void* __ptr_sceKernelCallIndirectBuffer2 = &__load_and_call_sceKernelCallIndirectBuffer2;
 
 static __attribute__ ((used)) void
-__load_sceKernelCallIndirectBuffer2() {
-  if(sceKernelDlsym(__module_id, "sceKernelCallIndirectBuffer2", &__ptr_sceKernelCallIndirectBuffer2)) {
-    __builtin_trap();
-  }
+__load_sceKernelCallIndirectBuffer2(void) {
+  sprx_dlsym(__handle, "sceKernelCallIndirectBuffer2", &__ptr_sceKernelCallIndirectBuffer2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17141,10 +16135,8 @@ void __load_and_call_sceKernelCancelEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelCancelEventFlag = &__load_and_call_sceKernelCancelEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelCancelEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelCancelEventFlag", &__ptr_sceKernelCancelEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelCancelEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelCancelEventFlag", &__ptr_sceKernelCancelEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17175,10 +16167,8 @@ void __load_and_call_sceKernelCancelSema();
 static __attribute__ ((used)) void* __ptr_sceKernelCancelSema = &__load_and_call_sceKernelCancelSema;
 
 static __attribute__ ((used)) void
-__load_sceKernelCancelSema() {
-  if(sceKernelDlsym(__module_id, "sceKernelCancelSema", &__ptr_sceKernelCancelSema)) {
-    __builtin_trap();
-  }
+__load_sceKernelCancelSema(void) {
+  sprx_dlsym(__handle, "sceKernelCancelSema", &__ptr_sceKernelCancelSema);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17209,10 +16199,8 @@ void __load_and_call_sceKernelCheckReachability();
 static __attribute__ ((used)) void* __ptr_sceKernelCheckReachability = &__load_and_call_sceKernelCheckReachability;
 
 static __attribute__ ((used)) void
-__load_sceKernelCheckReachability() {
-  if(sceKernelDlsym(__module_id, "sceKernelCheckReachability", &__ptr_sceKernelCheckReachability)) {
-    __builtin_trap();
-  }
+__load_sceKernelCheckReachability(void) {
+  sprx_dlsym(__handle, "sceKernelCheckReachability", &__ptr_sceKernelCheckReachability);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17243,10 +16231,8 @@ void __load_and_call_sceKernelCheckedReleaseDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelCheckedReleaseDirectMemory = &__load_and_call_sceKernelCheckedReleaseDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelCheckedReleaseDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelCheckedReleaseDirectMemory", &__ptr_sceKernelCheckedReleaseDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelCheckedReleaseDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelCheckedReleaseDirectMemory", &__ptr_sceKernelCheckedReleaseDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17277,10 +16263,8 @@ void __load_and_call_sceKernelChmod();
 static __attribute__ ((used)) void* __ptr_sceKernelChmod = &__load_and_call_sceKernelChmod;
 
 static __attribute__ ((used)) void
-__load_sceKernelChmod() {
-  if(sceKernelDlsym(__module_id, "sceKernelChmod", &__ptr_sceKernelChmod)) {
-    __builtin_trap();
-  }
+__load_sceKernelChmod(void) {
+  sprx_dlsym(__handle, "sceKernelChmod", &__ptr_sceKernelChmod);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17311,10 +16295,8 @@ void __load_and_call_sceKernelClearBootReqNotifyCount();
 static __attribute__ ((used)) void* __ptr_sceKernelClearBootReqNotifyCount = &__load_and_call_sceKernelClearBootReqNotifyCount;
 
 static __attribute__ ((used)) void
-__load_sceKernelClearBootReqNotifyCount() {
-  if(sceKernelDlsym(__module_id, "sceKernelClearBootReqNotifyCount", &__ptr_sceKernelClearBootReqNotifyCount)) {
-    __builtin_trap();
-  }
+__load_sceKernelClearBootReqNotifyCount(void) {
+  sprx_dlsym(__handle, "sceKernelClearBootReqNotifyCount", &__ptr_sceKernelClearBootReqNotifyCount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17345,10 +16327,8 @@ void __load_and_call_sceKernelClearEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelClearEventFlag = &__load_and_call_sceKernelClearEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelClearEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelClearEventFlag", &__ptr_sceKernelClearEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelClearEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelClearEventFlag", &__ptr_sceKernelClearEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17379,10 +16359,8 @@ void __load_and_call_sceKernelClearGameDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelClearGameDirectMemory = &__load_and_call_sceKernelClearGameDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelClearGameDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelClearGameDirectMemory", &__ptr_sceKernelClearGameDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelClearGameDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelClearGameDirectMemory", &__ptr_sceKernelClearGameDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17413,10 +16391,8 @@ void __load_and_call_sceKernelClockGetres();
 static __attribute__ ((used)) void* __ptr_sceKernelClockGetres = &__load_and_call_sceKernelClockGetres;
 
 static __attribute__ ((used)) void
-__load_sceKernelClockGetres() {
-  if(sceKernelDlsym(__module_id, "sceKernelClockGetres", &__ptr_sceKernelClockGetres)) {
-    __builtin_trap();
-  }
+__load_sceKernelClockGetres(void) {
+  sprx_dlsym(__handle, "sceKernelClockGetres", &__ptr_sceKernelClockGetres);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17447,10 +16423,8 @@ void __load_and_call_sceKernelClockGettime();
 static __attribute__ ((used)) void* __ptr_sceKernelClockGettime = &__load_and_call_sceKernelClockGettime;
 
 static __attribute__ ((used)) void
-__load_sceKernelClockGettime() {
-  if(sceKernelDlsym(__module_id, "sceKernelClockGettime", &__ptr_sceKernelClockGettime)) {
-    __builtin_trap();
-  }
+__load_sceKernelClockGettime(void) {
+  sprx_dlsym(__handle, "sceKernelClockGettime", &__ptr_sceKernelClockGettime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17481,10 +16455,8 @@ void __load_and_call_sceKernelClose();
 static __attribute__ ((used)) void* __ptr_sceKernelClose = &__load_and_call_sceKernelClose;
 
 static __attribute__ ((used)) void
-__load_sceKernelClose() {
-  if(sceKernelDlsym(__module_id, "sceKernelClose", &__ptr_sceKernelClose)) {
-    __builtin_trap();
-  }
+__load_sceKernelClose(void) {
+  sprx_dlsym(__handle, "sceKernelClose", &__ptr_sceKernelClose);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17515,10 +16487,8 @@ void __load_and_call_sceKernelCloseEport();
 static __attribute__ ((used)) void* __ptr_sceKernelCloseEport = &__load_and_call_sceKernelCloseEport;
 
 static __attribute__ ((used)) void
-__load_sceKernelCloseEport() {
-  if(sceKernelDlsym(__module_id, "sceKernelCloseEport", &__ptr_sceKernelCloseEport)) {
-    __builtin_trap();
-  }
+__load_sceKernelCloseEport(void) {
+  sprx_dlsym(__handle, "sceKernelCloseEport", &__ptr_sceKernelCloseEport);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17549,10 +16519,8 @@ void __load_and_call_sceKernelCloseEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelCloseEventFlag = &__load_and_call_sceKernelCloseEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelCloseEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelCloseEventFlag", &__ptr_sceKernelCloseEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelCloseEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelCloseEventFlag", &__ptr_sceKernelCloseEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17583,10 +16551,8 @@ void __load_and_call_sceKernelCloseSema();
 static __attribute__ ((used)) void* __ptr_sceKernelCloseSema = &__load_and_call_sceKernelCloseSema;
 
 static __attribute__ ((used)) void
-__load_sceKernelCloseSema() {
-  if(sceKernelDlsym(__module_id, "sceKernelCloseSema", &__ptr_sceKernelCloseSema)) {
-    __builtin_trap();
-  }
+__load_sceKernelCloseSema(void) {
+  sprx_dlsym(__handle, "sceKernelCloseSema", &__ptr_sceKernelCloseSema);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17617,10 +16583,8 @@ void __load_and_call_sceKernelConfiguredFlexibleMemorySize();
 static __attribute__ ((used)) void* __ptr_sceKernelConfiguredFlexibleMemorySize = &__load_and_call_sceKernelConfiguredFlexibleMemorySize;
 
 static __attribute__ ((used)) void
-__load_sceKernelConfiguredFlexibleMemorySize() {
-  if(sceKernelDlsym(__module_id, "sceKernelConfiguredFlexibleMemorySize", &__ptr_sceKernelConfiguredFlexibleMemorySize)) {
-    __builtin_trap();
-  }
+__load_sceKernelConfiguredFlexibleMemorySize(void) {
+  sprx_dlsym(__handle, "sceKernelConfiguredFlexibleMemorySize", &__ptr_sceKernelConfiguredFlexibleMemorySize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17651,10 +16615,8 @@ void __load_and_call_sceKernelConvertLocaltimeToUtc();
 static __attribute__ ((used)) void* __ptr_sceKernelConvertLocaltimeToUtc = &__load_and_call_sceKernelConvertLocaltimeToUtc;
 
 static __attribute__ ((used)) void
-__load_sceKernelConvertLocaltimeToUtc() {
-  if(sceKernelDlsym(__module_id, "sceKernelConvertLocaltimeToUtc", &__ptr_sceKernelConvertLocaltimeToUtc)) {
-    __builtin_trap();
-  }
+__load_sceKernelConvertLocaltimeToUtc(void) {
+  sprx_dlsym(__handle, "sceKernelConvertLocaltimeToUtc", &__ptr_sceKernelConvertLocaltimeToUtc);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17685,10 +16647,8 @@ void __load_and_call_sceKernelConvertUtcToLocaltime();
 static __attribute__ ((used)) void* __ptr_sceKernelConvertUtcToLocaltime = &__load_and_call_sceKernelConvertUtcToLocaltime;
 
 static __attribute__ ((used)) void
-__load_sceKernelConvertUtcToLocaltime() {
-  if(sceKernelDlsym(__module_id, "sceKernelConvertUtcToLocaltime", &__ptr_sceKernelConvertUtcToLocaltime)) {
-    __builtin_trap();
-  }
+__load_sceKernelConvertUtcToLocaltime(void) {
+  sprx_dlsym(__handle, "sceKernelConvertUtcToLocaltime", &__ptr_sceKernelConvertUtcToLocaltime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17719,10 +16679,8 @@ void __load_and_call_sceKernelCreateBudget();
 static __attribute__ ((used)) void* __ptr_sceKernelCreateBudget = &__load_and_call_sceKernelCreateBudget;
 
 static __attribute__ ((used)) void
-__load_sceKernelCreateBudget() {
-  if(sceKernelDlsym(__module_id, "sceKernelCreateBudget", &__ptr_sceKernelCreateBudget)) {
-    __builtin_trap();
-  }
+__load_sceKernelCreateBudget(void) {
+  sprx_dlsym(__handle, "sceKernelCreateBudget", &__ptr_sceKernelCreateBudget);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17753,10 +16711,8 @@ void __load_and_call_sceKernelCreateEport();
 static __attribute__ ((used)) void* __ptr_sceKernelCreateEport = &__load_and_call_sceKernelCreateEport;
 
 static __attribute__ ((used)) void
-__load_sceKernelCreateEport() {
-  if(sceKernelDlsym(__module_id, "sceKernelCreateEport", &__ptr_sceKernelCreateEport)) {
-    __builtin_trap();
-  }
+__load_sceKernelCreateEport(void) {
+  sprx_dlsym(__handle, "sceKernelCreateEport", &__ptr_sceKernelCreateEport);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17787,10 +16743,8 @@ void __load_and_call_sceKernelCreateEqueue();
 static __attribute__ ((used)) void* __ptr_sceKernelCreateEqueue = &__load_and_call_sceKernelCreateEqueue;
 
 static __attribute__ ((used)) void
-__load_sceKernelCreateEqueue() {
-  if(sceKernelDlsym(__module_id, "sceKernelCreateEqueue", &__ptr_sceKernelCreateEqueue)) {
-    __builtin_trap();
-  }
+__load_sceKernelCreateEqueue(void) {
+  sprx_dlsym(__handle, "sceKernelCreateEqueue", &__ptr_sceKernelCreateEqueue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17821,10 +16775,8 @@ void __load_and_call_sceKernelCreateEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelCreateEventFlag = &__load_and_call_sceKernelCreateEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelCreateEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelCreateEventFlag", &__ptr_sceKernelCreateEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelCreateEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelCreateEventFlag", &__ptr_sceKernelCreateEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17855,10 +16807,8 @@ void __load_and_call_sceKernelCreateSema();
 static __attribute__ ((used)) void* __ptr_sceKernelCreateSema = &__load_and_call_sceKernelCreateSema;
 
 static __attribute__ ((used)) void
-__load_sceKernelCreateSema() {
-  if(sceKernelDlsym(__module_id, "sceKernelCreateSema", &__ptr_sceKernelCreateSema)) {
-    __builtin_trap();
-  }
+__load_sceKernelCreateSema(void) {
+  sprx_dlsym(__handle, "sceKernelCreateSema", &__ptr_sceKernelCreateSema);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17889,10 +16839,8 @@ void __load_and_call_sceKernelDebugAcquireAndUpdateDebugRegister();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugAcquireAndUpdateDebugRegister = &__load_and_call_sceKernelDebugAcquireAndUpdateDebugRegister;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugAcquireAndUpdateDebugRegister() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugAcquireAndUpdateDebugRegister", &__ptr_sceKernelDebugAcquireAndUpdateDebugRegister)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugAcquireAndUpdateDebugRegister(void) {
+  sprx_dlsym(__handle, "sceKernelDebugAcquireAndUpdateDebugRegister", &__ptr_sceKernelDebugAcquireAndUpdateDebugRegister);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17923,10 +16871,8 @@ void __load_and_call_sceKernelDebugGetAppStatus();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugGetAppStatus = &__load_and_call_sceKernelDebugGetAppStatus;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugGetAppStatus() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugGetAppStatus", &__ptr_sceKernelDebugGetAppStatus)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugGetAppStatus(void) {
+  sprx_dlsym(__handle, "sceKernelDebugGetAppStatus", &__ptr_sceKernelDebugGetAppStatus);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17957,10 +16903,8 @@ void __load_and_call_sceKernelDebugGetPauseCount();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugGetPauseCount = &__load_and_call_sceKernelDebugGetPauseCount;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugGetPauseCount() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugGetPauseCount", &__ptr_sceKernelDebugGetPauseCount)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugGetPauseCount(void) {
+  sprx_dlsym(__handle, "sceKernelDebugGetPauseCount", &__ptr_sceKernelDebugGetPauseCount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -17991,10 +16935,8 @@ void __load_and_call_sceKernelDebugGetPrivateLogText();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugGetPrivateLogText = &__load_and_call_sceKernelDebugGetPrivateLogText;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugGetPrivateLogText() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugGetPrivateLogText", &__ptr_sceKernelDebugGetPrivateLogText)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugGetPrivateLogText(void) {
+  sprx_dlsym(__handle, "sceKernelDebugGetPrivateLogText", &__ptr_sceKernelDebugGetPrivateLogText);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18025,10 +16967,8 @@ void __load_and_call_sceKernelDebugGetSchedLockMode();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugGetSchedLockMode = &__load_and_call_sceKernelDebugGetSchedLockMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugGetSchedLockMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugGetSchedLockMode", &__ptr_sceKernelDebugGetSchedLockMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugGetSchedLockMode(void) {
+  sprx_dlsym(__handle, "sceKernelDebugGetSchedLockMode", &__ptr_sceKernelDebugGetSchedLockMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18059,10 +16999,8 @@ void __load_and_call_sceKernelDebugGetSdkLogText();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugGetSdkLogText = &__load_and_call_sceKernelDebugGetSdkLogText;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugGetSdkLogText() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugGetSdkLogText", &__ptr_sceKernelDebugGetSdkLogText)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugGetSdkLogText(void) {
+  sprx_dlsym(__handle, "sceKernelDebugGetSdkLogText", &__ptr_sceKernelDebugGetSdkLogText);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18093,10 +17031,8 @@ void __load_and_call_sceKernelDebugGpuPaDebugIsInProgress();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugGpuPaDebugIsInProgress = &__load_and_call_sceKernelDebugGpuPaDebugIsInProgress;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugGpuPaDebugIsInProgress() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugGpuPaDebugIsInProgress", &__ptr_sceKernelDebugGpuPaDebugIsInProgress)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugGpuPaDebugIsInProgress(void) {
+  sprx_dlsym(__handle, "sceKernelDebugGpuPaDebugIsInProgress", &__ptr_sceKernelDebugGpuPaDebugIsInProgress);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18127,10 +17063,8 @@ void __load_and_call_sceKernelDebugInjectProcessEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugInjectProcessEvent = &__load_and_call_sceKernelDebugInjectProcessEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugInjectProcessEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugInjectProcessEvent", &__ptr_sceKernelDebugInjectProcessEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugInjectProcessEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDebugInjectProcessEvent", &__ptr_sceKernelDebugInjectProcessEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18161,10 +17095,8 @@ void __load_and_call_sceKernelDebugOutText();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugOutText = &__load_and_call_sceKernelDebugOutText;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugOutText() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugOutText", &__ptr_sceKernelDebugOutText)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugOutText(void) {
+  sprx_dlsym(__handle, "sceKernelDebugOutText", &__ptr_sceKernelDebugOutText);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18195,10 +17127,8 @@ void __load_and_call_sceKernelDebugPackageCorrupted();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugPackageCorrupted = &__load_and_call_sceKernelDebugPackageCorrupted;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugPackageCorrupted() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugPackageCorrupted", &__ptr_sceKernelDebugPackageCorrupted)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugPackageCorrupted(void) {
+  sprx_dlsym(__handle, "sceKernelDebugPackageCorrupted", &__ptr_sceKernelDebugPackageCorrupted);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18229,10 +17159,8 @@ void __load_and_call_sceKernelDebugRaiseException();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugRaiseException = &__load_and_call_sceKernelDebugRaiseException;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugRaiseException() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugRaiseException", &__ptr_sceKernelDebugRaiseException)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugRaiseException(void) {
+  sprx_dlsym(__handle, "sceKernelDebugRaiseException", &__ptr_sceKernelDebugRaiseException);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18263,10 +17191,8 @@ void __load_and_call_sceKernelDebugRaiseExceptionOnReleaseMode();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugRaiseExceptionOnReleaseMode = &__load_and_call_sceKernelDebugRaiseExceptionOnReleaseMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugRaiseExceptionOnReleaseMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugRaiseExceptionOnReleaseMode", &__ptr_sceKernelDebugRaiseExceptionOnReleaseMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugRaiseExceptionOnReleaseMode(void) {
+  sprx_dlsym(__handle, "sceKernelDebugRaiseExceptionOnReleaseMode", &__ptr_sceKernelDebugRaiseExceptionOnReleaseMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18297,10 +17223,8 @@ void __load_and_call_sceKernelDebugRaiseExceptionWithContext();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugRaiseExceptionWithContext = &__load_and_call_sceKernelDebugRaiseExceptionWithContext;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugRaiseExceptionWithContext() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugRaiseExceptionWithContext", &__ptr_sceKernelDebugRaiseExceptionWithContext)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugRaiseExceptionWithContext(void) {
+  sprx_dlsym(__handle, "sceKernelDebugRaiseExceptionWithContext", &__ptr_sceKernelDebugRaiseExceptionWithContext);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18331,10 +17255,8 @@ void __load_and_call_sceKernelDebugRaiseExceptionWithInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugRaiseExceptionWithInfo = &__load_and_call_sceKernelDebugRaiseExceptionWithInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugRaiseExceptionWithInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugRaiseExceptionWithInfo", &__ptr_sceKernelDebugRaiseExceptionWithInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugRaiseExceptionWithInfo(void) {
+  sprx_dlsym(__handle, "sceKernelDebugRaiseExceptionWithInfo", &__ptr_sceKernelDebugRaiseExceptionWithInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18365,10 +17287,8 @@ void __load_and_call_sceKernelDebugReleaseDebugContext();
 static __attribute__ ((used)) void* __ptr_sceKernelDebugReleaseDebugContext = &__load_and_call_sceKernelDebugReleaseDebugContext;
 
 static __attribute__ ((used)) void
-__load_sceKernelDebugReleaseDebugContext() {
-  if(sceKernelDlsym(__module_id, "sceKernelDebugReleaseDebugContext", &__ptr_sceKernelDebugReleaseDebugContext)) {
-    __builtin_trap();
-  }
+__load_sceKernelDebugReleaseDebugContext(void) {
+  sprx_dlsym(__handle, "sceKernelDebugReleaseDebugContext", &__ptr_sceKernelDebugReleaseDebugContext);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18399,10 +17319,8 @@ void __load_and_call_sceKernelDeleteACInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteACInfo = &__load_and_call_sceKernelDeleteACInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteACInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteACInfo", &__ptr_sceKernelDeleteACInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteACInfo(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteACInfo", &__ptr_sceKernelDeleteACInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18433,10 +17351,8 @@ void __load_and_call_sceKernelDeleteAmprEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteAmprEvent = &__load_and_call_sceKernelDeleteAmprEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteAmprEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteAmprEvent", &__ptr_sceKernelDeleteAmprEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteAmprEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteAmprEvent", &__ptr_sceKernelDeleteAmprEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18467,10 +17383,8 @@ void __load_and_call_sceKernelDeleteBudget();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteBudget = &__load_and_call_sceKernelDeleteBudget;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteBudget() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteBudget", &__ptr_sceKernelDeleteBudget)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteBudget(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteBudget", &__ptr_sceKernelDeleteBudget);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18501,10 +17415,8 @@ void __load_and_call_sceKernelDeleteCpumodeEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteCpumodeEvent = &__load_and_call_sceKernelDeleteCpumodeEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteCpumodeEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteCpumodeEvent", &__ptr_sceKernelDeleteCpumodeEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteCpumodeEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteCpumodeEvent", &__ptr_sceKernelDeleteCpumodeEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18535,10 +17447,8 @@ void __load_and_call_sceKernelDeleteEport();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteEport = &__load_and_call_sceKernelDeleteEport;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteEport() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteEport", &__ptr_sceKernelDeleteEport)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteEport(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteEport", &__ptr_sceKernelDeleteEport);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18569,10 +17479,8 @@ void __load_and_call_sceKernelDeleteEqueue();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteEqueue = &__load_and_call_sceKernelDeleteEqueue;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteEqueue() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteEqueue", &__ptr_sceKernelDeleteEqueue)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteEqueue(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteEqueue", &__ptr_sceKernelDeleteEqueue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18603,10 +17511,8 @@ void __load_and_call_sceKernelDeleteEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteEventFlag = &__load_and_call_sceKernelDeleteEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteEventFlag", &__ptr_sceKernelDeleteEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteEventFlag", &__ptr_sceKernelDeleteEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18637,10 +17543,8 @@ void __load_and_call_sceKernelDeleteFileEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteFileEvent = &__load_and_call_sceKernelDeleteFileEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteFileEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteFileEvent", &__ptr_sceKernelDeleteFileEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteFileEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteFileEvent", &__ptr_sceKernelDeleteFileEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18671,10 +17575,8 @@ void __load_and_call_sceKernelDeleteGpuExceptionEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteGpuExceptionEvent = &__load_and_call_sceKernelDeleteGpuExceptionEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteGpuExceptionEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteGpuExceptionEvent", &__ptr_sceKernelDeleteGpuExceptionEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteGpuExceptionEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteGpuExceptionEvent", &__ptr_sceKernelDeleteGpuExceptionEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18705,10 +17607,8 @@ void __load_and_call_sceKernelDeleteHRTimerEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteHRTimerEvent = &__load_and_call_sceKernelDeleteHRTimerEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteHRTimerEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteHRTimerEvent", &__ptr_sceKernelDeleteHRTimerEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteHRTimerEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteHRTimerEvent", &__ptr_sceKernelDeleteHRTimerEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18739,10 +17639,8 @@ void __load_and_call_sceKernelDeleteProcessFromCanvasMap();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteProcessFromCanvasMap = &__load_and_call_sceKernelDeleteProcessFromCanvasMap;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteProcessFromCanvasMap() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteProcessFromCanvasMap", &__ptr_sceKernelDeleteProcessFromCanvasMap)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteProcessFromCanvasMap(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteProcessFromCanvasMap", &__ptr_sceKernelDeleteProcessFromCanvasMap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18773,10 +17671,8 @@ void __load_and_call_sceKernelDeleteReadEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteReadEvent = &__load_and_call_sceKernelDeleteReadEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteReadEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteReadEvent", &__ptr_sceKernelDeleteReadEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteReadEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteReadEvent", &__ptr_sceKernelDeleteReadEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18807,10 +17703,8 @@ void __load_and_call_sceKernelDeleteSavedApp();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteSavedApp = &__load_and_call_sceKernelDeleteSavedApp;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteSavedApp() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteSavedApp", &__ptr_sceKernelDeleteSavedApp)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteSavedApp(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteSavedApp", &__ptr_sceKernelDeleteSavedApp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18841,10 +17735,8 @@ void __load_and_call_sceKernelDeleteSema();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteSema = &__load_and_call_sceKernelDeleteSema;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteSema() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteSema", &__ptr_sceKernelDeleteSema)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteSema(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteSema", &__ptr_sceKernelDeleteSema);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18875,10 +17767,8 @@ void __load_and_call_sceKernelDeleteTimerEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteTimerEvent = &__load_and_call_sceKernelDeleteTimerEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteTimerEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteTimerEvent", &__ptr_sceKernelDeleteTimerEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteTimerEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteTimerEvent", &__ptr_sceKernelDeleteTimerEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18909,10 +17799,8 @@ void __load_and_call_sceKernelDeleteUserEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteUserEvent = &__load_and_call_sceKernelDeleteUserEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteUserEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteUserEvent", &__ptr_sceKernelDeleteUserEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteUserEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteUserEvent", &__ptr_sceKernelDeleteUserEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18943,10 +17831,8 @@ void __load_and_call_sceKernelDeleteWriteEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelDeleteWriteEvent = &__load_and_call_sceKernelDeleteWriteEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelDeleteWriteEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelDeleteWriteEvent", &__ptr_sceKernelDeleteWriteEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelDeleteWriteEvent(void) {
+  sprx_dlsym(__handle, "sceKernelDeleteWriteEvent", &__ptr_sceKernelDeleteWriteEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -18977,10 +17863,8 @@ void __load_and_call_sceKernelDirectMemoryQuery();
 static __attribute__ ((used)) void* __ptr_sceKernelDirectMemoryQuery = &__load_and_call_sceKernelDirectMemoryQuery;
 
 static __attribute__ ((used)) void
-__load_sceKernelDirectMemoryQuery() {
-  if(sceKernelDlsym(__module_id, "sceKernelDirectMemoryQuery", &__ptr_sceKernelDirectMemoryQuery)) {
-    __builtin_trap();
-  }
+__load_sceKernelDirectMemoryQuery(void) {
+  sprx_dlsym(__handle, "sceKernelDirectMemoryQuery", &__ptr_sceKernelDirectMemoryQuery);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19011,10 +17895,40 @@ void __load_and_call_sceKernelDirectMemoryQueryForId();
 static __attribute__ ((used)) void* __ptr_sceKernelDirectMemoryQueryForId = &__load_and_call_sceKernelDirectMemoryQueryForId;
 
 static __attribute__ ((used)) void
-__load_sceKernelDirectMemoryQueryForId() {
-  if(sceKernelDlsym(__module_id, "sceKernelDirectMemoryQueryForId", &__ptr_sceKernelDirectMemoryQueryForId)) {
-    __builtin_trap();
-  }
+__load_sceKernelDirectMemoryQueryForId(void) {
+  sprx_dlsym(__handle, "sceKernelDirectMemoryQueryForId", &__ptr_sceKernelDirectMemoryQueryForId);
+}
+
+asm(".intel_syntax noprefix\n"
+    ".global sceKernelDlsym\n"
+    ".type sceKernelDlsym @function\n"
+    "sceKernelDlsym:\n"
+    "jmp qword ptr [rip + __ptr_sceKernelDlsym]\n");
+
+asm(".intel_syntax noprefix\n"
+    ".type __load_and_call_sceKernelDlsym @function\n"
+    "__load_and_call_sceKernelDlsym:\n"
+    "push rdi\n"
+    "push rsi\n"
+    "push rdx\n"
+    "push rcx\n"
+    "push r8\n"
+    "push r9\n"
+    "call __load_sceKernelDlsym\n"
+    "pop r9\n"
+    "pop r8\n"
+    "pop rcx\n"
+    "pop rdx\n"
+    "pop rsi\n"
+    "pop rdi\n"
+    "jmp qword ptr [rip + __ptr_sceKernelDlsym]\n");
+
+void __load_and_call_sceKernelDlsym();
+static __attribute__ ((used)) void* __ptr_sceKernelDlsym = &__load_and_call_sceKernelDlsym;
+
+static __attribute__ ((used)) void
+__load_sceKernelDlsym(void) {
+  sprx_dlsym(__handle, "sceKernelDlsym", &__ptr_sceKernelDlsym);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19045,10 +17959,8 @@ void __load_and_call_sceKernelEnableDmemAliasing();
 static __attribute__ ((used)) void* __ptr_sceKernelEnableDmemAliasing = &__load_and_call_sceKernelEnableDmemAliasing;
 
 static __attribute__ ((used)) void
-__load_sceKernelEnableDmemAliasing() {
-  if(sceKernelDlsym(__module_id, "sceKernelEnableDmemAliasing", &__ptr_sceKernelEnableDmemAliasing)) {
-    __builtin_trap();
-  }
+__load_sceKernelEnableDmemAliasing(void) {
+  sprx_dlsym(__handle, "sceKernelEnableDmemAliasing", &__ptr_sceKernelEnableDmemAliasing);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19079,10 +17991,8 @@ void __load_and_call_sceKernelEnableDmemAliasing2();
 static __attribute__ ((used)) void* __ptr_sceKernelEnableDmemAliasing2 = &__load_and_call_sceKernelEnableDmemAliasing2;
 
 static __attribute__ ((used)) void
-__load_sceKernelEnableDmemAliasing2() {
-  if(sceKernelDlsym(__module_id, "sceKernelEnableDmemAliasing2", &__ptr_sceKernelEnableDmemAliasing2)) {
-    __builtin_trap();
-  }
+__load_sceKernelEnableDmemAliasing2(void) {
+  sprx_dlsym(__handle, "sceKernelEnableDmemAliasing2", &__ptr_sceKernelEnableDmemAliasing2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19113,10 +18023,8 @@ void __load_and_call_sceKernelEnablePthreadObjectCheck();
 static __attribute__ ((used)) void* __ptr_sceKernelEnablePthreadObjectCheck = &__load_and_call_sceKernelEnablePthreadObjectCheck;
 
 static __attribute__ ((used)) void
-__load_sceKernelEnablePthreadObjectCheck() {
-  if(sceKernelDlsym(__module_id, "sceKernelEnablePthreadObjectCheck", &__ptr_sceKernelEnablePthreadObjectCheck)) {
-    __builtin_trap();
-  }
+__load_sceKernelEnablePthreadObjectCheck(void) {
+  sprx_dlsym(__handle, "sceKernelEnablePthreadObjectCheck", &__ptr_sceKernelEnablePthreadObjectCheck);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19147,10 +18055,8 @@ void __load_and_call_sceKernelEndAppMount();
 static __attribute__ ((used)) void* __ptr_sceKernelEndAppMount = &__load_and_call_sceKernelEndAppMount;
 
 static __attribute__ ((used)) void
-__load_sceKernelEndAppMount() {
-  if(sceKernelDlsym(__module_id, "sceKernelEndAppMount", &__ptr_sceKernelEndAppMount)) {
-    __builtin_trap();
-  }
+__load_sceKernelEndAppMount(void) {
+  sprx_dlsym(__handle, "sceKernelEndAppMount", &__ptr_sceKernelEndAppMount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19181,10 +18087,8 @@ void __load_and_call_sceKernelEndAppMount2();
 static __attribute__ ((used)) void* __ptr_sceKernelEndAppMount2 = &__load_and_call_sceKernelEndAppMount2;
 
 static __attribute__ ((used)) void
-__load_sceKernelEndAppMount2() {
-  if(sceKernelDlsym(__module_id, "sceKernelEndAppMount2", &__ptr_sceKernelEndAppMount2)) {
-    __builtin_trap();
-  }
+__load_sceKernelEndAppMount2(void) {
+  sprx_dlsym(__handle, "sceKernelEndAppMount2", &__ptr_sceKernelEndAppMount2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19215,10 +18119,8 @@ void __load_and_call_sceKernelError();
 static __attribute__ ((used)) void* __ptr_sceKernelError = &__load_and_call_sceKernelError;
 
 static __attribute__ ((used)) void
-__load_sceKernelError() {
-  if(sceKernelDlsym(__module_id, "sceKernelError", &__ptr_sceKernelError)) {
-    __builtin_trap();
-  }
+__load_sceKernelError(void) {
+  sprx_dlsym(__handle, "sceKernelError", &__ptr_sceKernelError);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19249,10 +18151,8 @@ void __load_and_call_sceKernelEventLogInit();
 static __attribute__ ((used)) void* __ptr_sceKernelEventLogInit = &__load_and_call_sceKernelEventLogInit;
 
 static __attribute__ ((used)) void
-__load_sceKernelEventLogInit() {
-  if(sceKernelDlsym(__module_id, "sceKernelEventLogInit", &__ptr_sceKernelEventLogInit)) {
-    __builtin_trap();
-  }
+__load_sceKernelEventLogInit(void) {
+  sprx_dlsym(__handle, "sceKernelEventLogInit", &__ptr_sceKernelEventLogInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19283,10 +18183,8 @@ void __load_and_call_sceKernelEventLogPread();
 static __attribute__ ((used)) void* __ptr_sceKernelEventLogPread = &__load_and_call_sceKernelEventLogPread;
 
 static __attribute__ ((used)) void
-__load_sceKernelEventLogPread() {
-  if(sceKernelDlsym(__module_id, "sceKernelEventLogPread", &__ptr_sceKernelEventLogPread)) {
-    __builtin_trap();
-  }
+__load_sceKernelEventLogPread(void) {
+  sprx_dlsym(__handle, "sceKernelEventLogPread", &__ptr_sceKernelEventLogPread);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19317,10 +18215,8 @@ void __load_and_call_sceKernelEventLogRead();
 static __attribute__ ((used)) void* __ptr_sceKernelEventLogRead = &__load_and_call_sceKernelEventLogRead;
 
 static __attribute__ ((used)) void
-__load_sceKernelEventLogRead() {
-  if(sceKernelDlsym(__module_id, "sceKernelEventLogRead", &__ptr_sceKernelEventLogRead)) {
-    __builtin_trap();
-  }
+__load_sceKernelEventLogRead(void) {
+  sprx_dlsym(__handle, "sceKernelEventLogRead", &__ptr_sceKernelEventLogRead);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19351,10 +18247,8 @@ void __load_and_call_sceKernelEventLogWrite();
 static __attribute__ ((used)) void* __ptr_sceKernelEventLogWrite = &__load_and_call_sceKernelEventLogWrite;
 
 static __attribute__ ((used)) void
-__load_sceKernelEventLogWrite() {
-  if(sceKernelDlsym(__module_id, "sceKernelEventLogWrite", &__ptr_sceKernelEventLogWrite)) {
-    __builtin_trap();
-  }
+__load_sceKernelEventLogWrite(void) {
+  sprx_dlsym(__handle, "sceKernelEventLogWrite", &__ptr_sceKernelEventLogWrite);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19385,10 +18279,8 @@ void __load_and_call_sceKernelExpectedHddFormat();
 static __attribute__ ((used)) void* __ptr_sceKernelExpectedHddFormat = &__load_and_call_sceKernelExpectedHddFormat;
 
 static __attribute__ ((used)) void
-__load_sceKernelExpectedHddFormat() {
-  if(sceKernelDlsym(__module_id, "sceKernelExpectedHddFormat", &__ptr_sceKernelExpectedHddFormat)) {
-    __builtin_trap();
-  }
+__load_sceKernelExpectedHddFormat(void) {
+  sprx_dlsym(__handle, "sceKernelExpectedHddFormat", &__ptr_sceKernelExpectedHddFormat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19419,10 +18311,8 @@ void __load_and_call_sceKernelFchmod();
 static __attribute__ ((used)) void* __ptr_sceKernelFchmod = &__load_and_call_sceKernelFchmod;
 
 static __attribute__ ((used)) void
-__load_sceKernelFchmod() {
-  if(sceKernelDlsym(__module_id, "sceKernelFchmod", &__ptr_sceKernelFchmod)) {
-    __builtin_trap();
-  }
+__load_sceKernelFchmod(void) {
+  sprx_dlsym(__handle, "sceKernelFchmod", &__ptr_sceKernelFchmod);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19453,10 +18343,8 @@ void __load_and_call_sceKernelFcntl();
 static __attribute__ ((used)) void* __ptr_sceKernelFcntl = &__load_and_call_sceKernelFcntl;
 
 static __attribute__ ((used)) void
-__load_sceKernelFcntl() {
-  if(sceKernelDlsym(__module_id, "sceKernelFcntl", &__ptr_sceKernelFcntl)) {
-    __builtin_trap();
-  }
+__load_sceKernelFcntl(void) {
+  sprx_dlsym(__handle, "sceKernelFcntl", &__ptr_sceKernelFcntl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19487,10 +18375,8 @@ void __load_and_call_sceKernelFdatasync();
 static __attribute__ ((used)) void* __ptr_sceKernelFdatasync = &__load_and_call_sceKernelFdatasync;
 
 static __attribute__ ((used)) void
-__load_sceKernelFdatasync() {
-  if(sceKernelDlsym(__module_id, "sceKernelFdatasync", &__ptr_sceKernelFdatasync)) {
-    __builtin_trap();
-  }
+__load_sceKernelFdatasync(void) {
+  sprx_dlsym(__handle, "sceKernelFdatasync", &__ptr_sceKernelFdatasync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19521,10 +18407,8 @@ void __load_and_call_sceKernelFlock();
 static __attribute__ ((used)) void* __ptr_sceKernelFlock = &__load_and_call_sceKernelFlock;
 
 static __attribute__ ((used)) void
-__load_sceKernelFlock() {
-  if(sceKernelDlsym(__module_id, "sceKernelFlock", &__ptr_sceKernelFlock)) {
-    __builtin_trap();
-  }
+__load_sceKernelFlock(void) {
+  sprx_dlsym(__handle, "sceKernelFlock", &__ptr_sceKernelFlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19555,10 +18439,8 @@ void __load_and_call_sceKernelFstat();
 static __attribute__ ((used)) void* __ptr_sceKernelFstat = &__load_and_call_sceKernelFstat;
 
 static __attribute__ ((used)) void
-__load_sceKernelFstat() {
-  if(sceKernelDlsym(__module_id, "sceKernelFstat", &__ptr_sceKernelFstat)) {
-    __builtin_trap();
-  }
+__load_sceKernelFstat(void) {
+  sprx_dlsym(__handle, "sceKernelFstat", &__ptr_sceKernelFstat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19589,10 +18471,8 @@ void __load_and_call_sceKernelFsync();
 static __attribute__ ((used)) void* __ptr_sceKernelFsync = &__load_and_call_sceKernelFsync;
 
 static __attribute__ ((used)) void
-__load_sceKernelFsync() {
-  if(sceKernelDlsym(__module_id, "sceKernelFsync", &__ptr_sceKernelFsync)) {
-    __builtin_trap();
-  }
+__load_sceKernelFsync(void) {
+  sprx_dlsym(__handle, "sceKernelFsync", &__ptr_sceKernelFsync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19623,10 +18503,8 @@ void __load_and_call_sceKernelFtruncate();
 static __attribute__ ((used)) void* __ptr_sceKernelFtruncate = &__load_and_call_sceKernelFtruncate;
 
 static __attribute__ ((used)) void
-__load_sceKernelFtruncate() {
-  if(sceKernelDlsym(__module_id, "sceKernelFtruncate", &__ptr_sceKernelFtruncate)) {
-    __builtin_trap();
-  }
+__load_sceKernelFtruncate(void) {
+  sprx_dlsym(__handle, "sceKernelFtruncate", &__ptr_sceKernelFtruncate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19657,10 +18535,8 @@ void __load_and_call_sceKernelFutimes();
 static __attribute__ ((used)) void* __ptr_sceKernelFutimes = &__load_and_call_sceKernelFutimes;
 
 static __attribute__ ((used)) void
-__load_sceKernelFutimes() {
-  if(sceKernelDlsym(__module_id, "sceKernelFutimes", &__ptr_sceKernelFutimes)) {
-    __builtin_trap();
-  }
+__load_sceKernelFutimes(void) {
+  sprx_dlsym(__handle, "sceKernelFutimes", &__ptr_sceKernelFutimes);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19691,10 +18567,8 @@ void __load_and_call_sceKernelGetACInfoAllForCoredump();
 static __attribute__ ((used)) void* __ptr_sceKernelGetACInfoAllForCoredump = &__load_and_call_sceKernelGetACInfoAllForCoredump;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetACInfoAllForCoredump() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetACInfoAllForCoredump", &__ptr_sceKernelGetACInfoAllForCoredump)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetACInfoAllForCoredump(void) {
+  sprx_dlsym(__handle, "sceKernelGetACInfoAllForCoredump", &__ptr_sceKernelGetACInfoAllForCoredump);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19725,10 +18599,8 @@ void __load_and_call_sceKernelGetAllowedSdkVersionOnSystem();
 static __attribute__ ((used)) void* __ptr_sceKernelGetAllowedSdkVersionOnSystem = &__load_and_call_sceKernelGetAllowedSdkVersionOnSystem;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetAllowedSdkVersionOnSystem() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetAllowedSdkVersionOnSystem", &__ptr_sceKernelGetAllowedSdkVersionOnSystem)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetAllowedSdkVersionOnSystem(void) {
+  sprx_dlsym(__handle, "sceKernelGetAllowedSdkVersionOnSystem", &__ptr_sceKernelGetAllowedSdkVersionOnSystem);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19759,10 +18631,8 @@ void __load_and_call_sceKernelGetAppCategoryType();
 static __attribute__ ((used)) void* __ptr_sceKernelGetAppCategoryType = &__load_and_call_sceKernelGetAppCategoryType;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetAppCategoryType() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetAppCategoryType", &__ptr_sceKernelGetAppCategoryType)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetAppCategoryType(void) {
+  sprx_dlsym(__handle, "sceKernelGetAppCategoryType", &__ptr_sceKernelGetAppCategoryType);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19793,10 +18663,8 @@ void __load_and_call_sceKernelGetAppInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelGetAppInfo = &__load_and_call_sceKernelGetAppInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetAppInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetAppInfo", &__ptr_sceKernelGetAppInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetAppInfo(void) {
+  sprx_dlsym(__handle, "sceKernelGetAppInfo", &__ptr_sceKernelGetAppInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19827,10 +18695,8 @@ void __load_and_call_sceKernelGetAppInfoByAppId();
 static __attribute__ ((used)) void* __ptr_sceKernelGetAppInfoByAppId = &__load_and_call_sceKernelGetAppInfoByAppId;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetAppInfoByAppId() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetAppInfoByAppId", &__ptr_sceKernelGetAppInfoByAppId)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetAppInfoByAppId(void) {
+  sprx_dlsym(__handle, "sceKernelGetAppInfoByAppId", &__ptr_sceKernelGetAppInfoByAppId);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19861,10 +18727,8 @@ void __load_and_call_sceKernelGetAppState();
 static __attribute__ ((used)) void* __ptr_sceKernelGetAppState = &__load_and_call_sceKernelGetAppState;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetAppState() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetAppState", &__ptr_sceKernelGetAppState)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetAppState(void) {
+  sprx_dlsym(__handle, "sceKernelGetAppState", &__ptr_sceKernelGetAppState);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19895,10 +18759,8 @@ void __load_and_call_sceKernelGetAslrStatus();
 static __attribute__ ((used)) void* __ptr_sceKernelGetAslrStatus = &__load_and_call_sceKernelGetAslrStatus;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetAslrStatus() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetAslrStatus", &__ptr_sceKernelGetAslrStatus)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetAslrStatus(void) {
+  sprx_dlsym(__handle, "sceKernelGetAslrStatus", &__ptr_sceKernelGetAslrStatus);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19929,10 +18791,8 @@ void __load_and_call_sceKernelGetAutoUpdateVersion();
 static __attribute__ ((used)) void* __ptr_sceKernelGetAutoUpdateVersion = &__load_and_call_sceKernelGetAutoUpdateVersion;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetAutoUpdateVersion() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetAutoUpdateVersion", &__ptr_sceKernelGetAutoUpdateVersion)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetAutoUpdateVersion(void) {
+  sprx_dlsym(__handle, "sceKernelGetAutoUpdateVersion", &__ptr_sceKernelGetAutoUpdateVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19963,10 +18823,8 @@ void __load_and_call_sceKernelGetBackupRestoreMode();
 static __attribute__ ((used)) void* __ptr_sceKernelGetBackupRestoreMode = &__load_and_call_sceKernelGetBackupRestoreMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetBackupRestoreMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetBackupRestoreMode", &__ptr_sceKernelGetBackupRestoreMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetBackupRestoreMode(void) {
+  sprx_dlsym(__handle, "sceKernelGetBackupRestoreMode", &__ptr_sceKernelGetBackupRestoreMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -19997,10 +18855,8 @@ void __load_and_call_sceKernelGetBackupRestoreModeOfNextBoot();
 static __attribute__ ((used)) void* __ptr_sceKernelGetBackupRestoreModeOfNextBoot = &__load_and_call_sceKernelGetBackupRestoreModeOfNextBoot;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetBackupRestoreModeOfNextBoot() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetBackupRestoreModeOfNextBoot", &__ptr_sceKernelGetBackupRestoreModeOfNextBoot)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetBackupRestoreModeOfNextBoot(void) {
+  sprx_dlsym(__handle, "sceKernelGetBackupRestoreModeOfNextBoot", &__ptr_sceKernelGetBackupRestoreModeOfNextBoot);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20031,10 +18887,8 @@ void __load_and_call_sceKernelGetBasicProductShape();
 static __attribute__ ((used)) void* __ptr_sceKernelGetBasicProductShape = &__load_and_call_sceKernelGetBasicProductShape;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetBasicProductShape() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetBasicProductShape", &__ptr_sceKernelGetBasicProductShape)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetBasicProductShape(void) {
+  sprx_dlsym(__handle, "sceKernelGetBasicProductShape", &__ptr_sceKernelGetBasicProductShape);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20065,10 +18919,8 @@ void __load_and_call_sceKernelGetBetaUpdateTestForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetBetaUpdateTestForRcmgr = &__load_and_call_sceKernelGetBetaUpdateTestForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetBetaUpdateTestForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetBetaUpdateTestForRcmgr", &__ptr_sceKernelGetBetaUpdateTestForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetBetaUpdateTestForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetBetaUpdateTestForRcmgr", &__ptr_sceKernelGetBetaUpdateTestForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20099,10 +18951,8 @@ void __load_and_call_sceKernelGetBioUsageAll();
 static __attribute__ ((used)) void* __ptr_sceKernelGetBioUsageAll = &__load_and_call_sceKernelGetBioUsageAll;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetBioUsageAll() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetBioUsageAll", &__ptr_sceKernelGetBioUsageAll)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetBioUsageAll(void) {
+  sprx_dlsym(__handle, "sceKernelGetBioUsageAll", &__ptr_sceKernelGetBioUsageAll);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20133,10 +18983,8 @@ void __load_and_call_sceKernelGetBootReqNotifyCount();
 static __attribute__ ((used)) void* __ptr_sceKernelGetBootReqNotifyCount = &__load_and_call_sceKernelGetBootReqNotifyCount;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetBootReqNotifyCount() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetBootReqNotifyCount", &__ptr_sceKernelGetBootReqNotifyCount)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetBootReqNotifyCount(void) {
+  sprx_dlsym(__handle, "sceKernelGetBootReqNotifyCount", &__ptr_sceKernelGetBootReqNotifyCount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20167,10 +19015,8 @@ void __load_and_call_sceKernelGetBudget();
 static __attribute__ ((used)) void* __ptr_sceKernelGetBudget = &__load_and_call_sceKernelGetBudget;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetBudget() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetBudget", &__ptr_sceKernelGetBudget)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetBudget(void) {
+  sprx_dlsym(__handle, "sceKernelGetBudget", &__ptr_sceKernelGetBudget);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20201,10 +19047,8 @@ void __load_and_call_sceKernelGetBuildNumber();
 static __attribute__ ((used)) void* __ptr_sceKernelGetBuildNumber = &__load_and_call_sceKernelGetBuildNumber;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetBuildNumber() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetBuildNumber", &__ptr_sceKernelGetBuildNumber)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetBuildNumber(void) {
+  sprx_dlsym(__handle, "sceKernelGetBuildNumber", &__ptr_sceKernelGetBuildNumber);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20235,10 +19079,8 @@ void __load_and_call_sceKernelGetCallRecord();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCallRecord = &__load_and_call_sceKernelGetCallRecord;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCallRecord() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCallRecord", &__ptr_sceKernelGetCallRecord)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCallRecord(void) {
+  sprx_dlsym(__handle, "sceKernelGetCallRecord", &__ptr_sceKernelGetCallRecord);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20269,10 +19111,8 @@ void __load_and_call_sceKernelGetChildApp();
 static __attribute__ ((used)) void* __ptr_sceKernelGetChildApp = &__load_and_call_sceKernelGetChildApp;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetChildApp() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetChildApp", &__ptr_sceKernelGetChildApp)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetChildApp(void) {
+  sprx_dlsym(__handle, "sceKernelGetChildApp", &__ptr_sceKernelGetChildApp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20303,10 +19143,8 @@ void __load_and_call_sceKernelGetCompiledSdkVersion();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCompiledSdkVersion = &__load_and_call_sceKernelGetCompiledSdkVersion;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCompiledSdkVersion() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCompiledSdkVersion", &__ptr_sceKernelGetCompiledSdkVersion)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCompiledSdkVersion(void) {
+  sprx_dlsym(__handle, "sceKernelGetCompiledSdkVersion", &__ptr_sceKernelGetCompiledSdkVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20337,10 +19175,8 @@ void __load_and_call_sceKernelGetCompiledSdkVersionByPath();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCompiledSdkVersionByPath = &__load_and_call_sceKernelGetCompiledSdkVersionByPath;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCompiledSdkVersionByPath() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCompiledSdkVersionByPath", &__ptr_sceKernelGetCompiledSdkVersionByPath)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCompiledSdkVersionByPath(void) {
+  sprx_dlsym(__handle, "sceKernelGetCompiledSdkVersionByPath", &__ptr_sceKernelGetCompiledSdkVersionByPath);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20371,10 +19207,8 @@ void __load_and_call_sceKernelGetCompiledSdkVersionByPid();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCompiledSdkVersionByPid = &__load_and_call_sceKernelGetCompiledSdkVersionByPid;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCompiledSdkVersionByPid() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCompiledSdkVersionByPid", &__ptr_sceKernelGetCompiledSdkVersionByPid)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCompiledSdkVersionByPid(void) {
+  sprx_dlsym(__handle, "sceKernelGetCompiledSdkVersionByPid", &__ptr_sceKernelGetCompiledSdkVersionByPid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20405,10 +19239,8 @@ void __load_and_call_sceKernelGetCoredumpAppInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCoredumpAppInfo = &__load_and_call_sceKernelGetCoredumpAppInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCoredumpAppInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCoredumpAppInfo", &__ptr_sceKernelGetCoredumpAppInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCoredumpAppInfo(void) {
+  sprx_dlsym(__handle, "sceKernelGetCoredumpAppInfo", &__ptr_sceKernelGetCoredumpAppInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20439,10 +19271,8 @@ void __load_and_call_sceKernelGetCpuFrequency();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpuFrequency = &__load_and_call_sceKernelGetCpuFrequency;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpuFrequency() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpuFrequency", &__ptr_sceKernelGetCpuFrequency)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpuFrequency(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpuFrequency", &__ptr_sceKernelGetCpuFrequency);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20473,10 +19303,8 @@ void __load_and_call_sceKernelGetCpuTemperature();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpuTemperature = &__load_and_call_sceKernelGetCpuTemperature;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpuTemperature() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpuTemperature", &__ptr_sceKernelGetCpuTemperature)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpuTemperature(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpuTemperature", &__ptr_sceKernelGetCpuTemperature);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20507,10 +19335,8 @@ void __load_and_call_sceKernelGetCpuUsage();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpuUsage = &__load_and_call_sceKernelGetCpuUsage;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpuUsage() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpuUsage", &__ptr_sceKernelGetCpuUsage)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpuUsage(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpuUsage", &__ptr_sceKernelGetCpuUsage);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20541,10 +19367,8 @@ void __load_and_call_sceKernelGetCpuUsageAll();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpuUsageAll = &__load_and_call_sceKernelGetCpuUsageAll;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpuUsageAll() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpuUsageAll", &__ptr_sceKernelGetCpuUsageAll)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpuUsageAll(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpuUsageAll", &__ptr_sceKernelGetCpuUsageAll);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20575,10 +19399,8 @@ void __load_and_call_sceKernelGetCpuUsageProc();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpuUsageProc = &__load_and_call_sceKernelGetCpuUsageProc;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpuUsageProc() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpuUsageProc", &__ptr_sceKernelGetCpuUsageProc)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpuUsageProc(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpuUsageProc", &__ptr_sceKernelGetCpuUsageProc);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20609,10 +19431,8 @@ void __load_and_call_sceKernelGetCpuUsageProc2();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpuUsageProc2 = &__load_and_call_sceKernelGetCpuUsageProc2;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpuUsageProc2() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpuUsageProc2", &__ptr_sceKernelGetCpuUsageProc2)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpuUsageProc2(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpuUsageProc2", &__ptr_sceKernelGetCpuUsageProc2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20643,10 +19463,8 @@ void __load_and_call_sceKernelGetCpuUsageThread();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpuUsageThread = &__load_and_call_sceKernelGetCpuUsageThread;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpuUsageThread() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpuUsageThread", &__ptr_sceKernelGetCpuUsageThread)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpuUsageThread(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpuUsageThread", &__ptr_sceKernelGetCpuUsageThread);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20677,10 +19495,8 @@ void __load_and_call_sceKernelGetCpumode();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpumode = &__load_and_call_sceKernelGetCpumode;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpumode() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpumode", &__ptr_sceKernelGetCpumode)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpumode(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpumode", &__ptr_sceKernelGetCpumode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20711,10 +19527,8 @@ void __load_and_call_sceKernelGetCpumodeGame();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCpumodeGame = &__load_and_call_sceKernelGetCpumodeGame;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCpumodeGame() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCpumodeGame", &__ptr_sceKernelGetCpumodeGame)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCpumodeGame(void) {
+  sprx_dlsym(__handle, "sceKernelGetCpumodeGame", &__ptr_sceKernelGetCpumodeGame);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20745,10 +19559,8 @@ void __load_and_call_sceKernelGetCurrentCpu();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCurrentCpu = &__load_and_call_sceKernelGetCurrentCpu;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCurrentCpu() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCurrentCpu", &__ptr_sceKernelGetCurrentCpu)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCurrentCpu(void) {
+  sprx_dlsym(__handle, "sceKernelGetCurrentCpu", &__ptr_sceKernelGetCurrentCpu);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20779,10 +19591,8 @@ void __load_and_call_sceKernelGetCurrentFanDuty();
 static __attribute__ ((used)) void* __ptr_sceKernelGetCurrentFanDuty = &__load_and_call_sceKernelGetCurrentFanDuty;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetCurrentFanDuty() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetCurrentFanDuty", &__ptr_sceKernelGetCurrentFanDuty)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetCurrentFanDuty(void) {
+  sprx_dlsym(__handle, "sceKernelGetCurrentFanDuty", &__ptr_sceKernelGetCurrentFanDuty);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20813,10 +19623,8 @@ void __load_and_call_sceKernelGetDataTransferMode();
 static __attribute__ ((used)) void* __ptr_sceKernelGetDataTransferMode = &__load_and_call_sceKernelGetDataTransferMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetDataTransferMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetDataTransferMode", &__ptr_sceKernelGetDataTransferMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetDataTransferMode(void) {
+  sprx_dlsym(__handle, "sceKernelGetDataTransferMode", &__ptr_sceKernelGetDataTransferMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20847,10 +19655,8 @@ void __load_and_call_sceKernelGetDebugMenuMiniModeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetDebugMenuMiniModeForRcmgr = &__load_and_call_sceKernelGetDebugMenuMiniModeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetDebugMenuMiniModeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetDebugMenuMiniModeForRcmgr", &__ptr_sceKernelGetDebugMenuMiniModeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetDebugMenuMiniModeForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetDebugMenuMiniModeForRcmgr", &__ptr_sceKernelGetDebugMenuMiniModeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20881,10 +19687,8 @@ void __load_and_call_sceKernelGetDebugMenuModeForPsmForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetDebugMenuModeForPsmForRcmgr = &__load_and_call_sceKernelGetDebugMenuModeForPsmForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetDebugMenuModeForPsmForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetDebugMenuModeForPsmForRcmgr", &__ptr_sceKernelGetDebugMenuModeForPsmForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetDebugMenuModeForPsmForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetDebugMenuModeForPsmForRcmgr", &__ptr_sceKernelGetDebugMenuModeForPsmForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20915,10 +19719,8 @@ void __load_and_call_sceKernelGetDebugMenuModeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetDebugMenuModeForRcmgr = &__load_and_call_sceKernelGetDebugMenuModeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetDebugMenuModeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetDebugMenuModeForRcmgr", &__ptr_sceKernelGetDebugMenuModeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetDebugMenuModeForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetDebugMenuModeForRcmgr", &__ptr_sceKernelGetDebugMenuModeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20949,10 +19751,8 @@ void __load_and_call_sceKernelGetDefaultToolMemorySize();
 static __attribute__ ((used)) void* __ptr_sceKernelGetDefaultToolMemorySize = &__load_and_call_sceKernelGetDefaultToolMemorySize;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetDefaultToolMemorySize() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetDefaultToolMemorySize", &__ptr_sceKernelGetDefaultToolMemorySize)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetDefaultToolMemorySize(void) {
+  sprx_dlsym(__handle, "sceKernelGetDefaultToolMemorySize", &__ptr_sceKernelGetDefaultToolMemorySize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -20983,10 +19783,8 @@ void __load_and_call_sceKernelGetDirectMemorySize();
 static __attribute__ ((used)) void* __ptr_sceKernelGetDirectMemorySize = &__load_and_call_sceKernelGetDirectMemorySize;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetDirectMemorySize() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetDirectMemorySize", &__ptr_sceKernelGetDirectMemorySize)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetDirectMemorySize(void) {
+  sprx_dlsym(__handle, "sceKernelGetDirectMemorySize", &__ptr_sceKernelGetDirectMemorySize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21017,10 +19815,8 @@ void __load_and_call_sceKernelGetDirectMemoryType();
 static __attribute__ ((used)) void* __ptr_sceKernelGetDirectMemoryType = &__load_and_call_sceKernelGetDirectMemoryType;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetDirectMemoryType() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetDirectMemoryType", &__ptr_sceKernelGetDirectMemoryType)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetDirectMemoryType(void) {
+  sprx_dlsym(__handle, "sceKernelGetDirectMemoryType", &__ptr_sceKernelGetDirectMemoryType);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21051,10 +19847,8 @@ void __load_and_call_sceKernelGetEmergencyErrorLog();
 static __attribute__ ((used)) void* __ptr_sceKernelGetEmergencyErrorLog = &__load_and_call_sceKernelGetEmergencyErrorLog;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetEmergencyErrorLog() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetEmergencyErrorLog", &__ptr_sceKernelGetEmergencyErrorLog)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetEmergencyErrorLog(void) {
+  sprx_dlsym(__handle, "sceKernelGetEmergencyErrorLog", &__ptr_sceKernelGetEmergencyErrorLog);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21085,10 +19879,8 @@ void __load_and_call_sceKernelGetEventData();
 static __attribute__ ((used)) void* __ptr_sceKernelGetEventData = &__load_and_call_sceKernelGetEventData;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetEventData() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetEventData", &__ptr_sceKernelGetEventData)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetEventData(void) {
+  sprx_dlsym(__handle, "sceKernelGetEventData", &__ptr_sceKernelGetEventData);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21119,10 +19911,8 @@ void __load_and_call_sceKernelGetEventError();
 static __attribute__ ((used)) void* __ptr_sceKernelGetEventError = &__load_and_call_sceKernelGetEventError;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetEventError() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetEventError", &__ptr_sceKernelGetEventError)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetEventError(void) {
+  sprx_dlsym(__handle, "sceKernelGetEventError", &__ptr_sceKernelGetEventError);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21153,10 +19943,8 @@ void __load_and_call_sceKernelGetEventFflags();
 static __attribute__ ((used)) void* __ptr_sceKernelGetEventFflags = &__load_and_call_sceKernelGetEventFflags;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetEventFflags() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetEventFflags", &__ptr_sceKernelGetEventFflags)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetEventFflags(void) {
+  sprx_dlsym(__handle, "sceKernelGetEventFflags", &__ptr_sceKernelGetEventFflags);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21187,10 +19975,8 @@ void __load_and_call_sceKernelGetEventFilter();
 static __attribute__ ((used)) void* __ptr_sceKernelGetEventFilter = &__load_and_call_sceKernelGetEventFilter;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetEventFilter() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetEventFilter", &__ptr_sceKernelGetEventFilter)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetEventFilter(void) {
+  sprx_dlsym(__handle, "sceKernelGetEventFilter", &__ptr_sceKernelGetEventFilter);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21221,10 +20007,8 @@ void __load_and_call_sceKernelGetEventId();
 static __attribute__ ((used)) void* __ptr_sceKernelGetEventId = &__load_and_call_sceKernelGetEventId;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetEventId() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetEventId", &__ptr_sceKernelGetEventId)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetEventId(void) {
+  sprx_dlsym(__handle, "sceKernelGetEventId", &__ptr_sceKernelGetEventId);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21255,10 +20039,8 @@ void __load_and_call_sceKernelGetEventUserData();
 static __attribute__ ((used)) void* __ptr_sceKernelGetEventUserData = &__load_and_call_sceKernelGetEventUserData;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetEventUserData() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetEventUserData", &__ptr_sceKernelGetEventUserData)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetEventUserData(void) {
+  sprx_dlsym(__handle, "sceKernelGetEventUserData", &__ptr_sceKernelGetEventUserData);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21289,10 +20071,8 @@ void __load_and_call_sceKernelGetExecutableModuleHandle();
 static __attribute__ ((used)) void* __ptr_sceKernelGetExecutableModuleHandle = &__load_and_call_sceKernelGetExecutableModuleHandle;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetExecutableModuleHandle() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetExecutableModuleHandle", &__ptr_sceKernelGetExecutableModuleHandle)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetExecutableModuleHandle(void) {
+  sprx_dlsym(__handle, "sceKernelGetExecutableModuleHandle", &__ptr_sceKernelGetExecutableModuleHandle);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21323,10 +20103,8 @@ void __load_and_call_sceKernelGetExtLibcHandle();
 static __attribute__ ((used)) void* __ptr_sceKernelGetExtLibcHandle = &__load_and_call_sceKernelGetExtLibcHandle;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetExtLibcHandle() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetExtLibcHandle", &__ptr_sceKernelGetExtLibcHandle)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetExtLibcHandle(void) {
+  sprx_dlsym(__handle, "sceKernelGetExtLibcHandle", &__ptr_sceKernelGetExtLibcHandle);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21357,10 +20135,8 @@ void __load_and_call_sceKernelGetFakeFinalizeMenuForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetFakeFinalizeMenuForRcmgr = &__load_and_call_sceKernelGetFakeFinalizeMenuForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetFakeFinalizeMenuForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetFakeFinalizeMenuForRcmgr", &__ptr_sceKernelGetFakeFinalizeMenuForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetFakeFinalizeMenuForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetFakeFinalizeMenuForRcmgr", &__ptr_sceKernelGetFakeFinalizeMenuForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21391,10 +20167,8 @@ void __load_and_call_sceKernelGetFirstImageAddr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetFirstImageAddr = &__load_and_call_sceKernelGetFirstImageAddr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetFirstImageAddr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetFirstImageAddr", &__ptr_sceKernelGetFirstImageAddr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetFirstImageAddr(void) {
+  sprx_dlsym(__handle, "sceKernelGetFirstImageAddr", &__ptr_sceKernelGetFirstImageAddr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21425,10 +20199,8 @@ void __load_and_call_sceKernelGetFlagedUpdaterForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetFlagedUpdaterForRcmgr = &__load_and_call_sceKernelGetFlagedUpdaterForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetFlagedUpdaterForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetFlagedUpdaterForRcmgr", &__ptr_sceKernelGetFlagedUpdaterForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetFlagedUpdaterForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetFlagedUpdaterForRcmgr", &__ptr_sceKernelGetFlagedUpdaterForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21459,10 +20231,8 @@ void __load_and_call_sceKernelGetForceUpdateModeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetForceUpdateModeForRcmgr = &__load_and_call_sceKernelGetForceUpdateModeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetForceUpdateModeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetForceUpdateModeForRcmgr", &__ptr_sceKernelGetForceUpdateModeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetForceUpdateModeForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetForceUpdateModeForRcmgr", &__ptr_sceKernelGetForceUpdateModeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21493,10 +20263,8 @@ void __load_and_call_sceKernelGetFsSandboxRandomWord();
 static __attribute__ ((used)) void* __ptr_sceKernelGetFsSandboxRandomWord = &__load_and_call_sceKernelGetFsSandboxRandomWord;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetFsSandboxRandomWord() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetFsSandboxRandomWord", &__ptr_sceKernelGetFsSandboxRandomWord)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetFsSandboxRandomWord(void) {
+  sprx_dlsym(__handle, "sceKernelGetFsSandboxRandomWord", &__ptr_sceKernelGetFsSandboxRandomWord);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21527,10 +20295,8 @@ void __load_and_call_sceKernelGetGPI();
 static __attribute__ ((used)) void* __ptr_sceKernelGetGPI = &__load_and_call_sceKernelGetGPI;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetGPI() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetGPI", &__ptr_sceKernelGetGPI)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetGPI(void) {
+  sprx_dlsym(__handle, "sceKernelGetGPI", &__ptr_sceKernelGetGPI);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21561,10 +20327,8 @@ void __load_and_call_sceKernelGetGPO();
 static __attribute__ ((used)) void* __ptr_sceKernelGetGPO = &__load_and_call_sceKernelGetGPO;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetGPO() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetGPO", &__ptr_sceKernelGetGPO)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetGPO(void) {
+  sprx_dlsym(__handle, "sceKernelGetGPO", &__ptr_sceKernelGetGPO);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21595,10 +20359,8 @@ void __load_and_call_sceKernelGetHwFeatureInfoForDecid();
 static __attribute__ ((used)) void* __ptr_sceKernelGetHwFeatureInfoForDecid = &__load_and_call_sceKernelGetHwFeatureInfoForDecid;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetHwFeatureInfoForDecid() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetHwFeatureInfoForDecid", &__ptr_sceKernelGetHwFeatureInfoForDecid)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetHwFeatureInfoForDecid(void) {
+  sprx_dlsym(__handle, "sceKernelGetHwFeatureInfoForDecid", &__ptr_sceKernelGetHwFeatureInfoForDecid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21629,10 +20391,8 @@ void __load_and_call_sceKernelGetHwModelName();
 static __attribute__ ((used)) void* __ptr_sceKernelGetHwModelName = &__load_and_call_sceKernelGetHwModelName;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetHwModelName() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetHwModelName", &__ptr_sceKernelGetHwModelName)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetHwModelName(void) {
+  sprx_dlsym(__handle, "sceKernelGetHwModelName", &__ptr_sceKernelGetHwModelName);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21663,10 +20423,8 @@ void __load_and_call_sceKernelGetHwSerialNumber();
 static __attribute__ ((used)) void* __ptr_sceKernelGetHwSerialNumber = &__load_and_call_sceKernelGetHwSerialNumber;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetHwSerialNumber() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetHwSerialNumber", &__ptr_sceKernelGetHwSerialNumber)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetHwSerialNumber(void) {
+  sprx_dlsym(__handle, "sceKernelGetHwSerialNumber", &__ptr_sceKernelGetHwSerialNumber);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21697,10 +20455,8 @@ void __load_and_call_sceKernelGetIdPs();
 static __attribute__ ((used)) void* __ptr_sceKernelGetIdPs = &__load_and_call_sceKernelGetIdPs;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetIdPs() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetIdPs", &__ptr_sceKernelGetIdPs)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetIdPs(void) {
+  sprx_dlsym(__handle, "sceKernelGetIdPs", &__ptr_sceKernelGetIdPs);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21731,10 +20487,8 @@ void __load_and_call_sceKernelGetIdTableCurrentCount();
 static __attribute__ ((used)) void* __ptr_sceKernelGetIdTableCurrentCount = &__load_and_call_sceKernelGetIdTableCurrentCount;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetIdTableCurrentCount() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetIdTableCurrentCount", &__ptr_sceKernelGetIdTableCurrentCount)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetIdTableCurrentCount(void) {
+  sprx_dlsym(__handle, "sceKernelGetIdTableCurrentCount", &__ptr_sceKernelGetIdTableCurrentCount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21765,10 +20519,8 @@ void __load_and_call_sceKernelGetIoreq();
 static __attribute__ ((used)) void* __ptr_sceKernelGetIoreq = &__load_and_call_sceKernelGetIoreq;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetIoreq() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetIoreq", &__ptr_sceKernelGetIoreq)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetIoreq(void) {
+  sprx_dlsym(__handle, "sceKernelGetIoreq", &__ptr_sceKernelGetIoreq);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21799,10 +20551,8 @@ void __load_and_call_sceKernelGetIpcPath();
 static __attribute__ ((used)) void* __ptr_sceKernelGetIpcPath = &__load_and_call_sceKernelGetIpcPath;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetIpcPath() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetIpcPath", &__ptr_sceKernelGetIpcPath)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetIpcPath(void) {
+  sprx_dlsym(__handle, "sceKernelGetIpcPath", &__ptr_sceKernelGetIpcPath);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21833,10 +20583,8 @@ void __load_and_call_sceKernelGetKnobs();
 static __attribute__ ((used)) void* __ptr_sceKernelGetKnobs = &__load_and_call_sceKernelGetKnobs;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetKnobs() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetKnobs", &__ptr_sceKernelGetKnobs)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetKnobs(void) {
+  sprx_dlsym(__handle, "sceKernelGetKnobs", &__ptr_sceKernelGetKnobs);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21867,10 +20615,8 @@ void __load_and_call_sceKernelGetKqueueFromEqueue();
 static __attribute__ ((used)) void* __ptr_sceKernelGetKqueueFromEqueue = &__load_and_call_sceKernelGetKqueueFromEqueue;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetKqueueFromEqueue() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetKqueueFromEqueue", &__ptr_sceKernelGetKqueueFromEqueue)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetKqueueFromEqueue(void) {
+  sprx_dlsym(__handle, "sceKernelGetKqueueFromEqueue", &__ptr_sceKernelGetKqueueFromEqueue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21901,10 +20647,8 @@ void __load_and_call_sceKernelGetLibkernelTextLocation();
 static __attribute__ ((used)) void* __ptr_sceKernelGetLibkernelTextLocation = &__load_and_call_sceKernelGetLibkernelTextLocation;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetLibkernelTextLocation() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetLibkernelTextLocation", &__ptr_sceKernelGetLibkernelTextLocation)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetLibkernelTextLocation(void) {
+  sprx_dlsym(__handle, "sceKernelGetLibkernelTextLocation", &__ptr_sceKernelGetLibkernelTextLocation);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21935,10 +20679,8 @@ void __load_and_call_sceKernelGetMainSocId();
 static __attribute__ ((used)) void* __ptr_sceKernelGetMainSocId = &__load_and_call_sceKernelGetMainSocId;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetMainSocId() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetMainSocId", &__ptr_sceKernelGetMainSocId)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetMainSocId(void) {
+  sprx_dlsym(__handle, "sceKernelGetMainSocId", &__ptr_sceKernelGetMainSocId);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -21969,10 +20711,8 @@ void __load_and_call_sceKernelGetMemoryPstate();
 static __attribute__ ((used)) void* __ptr_sceKernelGetMemoryPstate = &__load_and_call_sceKernelGetMemoryPstate;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetMemoryPstate() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetMemoryPstate", &__ptr_sceKernelGetMemoryPstate)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetMemoryPstate(void) {
+  sprx_dlsym(__handle, "sceKernelGetMemoryPstate", &__ptr_sceKernelGetMemoryPstate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22003,10 +20743,8 @@ void __load_and_call_sceKernelGetModuleInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelGetModuleInfo = &__load_and_call_sceKernelGetModuleInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetModuleInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetModuleInfo", &__ptr_sceKernelGetModuleInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetModuleInfo(void) {
+  sprx_dlsym(__handle, "sceKernelGetModuleInfo", &__ptr_sceKernelGetModuleInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22037,10 +20775,8 @@ void __load_and_call_sceKernelGetModuleInfoForUnwind();
 static __attribute__ ((used)) void* __ptr_sceKernelGetModuleInfoForUnwind = &__load_and_call_sceKernelGetModuleInfoForUnwind;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetModuleInfoForUnwind() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetModuleInfoForUnwind", &__ptr_sceKernelGetModuleInfoForUnwind)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetModuleInfoForUnwind(void) {
+  sprx_dlsym(__handle, "sceKernelGetModuleInfoForUnwind", &__ptr_sceKernelGetModuleInfoForUnwind);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22071,10 +20807,8 @@ void __load_and_call_sceKernelGetModuleInfoFromAddr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetModuleInfoFromAddr = &__load_and_call_sceKernelGetModuleInfoFromAddr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetModuleInfoFromAddr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetModuleInfoFromAddr", &__ptr_sceKernelGetModuleInfoFromAddr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetModuleInfoFromAddr(void) {
+  sprx_dlsym(__handle, "sceKernelGetModuleInfoFromAddr", &__ptr_sceKernelGetModuleInfoFromAddr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22105,10 +20839,8 @@ void __load_and_call_sceKernelGetModuleInfoInternal();
 static __attribute__ ((used)) void* __ptr_sceKernelGetModuleInfoInternal = &__load_and_call_sceKernelGetModuleInfoInternal;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetModuleInfoInternal() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetModuleInfoInternal", &__ptr_sceKernelGetModuleInfoInternal)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetModuleInfoInternal(void) {
+  sprx_dlsym(__handle, "sceKernelGetModuleInfoInternal", &__ptr_sceKernelGetModuleInfoInternal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22139,10 +20871,8 @@ void __load_and_call_sceKernelGetModuleList();
 static __attribute__ ((used)) void* __ptr_sceKernelGetModuleList = &__load_and_call_sceKernelGetModuleList;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetModuleList() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetModuleList", &__ptr_sceKernelGetModuleList)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetModuleList(void) {
+  sprx_dlsym(__handle, "sceKernelGetModuleList", &__ptr_sceKernelGetModuleList);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22173,10 +20903,8 @@ void __load_and_call_sceKernelGetModuleListInternal();
 static __attribute__ ((used)) void* __ptr_sceKernelGetModuleListInternal = &__load_and_call_sceKernelGetModuleListInternal;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetModuleListInternal() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetModuleListInternal", &__ptr_sceKernelGetModuleListInternal)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetModuleListInternal(void) {
+  sprx_dlsym(__handle, "sceKernelGetModuleListInternal", &__ptr_sceKernelGetModuleListInternal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22207,10 +20935,8 @@ void __load_and_call_sceKernelGetOpenPsIdForSystem();
 static __attribute__ ((used)) void* __ptr_sceKernelGetOpenPsIdForSystem = &__load_and_call_sceKernelGetOpenPsIdForSystem;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetOpenPsIdForSystem() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetOpenPsIdForSystem", &__ptr_sceKernelGetOpenPsIdForSystem)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetOpenPsIdForSystem(void) {
+  sprx_dlsym(__handle, "sceKernelGetOpenPsIdForSystem", &__ptr_sceKernelGetOpenPsIdForSystem);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22241,10 +20967,8 @@ void __load_and_call_sceKernelGetPageTableStats();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPageTableStats = &__load_and_call_sceKernelGetPageTableStats;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPageTableStats() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPageTableStats", &__ptr_sceKernelGetPageTableStats)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPageTableStats(void) {
+  sprx_dlsym(__handle, "sceKernelGetPageTableStats", &__ptr_sceKernelGetPageTableStats);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22275,10 +20999,8 @@ void __load_and_call_sceKernelGetPagingStatsOfAllObjects();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPagingStatsOfAllObjects = &__load_and_call_sceKernelGetPagingStatsOfAllObjects;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPagingStatsOfAllObjects() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPagingStatsOfAllObjects", &__ptr_sceKernelGetPagingStatsOfAllObjects)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPagingStatsOfAllObjects(void) {
+  sprx_dlsym(__handle, "sceKernelGetPagingStatsOfAllObjects", &__ptr_sceKernelGetPagingStatsOfAllObjects);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22309,10 +21031,8 @@ void __load_and_call_sceKernelGetPagingStatsOfAllThreads();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPagingStatsOfAllThreads = &__load_and_call_sceKernelGetPagingStatsOfAllThreads;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPagingStatsOfAllThreads() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPagingStatsOfAllThreads", &__ptr_sceKernelGetPagingStatsOfAllThreads)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPagingStatsOfAllThreads(void) {
+  sprx_dlsym(__handle, "sceKernelGetPagingStatsOfAllThreads", &__ptr_sceKernelGetPagingStatsOfAllThreads);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22343,10 +21063,8 @@ void __load_and_call_sceKernelGetParentApp();
 static __attribute__ ((used)) void* __ptr_sceKernelGetParentApp = &__load_and_call_sceKernelGetParentApp;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetParentApp() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetParentApp", &__ptr_sceKernelGetParentApp)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetParentApp(void) {
+  sprx_dlsym(__handle, "sceKernelGetParentApp", &__ptr_sceKernelGetParentApp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22377,10 +21095,8 @@ void __load_and_call_sceKernelGetPhysPageSize();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPhysPageSize = &__load_and_call_sceKernelGetPhysPageSize;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPhysPageSize() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPhysPageSize", &__ptr_sceKernelGetPhysPageSize)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPhysPageSize(void) {
+  sprx_dlsym(__handle, "sceKernelGetPhysPageSize", &__ptr_sceKernelGetPhysPageSize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22411,10 +21127,8 @@ void __load_and_call_sceKernelGetPrefixVersion();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPrefixVersion = &__load_and_call_sceKernelGetPrefixVersion;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPrefixVersion() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPrefixVersion", &__ptr_sceKernelGetPrefixVersion)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPrefixVersion(void) {
+  sprx_dlsym(__handle, "sceKernelGetPrefixVersion", &__ptr_sceKernelGetPrefixVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22445,10 +21159,8 @@ void __load_and_call_sceKernelGetProcParam();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProcParam = &__load_and_call_sceKernelGetProcParam;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProcParam() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProcParam", &__ptr_sceKernelGetProcParam)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProcParam(void) {
+  sprx_dlsym(__handle, "sceKernelGetProcParam", &__ptr_sceKernelGetProcParam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22479,10 +21191,8 @@ void __load_and_call_sceKernelGetProcessAbiType();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProcessAbiType = &__load_and_call_sceKernelGetProcessAbiType;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProcessAbiType() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProcessAbiType", &__ptr_sceKernelGetProcessAbiType)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProcessAbiType(void) {
+  sprx_dlsym(__handle, "sceKernelGetProcessAbiType", &__ptr_sceKernelGetProcessAbiType);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22513,10 +21223,8 @@ void __load_and_call_sceKernelGetProcessName();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProcessName = &__load_and_call_sceKernelGetProcessName;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProcessName() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProcessName", &__ptr_sceKernelGetProcessName)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProcessName(void) {
+  sprx_dlsym(__handle, "sceKernelGetProcessName", &__ptr_sceKernelGetProcessName);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22547,10 +21255,8 @@ void __load_and_call_sceKernelGetProcessTime();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProcessTime = &__load_and_call_sceKernelGetProcessTime;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProcessTime() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProcessTime", &__ptr_sceKernelGetProcessTime)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProcessTime(void) {
+  sprx_dlsym(__handle, "sceKernelGetProcessTime", &__ptr_sceKernelGetProcessTime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22581,10 +21287,8 @@ void __load_and_call_sceKernelGetProcessTimeCounter();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProcessTimeCounter = &__load_and_call_sceKernelGetProcessTimeCounter;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProcessTimeCounter() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProcessTimeCounter", &__ptr_sceKernelGetProcessTimeCounter)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProcessTimeCounter(void) {
+  sprx_dlsym(__handle, "sceKernelGetProcessTimeCounter", &__ptr_sceKernelGetProcessTimeCounter);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22615,10 +21319,8 @@ void __load_and_call_sceKernelGetProcessTimeCounterFrequency();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProcessTimeCounterFrequency = &__load_and_call_sceKernelGetProcessTimeCounterFrequency;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProcessTimeCounterFrequency() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProcessTimeCounterFrequency", &__ptr_sceKernelGetProcessTimeCounterFrequency)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProcessTimeCounterFrequency(void) {
+  sprx_dlsym(__handle, "sceKernelGetProcessTimeCounterFrequency", &__ptr_sceKernelGetProcessTimeCounterFrequency);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22649,10 +21351,8 @@ void __load_and_call_sceKernelGetProcessType();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProcessType = &__load_and_call_sceKernelGetProcessType;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProcessType() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProcessType", &__ptr_sceKernelGetProcessType)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProcessType(void) {
+  sprx_dlsym(__handle, "sceKernelGetProcessType", &__ptr_sceKernelGetProcessType);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22683,10 +21383,8 @@ void __load_and_call_sceKernelGetProcessTypeOfBudget();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProcessTypeOfBudget = &__load_and_call_sceKernelGetProcessTypeOfBudget;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProcessTypeOfBudget() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProcessTypeOfBudget", &__ptr_sceKernelGetProcessTypeOfBudget)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProcessTypeOfBudget(void) {
+  sprx_dlsym(__handle, "sceKernelGetProcessTypeOfBudget", &__ptr_sceKernelGetProcessTypeOfBudget);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22717,10 +21415,8 @@ void __load_and_call_sceKernelGetProductCode();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProductCode = &__load_and_call_sceKernelGetProductCode;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProductCode() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProductCode", &__ptr_sceKernelGetProductCode)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProductCode(void) {
+  sprx_dlsym(__handle, "sceKernelGetProductCode", &__ptr_sceKernelGetProductCode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22751,10 +21447,8 @@ void __load_and_call_sceKernelGetProductStr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProductStr = &__load_and_call_sceKernelGetProductStr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProductStr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProductStr", &__ptr_sceKernelGetProductStr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProductStr(void) {
+  sprx_dlsym(__handle, "sceKernelGetProductStr", &__ptr_sceKernelGetProductStr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22785,10 +21479,8 @@ void __load_and_call_sceKernelGetProsperoSystemSwVersion();
 static __attribute__ ((used)) void* __ptr_sceKernelGetProsperoSystemSwVersion = &__load_and_call_sceKernelGetProsperoSystemSwVersion;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetProsperoSystemSwVersion() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetProsperoSystemSwVersion", &__ptr_sceKernelGetProsperoSystemSwVersion)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetProsperoSystemSwVersion(void) {
+  sprx_dlsym(__handle, "sceKernelGetProsperoSystemSwVersion", &__ptr_sceKernelGetProsperoSystemSwVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22819,10 +21511,8 @@ void __load_and_call_sceKernelGetPrtAperture();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPrtAperture = &__load_and_call_sceKernelGetPrtAperture;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPrtAperture() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPrtAperture", &__ptr_sceKernelGetPrtAperture)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPrtAperture(void) {
+  sprx_dlsym(__handle, "sceKernelGetPrtAperture", &__ptr_sceKernelGetPrtAperture);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22853,10 +21543,8 @@ void __load_and_call_sceKernelGetPs4SystemSwVersion();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPs4SystemSwVersion = &__load_and_call_sceKernelGetPs4SystemSwVersion;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPs4SystemSwVersion() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPs4SystemSwVersion", &__ptr_sceKernelGetPs4SystemSwVersion)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPs4SystemSwVersion(void) {
+  sprx_dlsym(__handle, "sceKernelGetPs4SystemSwVersion", &__ptr_sceKernelGetPs4SystemSwVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22887,10 +21575,8 @@ void __load_and_call_sceKernelGetPsmIntdevModeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPsmIntdevModeForRcmgr = &__load_and_call_sceKernelGetPsmIntdevModeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPsmIntdevModeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPsmIntdevModeForRcmgr", &__ptr_sceKernelGetPsmIntdevModeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPsmIntdevModeForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetPsmIntdevModeForRcmgr", &__ptr_sceKernelGetPsmIntdevModeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22921,10 +21607,8 @@ void __load_and_call_sceKernelGetPsnAccessTraceLogForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetPsnAccessTraceLogForRcmgr = &__load_and_call_sceKernelGetPsnAccessTraceLogForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetPsnAccessTraceLogForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetPsnAccessTraceLogForRcmgr", &__ptr_sceKernelGetPsnAccessTraceLogForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetPsnAccessTraceLogForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetPsnAccessTraceLogForRcmgr", &__ptr_sceKernelGetPsnAccessTraceLogForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22955,10 +21639,8 @@ void __load_and_call_sceKernelGetQafExpirationTimeNotafterForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetQafExpirationTimeNotafterForRcmgr = &__load_and_call_sceKernelGetQafExpirationTimeNotafterForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetQafExpirationTimeNotafterForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetQafExpirationTimeNotafterForRcmgr", &__ptr_sceKernelGetQafExpirationTimeNotafterForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetQafExpirationTimeNotafterForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetQafExpirationTimeNotafterForRcmgr", &__ptr_sceKernelGetQafExpirationTimeNotafterForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -22989,10 +21671,8 @@ void __load_and_call_sceKernelGetQafExpirationTimeNotbeforeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetQafExpirationTimeNotbeforeForRcmgr = &__load_and_call_sceKernelGetQafExpirationTimeNotbeforeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetQafExpirationTimeNotbeforeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetQafExpirationTimeNotbeforeForRcmgr", &__ptr_sceKernelGetQafExpirationTimeNotbeforeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetQafExpirationTimeNotbeforeForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetQafExpirationTimeNotbeforeForRcmgr", &__ptr_sceKernelGetQafExpirationTimeNotbeforeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23023,10 +21703,8 @@ void __load_and_call_sceKernelGetQafGenerationForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetQafGenerationForRcmgr = &__load_and_call_sceKernelGetQafGenerationForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetQafGenerationForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetQafGenerationForRcmgr", &__ptr_sceKernelGetQafGenerationForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetQafGenerationForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetQafGenerationForRcmgr", &__ptr_sceKernelGetQafGenerationForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23057,10 +21735,8 @@ void __load_and_call_sceKernelGetQafNameForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetQafNameForRcmgr = &__load_and_call_sceKernelGetQafNameForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetQafNameForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetQafNameForRcmgr", &__ptr_sceKernelGetQafNameForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetQafNameForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetQafNameForRcmgr", &__ptr_sceKernelGetQafNameForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23091,10 +21767,8 @@ void __load_and_call_sceKernelGetRenderingMode();
 static __attribute__ ((used)) void* __ptr_sceKernelGetRenderingMode = &__load_and_call_sceKernelGetRenderingMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetRenderingMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetRenderingMode", &__ptr_sceKernelGetRenderingMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetRenderingMode(void) {
+  sprx_dlsym(__handle, "sceKernelGetRenderingMode", &__ptr_sceKernelGetRenderingMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23125,10 +21799,8 @@ void __load_and_call_sceKernelGetResidentCount();
 static __attribute__ ((used)) void* __ptr_sceKernelGetResidentCount = &__load_and_call_sceKernelGetResidentCount;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetResidentCount() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetResidentCount", &__ptr_sceKernelGetResidentCount)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetResidentCount(void) {
+  sprx_dlsym(__handle, "sceKernelGetResidentCount", &__ptr_sceKernelGetResidentCount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23159,10 +21831,8 @@ void __load_and_call_sceKernelGetResidentFmemCount();
 static __attribute__ ((used)) void* __ptr_sceKernelGetResidentFmemCount = &__load_and_call_sceKernelGetResidentFmemCount;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetResidentFmemCount() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetResidentFmemCount", &__ptr_sceKernelGetResidentFmemCount)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetResidentFmemCount(void) {
+  sprx_dlsym(__handle, "sceKernelGetResidentFmemCount", &__ptr_sceKernelGetResidentFmemCount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23193,10 +21863,8 @@ void __load_and_call_sceKernelGetResource();
 static __attribute__ ((used)) void* __ptr_sceKernelGetResource = &__load_and_call_sceKernelGetResource;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetResource() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetResource", &__ptr_sceKernelGetResource)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetResource(void) {
+  sprx_dlsym(__handle, "sceKernelGetResource", &__ptr_sceKernelGetResource);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23227,10 +21895,8 @@ void __load_and_call_sceKernelGetResourceLimit();
 static __attribute__ ((used)) void* __ptr_sceKernelGetResourceLimit = &__load_and_call_sceKernelGetResourceLimit;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetResourceLimit() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetResourceLimit", &__ptr_sceKernelGetResourceLimit)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetResourceLimit(void) {
+  sprx_dlsym(__handle, "sceKernelGetResourceLimit", &__ptr_sceKernelGetResourceLimit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23261,10 +21927,8 @@ void __load_and_call_sceKernelGetResourceOne();
 static __attribute__ ((used)) void* __ptr_sceKernelGetResourceOne = &__load_and_call_sceKernelGetResourceOne;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetResourceOne() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetResourceOne", &__ptr_sceKernelGetResourceOne)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetResourceOne(void) {
+  sprx_dlsym(__handle, "sceKernelGetResourceOne", &__ptr_sceKernelGetResourceOne);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23295,10 +21959,8 @@ void __load_and_call_sceKernelGetSafemode();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSafemode = &__load_and_call_sceKernelGetSafemode;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSafemode() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSafemode", &__ptr_sceKernelGetSafemode)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSafemode(void) {
+  sprx_dlsym(__handle, "sceKernelGetSafemode", &__ptr_sceKernelGetSafemode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23329,10 +21991,8 @@ void __load_and_call_sceKernelGetSanitizerMallocReplace();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSanitizerMallocReplace = &__load_and_call_sceKernelGetSanitizerMallocReplace;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSanitizerMallocReplace() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSanitizerMallocReplace", &__ptr_sceKernelGetSanitizerMallocReplace)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSanitizerMallocReplace(void) {
+  sprx_dlsym(__handle, "sceKernelGetSanitizerMallocReplace", &__ptr_sceKernelGetSanitizerMallocReplace);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23363,10 +22023,8 @@ void __load_and_call_sceKernelGetSanitizerMallocReplaceExternal();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSanitizerMallocReplaceExternal = &__load_and_call_sceKernelGetSanitizerMallocReplaceExternal;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSanitizerMallocReplaceExternal() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSanitizerMallocReplaceExternal", &__ptr_sceKernelGetSanitizerMallocReplaceExternal)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSanitizerMallocReplaceExternal(void) {
+  sprx_dlsym(__handle, "sceKernelGetSanitizerMallocReplaceExternal", &__ptr_sceKernelGetSanitizerMallocReplaceExternal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23397,10 +22055,8 @@ void __load_and_call_sceKernelGetSanitizerNewReplace();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSanitizerNewReplace = &__load_and_call_sceKernelGetSanitizerNewReplace;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSanitizerNewReplace() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSanitizerNewReplace", &__ptr_sceKernelGetSanitizerNewReplace)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSanitizerNewReplace(void) {
+  sprx_dlsym(__handle, "sceKernelGetSanitizerNewReplace", &__ptr_sceKernelGetSanitizerNewReplace);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23431,10 +22087,8 @@ void __load_and_call_sceKernelGetSanitizerNewReplaceExternal();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSanitizerNewReplaceExternal = &__load_and_call_sceKernelGetSanitizerNewReplaceExternal;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSanitizerNewReplaceExternal() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSanitizerNewReplaceExternal", &__ptr_sceKernelGetSanitizerNewReplaceExternal)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSanitizerNewReplaceExternal(void) {
+  sprx_dlsym(__handle, "sceKernelGetSanitizerNewReplaceExternal", &__ptr_sceKernelGetSanitizerNewReplaceExternal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23465,10 +22119,8 @@ void __load_and_call_sceKernelGetSocClock();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSocClock = &__load_and_call_sceKernelGetSocClock;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSocClock() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSocClock", &__ptr_sceKernelGetSocClock)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSocClock(void) {
+  sprx_dlsym(__handle, "sceKernelGetSocClock", &__ptr_sceKernelGetSocClock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23499,10 +22151,8 @@ void __load_and_call_sceKernelGetSocPowerConsumption();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSocPowerConsumption = &__load_and_call_sceKernelGetSocPowerConsumption;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSocPowerConsumption() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSocPowerConsumption", &__ptr_sceKernelGetSocPowerConsumption)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSocPowerConsumption(void) {
+  sprx_dlsym(__handle, "sceKernelGetSocPowerConsumption", &__ptr_sceKernelGetSocPowerConsumption);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23533,10 +22183,8 @@ void __load_and_call_sceKernelGetSocSensorTemperature();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSocSensorTemperature = &__load_and_call_sceKernelGetSocSensorTemperature;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSocSensorTemperature() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSocSensorTemperature", &__ptr_sceKernelGetSocSensorTemperature)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSocSensorTemperature(void) {
+  sprx_dlsym(__handle, "sceKernelGetSocSensorTemperature", &__ptr_sceKernelGetSocSensorTemperature);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23567,10 +22215,8 @@ void __load_and_call_sceKernelGetSpecialIForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSpecialIForRcmgr = &__load_and_call_sceKernelGetSpecialIForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSpecialIForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSpecialIForRcmgr", &__ptr_sceKernelGetSpecialIForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSpecialIForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetSpecialIForRcmgr", &__ptr_sceKernelGetSpecialIForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23601,10 +22247,8 @@ void __load_and_call_sceKernelGetSubsysId();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSubsysId = &__load_and_call_sceKernelGetSubsysId;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSubsysId() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSubsysId", &__ptr_sceKernelGetSubsysId)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSubsysId(void) {
+  sprx_dlsym(__handle, "sceKernelGetSubsysId", &__ptr_sceKernelGetSubsysId);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23635,10 +22279,8 @@ void __load_and_call_sceKernelGetSubsysSubId();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSubsysSubId = &__load_and_call_sceKernelGetSubsysSubId;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSubsysSubId() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSubsysSubId", &__ptr_sceKernelGetSubsysSubId)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSubsysSubId(void) {
+  sprx_dlsym(__handle, "sceKernelGetSubsysSubId", &__ptr_sceKernelGetSubsysSubId);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23669,10 +22311,8 @@ void __load_and_call_sceKernelGetSystemExVersion();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSystemExVersion = &__load_and_call_sceKernelGetSystemExVersion;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSystemExVersion() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSystemExVersion", &__ptr_sceKernelGetSystemExVersion)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSystemExVersion(void) {
+  sprx_dlsym(__handle, "sceKernelGetSystemExVersion", &__ptr_sceKernelGetSystemExVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23703,10 +22343,8 @@ void __load_and_call_sceKernelGetSystemLevelDebuggerModeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSystemLevelDebuggerModeForRcmgr = &__load_and_call_sceKernelGetSystemLevelDebuggerModeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSystemLevelDebuggerModeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSystemLevelDebuggerModeForRcmgr", &__ptr_sceKernelGetSystemLevelDebuggerModeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSystemLevelDebuggerModeForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetSystemLevelDebuggerModeForRcmgr", &__ptr_sceKernelGetSystemLevelDebuggerModeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23737,10 +22375,8 @@ void __load_and_call_sceKernelGetSystemSwBeta();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSystemSwBeta = &__load_and_call_sceKernelGetSystemSwBeta;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSystemSwBeta() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSystemSwBeta", &__ptr_sceKernelGetSystemSwBeta)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSystemSwBeta(void) {
+  sprx_dlsym(__handle, "sceKernelGetSystemSwBeta", &__ptr_sceKernelGetSystemSwBeta);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23771,10 +22407,8 @@ void __load_and_call_sceKernelGetSystemSwVersion();
 static __attribute__ ((used)) void* __ptr_sceKernelGetSystemSwVersion = &__load_and_call_sceKernelGetSystemSwVersion;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetSystemSwVersion() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetSystemSwVersion", &__ptr_sceKernelGetSystemSwVersion)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetSystemSwVersion(void) {
+  sprx_dlsym(__handle, "sceKernelGetSystemSwVersion", &__ptr_sceKernelGetSystemSwVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23805,10 +22439,8 @@ void __load_and_call_sceKernelGetThreadName();
 static __attribute__ ((used)) void* __ptr_sceKernelGetThreadName = &__load_and_call_sceKernelGetThreadName;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetThreadName() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetThreadName", &__ptr_sceKernelGetThreadName)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetThreadName(void) {
+  sprx_dlsym(__handle, "sceKernelGetThreadName", &__ptr_sceKernelGetThreadName);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23839,10 +22471,8 @@ void __load_and_call_sceKernelGetTraceMemoryStats();
 static __attribute__ ((used)) void* __ptr_sceKernelGetTraceMemoryStats = &__load_and_call_sceKernelGetTraceMemoryStats;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetTraceMemoryStats() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetTraceMemoryStats", &__ptr_sceKernelGetTraceMemoryStats)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetTraceMemoryStats(void) {
+  sprx_dlsym(__handle, "sceKernelGetTraceMemoryStats", &__ptr_sceKernelGetTraceMemoryStats);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23873,10 +22503,8 @@ void __load_and_call_sceKernelGetTscFrequency();
 static __attribute__ ((used)) void* __ptr_sceKernelGetTscFrequency = &__load_and_call_sceKernelGetTscFrequency;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetTscFrequency() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetTscFrequency", &__ptr_sceKernelGetTscFrequency)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetTscFrequency(void) {
+  sprx_dlsym(__handle, "sceKernelGetTscFrequency", &__ptr_sceKernelGetTscFrequency);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23907,10 +22535,8 @@ void __load_and_call_sceKernelGetUniversalMode();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUniversalMode = &__load_and_call_sceKernelGetUniversalMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUniversalMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUniversalMode", &__ptr_sceKernelGetUniversalMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUniversalMode(void) {
+  sprx_dlsym(__handle, "sceKernelGetUniversalMode", &__ptr_sceKernelGetUniversalMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23941,10 +22567,8 @@ void __load_and_call_sceKernelGetUpdVersion();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUpdVersion = &__load_and_call_sceKernelGetUpdVersion;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUpdVersion() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUpdVersion", &__ptr_sceKernelGetUpdVersion)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUpdVersion(void) {
+  sprx_dlsym(__handle, "sceKernelGetUpdVersion", &__ptr_sceKernelGetUpdVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -23975,10 +22599,8 @@ void __load_and_call_sceKernelGetUtokenDataExecutionForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenDataExecutionForRcmgr = &__load_and_call_sceKernelGetUtokenDataExecutionForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenDataExecutionForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenDataExecutionForRcmgr", &__ptr_sceKernelGetUtokenDataExecutionForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenDataExecutionForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenDataExecutionForRcmgr", &__ptr_sceKernelGetUtokenDataExecutionForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24009,10 +22631,8 @@ void __load_and_call_sceKernelGetUtokenExpirationTimeNotafterForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenExpirationTimeNotafterForRcmgr = &__load_and_call_sceKernelGetUtokenExpirationTimeNotafterForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenExpirationTimeNotafterForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenExpirationTimeNotafterForRcmgr", &__ptr_sceKernelGetUtokenExpirationTimeNotafterForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenExpirationTimeNotafterForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenExpirationTimeNotafterForRcmgr", &__ptr_sceKernelGetUtokenExpirationTimeNotafterForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24043,10 +22663,8 @@ void __load_and_call_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr = &__load_and_call_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr", &__ptr_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr", &__ptr_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24077,10 +22695,8 @@ void __load_and_call_sceKernelGetUtokenFakeSharefactoryForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenFakeSharefactoryForRcmgr = &__load_and_call_sceKernelGetUtokenFakeSharefactoryForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenFakeSharefactoryForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenFakeSharefactoryForRcmgr", &__ptr_sceKernelGetUtokenFakeSharefactoryForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenFakeSharefactoryForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenFakeSharefactoryForRcmgr", &__ptr_sceKernelGetUtokenFakeSharefactoryForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24111,10 +22727,8 @@ void __load_and_call_sceKernelGetUtokenFlagedUpdaterForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenFlagedUpdaterForRcmgr = &__load_and_call_sceKernelGetUtokenFlagedUpdaterForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenFlagedUpdaterForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenFlagedUpdaterForRcmgr", &__ptr_sceKernelGetUtokenFlagedUpdaterForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenFlagedUpdaterForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenFlagedUpdaterForRcmgr", &__ptr_sceKernelGetUtokenFlagedUpdaterForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24145,10 +22759,8 @@ void __load_and_call_sceKernelGetUtokenNpEnvSwitchingForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenNpEnvSwitchingForRcmgr = &__load_and_call_sceKernelGetUtokenNpEnvSwitchingForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenNpEnvSwitchingForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenNpEnvSwitchingForRcmgr", &__ptr_sceKernelGetUtokenNpEnvSwitchingForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenNpEnvSwitchingForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenNpEnvSwitchingForRcmgr", &__ptr_sceKernelGetUtokenNpEnvSwitchingForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24179,10 +22791,8 @@ void __load_and_call_sceKernelGetUtokenSaveDataRepairForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenSaveDataRepairForRcmgr = &__load_and_call_sceKernelGetUtokenSaveDataRepairForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenSaveDataRepairForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenSaveDataRepairForRcmgr", &__ptr_sceKernelGetUtokenSaveDataRepairForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenSaveDataRepairForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenSaveDataRepairForRcmgr", &__ptr_sceKernelGetUtokenSaveDataRepairForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24213,10 +22823,8 @@ void __load_and_call_sceKernelGetUtokenStoreModeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenStoreModeForRcmgr = &__load_and_call_sceKernelGetUtokenStoreModeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenStoreModeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenStoreModeForRcmgr", &__ptr_sceKernelGetUtokenStoreModeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenStoreModeForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenStoreModeForRcmgr", &__ptr_sceKernelGetUtokenStoreModeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24247,10 +22855,8 @@ void __load_and_call_sceKernelGetUtokenUseSoftwagnerForAcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenUseSoftwagnerForAcmgr = &__load_and_call_sceKernelGetUtokenUseSoftwagnerForAcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenUseSoftwagnerForAcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenUseSoftwagnerForAcmgr", &__ptr_sceKernelGetUtokenUseSoftwagnerForAcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenUseSoftwagnerForAcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenUseSoftwagnerForAcmgr", &__ptr_sceKernelGetUtokenUseSoftwagnerForAcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24281,10 +22887,8 @@ void __load_and_call_sceKernelGetUtokenUseSoftwagnerForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenUseSoftwagnerForRcmgr = &__load_and_call_sceKernelGetUtokenUseSoftwagnerForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenUseSoftwagnerForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenUseSoftwagnerForRcmgr", &__ptr_sceKernelGetUtokenUseSoftwagnerForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenUseSoftwagnerForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenUseSoftwagnerForRcmgr", &__ptr_sceKernelGetUtokenUseSoftwagnerForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24315,10 +22919,8 @@ void __load_and_call_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr();
 static __attribute__ ((used)) void* __ptr_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr = &__load_and_call_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetUtokenWeakenedPortRestrictionForRcmgr", &__ptr_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr(void) {
+  sprx_dlsym(__handle, "sceKernelGetUtokenWeakenedPortRestrictionForRcmgr", &__ptr_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24349,10 +22951,8 @@ void __load_and_call_sceKernelGetVrCaptureSize();
 static __attribute__ ((used)) void* __ptr_sceKernelGetVrCaptureSize = &__load_and_call_sceKernelGetVrCaptureSize;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetVrCaptureSize() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetVrCaptureSize", &__ptr_sceKernelGetVrCaptureSize)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetVrCaptureSize(void) {
+  sprx_dlsym(__handle, "sceKernelGetVrCaptureSize", &__ptr_sceKernelGetVrCaptureSize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24383,10 +22983,8 @@ void __load_and_call_sceKernelGetdents();
 static __attribute__ ((used)) void* __ptr_sceKernelGetdents = &__load_and_call_sceKernelGetdents;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetdents() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetdents", &__ptr_sceKernelGetdents)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetdents(void) {
+  sprx_dlsym(__handle, "sceKernelGetdents", &__ptr_sceKernelGetdents);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24417,10 +23015,8 @@ void __load_and_call_sceKernelGetdirentries();
 static __attribute__ ((used)) void* __ptr_sceKernelGetdirentries = &__load_and_call_sceKernelGetdirentries;
 
 static __attribute__ ((used)) void
-__load_sceKernelGetdirentries() {
-  if(sceKernelDlsym(__module_id, "sceKernelGetdirentries", &__ptr_sceKernelGetdirentries)) {
-    __builtin_trap();
-  }
+__load_sceKernelGetdirentries(void) {
+  sprx_dlsym(__handle, "sceKernelGetdirentries", &__ptr_sceKernelGetdirentries);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24451,10 +23047,8 @@ void __load_and_call_sceKernelGettimeofday();
 static __attribute__ ((used)) void* __ptr_sceKernelGettimeofday = &__load_and_call_sceKernelGettimeofday;
 
 static __attribute__ ((used)) void
-__load_sceKernelGettimeofday() {
-  if(sceKernelDlsym(__module_id, "sceKernelGettimeofday", &__ptr_sceKernelGettimeofday)) {
-    __builtin_trap();
-  }
+__load_sceKernelGettimeofday(void) {
+  sprx_dlsym(__handle, "sceKernelGettimeofday", &__ptr_sceKernelGettimeofday);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24485,10 +23079,8 @@ void __load_and_call_sceKernelGettimezone();
 static __attribute__ ((used)) void* __ptr_sceKernelGettimezone = &__load_and_call_sceKernelGettimezone;
 
 static __attribute__ ((used)) void
-__load_sceKernelGettimezone() {
-  if(sceKernelDlsym(__module_id, "sceKernelGettimezone", &__ptr_sceKernelGettimezone)) {
-    __builtin_trap();
-  }
+__load_sceKernelGettimezone(void) {
+  sprx_dlsym(__handle, "sceKernelGettimezone", &__ptr_sceKernelGettimezone);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24519,10 +23111,8 @@ void __load_and_call_sceKernelGiveDirectMemoryToMapper();
 static __attribute__ ((used)) void* __ptr_sceKernelGiveDirectMemoryToMapper = &__load_and_call_sceKernelGiveDirectMemoryToMapper;
 
 static __attribute__ ((used)) void
-__load_sceKernelGiveDirectMemoryToMapper() {
-  if(sceKernelDlsym(__module_id, "sceKernelGiveDirectMemoryToMapper", &__ptr_sceKernelGiveDirectMemoryToMapper)) {
-    __builtin_trap();
-  }
+__load_sceKernelGiveDirectMemoryToMapper(void) {
+  sprx_dlsym(__handle, "sceKernelGiveDirectMemoryToMapper", &__ptr_sceKernelGiveDirectMemoryToMapper);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24553,10 +23143,8 @@ void __load_and_call_sceKernelHasNeoMode();
 static __attribute__ ((used)) void* __ptr_sceKernelHasNeoMode = &__load_and_call_sceKernelHasNeoMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelHasNeoMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelHasNeoMode", &__ptr_sceKernelHasNeoMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelHasNeoMode(void) {
+  sprx_dlsym(__handle, "sceKernelHasNeoMode", &__ptr_sceKernelHasNeoMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24587,10 +23175,8 @@ void __load_and_call_sceKernelHwGetBdDriveInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelHwGetBdDriveInfo = &__load_and_call_sceKernelHwGetBdDriveInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelHwGetBdDriveInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelHwGetBdDriveInfo", &__ptr_sceKernelHwGetBdDriveInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelHwGetBdDriveInfo(void) {
+  sprx_dlsym(__handle, "sceKernelHwGetBdDriveInfo", &__ptr_sceKernelHwGetBdDriveInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24621,10 +23207,8 @@ void __load_and_call_sceKernelHwHasOpticalOut();
 static __attribute__ ((used)) void* __ptr_sceKernelHwHasOpticalOut = &__load_and_call_sceKernelHwHasOpticalOut;
 
 static __attribute__ ((used)) void
-__load_sceKernelHwHasOpticalOut() {
-  if(sceKernelDlsym(__module_id, "sceKernelHwHasOpticalOut", &__ptr_sceKernelHwHasOpticalOut)) {
-    __builtin_trap();
-  }
+__load_sceKernelHwHasOpticalOut(void) {
+  sprx_dlsym(__handle, "sceKernelHwHasOpticalOut", &__ptr_sceKernelHwHasOpticalOut);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24655,10 +23239,8 @@ void __load_and_call_sceKernelHwHasWlanBt();
 static __attribute__ ((used)) void* __ptr_sceKernelHwHasWlanBt = &__load_and_call_sceKernelHwHasWlanBt;
 
 static __attribute__ ((used)) void
-__load_sceKernelHwHasWlanBt() {
-  if(sceKernelDlsym(__module_id, "sceKernelHwHasWlanBt", &__ptr_sceKernelHwHasWlanBt)) {
-    __builtin_trap();
-  }
+__load_sceKernelHwHasWlanBt(void) {
+  sprx_dlsym(__handle, "sceKernelHwHasWlanBt", &__ptr_sceKernelHwHasWlanBt);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24689,10 +23271,8 @@ void __load_and_call_sceKernelIccControlBDPowerState();
 static __attribute__ ((used)) void* __ptr_sceKernelIccControlBDPowerState = &__load_and_call_sceKernelIccControlBDPowerState;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccControlBDPowerState() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccControlBDPowerState", &__ptr_sceKernelIccControlBDPowerState)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccControlBDPowerState(void) {
+  sprx_dlsym(__handle, "sceKernelIccControlBDPowerState", &__ptr_sceKernelIccControlBDPowerState);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24723,10 +23303,8 @@ void __load_and_call_sceKernelIccControlUSBPowerState();
 static __attribute__ ((used)) void* __ptr_sceKernelIccControlUSBPowerState = &__load_and_call_sceKernelIccControlUSBPowerState;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccControlUSBPowerState() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccControlUSBPowerState", &__ptr_sceKernelIccControlUSBPowerState)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccControlUSBPowerState(void) {
+  sprx_dlsym(__handle, "sceKernelIccControlUSBPowerState", &__ptr_sceKernelIccControlUSBPowerState);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24757,10 +23335,8 @@ void __load_and_call_sceKernelIccGetBDPowerState();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetBDPowerState = &__load_and_call_sceKernelIccGetBDPowerState;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetBDPowerState() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetBDPowerState", &__ptr_sceKernelIccGetBDPowerState)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetBDPowerState(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetBDPowerState", &__ptr_sceKernelIccGetBDPowerState);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24791,10 +23367,8 @@ void __load_and_call_sceKernelIccGetBootTimestamp();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetBootTimestamp = &__load_and_call_sceKernelIccGetBootTimestamp;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetBootTimestamp() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetBootTimestamp", &__ptr_sceKernelIccGetBootTimestamp)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetBootTimestamp(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetBootTimestamp", &__ptr_sceKernelIccGetBootTimestamp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24825,10 +23399,8 @@ void __load_and_call_sceKernelIccGetCPMode();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetCPMode = &__load_and_call_sceKernelIccGetCPMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetCPMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetCPMode", &__ptr_sceKernelIccGetCPMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetCPMode(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetCPMode", &__ptr_sceKernelIccGetCPMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24859,10 +23431,8 @@ void __load_and_call_sceKernelIccGetCountTime();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetCountTime = &__load_and_call_sceKernelIccGetCountTime;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetCountTime() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetCountTime", &__ptr_sceKernelIccGetCountTime)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetCountTime(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetCountTime", &__ptr_sceKernelIccGetCountTime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24893,10 +23463,8 @@ void __load_and_call_sceKernelIccGetCpuInfoBit();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetCpuInfoBit = &__load_and_call_sceKernelIccGetCpuInfoBit;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetCpuInfoBit() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetCpuInfoBit", &__ptr_sceKernelIccGetCpuInfoBit)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetCpuInfoBit(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetCpuInfoBit", &__ptr_sceKernelIccGetCpuInfoBit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24927,10 +23495,8 @@ void __load_and_call_sceKernelIccGetErrLog();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetErrLog = &__load_and_call_sceKernelIccGetErrLog;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetErrLog() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetErrLog", &__ptr_sceKernelIccGetErrLog)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetErrLog(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetErrLog", &__ptr_sceKernelIccGetErrLog);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24961,10 +23527,8 @@ void __load_and_call_sceKernelIccGetHwInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetHwInfo = &__load_and_call_sceKernelIccGetHwInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetHwInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetHwInfo", &__ptr_sceKernelIccGetHwInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetHwInfo(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetHwInfo", &__ptr_sceKernelIccGetHwInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -24995,10 +23559,8 @@ void __load_and_call_sceKernelIccGetPowerNumberOfBootShutdown();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetPowerNumberOfBootShutdown = &__load_and_call_sceKernelIccGetPowerNumberOfBootShutdown;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetPowerNumberOfBootShutdown() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetPowerNumberOfBootShutdown", &__ptr_sceKernelIccGetPowerNumberOfBootShutdown)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetPowerNumberOfBootShutdown(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetPowerNumberOfBootShutdown", &__ptr_sceKernelIccGetPowerNumberOfBootShutdown);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25029,10 +23591,8 @@ void __load_and_call_sceKernelIccGetPowerOperatingTime();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetPowerOperatingTime = &__load_and_call_sceKernelIccGetPowerOperatingTime;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetPowerOperatingTime() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetPowerOperatingTime", &__ptr_sceKernelIccGetPowerOperatingTime)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetPowerOperatingTime(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetPowerOperatingTime", &__ptr_sceKernelIccGetPowerOperatingTime);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25063,10 +23623,8 @@ void __load_and_call_sceKernelIccGetPowerUpCause();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetPowerUpCause = &__load_and_call_sceKernelIccGetPowerUpCause;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetPowerUpCause() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetPowerUpCause", &__ptr_sceKernelIccGetPowerUpCause)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetPowerUpCause(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetPowerUpCause", &__ptr_sceKernelIccGetPowerUpCause);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25097,10 +23655,8 @@ void __load_and_call_sceKernelIccGetSysEventLog();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetSysEventLog = &__load_and_call_sceKernelIccGetSysEventLog;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetSysEventLog() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetSysEventLog", &__ptr_sceKernelIccGetSysEventLog)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetSysEventLog(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetSysEventLog", &__ptr_sceKernelIccGetSysEventLog);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25131,10 +23687,8 @@ void __load_and_call_sceKernelIccGetThermalAlert();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetThermalAlert = &__load_and_call_sceKernelIccGetThermalAlert;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetThermalAlert() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetThermalAlert", &__ptr_sceKernelIccGetThermalAlert)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetThermalAlert(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetThermalAlert", &__ptr_sceKernelIccGetThermalAlert);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25165,10 +23719,8 @@ void __load_and_call_sceKernelIccGetUSBPowerState();
 static __attribute__ ((used)) void* __ptr_sceKernelIccGetUSBPowerState = &__load_and_call_sceKernelIccGetUSBPowerState;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccGetUSBPowerState() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccGetUSBPowerState", &__ptr_sceKernelIccGetUSBPowerState)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccGetUSBPowerState(void) {
+  sprx_dlsym(__handle, "sceKernelIccGetUSBPowerState", &__ptr_sceKernelIccGetUSBPowerState);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25199,10 +23751,8 @@ void __load_and_call_sceKernelIccIndicatorBootDone();
 static __attribute__ ((used)) void* __ptr_sceKernelIccIndicatorBootDone = &__load_and_call_sceKernelIccIndicatorBootDone;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccIndicatorBootDone() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccIndicatorBootDone", &__ptr_sceKernelIccIndicatorBootDone)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccIndicatorBootDone(void) {
+  sprx_dlsym(__handle, "sceKernelIccIndicatorBootDone", &__ptr_sceKernelIccIndicatorBootDone);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25233,10 +23783,8 @@ void __load_and_call_sceKernelIccIndicatorShutdown();
 static __attribute__ ((used)) void* __ptr_sceKernelIccIndicatorShutdown = &__load_and_call_sceKernelIccIndicatorShutdown;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccIndicatorShutdown() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccIndicatorShutdown", &__ptr_sceKernelIccIndicatorShutdown)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccIndicatorShutdown(void) {
+  sprx_dlsym(__handle, "sceKernelIccIndicatorShutdown", &__ptr_sceKernelIccIndicatorShutdown);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25267,10 +23815,8 @@ void __load_and_call_sceKernelIccIndicatorStandby();
 static __attribute__ ((used)) void* __ptr_sceKernelIccIndicatorStandby = &__load_and_call_sceKernelIccIndicatorStandby;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccIndicatorStandby() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccIndicatorStandby", &__ptr_sceKernelIccIndicatorStandby)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccIndicatorStandby(void) {
+  sprx_dlsym(__handle, "sceKernelIccIndicatorStandby", &__ptr_sceKernelIccIndicatorStandby);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25301,10 +23847,8 @@ void __load_and_call_sceKernelIccIndicatorStandbyBoot();
 static __attribute__ ((used)) void* __ptr_sceKernelIccIndicatorStandbyBoot = &__load_and_call_sceKernelIccIndicatorStandbyBoot;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccIndicatorStandbyBoot() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccIndicatorStandbyBoot", &__ptr_sceKernelIccIndicatorStandbyBoot)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccIndicatorStandbyBoot(void) {
+  sprx_dlsym(__handle, "sceKernelIccIndicatorStandbyBoot", &__ptr_sceKernelIccIndicatorStandbyBoot);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25335,10 +23879,8 @@ void __load_and_call_sceKernelIccIndicatorStandbyShutdown();
 static __attribute__ ((used)) void* __ptr_sceKernelIccIndicatorStandbyShutdown = &__load_and_call_sceKernelIccIndicatorStandbyShutdown;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccIndicatorStandbyShutdown() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccIndicatorStandbyShutdown", &__ptr_sceKernelIccIndicatorStandbyShutdown)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccIndicatorStandbyShutdown(void) {
+  sprx_dlsym(__handle, "sceKernelIccIndicatorStandbyShutdown", &__ptr_sceKernelIccIndicatorStandbyShutdown);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25369,10 +23911,8 @@ void __load_and_call_sceKernelIccNotifyBootStatus();
 static __attribute__ ((used)) void* __ptr_sceKernelIccNotifyBootStatus = &__load_and_call_sceKernelIccNotifyBootStatus;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccNotifyBootStatus() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccNotifyBootStatus", &__ptr_sceKernelIccNotifyBootStatus)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccNotifyBootStatus(void) {
+  sprx_dlsym(__handle, "sceKernelIccNotifyBootStatus", &__ptr_sceKernelIccNotifyBootStatus);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25403,10 +23943,8 @@ void __load_and_call_sceKernelIccNvsFlush();
 static __attribute__ ((used)) void* __ptr_sceKernelIccNvsFlush = &__load_and_call_sceKernelIccNvsFlush;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccNvsFlush() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccNvsFlush", &__ptr_sceKernelIccNvsFlush)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccNvsFlush(void) {
+  sprx_dlsym(__handle, "sceKernelIccNvsFlush", &__ptr_sceKernelIccNvsFlush);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25437,10 +23975,8 @@ void __load_and_call_sceKernelIccReadPowerBootMessage();
 static __attribute__ ((used)) void* __ptr_sceKernelIccReadPowerBootMessage = &__load_and_call_sceKernelIccReadPowerBootMessage;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccReadPowerBootMessage() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccReadPowerBootMessage", &__ptr_sceKernelIccReadPowerBootMessage)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccReadPowerBootMessage(void) {
+  sprx_dlsym(__handle, "sceKernelIccReadPowerBootMessage", &__ptr_sceKernelIccReadPowerBootMessage);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25471,10 +24007,8 @@ void __load_and_call_sceKernelIccSetBuzzer();
 static __attribute__ ((used)) void* __ptr_sceKernelIccSetBuzzer = &__load_and_call_sceKernelIccSetBuzzer;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccSetBuzzer() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccSetBuzzer", &__ptr_sceKernelIccSetBuzzer)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccSetBuzzer(void) {
+  sprx_dlsym(__handle, "sceKernelIccSetBuzzer", &__ptr_sceKernelIccSetBuzzer);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25505,10 +24039,8 @@ void __load_and_call_sceKernelIccSetCPMode();
 static __attribute__ ((used)) void* __ptr_sceKernelIccSetCPMode = &__load_and_call_sceKernelIccSetCPMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccSetCPMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccSetCPMode", &__ptr_sceKernelIccSetCPMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccSetCPMode(void) {
+  sprx_dlsym(__handle, "sceKernelIccSetCPMode", &__ptr_sceKernelIccSetCPMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25539,10 +24071,8 @@ void __load_and_call_sceKernelIccSetCpuInfoBit();
 static __attribute__ ((used)) void* __ptr_sceKernelIccSetCpuInfoBit = &__load_and_call_sceKernelIccSetCpuInfoBit;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccSetCpuInfoBit() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccSetCpuInfoBit", &__ptr_sceKernelIccSetCpuInfoBit)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccSetCpuInfoBit(void) {
+  sprx_dlsym(__handle, "sceKernelIccSetCpuInfoBit", &__ptr_sceKernelIccSetCpuInfoBit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25573,10 +24103,8 @@ void __load_and_call_sceKernelIccSetDownloadMode();
 static __attribute__ ((used)) void* __ptr_sceKernelIccSetDownloadMode = &__load_and_call_sceKernelIccSetDownloadMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelIccSetDownloadMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelIccSetDownloadMode", &__ptr_sceKernelIccSetDownloadMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelIccSetDownloadMode(void) {
+  sprx_dlsym(__handle, "sceKernelIccSetDownloadMode", &__ptr_sceKernelIccSetDownloadMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25607,10 +24135,8 @@ void __load_and_call_sceKernelInstallExceptionHandler();
 static __attribute__ ((used)) void* __ptr_sceKernelInstallExceptionHandler = &__load_and_call_sceKernelInstallExceptionHandler;
 
 static __attribute__ ((used)) void
-__load_sceKernelInstallExceptionHandler() {
-  if(sceKernelDlsym(__module_id, "sceKernelInstallExceptionHandler", &__ptr_sceKernelInstallExceptionHandler)) {
-    __builtin_trap();
-  }
+__load_sceKernelInstallExceptionHandler(void) {
+  sprx_dlsym(__handle, "sceKernelInstallExceptionHandler", &__ptr_sceKernelInstallExceptionHandler);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25641,10 +24167,8 @@ void __load_and_call_sceKernelInternalGetKmemStatistics();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalGetKmemStatistics = &__load_and_call_sceKernelInternalGetKmemStatistics;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalGetKmemStatistics() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalGetKmemStatistics", &__ptr_sceKernelInternalGetKmemStatistics)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalGetKmemStatistics(void) {
+  sprx_dlsym(__handle, "sceKernelInternalGetKmemStatistics", &__ptr_sceKernelInternalGetKmemStatistics);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25675,10 +24199,8 @@ void __load_and_call_sceKernelInternalGetMapStatistics();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalGetMapStatistics = &__load_and_call_sceKernelInternalGetMapStatistics;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalGetMapStatistics() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalGetMapStatistics", &__ptr_sceKernelInternalGetMapStatistics)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalGetMapStatistics(void) {
+  sprx_dlsym(__handle, "sceKernelInternalGetMapStatistics", &__ptr_sceKernelInternalGetMapStatistics);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25709,10 +24231,8 @@ void __load_and_call_sceKernelInternalHeapPrintBacktraceWithModuleInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalHeapPrintBacktraceWithModuleInfo = &__load_and_call_sceKernelInternalHeapPrintBacktraceWithModuleInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalHeapPrintBacktraceWithModuleInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalHeapPrintBacktraceWithModuleInfo", &__ptr_sceKernelInternalHeapPrintBacktraceWithModuleInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalHeapPrintBacktraceWithModuleInfo(void) {
+  sprx_dlsym(__handle, "sceKernelInternalHeapPrintBacktraceWithModuleInfo", &__ptr_sceKernelInternalHeapPrintBacktraceWithModuleInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25743,10 +24263,8 @@ void __load_and_call_sceKernelInternalMapDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalMapDirectMemory = &__load_and_call_sceKernelInternalMapDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalMapDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalMapDirectMemory", &__ptr_sceKernelInternalMapDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalMapDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelInternalMapDirectMemory", &__ptr_sceKernelInternalMapDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25777,10 +24295,8 @@ void __load_and_call_sceKernelInternalMapNamedDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalMapNamedDirectMemory = &__load_and_call_sceKernelInternalMapNamedDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalMapNamedDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalMapNamedDirectMemory", &__ptr_sceKernelInternalMapNamedDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalMapNamedDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelInternalMapNamedDirectMemory", &__ptr_sceKernelInternalMapNamedDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25811,10 +24327,8 @@ void __load_and_call_sceKernelInternalMemoryGetAvailableSize();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalMemoryGetAvailableSize = &__load_and_call_sceKernelInternalMemoryGetAvailableSize;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalMemoryGetAvailableSize() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalMemoryGetAvailableSize", &__ptr_sceKernelInternalMemoryGetAvailableSize)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalMemoryGetAvailableSize(void) {
+  sprx_dlsym(__handle, "sceKernelInternalMemoryGetAvailableSize", &__ptr_sceKernelInternalMemoryGetAvailableSize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25845,10 +24359,8 @@ void __load_and_call_sceKernelInternalMemoryGetModuleSegmentInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalMemoryGetModuleSegmentInfo = &__load_and_call_sceKernelInternalMemoryGetModuleSegmentInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalMemoryGetModuleSegmentInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalMemoryGetModuleSegmentInfo", &__ptr_sceKernelInternalMemoryGetModuleSegmentInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalMemoryGetModuleSegmentInfo(void) {
+  sprx_dlsym(__handle, "sceKernelInternalMemoryGetModuleSegmentInfo", &__ptr_sceKernelInternalMemoryGetModuleSegmentInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25879,10 +24391,8 @@ void __load_and_call_sceKernelInternalResumeDirectMemoryRelease();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalResumeDirectMemoryRelease = &__load_and_call_sceKernelInternalResumeDirectMemoryRelease;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalResumeDirectMemoryRelease() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalResumeDirectMemoryRelease", &__ptr_sceKernelInternalResumeDirectMemoryRelease)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalResumeDirectMemoryRelease(void) {
+  sprx_dlsym(__handle, "sceKernelInternalResumeDirectMemoryRelease", &__ptr_sceKernelInternalResumeDirectMemoryRelease);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25913,10 +24423,8 @@ void __load_and_call_sceKernelInternalSuspendDirectMemoryRelease();
 static __attribute__ ((used)) void* __ptr_sceKernelInternalSuspendDirectMemoryRelease = &__load_and_call_sceKernelInternalSuspendDirectMemoryRelease;
 
 static __attribute__ ((used)) void
-__load_sceKernelInternalSuspendDirectMemoryRelease() {
-  if(sceKernelDlsym(__module_id, "sceKernelInternalSuspendDirectMemoryRelease", &__ptr_sceKernelInternalSuspendDirectMemoryRelease)) {
-    __builtin_trap();
-  }
+__load_sceKernelInternalSuspendDirectMemoryRelease(void) {
+  sprx_dlsym(__handle, "sceKernelInternalSuspendDirectMemoryRelease", &__ptr_sceKernelInternalSuspendDirectMemoryRelease);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25947,10 +24455,8 @@ void __load_and_call_sceKernelIsAddressSanitizerEnabled();
 static __attribute__ ((used)) void* __ptr_sceKernelIsAddressSanitizerEnabled = &__load_and_call_sceKernelIsAddressSanitizerEnabled;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsAddressSanitizerEnabled() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsAddressSanitizerEnabled", &__ptr_sceKernelIsAddressSanitizerEnabled)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsAddressSanitizerEnabled(void) {
+  sprx_dlsym(__handle, "sceKernelIsAddressSanitizerEnabled", &__ptr_sceKernelIsAddressSanitizerEnabled);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -25981,10 +24487,8 @@ void __load_and_call_sceKernelIsAllowedToSelectDvdRegion();
 static __attribute__ ((used)) void* __ptr_sceKernelIsAllowedToSelectDvdRegion = &__load_and_call_sceKernelIsAllowedToSelectDvdRegion;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsAllowedToSelectDvdRegion() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsAllowedToSelectDvdRegion", &__ptr_sceKernelIsAllowedToSelectDvdRegion)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsAllowedToSelectDvdRegion(void) {
+  sprx_dlsym(__handle, "sceKernelIsAllowedToSelectDvdRegion", &__ptr_sceKernelIsAllowedToSelectDvdRegion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26015,10 +24519,8 @@ void __load_and_call_sceKernelIsAuthenticNeo();
 static __attribute__ ((used)) void* __ptr_sceKernelIsAuthenticNeo = &__load_and_call_sceKernelIsAuthenticNeo;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsAuthenticNeo() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsAuthenticNeo", &__ptr_sceKernelIsAuthenticNeo)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsAuthenticNeo(void) {
+  sprx_dlsym(__handle, "sceKernelIsAuthenticNeo", &__ptr_sceKernelIsAuthenticNeo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26049,10 +24551,8 @@ void __load_and_call_sceKernelIsCEX();
 static __attribute__ ((used)) void* __ptr_sceKernelIsCEX = &__load_and_call_sceKernelIsCEX;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsCEX() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsCEX", &__ptr_sceKernelIsCEX)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsCEX(void) {
+  sprx_dlsym(__handle, "sceKernelIsCEX", &__ptr_sceKernelIsCEX);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26083,10 +24583,8 @@ void __load_and_call_sceKernelIsDebuggerAttached();
 static __attribute__ ((used)) void* __ptr_sceKernelIsDebuggerAttached = &__load_and_call_sceKernelIsDebuggerAttached;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsDebuggerAttached() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsDebuggerAttached", &__ptr_sceKernelIsDebuggerAttached)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsDebuggerAttached(void) {
+  sprx_dlsym(__handle, "sceKernelIsDebuggerAttached", &__ptr_sceKernelIsDebuggerAttached);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26117,10 +24615,8 @@ void __load_and_call_sceKernelIsDevKit();
 static __attribute__ ((used)) void* __ptr_sceKernelIsDevKit = &__load_and_call_sceKernelIsDevKit;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsDevKit() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsDevKit", &__ptr_sceKernelIsDevKit)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsDevKit(void) {
+  sprx_dlsym(__handle, "sceKernelIsDevKit", &__ptr_sceKernelIsDevKit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26151,10 +24647,8 @@ void __load_and_call_sceKernelIsExperimentalBeta();
 static __attribute__ ((used)) void* __ptr_sceKernelIsExperimentalBeta = &__load_and_call_sceKernelIsExperimentalBeta;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsExperimentalBeta() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsExperimentalBeta", &__ptr_sceKernelIsExperimentalBeta)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsExperimentalBeta(void) {
+  sprx_dlsym(__handle, "sceKernelIsExperimentalBeta", &__ptr_sceKernelIsExperimentalBeta);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26185,10 +24679,8 @@ void __load_and_call_sceKernelIsGenuineCEX();
 static __attribute__ ((used)) void* __ptr_sceKernelIsGenuineCEX = &__load_and_call_sceKernelIsGenuineCEX;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsGenuineCEX() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsGenuineCEX", &__ptr_sceKernelIsGenuineCEX)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsGenuineCEX(void) {
+  sprx_dlsym(__handle, "sceKernelIsGenuineCEX", &__ptr_sceKernelIsGenuineCEX);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26219,10 +24711,8 @@ void __load_and_call_sceKernelIsGenuineDevKit();
 static __attribute__ ((used)) void* __ptr_sceKernelIsGenuineDevKit = &__load_and_call_sceKernelIsGenuineDevKit;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsGenuineDevKit() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsGenuineDevKit", &__ptr_sceKernelIsGenuineDevKit)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsGenuineDevKit(void) {
+  sprx_dlsym(__handle, "sceKernelIsGenuineDevKit", &__ptr_sceKernelIsGenuineDevKit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26253,10 +24743,8 @@ void __load_and_call_sceKernelIsGenuineKratosCex();
 static __attribute__ ((used)) void* __ptr_sceKernelIsGenuineKratosCex = &__load_and_call_sceKernelIsGenuineKratosCex;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsGenuineKratosCex() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsGenuineKratosCex", &__ptr_sceKernelIsGenuineKratosCex)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsGenuineKratosCex(void) {
+  sprx_dlsym(__handle, "sceKernelIsGenuineKratosCex", &__ptr_sceKernelIsGenuineKratosCex);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26287,10 +24775,8 @@ void __load_and_call_sceKernelIsGenuineN();
 static __attribute__ ((used)) void* __ptr_sceKernelIsGenuineN = &__load_and_call_sceKernelIsGenuineN;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsGenuineN() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsGenuineN", &__ptr_sceKernelIsGenuineN)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsGenuineN(void) {
+  sprx_dlsym(__handle, "sceKernelIsGenuineN", &__ptr_sceKernelIsGenuineN);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26321,10 +24807,8 @@ void __load_and_call_sceKernelIsGenuineTestKit();
 static __attribute__ ((used)) void* __ptr_sceKernelIsGenuineTestKit = &__load_and_call_sceKernelIsGenuineTestKit;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsGenuineTestKit() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsGenuineTestKit", &__ptr_sceKernelIsGenuineTestKit)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsGenuineTestKit(void) {
+  sprx_dlsym(__handle, "sceKernelIsGenuineTestKit", &__ptr_sceKernelIsGenuineTestKit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26355,10 +24839,8 @@ void __load_and_call_sceKernelIsInSandbox();
 static __attribute__ ((used)) void* __ptr_sceKernelIsInSandbox = &__load_and_call_sceKernelIsInSandbox;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsInSandbox() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsInSandbox", &__ptr_sceKernelIsInSandbox)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsInSandbox(void) {
+  sprx_dlsym(__handle, "sceKernelIsInSandbox", &__ptr_sceKernelIsInSandbox);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26389,10 +24871,8 @@ void __load_and_call_sceKernelIsKratos();
 static __attribute__ ((used)) void* __ptr_sceKernelIsKratos = &__load_and_call_sceKernelIsKratos;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsKratos() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsKratos", &__ptr_sceKernelIsKratos)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsKratos(void) {
+  sprx_dlsym(__handle, "sceKernelIsKratos", &__ptr_sceKernelIsKratos);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26423,10 +24903,8 @@ void __load_and_call_sceKernelIsM2DeviceAttached();
 static __attribute__ ((used)) void* __ptr_sceKernelIsM2DeviceAttached = &__load_and_call_sceKernelIsM2DeviceAttached;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsM2DeviceAttached() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsM2DeviceAttached", &__ptr_sceKernelIsM2DeviceAttached)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsM2DeviceAttached(void) {
+  sprx_dlsym(__handle, "sceKernelIsM2DeviceAttached", &__ptr_sceKernelIsM2DeviceAttached);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26457,10 +24935,8 @@ void __load_and_call_sceKernelIsMainOnStanbyMode();
 static __attribute__ ((used)) void* __ptr_sceKernelIsMainOnStanbyMode = &__load_and_call_sceKernelIsMainOnStanbyMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsMainOnStanbyMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsMainOnStanbyMode", &__ptr_sceKernelIsMainOnStanbyMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsMainOnStanbyMode(void) {
+  sprx_dlsym(__handle, "sceKernelIsMainOnStanbyMode", &__ptr_sceKernelIsMainOnStanbyMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26491,10 +24967,8 @@ void __load_and_call_sceKernelIsMainOnStandbyMode();
 static __attribute__ ((used)) void* __ptr_sceKernelIsMainOnStandbyMode = &__load_and_call_sceKernelIsMainOnStandbyMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsMainOnStandbyMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsMainOnStandbyMode", &__ptr_sceKernelIsMainOnStandbyMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsMainOnStandbyMode(void) {
+  sprx_dlsym(__handle, "sceKernelIsMainOnStandbyMode", &__ptr_sceKernelIsMainOnStandbyMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26525,10 +24999,8 @@ void __load_and_call_sceKernelIsNeoMode();
 static __attribute__ ((used)) void* __ptr_sceKernelIsNeoMode = &__load_and_call_sceKernelIsNeoMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsNeoMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsNeoMode", &__ptr_sceKernelIsNeoMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsNeoMode(void) {
+  sprx_dlsym(__handle, "sceKernelIsNeoMode", &__ptr_sceKernelIsNeoMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26559,10 +25031,8 @@ void __load_and_call_sceKernelIsPs4Process();
 static __attribute__ ((used)) void* __ptr_sceKernelIsPs4Process = &__load_and_call_sceKernelIsPs4Process;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsPs4Process() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsPs4Process", &__ptr_sceKernelIsPs4Process)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsPs4Process(void) {
+  sprx_dlsym(__handle, "sceKernelIsPs4Process", &__ptr_sceKernelIsPs4Process);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26593,10 +25063,8 @@ void __load_and_call_sceKernelIsStack();
 static __attribute__ ((used)) void* __ptr_sceKernelIsStack = &__load_and_call_sceKernelIsStack;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsStack() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsStack", &__ptr_sceKernelIsStack)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsStack(void) {
+  sprx_dlsym(__handle, "sceKernelIsStack", &__ptr_sceKernelIsStack);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26627,10 +25095,8 @@ void __load_and_call_sceKernelIsTestKit();
 static __attribute__ ((used)) void* __ptr_sceKernelIsTestKit = &__load_and_call_sceKernelIsTestKit;
 
 static __attribute__ ((used)) void
-__load_sceKernelIsTestKit() {
-  if(sceKernelDlsym(__module_id, "sceKernelIsTestKit", &__ptr_sceKernelIsTestKit)) {
-    __builtin_trap();
-  }
+__load_sceKernelIsTestKit(void) {
+  sprx_dlsym(__handle, "sceKernelIsTestKit", &__ptr_sceKernelIsTestKit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26661,10 +25127,8 @@ void __load_and_call_sceKernelJitCreateAliasOfSharedMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelJitCreateAliasOfSharedMemory = &__load_and_call_sceKernelJitCreateAliasOfSharedMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelJitCreateAliasOfSharedMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelJitCreateAliasOfSharedMemory", &__ptr_sceKernelJitCreateAliasOfSharedMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelJitCreateAliasOfSharedMemory(void) {
+  sprx_dlsym(__handle, "sceKernelJitCreateAliasOfSharedMemory", &__ptr_sceKernelJitCreateAliasOfSharedMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26695,10 +25159,8 @@ void __load_and_call_sceKernelJitCreateSharedMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelJitCreateSharedMemory = &__load_and_call_sceKernelJitCreateSharedMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelJitCreateSharedMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelJitCreateSharedMemory", &__ptr_sceKernelJitCreateSharedMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelJitCreateSharedMemory(void) {
+  sprx_dlsym(__handle, "sceKernelJitCreateSharedMemory", &__ptr_sceKernelJitCreateSharedMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26729,10 +25191,8 @@ void __load_and_call_sceKernelJitGetSharedMemoryInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelJitGetSharedMemoryInfo = &__load_and_call_sceKernelJitGetSharedMemoryInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelJitGetSharedMemoryInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelJitGetSharedMemoryInfo", &__ptr_sceKernelJitGetSharedMemoryInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelJitGetSharedMemoryInfo(void) {
+  sprx_dlsym(__handle, "sceKernelJitGetSharedMemoryInfo", &__ptr_sceKernelJitGetSharedMemoryInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26763,10 +25223,8 @@ void __load_and_call_sceKernelJitMapSharedMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelJitMapSharedMemory = &__load_and_call_sceKernelJitMapSharedMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelJitMapSharedMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelJitMapSharedMemory", &__ptr_sceKernelJitMapSharedMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelJitMapSharedMemory(void) {
+  sprx_dlsym(__handle, "sceKernelJitMapSharedMemory", &__ptr_sceKernelJitMapSharedMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26797,10 +25255,40 @@ void __load_and_call_sceKernelKernelHeapUsage();
 static __attribute__ ((used)) void* __ptr_sceKernelKernelHeapUsage = &__load_and_call_sceKernelKernelHeapUsage;
 
 static __attribute__ ((used)) void
-__load_sceKernelKernelHeapUsage() {
-  if(sceKernelDlsym(__module_id, "sceKernelKernelHeapUsage", &__ptr_sceKernelKernelHeapUsage)) {
-    __builtin_trap();
-  }
+__load_sceKernelKernelHeapUsage(void) {
+  sprx_dlsym(__handle, "sceKernelKernelHeapUsage", &__ptr_sceKernelKernelHeapUsage);
+}
+
+asm(".intel_syntax noprefix\n"
+    ".global sceKernelLoadStartModule\n"
+    ".type sceKernelLoadStartModule @function\n"
+    "sceKernelLoadStartModule:\n"
+    "jmp qword ptr [rip + __ptr_sceKernelLoadStartModule]\n");
+
+asm(".intel_syntax noprefix\n"
+    ".type __load_and_call_sceKernelLoadStartModule @function\n"
+    "__load_and_call_sceKernelLoadStartModule:\n"
+    "push rdi\n"
+    "push rsi\n"
+    "push rdx\n"
+    "push rcx\n"
+    "push r8\n"
+    "push r9\n"
+    "call __load_sceKernelLoadStartModule\n"
+    "pop r9\n"
+    "pop r8\n"
+    "pop rcx\n"
+    "pop rdx\n"
+    "pop rsi\n"
+    "pop rdi\n"
+    "jmp qword ptr [rip + __ptr_sceKernelLoadStartModule]\n");
+
+void __load_and_call_sceKernelLoadStartModule();
+static __attribute__ ((used)) void* __ptr_sceKernelLoadStartModule = &__load_and_call_sceKernelLoadStartModule;
+
+static __attribute__ ((used)) void
+__load_sceKernelLoadStartModule(void) {
+  sprx_dlsym(__handle, "sceKernelLoadStartModule", &__ptr_sceKernelLoadStartModule);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26831,10 +25319,8 @@ void __load_and_call_sceKernelLoadStartModuleForSysmodule();
 static __attribute__ ((used)) void* __ptr_sceKernelLoadStartModuleForSysmodule = &__load_and_call_sceKernelLoadStartModuleForSysmodule;
 
 static __attribute__ ((used)) void
-__load_sceKernelLoadStartModuleForSysmodule() {
-  if(sceKernelDlsym(__module_id, "sceKernelLoadStartModuleForSysmodule", &__ptr_sceKernelLoadStartModuleForSysmodule)) {
-    __builtin_trap();
-  }
+__load_sceKernelLoadStartModuleForSysmodule(void) {
+  sprx_dlsym(__handle, "sceKernelLoadStartModuleForSysmodule", &__ptr_sceKernelLoadStartModuleForSysmodule);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26865,10 +25351,8 @@ void __load_and_call_sceKernelLoadStartModuleInternalForMono();
 static __attribute__ ((used)) void* __ptr_sceKernelLoadStartModuleInternalForMono = &__load_and_call_sceKernelLoadStartModuleInternalForMono;
 
 static __attribute__ ((used)) void
-__load_sceKernelLoadStartModuleInternalForMono() {
-  if(sceKernelDlsym(__module_id, "sceKernelLoadStartModuleInternalForMono", &__ptr_sceKernelLoadStartModuleInternalForMono)) {
-    __builtin_trap();
-  }
+__load_sceKernelLoadStartModuleInternalForMono(void) {
+  sprx_dlsym(__handle, "sceKernelLoadStartModuleInternalForMono", &__ptr_sceKernelLoadStartModuleInternalForMono);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26899,10 +25383,8 @@ void __load_and_call_sceKernelLseek();
 static __attribute__ ((used)) void* __ptr_sceKernelLseek = &__load_and_call_sceKernelLseek;
 
 static __attribute__ ((used)) void
-__load_sceKernelLseek() {
-  if(sceKernelDlsym(__module_id, "sceKernelLseek", &__ptr_sceKernelLseek)) {
-    __builtin_trap();
-  }
+__load_sceKernelLseek(void) {
+  sprx_dlsym(__handle, "sceKernelLseek", &__ptr_sceKernelLseek);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26933,10 +25415,8 @@ void __load_and_call_sceKernelLwfsAllocateBlock();
 static __attribute__ ((used)) void* __ptr_sceKernelLwfsAllocateBlock = &__load_and_call_sceKernelLwfsAllocateBlock;
 
 static __attribute__ ((used)) void
-__load_sceKernelLwfsAllocateBlock() {
-  if(sceKernelDlsym(__module_id, "sceKernelLwfsAllocateBlock", &__ptr_sceKernelLwfsAllocateBlock)) {
-    __builtin_trap();
-  }
+__load_sceKernelLwfsAllocateBlock(void) {
+  sprx_dlsym(__handle, "sceKernelLwfsAllocateBlock", &__ptr_sceKernelLwfsAllocateBlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -26967,10 +25447,8 @@ void __load_and_call_sceKernelLwfsLseek();
 static __attribute__ ((used)) void* __ptr_sceKernelLwfsLseek = &__load_and_call_sceKernelLwfsLseek;
 
 static __attribute__ ((used)) void
-__load_sceKernelLwfsLseek() {
-  if(sceKernelDlsym(__module_id, "sceKernelLwfsLseek", &__ptr_sceKernelLwfsLseek)) {
-    __builtin_trap();
-  }
+__load_sceKernelLwfsLseek(void) {
+  sprx_dlsym(__handle, "sceKernelLwfsLseek", &__ptr_sceKernelLwfsLseek);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27001,10 +25479,8 @@ void __load_and_call_sceKernelLwfsSetAttribute();
 static __attribute__ ((used)) void* __ptr_sceKernelLwfsSetAttribute = &__load_and_call_sceKernelLwfsSetAttribute;
 
 static __attribute__ ((used)) void
-__load_sceKernelLwfsSetAttribute() {
-  if(sceKernelDlsym(__module_id, "sceKernelLwfsSetAttribute", &__ptr_sceKernelLwfsSetAttribute)) {
-    __builtin_trap();
-  }
+__load_sceKernelLwfsSetAttribute(void) {
+  sprx_dlsym(__handle, "sceKernelLwfsSetAttribute", &__ptr_sceKernelLwfsSetAttribute);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27035,10 +25511,8 @@ void __load_and_call_sceKernelLwfsTrimBlock();
 static __attribute__ ((used)) void* __ptr_sceKernelLwfsTrimBlock = &__load_and_call_sceKernelLwfsTrimBlock;
 
 static __attribute__ ((used)) void
-__load_sceKernelLwfsTrimBlock() {
-  if(sceKernelDlsym(__module_id, "sceKernelLwfsTrimBlock", &__ptr_sceKernelLwfsTrimBlock)) {
-    __builtin_trap();
-  }
+__load_sceKernelLwfsTrimBlock(void) {
+  sprx_dlsym(__handle, "sceKernelLwfsTrimBlock", &__ptr_sceKernelLwfsTrimBlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27069,10 +25543,8 @@ void __load_and_call_sceKernelLwfsWrite();
 static __attribute__ ((used)) void* __ptr_sceKernelLwfsWrite = &__load_and_call_sceKernelLwfsWrite;
 
 static __attribute__ ((used)) void
-__load_sceKernelLwfsWrite() {
-  if(sceKernelDlsym(__module_id, "sceKernelLwfsWrite", &__ptr_sceKernelLwfsWrite)) {
-    __builtin_trap();
-  }
+__load_sceKernelLwfsWrite(void) {
+  sprx_dlsym(__handle, "sceKernelLwfsWrite", &__ptr_sceKernelLwfsWrite);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27103,10 +25575,8 @@ void __load_and_call_sceKernelMapDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelMapDirectMemory = &__load_and_call_sceKernelMapDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapDirectMemory", &__ptr_sceKernelMapDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelMapDirectMemory", &__ptr_sceKernelMapDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27137,10 +25607,8 @@ void __load_and_call_sceKernelMapDirectMemory2();
 static __attribute__ ((used)) void* __ptr_sceKernelMapDirectMemory2 = &__load_and_call_sceKernelMapDirectMemory2;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapDirectMemory2() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapDirectMemory2", &__ptr_sceKernelMapDirectMemory2)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapDirectMemory2(void) {
+  sprx_dlsym(__handle, "sceKernelMapDirectMemory2", &__ptr_sceKernelMapDirectMemory2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27171,10 +25639,8 @@ void __load_and_call_sceKernelMapFlexibleMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelMapFlexibleMemory = &__load_and_call_sceKernelMapFlexibleMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapFlexibleMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapFlexibleMemory", &__ptr_sceKernelMapFlexibleMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapFlexibleMemory(void) {
+  sprx_dlsym(__handle, "sceKernelMapFlexibleMemory", &__ptr_sceKernelMapFlexibleMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27205,10 +25671,8 @@ void __load_and_call_sceKernelMapNamedDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelMapNamedDirectMemory = &__load_and_call_sceKernelMapNamedDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapNamedDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapNamedDirectMemory", &__ptr_sceKernelMapNamedDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapNamedDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelMapNamedDirectMemory", &__ptr_sceKernelMapNamedDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27239,10 +25703,8 @@ void __load_and_call_sceKernelMapNamedFlexibleMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelMapNamedFlexibleMemory = &__load_and_call_sceKernelMapNamedFlexibleMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapNamedFlexibleMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapNamedFlexibleMemory", &__ptr_sceKernelMapNamedFlexibleMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapNamedFlexibleMemory(void) {
+  sprx_dlsym(__handle, "sceKernelMapNamedFlexibleMemory", &__ptr_sceKernelMapNamedFlexibleMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27273,10 +25735,8 @@ void __load_and_call_sceKernelMapNamedSystemFlexibleMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelMapNamedSystemFlexibleMemory = &__load_and_call_sceKernelMapNamedSystemFlexibleMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapNamedSystemFlexibleMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapNamedSystemFlexibleMemory", &__ptr_sceKernelMapNamedSystemFlexibleMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapNamedSystemFlexibleMemory(void) {
+  sprx_dlsym(__handle, "sceKernelMapNamedSystemFlexibleMemory", &__ptr_sceKernelMapNamedSystemFlexibleMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27307,10 +25767,8 @@ void __load_and_call_sceKernelMapSanitizerShadowMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelMapSanitizerShadowMemory = &__load_and_call_sceKernelMapSanitizerShadowMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapSanitizerShadowMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapSanitizerShadowMemory", &__ptr_sceKernelMapSanitizerShadowMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapSanitizerShadowMemory(void) {
+  sprx_dlsym(__handle, "sceKernelMapSanitizerShadowMemory", &__ptr_sceKernelMapSanitizerShadowMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27341,10 +25799,8 @@ void __load_and_call_sceKernelMapToolMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelMapToolMemory = &__load_and_call_sceKernelMapToolMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapToolMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapToolMemory", &__ptr_sceKernelMapToolMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapToolMemory(void) {
+  sprx_dlsym(__handle, "sceKernelMapToolMemory", &__ptr_sceKernelMapToolMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27375,10 +25831,8 @@ void __load_and_call_sceKernelMapTraceMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelMapTraceMemory = &__load_and_call_sceKernelMapTraceMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapTraceMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapTraceMemory", &__ptr_sceKernelMapTraceMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapTraceMemory(void) {
+  sprx_dlsym(__handle, "sceKernelMapTraceMemory", &__ptr_sceKernelMapTraceMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27409,10 +25863,8 @@ void __load_and_call_sceKernelMapperGetParam();
 static __attribute__ ((used)) void* __ptr_sceKernelMapperGetParam = &__load_and_call_sceKernelMapperGetParam;
 
 static __attribute__ ((used)) void
-__load_sceKernelMapperGetParam() {
-  if(sceKernelDlsym(__module_id, "sceKernelMapperGetParam", &__ptr_sceKernelMapperGetParam)) {
-    __builtin_trap();
-  }
+__load_sceKernelMapperGetParam(void) {
+  sprx_dlsym(__handle, "sceKernelMapperGetParam", &__ptr_sceKernelMapperGetParam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27443,10 +25895,8 @@ void __load_and_call_sceKernelMemoryPoolBatch();
 static __attribute__ ((used)) void* __ptr_sceKernelMemoryPoolBatch = &__load_and_call_sceKernelMemoryPoolBatch;
 
 static __attribute__ ((used)) void
-__load_sceKernelMemoryPoolBatch() {
-  if(sceKernelDlsym(__module_id, "sceKernelMemoryPoolBatch", &__ptr_sceKernelMemoryPoolBatch)) {
-    __builtin_trap();
-  }
+__load_sceKernelMemoryPoolBatch(void) {
+  sprx_dlsym(__handle, "sceKernelMemoryPoolBatch", &__ptr_sceKernelMemoryPoolBatch);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27477,10 +25927,8 @@ void __load_and_call_sceKernelMemoryPoolCommit();
 static __attribute__ ((used)) void* __ptr_sceKernelMemoryPoolCommit = &__load_and_call_sceKernelMemoryPoolCommit;
 
 static __attribute__ ((used)) void
-__load_sceKernelMemoryPoolCommit() {
-  if(sceKernelDlsym(__module_id, "sceKernelMemoryPoolCommit", &__ptr_sceKernelMemoryPoolCommit)) {
-    __builtin_trap();
-  }
+__load_sceKernelMemoryPoolCommit(void) {
+  sprx_dlsym(__handle, "sceKernelMemoryPoolCommit", &__ptr_sceKernelMemoryPoolCommit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27511,10 +25959,8 @@ void __load_and_call_sceKernelMemoryPoolDecommit();
 static __attribute__ ((used)) void* __ptr_sceKernelMemoryPoolDecommit = &__load_and_call_sceKernelMemoryPoolDecommit;
 
 static __attribute__ ((used)) void
-__load_sceKernelMemoryPoolDecommit() {
-  if(sceKernelDlsym(__module_id, "sceKernelMemoryPoolDecommit", &__ptr_sceKernelMemoryPoolDecommit)) {
-    __builtin_trap();
-  }
+__load_sceKernelMemoryPoolDecommit(void) {
+  sprx_dlsym(__handle, "sceKernelMemoryPoolDecommit", &__ptr_sceKernelMemoryPoolDecommit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27545,10 +25991,8 @@ void __load_and_call_sceKernelMemoryPoolExpand();
 static __attribute__ ((used)) void* __ptr_sceKernelMemoryPoolExpand = &__load_and_call_sceKernelMemoryPoolExpand;
 
 static __attribute__ ((used)) void
-__load_sceKernelMemoryPoolExpand() {
-  if(sceKernelDlsym(__module_id, "sceKernelMemoryPoolExpand", &__ptr_sceKernelMemoryPoolExpand)) {
-    __builtin_trap();
-  }
+__load_sceKernelMemoryPoolExpand(void) {
+  sprx_dlsym(__handle, "sceKernelMemoryPoolExpand", &__ptr_sceKernelMemoryPoolExpand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27579,10 +26023,8 @@ void __load_and_call_sceKernelMemoryPoolGetBlockStats();
 static __attribute__ ((used)) void* __ptr_sceKernelMemoryPoolGetBlockStats = &__load_and_call_sceKernelMemoryPoolGetBlockStats;
 
 static __attribute__ ((used)) void
-__load_sceKernelMemoryPoolGetBlockStats() {
-  if(sceKernelDlsym(__module_id, "sceKernelMemoryPoolGetBlockStats", &__ptr_sceKernelMemoryPoolGetBlockStats)) {
-    __builtin_trap();
-  }
+__load_sceKernelMemoryPoolGetBlockStats(void) {
+  sprx_dlsym(__handle, "sceKernelMemoryPoolGetBlockStats", &__ptr_sceKernelMemoryPoolGetBlockStats);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27613,10 +26055,8 @@ void __load_and_call_sceKernelMemoryPoolMove();
 static __attribute__ ((used)) void* __ptr_sceKernelMemoryPoolMove = &__load_and_call_sceKernelMemoryPoolMove;
 
 static __attribute__ ((used)) void
-__load_sceKernelMemoryPoolMove() {
-  if(sceKernelDlsym(__module_id, "sceKernelMemoryPoolMove", &__ptr_sceKernelMemoryPoolMove)) {
-    __builtin_trap();
-  }
+__load_sceKernelMemoryPoolMove(void) {
+  sprx_dlsym(__handle, "sceKernelMemoryPoolMove", &__ptr_sceKernelMemoryPoolMove);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27647,10 +26087,8 @@ void __load_and_call_sceKernelMemoryPoolReserve();
 static __attribute__ ((used)) void* __ptr_sceKernelMemoryPoolReserve = &__load_and_call_sceKernelMemoryPoolReserve;
 
 static __attribute__ ((used)) void
-__load_sceKernelMemoryPoolReserve() {
-  if(sceKernelDlsym(__module_id, "sceKernelMemoryPoolReserve", &__ptr_sceKernelMemoryPoolReserve)) {
-    __builtin_trap();
-  }
+__load_sceKernelMemoryPoolReserve(void) {
+  sprx_dlsym(__handle, "sceKernelMemoryPoolReserve", &__ptr_sceKernelMemoryPoolReserve);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27681,10 +26119,8 @@ void __load_and_call_sceKernelMkdir();
 static __attribute__ ((used)) void* __ptr_sceKernelMkdir = &__load_and_call_sceKernelMkdir;
 
 static __attribute__ ((used)) void
-__load_sceKernelMkdir() {
-  if(sceKernelDlsym(__module_id, "sceKernelMkdir", &__ptr_sceKernelMkdir)) {
-    __builtin_trap();
-  }
+__load_sceKernelMkdir(void) {
+  sprx_dlsym(__handle, "sceKernelMkdir", &__ptr_sceKernelMkdir);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27715,10 +26151,8 @@ void __load_and_call_sceKernelMlock();
 static __attribute__ ((used)) void* __ptr_sceKernelMlock = &__load_and_call_sceKernelMlock;
 
 static __attribute__ ((used)) void
-__load_sceKernelMlock() {
-  if(sceKernelDlsym(__module_id, "sceKernelMlock", &__ptr_sceKernelMlock)) {
-    __builtin_trap();
-  }
+__load_sceKernelMlock(void) {
+  sprx_dlsym(__handle, "sceKernelMlock", &__ptr_sceKernelMlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27749,10 +26183,8 @@ void __load_and_call_sceKernelMlockall();
 static __attribute__ ((used)) void* __ptr_sceKernelMlockall = &__load_and_call_sceKernelMlockall;
 
 static __attribute__ ((used)) void
-__load_sceKernelMlockall() {
-  if(sceKernelDlsym(__module_id, "sceKernelMlockall", &__ptr_sceKernelMlockall)) {
-    __builtin_trap();
-  }
+__load_sceKernelMlockall(void) {
+  sprx_dlsym(__handle, "sceKernelMlockall", &__ptr_sceKernelMlockall);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27783,10 +26215,8 @@ void __load_and_call_sceKernelMmap();
 static __attribute__ ((used)) void* __ptr_sceKernelMmap = &__load_and_call_sceKernelMmap;
 
 static __attribute__ ((used)) void
-__load_sceKernelMmap() {
-  if(sceKernelDlsym(__module_id, "sceKernelMmap", &__ptr_sceKernelMmap)) {
-    __builtin_trap();
-  }
+__load_sceKernelMmap(void) {
+  sprx_dlsym(__handle, "sceKernelMmap", &__ptr_sceKernelMmap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27817,10 +26247,8 @@ void __load_and_call_sceKernelMprotect();
 static __attribute__ ((used)) void* __ptr_sceKernelMprotect = &__load_and_call_sceKernelMprotect;
 
 static __attribute__ ((used)) void
-__load_sceKernelMprotect() {
-  if(sceKernelDlsym(__module_id, "sceKernelMprotect", &__ptr_sceKernelMprotect)) {
-    __builtin_trap();
-  }
+__load_sceKernelMprotect(void) {
+  sprx_dlsym(__handle, "sceKernelMprotect", &__ptr_sceKernelMprotect);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27851,10 +26279,8 @@ void __load_and_call_sceKernelMsync();
 static __attribute__ ((used)) void* __ptr_sceKernelMsync = &__load_and_call_sceKernelMsync;
 
 static __attribute__ ((used)) void
-__load_sceKernelMsync() {
-  if(sceKernelDlsym(__module_id, "sceKernelMsync", &__ptr_sceKernelMsync)) {
-    __builtin_trap();
-  }
+__load_sceKernelMsync(void) {
+  sprx_dlsym(__handle, "sceKernelMsync", &__ptr_sceKernelMsync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27885,10 +26311,8 @@ void __load_and_call_sceKernelMtypeprotect();
 static __attribute__ ((used)) void* __ptr_sceKernelMtypeprotect = &__load_and_call_sceKernelMtypeprotect;
 
 static __attribute__ ((used)) void
-__load_sceKernelMtypeprotect() {
-  if(sceKernelDlsym(__module_id, "sceKernelMtypeprotect", &__ptr_sceKernelMtypeprotect)) {
-    __builtin_trap();
-  }
+__load_sceKernelMtypeprotect(void) {
+  sprx_dlsym(__handle, "sceKernelMtypeprotect", &__ptr_sceKernelMtypeprotect);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27919,10 +26343,8 @@ void __load_and_call_sceKernelMunlock();
 static __attribute__ ((used)) void* __ptr_sceKernelMunlock = &__load_and_call_sceKernelMunlock;
 
 static __attribute__ ((used)) void
-__load_sceKernelMunlock() {
-  if(sceKernelDlsym(__module_id, "sceKernelMunlock", &__ptr_sceKernelMunlock)) {
-    __builtin_trap();
-  }
+__load_sceKernelMunlock(void) {
+  sprx_dlsym(__handle, "sceKernelMunlock", &__ptr_sceKernelMunlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27953,10 +26375,8 @@ void __load_and_call_sceKernelMunlockall();
 static __attribute__ ((used)) void* __ptr_sceKernelMunlockall = &__load_and_call_sceKernelMunlockall;
 
 static __attribute__ ((used)) void
-__load_sceKernelMunlockall() {
-  if(sceKernelDlsym(__module_id, "sceKernelMunlockall", &__ptr_sceKernelMunlockall)) {
-    __builtin_trap();
-  }
+__load_sceKernelMunlockall(void) {
+  sprx_dlsym(__handle, "sceKernelMunlockall", &__ptr_sceKernelMunlockall);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -27987,10 +26407,8 @@ void __load_and_call_sceKernelMunmap();
 static __attribute__ ((used)) void* __ptr_sceKernelMunmap = &__load_and_call_sceKernelMunmap;
 
 static __attribute__ ((used)) void
-__load_sceKernelMunmap() {
-  if(sceKernelDlsym(__module_id, "sceKernelMunmap", &__ptr_sceKernelMunmap)) {
-    __builtin_trap();
-  }
+__load_sceKernelMunmap(void) {
+  sprx_dlsym(__handle, "sceKernelMunmap", &__ptr_sceKernelMunmap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28021,10 +26439,8 @@ void __load_and_call_sceKernelNanosleep();
 static __attribute__ ((used)) void* __ptr_sceKernelNanosleep = &__load_and_call_sceKernelNanosleep;
 
 static __attribute__ ((used)) void
-__load_sceKernelNanosleep() {
-  if(sceKernelDlsym(__module_id, "sceKernelNanosleep", &__ptr_sceKernelNanosleep)) {
-    __builtin_trap();
-  }
+__load_sceKernelNanosleep(void) {
+  sprx_dlsym(__handle, "sceKernelNanosleep", &__ptr_sceKernelNanosleep);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28055,10 +26471,8 @@ void __load_and_call_sceKernelNormalizePath();
 static __attribute__ ((used)) void* __ptr_sceKernelNormalizePath = &__load_and_call_sceKernelNormalizePath;
 
 static __attribute__ ((used)) void
-__load_sceKernelNormalizePath() {
-  if(sceKernelDlsym(__module_id, "sceKernelNormalizePath", &__ptr_sceKernelNormalizePath)) {
-    __builtin_trap();
-  }
+__load_sceKernelNormalizePath(void) {
+  sprx_dlsym(__handle, "sceKernelNormalizePath", &__ptr_sceKernelNormalizePath);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28089,10 +26503,8 @@ void __load_and_call_sceKernelNotifyAppEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelNotifyAppEvent = &__load_and_call_sceKernelNotifyAppEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelNotifyAppEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelNotifyAppEvent", &__ptr_sceKernelNotifyAppEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelNotifyAppEvent(void) {
+  sprx_dlsym(__handle, "sceKernelNotifyAppEvent", &__ptr_sceKernelNotifyAppEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28123,10 +26535,8 @@ void __load_and_call_sceKernelNotifyAppStateChanged();
 static __attribute__ ((used)) void* __ptr_sceKernelNotifyAppStateChanged = &__load_and_call_sceKernelNotifyAppStateChanged;
 
 static __attribute__ ((used)) void
-__load_sceKernelNotifyAppStateChanged() {
-  if(sceKernelDlsym(__module_id, "sceKernelNotifyAppStateChanged", &__ptr_sceKernelNotifyAppStateChanged)) {
-    __builtin_trap();
-  }
+__load_sceKernelNotifyAppStateChanged(void) {
+  sprx_dlsym(__handle, "sceKernelNotifyAppStateChanged", &__ptr_sceKernelNotifyAppStateChanged);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28157,10 +26567,8 @@ void __load_and_call_sceKernelNotifySystemSuspendResumeProgress();
 static __attribute__ ((used)) void* __ptr_sceKernelNotifySystemSuspendResumeProgress = &__load_and_call_sceKernelNotifySystemSuspendResumeProgress;
 
 static __attribute__ ((used)) void
-__load_sceKernelNotifySystemSuspendResumeProgress() {
-  if(sceKernelDlsym(__module_id, "sceKernelNotifySystemSuspendResumeProgress", &__ptr_sceKernelNotifySystemSuspendResumeProgress)) {
-    __builtin_trap();
-  }
+__load_sceKernelNotifySystemSuspendResumeProgress(void) {
+  sprx_dlsym(__handle, "sceKernelNotifySystemSuspendResumeProgress", &__ptr_sceKernelNotifySystemSuspendResumeProgress);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28191,10 +26599,8 @@ void __load_and_call_sceKernelNotifySystemSuspendStart();
 static __attribute__ ((used)) void* __ptr_sceKernelNotifySystemSuspendStart = &__load_and_call_sceKernelNotifySystemSuspendStart;
 
 static __attribute__ ((used)) void
-__load_sceKernelNotifySystemSuspendStart() {
-  if(sceKernelDlsym(__module_id, "sceKernelNotifySystemSuspendStart", &__ptr_sceKernelNotifySystemSuspendStart)) {
-    __builtin_trap();
-  }
+__load_sceKernelNotifySystemSuspendStart(void) {
+  sprx_dlsym(__handle, "sceKernelNotifySystemSuspendStart", &__ptr_sceKernelNotifySystemSuspendStart);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28225,10 +26631,8 @@ void __load_and_call_sceKernelOpen();
 static __attribute__ ((used)) void* __ptr_sceKernelOpen = &__load_and_call_sceKernelOpen;
 
 static __attribute__ ((used)) void
-__load_sceKernelOpen() {
-  if(sceKernelDlsym(__module_id, "sceKernelOpen", &__ptr_sceKernelOpen)) {
-    __builtin_trap();
-  }
+__load_sceKernelOpen(void) {
+  sprx_dlsym(__handle, "sceKernelOpen", &__ptr_sceKernelOpen);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28259,10 +26663,8 @@ void __load_and_call_sceKernelOpenEport();
 static __attribute__ ((used)) void* __ptr_sceKernelOpenEport = &__load_and_call_sceKernelOpenEport;
 
 static __attribute__ ((used)) void
-__load_sceKernelOpenEport() {
-  if(sceKernelDlsym(__module_id, "sceKernelOpenEport", &__ptr_sceKernelOpenEport)) {
-    __builtin_trap();
-  }
+__load_sceKernelOpenEport(void) {
+  sprx_dlsym(__handle, "sceKernelOpenEport", &__ptr_sceKernelOpenEport);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28293,10 +26695,8 @@ void __load_and_call_sceKernelOpenEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelOpenEventFlag = &__load_and_call_sceKernelOpenEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelOpenEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelOpenEventFlag", &__ptr_sceKernelOpenEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelOpenEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelOpenEventFlag", &__ptr_sceKernelOpenEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28327,10 +26727,8 @@ void __load_and_call_sceKernelOpenInternal();
 static __attribute__ ((used)) void* __ptr_sceKernelOpenInternal = &__load_and_call_sceKernelOpenInternal;
 
 static __attribute__ ((used)) void
-__load_sceKernelOpenInternal() {
-  if(sceKernelDlsym(__module_id, "sceKernelOpenInternal", &__ptr_sceKernelOpenInternal)) {
-    __builtin_trap();
-  }
+__load_sceKernelOpenInternal(void) {
+  sprx_dlsym(__handle, "sceKernelOpenInternal", &__ptr_sceKernelOpenInternal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28361,10 +26759,8 @@ void __load_and_call_sceKernelOpenSema();
 static __attribute__ ((used)) void* __ptr_sceKernelOpenSema = &__load_and_call_sceKernelOpenSema;
 
 static __attribute__ ((used)) void
-__load_sceKernelOpenSema() {
-  if(sceKernelDlsym(__module_id, "sceKernelOpenSema", &__ptr_sceKernelOpenSema)) {
-    __builtin_trap();
-  }
+__load_sceKernelOpenSema(void) {
+  sprx_dlsym(__handle, "sceKernelOpenSema", &__ptr_sceKernelOpenSema);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28395,10 +26791,8 @@ void __load_and_call_sceKernelPollEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelPollEventFlag = &__load_and_call_sceKernelPollEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelPollEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelPollEventFlag", &__ptr_sceKernelPollEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelPollEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelPollEventFlag", &__ptr_sceKernelPollEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28429,10 +26823,8 @@ void __load_and_call_sceKernelPollSema();
 static __attribute__ ((used)) void* __ptr_sceKernelPollSema = &__load_and_call_sceKernelPollSema;
 
 static __attribute__ ((used)) void
-__load_sceKernelPollSema() {
-  if(sceKernelDlsym(__module_id, "sceKernelPollSema", &__ptr_sceKernelPollSema)) {
-    __builtin_trap();
-  }
+__load_sceKernelPollSema(void) {
+  sprx_dlsym(__handle, "sceKernelPollSema", &__ptr_sceKernelPollSema);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28463,10 +26855,8 @@ void __load_and_call_sceKernelPread();
 static __attribute__ ((used)) void* __ptr_sceKernelPread = &__load_and_call_sceKernelPread;
 
 static __attribute__ ((used)) void
-__load_sceKernelPread() {
-  if(sceKernelDlsym(__module_id, "sceKernelPread", &__ptr_sceKernelPread)) {
-    __builtin_trap();
-  }
+__load_sceKernelPread(void) {
+  sprx_dlsym(__handle, "sceKernelPread", &__ptr_sceKernelPread);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28497,10 +26887,8 @@ void __load_and_call_sceKernelPreadv();
 static __attribute__ ((used)) void* __ptr_sceKernelPreadv = &__load_and_call_sceKernelPreadv;
 
 static __attribute__ ((used)) void
-__load_sceKernelPreadv() {
-  if(sceKernelDlsym(__module_id, "sceKernelPreadv", &__ptr_sceKernelPreadv)) {
-    __builtin_trap();
-  }
+__load_sceKernelPreadv(void) {
+  sprx_dlsym(__handle, "sceKernelPreadv", &__ptr_sceKernelPreadv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28531,10 +26919,8 @@ void __load_and_call_sceKernelPrepareDirectMemorySwap();
 static __attribute__ ((used)) void* __ptr_sceKernelPrepareDirectMemorySwap = &__load_and_call_sceKernelPrepareDirectMemorySwap;
 
 static __attribute__ ((used)) void
-__load_sceKernelPrepareDirectMemorySwap() {
-  if(sceKernelDlsym(__module_id, "sceKernelPrepareDirectMemorySwap", &__ptr_sceKernelPrepareDirectMemorySwap)) {
-    __builtin_trap();
-  }
+__load_sceKernelPrepareDirectMemorySwap(void) {
+  sprx_dlsym(__handle, "sceKernelPrepareDirectMemorySwap", &__ptr_sceKernelPrepareDirectMemorySwap);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28565,10 +26951,8 @@ void __load_and_call_sceKernelPrepareToResumeProcess();
 static __attribute__ ((used)) void* __ptr_sceKernelPrepareToResumeProcess = &__load_and_call_sceKernelPrepareToResumeProcess;
 
 static __attribute__ ((used)) void
-__load_sceKernelPrepareToResumeProcess() {
-  if(sceKernelDlsym(__module_id, "sceKernelPrepareToResumeProcess", &__ptr_sceKernelPrepareToResumeProcess)) {
-    __builtin_trap();
-  }
+__load_sceKernelPrepareToResumeProcess(void) {
+  sprx_dlsym(__handle, "sceKernelPrepareToResumeProcess", &__ptr_sceKernelPrepareToResumeProcess);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28599,10 +26983,8 @@ void __load_and_call_sceKernelPrepareToSuspendProcess();
 static __attribute__ ((used)) void* __ptr_sceKernelPrepareToSuspendProcess = &__load_and_call_sceKernelPrepareToSuspendProcess;
 
 static __attribute__ ((used)) void
-__load_sceKernelPrepareToSuspendProcess() {
-  if(sceKernelDlsym(__module_id, "sceKernelPrepareToSuspendProcess", &__ptr_sceKernelPrepareToSuspendProcess)) {
-    __builtin_trap();
-  }
+__load_sceKernelPrepareToSuspendProcess(void) {
+  sprx_dlsym(__handle, "sceKernelPrepareToSuspendProcess", &__ptr_sceKernelPrepareToSuspendProcess);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28633,10 +27015,8 @@ void __load_and_call_sceKernelPrintBacktraceWithModuleInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelPrintBacktraceWithModuleInfo = &__load_and_call_sceKernelPrintBacktraceWithModuleInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelPrintBacktraceWithModuleInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelPrintBacktraceWithModuleInfo", &__ptr_sceKernelPrintBacktraceWithModuleInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelPrintBacktraceWithModuleInfo(void) {
+  sprx_dlsym(__handle, "sceKernelPrintBacktraceWithModuleInfo", &__ptr_sceKernelPrintBacktraceWithModuleInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28667,10 +27047,8 @@ void __load_and_call_sceKernelProtectDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelProtectDirectMemory = &__load_and_call_sceKernelProtectDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelProtectDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelProtectDirectMemory", &__ptr_sceKernelProtectDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelProtectDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelProtectDirectMemory", &__ptr_sceKernelProtectDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28701,10 +27079,8 @@ void __load_and_call_sceKernelProtectDirectMemoryForPID();
 static __attribute__ ((used)) void* __ptr_sceKernelProtectDirectMemoryForPID = &__load_and_call_sceKernelProtectDirectMemoryForPID;
 
 static __attribute__ ((used)) void
-__load_sceKernelProtectDirectMemoryForPID() {
-  if(sceKernelDlsym(__module_id, "sceKernelProtectDirectMemoryForPID", &__ptr_sceKernelProtectDirectMemoryForPID)) {
-    __builtin_trap();
-  }
+__load_sceKernelProtectDirectMemoryForPID(void) {
+  sprx_dlsym(__handle, "sceKernelProtectDirectMemoryForPID", &__ptr_sceKernelProtectDirectMemoryForPID);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28735,10 +27111,8 @@ void __load_and_call_sceKernelPwrite();
 static __attribute__ ((used)) void* __ptr_sceKernelPwrite = &__load_and_call_sceKernelPwrite;
 
 static __attribute__ ((used)) void
-__load_sceKernelPwrite() {
-  if(sceKernelDlsym(__module_id, "sceKernelPwrite", &__ptr_sceKernelPwrite)) {
-    __builtin_trap();
-  }
+__load_sceKernelPwrite(void) {
+  sprx_dlsym(__handle, "sceKernelPwrite", &__ptr_sceKernelPwrite);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28769,10 +27143,8 @@ void __load_and_call_sceKernelPwritev();
 static __attribute__ ((used)) void* __ptr_sceKernelPwritev = &__load_and_call_sceKernelPwritev;
 
 static __attribute__ ((used)) void
-__load_sceKernelPwritev() {
-  if(sceKernelDlsym(__module_id, "sceKernelPwritev", &__ptr_sceKernelPwritev)) {
-    __builtin_trap();
-  }
+__load_sceKernelPwritev(void) {
+  sprx_dlsym(__handle, "sceKernelPwritev", &__ptr_sceKernelPwritev);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28803,10 +27175,8 @@ void __load_and_call_sceKernelQueryMemoryProtection();
 static __attribute__ ((used)) void* __ptr_sceKernelQueryMemoryProtection = &__load_and_call_sceKernelQueryMemoryProtection;
 
 static __attribute__ ((used)) void
-__load_sceKernelQueryMemoryProtection() {
-  if(sceKernelDlsym(__module_id, "sceKernelQueryMemoryProtection", &__ptr_sceKernelQueryMemoryProtection)) {
-    __builtin_trap();
-  }
+__load_sceKernelQueryMemoryProtection(void) {
+  sprx_dlsym(__handle, "sceKernelQueryMemoryProtection", &__ptr_sceKernelQueryMemoryProtection);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28837,10 +27207,8 @@ void __load_and_call_sceKernelQueryToolMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelQueryToolMemory = &__load_and_call_sceKernelQueryToolMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelQueryToolMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelQueryToolMemory", &__ptr_sceKernelQueryToolMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelQueryToolMemory(void) {
+  sprx_dlsym(__handle, "sceKernelQueryToolMemory", &__ptr_sceKernelQueryToolMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28871,10 +27239,8 @@ void __load_and_call_sceKernelQueryTraceMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelQueryTraceMemory = &__load_and_call_sceKernelQueryTraceMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelQueryTraceMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelQueryTraceMemory", &__ptr_sceKernelQueryTraceMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelQueryTraceMemory(void) {
+  sprx_dlsym(__handle, "sceKernelQueryTraceMemory", &__ptr_sceKernelQueryTraceMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28905,10 +27271,8 @@ void __load_and_call_sceKernelRaiseException();
 static __attribute__ ((used)) void* __ptr_sceKernelRaiseException = &__load_and_call_sceKernelRaiseException;
 
 static __attribute__ ((used)) void
-__load_sceKernelRaiseException() {
-  if(sceKernelDlsym(__module_id, "sceKernelRaiseException", &__ptr_sceKernelRaiseException)) {
-    __builtin_trap();
-  }
+__load_sceKernelRaiseException(void) {
+  sprx_dlsym(__handle, "sceKernelRaiseException", &__ptr_sceKernelRaiseException);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28939,10 +27303,8 @@ void __load_and_call_sceKernelRandomizedPath();
 static __attribute__ ((used)) void* __ptr_sceKernelRandomizedPath = &__load_and_call_sceKernelRandomizedPath;
 
 static __attribute__ ((used)) void
-__load_sceKernelRandomizedPath() {
-  if(sceKernelDlsym(__module_id, "sceKernelRandomizedPath", &__ptr_sceKernelRandomizedPath)) {
-    __builtin_trap();
-  }
+__load_sceKernelRandomizedPath(void) {
+  sprx_dlsym(__handle, "sceKernelRandomizedPath", &__ptr_sceKernelRandomizedPath);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -28973,10 +27335,8 @@ void __load_and_call_sceKernelRdup();
 static __attribute__ ((used)) void* __ptr_sceKernelRdup = &__load_and_call_sceKernelRdup;
 
 static __attribute__ ((used)) void
-__load_sceKernelRdup() {
-  if(sceKernelDlsym(__module_id, "sceKernelRdup", &__ptr_sceKernelRdup)) {
-    __builtin_trap();
-  }
+__load_sceKernelRdup(void) {
+  sprx_dlsym(__handle, "sceKernelRdup", &__ptr_sceKernelRdup);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29007,10 +27367,8 @@ void __load_and_call_sceKernelRead();
 static __attribute__ ((used)) void* __ptr_sceKernelRead = &__load_and_call_sceKernelRead;
 
 static __attribute__ ((used)) void
-__load_sceKernelRead() {
-  if(sceKernelDlsym(__module_id, "sceKernelRead", &__ptr_sceKernelRead)) {
-    __builtin_trap();
-  }
+__load_sceKernelRead(void) {
+  sprx_dlsym(__handle, "sceKernelRead", &__ptr_sceKernelRead);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29041,10 +27399,8 @@ void __load_and_call_sceKernelReadTsc();
 static __attribute__ ((used)) void* __ptr_sceKernelReadTsc = &__load_and_call_sceKernelReadTsc;
 
 static __attribute__ ((used)) void
-__load_sceKernelReadTsc() {
-  if(sceKernelDlsym(__module_id, "sceKernelReadTsc", &__ptr_sceKernelReadTsc)) {
-    __builtin_trap();
-  }
+__load_sceKernelReadTsc(void) {
+  sprx_dlsym(__handle, "sceKernelReadTsc", &__ptr_sceKernelReadTsc);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29075,10 +27431,8 @@ void __load_and_call_sceKernelReadv();
 static __attribute__ ((used)) void* __ptr_sceKernelReadv = &__load_and_call_sceKernelReadv;
 
 static __attribute__ ((used)) void
-__load_sceKernelReadv() {
-  if(sceKernelDlsym(__module_id, "sceKernelReadv", &__ptr_sceKernelReadv)) {
-    __builtin_trap();
-  }
+__load_sceKernelReadv(void) {
+  sprx_dlsym(__handle, "sceKernelReadv", &__ptr_sceKernelReadv);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29109,10 +27463,8 @@ void __load_and_call_sceKernelReboot();
 static __attribute__ ((used)) void* __ptr_sceKernelReboot = &__load_and_call_sceKernelReboot;
 
 static __attribute__ ((used)) void
-__load_sceKernelReboot() {
-  if(sceKernelDlsym(__module_id, "sceKernelReboot", &__ptr_sceKernelReboot)) {
-    __builtin_trap();
-  }
+__load_sceKernelReboot(void) {
+  sprx_dlsym(__handle, "sceKernelReboot", &__ptr_sceKernelReboot);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29143,10 +27495,8 @@ void __load_and_call_sceKernelReleaseDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelReleaseDirectMemory = &__load_and_call_sceKernelReleaseDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelReleaseDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelReleaseDirectMemory", &__ptr_sceKernelReleaseDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelReleaseDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelReleaseDirectMemory", &__ptr_sceKernelReleaseDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29177,10 +27527,8 @@ void __load_and_call_sceKernelReleaseFlexibleMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelReleaseFlexibleMemory = &__load_and_call_sceKernelReleaseFlexibleMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelReleaseFlexibleMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelReleaseFlexibleMemory", &__ptr_sceKernelReleaseFlexibleMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelReleaseFlexibleMemory(void) {
+  sprx_dlsym(__handle, "sceKernelReleaseFlexibleMemory", &__ptr_sceKernelReleaseFlexibleMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29211,10 +27559,8 @@ void __load_and_call_sceKernelReleaseToolMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelReleaseToolMemory = &__load_and_call_sceKernelReleaseToolMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelReleaseToolMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelReleaseToolMemory", &__ptr_sceKernelReleaseToolMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelReleaseToolMemory(void) {
+  sprx_dlsym(__handle, "sceKernelReleaseToolMemory", &__ptr_sceKernelReleaseToolMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29245,10 +27591,8 @@ void __load_and_call_sceKernelReleaseTraceDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelReleaseTraceDirectMemory = &__load_and_call_sceKernelReleaseTraceDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelReleaseTraceDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelReleaseTraceDirectMemory", &__ptr_sceKernelReleaseTraceDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelReleaseTraceDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelReleaseTraceDirectMemory", &__ptr_sceKernelReleaseTraceDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29279,10 +27623,8 @@ void __load_and_call_sceKernelRemoveExceptionHandler();
 static __attribute__ ((used)) void* __ptr_sceKernelRemoveExceptionHandler = &__load_and_call_sceKernelRemoveExceptionHandler;
 
 static __attribute__ ((used)) void
-__load_sceKernelRemoveExceptionHandler() {
-  if(sceKernelDlsym(__module_id, "sceKernelRemoveExceptionHandler", &__ptr_sceKernelRemoveExceptionHandler)) {
-    __builtin_trap();
-  }
+__load_sceKernelRemoveExceptionHandler(void) {
+  sprx_dlsym(__handle, "sceKernelRemoveExceptionHandler", &__ptr_sceKernelRemoveExceptionHandler);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29313,10 +27655,8 @@ void __load_and_call_sceKernelRename();
 static __attribute__ ((used)) void* __ptr_sceKernelRename = &__load_and_call_sceKernelRename;
 
 static __attribute__ ((used)) void
-__load_sceKernelRename() {
-  if(sceKernelDlsym(__module_id, "sceKernelRename", &__ptr_sceKernelRename)) {
-    __builtin_trap();
-  }
+__load_sceKernelRename(void) {
+  sprx_dlsym(__handle, "sceKernelRename", &__ptr_sceKernelRename);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29347,10 +27687,8 @@ void __load_and_call_sceKernelReportUnpatchedFunctionCall();
 static __attribute__ ((used)) void* __ptr_sceKernelReportUnpatchedFunctionCall = &__load_and_call_sceKernelReportUnpatchedFunctionCall;
 
 static __attribute__ ((used)) void
-__load_sceKernelReportUnpatchedFunctionCall() {
-  if(sceKernelDlsym(__module_id, "sceKernelReportUnpatchedFunctionCall", &__ptr_sceKernelReportUnpatchedFunctionCall)) {
-    __builtin_trap();
-  }
+__load_sceKernelReportUnpatchedFunctionCall(void) {
+  sprx_dlsym(__handle, "sceKernelReportUnpatchedFunctionCall", &__ptr_sceKernelReportUnpatchedFunctionCall);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29381,10 +27719,8 @@ void __load_and_call_sceKernelReserve2mbPage();
 static __attribute__ ((used)) void* __ptr_sceKernelReserve2mbPage = &__load_and_call_sceKernelReserve2mbPage;
 
 static __attribute__ ((used)) void
-__load_sceKernelReserve2mbPage() {
-  if(sceKernelDlsym(__module_id, "sceKernelReserve2mbPage", &__ptr_sceKernelReserve2mbPage)) {
-    __builtin_trap();
-  }
+__load_sceKernelReserve2mbPage(void) {
+  sprx_dlsym(__handle, "sceKernelReserve2mbPage", &__ptr_sceKernelReserve2mbPage);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29415,10 +27751,8 @@ void __load_and_call_sceKernelReserveSystemDirectMemory();
 static __attribute__ ((used)) void* __ptr_sceKernelReserveSystemDirectMemory = &__load_and_call_sceKernelReserveSystemDirectMemory;
 
 static __attribute__ ((used)) void
-__load_sceKernelReserveSystemDirectMemory() {
-  if(sceKernelDlsym(__module_id, "sceKernelReserveSystemDirectMemory", &__ptr_sceKernelReserveSystemDirectMemory)) {
-    __builtin_trap();
-  }
+__load_sceKernelReserveSystemDirectMemory(void) {
+  sprx_dlsym(__handle, "sceKernelReserveSystemDirectMemory", &__ptr_sceKernelReserveSystemDirectMemory);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29449,10 +27783,8 @@ void __load_and_call_sceKernelReserveVirtualRange();
 static __attribute__ ((used)) void* __ptr_sceKernelReserveVirtualRange = &__load_and_call_sceKernelReserveVirtualRange;
 
 static __attribute__ ((used)) void
-__load_sceKernelReserveVirtualRange() {
-  if(sceKernelDlsym(__module_id, "sceKernelReserveVirtualRange", &__ptr_sceKernelReserveVirtualRange)) {
-    __builtin_trap();
-  }
+__load_sceKernelReserveVirtualRange(void) {
+  sprx_dlsym(__handle, "sceKernelReserveVirtualRange", &__ptr_sceKernelReserveVirtualRange);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29483,10 +27815,8 @@ void __load_and_call_sceKernelRestoreApp();
 static __attribute__ ((used)) void* __ptr_sceKernelRestoreApp = &__load_and_call_sceKernelRestoreApp;
 
 static __attribute__ ((used)) void
-__load_sceKernelRestoreApp() {
-  if(sceKernelDlsym(__module_id, "sceKernelRestoreApp", &__ptr_sceKernelRestoreApp)) {
-    __builtin_trap();
-  }
+__load_sceKernelRestoreApp(void) {
+  sprx_dlsym(__handle, "sceKernelRestoreApp", &__ptr_sceKernelRestoreApp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29517,10 +27847,8 @@ void __load_and_call_sceKernelResumeDirectMemoryRelease();
 static __attribute__ ((used)) void* __ptr_sceKernelResumeDirectMemoryRelease = &__load_and_call_sceKernelResumeDirectMemoryRelease;
 
 static __attribute__ ((used)) void
-__load_sceKernelResumeDirectMemoryRelease() {
-  if(sceKernelDlsym(__module_id, "sceKernelResumeDirectMemoryRelease", &__ptr_sceKernelResumeDirectMemoryRelease)) {
-    __builtin_trap();
-  }
+__load_sceKernelResumeDirectMemoryRelease(void) {
+  sprx_dlsym(__handle, "sceKernelResumeDirectMemoryRelease", &__ptr_sceKernelResumeDirectMemoryRelease);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29551,10 +27879,8 @@ void __load_and_call_sceKernelResumeProcess();
 static __attribute__ ((used)) void* __ptr_sceKernelResumeProcess = &__load_and_call_sceKernelResumeProcess;
 
 static __attribute__ ((used)) void
-__load_sceKernelResumeProcess() {
-  if(sceKernelDlsym(__module_id, "sceKernelResumeProcess", &__ptr_sceKernelResumeProcess)) {
-    __builtin_trap();
-  }
+__load_sceKernelResumeProcess(void) {
+  sprx_dlsym(__handle, "sceKernelResumeProcess", &__ptr_sceKernelResumeProcess);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29585,10 +27911,8 @@ void __load_and_call_sceKernelRmdir();
 static __attribute__ ((used)) void* __ptr_sceKernelRmdir = &__load_and_call_sceKernelRmdir;
 
 static __attribute__ ((used)) void
-__load_sceKernelRmdir() {
-  if(sceKernelDlsym(__module_id, "sceKernelRmdir", &__ptr_sceKernelRmdir)) {
-    __builtin_trap();
-  }
+__load_sceKernelRmdir(void) {
+  sprx_dlsym(__handle, "sceKernelRmdir", &__ptr_sceKernelRmdir);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29619,10 +27943,8 @@ void __load_and_call_sceKernelRtldControl();
 static __attribute__ ((used)) void* __ptr_sceKernelRtldControl = &__load_and_call_sceKernelRtldControl;
 
 static __attribute__ ((used)) void
-__load_sceKernelRtldControl() {
-  if(sceKernelDlsym(__module_id, "sceKernelRtldControl", &__ptr_sceKernelRtldControl)) {
-    __builtin_trap();
-  }
+__load_sceKernelRtldControl(void) {
+  sprx_dlsym(__handle, "sceKernelRtldControl", &__ptr_sceKernelRtldControl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29653,10 +27975,8 @@ void __load_and_call_sceKernelSandboxPath();
 static __attribute__ ((used)) void* __ptr_sceKernelSandboxPath = &__load_and_call_sceKernelSandboxPath;
 
 static __attribute__ ((used)) void
-__load_sceKernelSandboxPath() {
-  if(sceKernelDlsym(__module_id, "sceKernelSandboxPath", &__ptr_sceKernelSandboxPath)) {
-    __builtin_trap();
-  }
+__load_sceKernelSandboxPath(void) {
+  sprx_dlsym(__handle, "sceKernelSandboxPath", &__ptr_sceKernelSandboxPath);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29687,10 +28007,8 @@ void __load_and_call_sceKernelSaveApp();
 static __attribute__ ((used)) void* __ptr_sceKernelSaveApp = &__load_and_call_sceKernelSaveApp;
 
 static __attribute__ ((used)) void
-__load_sceKernelSaveApp() {
-  if(sceKernelDlsym(__module_id, "sceKernelSaveApp", &__ptr_sceKernelSaveApp)) {
-    __builtin_trap();
-  }
+__load_sceKernelSaveApp(void) {
+  sprx_dlsym(__handle, "sceKernelSaveApp", &__ptr_sceKernelSaveApp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29721,10 +28039,8 @@ void __load_and_call_sceKernelSendNotificationRequest();
 static __attribute__ ((used)) void* __ptr_sceKernelSendNotificationRequest = &__load_and_call_sceKernelSendNotificationRequest;
 
 static __attribute__ ((used)) void
-__load_sceKernelSendNotificationRequest() {
-  if(sceKernelDlsym(__module_id, "sceKernelSendNotificationRequest", &__ptr_sceKernelSendNotificationRequest)) {
-    __builtin_trap();
-  }
+__load_sceKernelSendNotificationRequest(void) {
+  sprx_dlsym(__handle, "sceKernelSendNotificationRequest", &__ptr_sceKernelSendNotificationRequest);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29755,10 +28071,8 @@ void __load_and_call_sceKernelSetAppInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelSetAppInfo = &__load_and_call_sceKernelSetAppInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetAppInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetAppInfo", &__ptr_sceKernelSetAppInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetAppInfo(void) {
+  sprx_dlsym(__handle, "sceKernelSetAppInfo", &__ptr_sceKernelSetAppInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29789,10 +28103,8 @@ void __load_and_call_sceKernelSetAppState();
 static __attribute__ ((used)) void* __ptr_sceKernelSetAppState = &__load_and_call_sceKernelSetAppState;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetAppState() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetAppState", &__ptr_sceKernelSetAppState)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetAppState(void) {
+  sprx_dlsym(__handle, "sceKernelSetAppState", &__ptr_sceKernelSetAppState);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29823,10 +28135,8 @@ void __load_and_call_sceKernelSetBackupRestoreMode();
 static __attribute__ ((used)) void* __ptr_sceKernelSetBackupRestoreMode = &__load_and_call_sceKernelSetBackupRestoreMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetBackupRestoreMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetBackupRestoreMode", &__ptr_sceKernelSetBackupRestoreMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetBackupRestoreMode(void) {
+  sprx_dlsym(__handle, "sceKernelSetBackupRestoreMode", &__ptr_sceKernelSetBackupRestoreMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29857,10 +28167,8 @@ void __load_and_call_sceKernelSetBaseModeClock();
 static __attribute__ ((used)) void* __ptr_sceKernelSetBaseModeClock = &__load_and_call_sceKernelSetBaseModeClock;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetBaseModeClock() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetBaseModeClock", &__ptr_sceKernelSetBaseModeClock)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetBaseModeClock(void) {
+  sprx_dlsym(__handle, "sceKernelSetBaseModeClock", &__ptr_sceKernelSetBaseModeClock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29891,10 +28199,8 @@ void __load_and_call_sceKernelSetBesteffort();
 static __attribute__ ((used)) void* __ptr_sceKernelSetBesteffort = &__load_and_call_sceKernelSetBesteffort;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetBesteffort() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetBesteffort", &__ptr_sceKernelSetBesteffort)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetBesteffort(void) {
+  sprx_dlsym(__handle, "sceKernelSetBesteffort", &__ptr_sceKernelSetBesteffort);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29925,10 +28231,8 @@ void __load_and_call_sceKernelSetBootReqNotify();
 static __attribute__ ((used)) void* __ptr_sceKernelSetBootReqNotify = &__load_and_call_sceKernelSetBootReqNotify;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetBootReqNotify() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetBootReqNotify", &__ptr_sceKernelSetBootReqNotify)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetBootReqNotify(void) {
+  sprx_dlsym(__handle, "sceKernelSetBootReqNotify", &__ptr_sceKernelSetBootReqNotify);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29959,10 +28263,8 @@ void __load_and_call_sceKernelSetBudget();
 static __attribute__ ((used)) void* __ptr_sceKernelSetBudget = &__load_and_call_sceKernelSetBudget;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetBudget() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetBudget", &__ptr_sceKernelSetBudget)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetBudget(void) {
+  sprx_dlsym(__handle, "sceKernelSetBudget", &__ptr_sceKernelSetBudget);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -29993,10 +28295,8 @@ void __load_and_call_sceKernelSetCallRecord();
 static __attribute__ ((used)) void* __ptr_sceKernelSetCallRecord = &__load_and_call_sceKernelSetCallRecord;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetCallRecord() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetCallRecord", &__ptr_sceKernelSetCallRecord)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetCallRecord(void) {
+  sprx_dlsym(__handle, "sceKernelSetCallRecord", &__ptr_sceKernelSetCallRecord);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30027,10 +28327,8 @@ void __load_and_call_sceKernelSetCompressionAttribute();
 static __attribute__ ((used)) void* __ptr_sceKernelSetCompressionAttribute = &__load_and_call_sceKernelSetCompressionAttribute;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetCompressionAttribute() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetCompressionAttribute", &__ptr_sceKernelSetCompressionAttribute)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetCompressionAttribute(void) {
+  sprx_dlsym(__handle, "sceKernelSetCompressionAttribute", &__ptr_sceKernelSetCompressionAttribute);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30061,10 +28359,8 @@ void __load_and_call_sceKernelSetCoredumpAppInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelSetCoredumpAppInfo = &__load_and_call_sceKernelSetCoredumpAppInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetCoredumpAppInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetCoredumpAppInfo", &__ptr_sceKernelSetCoredumpAppInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetCoredumpAppInfo(void) {
+  sprx_dlsym(__handle, "sceKernelSetCoredumpAppInfo", &__ptr_sceKernelSetCoredumpAppInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30095,10 +28391,8 @@ void __load_and_call_sceKernelSetCpumodeGame();
 static __attribute__ ((used)) void* __ptr_sceKernelSetCpumodeGame = &__load_and_call_sceKernelSetCpumodeGame;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetCpumodeGame() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetCpumodeGame", &__ptr_sceKernelSetCpumodeGame)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetCpumodeGame(void) {
+  sprx_dlsym(__handle, "sceKernelSetCpumodeGame", &__ptr_sceKernelSetCpumodeGame);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30129,10 +28423,8 @@ void __load_and_call_sceKernelSetDataTransferMode();
 static __attribute__ ((used)) void* __ptr_sceKernelSetDataTransferMode = &__load_and_call_sceKernelSetDataTransferMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetDataTransferMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetDataTransferMode", &__ptr_sceKernelSetDataTransferMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetDataTransferMode(void) {
+  sprx_dlsym(__handle, "sceKernelSetDataTransferMode", &__ptr_sceKernelSetDataTransferMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30163,10 +28455,8 @@ void __load_and_call_sceKernelSetEmergencyErrorLog();
 static __attribute__ ((used)) void* __ptr_sceKernelSetEmergencyErrorLog = &__load_and_call_sceKernelSetEmergencyErrorLog;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetEmergencyErrorLog() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetEmergencyErrorLog", &__ptr_sceKernelSetEmergencyErrorLog)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetEmergencyErrorLog(void) {
+  sprx_dlsym(__handle, "sceKernelSetEmergencyErrorLog", &__ptr_sceKernelSetEmergencyErrorLog);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30197,10 +28487,8 @@ void __load_and_call_sceKernelSetEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelSetEventFlag = &__load_and_call_sceKernelSetEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetEventFlag", &__ptr_sceKernelSetEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelSetEventFlag", &__ptr_sceKernelSetEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30231,10 +28519,8 @@ void __load_and_call_sceKernelSetFsstParam();
 static __attribute__ ((used)) void* __ptr_sceKernelSetFsstParam = &__load_and_call_sceKernelSetFsstParam;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetFsstParam() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetFsstParam", &__ptr_sceKernelSetFsstParam)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetFsstParam(void) {
+  sprx_dlsym(__handle, "sceKernelSetFsstParam", &__ptr_sceKernelSetFsstParam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30265,10 +28551,8 @@ void __load_and_call_sceKernelSetGPI();
 static __attribute__ ((used)) void* __ptr_sceKernelSetGPI = &__load_and_call_sceKernelSetGPI;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetGPI() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetGPI", &__ptr_sceKernelSetGPI)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetGPI(void) {
+  sprx_dlsym(__handle, "sceKernelSetGPI", &__ptr_sceKernelSetGPI);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30299,10 +28583,8 @@ void __load_and_call_sceKernelSetGPO();
 static __attribute__ ((used)) void* __ptr_sceKernelSetGPO = &__load_and_call_sceKernelSetGPO;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetGPO() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetGPO", &__ptr_sceKernelSetGPO)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetGPO(void) {
+  sprx_dlsym(__handle, "sceKernelSetGPO", &__ptr_sceKernelSetGPO);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30333,10 +28615,8 @@ void __load_and_call_sceKernelSetGameDirectMemoryLimit();
 static __attribute__ ((used)) void* __ptr_sceKernelSetGameDirectMemoryLimit = &__load_and_call_sceKernelSetGameDirectMemoryLimit;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetGameDirectMemoryLimit() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetGameDirectMemoryLimit", &__ptr_sceKernelSetGameDirectMemoryLimit)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetGameDirectMemoryLimit(void) {
+  sprx_dlsym(__handle, "sceKernelSetGameDirectMemoryLimit", &__ptr_sceKernelSetGameDirectMemoryLimit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30367,10 +28647,8 @@ void __load_and_call_sceKernelSetGpuCu();
 static __attribute__ ((used)) void* __ptr_sceKernelSetGpuCu = &__load_and_call_sceKernelSetGpuCu;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetGpuCu() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetGpuCu", &__ptr_sceKernelSetGpuCu)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetGpuCu(void) {
+  sprx_dlsym(__handle, "sceKernelSetGpuCu", &__ptr_sceKernelSetGpuCu);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30401,10 +28679,8 @@ void __load_and_call_sceKernelSetIoreq();
 static __attribute__ ((used)) void* __ptr_sceKernelSetIoreq = &__load_and_call_sceKernelSetIoreq;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetIoreq() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetIoreq", &__ptr_sceKernelSetIoreq)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetIoreq(void) {
+  sprx_dlsym(__handle, "sceKernelSetIoreq", &__ptr_sceKernelSetIoreq);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30435,10 +28711,8 @@ void __load_and_call_sceKernelSetKnobs();
 static __attribute__ ((used)) void* __ptr_sceKernelSetKnobs = &__load_and_call_sceKernelSetKnobs;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetKnobs() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetKnobs", &__ptr_sceKernelSetKnobs)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetKnobs(void) {
+  sprx_dlsym(__handle, "sceKernelSetKnobs", &__ptr_sceKernelSetKnobs);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30469,10 +28743,8 @@ void __load_and_call_sceKernelSetMemoryPstate();
 static __attribute__ ((used)) void* __ptr_sceKernelSetMemoryPstate = &__load_and_call_sceKernelSetMemoryPstate;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetMemoryPstate() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetMemoryPstate", &__ptr_sceKernelSetMemoryPstate)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetMemoryPstate(void) {
+  sprx_dlsym(__handle, "sceKernelSetMemoryPstate", &__ptr_sceKernelSetMemoryPstate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30503,10 +28775,8 @@ void __load_and_call_sceKernelSetNeoModeClock();
 static __attribute__ ((used)) void* __ptr_sceKernelSetNeoModeClock = &__load_and_call_sceKernelSetNeoModeClock;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetNeoModeClock() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetNeoModeClock", &__ptr_sceKernelSetNeoModeClock)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetNeoModeClock(void) {
+  sprx_dlsym(__handle, "sceKernelSetNeoModeClock", &__ptr_sceKernelSetNeoModeClock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30537,10 +28807,8 @@ void __load_and_call_sceKernelSetPackageInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelSetPackageInfo = &__load_and_call_sceKernelSetPackageInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetPackageInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetPackageInfo", &__ptr_sceKernelSetPackageInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetPackageInfo(void) {
+  sprx_dlsym(__handle, "sceKernelSetPackageInfo", &__ptr_sceKernelSetPackageInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30571,10 +28839,8 @@ void __load_and_call_sceKernelSetPhysFmemLimit();
 static __attribute__ ((used)) void* __ptr_sceKernelSetPhysFmemLimit = &__load_and_call_sceKernelSetPhysFmemLimit;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetPhysFmemLimit() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetPhysFmemLimit", &__ptr_sceKernelSetPhysFmemLimit)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetPhysFmemLimit(void) {
+  sprx_dlsym(__handle, "sceKernelSetPhysFmemLimit", &__ptr_sceKernelSetPhysFmemLimit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30605,10 +28871,8 @@ void __load_and_call_sceKernelSetProcessName();
 static __attribute__ ((used)) void* __ptr_sceKernelSetProcessName = &__load_and_call_sceKernelSetProcessName;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetProcessName() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetProcessName", &__ptr_sceKernelSetProcessName)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetProcessName(void) {
+  sprx_dlsym(__handle, "sceKernelSetProcessName", &__ptr_sceKernelSetProcessName);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30639,10 +28903,8 @@ void __load_and_call_sceKernelSetProcessProperty();
 static __attribute__ ((used)) void* __ptr_sceKernelSetProcessProperty = &__load_and_call_sceKernelSetProcessProperty;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetProcessProperty() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetProcessProperty", &__ptr_sceKernelSetProcessProperty)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetProcessProperty(void) {
+  sprx_dlsym(__handle, "sceKernelSetProcessProperty", &__ptr_sceKernelSetProcessProperty);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30673,10 +28935,8 @@ void __load_and_call_sceKernelSetProcessPropertyString();
 static __attribute__ ((used)) void* __ptr_sceKernelSetProcessPropertyString = &__load_and_call_sceKernelSetProcessPropertyString;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetProcessPropertyString() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetProcessPropertyString", &__ptr_sceKernelSetProcessPropertyString)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetProcessPropertyString(void) {
+  sprx_dlsym(__handle, "sceKernelSetProcessPropertyString", &__ptr_sceKernelSetProcessPropertyString);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30707,10 +28967,8 @@ void __load_and_call_sceKernelSetPrtAperture();
 static __attribute__ ((used)) void* __ptr_sceKernelSetPrtAperture = &__load_and_call_sceKernelSetPrtAperture;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetPrtAperture() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetPrtAperture", &__ptr_sceKernelSetPrtAperture)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetPrtAperture(void) {
+  sprx_dlsym(__handle, "sceKernelSetPrtAperture", &__ptr_sceKernelSetPrtAperture);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30741,10 +28999,8 @@ void __load_and_call_sceKernelSetSafemode();
 static __attribute__ ((used)) void* __ptr_sceKernelSetSafemode = &__load_and_call_sceKernelSetSafemode;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetSafemode() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetSafemode", &__ptr_sceKernelSetSafemode)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetSafemode(void) {
+  sprx_dlsym(__handle, "sceKernelSetSafemode", &__ptr_sceKernelSetSafemode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30775,10 +29031,8 @@ void __load_and_call_sceKernelSetSafemodeDirect();
 static __attribute__ ((used)) void* __ptr_sceKernelSetSafemodeDirect = &__load_and_call_sceKernelSetSafemodeDirect;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetSafemodeDirect() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetSafemodeDirect", &__ptr_sceKernelSetSafemodeDirect)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetSafemodeDirect(void) {
+  sprx_dlsym(__handle, "sceKernelSetSafemodeDirect", &__ptr_sceKernelSetSafemodeDirect);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30809,10 +29063,8 @@ void __load_and_call_sceKernelSetSuspendState();
 static __attribute__ ((used)) void* __ptr_sceKernelSetSuspendState = &__load_and_call_sceKernelSetSuspendState;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetSuspendState() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetSuspendState", &__ptr_sceKernelSetSuspendState)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetSuspendState(void) {
+  sprx_dlsym(__handle, "sceKernelSetSuspendState", &__ptr_sceKernelSetSuspendState);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30843,10 +29095,8 @@ void __load_and_call_sceKernelSetTimezoneInfo();
 static __attribute__ ((used)) void* __ptr_sceKernelSetTimezoneInfo = &__load_and_call_sceKernelSetTimezoneInfo;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetTimezoneInfo() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetTimezoneInfo", &__ptr_sceKernelSetTimezoneInfo)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetTimezoneInfo(void) {
+  sprx_dlsym(__handle, "sceKernelSetTimezoneInfo", &__ptr_sceKernelSetTimezoneInfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30877,10 +29127,8 @@ void __load_and_call_sceKernelSetUpdatemode();
 static __attribute__ ((used)) void* __ptr_sceKernelSetUpdatemode = &__load_and_call_sceKernelSetUpdatemode;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetUpdatemode() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetUpdatemode", &__ptr_sceKernelSetUpdatemode)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetUpdatemode(void) {
+  sprx_dlsym(__handle, "sceKernelSetUpdatemode", &__ptr_sceKernelSetUpdatemode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30911,10 +29159,8 @@ void __load_and_call_sceKernelSetVirtualRangeName();
 static __attribute__ ((used)) void* __ptr_sceKernelSetVirtualRangeName = &__load_and_call_sceKernelSetVirtualRangeName;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetVirtualRangeName() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetVirtualRangeName", &__ptr_sceKernelSetVirtualRangeName)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetVirtualRangeName(void) {
+  sprx_dlsym(__handle, "sceKernelSetVirtualRangeName", &__ptr_sceKernelSetVirtualRangeName);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30945,10 +29191,8 @@ void __load_and_call_sceKernelSetVmContainer();
 static __attribute__ ((used)) void* __ptr_sceKernelSetVmContainer = &__load_and_call_sceKernelSetVmContainer;
 
 static __attribute__ ((used)) void
-__load_sceKernelSetVmContainer() {
-  if(sceKernelDlsym(__module_id, "sceKernelSetVmContainer", &__ptr_sceKernelSetVmContainer)) {
-    __builtin_trap();
-  }
+__load_sceKernelSetVmContainer(void) {
+  sprx_dlsym(__handle, "sceKernelSetVmContainer", &__ptr_sceKernelSetVmContainer);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -30979,10 +29223,8 @@ void __load_and_call_sceKernelSettimeofday();
 static __attribute__ ((used)) void* __ptr_sceKernelSettimeofday = &__load_and_call_sceKernelSettimeofday;
 
 static __attribute__ ((used)) void
-__load_sceKernelSettimeofday() {
-  if(sceKernelDlsym(__module_id, "sceKernelSettimeofday", &__ptr_sceKernelSettimeofday)) {
-    __builtin_trap();
-  }
+__load_sceKernelSettimeofday(void) {
+  sprx_dlsym(__handle, "sceKernelSettimeofday", &__ptr_sceKernelSettimeofday);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31013,10 +29255,8 @@ void __load_and_call_sceKernelSflashGetWritePrio();
 static __attribute__ ((used)) void* __ptr_sceKernelSflashGetWritePrio = &__load_and_call_sceKernelSflashGetWritePrio;
 
 static __attribute__ ((used)) void
-__load_sceKernelSflashGetWritePrio() {
-  if(sceKernelDlsym(__module_id, "sceKernelSflashGetWritePrio", &__ptr_sceKernelSflashGetWritePrio)) {
-    __builtin_trap();
-  }
+__load_sceKernelSflashGetWritePrio(void) {
+  sprx_dlsym(__handle, "sceKernelSflashGetWritePrio", &__ptr_sceKernelSflashGetWritePrio);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31047,10 +29287,8 @@ void __load_and_call_sceKernelSflashSetWritePrio();
 static __attribute__ ((used)) void* __ptr_sceKernelSflashSetWritePrio = &__load_and_call_sceKernelSflashSetWritePrio;
 
 static __attribute__ ((used)) void
-__load_sceKernelSflashSetWritePrio() {
-  if(sceKernelDlsym(__module_id, "sceKernelSflashSetWritePrio", &__ptr_sceKernelSflashSetWritePrio)) {
-    __builtin_trap();
-  }
+__load_sceKernelSflashSetWritePrio(void) {
+  sprx_dlsym(__handle, "sceKernelSflashSetWritePrio", &__ptr_sceKernelSflashSetWritePrio);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31081,10 +29319,8 @@ void __load_and_call_sceKernelSignalSema();
 static __attribute__ ((used)) void* __ptr_sceKernelSignalSema = &__load_and_call_sceKernelSignalSema;
 
 static __attribute__ ((used)) void
-__load_sceKernelSignalSema() {
-  if(sceKernelDlsym(__module_id, "sceKernelSignalSema", &__ptr_sceKernelSignalSema)) {
-    __builtin_trap();
-  }
+__load_sceKernelSignalSema(void) {
+  sprx_dlsym(__handle, "sceKernelSignalSema", &__ptr_sceKernelSignalSema);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31115,10 +29351,8 @@ void __load_and_call_sceKernelSleep();
 static __attribute__ ((used)) void* __ptr_sceKernelSleep = &__load_and_call_sceKernelSleep;
 
 static __attribute__ ((used)) void
-__load_sceKernelSleep() {
-  if(sceKernelDlsym(__module_id, "sceKernelSleep", &__ptr_sceKernelSleep)) {
-    __builtin_trap();
-  }
+__load_sceKernelSleep(void) {
+  sprx_dlsym(__handle, "sceKernelSleep", &__ptr_sceKernelSleep);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31149,10 +29383,8 @@ void __load_and_call_sceKernelSlvNotifyError();
 static __attribute__ ((used)) void* __ptr_sceKernelSlvNotifyError = &__load_and_call_sceKernelSlvNotifyError;
 
 static __attribute__ ((used)) void
-__load_sceKernelSlvNotifyError() {
-  if(sceKernelDlsym(__module_id, "sceKernelSlvNotifyError", &__ptr_sceKernelSlvNotifyError)) {
-    __builtin_trap();
-  }
+__load_sceKernelSlvNotifyError(void) {
+  sprx_dlsym(__handle, "sceKernelSlvNotifyError", &__ptr_sceKernelSlvNotifyError);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31183,10 +29415,8 @@ void __load_and_call_sceKernelSpawn();
 static __attribute__ ((used)) void* __ptr_sceKernelSpawn = &__load_and_call_sceKernelSpawn;
 
 static __attribute__ ((used)) void
-__load_sceKernelSpawn() {
-  if(sceKernelDlsym(__module_id, "sceKernelSpawn", &__ptr_sceKernelSpawn)) {
-    __builtin_trap();
-  }
+__load_sceKernelSpawn(void) {
+  sprx_dlsym(__handle, "sceKernelSpawn", &__ptr_sceKernelSpawn);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31217,10 +29447,40 @@ void __load_and_call_sceKernelStat();
 static __attribute__ ((used)) void* __ptr_sceKernelStat = &__load_and_call_sceKernelStat;
 
 static __attribute__ ((used)) void
-__load_sceKernelStat() {
-  if(sceKernelDlsym(__module_id, "sceKernelStat", &__ptr_sceKernelStat)) {
-    __builtin_trap();
-  }
+__load_sceKernelStat(void) {
+  sprx_dlsym(__handle, "sceKernelStat", &__ptr_sceKernelStat);
+}
+
+asm(".intel_syntax noprefix\n"
+    ".global sceKernelStopUnloadModule\n"
+    ".type sceKernelStopUnloadModule @function\n"
+    "sceKernelStopUnloadModule:\n"
+    "jmp qword ptr [rip + __ptr_sceKernelStopUnloadModule]\n");
+
+asm(".intel_syntax noprefix\n"
+    ".type __load_and_call_sceKernelStopUnloadModule @function\n"
+    "__load_and_call_sceKernelStopUnloadModule:\n"
+    "push rdi\n"
+    "push rsi\n"
+    "push rdx\n"
+    "push rcx\n"
+    "push r8\n"
+    "push r9\n"
+    "call __load_sceKernelStopUnloadModule\n"
+    "pop r9\n"
+    "pop r8\n"
+    "pop rcx\n"
+    "pop rdx\n"
+    "pop rsi\n"
+    "pop rdi\n"
+    "jmp qword ptr [rip + __ptr_sceKernelStopUnloadModule]\n");
+
+void __load_and_call_sceKernelStopUnloadModule();
+static __attribute__ ((used)) void* __ptr_sceKernelStopUnloadModule = &__load_and_call_sceKernelStopUnloadModule;
+
+static __attribute__ ((used)) void
+__load_sceKernelStopUnloadModule(void) {
+  sprx_dlsym(__handle, "sceKernelStopUnloadModule", &__ptr_sceKernelStopUnloadModule);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31251,10 +29511,8 @@ void __load_and_call_sceKernelStreamWriteActivate();
 static __attribute__ ((used)) void* __ptr_sceKernelStreamWriteActivate = &__load_and_call_sceKernelStreamWriteActivate;
 
 static __attribute__ ((used)) void
-__load_sceKernelStreamWriteActivate() {
-  if(sceKernelDlsym(__module_id, "sceKernelStreamWriteActivate", &__ptr_sceKernelStreamWriteActivate)) {
-    __builtin_trap();
-  }
+__load_sceKernelStreamWriteActivate(void) {
+  sprx_dlsym(__handle, "sceKernelStreamWriteActivate", &__ptr_sceKernelStreamWriteActivate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31285,10 +29543,8 @@ void __load_and_call_sceKernelStreamWriteCreate();
 static __attribute__ ((used)) void* __ptr_sceKernelStreamWriteCreate = &__load_and_call_sceKernelStreamWriteCreate;
 
 static __attribute__ ((used)) void
-__load_sceKernelStreamWriteCreate() {
-  if(sceKernelDlsym(__module_id, "sceKernelStreamWriteCreate", &__ptr_sceKernelStreamWriteCreate)) {
-    __builtin_trap();
-  }
+__load_sceKernelStreamWriteCreate(void) {
+  sprx_dlsym(__handle, "sceKernelStreamWriteCreate", &__ptr_sceKernelStreamWriteCreate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31319,10 +29575,8 @@ void __load_and_call_sceKernelStreamWriteDeactivate();
 static __attribute__ ((used)) void* __ptr_sceKernelStreamWriteDeactivate = &__load_and_call_sceKernelStreamWriteDeactivate;
 
 static __attribute__ ((used)) void
-__load_sceKernelStreamWriteDeactivate() {
-  if(sceKernelDlsym(__module_id, "sceKernelStreamWriteDeactivate", &__ptr_sceKernelStreamWriteDeactivate)) {
-    __builtin_trap();
-  }
+__load_sceKernelStreamWriteDeactivate(void) {
+  sprx_dlsym(__handle, "sceKernelStreamWriteDeactivate", &__ptr_sceKernelStreamWriteDeactivate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31353,10 +29607,8 @@ void __load_and_call_sceKernelStreamWriteDelete();
 static __attribute__ ((used)) void* __ptr_sceKernelStreamWriteDelete = &__load_and_call_sceKernelStreamWriteDelete;
 
 static __attribute__ ((used)) void
-__load_sceKernelStreamWriteDelete() {
-  if(sceKernelDlsym(__module_id, "sceKernelStreamWriteDelete", &__ptr_sceKernelStreamWriteDelete)) {
-    __builtin_trap();
-  }
+__load_sceKernelStreamWriteDelete(void) {
+  sprx_dlsym(__handle, "sceKernelStreamWriteDelete", &__ptr_sceKernelStreamWriteDelete);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31387,10 +29639,8 @@ void __load_and_call_sceKernelStreamWriteRead();
 static __attribute__ ((used)) void* __ptr_sceKernelStreamWriteRead = &__load_and_call_sceKernelStreamWriteRead;
 
 static __attribute__ ((used)) void
-__load_sceKernelStreamWriteRead() {
-  if(sceKernelDlsym(__module_id, "sceKernelStreamWriteRead", &__ptr_sceKernelStreamWriteRead)) {
-    __builtin_trap();
-  }
+__load_sceKernelStreamWriteRead(void) {
+  sprx_dlsym(__handle, "sceKernelStreamWriteRead", &__ptr_sceKernelStreamWriteRead);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31421,10 +29671,8 @@ void __load_and_call_sceKernelStreamWriteStat();
 static __attribute__ ((used)) void* __ptr_sceKernelStreamWriteStat = &__load_and_call_sceKernelStreamWriteStat;
 
 static __attribute__ ((used)) void
-__load_sceKernelStreamWriteStat() {
-  if(sceKernelDlsym(__module_id, "sceKernelStreamWriteStat", &__ptr_sceKernelStreamWriteStat)) {
-    __builtin_trap();
-  }
+__load_sceKernelStreamWriteStat(void) {
+  sprx_dlsym(__handle, "sceKernelStreamWriteStat", &__ptr_sceKernelStreamWriteStat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31455,10 +29703,8 @@ void __load_and_call_sceKernelStreamWriteWrite();
 static __attribute__ ((used)) void* __ptr_sceKernelStreamWriteWrite = &__load_and_call_sceKernelStreamWriteWrite;
 
 static __attribute__ ((used)) void
-__load_sceKernelStreamWriteWrite() {
-  if(sceKernelDlsym(__module_id, "sceKernelStreamWriteWrite", &__ptr_sceKernelStreamWriteWrite)) {
-    __builtin_trap();
-  }
+__load_sceKernelStreamWriteWrite(void) {
+  sprx_dlsym(__handle, "sceKernelStreamWriteWrite", &__ptr_sceKernelStreamWriteWrite);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31489,10 +29735,8 @@ void __load_and_call_sceKernelSuspendDirectMemoryRelease();
 static __attribute__ ((used)) void* __ptr_sceKernelSuspendDirectMemoryRelease = &__load_and_call_sceKernelSuspendDirectMemoryRelease;
 
 static __attribute__ ((used)) void
-__load_sceKernelSuspendDirectMemoryRelease() {
-  if(sceKernelDlsym(__module_id, "sceKernelSuspendDirectMemoryRelease", &__ptr_sceKernelSuspendDirectMemoryRelease)) {
-    __builtin_trap();
-  }
+__load_sceKernelSuspendDirectMemoryRelease(void) {
+  sprx_dlsym(__handle, "sceKernelSuspendDirectMemoryRelease", &__ptr_sceKernelSuspendDirectMemoryRelease);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31523,10 +29767,8 @@ void __load_and_call_sceKernelSuspendProcess();
 static __attribute__ ((used)) void* __ptr_sceKernelSuspendProcess = &__load_and_call_sceKernelSuspendProcess;
 
 static __attribute__ ((used)) void
-__load_sceKernelSuspendProcess() {
-  if(sceKernelDlsym(__module_id, "sceKernelSuspendProcess", &__ptr_sceKernelSuspendProcess)) {
-    __builtin_trap();
-  }
+__load_sceKernelSuspendProcess(void) {
+  sprx_dlsym(__handle, "sceKernelSuspendProcess", &__ptr_sceKernelSuspendProcess);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31557,10 +29799,8 @@ void __load_and_call_sceKernelSuspendSystem();
 static __attribute__ ((used)) void* __ptr_sceKernelSuspendSystem = &__load_and_call_sceKernelSuspendSystem;
 
 static __attribute__ ((used)) void
-__load_sceKernelSuspendSystem() {
-  if(sceKernelDlsym(__module_id, "sceKernelSuspendSystem", &__ptr_sceKernelSuspendSystem)) {
-    __builtin_trap();
-  }
+__load_sceKernelSuspendSystem(void) {
+  sprx_dlsym(__handle, "sceKernelSuspendSystem", &__ptr_sceKernelSuspendSystem);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31591,10 +29831,8 @@ void __load_and_call_sceKernelSwitchToBaseMode();
 static __attribute__ ((used)) void* __ptr_sceKernelSwitchToBaseMode = &__load_and_call_sceKernelSwitchToBaseMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelSwitchToBaseMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelSwitchToBaseMode", &__ptr_sceKernelSwitchToBaseMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelSwitchToBaseMode(void) {
+  sprx_dlsym(__handle, "sceKernelSwitchToBaseMode", &__ptr_sceKernelSwitchToBaseMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31625,10 +29863,8 @@ void __load_and_call_sceKernelSwitchToNativeMode();
 static __attribute__ ((used)) void* __ptr_sceKernelSwitchToNativeMode = &__load_and_call_sceKernelSwitchToNativeMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelSwitchToNativeMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelSwitchToNativeMode", &__ptr_sceKernelSwitchToNativeMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelSwitchToNativeMode(void) {
+  sprx_dlsym(__handle, "sceKernelSwitchToNativeMode", &__ptr_sceKernelSwitchToNativeMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31659,10 +29895,8 @@ void __load_and_call_sceKernelSwitchToNeoMode();
 static __attribute__ ((used)) void* __ptr_sceKernelSwitchToNeoMode = &__load_and_call_sceKernelSwitchToNeoMode;
 
 static __attribute__ ((used)) void
-__load_sceKernelSwitchToNeoMode() {
-  if(sceKernelDlsym(__module_id, "sceKernelSwitchToNeoMode", &__ptr_sceKernelSwitchToNeoMode)) {
-    __builtin_trap();
-  }
+__load_sceKernelSwitchToNeoMode(void) {
+  sprx_dlsym(__handle, "sceKernelSwitchToNeoMode", &__ptr_sceKernelSwitchToNeoMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31693,10 +29927,8 @@ void __load_and_call_sceKernelSync();
 static __attribute__ ((used)) void* __ptr_sceKernelSync = &__load_and_call_sceKernelSync;
 
 static __attribute__ ((used)) void
-__load_sceKernelSync() {
-  if(sceKernelDlsym(__module_id, "sceKernelSync", &__ptr_sceKernelSync)) {
-    __builtin_trap();
-  }
+__load_sceKernelSync(void) {
+  sprx_dlsym(__handle, "sceKernelSync", &__ptr_sceKernelSync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31727,10 +29959,8 @@ void __load_and_call_sceKernelTerminateProcess();
 static __attribute__ ((used)) void* __ptr_sceKernelTerminateProcess = &__load_and_call_sceKernelTerminateProcess;
 
 static __attribute__ ((used)) void
-__load_sceKernelTerminateProcess() {
-  if(sceKernelDlsym(__module_id, "sceKernelTerminateProcess", &__ptr_sceKernelTerminateProcess)) {
-    __builtin_trap();
-  }
+__load_sceKernelTerminateProcess(void) {
+  sprx_dlsym(__handle, "sceKernelTerminateProcess", &__ptr_sceKernelTerminateProcess);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31761,10 +29991,8 @@ void __load_and_call_sceKernelTerminateSysCore();
 static __attribute__ ((used)) void* __ptr_sceKernelTerminateSysCore = &__load_and_call_sceKernelTerminateSysCore;
 
 static __attribute__ ((used)) void
-__load_sceKernelTerminateSysCore() {
-  if(sceKernelDlsym(__module_id, "sceKernelTerminateSysCore", &__ptr_sceKernelTerminateSysCore)) {
-    __builtin_trap();
-  }
+__load_sceKernelTerminateSysCore(void) {
+  sprx_dlsym(__handle, "sceKernelTerminateSysCore", &__ptr_sceKernelTerminateSysCore);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31795,10 +30023,8 @@ void __load_and_call_sceKernelTitleWorkaroundIsEnabled();
 static __attribute__ ((used)) void* __ptr_sceKernelTitleWorkaroundIsEnabled = &__load_and_call_sceKernelTitleWorkaroundIsEnabled;
 
 static __attribute__ ((used)) void
-__load_sceKernelTitleWorkaroundIsEnabled() {
-  if(sceKernelDlsym(__module_id, "sceKernelTitleWorkaroundIsEnabled", &__ptr_sceKernelTitleWorkaroundIsEnabled)) {
-    __builtin_trap();
-  }
+__load_sceKernelTitleWorkaroundIsEnabled(void) {
+  sprx_dlsym(__handle, "sceKernelTitleWorkaroundIsEnabled", &__ptr_sceKernelTitleWorkaroundIsEnabled);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31829,10 +30055,8 @@ void __load_and_call_sceKernelTitleWorkdaroundIsEnabled();
 static __attribute__ ((used)) void* __ptr_sceKernelTitleWorkdaroundIsEnabled = &__load_and_call_sceKernelTitleWorkdaroundIsEnabled;
 
 static __attribute__ ((used)) void
-__load_sceKernelTitleWorkdaroundIsEnabled() {
-  if(sceKernelDlsym(__module_id, "sceKernelTitleWorkdaroundIsEnabled", &__ptr_sceKernelTitleWorkdaroundIsEnabled)) {
-    __builtin_trap();
-  }
+__load_sceKernelTitleWorkdaroundIsEnabled(void) {
+  sprx_dlsym(__handle, "sceKernelTitleWorkdaroundIsEnabled", &__ptr_sceKernelTitleWorkdaroundIsEnabled);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31863,10 +30087,8 @@ void __load_and_call_sceKernelTraceMemoryTypeProtect();
 static __attribute__ ((used)) void* __ptr_sceKernelTraceMemoryTypeProtect = &__load_and_call_sceKernelTraceMemoryTypeProtect;
 
 static __attribute__ ((used)) void
-__load_sceKernelTraceMemoryTypeProtect() {
-  if(sceKernelDlsym(__module_id, "sceKernelTraceMemoryTypeProtect", &__ptr_sceKernelTraceMemoryTypeProtect)) {
-    __builtin_trap();
-  }
+__load_sceKernelTraceMemoryTypeProtect(void) {
+  sprx_dlsym(__handle, "sceKernelTraceMemoryTypeProtect", &__ptr_sceKernelTraceMemoryTypeProtect);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31897,10 +30119,8 @@ void __load_and_call_sceKernelTriggerEport();
 static __attribute__ ((used)) void* __ptr_sceKernelTriggerEport = &__load_and_call_sceKernelTriggerEport;
 
 static __attribute__ ((used)) void
-__load_sceKernelTriggerEport() {
-  if(sceKernelDlsym(__module_id, "sceKernelTriggerEport", &__ptr_sceKernelTriggerEport)) {
-    __builtin_trap();
-  }
+__load_sceKernelTriggerEport(void) {
+  sprx_dlsym(__handle, "sceKernelTriggerEport", &__ptr_sceKernelTriggerEport);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31931,10 +30151,8 @@ void __load_and_call_sceKernelTriggerUserEvent();
 static __attribute__ ((used)) void* __ptr_sceKernelTriggerUserEvent = &__load_and_call_sceKernelTriggerUserEvent;
 
 static __attribute__ ((used)) void
-__load_sceKernelTriggerUserEvent() {
-  if(sceKernelDlsym(__module_id, "sceKernelTriggerUserEvent", &__ptr_sceKernelTriggerUserEvent)) {
-    __builtin_trap();
-  }
+__load_sceKernelTriggerUserEvent(void) {
+  sprx_dlsym(__handle, "sceKernelTriggerUserEvent", &__ptr_sceKernelTriggerUserEvent);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31965,10 +30183,8 @@ void __load_and_call_sceKernelTruncate();
 static __attribute__ ((used)) void* __ptr_sceKernelTruncate = &__load_and_call_sceKernelTruncate;
 
 static __attribute__ ((used)) void
-__load_sceKernelTruncate() {
-  if(sceKernelDlsym(__module_id, "sceKernelTruncate", &__ptr_sceKernelTruncate)) {
-    __builtin_trap();
-  }
+__load_sceKernelTruncate(void) {
+  sprx_dlsym(__handle, "sceKernelTruncate", &__ptr_sceKernelTruncate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -31999,10 +30215,8 @@ void __load_and_call_sceKernelUnlink();
 static __attribute__ ((used)) void* __ptr_sceKernelUnlink = &__load_and_call_sceKernelUnlink;
 
 static __attribute__ ((used)) void
-__load_sceKernelUnlink() {
-  if(sceKernelDlsym(__module_id, "sceKernelUnlink", &__ptr_sceKernelUnlink)) {
-    __builtin_trap();
-  }
+__load_sceKernelUnlink(void) {
+  sprx_dlsym(__handle, "sceKernelUnlink", &__ptr_sceKernelUnlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32033,10 +30247,8 @@ void __load_and_call_sceKernelUsleep();
 static __attribute__ ((used)) void* __ptr_sceKernelUsleep = &__load_and_call_sceKernelUsleep;
 
 static __attribute__ ((used)) void
-__load_sceKernelUsleep() {
-  if(sceKernelDlsym(__module_id, "sceKernelUsleep", &__ptr_sceKernelUsleep)) {
-    __builtin_trap();
-  }
+__load_sceKernelUsleep(void) {
+  sprx_dlsym(__handle, "sceKernelUsleep", &__ptr_sceKernelUsleep);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32067,10 +30279,8 @@ void __load_and_call_sceKernelUtimes();
 static __attribute__ ((used)) void* __ptr_sceKernelUtimes = &__load_and_call_sceKernelUtimes;
 
 static __attribute__ ((used)) void
-__load_sceKernelUtimes() {
-  if(sceKernelDlsym(__module_id, "sceKernelUtimes", &__ptr_sceKernelUtimes)) {
-    __builtin_trap();
-  }
+__load_sceKernelUtimes(void) {
+  sprx_dlsym(__handle, "sceKernelUtimes", &__ptr_sceKernelUtimes);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32101,10 +30311,8 @@ void __load_and_call_sceKernelUuidCreate();
 static __attribute__ ((used)) void* __ptr_sceKernelUuidCreate = &__load_and_call_sceKernelUuidCreate;
 
 static __attribute__ ((used)) void
-__load_sceKernelUuidCreate() {
-  if(sceKernelDlsym(__module_id, "sceKernelUuidCreate", &__ptr_sceKernelUuidCreate)) {
-    __builtin_trap();
-  }
+__load_sceKernelUuidCreate(void) {
+  sprx_dlsym(__handle, "sceKernelUuidCreate", &__ptr_sceKernelUuidCreate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32135,10 +30343,8 @@ void __load_and_call_sceKernelVirtualQuery();
 static __attribute__ ((used)) void* __ptr_sceKernelVirtualQuery = &__load_and_call_sceKernelVirtualQuery;
 
 static __attribute__ ((used)) void
-__load_sceKernelVirtualQuery() {
-  if(sceKernelDlsym(__module_id, "sceKernelVirtualQuery", &__ptr_sceKernelVirtualQuery)) {
-    __builtin_trap();
-  }
+__load_sceKernelVirtualQuery(void) {
+  sprx_dlsym(__handle, "sceKernelVirtualQuery", &__ptr_sceKernelVirtualQuery);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32169,10 +30375,8 @@ void __load_and_call_sceKernelVirtualQueryAll();
 static __attribute__ ((used)) void* __ptr_sceKernelVirtualQueryAll = &__load_and_call_sceKernelVirtualQueryAll;
 
 static __attribute__ ((used)) void
-__load_sceKernelVirtualQueryAll() {
-  if(sceKernelDlsym(__module_id, "sceKernelVirtualQueryAll", &__ptr_sceKernelVirtualQueryAll)) {
-    __builtin_trap();
-  }
+__load_sceKernelVirtualQueryAll(void) {
+  sprx_dlsym(__handle, "sceKernelVirtualQueryAll", &__ptr_sceKernelVirtualQueryAll);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32203,10 +30407,8 @@ void __load_and_call_sceKernelWaitCommandBufferCompletion();
 static __attribute__ ((used)) void* __ptr_sceKernelWaitCommandBufferCompletion = &__load_and_call_sceKernelWaitCommandBufferCompletion;
 
 static __attribute__ ((used)) void
-__load_sceKernelWaitCommandBufferCompletion() {
-  if(sceKernelDlsym(__module_id, "sceKernelWaitCommandBufferCompletion", &__ptr_sceKernelWaitCommandBufferCompletion)) {
-    __builtin_trap();
-  }
+__load_sceKernelWaitCommandBufferCompletion(void) {
+  sprx_dlsym(__handle, "sceKernelWaitCommandBufferCompletion", &__ptr_sceKernelWaitCommandBufferCompletion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32237,10 +30439,8 @@ void __load_and_call_sceKernelWaitEqueue();
 static __attribute__ ((used)) void* __ptr_sceKernelWaitEqueue = &__load_and_call_sceKernelWaitEqueue;
 
 static __attribute__ ((used)) void
-__load_sceKernelWaitEqueue() {
-  if(sceKernelDlsym(__module_id, "sceKernelWaitEqueue", &__ptr_sceKernelWaitEqueue)) {
-    __builtin_trap();
-  }
+__load_sceKernelWaitEqueue(void) {
+  sprx_dlsym(__handle, "sceKernelWaitEqueue", &__ptr_sceKernelWaitEqueue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32271,10 +30471,8 @@ void __load_and_call_sceKernelWaitEventFlag();
 static __attribute__ ((used)) void* __ptr_sceKernelWaitEventFlag = &__load_and_call_sceKernelWaitEventFlag;
 
 static __attribute__ ((used)) void
-__load_sceKernelWaitEventFlag() {
-  if(sceKernelDlsym(__module_id, "sceKernelWaitEventFlag", &__ptr_sceKernelWaitEventFlag)) {
-    __builtin_trap();
-  }
+__load_sceKernelWaitEventFlag(void) {
+  sprx_dlsym(__handle, "sceKernelWaitEventFlag", &__ptr_sceKernelWaitEventFlag);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32305,10 +30503,8 @@ void __load_and_call_sceKernelWaitSema();
 static __attribute__ ((used)) void* __ptr_sceKernelWaitSema = &__load_and_call_sceKernelWaitSema;
 
 static __attribute__ ((used)) void
-__load_sceKernelWaitSema() {
-  if(sceKernelDlsym(__module_id, "sceKernelWaitSema", &__ptr_sceKernelWaitSema)) {
-    __builtin_trap();
-  }
+__load_sceKernelWaitSema(void) {
+  sprx_dlsym(__handle, "sceKernelWaitSema", &__ptr_sceKernelWaitSema);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32339,10 +30535,8 @@ void __load_and_call_sceKernelWrite();
 static __attribute__ ((used)) void* __ptr_sceKernelWrite = &__load_and_call_sceKernelWrite;
 
 static __attribute__ ((used)) void
-__load_sceKernelWrite() {
-  if(sceKernelDlsym(__module_id, "sceKernelWrite", &__ptr_sceKernelWrite)) {
-    __builtin_trap();
-  }
+__load_sceKernelWrite(void) {
+  sprx_dlsym(__handle, "sceKernelWrite", &__ptr_sceKernelWrite);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32373,10 +30567,8 @@ void __load_and_call_sceKernelWriteEventQueueOnCompletionCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteEventQueueOnCompletionCommand = &__load_and_call_sceKernelWriteEventQueueOnCompletionCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteEventQueueOnCompletionCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteEventQueueOnCompletionCommand", &__ptr_sceKernelWriteEventQueueOnCompletionCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteEventQueueOnCompletionCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteEventQueueOnCompletionCommand", &__ptr_sceKernelWriteEventQueueOnCompletionCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32407,10 +30599,8 @@ void __load_and_call_sceKernelWriteMapCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteMapCommand = &__load_and_call_sceKernelWriteMapCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteMapCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteMapCommand", &__ptr_sceKernelWriteMapCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteMapCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteMapCommand", &__ptr_sceKernelWriteMapCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32441,10 +30631,8 @@ void __load_and_call_sceKernelWriteMapCommand2();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteMapCommand2 = &__load_and_call_sceKernelWriteMapCommand2;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteMapCommand2() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteMapCommand2", &__ptr_sceKernelWriteMapCommand2)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteMapCommand2(void) {
+  sprx_dlsym(__handle, "sceKernelWriteMapCommand2", &__ptr_sceKernelWriteMapCommand2);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32475,10 +30663,8 @@ void __load_and_call_sceKernelWriteMapDirectCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteMapDirectCommand = &__load_and_call_sceKernelWriteMapDirectCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteMapDirectCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteMapDirectCommand", &__ptr_sceKernelWriteMapDirectCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteMapDirectCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteMapDirectCommand", &__ptr_sceKernelWriteMapDirectCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32509,10 +30695,8 @@ void __load_and_call_sceKernelWriteMapDirectWithGpuMaskIdCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteMapDirectWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteMapDirectWithGpuMaskIdCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteMapDirectWithGpuMaskIdCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteMapDirectWithGpuMaskIdCommand", &__ptr_sceKernelWriteMapDirectWithGpuMaskIdCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteMapDirectWithGpuMaskIdCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteMapDirectWithGpuMaskIdCommand", &__ptr_sceKernelWriteMapDirectWithGpuMaskIdCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32543,10 +30727,8 @@ void __load_and_call_sceKernelWriteMapWithGpuMaskIdCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteMapWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteMapWithGpuMaskIdCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteMapWithGpuMaskIdCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteMapWithGpuMaskIdCommand", &__ptr_sceKernelWriteMapWithGpuMaskIdCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteMapWithGpuMaskIdCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteMapWithGpuMaskIdCommand", &__ptr_sceKernelWriteMapWithGpuMaskIdCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32577,10 +30759,8 @@ void __load_and_call_sceKernelWriteModifyMtypeProtectCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteModifyMtypeProtectCommand = &__load_and_call_sceKernelWriteModifyMtypeProtectCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteModifyMtypeProtectCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteModifyMtypeProtectCommand", &__ptr_sceKernelWriteModifyMtypeProtectCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteModifyMtypeProtectCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteModifyMtypeProtectCommand", &__ptr_sceKernelWriteModifyMtypeProtectCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32611,10 +30791,8 @@ void __load_and_call_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand", &__ptr_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand", &__ptr_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32645,10 +30823,8 @@ void __load_and_call_sceKernelWriteModifyProtectCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteModifyProtectCommand = &__load_and_call_sceKernelWriteModifyProtectCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteModifyProtectCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteModifyProtectCommand", &__ptr_sceKernelWriteModifyProtectCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteModifyProtectCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteModifyProtectCommand", &__ptr_sceKernelWriteModifyProtectCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32679,10 +30855,8 @@ void __load_and_call_sceKernelWriteModifyProtectWithGpuMaskIdCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteModifyProtectWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteModifyProtectWithGpuMaskIdCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteModifyProtectWithGpuMaskIdCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteModifyProtectWithGpuMaskIdCommand", &__ptr_sceKernelWriteModifyProtectWithGpuMaskIdCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteModifyProtectWithGpuMaskIdCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteModifyProtectWithGpuMaskIdCommand", &__ptr_sceKernelWriteModifyProtectWithGpuMaskIdCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32713,10 +30887,8 @@ void __load_and_call_sceKernelWriteMultiMapCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteMultiMapCommand = &__load_and_call_sceKernelWriteMultiMapCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteMultiMapCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteMultiMapCommand", &__ptr_sceKernelWriteMultiMapCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteMultiMapCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteMultiMapCommand", &__ptr_sceKernelWriteMultiMapCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32747,10 +30919,8 @@ void __load_and_call_sceKernelWriteMultiMapWithGpuMaskIdCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteMultiMapWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteMultiMapWithGpuMaskIdCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteMultiMapWithGpuMaskIdCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteMultiMapWithGpuMaskIdCommand", &__ptr_sceKernelWriteMultiMapWithGpuMaskIdCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteMultiMapWithGpuMaskIdCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteMultiMapWithGpuMaskIdCommand", &__ptr_sceKernelWriteMultiMapWithGpuMaskIdCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32781,10 +30951,8 @@ void __load_and_call_sceKernelWriteRemapCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteRemapCommand = &__load_and_call_sceKernelWriteRemapCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteRemapCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteRemapCommand", &__ptr_sceKernelWriteRemapCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteRemapCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteRemapCommand", &__ptr_sceKernelWriteRemapCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32815,10 +30983,8 @@ void __load_and_call_sceKernelWriteRemapWithGpuMaskIdCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteRemapWithGpuMaskIdCommand = &__load_and_call_sceKernelWriteRemapWithGpuMaskIdCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteRemapWithGpuMaskIdCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteRemapWithGpuMaskIdCommand", &__ptr_sceKernelWriteRemapWithGpuMaskIdCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteRemapWithGpuMaskIdCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteRemapWithGpuMaskIdCommand", &__ptr_sceKernelWriteRemapWithGpuMaskIdCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32849,10 +31015,8 @@ void __load_and_call_sceKernelWriteSdkEventLog();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteSdkEventLog = &__load_and_call_sceKernelWriteSdkEventLog;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteSdkEventLog() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteSdkEventLog", &__ptr_sceKernelWriteSdkEventLog)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteSdkEventLog(void) {
+  sprx_dlsym(__handle, "sceKernelWriteSdkEventLog", &__ptr_sceKernelWriteSdkEventLog);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32883,10 +31047,8 @@ void __load_and_call_sceKernelWriteSdkEventLogV();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteSdkEventLogV = &__load_and_call_sceKernelWriteSdkEventLogV;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteSdkEventLogV() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteSdkEventLogV", &__ptr_sceKernelWriteSdkEventLogV)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteSdkEventLogV(void) {
+  sprx_dlsym(__handle, "sceKernelWriteSdkEventLogV", &__ptr_sceKernelWriteSdkEventLogV);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32917,10 +31079,8 @@ void __load_and_call_sceKernelWriteUnmapCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteUnmapCommand = &__load_and_call_sceKernelWriteUnmapCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteUnmapCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteUnmapCommand", &__ptr_sceKernelWriteUnmapCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteUnmapCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteUnmapCommand", &__ptr_sceKernelWriteUnmapCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32951,10 +31111,8 @@ void __load_and_call_sceKernelWriteWaitOnAddressCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteWaitOnAddressCommand = &__load_and_call_sceKernelWriteWaitOnAddressCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteWaitOnAddressCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteWaitOnAddressCommand", &__ptr_sceKernelWriteWaitOnAddressCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteWaitOnAddressCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteWaitOnAddressCommand", &__ptr_sceKernelWriteWaitOnAddressCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -32985,10 +31143,8 @@ void __load_and_call_sceKernelWriteWaitOnCounterCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteWaitOnCounterCommand = &__load_and_call_sceKernelWriteWaitOnCounterCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteWaitOnCounterCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteWaitOnCounterCommand", &__ptr_sceKernelWriteWaitOnCounterCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteWaitOnCounterCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteWaitOnCounterCommand", &__ptr_sceKernelWriteWaitOnCounterCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33019,10 +31175,8 @@ void __load_and_call_sceKernelWriteWriteAddressCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteWriteAddressCommand = &__load_and_call_sceKernelWriteWriteAddressCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteWriteAddressCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteWriteAddressCommand", &__ptr_sceKernelWriteWriteAddressCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteWriteAddressCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteWriteAddressCommand", &__ptr_sceKernelWriteWriteAddressCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33053,10 +31207,8 @@ void __load_and_call_sceKernelWriteWriteCounterCommand();
 static __attribute__ ((used)) void* __ptr_sceKernelWriteWriteCounterCommand = &__load_and_call_sceKernelWriteWriteCounterCommand;
 
 static __attribute__ ((used)) void
-__load_sceKernelWriteWriteCounterCommand() {
-  if(sceKernelDlsym(__module_id, "sceKernelWriteWriteCounterCommand", &__ptr_sceKernelWriteWriteCounterCommand)) {
-    __builtin_trap();
-  }
+__load_sceKernelWriteWriteCounterCommand(void) {
+  sprx_dlsym(__handle, "sceKernelWriteWriteCounterCommand", &__ptr_sceKernelWriteWriteCounterCommand);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33087,10 +31239,8 @@ void __load_and_call_sceKernelWritev();
 static __attribute__ ((used)) void* __ptr_sceKernelWritev = &__load_and_call_sceKernelWritev;
 
 static __attribute__ ((used)) void
-__load_sceKernelWritev() {
-  if(sceKernelDlsym(__module_id, "sceKernelWritev", &__ptr_sceKernelWritev)) {
-    __builtin_trap();
-  }
+__load_sceKernelWritev(void) {
+  sprx_dlsym(__handle, "sceKernelWritev", &__ptr_sceKernelWritev);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33121,10 +31271,8 @@ void __load_and_call_sceKernelYieldCpumode();
 static __attribute__ ((used)) void* __ptr_sceKernelYieldCpumode = &__load_and_call_sceKernelYieldCpumode;
 
 static __attribute__ ((used)) void
-__load_sceKernelYieldCpumode() {
-  if(sceKernelDlsym(__module_id, "sceKernelYieldCpumode", &__ptr_sceKernelYieldCpumode)) {
-    __builtin_trap();
-  }
+__load_sceKernelYieldCpumode(void) {
+  sprx_dlsym(__handle, "sceKernelYieldCpumode", &__ptr_sceKernelYieldCpumode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33155,10 +31303,8 @@ void __load_and_call_sceLibcMspaceCreateForMonoMutex();
 static __attribute__ ((used)) void* __ptr_sceLibcMspaceCreateForMonoMutex = &__load_and_call_sceLibcMspaceCreateForMonoMutex;
 
 static __attribute__ ((used)) void
-__load_sceLibcMspaceCreateForMonoMutex() {
-  if(sceKernelDlsym(__module_id, "sceLibcMspaceCreateForMonoMutex", &__ptr_sceLibcMspaceCreateForMonoMutex)) {
-    __builtin_trap();
-  }
+__load_sceLibcMspaceCreateForMonoMutex(void) {
+  sprx_dlsym(__handle, "sceLibcMspaceCreateForMonoMutex", &__ptr_sceLibcMspaceCreateForMonoMutex);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33189,10 +31335,8 @@ void __load_and_call_scePthreadAtfork();
 static __attribute__ ((used)) void* __ptr_scePthreadAtfork = &__load_and_call_scePthreadAtfork;
 
 static __attribute__ ((used)) void
-__load_scePthreadAtfork() {
-  if(sceKernelDlsym(__module_id, "scePthreadAtfork", &__ptr_scePthreadAtfork)) {
-    __builtin_trap();
-  }
+__load_scePthreadAtfork(void) {
+  sprx_dlsym(__handle, "scePthreadAtfork", &__ptr_scePthreadAtfork);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33223,10 +31367,8 @@ void __load_and_call_scePthreadAttrDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrDestroy = &__load_and_call_scePthreadAttrDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrDestroy", &__ptr_scePthreadAttrDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadAttrDestroy", &__ptr_scePthreadAttrDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33257,10 +31399,8 @@ void __load_and_call_scePthreadAttrGet();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGet = &__load_and_call_scePthreadAttrGet;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGet() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGet", &__ptr_scePthreadAttrGet)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGet(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGet", &__ptr_scePthreadAttrGet);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33291,10 +31431,8 @@ void __load_and_call_scePthreadAttrGetaffinity();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetaffinity = &__load_and_call_scePthreadAttrGetaffinity;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetaffinity() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetaffinity", &__ptr_scePthreadAttrGetaffinity)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetaffinity(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetaffinity", &__ptr_scePthreadAttrGetaffinity);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33325,10 +31463,8 @@ void __load_and_call_scePthreadAttrGetdetachstate();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetdetachstate = &__load_and_call_scePthreadAttrGetdetachstate;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetdetachstate() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetdetachstate", &__ptr_scePthreadAttrGetdetachstate)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetdetachstate(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetdetachstate", &__ptr_scePthreadAttrGetdetachstate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33359,10 +31495,8 @@ void __load_and_call_scePthreadAttrGetguardsize();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetguardsize = &__load_and_call_scePthreadAttrGetguardsize;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetguardsize() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetguardsize", &__ptr_scePthreadAttrGetguardsize)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetguardsize(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetguardsize", &__ptr_scePthreadAttrGetguardsize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33393,10 +31527,8 @@ void __load_and_call_scePthreadAttrGetinheritsched();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetinheritsched = &__load_and_call_scePthreadAttrGetinheritsched;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetinheritsched() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetinheritsched", &__ptr_scePthreadAttrGetinheritsched)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetinheritsched(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetinheritsched", &__ptr_scePthreadAttrGetinheritsched);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33427,10 +31559,8 @@ void __load_and_call_scePthreadAttrGetschedparam();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetschedparam = &__load_and_call_scePthreadAttrGetschedparam;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetschedparam() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetschedparam", &__ptr_scePthreadAttrGetschedparam)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetschedparam(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetschedparam", &__ptr_scePthreadAttrGetschedparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33461,10 +31591,8 @@ void __load_and_call_scePthreadAttrGetschedpolicy();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetschedpolicy = &__load_and_call_scePthreadAttrGetschedpolicy;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetschedpolicy() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetschedpolicy", &__ptr_scePthreadAttrGetschedpolicy)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetschedpolicy(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetschedpolicy", &__ptr_scePthreadAttrGetschedpolicy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33495,10 +31623,8 @@ void __load_and_call_scePthreadAttrGetscope();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetscope = &__load_and_call_scePthreadAttrGetscope;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetscope() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetscope", &__ptr_scePthreadAttrGetscope)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetscope(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetscope", &__ptr_scePthreadAttrGetscope);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33529,10 +31655,8 @@ void __load_and_call_scePthreadAttrGetsolosched();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetsolosched = &__load_and_call_scePthreadAttrGetsolosched;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetsolosched() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetsolosched", &__ptr_scePthreadAttrGetsolosched)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetsolosched(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetsolosched", &__ptr_scePthreadAttrGetsolosched);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33563,10 +31687,8 @@ void __load_and_call_scePthreadAttrGetstack();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetstack = &__load_and_call_scePthreadAttrGetstack;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetstack() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetstack", &__ptr_scePthreadAttrGetstack)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetstack(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetstack", &__ptr_scePthreadAttrGetstack);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33597,10 +31719,8 @@ void __load_and_call_scePthreadAttrGetstackaddr();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetstackaddr = &__load_and_call_scePthreadAttrGetstackaddr;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetstackaddr() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetstackaddr", &__ptr_scePthreadAttrGetstackaddr)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetstackaddr(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetstackaddr", &__ptr_scePthreadAttrGetstackaddr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33631,10 +31751,8 @@ void __load_and_call_scePthreadAttrGetstacksize();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrGetstacksize = &__load_and_call_scePthreadAttrGetstacksize;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrGetstacksize() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrGetstacksize", &__ptr_scePthreadAttrGetstacksize)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrGetstacksize(void) {
+  sprx_dlsym(__handle, "scePthreadAttrGetstacksize", &__ptr_scePthreadAttrGetstacksize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33665,10 +31783,8 @@ void __load_and_call_scePthreadAttrInit();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrInit = &__load_and_call_scePthreadAttrInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrInit", &__ptr_scePthreadAttrInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrInit(void) {
+  sprx_dlsym(__handle, "scePthreadAttrInit", &__ptr_scePthreadAttrInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33699,10 +31815,8 @@ void __load_and_call_scePthreadAttrSetaffinity();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetaffinity = &__load_and_call_scePthreadAttrSetaffinity;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetaffinity() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetaffinity", &__ptr_scePthreadAttrSetaffinity)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetaffinity(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetaffinity", &__ptr_scePthreadAttrSetaffinity);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33733,10 +31847,8 @@ void __load_and_call_scePthreadAttrSetcreatesuspend();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetcreatesuspend = &__load_and_call_scePthreadAttrSetcreatesuspend;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetcreatesuspend() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetcreatesuspend", &__ptr_scePthreadAttrSetcreatesuspend)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetcreatesuspend(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetcreatesuspend", &__ptr_scePthreadAttrSetcreatesuspend);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33767,10 +31879,8 @@ void __load_and_call_scePthreadAttrSetdetachstate();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetdetachstate = &__load_and_call_scePthreadAttrSetdetachstate;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetdetachstate() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetdetachstate", &__ptr_scePthreadAttrSetdetachstate)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetdetachstate(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetdetachstate", &__ptr_scePthreadAttrSetdetachstate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33801,10 +31911,8 @@ void __load_and_call_scePthreadAttrSetguardsize();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetguardsize = &__load_and_call_scePthreadAttrSetguardsize;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetguardsize() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetguardsize", &__ptr_scePthreadAttrSetguardsize)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetguardsize(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetguardsize", &__ptr_scePthreadAttrSetguardsize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33835,10 +31943,8 @@ void __load_and_call_scePthreadAttrSetinheritsched();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetinheritsched = &__load_and_call_scePthreadAttrSetinheritsched;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetinheritsched() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetinheritsched", &__ptr_scePthreadAttrSetinheritsched)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetinheritsched(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetinheritsched", &__ptr_scePthreadAttrSetinheritsched);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33869,10 +31975,8 @@ void __load_and_call_scePthreadAttrSetschedparam();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetschedparam = &__load_and_call_scePthreadAttrSetschedparam;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetschedparam() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetschedparam", &__ptr_scePthreadAttrSetschedparam)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetschedparam(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetschedparam", &__ptr_scePthreadAttrSetschedparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33903,10 +32007,8 @@ void __load_and_call_scePthreadAttrSetschedpolicy();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetschedpolicy = &__load_and_call_scePthreadAttrSetschedpolicy;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetschedpolicy() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetschedpolicy", &__ptr_scePthreadAttrSetschedpolicy)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetschedpolicy(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetschedpolicy", &__ptr_scePthreadAttrSetschedpolicy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33937,10 +32039,8 @@ void __load_and_call_scePthreadAttrSetscope();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetscope = &__load_and_call_scePthreadAttrSetscope;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetscope() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetscope", &__ptr_scePthreadAttrSetscope)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetscope(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetscope", &__ptr_scePthreadAttrSetscope);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -33971,10 +32071,8 @@ void __load_and_call_scePthreadAttrSetsolosched();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetsolosched = &__load_and_call_scePthreadAttrSetsolosched;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetsolosched() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetsolosched", &__ptr_scePthreadAttrSetsolosched)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetsolosched(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetsolosched", &__ptr_scePthreadAttrSetsolosched);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34005,10 +32103,8 @@ void __load_and_call_scePthreadAttrSetstack();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetstack = &__load_and_call_scePthreadAttrSetstack;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetstack() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetstack", &__ptr_scePthreadAttrSetstack)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetstack(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetstack", &__ptr_scePthreadAttrSetstack);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34039,10 +32135,8 @@ void __load_and_call_scePthreadAttrSetstackaddr();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetstackaddr = &__load_and_call_scePthreadAttrSetstackaddr;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetstackaddr() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetstackaddr", &__ptr_scePthreadAttrSetstackaddr)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetstackaddr(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetstackaddr", &__ptr_scePthreadAttrSetstackaddr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34073,10 +32167,8 @@ void __load_and_call_scePthreadAttrSetstacksize();
 static __attribute__ ((used)) void* __ptr_scePthreadAttrSetstacksize = &__load_and_call_scePthreadAttrSetstacksize;
 
 static __attribute__ ((used)) void
-__load_scePthreadAttrSetstacksize() {
-  if(sceKernelDlsym(__module_id, "scePthreadAttrSetstacksize", &__ptr_scePthreadAttrSetstacksize)) {
-    __builtin_trap();
-  }
+__load_scePthreadAttrSetstacksize(void) {
+  sprx_dlsym(__handle, "scePthreadAttrSetstacksize", &__ptr_scePthreadAttrSetstacksize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34107,10 +32199,8 @@ void __load_and_call_scePthreadBarrierDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadBarrierDestroy = &__load_and_call_scePthreadBarrierDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadBarrierDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadBarrierDestroy", &__ptr_scePthreadBarrierDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadBarrierDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadBarrierDestroy", &__ptr_scePthreadBarrierDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34141,10 +32231,8 @@ void __load_and_call_scePthreadBarrierInit();
 static __attribute__ ((used)) void* __ptr_scePthreadBarrierInit = &__load_and_call_scePthreadBarrierInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadBarrierInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadBarrierInit", &__ptr_scePthreadBarrierInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadBarrierInit(void) {
+  sprx_dlsym(__handle, "scePthreadBarrierInit", &__ptr_scePthreadBarrierInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34175,10 +32263,8 @@ void __load_and_call_scePthreadBarrierWait();
 static __attribute__ ((used)) void* __ptr_scePthreadBarrierWait = &__load_and_call_scePthreadBarrierWait;
 
 static __attribute__ ((used)) void
-__load_scePthreadBarrierWait() {
-  if(sceKernelDlsym(__module_id, "scePthreadBarrierWait", &__ptr_scePthreadBarrierWait)) {
-    __builtin_trap();
-  }
+__load_scePthreadBarrierWait(void) {
+  sprx_dlsym(__handle, "scePthreadBarrierWait", &__ptr_scePthreadBarrierWait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34209,10 +32295,8 @@ void __load_and_call_scePthreadBarrierattrDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadBarrierattrDestroy = &__load_and_call_scePthreadBarrierattrDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadBarrierattrDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadBarrierattrDestroy", &__ptr_scePthreadBarrierattrDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadBarrierattrDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadBarrierattrDestroy", &__ptr_scePthreadBarrierattrDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34243,10 +32327,8 @@ void __load_and_call_scePthreadBarrierattrGetpshared();
 static __attribute__ ((used)) void* __ptr_scePthreadBarrierattrGetpshared = &__load_and_call_scePthreadBarrierattrGetpshared;
 
 static __attribute__ ((used)) void
-__load_scePthreadBarrierattrGetpshared() {
-  if(sceKernelDlsym(__module_id, "scePthreadBarrierattrGetpshared", &__ptr_scePthreadBarrierattrGetpshared)) {
-    __builtin_trap();
-  }
+__load_scePthreadBarrierattrGetpshared(void) {
+  sprx_dlsym(__handle, "scePthreadBarrierattrGetpshared", &__ptr_scePthreadBarrierattrGetpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34277,10 +32359,8 @@ void __load_and_call_scePthreadBarrierattrInit();
 static __attribute__ ((used)) void* __ptr_scePthreadBarrierattrInit = &__load_and_call_scePthreadBarrierattrInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadBarrierattrInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadBarrierattrInit", &__ptr_scePthreadBarrierattrInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadBarrierattrInit(void) {
+  sprx_dlsym(__handle, "scePthreadBarrierattrInit", &__ptr_scePthreadBarrierattrInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34311,10 +32391,8 @@ void __load_and_call_scePthreadBarrierattrSetpshared();
 static __attribute__ ((used)) void* __ptr_scePthreadBarrierattrSetpshared = &__load_and_call_scePthreadBarrierattrSetpshared;
 
 static __attribute__ ((used)) void
-__load_scePthreadBarrierattrSetpshared() {
-  if(sceKernelDlsym(__module_id, "scePthreadBarrierattrSetpshared", &__ptr_scePthreadBarrierattrSetpshared)) {
-    __builtin_trap();
-  }
+__load_scePthreadBarrierattrSetpshared(void) {
+  sprx_dlsym(__handle, "scePthreadBarrierattrSetpshared", &__ptr_scePthreadBarrierattrSetpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34345,10 +32423,8 @@ void __load_and_call_scePthreadCancel();
 static __attribute__ ((used)) void* __ptr_scePthreadCancel = &__load_and_call_scePthreadCancel;
 
 static __attribute__ ((used)) void
-__load_scePthreadCancel() {
-  if(sceKernelDlsym(__module_id, "scePthreadCancel", &__ptr_scePthreadCancel)) {
-    __builtin_trap();
-  }
+__load_scePthreadCancel(void) {
+  sprx_dlsym(__handle, "scePthreadCancel", &__ptr_scePthreadCancel);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34379,10 +32455,8 @@ void __load_and_call_scePthreadCondBroadcast();
 static __attribute__ ((used)) void* __ptr_scePthreadCondBroadcast = &__load_and_call_scePthreadCondBroadcast;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondBroadcast() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondBroadcast", &__ptr_scePthreadCondBroadcast)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondBroadcast(void) {
+  sprx_dlsym(__handle, "scePthreadCondBroadcast", &__ptr_scePthreadCondBroadcast);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34413,10 +32487,8 @@ void __load_and_call_scePthreadCondDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadCondDestroy = &__load_and_call_scePthreadCondDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondDestroy", &__ptr_scePthreadCondDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadCondDestroy", &__ptr_scePthreadCondDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34447,10 +32519,8 @@ void __load_and_call_scePthreadCondInit();
 static __attribute__ ((used)) void* __ptr_scePthreadCondInit = &__load_and_call_scePthreadCondInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondInit", &__ptr_scePthreadCondInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondInit(void) {
+  sprx_dlsym(__handle, "scePthreadCondInit", &__ptr_scePthreadCondInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34481,10 +32551,8 @@ void __load_and_call_scePthreadCondSignal();
 static __attribute__ ((used)) void* __ptr_scePthreadCondSignal = &__load_and_call_scePthreadCondSignal;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondSignal() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondSignal", &__ptr_scePthreadCondSignal)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondSignal(void) {
+  sprx_dlsym(__handle, "scePthreadCondSignal", &__ptr_scePthreadCondSignal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34515,10 +32583,8 @@ void __load_and_call_scePthreadCondSignalto();
 static __attribute__ ((used)) void* __ptr_scePthreadCondSignalto = &__load_and_call_scePthreadCondSignalto;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondSignalto() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondSignalto", &__ptr_scePthreadCondSignalto)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondSignalto(void) {
+  sprx_dlsym(__handle, "scePthreadCondSignalto", &__ptr_scePthreadCondSignalto);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34549,10 +32615,8 @@ void __load_and_call_scePthreadCondTimedwait();
 static __attribute__ ((used)) void* __ptr_scePthreadCondTimedwait = &__load_and_call_scePthreadCondTimedwait;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondTimedwait() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondTimedwait", &__ptr_scePthreadCondTimedwait)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondTimedwait(void) {
+  sprx_dlsym(__handle, "scePthreadCondTimedwait", &__ptr_scePthreadCondTimedwait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34583,10 +32647,8 @@ void __load_and_call_scePthreadCondWait();
 static __attribute__ ((used)) void* __ptr_scePthreadCondWait = &__load_and_call_scePthreadCondWait;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondWait() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondWait", &__ptr_scePthreadCondWait)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondWait(void) {
+  sprx_dlsym(__handle, "scePthreadCondWait", &__ptr_scePthreadCondWait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34617,10 +32679,8 @@ void __load_and_call_scePthreadCondattrDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadCondattrDestroy = &__load_and_call_scePthreadCondattrDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondattrDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondattrDestroy", &__ptr_scePthreadCondattrDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondattrDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadCondattrDestroy", &__ptr_scePthreadCondattrDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34651,10 +32711,8 @@ void __load_and_call_scePthreadCondattrGetclock();
 static __attribute__ ((used)) void* __ptr_scePthreadCondattrGetclock = &__load_and_call_scePthreadCondattrGetclock;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondattrGetclock() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondattrGetclock", &__ptr_scePthreadCondattrGetclock)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondattrGetclock(void) {
+  sprx_dlsym(__handle, "scePthreadCondattrGetclock", &__ptr_scePthreadCondattrGetclock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34685,10 +32743,8 @@ void __load_and_call_scePthreadCondattrGetpshared();
 static __attribute__ ((used)) void* __ptr_scePthreadCondattrGetpshared = &__load_and_call_scePthreadCondattrGetpshared;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondattrGetpshared() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondattrGetpshared", &__ptr_scePthreadCondattrGetpshared)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondattrGetpshared(void) {
+  sprx_dlsym(__handle, "scePthreadCondattrGetpshared", &__ptr_scePthreadCondattrGetpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34719,10 +32775,8 @@ void __load_and_call_scePthreadCondattrInit();
 static __attribute__ ((used)) void* __ptr_scePthreadCondattrInit = &__load_and_call_scePthreadCondattrInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondattrInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondattrInit", &__ptr_scePthreadCondattrInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondattrInit(void) {
+  sprx_dlsym(__handle, "scePthreadCondattrInit", &__ptr_scePthreadCondattrInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34753,10 +32807,8 @@ void __load_and_call_scePthreadCondattrSetclock();
 static __attribute__ ((used)) void* __ptr_scePthreadCondattrSetclock = &__load_and_call_scePthreadCondattrSetclock;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondattrSetclock() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondattrSetclock", &__ptr_scePthreadCondattrSetclock)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondattrSetclock(void) {
+  sprx_dlsym(__handle, "scePthreadCondattrSetclock", &__ptr_scePthreadCondattrSetclock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34787,10 +32839,8 @@ void __load_and_call_scePthreadCondattrSetpshared();
 static __attribute__ ((used)) void* __ptr_scePthreadCondattrSetpshared = &__load_and_call_scePthreadCondattrSetpshared;
 
 static __attribute__ ((used)) void
-__load_scePthreadCondattrSetpshared() {
-  if(sceKernelDlsym(__module_id, "scePthreadCondattrSetpshared", &__ptr_scePthreadCondattrSetpshared)) {
-    __builtin_trap();
-  }
+__load_scePthreadCondattrSetpshared(void) {
+  sprx_dlsym(__handle, "scePthreadCondattrSetpshared", &__ptr_scePthreadCondattrSetpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34821,10 +32871,8 @@ void __load_and_call_scePthreadCreate();
 static __attribute__ ((used)) void* __ptr_scePthreadCreate = &__load_and_call_scePthreadCreate;
 
 static __attribute__ ((used)) void
-__load_scePthreadCreate() {
-  if(sceKernelDlsym(__module_id, "scePthreadCreate", &__ptr_scePthreadCreate)) {
-    __builtin_trap();
-  }
+__load_scePthreadCreate(void) {
+  sprx_dlsym(__handle, "scePthreadCreate", &__ptr_scePthreadCreate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34855,10 +32903,8 @@ void __load_and_call_scePthreadDetach();
 static __attribute__ ((used)) void* __ptr_scePthreadDetach = &__load_and_call_scePthreadDetach;
 
 static __attribute__ ((used)) void
-__load_scePthreadDetach() {
-  if(sceKernelDlsym(__module_id, "scePthreadDetach", &__ptr_scePthreadDetach)) {
-    __builtin_trap();
-  }
+__load_scePthreadDetach(void) {
+  sprx_dlsym(__handle, "scePthreadDetach", &__ptr_scePthreadDetach);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34889,10 +32935,8 @@ void __load_and_call_scePthreadEqual();
 static __attribute__ ((used)) void* __ptr_scePthreadEqual = &__load_and_call_scePthreadEqual;
 
 static __attribute__ ((used)) void
-__load_scePthreadEqual() {
-  if(sceKernelDlsym(__module_id, "scePthreadEqual", &__ptr_scePthreadEqual)) {
-    __builtin_trap();
-  }
+__load_scePthreadEqual(void) {
+  sprx_dlsym(__handle, "scePthreadEqual", &__ptr_scePthreadEqual);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34923,10 +32967,8 @@ void __load_and_call_scePthreadExit();
 static __attribute__ ((used)) void* __ptr_scePthreadExit = &__load_and_call_scePthreadExit;
 
 static __attribute__ ((used)) void
-__load_scePthreadExit() {
-  if(sceKernelDlsym(__module_id, "scePthreadExit", &__ptr_scePthreadExit)) {
-    __builtin_trap();
-  }
+__load_scePthreadExit(void) {
+  sprx_dlsym(__handle, "scePthreadExit", &__ptr_scePthreadExit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34957,10 +32999,8 @@ void __load_and_call_scePthreadGetaffinity();
 static __attribute__ ((used)) void* __ptr_scePthreadGetaffinity = &__load_and_call_scePthreadGetaffinity;
 
 static __attribute__ ((used)) void
-__load_scePthreadGetaffinity() {
-  if(sceKernelDlsym(__module_id, "scePthreadGetaffinity", &__ptr_scePthreadGetaffinity)) {
-    __builtin_trap();
-  }
+__load_scePthreadGetaffinity(void) {
+  sprx_dlsym(__handle, "scePthreadGetaffinity", &__ptr_scePthreadGetaffinity);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -34991,10 +33031,8 @@ void __load_and_call_scePthreadGetconcurrency();
 static __attribute__ ((used)) void* __ptr_scePthreadGetconcurrency = &__load_and_call_scePthreadGetconcurrency;
 
 static __attribute__ ((used)) void
-__load_scePthreadGetconcurrency() {
-  if(sceKernelDlsym(__module_id, "scePthreadGetconcurrency", &__ptr_scePthreadGetconcurrency)) {
-    __builtin_trap();
-  }
+__load_scePthreadGetconcurrency(void) {
+  sprx_dlsym(__handle, "scePthreadGetconcurrency", &__ptr_scePthreadGetconcurrency);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35025,10 +33063,8 @@ void __load_and_call_scePthreadGetcpuclockid();
 static __attribute__ ((used)) void* __ptr_scePthreadGetcpuclockid = &__load_and_call_scePthreadGetcpuclockid;
 
 static __attribute__ ((used)) void
-__load_scePthreadGetcpuclockid() {
-  if(sceKernelDlsym(__module_id, "scePthreadGetcpuclockid", &__ptr_scePthreadGetcpuclockid)) {
-    __builtin_trap();
-  }
+__load_scePthreadGetcpuclockid(void) {
+  sprx_dlsym(__handle, "scePthreadGetcpuclockid", &__ptr_scePthreadGetcpuclockid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35059,10 +33095,8 @@ void __load_and_call_scePthreadGetname();
 static __attribute__ ((used)) void* __ptr_scePthreadGetname = &__load_and_call_scePthreadGetname;
 
 static __attribute__ ((used)) void
-__load_scePthreadGetname() {
-  if(sceKernelDlsym(__module_id, "scePthreadGetname", &__ptr_scePthreadGetname)) {
-    __builtin_trap();
-  }
+__load_scePthreadGetname(void) {
+  sprx_dlsym(__handle, "scePthreadGetname", &__ptr_scePthreadGetname);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35093,10 +33127,8 @@ void __load_and_call_scePthreadGetprio();
 static __attribute__ ((used)) void* __ptr_scePthreadGetprio = &__load_and_call_scePthreadGetprio;
 
 static __attribute__ ((used)) void
-__load_scePthreadGetprio() {
-  if(sceKernelDlsym(__module_id, "scePthreadGetprio", &__ptr_scePthreadGetprio)) {
-    __builtin_trap();
-  }
+__load_scePthreadGetprio(void) {
+  sprx_dlsym(__handle, "scePthreadGetprio", &__ptr_scePthreadGetprio);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35127,10 +33159,8 @@ void __load_and_call_scePthreadGetschedparam();
 static __attribute__ ((used)) void* __ptr_scePthreadGetschedparam = &__load_and_call_scePthreadGetschedparam;
 
 static __attribute__ ((used)) void
-__load_scePthreadGetschedparam() {
-  if(sceKernelDlsym(__module_id, "scePthreadGetschedparam", &__ptr_scePthreadGetschedparam)) {
-    __builtin_trap();
-  }
+__load_scePthreadGetschedparam(void) {
+  sprx_dlsym(__handle, "scePthreadGetschedparam", &__ptr_scePthreadGetschedparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35161,10 +33191,8 @@ void __load_and_call_scePthreadGetspecific();
 static __attribute__ ((used)) void* __ptr_scePthreadGetspecific = &__load_and_call_scePthreadGetspecific;
 
 static __attribute__ ((used)) void
-__load_scePthreadGetspecific() {
-  if(sceKernelDlsym(__module_id, "scePthreadGetspecific", &__ptr_scePthreadGetspecific)) {
-    __builtin_trap();
-  }
+__load_scePthreadGetspecific(void) {
+  sprx_dlsym(__handle, "scePthreadGetspecific", &__ptr_scePthreadGetspecific);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35195,10 +33223,8 @@ void __load_and_call_scePthreadGetthreadid();
 static __attribute__ ((used)) void* __ptr_scePthreadGetthreadid = &__load_and_call_scePthreadGetthreadid;
 
 static __attribute__ ((used)) void
-__load_scePthreadGetthreadid() {
-  if(sceKernelDlsym(__module_id, "scePthreadGetthreadid", &__ptr_scePthreadGetthreadid)) {
-    __builtin_trap();
-  }
+__load_scePthreadGetthreadid(void) {
+  sprx_dlsym(__handle, "scePthreadGetthreadid", &__ptr_scePthreadGetthreadid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35229,10 +33255,8 @@ void __load_and_call_scePthreadJoin();
 static __attribute__ ((used)) void* __ptr_scePthreadJoin = &__load_and_call_scePthreadJoin;
 
 static __attribute__ ((used)) void
-__load_scePthreadJoin() {
-  if(sceKernelDlsym(__module_id, "scePthreadJoin", &__ptr_scePthreadJoin)) {
-    __builtin_trap();
-  }
+__load_scePthreadJoin(void) {
+  sprx_dlsym(__handle, "scePthreadJoin", &__ptr_scePthreadJoin);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35263,10 +33287,8 @@ void __load_and_call_scePthreadKeyCreate();
 static __attribute__ ((used)) void* __ptr_scePthreadKeyCreate = &__load_and_call_scePthreadKeyCreate;
 
 static __attribute__ ((used)) void
-__load_scePthreadKeyCreate() {
-  if(sceKernelDlsym(__module_id, "scePthreadKeyCreate", &__ptr_scePthreadKeyCreate)) {
-    __builtin_trap();
-  }
+__load_scePthreadKeyCreate(void) {
+  sprx_dlsym(__handle, "scePthreadKeyCreate", &__ptr_scePthreadKeyCreate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35297,10 +33319,8 @@ void __load_and_call_scePthreadKeyDelete();
 static __attribute__ ((used)) void* __ptr_scePthreadKeyDelete = &__load_and_call_scePthreadKeyDelete;
 
 static __attribute__ ((used)) void
-__load_scePthreadKeyDelete() {
-  if(sceKernelDlsym(__module_id, "scePthreadKeyDelete", &__ptr_scePthreadKeyDelete)) {
-    __builtin_trap();
-  }
+__load_scePthreadKeyDelete(void) {
+  sprx_dlsym(__handle, "scePthreadKeyDelete", &__ptr_scePthreadKeyDelete);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35331,10 +33351,8 @@ void __load_and_call_scePthreadMain();
 static __attribute__ ((used)) void* __ptr_scePthreadMain = &__load_and_call_scePthreadMain;
 
 static __attribute__ ((used)) void
-__load_scePthreadMain() {
-  if(sceKernelDlsym(__module_id, "scePthreadMain", &__ptr_scePthreadMain)) {
-    __builtin_trap();
-  }
+__load_scePthreadMain(void) {
+  sprx_dlsym(__handle, "scePthreadMain", &__ptr_scePthreadMain);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35365,10 +33383,8 @@ void __load_and_call_scePthreadMulti();
 static __attribute__ ((used)) void* __ptr_scePthreadMulti = &__load_and_call_scePthreadMulti;
 
 static __attribute__ ((used)) void
-__load_scePthreadMulti() {
-  if(sceKernelDlsym(__module_id, "scePthreadMulti", &__ptr_scePthreadMulti)) {
-    __builtin_trap();
-  }
+__load_scePthreadMulti(void) {
+  sprx_dlsym(__handle, "scePthreadMulti", &__ptr_scePthreadMulti);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35399,10 +33415,8 @@ void __load_and_call_scePthreadMutexDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexDestroy = &__load_and_call_scePthreadMutexDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexDestroy", &__ptr_scePthreadMutexDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadMutexDestroy", &__ptr_scePthreadMutexDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35433,10 +33447,8 @@ void __load_and_call_scePthreadMutexGetprioceiling();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexGetprioceiling = &__load_and_call_scePthreadMutexGetprioceiling;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexGetprioceiling() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexGetprioceiling", &__ptr_scePthreadMutexGetprioceiling)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexGetprioceiling(void) {
+  sprx_dlsym(__handle, "scePthreadMutexGetprioceiling", &__ptr_scePthreadMutexGetprioceiling);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35467,10 +33479,8 @@ void __load_and_call_scePthreadMutexGetspinloops();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexGetspinloops = &__load_and_call_scePthreadMutexGetspinloops;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexGetspinloops() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexGetspinloops", &__ptr_scePthreadMutexGetspinloops)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexGetspinloops(void) {
+  sprx_dlsym(__handle, "scePthreadMutexGetspinloops", &__ptr_scePthreadMutexGetspinloops);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35501,10 +33511,8 @@ void __load_and_call_scePthreadMutexGetyieldloops();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexGetyieldloops = &__load_and_call_scePthreadMutexGetyieldloops;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexGetyieldloops() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexGetyieldloops", &__ptr_scePthreadMutexGetyieldloops)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexGetyieldloops(void) {
+  sprx_dlsym(__handle, "scePthreadMutexGetyieldloops", &__ptr_scePthreadMutexGetyieldloops);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35535,10 +33543,8 @@ void __load_and_call_scePthreadMutexInit();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexInit = &__load_and_call_scePthreadMutexInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexInit", &__ptr_scePthreadMutexInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexInit(void) {
+  sprx_dlsym(__handle, "scePthreadMutexInit", &__ptr_scePthreadMutexInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35569,10 +33575,8 @@ void __load_and_call_scePthreadMutexInitForInternalLibc();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexInitForInternalLibc = &__load_and_call_scePthreadMutexInitForInternalLibc;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexInitForInternalLibc() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexInitForInternalLibc", &__ptr_scePthreadMutexInitForInternalLibc)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexInitForInternalLibc(void) {
+  sprx_dlsym(__handle, "scePthreadMutexInitForInternalLibc", &__ptr_scePthreadMutexInitForInternalLibc);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35603,10 +33607,8 @@ void __load_and_call_scePthreadMutexIsowned();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexIsowned = &__load_and_call_scePthreadMutexIsowned;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexIsowned() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexIsowned", &__ptr_scePthreadMutexIsowned)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexIsowned(void) {
+  sprx_dlsym(__handle, "scePthreadMutexIsowned", &__ptr_scePthreadMutexIsowned);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35637,10 +33639,8 @@ void __load_and_call_scePthreadMutexLock();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexLock = &__load_and_call_scePthreadMutexLock;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexLock() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexLock", &__ptr_scePthreadMutexLock)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexLock(void) {
+  sprx_dlsym(__handle, "scePthreadMutexLock", &__ptr_scePthreadMutexLock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35671,10 +33671,8 @@ void __load_and_call_scePthreadMutexSetprioceiling();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexSetprioceiling = &__load_and_call_scePthreadMutexSetprioceiling;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexSetprioceiling() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexSetprioceiling", &__ptr_scePthreadMutexSetprioceiling)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexSetprioceiling(void) {
+  sprx_dlsym(__handle, "scePthreadMutexSetprioceiling", &__ptr_scePthreadMutexSetprioceiling);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35705,10 +33703,8 @@ void __load_and_call_scePthreadMutexSetspinloops();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexSetspinloops = &__load_and_call_scePthreadMutexSetspinloops;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexSetspinloops() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexSetspinloops", &__ptr_scePthreadMutexSetspinloops)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexSetspinloops(void) {
+  sprx_dlsym(__handle, "scePthreadMutexSetspinloops", &__ptr_scePthreadMutexSetspinloops);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35739,10 +33735,8 @@ void __load_and_call_scePthreadMutexSetyieldloops();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexSetyieldloops = &__load_and_call_scePthreadMutexSetyieldloops;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexSetyieldloops() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexSetyieldloops", &__ptr_scePthreadMutexSetyieldloops)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexSetyieldloops(void) {
+  sprx_dlsym(__handle, "scePthreadMutexSetyieldloops", &__ptr_scePthreadMutexSetyieldloops);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35773,10 +33767,8 @@ void __load_and_call_scePthreadMutexTimedlock();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexTimedlock = &__load_and_call_scePthreadMutexTimedlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexTimedlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexTimedlock", &__ptr_scePthreadMutexTimedlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexTimedlock(void) {
+  sprx_dlsym(__handle, "scePthreadMutexTimedlock", &__ptr_scePthreadMutexTimedlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35807,10 +33799,8 @@ void __load_and_call_scePthreadMutexTrylock();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexTrylock = &__load_and_call_scePthreadMutexTrylock;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexTrylock() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexTrylock", &__ptr_scePthreadMutexTrylock)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexTrylock(void) {
+  sprx_dlsym(__handle, "scePthreadMutexTrylock", &__ptr_scePthreadMutexTrylock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35841,10 +33831,8 @@ void __load_and_call_scePthreadMutexUnlock();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexUnlock = &__load_and_call_scePthreadMutexUnlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexUnlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexUnlock", &__ptr_scePthreadMutexUnlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexUnlock(void) {
+  sprx_dlsym(__handle, "scePthreadMutexUnlock", &__ptr_scePthreadMutexUnlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35875,10 +33863,8 @@ void __load_and_call_scePthreadMutexattrDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrDestroy = &__load_and_call_scePthreadMutexattrDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrDestroy", &__ptr_scePthreadMutexattrDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrDestroy", &__ptr_scePthreadMutexattrDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35909,10 +33895,8 @@ void __load_and_call_scePthreadMutexattrGetgen();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrGetgen = &__load_and_call_scePthreadMutexattrGetgen;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrGetgen() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrGetgen", &__ptr_scePthreadMutexattrGetgen)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrGetgen(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrGetgen", &__ptr_scePthreadMutexattrGetgen);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35943,10 +33927,8 @@ void __load_and_call_scePthreadMutexattrGetkind();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrGetkind = &__load_and_call_scePthreadMutexattrGetkind;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrGetkind() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrGetkind", &__ptr_scePthreadMutexattrGetkind)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrGetkind(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrGetkind", &__ptr_scePthreadMutexattrGetkind);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -35977,10 +33959,8 @@ void __load_and_call_scePthreadMutexattrGetprioceiling();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrGetprioceiling = &__load_and_call_scePthreadMutexattrGetprioceiling;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrGetprioceiling() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrGetprioceiling", &__ptr_scePthreadMutexattrGetprioceiling)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrGetprioceiling(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrGetprioceiling", &__ptr_scePthreadMutexattrGetprioceiling);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36011,10 +33991,8 @@ void __load_and_call_scePthreadMutexattrGetprotocol();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrGetprotocol = &__load_and_call_scePthreadMutexattrGetprotocol;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrGetprotocol() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrGetprotocol", &__ptr_scePthreadMutexattrGetprotocol)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrGetprotocol(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrGetprotocol", &__ptr_scePthreadMutexattrGetprotocol);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36045,10 +34023,8 @@ void __load_and_call_scePthreadMutexattrGetpshared();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrGetpshared = &__load_and_call_scePthreadMutexattrGetpshared;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrGetpshared() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrGetpshared", &__ptr_scePthreadMutexattrGetpshared)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrGetpshared(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrGetpshared", &__ptr_scePthreadMutexattrGetpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36079,10 +34055,8 @@ void __load_and_call_scePthreadMutexattrGettype();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrGettype = &__load_and_call_scePthreadMutexattrGettype;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrGettype() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrGettype", &__ptr_scePthreadMutexattrGettype)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrGettype(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrGettype", &__ptr_scePthreadMutexattrGettype);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36113,10 +34087,8 @@ void __load_and_call_scePthreadMutexattrInit();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrInit = &__load_and_call_scePthreadMutexattrInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrInit", &__ptr_scePthreadMutexattrInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrInit(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrInit", &__ptr_scePthreadMutexattrInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36147,10 +34119,8 @@ void __load_and_call_scePthreadMutexattrInitForInternalLibc();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrInitForInternalLibc = &__load_and_call_scePthreadMutexattrInitForInternalLibc;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrInitForInternalLibc() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrInitForInternalLibc", &__ptr_scePthreadMutexattrInitForInternalLibc)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrInitForInternalLibc(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrInitForInternalLibc", &__ptr_scePthreadMutexattrInitForInternalLibc);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36181,10 +34151,8 @@ void __load_and_call_scePthreadMutexattrSetgen();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrSetgen = &__load_and_call_scePthreadMutexattrSetgen;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrSetgen() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrSetgen", &__ptr_scePthreadMutexattrSetgen)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrSetgen(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrSetgen", &__ptr_scePthreadMutexattrSetgen);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36215,10 +34183,8 @@ void __load_and_call_scePthreadMutexattrSetkind();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrSetkind = &__load_and_call_scePthreadMutexattrSetkind;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrSetkind() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrSetkind", &__ptr_scePthreadMutexattrSetkind)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrSetkind(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrSetkind", &__ptr_scePthreadMutexattrSetkind);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36249,10 +34215,8 @@ void __load_and_call_scePthreadMutexattrSetprioceiling();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrSetprioceiling = &__load_and_call_scePthreadMutexattrSetprioceiling;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrSetprioceiling() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrSetprioceiling", &__ptr_scePthreadMutexattrSetprioceiling)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrSetprioceiling(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrSetprioceiling", &__ptr_scePthreadMutexattrSetprioceiling);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36283,10 +34247,8 @@ void __load_and_call_scePthreadMutexattrSetprotocol();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrSetprotocol = &__load_and_call_scePthreadMutexattrSetprotocol;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrSetprotocol() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrSetprotocol", &__ptr_scePthreadMutexattrSetprotocol)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrSetprotocol(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrSetprotocol", &__ptr_scePthreadMutexattrSetprotocol);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36317,10 +34279,8 @@ void __load_and_call_scePthreadMutexattrSetpshared();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrSetpshared = &__load_and_call_scePthreadMutexattrSetpshared;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrSetpshared() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrSetpshared", &__ptr_scePthreadMutexattrSetpshared)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrSetpshared(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrSetpshared", &__ptr_scePthreadMutexattrSetpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36351,10 +34311,8 @@ void __load_and_call_scePthreadMutexattrSettype();
 static __attribute__ ((used)) void* __ptr_scePthreadMutexattrSettype = &__load_and_call_scePthreadMutexattrSettype;
 
 static __attribute__ ((used)) void
-__load_scePthreadMutexattrSettype() {
-  if(sceKernelDlsym(__module_id, "scePthreadMutexattrSettype", &__ptr_scePthreadMutexattrSettype)) {
-    __builtin_trap();
-  }
+__load_scePthreadMutexattrSettype(void) {
+  sprx_dlsym(__handle, "scePthreadMutexattrSettype", &__ptr_scePthreadMutexattrSettype);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36385,10 +34343,8 @@ void __load_and_call_scePthreadOnce();
 static __attribute__ ((used)) void* __ptr_scePthreadOnce = &__load_and_call_scePthreadOnce;
 
 static __attribute__ ((used)) void
-__load_scePthreadOnce() {
-  if(sceKernelDlsym(__module_id, "scePthreadOnce", &__ptr_scePthreadOnce)) {
-    __builtin_trap();
-  }
+__load_scePthreadOnce(void) {
+  sprx_dlsym(__handle, "scePthreadOnce", &__ptr_scePthreadOnce);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36419,10 +34375,8 @@ void __load_and_call_scePthreadRename();
 static __attribute__ ((used)) void* __ptr_scePthreadRename = &__load_and_call_scePthreadRename;
 
 static __attribute__ ((used)) void
-__load_scePthreadRename() {
-  if(sceKernelDlsym(__module_id, "scePthreadRename", &__ptr_scePthreadRename)) {
-    __builtin_trap();
-  }
+__load_scePthreadRename(void) {
+  sprx_dlsym(__handle, "scePthreadRename", &__ptr_scePthreadRename);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36453,10 +34407,8 @@ void __load_and_call_scePthreadResume();
 static __attribute__ ((used)) void* __ptr_scePthreadResume = &__load_and_call_scePthreadResume;
 
 static __attribute__ ((used)) void
-__load_scePthreadResume() {
-  if(sceKernelDlsym(__module_id, "scePthreadResume", &__ptr_scePthreadResume)) {
-    __builtin_trap();
-  }
+__load_scePthreadResume(void) {
+  sprx_dlsym(__handle, "scePthreadResume", &__ptr_scePthreadResume);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36487,10 +34439,8 @@ void __load_and_call_scePthreadResumeAll();
 static __attribute__ ((used)) void* __ptr_scePthreadResumeAll = &__load_and_call_scePthreadResumeAll;
 
 static __attribute__ ((used)) void
-__load_scePthreadResumeAll() {
-  if(sceKernelDlsym(__module_id, "scePthreadResumeAll", &__ptr_scePthreadResumeAll)) {
-    __builtin_trap();
-  }
+__load_scePthreadResumeAll(void) {
+  sprx_dlsym(__handle, "scePthreadResumeAll", &__ptr_scePthreadResumeAll);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36521,10 +34471,8 @@ void __load_and_call_scePthreadRwlockDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockDestroy = &__load_and_call_scePthreadRwlockDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockDestroy", &__ptr_scePthreadRwlockDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockDestroy", &__ptr_scePthreadRwlockDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36555,10 +34503,8 @@ void __load_and_call_scePthreadRwlockInit();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockInit = &__load_and_call_scePthreadRwlockInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockInit", &__ptr_scePthreadRwlockInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockInit(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockInit", &__ptr_scePthreadRwlockInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36589,10 +34535,8 @@ void __load_and_call_scePthreadRwlockRdlock();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockRdlock = &__load_and_call_scePthreadRwlockRdlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockRdlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockRdlock", &__ptr_scePthreadRwlockRdlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockRdlock(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockRdlock", &__ptr_scePthreadRwlockRdlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36623,10 +34567,8 @@ void __load_and_call_scePthreadRwlockTimedrdlock();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockTimedrdlock = &__load_and_call_scePthreadRwlockTimedrdlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockTimedrdlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockTimedrdlock", &__ptr_scePthreadRwlockTimedrdlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockTimedrdlock(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockTimedrdlock", &__ptr_scePthreadRwlockTimedrdlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36657,10 +34599,8 @@ void __load_and_call_scePthreadRwlockTimedwrlock();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockTimedwrlock = &__load_and_call_scePthreadRwlockTimedwrlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockTimedwrlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockTimedwrlock", &__ptr_scePthreadRwlockTimedwrlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockTimedwrlock(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockTimedwrlock", &__ptr_scePthreadRwlockTimedwrlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36691,10 +34631,8 @@ void __load_and_call_scePthreadRwlockTryrdlock();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockTryrdlock = &__load_and_call_scePthreadRwlockTryrdlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockTryrdlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockTryrdlock", &__ptr_scePthreadRwlockTryrdlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockTryrdlock(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockTryrdlock", &__ptr_scePthreadRwlockTryrdlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36725,10 +34663,8 @@ void __load_and_call_scePthreadRwlockTrywrlock();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockTrywrlock = &__load_and_call_scePthreadRwlockTrywrlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockTrywrlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockTrywrlock", &__ptr_scePthreadRwlockTrywrlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockTrywrlock(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockTrywrlock", &__ptr_scePthreadRwlockTrywrlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36759,10 +34695,8 @@ void __load_and_call_scePthreadRwlockUnlock();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockUnlock = &__load_and_call_scePthreadRwlockUnlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockUnlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockUnlock", &__ptr_scePthreadRwlockUnlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockUnlock(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockUnlock", &__ptr_scePthreadRwlockUnlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36793,10 +34727,8 @@ void __load_and_call_scePthreadRwlockWrlock();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockWrlock = &__load_and_call_scePthreadRwlockWrlock;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockWrlock() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockWrlock", &__ptr_scePthreadRwlockWrlock)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockWrlock(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockWrlock", &__ptr_scePthreadRwlockWrlock);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36827,10 +34759,8 @@ void __load_and_call_scePthreadRwlockattrDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockattrDestroy = &__load_and_call_scePthreadRwlockattrDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockattrDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockattrDestroy", &__ptr_scePthreadRwlockattrDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockattrDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockattrDestroy", &__ptr_scePthreadRwlockattrDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36861,10 +34791,8 @@ void __load_and_call_scePthreadRwlockattrGetpshared();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockattrGetpshared = &__load_and_call_scePthreadRwlockattrGetpshared;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockattrGetpshared() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockattrGetpshared", &__ptr_scePthreadRwlockattrGetpshared)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockattrGetpshared(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockattrGetpshared", &__ptr_scePthreadRwlockattrGetpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36895,10 +34823,8 @@ void __load_and_call_scePthreadRwlockattrGettype();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockattrGettype = &__load_and_call_scePthreadRwlockattrGettype;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockattrGettype() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockattrGettype", &__ptr_scePthreadRwlockattrGettype)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockattrGettype(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockattrGettype", &__ptr_scePthreadRwlockattrGettype);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36929,10 +34855,8 @@ void __load_and_call_scePthreadRwlockattrInit();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockattrInit = &__load_and_call_scePthreadRwlockattrInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockattrInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockattrInit", &__ptr_scePthreadRwlockattrInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockattrInit(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockattrInit", &__ptr_scePthreadRwlockattrInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36963,10 +34887,8 @@ void __load_and_call_scePthreadRwlockattrSetpshared();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockattrSetpshared = &__load_and_call_scePthreadRwlockattrSetpshared;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockattrSetpshared() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockattrSetpshared", &__ptr_scePthreadRwlockattrSetpshared)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockattrSetpshared(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockattrSetpshared", &__ptr_scePthreadRwlockattrSetpshared);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -36997,10 +34919,8 @@ void __load_and_call_scePthreadRwlockattrSettype();
 static __attribute__ ((used)) void* __ptr_scePthreadRwlockattrSettype = &__load_and_call_scePthreadRwlockattrSettype;
 
 static __attribute__ ((used)) void
-__load_scePthreadRwlockattrSettype() {
-  if(sceKernelDlsym(__module_id, "scePthreadRwlockattrSettype", &__ptr_scePthreadRwlockattrSettype)) {
-    __builtin_trap();
-  }
+__load_scePthreadRwlockattrSettype(void) {
+  sprx_dlsym(__handle, "scePthreadRwlockattrSettype", &__ptr_scePthreadRwlockattrSettype);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37031,10 +34951,8 @@ void __load_and_call_scePthreadSelf();
 static __attribute__ ((used)) void* __ptr_scePthreadSelf = &__load_and_call_scePthreadSelf;
 
 static __attribute__ ((used)) void
-__load_scePthreadSelf() {
-  if(sceKernelDlsym(__module_id, "scePthreadSelf", &__ptr_scePthreadSelf)) {
-    __builtin_trap();
-  }
+__load_scePthreadSelf(void) {
+  sprx_dlsym(__handle, "scePthreadSelf", &__ptr_scePthreadSelf);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37065,10 +34983,8 @@ void __load_and_call_scePthreadSemDestroy();
 static __attribute__ ((used)) void* __ptr_scePthreadSemDestroy = &__load_and_call_scePthreadSemDestroy;
 
 static __attribute__ ((used)) void
-__load_scePthreadSemDestroy() {
-  if(sceKernelDlsym(__module_id, "scePthreadSemDestroy", &__ptr_scePthreadSemDestroy)) {
-    __builtin_trap();
-  }
+__load_scePthreadSemDestroy(void) {
+  sprx_dlsym(__handle, "scePthreadSemDestroy", &__ptr_scePthreadSemDestroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37099,10 +35015,8 @@ void __load_and_call_scePthreadSemGetvalue();
 static __attribute__ ((used)) void* __ptr_scePthreadSemGetvalue = &__load_and_call_scePthreadSemGetvalue;
 
 static __attribute__ ((used)) void
-__load_scePthreadSemGetvalue() {
-  if(sceKernelDlsym(__module_id, "scePthreadSemGetvalue", &__ptr_scePthreadSemGetvalue)) {
-    __builtin_trap();
-  }
+__load_scePthreadSemGetvalue(void) {
+  sprx_dlsym(__handle, "scePthreadSemGetvalue", &__ptr_scePthreadSemGetvalue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37133,10 +35047,8 @@ void __load_and_call_scePthreadSemInit();
 static __attribute__ ((used)) void* __ptr_scePthreadSemInit = &__load_and_call_scePthreadSemInit;
 
 static __attribute__ ((used)) void
-__load_scePthreadSemInit() {
-  if(sceKernelDlsym(__module_id, "scePthreadSemInit", &__ptr_scePthreadSemInit)) {
-    __builtin_trap();
-  }
+__load_scePthreadSemInit(void) {
+  sprx_dlsym(__handle, "scePthreadSemInit", &__ptr_scePthreadSemInit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37167,10 +35079,8 @@ void __load_and_call_scePthreadSemPost();
 static __attribute__ ((used)) void* __ptr_scePthreadSemPost = &__load_and_call_scePthreadSemPost;
 
 static __attribute__ ((used)) void
-__load_scePthreadSemPost() {
-  if(sceKernelDlsym(__module_id, "scePthreadSemPost", &__ptr_scePthreadSemPost)) {
-    __builtin_trap();
-  }
+__load_scePthreadSemPost(void) {
+  sprx_dlsym(__handle, "scePthreadSemPost", &__ptr_scePthreadSemPost);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37201,10 +35111,8 @@ void __load_and_call_scePthreadSemTimedwait();
 static __attribute__ ((used)) void* __ptr_scePthreadSemTimedwait = &__load_and_call_scePthreadSemTimedwait;
 
 static __attribute__ ((used)) void
-__load_scePthreadSemTimedwait() {
-  if(sceKernelDlsym(__module_id, "scePthreadSemTimedwait", &__ptr_scePthreadSemTimedwait)) {
-    __builtin_trap();
-  }
+__load_scePthreadSemTimedwait(void) {
+  sprx_dlsym(__handle, "scePthreadSemTimedwait", &__ptr_scePthreadSemTimedwait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37235,10 +35143,8 @@ void __load_and_call_scePthreadSemTrywait();
 static __attribute__ ((used)) void* __ptr_scePthreadSemTrywait = &__load_and_call_scePthreadSemTrywait;
 
 static __attribute__ ((used)) void
-__load_scePthreadSemTrywait() {
-  if(sceKernelDlsym(__module_id, "scePthreadSemTrywait", &__ptr_scePthreadSemTrywait)) {
-    __builtin_trap();
-  }
+__load_scePthreadSemTrywait(void) {
+  sprx_dlsym(__handle, "scePthreadSemTrywait", &__ptr_scePthreadSemTrywait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37269,10 +35175,8 @@ void __load_and_call_scePthreadSemWait();
 static __attribute__ ((used)) void* __ptr_scePthreadSemWait = &__load_and_call_scePthreadSemWait;
 
 static __attribute__ ((used)) void
-__load_scePthreadSemWait() {
-  if(sceKernelDlsym(__module_id, "scePthreadSemWait", &__ptr_scePthreadSemWait)) {
-    __builtin_trap();
-  }
+__load_scePthreadSemWait(void) {
+  sprx_dlsym(__handle, "scePthreadSemWait", &__ptr_scePthreadSemWait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37303,10 +35207,8 @@ void __load_and_call_scePthreadSetBesteffort();
 static __attribute__ ((used)) void* __ptr_scePthreadSetBesteffort = &__load_and_call_scePthreadSetBesteffort;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetBesteffort() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetBesteffort", &__ptr_scePthreadSetBesteffort)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetBesteffort(void) {
+  sprx_dlsym(__handle, "scePthreadSetBesteffort", &__ptr_scePthreadSetBesteffort);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37337,10 +35239,8 @@ void __load_and_call_scePthreadSetDefaultstacksize();
 static __attribute__ ((used)) void* __ptr_scePthreadSetDefaultstacksize = &__load_and_call_scePthreadSetDefaultstacksize;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetDefaultstacksize() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetDefaultstacksize", &__ptr_scePthreadSetDefaultstacksize)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetDefaultstacksize(void) {
+  sprx_dlsym(__handle, "scePthreadSetDefaultstacksize", &__ptr_scePthreadSetDefaultstacksize);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37371,10 +35271,8 @@ void __load_and_call_scePthreadSetName();
 static __attribute__ ((used)) void* __ptr_scePthreadSetName = &__load_and_call_scePthreadSetName;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetName() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetName", &__ptr_scePthreadSetName)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetName(void) {
+  sprx_dlsym(__handle, "scePthreadSetName", &__ptr_scePthreadSetName);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37405,10 +35303,8 @@ void __load_and_call_scePthreadSetaffinity();
 static __attribute__ ((used)) void* __ptr_scePthreadSetaffinity = &__load_and_call_scePthreadSetaffinity;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetaffinity() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetaffinity", &__ptr_scePthreadSetaffinity)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetaffinity(void) {
+  sprx_dlsym(__handle, "scePthreadSetaffinity", &__ptr_scePthreadSetaffinity);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37439,10 +35335,8 @@ void __load_and_call_scePthreadSetcancelstate();
 static __attribute__ ((used)) void* __ptr_scePthreadSetcancelstate = &__load_and_call_scePthreadSetcancelstate;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetcancelstate() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetcancelstate", &__ptr_scePthreadSetcancelstate)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetcancelstate(void) {
+  sprx_dlsym(__handle, "scePthreadSetcancelstate", &__ptr_scePthreadSetcancelstate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37473,10 +35367,8 @@ void __load_and_call_scePthreadSetcanceltype();
 static __attribute__ ((used)) void* __ptr_scePthreadSetcanceltype = &__load_and_call_scePthreadSetcanceltype;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetcanceltype() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetcanceltype", &__ptr_scePthreadSetcanceltype)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetcanceltype(void) {
+  sprx_dlsym(__handle, "scePthreadSetcanceltype", &__ptr_scePthreadSetcanceltype);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37507,10 +35399,8 @@ void __load_and_call_scePthreadSetconcurrency();
 static __attribute__ ((used)) void* __ptr_scePthreadSetconcurrency = &__load_and_call_scePthreadSetconcurrency;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetconcurrency() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetconcurrency", &__ptr_scePthreadSetconcurrency)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetconcurrency(void) {
+  sprx_dlsym(__handle, "scePthreadSetconcurrency", &__ptr_scePthreadSetconcurrency);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37541,10 +35431,8 @@ void __load_and_call_scePthreadSetprio();
 static __attribute__ ((used)) void* __ptr_scePthreadSetprio = &__load_and_call_scePthreadSetprio;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetprio() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetprio", &__ptr_scePthreadSetprio)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetprio(void) {
+  sprx_dlsym(__handle, "scePthreadSetprio", &__ptr_scePthreadSetprio);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37575,10 +35463,8 @@ void __load_and_call_scePthreadSetschedparam();
 static __attribute__ ((used)) void* __ptr_scePthreadSetschedparam = &__load_and_call_scePthreadSetschedparam;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetschedparam() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetschedparam", &__ptr_scePthreadSetschedparam)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetschedparam(void) {
+  sprx_dlsym(__handle, "scePthreadSetschedparam", &__ptr_scePthreadSetschedparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37609,10 +35495,8 @@ void __load_and_call_scePthreadSetspecific();
 static __attribute__ ((used)) void* __ptr_scePthreadSetspecific = &__load_and_call_scePthreadSetspecific;
 
 static __attribute__ ((used)) void
-__load_scePthreadSetspecific() {
-  if(sceKernelDlsym(__module_id, "scePthreadSetspecific", &__ptr_scePthreadSetspecific)) {
-    __builtin_trap();
-  }
+__load_scePthreadSetspecific(void) {
+  sprx_dlsym(__handle, "scePthreadSetspecific", &__ptr_scePthreadSetspecific);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37643,10 +35527,8 @@ void __load_and_call_scePthreadSingle();
 static __attribute__ ((used)) void* __ptr_scePthreadSingle = &__load_and_call_scePthreadSingle;
 
 static __attribute__ ((used)) void
-__load_scePthreadSingle() {
-  if(sceKernelDlsym(__module_id, "scePthreadSingle", &__ptr_scePthreadSingle)) {
-    __builtin_trap();
-  }
+__load_scePthreadSingle(void) {
+  sprx_dlsym(__handle, "scePthreadSingle", &__ptr_scePthreadSingle);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37677,10 +35559,8 @@ void __load_and_call_scePthreadSuspend();
 static __attribute__ ((used)) void* __ptr_scePthreadSuspend = &__load_and_call_scePthreadSuspend;
 
 static __attribute__ ((used)) void
-__load_scePthreadSuspend() {
-  if(sceKernelDlsym(__module_id, "scePthreadSuspend", &__ptr_scePthreadSuspend)) {
-    __builtin_trap();
-  }
+__load_scePthreadSuspend(void) {
+  sprx_dlsym(__handle, "scePthreadSuspend", &__ptr_scePthreadSuspend);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37711,10 +35591,8 @@ void __load_and_call_scePthreadSuspendAll();
 static __attribute__ ((used)) void* __ptr_scePthreadSuspendAll = &__load_and_call_scePthreadSuspendAll;
 
 static __attribute__ ((used)) void
-__load_scePthreadSuspendAll() {
-  if(sceKernelDlsym(__module_id, "scePthreadSuspendAll", &__ptr_scePthreadSuspendAll)) {
-    __builtin_trap();
-  }
+__load_scePthreadSuspendAll(void) {
+  sprx_dlsym(__handle, "scePthreadSuspendAll", &__ptr_scePthreadSuspendAll);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37745,10 +35623,8 @@ void __load_and_call_scePthreadTestcancel();
 static __attribute__ ((used)) void* __ptr_scePthreadTestcancel = &__load_and_call_scePthreadTestcancel;
 
 static __attribute__ ((used)) void
-__load_scePthreadTestcancel() {
-  if(sceKernelDlsym(__module_id, "scePthreadTestcancel", &__ptr_scePthreadTestcancel)) {
-    __builtin_trap();
-  }
+__load_scePthreadTestcancel(void) {
+  sprx_dlsym(__handle, "scePthreadTestcancel", &__ptr_scePthreadTestcancel);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37779,10 +35655,8 @@ void __load_and_call_scePthreadTimedjoin();
 static __attribute__ ((used)) void* __ptr_scePthreadTimedjoin = &__load_and_call_scePthreadTimedjoin;
 
 static __attribute__ ((used)) void
-__load_scePthreadTimedjoin() {
-  if(sceKernelDlsym(__module_id, "scePthreadTimedjoin", &__ptr_scePthreadTimedjoin)) {
-    __builtin_trap();
-  }
+__load_scePthreadTimedjoin(void) {
+  sprx_dlsym(__handle, "scePthreadTimedjoin", &__ptr_scePthreadTimedjoin);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37813,10 +35687,8 @@ void __load_and_call_scePthreadYield();
 static __attribute__ ((used)) void* __ptr_scePthreadYield = &__load_and_call_scePthreadYield;
 
 static __attribute__ ((used)) void
-__load_scePthreadYield() {
-  if(sceKernelDlsym(__module_id, "scePthreadYield", &__ptr_scePthreadYield)) {
-    __builtin_trap();
-  }
+__load_scePthreadYield(void) {
+  sprx_dlsym(__handle, "scePthreadYield", &__ptr_scePthreadYield);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37847,10 +35719,8 @@ void __load_and_call_sched_get_priority_max();
 static __attribute__ ((used)) void* __ptr_sched_get_priority_max = &__load_and_call_sched_get_priority_max;
 
 static __attribute__ ((used)) void
-__load_sched_get_priority_max() {
-  if(sceKernelDlsym(__module_id, "sched_get_priority_max", &__ptr_sched_get_priority_max)) {
-    __builtin_trap();
-  }
+__load_sched_get_priority_max(void) {
+  sprx_dlsym(__handle, "sched_get_priority_max", &__ptr_sched_get_priority_max);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37881,10 +35751,8 @@ void __load_and_call_sched_get_priority_min();
 static __attribute__ ((used)) void* __ptr_sched_get_priority_min = &__load_and_call_sched_get_priority_min;
 
 static __attribute__ ((used)) void
-__load_sched_get_priority_min() {
-  if(sceKernelDlsym(__module_id, "sched_get_priority_min", &__ptr_sched_get_priority_min)) {
-    __builtin_trap();
-  }
+__load_sched_get_priority_min(void) {
+  sprx_dlsym(__handle, "sched_get_priority_min", &__ptr_sched_get_priority_min);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37915,10 +35783,8 @@ void __load_and_call_sched_getparam();
 static __attribute__ ((used)) void* __ptr_sched_getparam = &__load_and_call_sched_getparam;
 
 static __attribute__ ((used)) void
-__load_sched_getparam() {
-  if(sceKernelDlsym(__module_id, "sched_getparam", &__ptr_sched_getparam)) {
-    __builtin_trap();
-  }
+__load_sched_getparam(void) {
+  sprx_dlsym(__handle, "sched_getparam", &__ptr_sched_getparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37949,10 +35815,8 @@ void __load_and_call_sched_getscheduler();
 static __attribute__ ((used)) void* __ptr_sched_getscheduler = &__load_and_call_sched_getscheduler;
 
 static __attribute__ ((used)) void
-__load_sched_getscheduler() {
-  if(sceKernelDlsym(__module_id, "sched_getscheduler", &__ptr_sched_getscheduler)) {
-    __builtin_trap();
-  }
+__load_sched_getscheduler(void) {
+  sprx_dlsym(__handle, "sched_getscheduler", &__ptr_sched_getscheduler);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -37983,10 +35847,8 @@ void __load_and_call_sched_rr_get_interval();
 static __attribute__ ((used)) void* __ptr_sched_rr_get_interval = &__load_and_call_sched_rr_get_interval;
 
 static __attribute__ ((used)) void
-__load_sched_rr_get_interval() {
-  if(sceKernelDlsym(__module_id, "sched_rr_get_interval", &__ptr_sched_rr_get_interval)) {
-    __builtin_trap();
-  }
+__load_sched_rr_get_interval(void) {
+  sprx_dlsym(__handle, "sched_rr_get_interval", &__ptr_sched_rr_get_interval);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38017,10 +35879,8 @@ void __load_and_call_sched_setparam();
 static __attribute__ ((used)) void* __ptr_sched_setparam = &__load_and_call_sched_setparam;
 
 static __attribute__ ((used)) void
-__load_sched_setparam() {
-  if(sceKernelDlsym(__module_id, "sched_setparam", &__ptr_sched_setparam)) {
-    __builtin_trap();
-  }
+__load_sched_setparam(void) {
+  sprx_dlsym(__handle, "sched_setparam", &__ptr_sched_setparam);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38051,10 +35911,8 @@ void __load_and_call_sched_setscheduler();
 static __attribute__ ((used)) void* __ptr_sched_setscheduler = &__load_and_call_sched_setscheduler;
 
 static __attribute__ ((used)) void
-__load_sched_setscheduler() {
-  if(sceKernelDlsym(__module_id, "sched_setscheduler", &__ptr_sched_setscheduler)) {
-    __builtin_trap();
-  }
+__load_sched_setscheduler(void) {
+  sprx_dlsym(__handle, "sched_setscheduler", &__ptr_sched_setscheduler);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38085,10 +35943,8 @@ void __load_and_call_sched_yield();
 static __attribute__ ((used)) void* __ptr_sched_yield = &__load_and_call_sched_yield;
 
 static __attribute__ ((used)) void
-__load_sched_yield() {
-  if(sceKernelDlsym(__module_id, "sched_yield", &__ptr_sched_yield)) {
-    __builtin_trap();
-  }
+__load_sched_yield(void) {
+  sprx_dlsym(__handle, "sched_yield", &__ptr_sched_yield);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38119,10 +35975,8 @@ void __load_and_call_select();
 static __attribute__ ((used)) void* __ptr_select = &__load_and_call_select;
 
 static __attribute__ ((used)) void
-__load_select() {
-  if(sceKernelDlsym(__module_id, "select", &__ptr_select)) {
-    __builtin_trap();
-  }
+__load_select(void) {
+  sprx_dlsym(__handle, "select", &__ptr_select);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38153,10 +36007,8 @@ void __load_and_call_sem_close();
 static __attribute__ ((used)) void* __ptr_sem_close = &__load_and_call_sem_close;
 
 static __attribute__ ((used)) void
-__load_sem_close() {
-  if(sceKernelDlsym(__module_id, "sem_close", &__ptr_sem_close)) {
-    __builtin_trap();
-  }
+__load_sem_close(void) {
+  sprx_dlsym(__handle, "sem_close", &__ptr_sem_close);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38187,10 +36039,8 @@ void __load_and_call_sem_destroy();
 static __attribute__ ((used)) void* __ptr_sem_destroy = &__load_and_call_sem_destroy;
 
 static __attribute__ ((used)) void
-__load_sem_destroy() {
-  if(sceKernelDlsym(__module_id, "sem_destroy", &__ptr_sem_destroy)) {
-    __builtin_trap();
-  }
+__load_sem_destroy(void) {
+  sprx_dlsym(__handle, "sem_destroy", &__ptr_sem_destroy);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38221,10 +36071,8 @@ void __load_and_call_sem_getvalue();
 static __attribute__ ((used)) void* __ptr_sem_getvalue = &__load_and_call_sem_getvalue;
 
 static __attribute__ ((used)) void
-__load_sem_getvalue() {
-  if(sceKernelDlsym(__module_id, "sem_getvalue", &__ptr_sem_getvalue)) {
-    __builtin_trap();
-  }
+__load_sem_getvalue(void) {
+  sprx_dlsym(__handle, "sem_getvalue", &__ptr_sem_getvalue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38255,10 +36103,8 @@ void __load_and_call_sem_init();
 static __attribute__ ((used)) void* __ptr_sem_init = &__load_and_call_sem_init;
 
 static __attribute__ ((used)) void
-__load_sem_init() {
-  if(sceKernelDlsym(__module_id, "sem_init", &__ptr_sem_init)) {
-    __builtin_trap();
-  }
+__load_sem_init(void) {
+  sprx_dlsym(__handle, "sem_init", &__ptr_sem_init);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38289,10 +36135,8 @@ void __load_and_call_sem_open();
 static __attribute__ ((used)) void* __ptr_sem_open = &__load_and_call_sem_open;
 
 static __attribute__ ((used)) void
-__load_sem_open() {
-  if(sceKernelDlsym(__module_id, "sem_open", &__ptr_sem_open)) {
-    __builtin_trap();
-  }
+__load_sem_open(void) {
+  sprx_dlsym(__handle, "sem_open", &__ptr_sem_open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38323,10 +36167,8 @@ void __load_and_call_sem_post();
 static __attribute__ ((used)) void* __ptr_sem_post = &__load_and_call_sem_post;
 
 static __attribute__ ((used)) void
-__load_sem_post() {
-  if(sceKernelDlsym(__module_id, "sem_post", &__ptr_sem_post)) {
-    __builtin_trap();
-  }
+__load_sem_post(void) {
+  sprx_dlsym(__handle, "sem_post", &__ptr_sem_post);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38357,10 +36199,8 @@ void __load_and_call_sem_reltimedwait_np();
 static __attribute__ ((used)) void* __ptr_sem_reltimedwait_np = &__load_and_call_sem_reltimedwait_np;
 
 static __attribute__ ((used)) void
-__load_sem_reltimedwait_np() {
-  if(sceKernelDlsym(__module_id, "sem_reltimedwait_np", &__ptr_sem_reltimedwait_np)) {
-    __builtin_trap();
-  }
+__load_sem_reltimedwait_np(void) {
+  sprx_dlsym(__handle, "sem_reltimedwait_np", &__ptr_sem_reltimedwait_np);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38391,10 +36231,8 @@ void __load_and_call_sem_setname();
 static __attribute__ ((used)) void* __ptr_sem_setname = &__load_and_call_sem_setname;
 
 static __attribute__ ((used)) void
-__load_sem_setname() {
-  if(sceKernelDlsym(__module_id, "sem_setname", &__ptr_sem_setname)) {
-    __builtin_trap();
-  }
+__load_sem_setname(void) {
+  sprx_dlsym(__handle, "sem_setname", &__ptr_sem_setname);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38425,10 +36263,8 @@ void __load_and_call_sem_timedwait();
 static __attribute__ ((used)) void* __ptr_sem_timedwait = &__load_and_call_sem_timedwait;
 
 static __attribute__ ((used)) void
-__load_sem_timedwait() {
-  if(sceKernelDlsym(__module_id, "sem_timedwait", &__ptr_sem_timedwait)) {
-    __builtin_trap();
-  }
+__load_sem_timedwait(void) {
+  sprx_dlsym(__handle, "sem_timedwait", &__ptr_sem_timedwait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38459,10 +36295,8 @@ void __load_and_call_sem_trywait();
 static __attribute__ ((used)) void* __ptr_sem_trywait = &__load_and_call_sem_trywait;
 
 static __attribute__ ((used)) void
-__load_sem_trywait() {
-  if(sceKernelDlsym(__module_id, "sem_trywait", &__ptr_sem_trywait)) {
-    __builtin_trap();
-  }
+__load_sem_trywait(void) {
+  sprx_dlsym(__handle, "sem_trywait", &__ptr_sem_trywait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38493,10 +36327,8 @@ void __load_and_call_sem_unlink();
 static __attribute__ ((used)) void* __ptr_sem_unlink = &__load_and_call_sem_unlink;
 
 static __attribute__ ((used)) void
-__load_sem_unlink() {
-  if(sceKernelDlsym(__module_id, "sem_unlink", &__ptr_sem_unlink)) {
-    __builtin_trap();
-  }
+__load_sem_unlink(void) {
+  sprx_dlsym(__handle, "sem_unlink", &__ptr_sem_unlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38527,10 +36359,8 @@ void __load_and_call_sem_wait();
 static __attribute__ ((used)) void* __ptr_sem_wait = &__load_and_call_sem_wait;
 
 static __attribute__ ((used)) void
-__load_sem_wait() {
-  if(sceKernelDlsym(__module_id, "sem_wait", &__ptr_sem_wait)) {
-    __builtin_trap();
-  }
+__load_sem_wait(void) {
+  sprx_dlsym(__handle, "sem_wait", &__ptr_sem_wait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38561,10 +36391,8 @@ void __load_and_call_send();
 static __attribute__ ((used)) void* __ptr_send = &__load_and_call_send;
 
 static __attribute__ ((used)) void
-__load_send() {
-  if(sceKernelDlsym(__module_id, "send", &__ptr_send)) {
-    __builtin_trap();
-  }
+__load_send(void) {
+  sprx_dlsym(__handle, "send", &__ptr_send);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38595,10 +36423,8 @@ void __load_and_call_sendfile();
 static __attribute__ ((used)) void* __ptr_sendfile = &__load_and_call_sendfile;
 
 static __attribute__ ((used)) void
-__load_sendfile() {
-  if(sceKernelDlsym(__module_id, "sendfile", &__ptr_sendfile)) {
-    __builtin_trap();
-  }
+__load_sendfile(void) {
+  sprx_dlsym(__handle, "sendfile", &__ptr_sendfile);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38629,10 +36455,8 @@ void __load_and_call_sendmsg();
 static __attribute__ ((used)) void* __ptr_sendmsg = &__load_and_call_sendmsg;
 
 static __attribute__ ((used)) void
-__load_sendmsg() {
-  if(sceKernelDlsym(__module_id, "sendmsg", &__ptr_sendmsg)) {
-    __builtin_trap();
-  }
+__load_sendmsg(void) {
+  sprx_dlsym(__handle, "sendmsg", &__ptr_sendmsg);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38663,10 +36487,8 @@ void __load_and_call_sendto();
 static __attribute__ ((used)) void* __ptr_sendto = &__load_and_call_sendto;
 
 static __attribute__ ((used)) void
-__load_sendto() {
-  if(sceKernelDlsym(__module_id, "sendto", &__ptr_sendto)) {
-    __builtin_trap();
-  }
+__load_sendto(void) {
+  sprx_dlsym(__handle, "sendto", &__ptr_sendto);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38697,10 +36519,8 @@ void __load_and_call_set_phys_fmem_limit();
 static __attribute__ ((used)) void* __ptr_set_phys_fmem_limit = &__load_and_call_set_phys_fmem_limit;
 
 static __attribute__ ((used)) void
-__load_set_phys_fmem_limit() {
-  if(sceKernelDlsym(__module_id, "set_phys_fmem_limit", &__ptr_set_phys_fmem_limit)) {
-    __builtin_trap();
-  }
+__load_set_phys_fmem_limit(void) {
+  sprx_dlsym(__handle, "set_phys_fmem_limit", &__ptr_set_phys_fmem_limit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38731,10 +36551,8 @@ void __load_and_call_setcontext();
 static __attribute__ ((used)) void* __ptr_setcontext = &__load_and_call_setcontext;
 
 static __attribute__ ((used)) void
-__load_setcontext() {
-  if(sceKernelDlsym(__module_id, "setcontext", &__ptr_setcontext)) {
-    __builtin_trap();
-  }
+__load_setcontext(void) {
+  sprx_dlsym(__handle, "setcontext", &__ptr_setcontext);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38765,10 +36583,8 @@ void __load_and_call_setegid();
 static __attribute__ ((used)) void* __ptr_setegid = &__load_and_call_setegid;
 
 static __attribute__ ((used)) void
-__load_setegid() {
-  if(sceKernelDlsym(__module_id, "setegid", &__ptr_setegid)) {
-    __builtin_trap();
-  }
+__load_setegid(void) {
+  sprx_dlsym(__handle, "setegid", &__ptr_setegid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38799,10 +36615,8 @@ void __load_and_call_seteuid();
 static __attribute__ ((used)) void* __ptr_seteuid = &__load_and_call_seteuid;
 
 static __attribute__ ((used)) void
-__load_seteuid() {
-  if(sceKernelDlsym(__module_id, "seteuid", &__ptr_seteuid)) {
-    __builtin_trap();
-  }
+__load_seteuid(void) {
+  sprx_dlsym(__handle, "seteuid", &__ptr_seteuid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38833,10 +36647,8 @@ void __load_and_call_setgroups();
 static __attribute__ ((used)) void* __ptr_setgroups = &__load_and_call_setgroups;
 
 static __attribute__ ((used)) void
-__load_setgroups() {
-  if(sceKernelDlsym(__module_id, "setgroups", &__ptr_setgroups)) {
-    __builtin_trap();
-  }
+__load_setgroups(void) {
+  sprx_dlsym(__handle, "setgroups", &__ptr_setgroups);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38867,10 +36679,8 @@ void __load_and_call_setitimer();
 static __attribute__ ((used)) void* __ptr_setitimer = &__load_and_call_setitimer;
 
 static __attribute__ ((used)) void
-__load_setitimer() {
-  if(sceKernelDlsym(__module_id, "setitimer", &__ptr_setitimer)) {
-    __builtin_trap();
-  }
+__load_setitimer(void) {
+  sprx_dlsym(__handle, "setitimer", &__ptr_setitimer);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38901,10 +36711,8 @@ void __load_and_call_setlogin();
 static __attribute__ ((used)) void* __ptr_setlogin = &__load_and_call_setlogin;
 
 static __attribute__ ((used)) void
-__load_setlogin() {
-  if(sceKernelDlsym(__module_id, "setlogin", &__ptr_setlogin)) {
-    __builtin_trap();
-  }
+__load_setlogin(void) {
+  sprx_dlsym(__handle, "setlogin", &__ptr_setlogin);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38935,10 +36743,8 @@ void __load_and_call_setpgid();
 static __attribute__ ((used)) void* __ptr_setpgid = &__load_and_call_setpgid;
 
 static __attribute__ ((used)) void
-__load_setpgid() {
-  if(sceKernelDlsym(__module_id, "setpgid", &__ptr_setpgid)) {
-    __builtin_trap();
-  }
+__load_setpgid(void) {
+  sprx_dlsym(__handle, "setpgid", &__ptr_setpgid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -38969,10 +36775,8 @@ void __load_and_call_setpriority();
 static __attribute__ ((used)) void* __ptr_setpriority = &__load_and_call_setpriority;
 
 static __attribute__ ((used)) void
-__load_setpriority() {
-  if(sceKernelDlsym(__module_id, "setpriority", &__ptr_setpriority)) {
-    __builtin_trap();
-  }
+__load_setpriority(void) {
+  sprx_dlsym(__handle, "setpriority", &__ptr_setpriority);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39003,10 +36807,8 @@ void __load_and_call_setregid();
 static __attribute__ ((used)) void* __ptr_setregid = &__load_and_call_setregid;
 
 static __attribute__ ((used)) void
-__load_setregid() {
-  if(sceKernelDlsym(__module_id, "setregid", &__ptr_setregid)) {
-    __builtin_trap();
-  }
+__load_setregid(void) {
+  sprx_dlsym(__handle, "setregid", &__ptr_setregid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39037,10 +36839,8 @@ void __load_and_call_setreuid();
 static __attribute__ ((used)) void* __ptr_setreuid = &__load_and_call_setreuid;
 
 static __attribute__ ((used)) void
-__load_setreuid() {
-  if(sceKernelDlsym(__module_id, "setreuid", &__ptr_setreuid)) {
-    __builtin_trap();
-  }
+__load_setreuid(void) {
+  sprx_dlsym(__handle, "setreuid", &__ptr_setreuid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39071,10 +36871,8 @@ void __load_and_call_setrlimit();
 static __attribute__ ((used)) void* __ptr_setrlimit = &__load_and_call_setrlimit;
 
 static __attribute__ ((used)) void
-__load_setrlimit() {
-  if(sceKernelDlsym(__module_id, "setrlimit", &__ptr_setrlimit)) {
-    __builtin_trap();
-  }
+__load_setrlimit(void) {
+  sprx_dlsym(__handle, "setrlimit", &__ptr_setrlimit);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39105,10 +36903,8 @@ void __load_and_call_setsid();
 static __attribute__ ((used)) void* __ptr_setsid = &__load_and_call_setsid;
 
 static __attribute__ ((used)) void
-__load_setsid() {
-  if(sceKernelDlsym(__module_id, "setsid", &__ptr_setsid)) {
-    __builtin_trap();
-  }
+__load_setsid(void) {
+  sprx_dlsym(__handle, "setsid", &__ptr_setsid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39139,10 +36935,8 @@ void __load_and_call_setsockopt();
 static __attribute__ ((used)) void* __ptr_setsockopt = &__load_and_call_setsockopt;
 
 static __attribute__ ((used)) void
-__load_setsockopt() {
-  if(sceKernelDlsym(__module_id, "setsockopt", &__ptr_setsockopt)) {
-    __builtin_trap();
-  }
+__load_setsockopt(void) {
+  sprx_dlsym(__handle, "setsockopt", &__ptr_setsockopt);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39173,10 +36967,8 @@ void __load_and_call_settimeofday();
 static __attribute__ ((used)) void* __ptr_settimeofday = &__load_and_call_settimeofday;
 
 static __attribute__ ((used)) void
-__load_settimeofday() {
-  if(sceKernelDlsym(__module_id, "settimeofday", &__ptr_settimeofday)) {
-    __builtin_trap();
-  }
+__load_settimeofday(void) {
+  sprx_dlsym(__handle, "settimeofday", &__ptr_settimeofday);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39207,10 +36999,8 @@ void __load_and_call_setuid();
 static __attribute__ ((used)) void* __ptr_setuid = &__load_and_call_setuid;
 
 static __attribute__ ((used)) void
-__load_setuid() {
-  if(sceKernelDlsym(__module_id, "setuid", &__ptr_setuid)) {
-    __builtin_trap();
-  }
+__load_setuid(void) {
+  sprx_dlsym(__handle, "setuid", &__ptr_setuid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39241,10 +37031,8 @@ void __load_and_call_shm_open();
 static __attribute__ ((used)) void* __ptr_shm_open = &__load_and_call_shm_open;
 
 static __attribute__ ((used)) void
-__load_shm_open() {
-  if(sceKernelDlsym(__module_id, "shm_open", &__ptr_shm_open)) {
-    __builtin_trap();
-  }
+__load_shm_open(void) {
+  sprx_dlsym(__handle, "shm_open", &__ptr_shm_open);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39275,10 +37063,8 @@ void __load_and_call_shm_unlink();
 static __attribute__ ((used)) void* __ptr_shm_unlink = &__load_and_call_shm_unlink;
 
 static __attribute__ ((used)) void
-__load_shm_unlink() {
-  if(sceKernelDlsym(__module_id, "shm_unlink", &__ptr_shm_unlink)) {
-    __builtin_trap();
-  }
+__load_shm_unlink(void) {
+  sprx_dlsym(__handle, "shm_unlink", &__ptr_shm_unlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39309,10 +37095,8 @@ void __load_and_call_shutdown();
 static __attribute__ ((used)) void* __ptr_shutdown = &__load_and_call_shutdown;
 
 static __attribute__ ((used)) void
-__load_shutdown() {
-  if(sceKernelDlsym(__module_id, "shutdown", &__ptr_shutdown)) {
-    __builtin_trap();
-  }
+__load_shutdown(void) {
+  sprx_dlsym(__handle, "shutdown", &__ptr_shutdown);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39343,10 +37127,8 @@ void __load_and_call_sigaction();
 static __attribute__ ((used)) void* __ptr_sigaction = &__load_and_call_sigaction;
 
 static __attribute__ ((used)) void
-__load_sigaction() {
-  if(sceKernelDlsym(__module_id, "sigaction", &__ptr_sigaction)) {
-    __builtin_trap();
-  }
+__load_sigaction(void) {
+  sprx_dlsym(__handle, "sigaction", &__ptr_sigaction);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39377,10 +37159,8 @@ void __load_and_call_sigaddset();
 static __attribute__ ((used)) void* __ptr_sigaddset = &__load_and_call_sigaddset;
 
 static __attribute__ ((used)) void
-__load_sigaddset() {
-  if(sceKernelDlsym(__module_id, "sigaddset", &__ptr_sigaddset)) {
-    __builtin_trap();
-  }
+__load_sigaddset(void) {
+  sprx_dlsym(__handle, "sigaddset", &__ptr_sigaddset);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39411,10 +37191,8 @@ void __load_and_call_sigaltstack();
 static __attribute__ ((used)) void* __ptr_sigaltstack = &__load_and_call_sigaltstack;
 
 static __attribute__ ((used)) void
-__load_sigaltstack() {
-  if(sceKernelDlsym(__module_id, "sigaltstack", &__ptr_sigaltstack)) {
-    __builtin_trap();
-  }
+__load_sigaltstack(void) {
+  sprx_dlsym(__handle, "sigaltstack", &__ptr_sigaltstack);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39445,10 +37223,8 @@ void __load_and_call_sigdelset();
 static __attribute__ ((used)) void* __ptr_sigdelset = &__load_and_call_sigdelset;
 
 static __attribute__ ((used)) void
-__load_sigdelset() {
-  if(sceKernelDlsym(__module_id, "sigdelset", &__ptr_sigdelset)) {
-    __builtin_trap();
-  }
+__load_sigdelset(void) {
+  sprx_dlsym(__handle, "sigdelset", &__ptr_sigdelset);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39479,10 +37255,8 @@ void __load_and_call_sigemptyset();
 static __attribute__ ((used)) void* __ptr_sigemptyset = &__load_and_call_sigemptyset;
 
 static __attribute__ ((used)) void
-__load_sigemptyset() {
-  if(sceKernelDlsym(__module_id, "sigemptyset", &__ptr_sigemptyset)) {
-    __builtin_trap();
-  }
+__load_sigemptyset(void) {
+  sprx_dlsym(__handle, "sigemptyset", &__ptr_sigemptyset);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39513,10 +37287,8 @@ void __load_and_call_sigfillset();
 static __attribute__ ((used)) void* __ptr_sigfillset = &__load_and_call_sigfillset;
 
 static __attribute__ ((used)) void
-__load_sigfillset() {
-  if(sceKernelDlsym(__module_id, "sigfillset", &__ptr_sigfillset)) {
-    __builtin_trap();
-  }
+__load_sigfillset(void) {
+  sprx_dlsym(__handle, "sigfillset", &__ptr_sigfillset);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39547,10 +37319,8 @@ void __load_and_call_sigismember();
 static __attribute__ ((used)) void* __ptr_sigismember = &__load_and_call_sigismember;
 
 static __attribute__ ((used)) void
-__load_sigismember() {
-  if(sceKernelDlsym(__module_id, "sigismember", &__ptr_sigismember)) {
-    __builtin_trap();
-  }
+__load_sigismember(void) {
+  sprx_dlsym(__handle, "sigismember", &__ptr_sigismember);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39581,10 +37351,8 @@ void __load_and_call_siglongjmp();
 static __attribute__ ((used)) void* __ptr_siglongjmp = &__load_and_call_siglongjmp;
 
 static __attribute__ ((used)) void
-__load_siglongjmp() {
-  if(sceKernelDlsym(__module_id, "siglongjmp", &__ptr_siglongjmp)) {
-    __builtin_trap();
-  }
+__load_siglongjmp(void) {
+  sprx_dlsym(__handle, "siglongjmp", &__ptr_siglongjmp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39615,10 +37383,8 @@ void __load_and_call_signal();
 static __attribute__ ((used)) void* __ptr_signal = &__load_and_call_signal;
 
 static __attribute__ ((used)) void
-__load_signal() {
-  if(sceKernelDlsym(__module_id, "signal", &__ptr_signal)) {
-    __builtin_trap();
-  }
+__load_signal(void) {
+  sprx_dlsym(__handle, "signal", &__ptr_signal);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39649,10 +37415,8 @@ void __load_and_call_sigpending();
 static __attribute__ ((used)) void* __ptr_sigpending = &__load_and_call_sigpending;
 
 static __attribute__ ((used)) void
-__load_sigpending() {
-  if(sceKernelDlsym(__module_id, "sigpending", &__ptr_sigpending)) {
-    __builtin_trap();
-  }
+__load_sigpending(void) {
+  sprx_dlsym(__handle, "sigpending", &__ptr_sigpending);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39683,10 +37447,8 @@ void __load_and_call_sigprocmask();
 static __attribute__ ((used)) void* __ptr_sigprocmask = &__load_and_call_sigprocmask;
 
 static __attribute__ ((used)) void
-__load_sigprocmask() {
-  if(sceKernelDlsym(__module_id, "sigprocmask", &__ptr_sigprocmask)) {
-    __builtin_trap();
-  }
+__load_sigprocmask(void) {
+  sprx_dlsym(__handle, "sigprocmask", &__ptr_sigprocmask);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39717,10 +37479,8 @@ void __load_and_call_sigqueue();
 static __attribute__ ((used)) void* __ptr_sigqueue = &__load_and_call_sigqueue;
 
 static __attribute__ ((used)) void
-__load_sigqueue() {
-  if(sceKernelDlsym(__module_id, "sigqueue", &__ptr_sigqueue)) {
-    __builtin_trap();
-  }
+__load_sigqueue(void) {
+  sprx_dlsym(__handle, "sigqueue", &__ptr_sigqueue);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39751,10 +37511,8 @@ void __load_and_call_sigreturn();
 static __attribute__ ((used)) void* __ptr_sigreturn = &__load_and_call_sigreturn;
 
 static __attribute__ ((used)) void
-__load_sigreturn() {
-  if(sceKernelDlsym(__module_id, "sigreturn", &__ptr_sigreturn)) {
-    __builtin_trap();
-  }
+__load_sigreturn(void) {
+  sprx_dlsym(__handle, "sigreturn", &__ptr_sigreturn);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39785,10 +37543,8 @@ void __load_and_call_sigsetjmp();
 static __attribute__ ((used)) void* __ptr_sigsetjmp = &__load_and_call_sigsetjmp;
 
 static __attribute__ ((used)) void
-__load_sigsetjmp() {
-  if(sceKernelDlsym(__module_id, "sigsetjmp", &__ptr_sigsetjmp)) {
-    __builtin_trap();
-  }
+__load_sigsetjmp(void) {
+  sprx_dlsym(__handle, "sigsetjmp", &__ptr_sigsetjmp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39819,10 +37575,8 @@ void __load_and_call_sigsuspend();
 static __attribute__ ((used)) void* __ptr_sigsuspend = &__load_and_call_sigsuspend;
 
 static __attribute__ ((used)) void
-__load_sigsuspend() {
-  if(sceKernelDlsym(__module_id, "sigsuspend", &__ptr_sigsuspend)) {
-    __builtin_trap();
-  }
+__load_sigsuspend(void) {
+  sprx_dlsym(__handle, "sigsuspend", &__ptr_sigsuspend);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39853,10 +37607,8 @@ void __load_and_call_sigtimedwait();
 static __attribute__ ((used)) void* __ptr_sigtimedwait = &__load_and_call_sigtimedwait;
 
 static __attribute__ ((used)) void
-__load_sigtimedwait() {
-  if(sceKernelDlsym(__module_id, "sigtimedwait", &__ptr_sigtimedwait)) {
-    __builtin_trap();
-  }
+__load_sigtimedwait(void) {
+  sprx_dlsym(__handle, "sigtimedwait", &__ptr_sigtimedwait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39887,10 +37639,8 @@ void __load_and_call_sigwait();
 static __attribute__ ((used)) void* __ptr_sigwait = &__load_and_call_sigwait;
 
 static __attribute__ ((used)) void
-__load_sigwait() {
-  if(sceKernelDlsym(__module_id, "sigwait", &__ptr_sigwait)) {
-    __builtin_trap();
-  }
+__load_sigwait(void) {
+  sprx_dlsym(__handle, "sigwait", &__ptr_sigwait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39921,10 +37671,8 @@ void __load_and_call_sigwaitinfo();
 static __attribute__ ((used)) void* __ptr_sigwaitinfo = &__load_and_call_sigwaitinfo;
 
 static __attribute__ ((used)) void
-__load_sigwaitinfo() {
-  if(sceKernelDlsym(__module_id, "sigwaitinfo", &__ptr_sigwaitinfo)) {
-    __builtin_trap();
-  }
+__load_sigwaitinfo(void) {
+  sprx_dlsym(__handle, "sigwaitinfo", &__ptr_sigwaitinfo);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39955,10 +37703,8 @@ void __load_and_call_sleep();
 static __attribute__ ((used)) void* __ptr_sleep = &__load_and_call_sleep;
 
 static __attribute__ ((used)) void
-__load_sleep() {
-  if(sceKernelDlsym(__module_id, "sleep", &__ptr_sleep)) {
-    __builtin_trap();
-  }
+__load_sleep(void) {
+  sprx_dlsym(__handle, "sleep", &__ptr_sleep);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -39989,10 +37735,8 @@ void __load_and_call_socket();
 static __attribute__ ((used)) void* __ptr_socket = &__load_and_call_socket;
 
 static __attribute__ ((used)) void
-__load_socket() {
-  if(sceKernelDlsym(__module_id, "socket", &__ptr_socket)) {
-    __builtin_trap();
-  }
+__load_socket(void) {
+  sprx_dlsym(__handle, "socket", &__ptr_socket);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40023,10 +37767,8 @@ void __load_and_call_socketpair();
 static __attribute__ ((used)) void* __ptr_socketpair = &__load_and_call_socketpair;
 
 static __attribute__ ((used)) void
-__load_socketpair() {
-  if(sceKernelDlsym(__module_id, "socketpair", &__ptr_socketpair)) {
-    __builtin_trap();
-  }
+__load_socketpair(void) {
+  sprx_dlsym(__handle, "socketpair", &__ptr_socketpair);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40057,10 +37799,8 @@ void __load_and_call_stat();
 static __attribute__ ((used)) void* __ptr_stat = &__load_and_call_stat;
 
 static __attribute__ ((used)) void
-__load_stat() {
-  if(sceKernelDlsym(__module_id, "stat", &__ptr_stat)) {
-    __builtin_trap();
-  }
+__load_stat(void) {
+  sprx_dlsym(__handle, "stat", &__ptr_stat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40091,10 +37831,8 @@ void __load_and_call_statfs();
 static __attribute__ ((used)) void* __ptr_statfs = &__load_and_call_statfs;
 
 static __attribute__ ((used)) void
-__load_statfs() {
-  if(sceKernelDlsym(__module_id, "statfs", &__ptr_statfs)) {
-    __builtin_trap();
-  }
+__load_statfs(void) {
+  sprx_dlsym(__handle, "statfs", &__ptr_statfs);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40125,10 +37863,8 @@ void __load_and_call_swapcontext();
 static __attribute__ ((used)) void* __ptr_swapcontext = &__load_and_call_swapcontext;
 
 static __attribute__ ((used)) void
-__load_swapcontext() {
-  if(sceKernelDlsym(__module_id, "swapcontext", &__ptr_swapcontext)) {
-    __builtin_trap();
-  }
+__load_swapcontext(void) {
+  sprx_dlsym(__handle, "swapcontext", &__ptr_swapcontext);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40159,10 +37895,8 @@ void __load_and_call_swapon();
 static __attribute__ ((used)) void* __ptr_swapon = &__load_and_call_swapon;
 
 static __attribute__ ((used)) void
-__load_swapon() {
-  if(sceKernelDlsym(__module_id, "swapon", &__ptr_swapon)) {
-    __builtin_trap();
-  }
+__load_swapon(void) {
+  sprx_dlsym(__handle, "swapon", &__ptr_swapon);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40193,10 +37927,8 @@ void __load_and_call_symlink();
 static __attribute__ ((used)) void* __ptr_symlink = &__load_and_call_symlink;
 
 static __attribute__ ((used)) void
-__load_symlink() {
-  if(sceKernelDlsym(__module_id, "symlink", &__ptr_symlink)) {
-    __builtin_trap();
-  }
+__load_symlink(void) {
+  sprx_dlsym(__handle, "symlink", &__ptr_symlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40227,10 +37959,8 @@ void __load_and_call_symlinkat();
 static __attribute__ ((used)) void* __ptr_symlinkat = &__load_and_call_symlinkat;
 
 static __attribute__ ((used)) void
-__load_symlinkat() {
-  if(sceKernelDlsym(__module_id, "symlinkat", &__ptr_symlinkat)) {
-    __builtin_trap();
-  }
+__load_symlinkat(void) {
+  sprx_dlsym(__handle, "symlinkat", &__ptr_symlinkat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40261,10 +37991,8 @@ void __load_and_call_sync();
 static __attribute__ ((used)) void* __ptr_sync = &__load_and_call_sync;
 
 static __attribute__ ((used)) void
-__load_sync() {
-  if(sceKernelDlsym(__module_id, "sync", &__ptr_sync)) {
-    __builtin_trap();
-  }
+__load_sync(void) {
+  sprx_dlsym(__handle, "sync", &__ptr_sync);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40295,10 +38023,8 @@ void __load_and_call_sysKernelGetIntdevModeForInternalLibc();
 static __attribute__ ((used)) void* __ptr_sysKernelGetIntdevModeForInternalLibc = &__load_and_call_sysKernelGetIntdevModeForInternalLibc;
 
 static __attribute__ ((used)) void
-__load_sysKernelGetIntdevModeForInternalLibc() {
-  if(sceKernelDlsym(__module_id, "sysKernelGetIntdevModeForInternalLibc", &__ptr_sysKernelGetIntdevModeForInternalLibc)) {
-    __builtin_trap();
-  }
+__load_sysKernelGetIntdevModeForInternalLibc(void) {
+  sprx_dlsym(__handle, "sysKernelGetIntdevModeForInternalLibc", &__ptr_sysKernelGetIntdevModeForInternalLibc);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40329,10 +38055,8 @@ void __load_and_call_sysKernelGetIntdevModeForRcmgr();
 static __attribute__ ((used)) void* __ptr_sysKernelGetIntdevModeForRcmgr = &__load_and_call_sysKernelGetIntdevModeForRcmgr;
 
 static __attribute__ ((used)) void
-__load_sysKernelGetIntdevModeForRcmgr() {
-  if(sceKernelDlsym(__module_id, "sysKernelGetIntdevModeForRcmgr", &__ptr_sysKernelGetIntdevModeForRcmgr)) {
-    __builtin_trap();
-  }
+__load_sysKernelGetIntdevModeForRcmgr(void) {
+  sprx_dlsym(__handle, "sysKernelGetIntdevModeForRcmgr", &__ptr_sysKernelGetIntdevModeForRcmgr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40363,10 +38087,8 @@ void __load_and_call_sysKernelGetLowerLimitSysexVersion();
 static __attribute__ ((used)) void* __ptr_sysKernelGetLowerLimitSysexVersion = &__load_and_call_sysKernelGetLowerLimitSysexVersion;
 
 static __attribute__ ((used)) void
-__load_sysKernelGetLowerLimitSysexVersion() {
-  if(sceKernelDlsym(__module_id, "sysKernelGetLowerLimitSysexVersion", &__ptr_sysKernelGetLowerLimitSysexVersion)) {
-    __builtin_trap();
-  }
+__load_sysKernelGetLowerLimitSysexVersion(void) {
+  sprx_dlsym(__handle, "sysKernelGetLowerLimitSysexVersion", &__ptr_sysKernelGetLowerLimitSysexVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40397,10 +38119,8 @@ void __load_and_call_sysKernelGetLowerLimitUpdVersion();
 static __attribute__ ((used)) void* __ptr_sysKernelGetLowerLimitUpdVersion = &__load_and_call_sysKernelGetLowerLimitUpdVersion;
 
 static __attribute__ ((used)) void
-__load_sysKernelGetLowerLimitUpdVersion() {
-  if(sceKernelDlsym(__module_id, "sysKernelGetLowerLimitUpdVersion", &__ptr_sysKernelGetLowerLimitUpdVersion)) {
-    __builtin_trap();
-  }
+__load_sysKernelGetLowerLimitUpdVersion(void) {
+  sprx_dlsym(__handle, "sysKernelGetLowerLimitUpdVersion", &__ptr_sysKernelGetLowerLimitUpdVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40431,10 +38151,8 @@ void __load_and_call_sysKernelGetManufacturingMode();
 static __attribute__ ((used)) void* __ptr_sysKernelGetManufacturingMode = &__load_and_call_sysKernelGetManufacturingMode;
 
 static __attribute__ ((used)) void
-__load_sysKernelGetManufacturingMode() {
-  if(sceKernelDlsym(__module_id, "sysKernelGetManufacturingMode", &__ptr_sysKernelGetManufacturingMode)) {
-    __builtin_trap();
-  }
+__load_sysKernelGetManufacturingMode(void) {
+  sprx_dlsym(__handle, "sysKernelGetManufacturingMode", &__ptr_sysKernelGetManufacturingMode);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40465,10 +38183,8 @@ void __load_and_call_sysKernelGetUpdVersion();
 static __attribute__ ((used)) void* __ptr_sysKernelGetUpdVersion = &__load_and_call_sysKernelGetUpdVersion;
 
 static __attribute__ ((used)) void
-__load_sysKernelGetUpdVersion() {
-  if(sceKernelDlsym(__module_id, "sysKernelGetUpdVersion", &__ptr_sysKernelGetUpdVersion)) {
-    __builtin_trap();
-  }
+__load_sysKernelGetUpdVersion(void) {
+  sprx_dlsym(__handle, "sysKernelGetUpdVersion", &__ptr_sysKernelGetUpdVersion);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40499,10 +38215,8 @@ void __load_and_call_sysarch();
 static __attribute__ ((used)) void* __ptr_sysarch = &__load_and_call_sysarch;
 
 static __attribute__ ((used)) void
-__load_sysarch() {
-  if(sceKernelDlsym(__module_id, "sysarch", &__ptr_sysarch)) {
-    __builtin_trap();
-  }
+__load_sysarch(void) {
+  sprx_dlsym(__handle, "sysarch", &__ptr_sysarch);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40533,10 +38247,8 @@ void __load_and_call_sysconf();
 static __attribute__ ((used)) void* __ptr_sysconf = &__load_and_call_sysconf;
 
 static __attribute__ ((used)) void
-__load_sysconf() {
-  if(sceKernelDlsym(__module_id, "sysconf", &__ptr_sysconf)) {
-    __builtin_trap();
-  }
+__load_sysconf(void) {
+  sprx_dlsym(__handle, "sysconf", &__ptr_sysconf);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40567,10 +38279,8 @@ void __load_and_call_sysctl();
 static __attribute__ ((used)) void* __ptr_sysctl = &__load_and_call_sysctl;
 
 static __attribute__ ((used)) void
-__load_sysctl() {
-  if(sceKernelDlsym(__module_id, "sysctl", &__ptr_sysctl)) {
-    __builtin_trap();
-  }
+__load_sysctl(void) {
+  sprx_dlsym(__handle, "sysctl", &__ptr_sysctl);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40601,10 +38311,8 @@ void __load_and_call_sysctlbyname();
 static __attribute__ ((used)) void* __ptr_sysctlbyname = &__load_and_call_sysctlbyname;
 
 static __attribute__ ((used)) void
-__load_sysctlbyname() {
-  if(sceKernelDlsym(__module_id, "sysctlbyname", &__ptr_sysctlbyname)) {
-    __builtin_trap();
-  }
+__load_sysctlbyname(void) {
+  sprx_dlsym(__handle, "sysctlbyname", &__ptr_sysctlbyname);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40635,10 +38343,8 @@ void __load_and_call_sysctlnametomib();
 static __attribute__ ((used)) void* __ptr_sysctlnametomib = &__load_and_call_sysctlnametomib;
 
 static __attribute__ ((used)) void
-__load_sysctlnametomib() {
-  if(sceKernelDlsym(__module_id, "sysctlnametomib", &__ptr_sysctlnametomib)) {
-    __builtin_trap();
-  }
+__load_sysctlnametomib(void) {
+  sprx_dlsym(__handle, "sysctlnametomib", &__ptr_sysctlnametomib);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40669,10 +38375,8 @@ void __load_and_call_system();
 static __attribute__ ((used)) void* __ptr_system = &__load_and_call_system;
 
 static __attribute__ ((used)) void
-__load_system() {
-  if(sceKernelDlsym(__module_id, "system", &__ptr_system)) {
-    __builtin_trap();
-  }
+__load_system(void) {
+  sprx_dlsym(__handle, "system", &__ptr_system);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40703,10 +38407,8 @@ void __load_and_call_tcdrain();
 static __attribute__ ((used)) void* __ptr_tcdrain = &__load_and_call_tcdrain;
 
 static __attribute__ ((used)) void
-__load_tcdrain() {
-  if(sceKernelDlsym(__module_id, "tcdrain", &__ptr_tcdrain)) {
-    __builtin_trap();
-  }
+__load_tcdrain(void) {
+  sprx_dlsym(__handle, "tcdrain", &__ptr_tcdrain);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40737,10 +38439,8 @@ void __load_and_call_tcflow();
 static __attribute__ ((used)) void* __ptr_tcflow = &__load_and_call_tcflow;
 
 static __attribute__ ((used)) void
-__load_tcflow() {
-  if(sceKernelDlsym(__module_id, "tcflow", &__ptr_tcflow)) {
-    __builtin_trap();
-  }
+__load_tcflow(void) {
+  sprx_dlsym(__handle, "tcflow", &__ptr_tcflow);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40771,10 +38471,8 @@ void __load_and_call_tcflush();
 static __attribute__ ((used)) void* __ptr_tcflush = &__load_and_call_tcflush;
 
 static __attribute__ ((used)) void
-__load_tcflush() {
-  if(sceKernelDlsym(__module_id, "tcflush", &__ptr_tcflush)) {
-    __builtin_trap();
-  }
+__load_tcflush(void) {
+  sprx_dlsym(__handle, "tcflush", &__ptr_tcflush);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40805,10 +38503,8 @@ void __load_and_call_tcgetattr();
 static __attribute__ ((used)) void* __ptr_tcgetattr = &__load_and_call_tcgetattr;
 
 static __attribute__ ((used)) void
-__load_tcgetattr() {
-  if(sceKernelDlsym(__module_id, "tcgetattr", &__ptr_tcgetattr)) {
-    __builtin_trap();
-  }
+__load_tcgetattr(void) {
+  sprx_dlsym(__handle, "tcgetattr", &__ptr_tcgetattr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40839,10 +38535,8 @@ void __load_and_call_tcgetpgrp();
 static __attribute__ ((used)) void* __ptr_tcgetpgrp = &__load_and_call_tcgetpgrp;
 
 static __attribute__ ((used)) void
-__load_tcgetpgrp() {
-  if(sceKernelDlsym(__module_id, "tcgetpgrp", &__ptr_tcgetpgrp)) {
-    __builtin_trap();
-  }
+__load_tcgetpgrp(void) {
+  sprx_dlsym(__handle, "tcgetpgrp", &__ptr_tcgetpgrp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40873,10 +38567,8 @@ void __load_and_call_tcgetsid();
 static __attribute__ ((used)) void* __ptr_tcgetsid = &__load_and_call_tcgetsid;
 
 static __attribute__ ((used)) void
-__load_tcgetsid() {
-  if(sceKernelDlsym(__module_id, "tcgetsid", &__ptr_tcgetsid)) {
-    __builtin_trap();
-  }
+__load_tcgetsid(void) {
+  sprx_dlsym(__handle, "tcgetsid", &__ptr_tcgetsid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40907,10 +38599,8 @@ void __load_and_call_tcsendbreak();
 static __attribute__ ((used)) void* __ptr_tcsendbreak = &__load_and_call_tcsendbreak;
 
 static __attribute__ ((used)) void
-__load_tcsendbreak() {
-  if(sceKernelDlsym(__module_id, "tcsendbreak", &__ptr_tcsendbreak)) {
-    __builtin_trap();
-  }
+__load_tcsendbreak(void) {
+  sprx_dlsym(__handle, "tcsendbreak", &__ptr_tcsendbreak);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40941,10 +38631,8 @@ void __load_and_call_tcsetattr();
 static __attribute__ ((used)) void* __ptr_tcsetattr = &__load_and_call_tcsetattr;
 
 static __attribute__ ((used)) void
-__load_tcsetattr() {
-  if(sceKernelDlsym(__module_id, "tcsetattr", &__ptr_tcsetattr)) {
-    __builtin_trap();
-  }
+__load_tcsetattr(void) {
+  sprx_dlsym(__handle, "tcsetattr", &__ptr_tcsetattr);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -40975,10 +38663,8 @@ void __load_and_call_tcsetpgrp();
 static __attribute__ ((used)) void* __ptr_tcsetpgrp = &__load_and_call_tcsetpgrp;
 
 static __attribute__ ((used)) void
-__load_tcsetpgrp() {
-  if(sceKernelDlsym(__module_id, "tcsetpgrp", &__ptr_tcsetpgrp)) {
-    __builtin_trap();
-  }
+__load_tcsetpgrp(void) {
+  sprx_dlsym(__handle, "tcsetpgrp", &__ptr_tcsetpgrp);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41009,10 +38695,8 @@ void __load_and_call_tcsetsid();
 static __attribute__ ((used)) void* __ptr_tcsetsid = &__load_and_call_tcsetsid;
 
 static __attribute__ ((used)) void
-__load_tcsetsid() {
-  if(sceKernelDlsym(__module_id, "tcsetsid", &__ptr_tcsetsid)) {
-    __builtin_trap();
-  }
+__load_tcsetsid(void) {
+  sprx_dlsym(__handle, "tcsetsid", &__ptr_tcsetsid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41043,10 +38727,8 @@ void __load_and_call_truncate();
 static __attribute__ ((used)) void* __ptr_truncate = &__load_and_call_truncate;
 
 static __attribute__ ((used)) void
-__load_truncate() {
-  if(sceKernelDlsym(__module_id, "truncate", &__ptr_truncate)) {
-    __builtin_trap();
-  }
+__load_truncate(void) {
+  sprx_dlsym(__handle, "truncate", &__ptr_truncate);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41077,10 +38759,8 @@ void __load_and_call_umask();
 static __attribute__ ((used)) void* __ptr_umask = &__load_and_call_umask;
 
 static __attribute__ ((used)) void
-__load_umask() {
-  if(sceKernelDlsym(__module_id, "umask", &__ptr_umask)) {
-    __builtin_trap();
-  }
+__load_umask(void) {
+  sprx_dlsym(__handle, "umask", &__ptr_umask);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41111,10 +38791,8 @@ void __load_and_call_unlink();
 static __attribute__ ((used)) void* __ptr_unlink = &__load_and_call_unlink;
 
 static __attribute__ ((used)) void
-__load_unlink() {
-  if(sceKernelDlsym(__module_id, "unlink", &__ptr_unlink)) {
-    __builtin_trap();
-  }
+__load_unlink(void) {
+  sprx_dlsym(__handle, "unlink", &__ptr_unlink);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41145,10 +38823,8 @@ void __load_and_call_unlinkat();
 static __attribute__ ((used)) void* __ptr_unlinkat = &__load_and_call_unlinkat;
 
 static __attribute__ ((used)) void
-__load_unlinkat() {
-  if(sceKernelDlsym(__module_id, "unlinkat", &__ptr_unlinkat)) {
-    __builtin_trap();
-  }
+__load_unlinkat(void) {
+  sprx_dlsym(__handle, "unlinkat", &__ptr_unlinkat);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41179,10 +38855,8 @@ void __load_and_call_unmount();
 static __attribute__ ((used)) void* __ptr_unmount = &__load_and_call_unmount;
 
 static __attribute__ ((used)) void
-__load_unmount() {
-  if(sceKernelDlsym(__module_id, "unmount", &__ptr_unmount)) {
-    __builtin_trap();
-  }
+__load_unmount(void) {
+  sprx_dlsym(__handle, "unmount", &__ptr_unmount);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41213,10 +38887,8 @@ void __load_and_call_usleep();
 static __attribute__ ((used)) void* __ptr_usleep = &__load_and_call_usleep;
 
 static __attribute__ ((used)) void
-__load_usleep() {
-  if(sceKernelDlsym(__module_id, "usleep", &__ptr_usleep)) {
-    __builtin_trap();
-  }
+__load_usleep(void) {
+  sprx_dlsym(__handle, "usleep", &__ptr_usleep);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41247,10 +38919,8 @@ void __load_and_call_utimes();
 static __attribute__ ((used)) void* __ptr_utimes = &__load_and_call_utimes;
 
 static __attribute__ ((used)) void
-__load_utimes() {
-  if(sceKernelDlsym(__module_id, "utimes", &__ptr_utimes)) {
-    __builtin_trap();
-  }
+__load_utimes(void) {
+  sprx_dlsym(__handle, "utimes", &__ptr_utimes);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41281,10 +38951,8 @@ void __load_and_call_utrace();
 static __attribute__ ((used)) void* __ptr_utrace = &__load_and_call_utrace;
 
 static __attribute__ ((used)) void
-__load_utrace() {
-  if(sceKernelDlsym(__module_id, "utrace", &__ptr_utrace)) {
-    __builtin_trap();
-  }
+__load_utrace(void) {
+  sprx_dlsym(__handle, "utrace", &__ptr_utrace);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41315,10 +38983,8 @@ void __load_and_call_uuidgen();
 static __attribute__ ((used)) void* __ptr_uuidgen = &__load_and_call_uuidgen;
 
 static __attribute__ ((used)) void
-__load_uuidgen() {
-  if(sceKernelDlsym(__module_id, "uuidgen", &__ptr_uuidgen)) {
-    __builtin_trap();
-  }
+__load_uuidgen(void) {
+  sprx_dlsym(__handle, "uuidgen", &__ptr_uuidgen);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41349,10 +39015,8 @@ void __load_and_call_vfork();
 static __attribute__ ((used)) void* __ptr_vfork = &__load_and_call_vfork;
 
 static __attribute__ ((used)) void
-__load_vfork() {
-  if(sceKernelDlsym(__module_id, "vfork", &__ptr_vfork)) {
-    __builtin_trap();
-  }
+__load_vfork(void) {
+  sprx_dlsym(__handle, "vfork", &__ptr_vfork);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41383,10 +39047,8 @@ void __load_and_call_wait();
 static __attribute__ ((used)) void* __ptr_wait = &__load_and_call_wait;
 
 static __attribute__ ((used)) void
-__load_wait() {
-  if(sceKernelDlsym(__module_id, "wait", &__ptr_wait)) {
-    __builtin_trap();
-  }
+__load_wait(void) {
+  sprx_dlsym(__handle, "wait", &__ptr_wait);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41417,10 +39079,8 @@ void __load_and_call_wait3();
 static __attribute__ ((used)) void* __ptr_wait3 = &__load_and_call_wait3;
 
 static __attribute__ ((used)) void
-__load_wait3() {
-  if(sceKernelDlsym(__module_id, "wait3", &__ptr_wait3)) {
-    __builtin_trap();
-  }
+__load_wait3(void) {
+  sprx_dlsym(__handle, "wait3", &__ptr_wait3);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41451,10 +39111,8 @@ void __load_and_call_wait4();
 static __attribute__ ((used)) void* __ptr_wait4 = &__load_and_call_wait4;
 
 static __attribute__ ((used)) void
-__load_wait4() {
-  if(sceKernelDlsym(__module_id, "wait4", &__ptr_wait4)) {
-    __builtin_trap();
-  }
+__load_wait4(void) {
+  sprx_dlsym(__handle, "wait4", &__ptr_wait4);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41485,10 +39143,8 @@ void __load_and_call_waitpid();
 static __attribute__ ((used)) void* __ptr_waitpid = &__load_and_call_waitpid;
 
 static __attribute__ ((used)) void
-__load_waitpid() {
-  if(sceKernelDlsym(__module_id, "waitpid", &__ptr_waitpid)) {
-    __builtin_trap();
-  }
+__load_waitpid(void) {
+  sprx_dlsym(__handle, "waitpid", &__ptr_waitpid);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41519,10 +39175,8 @@ void __load_and_call_write();
 static __attribute__ ((used)) void* __ptr_write = &__load_and_call_write;
 
 static __attribute__ ((used)) void
-__load_write() {
-  if(sceKernelDlsym(__module_id, "write", &__ptr_write)) {
-    __builtin_trap();
-  }
+__load_write(void) {
+  sprx_dlsym(__handle, "write", &__ptr_write);
 }
 
 asm(".intel_syntax noprefix\n"
@@ -41553,8 +39207,6 @@ void __load_and_call_writev();
 static __attribute__ ((used)) void* __ptr_writev = &__load_and_call_writev;
 
 static __attribute__ ((used)) void
-__load_writev() {
-  if(sceKernelDlsym(__module_id, "writev", &__ptr_writev)) {
-    __builtin_trap();
-  }
+__load_writev(void) {
+  sprx_dlsym(__handle, "writev", &__ptr_writev);
 }
