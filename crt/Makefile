@@ -14,9 +14,10 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-CC      := clang
-LD      := ld.lld
-CFLAGS  := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -fPIC -masm=intel
+CC      ?= cc
+LD      ?= ld
+CFLAGS  := -ffreestanding -fno-builtin -nostdlib
+CFLAGS  += -mcmodel=large -fPIC -fno-plt -masm=intel
 DESTDIR ?= /opt/ps5-payload-sdk
 
 all: crt1.o

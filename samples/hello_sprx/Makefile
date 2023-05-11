@@ -7,10 +7,10 @@ PS5_PORT ?= 9020
 
 ELF := hello_sprx.elf
 
-CC := clang
-LD := ld.lld
+CC ?= cc
+LD ?= ld
 
-CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -fPIC -mcmodel=large
+CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -fPIC -fno-plt -mcmodel=large
 LDADD  := -lSceLibcInternal -lkernel_web -lSceRandom
 
 all: $(ELF)

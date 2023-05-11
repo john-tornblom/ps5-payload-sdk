@@ -16,7 +16,8 @@
 
 PYTHON ?= python3
 CC     := clang
-CFLAGS := -ffreestanding -fno-builtin -nostdlib -mcmodel=large -fPIC -masm=intel
+CFLAGS := -ffreestanding -fno-builtin -nostdlib
+CFLAGS += -mcmodel=large -fPIC -fno-plt -masm=intel
 
 SPRXS := $(wildcard *.sprx)
 STUBS := $(SPRXS:.sprx=.c)
@@ -24,7 +25,7 @@ STUBS := $(SPRXS:.sprx=.c)
 SOURCES   := $(wildcard *.c)
 ARCHIVES  := $(SOURCES:.c=.a)
 
-NID_DB_URL  := https://raw.githubusercontent.com/astrelsky/GhidraOrbis/master/data/nid_db.xml
+NID_DB_URL := https://raw.githubusercontent.com/astrelsky/GhidraOrbis/master/data/nid_db.xml
 
 DESTDIR ?= /opt/ps5-payload-sdk
 

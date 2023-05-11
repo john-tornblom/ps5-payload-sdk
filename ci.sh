@@ -18,6 +18,8 @@ SAMPLES=("hello_sprx"
 
 export PS5_PAYLOAD_SDK=$DESTDIR
 for SAMPLE in "${SAMPLES[@]}"; do
-    make -C samples/$SAMPLE clean all || exit 1
+    make CC=gcc   LD=ld     -C samples/$SAMPLE clean all || exit 1
+    make CC=gcc   LD=ld.lld -C samples/$SAMPLE clean all || exit 1
+    make CC=clang LD=ld     -C samples/$SAMPLE clean all || exit 1
+    make CC=clang LD=ld.lld -C samples/$SAMPLE clean all || exit 1
 done
-
