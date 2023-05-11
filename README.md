@@ -1,7 +1,7 @@
 # PS5 Payload SDK
-This is an SDK for developing ELF payloads targeted at exploited PS5s, running
-the [BD-J ELF loader][bjd-elf] or the [Webkit ELF loader][webkit-elf]. Several
-artifacts in this repository originate from the [PS5SDK][PS5SDK] project.
+This is an SDK for developing ELF payloads targeted at exploited PS5s running
+the [BD-J ELF loader][bjd-elf]. Several artifacts in this repository originate
+from the [PS5SDK][PS5SDK] project.
 
 ## Prerequisites
 On Debian-flavored operating systems, you can invoke the following command to
