@@ -36,12 +36,16 @@ jobs:
 
     - name: Build
       run: |
+        make -C samples/hello_sprx
+        make -C samples/hello_stdio
         make -C samples/hello_world
+        make -C samples/hwinfo
         make -C samples/klog
         make -C samples/list_files
+        make -C samples/mntinfo
         make -C samples/pipe_pirate
         make -C samples/ps
-        make -C samples/hwinfo
+        make -C samples/remount
 
     - name: Upload SDK
       uses: actions/upload-artifact@v3
