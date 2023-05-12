@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #   Copyright (C) 2023 John Törnblom
 #
 # This file is free software; you can redistribute it and/or modify it
@@ -14,21 +15,12 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-MAKE ?= make
-SUBDIRS := crt sce_stubs
-TOPTARGETS := all clean install
+PS5_PAYLOAD_SDK="${BASH_SOURCE[0]}"
+PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
+PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
-$(TOPTARGETS): $(SUBDIRS)
-$(SUBDIRS):
-	$(MAKE) -C $@ $(MAKECMDGOALS)
-
-.PHONY: $(TOPTARGETS) $(SUBDIRS)
-
-install: elf_x86_64.x
-	install -d $(DESTDIR)/ldscripts
-	install -d $(DESTDIR)/host
-	install elf_x86_64.x $(DESTDIR)/ldscripts
-	cp -r include_bsd/. $(DESTDIR)/usr/include
-	cp -r include_ps5/. $(DESTDIR)/usr/include/ps5
-	cp -r samples/. $(DESTDIR)/samples
-	cp -r host/. $(DESTDIR)/host
+ld -static \
+   -T "${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x" \
+   -L "${PS5_PAYLOAD_SDK}/usr/lib" \
+      $* \
+      "${PS5_PAYLOAD_SDK}/usr/lib/crt1.o"

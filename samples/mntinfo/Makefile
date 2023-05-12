@@ -7,10 +7,10 @@ PS5_PORT ?= 9020
 
 ELF := mntinfo.elf
 
-CC ?= cc
-LD ?= ld
+CC := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-cc
+LD := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-ld
 
-CFLAGS := --sysroot $(PS5_PAYLOAD_SDK) -fPIC -fno-plt -mcmodel=large
+CFLAGS := -g -O2
 LDADD  := -lkernel_sys -lSceLibcInternal
 
 all: $(ELF)
@@ -19,11 +19,7 @@ all: $(ELF)
 	$(CC) -c $(CFLAGS) -o $@ $^
 
 $(ELF): main.o
-	$(LD) -static -o $@ \
-	      -T $(PS5_PAYLOAD_SDK)/ldscripts/elf_x86_64.x \
-	      -L$(PS5_PAYLOAD_SDK)/usr/lib \
-	      $^ $(PS5_PAYLOAD_SDK)/usr/lib/crt1.o \
-	      $(LDADD)
+	$(LD) $^ $(LDADD) -o $@
 
 clean:
 	rm -f *.o $(ELF)
