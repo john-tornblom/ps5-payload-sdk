@@ -28,6 +28,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceRandomGetRandomNumber]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceRandomGetRandomNumber\n"
     ".type __load_and_call_sceRandomGetRandomNumber @function\n"
     "__load_and_call_sceRandomGetRandomNumber:\n"
     "push rdi\n"

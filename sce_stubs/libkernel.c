@@ -18,6 +18,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___Ux86_64_setcontext]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___Ux86_64_setcontext\n"
     ".type __load_and_call___Ux86_64_setcontext @function\n"
     "__load_and_call___Ux86_64_setcontext:\n"
     "push rdi\n"
@@ -50,6 +51,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___elf_phdr_match_addr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___elf_phdr_match_addr\n"
     ".type __load_and_call___elf_phdr_match_addr @function\n"
     "__load_and_call___elf_phdr_match_addr:\n"
     "push rdi\n"
@@ -82,6 +84,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___error]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___error\n"
     ".type __load_and_call___error @function\n"
     "__load_and_call___error:\n"
     "push rdi\n"
@@ -114,6 +117,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___freeze]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___freeze\n"
     ".type __load_and_call___freeze @function\n"
     "__load_and_call___freeze:\n"
     "push rdi\n"
@@ -146,6 +150,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___inet_ntop]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___inet_ntop\n"
     ".type __load_and_call___inet_ntop @function\n"
     "__load_and_call___inet_ntop:\n"
     "push rdi\n"
@@ -178,6 +183,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___inet_pton]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___inet_pton\n"
     ".type __load_and_call___inet_pton @function\n"
     "__load_and_call___inet_pton:\n"
     "push rdi\n"
@@ -210,6 +216,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___pthread_cleanup_pop_imp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___pthread_cleanup_pop_imp\n"
     ".type __load_and_call___pthread_cleanup_pop_imp @function\n"
     "__load_and_call___pthread_cleanup_pop_imp:\n"
     "push rdi\n"
@@ -242,6 +249,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___pthread_cleanup_push_imp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___pthread_cleanup_push_imp\n"
     ".type __load_and_call___pthread_cleanup_push_imp @function\n"
     "__load_and_call___pthread_cleanup_push_imp:\n"
     "push rdi\n"
@@ -274,6 +282,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___pthread_cxa_finalize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___pthread_cxa_finalize\n"
     ".type __load_and_call___pthread_cxa_finalize @function\n"
     "__load_and_call___pthread_cxa_finalize:\n"
     "push rdi\n"
@@ -306,6 +315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sceKernelGetGPI]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sceKernelGetGPI\n"
     ".type __load_and_call___sceKernelGetGPI @function\n"
     "__load_and_call___sceKernelGetGPI:\n"
     "push rdi\n"
@@ -338,6 +348,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___stack_chk_fail]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___stack_chk_fail\n"
     ".type __load_and_call___stack_chk_fail @function\n"
     "__load_and_call___stack_chk_fail:\n"
     "push rdi\n"
@@ -370,6 +381,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_debug_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_debug_init\n"
     ".type __load_and_call___sys_debug_init @function\n"
     "__load_and_call___sys_debug_init:\n"
     "push rdi\n"
@@ -402,6 +414,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dl_get_info]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dl_get_info\n"
     ".type __load_and_call___sys_dl_get_info @function\n"
     "__load_and_call___sys_dl_get_info:\n"
     "push rdi\n"
@@ -434,6 +447,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dl_get_info_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dl_get_info_2\n"
     ".type __load_and_call___sys_dl_get_info_2 @function\n"
     "__load_and_call___sys_dl_get_info_2:\n"
     "push rdi\n"
@@ -466,6 +480,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dl_get_list]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dl_get_list\n"
     ".type __load_and_call___sys_dl_get_list @function\n"
     "__load_and_call___sys_dl_get_list:\n"
     "push rdi\n"
@@ -498,6 +513,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dl_get_metadata]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dl_get_metadata\n"
     ".type __load_and_call___sys_dl_get_metadata @function\n"
     "__load_and_call___sys_dl_get_metadata:\n"
     "push rdi\n"
@@ -530,6 +546,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_get_info2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dynlib_get_info2\n"
     ".type __load_and_call___sys_dynlib_get_info2 @function\n"
     "__load_and_call___sys_dynlib_get_info2:\n"
     "push rdi\n"
@@ -562,6 +579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_get_info_for_libdbg]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dynlib_get_info_for_libdbg\n"
     ".type __load_and_call___sys_dynlib_get_info_for_libdbg @function\n"
     "__load_and_call___sys_dynlib_get_info_for_libdbg:\n"
     "push rdi\n"
@@ -594,6 +612,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_get_list2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dynlib_get_list2\n"
     ".type __load_and_call___sys_dynlib_get_list2 @function\n"
     "__load_and_call___sys_dynlib_get_list2:\n"
     "push rdi\n"
@@ -626,6 +645,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_get_list_for_libdbg]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dynlib_get_list_for_libdbg\n"
     ".type __load_and_call___sys_dynlib_get_list_for_libdbg @function\n"
     "__load_and_call___sys_dynlib_get_list_for_libdbg:\n"
     "push rdi\n"
@@ -658,6 +678,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_dynlib_load_prx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_dynlib_load_prx\n"
     ".type __load_and_call___sys_dynlib_load_prx @function\n"
     "__load_and_call___sys_dynlib_load_prx:\n"
     "push rdi\n"
@@ -690,6 +711,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_get_proc_type_info]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_get_proc_type_info\n"
     ".type __load_and_call___sys_get_proc_type_info @function\n"
     "__load_and_call___sys_get_proc_type_info:\n"
     "push rdi\n"
@@ -722,6 +744,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_is_development_mode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_is_development_mode\n"
     ".type __load_and_call___sys_is_development_mode @function\n"
     "__load_and_call___sys_is_development_mode:\n"
     "push rdi\n"
@@ -754,6 +777,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_kqueueex]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_kqueueex\n"
     ".type __load_and_call___sys_kqueueex @function\n"
     "__load_and_call___sys_kqueueex:\n"
     "push rdi\n"
@@ -786,6 +810,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_namedobj_create]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_namedobj_create\n"
     ".type __load_and_call___sys_namedobj_create @function\n"
     "__load_and_call___sys_namedobj_create:\n"
     "push rdi\n"
@@ -818,6 +843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_namedobj_delete]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_namedobj_delete\n"
     ".type __load_and_call___sys_namedobj_delete @function\n"
     "__load_and_call___sys_namedobj_delete:\n"
     "push rdi\n"
@@ -850,6 +876,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_netabort]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_netabort\n"
     ".type __load_and_call___sys_netabort @function\n"
     "__load_and_call___sys_netabort:\n"
     "push rdi\n"
@@ -882,6 +909,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_netcontrol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_netcontrol\n"
     ".type __load_and_call___sys_netcontrol @function\n"
     "__load_and_call___sys_netcontrol:\n"
     "push rdi\n"
@@ -914,6 +942,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_netgetiflist]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_netgetiflist\n"
     ".type __load_and_call___sys_netgetiflist @function\n"
     "__load_and_call___sys_netgetiflist:\n"
     "push rdi\n"
@@ -946,6 +975,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_netgetsockinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_netgetsockinfo\n"
     ".type __load_and_call___sys_netgetsockinfo @function\n"
     "__load_and_call___sys_netgetsockinfo:\n"
     "push rdi\n"
@@ -978,6 +1008,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_disable]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_opmc_disable\n"
     ".type __load_and_call___sys_opmc_disable @function\n"
     "__load_and_call___sys_opmc_disable:\n"
     "push rdi\n"
@@ -1010,6 +1041,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_enable]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_opmc_enable\n"
     ".type __load_and_call___sys_opmc_enable @function\n"
     "__load_and_call___sys_opmc_enable:\n"
     "push rdi\n"
@@ -1042,6 +1074,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_get_ctr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_opmc_get_ctr\n"
     ".type __load_and_call___sys_opmc_get_ctr @function\n"
     "__load_and_call___sys_opmc_get_ctr:\n"
     "push rdi\n"
@@ -1074,6 +1107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_get_hw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_opmc_get_hw\n"
     ".type __load_and_call___sys_opmc_get_hw @function\n"
     "__load_and_call___sys_opmc_get_hw:\n"
     "push rdi\n"
@@ -1106,6 +1140,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_set_ctl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_opmc_set_ctl\n"
     ".type __load_and_call___sys_opmc_set_ctl @function\n"
     "__load_and_call___sys_opmc_set_ctl:\n"
     "push rdi\n"
@@ -1138,6 +1173,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_set_ctr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_opmc_set_ctr\n"
     ".type __load_and_call___sys_opmc_set_ctr @function\n"
     "__load_and_call___sys_opmc_set_ctr:\n"
     "push rdi\n"
@@ -1170,6 +1206,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_opmc_set_hw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_opmc_set_hw\n"
     ".type __load_and_call___sys_opmc_set_hw @function\n"
     "__load_and_call___sys_opmc_set_hw:\n"
     "push rdi\n"
@@ -1202,6 +1239,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_osem_close]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_osem_close\n"
     ".type __load_and_call___sys_osem_close @function\n"
     "__load_and_call___sys_osem_close:\n"
     "push rdi\n"
@@ -1234,6 +1272,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_osem_open]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_osem_open\n"
     ".type __load_and_call___sys_osem_open @function\n"
     "__load_and_call___sys_osem_open:\n"
     "push rdi\n"
@@ -1266,6 +1305,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_randomized_path]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_randomized_path\n"
     ".type __load_and_call___sys_randomized_path @function\n"
     "__load_and_call___sys_randomized_path:\n"
     "push rdi\n"
@@ -1298,6 +1338,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_rdup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_rdup\n"
     ".type __load_and_call___sys_rdup @function\n"
     "__load_and_call___sys_rdup:\n"
     "push rdi\n"
@@ -1330,6 +1371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_regmgr_call]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_regmgr_call\n"
     ".type __load_and_call___sys_regmgr_call @function\n"
     "__load_and_call___sys_regmgr_call:\n"
     "push rdi\n"
@@ -1362,6 +1404,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_set_uevt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_set_uevt\n"
     ".type __load_and_call___sys_set_uevt @function\n"
     "__load_and_call___sys_set_uevt:\n"
     "push rdi\n"
@@ -1394,6 +1437,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_socketclose]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_socketclose\n"
     ".type __load_and_call___sys_socketclose @function\n"
     "__load_and_call___sys_socketclose:\n"
     "push rdi\n"
@@ -1426,6 +1470,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_socketex]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_socketex\n"
     ".type __load_and_call___sys_socketex @function\n"
     "__load_and_call___sys_socketex:\n"
     "push rdi\n"
@@ -1458,6 +1503,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_test_debug_rwmem]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_test_debug_rwmem\n"
     ".type __load_and_call___sys_test_debug_rwmem @function\n"
     "__load_and_call___sys_test_debug_rwmem:\n"
     "push rdi\n"
@@ -1490,6 +1536,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sys_workaround8849]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sys_workaround8849\n"
     ".type __load_and_call___sys_workaround8849 @function\n"
     "__load_and_call___sys_workaround8849:\n"
     "push rdi\n"
@@ -1522,6 +1569,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___tls_get_addr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___tls_get_addr\n"
     ".type __load_and_call___tls_get_addr @function\n"
     "__load_and_call___tls_get_addr:\n"
     "push rdi\n"
@@ -1554,6 +1602,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__accept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__accept\n"
     ".type __load_and_call__accept @function\n"
     "__load_and_call__accept:\n"
     "push rdi\n"
@@ -1586,6 +1635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__bind]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__bind\n"
     ".type __load_and_call__bind @function\n"
     "__load_and_call__bind:\n"
     "push rdi\n"
@@ -1618,6 +1668,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__close]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__close\n"
     ".type __load_and_call__close @function\n"
     "__load_and_call__close:\n"
     "push rdi\n"
@@ -1650,6 +1701,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__connect]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__connect\n"
     ".type __load_and_call__connect @function\n"
     "__load_and_call__connect:\n"
     "push rdi\n"
@@ -1682,6 +1734,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__dup2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__dup2\n"
     ".type __load_and_call__dup2 @function\n"
     "__load_and_call__dup2:\n"
     "push rdi\n"
@@ -1714,6 +1767,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__execve]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__execve\n"
     ".type __load_and_call__execve @function\n"
     "__load_and_call__execve:\n"
     "push rdi\n"
@@ -1746,6 +1800,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__execvpe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__execvpe\n"
     ".type __load_and_call__execvpe @function\n"
     "__load_and_call__execvpe:\n"
     "push rdi\n"
@@ -1778,6 +1833,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__exit\n"
     ".type __load_and_call__exit @function\n"
     "__load_and_call__exit:\n"
     "push rdi\n"
@@ -1810,6 +1866,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__fcntl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__fcntl\n"
     ".type __load_and_call__fcntl @function\n"
     "__load_and_call__fcntl:\n"
     "push rdi\n"
@@ -1842,6 +1899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__fpathconf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__fpathconf\n"
     ".type __load_and_call__fpathconf @function\n"
     "__load_and_call__fpathconf:\n"
     "push rdi\n"
@@ -1874,6 +1932,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__fstat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__fstat\n"
     ".type __load_and_call__fstat @function\n"
     "__load_and_call__fstat:\n"
     "push rdi\n"
@@ -1906,6 +1965,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__fstatfs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__fstatfs\n"
     ".type __load_and_call__fstatfs @function\n"
     "__load_and_call__fstatfs:\n"
     "push rdi\n"
@@ -1938,6 +1998,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getdirentries]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__getdirentries\n"
     ".type __load_and_call__getdirentries @function\n"
     "__load_and_call__getdirentries:\n"
     "push rdi\n"
@@ -1970,6 +2031,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getpeername]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__getpeername\n"
     ".type __load_and_call__getpeername @function\n"
     "__load_and_call__getpeername:\n"
     "push rdi\n"
@@ -2002,6 +2064,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getsockname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__getsockname\n"
     ".type __load_and_call__getsockname @function\n"
     "__load_and_call__getsockname:\n"
     "push rdi\n"
@@ -2034,6 +2097,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getsockopt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__getsockopt\n"
     ".type __load_and_call__getsockopt @function\n"
     "__load_and_call__getsockopt:\n"
     "push rdi\n"
@@ -2066,6 +2130,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ioctl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ioctl\n"
     ".type __load_and_call__ioctl @function\n"
     "__load_and_call__ioctl:\n"
     "push rdi\n"
@@ -2098,6 +2163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__is_signal_return]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__is_signal_return\n"
     ".type __load_and_call__is_signal_return @function\n"
     "__load_and_call__is_signal_return:\n"
     "push rdi\n"
@@ -2130,6 +2196,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__listen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__listen\n"
     ".type __load_and_call__listen @function\n"
     "__load_and_call__listen:\n"
     "push rdi\n"
@@ -2162,6 +2229,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__nanosleep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__nanosleep\n"
     ".type __load_and_call__nanosleep @function\n"
     "__load_and_call__nanosleep:\n"
     "push rdi\n"
@@ -2194,6 +2262,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__open]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__open\n"
     ".type __load_and_call__open @function\n"
     "__load_and_call__open:\n"
     "push rdi\n"
@@ -2226,6 +2295,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__openat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__openat\n"
     ".type __load_and_call__openat @function\n"
     "__load_and_call__openat:\n"
     "push rdi\n"
@@ -2258,6 +2328,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__read]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__read\n"
     ".type __load_and_call__read @function\n"
     "__load_and_call__read:\n"
     "push rdi\n"
@@ -2290,6 +2361,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__readv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__readv\n"
     ".type __load_and_call__readv @function\n"
     "__load_and_call__readv:\n"
     "push rdi\n"
@@ -2322,6 +2394,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__recvfrom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__recvfrom\n"
     ".type __load_and_call__recvfrom @function\n"
     "__load_and_call__recvfrom:\n"
     "push rdi\n"
@@ -2354,6 +2427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__recvmsg]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__recvmsg\n"
     ".type __load_and_call__recvmsg @function\n"
     "__load_and_call__recvmsg:\n"
     "push rdi\n"
@@ -2386,6 +2460,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelRtldSetApplicationHeapAPI]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sceKernelRtldSetApplicationHeapAPI\n"
     ".type __load_and_call__sceKernelRtldSetApplicationHeapAPI @function\n"
     "__load_and_call__sceKernelRtldSetApplicationHeapAPI:\n"
     "push rdi\n"
@@ -2418,6 +2493,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelRtldThreadAtexitDecrement]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sceKernelRtldThreadAtexitDecrement\n"
     ".type __load_and_call__sceKernelRtldThreadAtexitDecrement @function\n"
     "__load_and_call__sceKernelRtldThreadAtexitDecrement:\n"
     "push rdi\n"
@@ -2450,6 +2526,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelRtldThreadAtexitIncrement]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sceKernelRtldThreadAtexitIncrement\n"
     ".type __load_and_call__sceKernelRtldThreadAtexitIncrement @function\n"
     "__load_and_call__sceKernelRtldThreadAtexitIncrement:\n"
     "push rdi\n"
@@ -2482,6 +2559,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelSetThreadAtexitCount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sceKernelSetThreadAtexitCount\n"
     ".type __load_and_call__sceKernelSetThreadAtexitCount @function\n"
     "__load_and_call__sceKernelSetThreadAtexitCount:\n"
     "push rdi\n"
@@ -2514,6 +2592,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelSetThreadAtexitReport]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sceKernelSetThreadAtexitReport\n"
     ".type __load_and_call__sceKernelSetThreadAtexitReport @function\n"
     "__load_and_call__sceKernelSetThreadAtexitReport:\n"
     "push rdi\n"
@@ -2546,6 +2625,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceKernelSetThreadDtors]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sceKernelSetThreadDtors\n"
     ".type __load_and_call__sceKernelSetThreadDtors @function\n"
     "__load_and_call__sceKernelSetThreadDtors:\n"
     "push rdi\n"
@@ -2578,6 +2658,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sendmsg]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sendmsg\n"
     ".type __load_and_call__sendmsg @function\n"
     "__load_and_call__sendmsg:\n"
     "push rdi\n"
@@ -2610,6 +2691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sendto]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sendto\n"
     ".type __load_and_call__sendto @function\n"
     "__load_and_call__sendto:\n"
     "push rdi\n"
@@ -2642,6 +2724,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__setsockopt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__setsockopt\n"
     ".type __load_and_call__setsockopt @function\n"
     "__load_and_call__setsockopt:\n"
     "push rdi\n"
@@ -2674,6 +2757,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sigaction]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sigaction\n"
     ".type __load_and_call__sigaction @function\n"
     "__load_and_call__sigaction:\n"
     "push rdi\n"
@@ -2706,6 +2790,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sigprocmask]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sigprocmask\n"
     ".type __load_and_call__sigprocmask @function\n"
     "__load_and_call__sigprocmask:\n"
     "push rdi\n"
@@ -2738,6 +2823,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sigsuspend]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sigsuspend\n"
     ".type __load_and_call__sigsuspend @function\n"
     "__load_and_call__sigsuspend:\n"
     "push rdi\n"
@@ -2770,6 +2856,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__umtx_op]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__umtx_op\n"
     ".type __load_and_call__umtx_op @function\n"
     "__load_and_call__umtx_op:\n"
     "push rdi\n"
@@ -2802,6 +2889,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__wait4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__wait4\n"
     ".type __load_and_call__wait4 @function\n"
     "__load_and_call__wait4:\n"
     "push rdi\n"
@@ -2834,6 +2922,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__write]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__write\n"
     ".type __load_and_call__write @function\n"
     "__load_and_call__write:\n"
     "push rdi\n"
@@ -2866,6 +2955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__writev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__writev\n"
     ".type __load_and_call__writev @function\n"
     "__load_and_call__writev:\n"
     "push rdi\n"
@@ -2898,6 +2988,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_accept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_accept\n"
     ".type __load_and_call_accept @function\n"
     "__load_and_call_accept:\n"
     "push rdi\n"
@@ -2930,6 +3021,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_access]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_access\n"
     ".type __load_and_call_access @function\n"
     "__load_and_call_access:\n"
     "push rdi\n"
@@ -2962,6 +3054,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_amd64_set_fsbase]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_amd64_set_fsbase\n"
     ".type __load_and_call_amd64_set_fsbase @function\n"
     "__load_and_call_amd64_set_fsbase:\n"
     "push rdi\n"
@@ -2994,6 +3087,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_bind]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_bind\n"
     ".type __load_and_call_bind @function\n"
     "__load_and_call_bind:\n"
     "push rdi\n"
@@ -3026,6 +3120,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_blockpool_batch]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_blockpool_batch\n"
     ".type __load_and_call_blockpool_batch @function\n"
     "__load_and_call_blockpool_batch:\n"
     "push rdi\n"
@@ -3058,6 +3153,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_blockpool_map]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_blockpool_map\n"
     ".type __load_and_call_blockpool_map @function\n"
     "__load_and_call_blockpool_map:\n"
     "push rdi\n"
@@ -3090,6 +3186,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_blockpool_open]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_blockpool_open\n"
     ".type __load_and_call_blockpool_open @function\n"
     "__load_and_call_blockpool_open:\n"
     "push rdi\n"
@@ -3122,6 +3219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_blockpool_unmap]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_blockpool_unmap\n"
     ".type __load_and_call_blockpool_unmap @function\n"
     "__load_and_call_blockpool_unmap:\n"
     "push rdi\n"
@@ -3154,6 +3252,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_chdir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_chdir\n"
     ".type __load_and_call_chdir @function\n"
     "__load_and_call_chdir:\n"
     "push rdi\n"
@@ -3186,6 +3285,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_chflags]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_chflags\n"
     ".type __load_and_call_chflags @function\n"
     "__load_and_call_chflags:\n"
     "push rdi\n"
@@ -3218,6 +3318,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_chmod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_chmod\n"
     ".type __load_and_call_chmod @function\n"
     "__load_and_call_chmod:\n"
     "push rdi\n"
@@ -3250,6 +3351,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clock_getres]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_clock_getres\n"
     ".type __load_and_call_clock_getres @function\n"
     "__load_and_call_clock_getres:\n"
     "push rdi\n"
@@ -3282,6 +3384,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clock_gettime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_clock_gettime\n"
     ".type __load_and_call_clock_gettime @function\n"
     "__load_and_call_clock_gettime:\n"
     "push rdi\n"
@@ -3314,6 +3417,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clock_settime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_clock_settime\n"
     ".type __load_and_call_clock_settime @function\n"
     "__load_and_call_clock_settime:\n"
     "push rdi\n"
@@ -3346,6 +3450,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_close]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_close\n"
     ".type __load_and_call_close @function\n"
     "__load_and_call_close:\n"
     "push rdi\n"
@@ -3378,6 +3483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_connect]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_connect\n"
     ".type __load_and_call_connect @function\n"
     "__load_and_call_connect:\n"
     "push rdi\n"
@@ -3410,6 +3516,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cpuset_getaffinity]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cpuset_getaffinity\n"
     ".type __load_and_call_cpuset_getaffinity @function\n"
     "__load_and_call_cpuset_getaffinity:\n"
     "push rdi\n"
@@ -3442,6 +3549,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cpuset_getid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cpuset_getid\n"
     ".type __load_and_call_cpuset_getid @function\n"
     "__load_and_call_cpuset_getid:\n"
     "push rdi\n"
@@ -3474,6 +3582,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cpuset_setaffinity]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cpuset_setaffinity\n"
     ".type __load_and_call_cpuset_setaffinity @function\n"
     "__load_and_call_cpuset_setaffinity:\n"
     "push rdi\n"
@@ -3506,6 +3615,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_creat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_creat\n"
     ".type __load_and_call_creat @function\n"
     "__load_and_call_creat:\n"
     "push rdi\n"
@@ -3538,6 +3648,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dlclose]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dlclose\n"
     ".type __load_and_call_dlclose @function\n"
     "__load_and_call_dlclose:\n"
     "push rdi\n"
@@ -3570,6 +3681,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dlerror]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dlerror\n"
     ".type __load_and_call_dlerror @function\n"
     "__load_and_call_dlerror:\n"
     "push rdi\n"
@@ -3602,6 +3714,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dlopen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dlopen\n"
     ".type __load_and_call_dlopen @function\n"
     "__load_and_call_dlopen:\n"
     "push rdi\n"
@@ -3634,6 +3747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dlsym]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dlsym\n"
     ".type __load_and_call_dlsym @function\n"
     "__load_and_call_dlsym:\n"
     "push rdi\n"
@@ -3666,6 +3780,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dup\n"
     ".type __load_and_call_dup @function\n"
     "__load_and_call_dup:\n"
     "push rdi\n"
@@ -3698,6 +3813,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dup2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dup2\n"
     ".type __load_and_call_dup2 @function\n"
     "__load_and_call_dup2:\n"
     "push rdi\n"
@@ -3730,6 +3846,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dynlib_get_obj_member]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dynlib_get_obj_member\n"
     ".type __load_and_call_dynlib_get_obj_member @function\n"
     "__load_and_call_dynlib_get_obj_member:\n"
     "push rdi\n"
@@ -3762,6 +3879,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_execv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_execv\n"
     ".type __load_and_call_execv @function\n"
     "__load_and_call_execv:\n"
     "push rdi\n"
@@ -3794,6 +3912,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_execve]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_execve\n"
     ".type __load_and_call_execve @function\n"
     "__load_and_call_execve:\n"
     "push rdi\n"
@@ -3826,6 +3945,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_execvp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_execvp\n"
     ".type __load_and_call_execvp @function\n"
     "__load_and_call_execvp:\n"
     "push rdi\n"
@@ -3858,6 +3978,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fchflags]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fchflags\n"
     ".type __load_and_call_fchflags @function\n"
     "__load_and_call_fchflags:\n"
     "push rdi\n"
@@ -3890,6 +4011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fchmod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fchmod\n"
     ".type __load_and_call_fchmod @function\n"
     "__load_and_call_fchmod:\n"
     "push rdi\n"
@@ -3922,6 +4044,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fcntl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fcntl\n"
     ".type __load_and_call_fcntl @function\n"
     "__load_and_call_fcntl:\n"
     "push rdi\n"
@@ -3954,6 +4077,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fdatasync]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fdatasync\n"
     ".type __load_and_call_fdatasync @function\n"
     "__load_and_call_fdatasync:\n"
     "push rdi\n"
@@ -3986,6 +4110,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_flock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_flock\n"
     ".type __load_and_call_flock @function\n"
     "__load_and_call_flock:\n"
     "push rdi\n"
@@ -4018,6 +4143,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fstat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fstat\n"
     ".type __load_and_call_fstat @function\n"
     "__load_and_call_fstat:\n"
     "push rdi\n"
@@ -4050,6 +4176,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fsync]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fsync\n"
     ".type __load_and_call_fsync @function\n"
     "__load_and_call_fsync:\n"
     "push rdi\n"
@@ -4082,6 +4209,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ftruncate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ftruncate\n"
     ".type __load_and_call_ftruncate @function\n"
     "__load_and_call_ftruncate:\n"
     "push rdi\n"
@@ -4114,6 +4242,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_futimes]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_futimes\n"
     ".type __load_and_call_futimes @function\n"
     "__load_and_call_futimes:\n"
     "push rdi\n"
@@ -4146,6 +4275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_authinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_get_authinfo\n"
     ".type __load_and_call_get_authinfo @function\n"
     "__load_and_call_get_authinfo:\n"
     "push rdi\n"
@@ -4178,6 +4308,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_module_info_list]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_get_module_info_list\n"
     ".type __load_and_call_get_module_info_list @function\n"
     "__load_and_call_get_module_info_list:\n"
     "push rdi\n"
@@ -4210,6 +4341,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_page_table_stats]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_get_page_table_stats\n"
     ".type __load_and_call_get_page_table_stats @function\n"
     "__load_and_call_get_page_table_stats:\n"
     "push rdi\n"
@@ -4242,6 +4374,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_sdk_compiled_version]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_get_sdk_compiled_version\n"
     ".type __load_and_call_get_sdk_compiled_version @function\n"
     "__load_and_call_get_sdk_compiled_version:\n"
     "push rdi\n"
@@ -4274,6 +4407,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_self_auth_info]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_get_self_auth_info\n"
     ".type __load_and_call_get_self_auth_info @function\n"
     "__load_and_call_get_self_auth_info:\n"
     "push rdi\n"
@@ -4306,6 +4440,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_get_vm_map_timestamp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_get_vm_map_timestamp\n"
     ".type __load_and_call_get_vm_map_timestamp @function\n"
     "__load_and_call_get_vm_map_timestamp:\n"
     "push rdi\n"
@@ -4338,6 +4473,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getargc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getargc\n"
     ".type __load_and_call_getargc @function\n"
     "__load_and_call_getargc:\n"
     "push rdi\n"
@@ -4370,6 +4506,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getargv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getargv\n"
     ".type __load_and_call_getargv @function\n"
     "__load_and_call_getargv:\n"
     "push rdi\n"
@@ -4402,6 +4539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getcontext]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getcontext\n"
     ".type __load_and_call_getcontext @function\n"
     "__load_and_call_getcontext:\n"
     "push rdi\n"
@@ -4434,6 +4572,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getdents]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getdents\n"
     ".type __load_and_call_getdents @function\n"
     "__load_and_call_getdents:\n"
     "push rdi\n"
@@ -4466,6 +4605,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getdirentries]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getdirentries\n"
     ".type __load_and_call_getdirentries @function\n"
     "__load_and_call_getdirentries:\n"
     "push rdi\n"
@@ -4498,6 +4638,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getdtablesize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getdtablesize\n"
     ".type __load_and_call_getdtablesize @function\n"
     "__load_and_call_getdtablesize:\n"
     "push rdi\n"
@@ -4530,6 +4671,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getegid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getegid\n"
     ".type __load_and_call_getegid @function\n"
     "__load_and_call_getegid:\n"
     "push rdi\n"
@@ -4562,6 +4704,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_geteuid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_geteuid\n"
     ".type __load_and_call_geteuid @function\n"
     "__load_and_call_geteuid:\n"
     "push rdi\n"
@@ -4594,6 +4737,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getgid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getgid\n"
     ".type __load_and_call_getgid @function\n"
     "__load_and_call_getgid:\n"
     "push rdi\n"
@@ -4626,6 +4770,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getgroups]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getgroups\n"
     ".type __load_and_call_getgroups @function\n"
     "__load_and_call_getgroups:\n"
     "push rdi\n"
@@ -4658,6 +4803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getitimer]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getitimer\n"
     ".type __load_and_call_getitimer @function\n"
     "__load_and_call_getitimer:\n"
     "push rdi\n"
@@ -4690,6 +4836,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getlogin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getlogin\n"
     ".type __load_and_call_getlogin @function\n"
     "__load_and_call_getlogin:\n"
     "push rdi\n"
@@ -4722,6 +4869,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getlogin_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getlogin_r\n"
     ".type __load_and_call_getlogin_r @function\n"
     "__load_and_call_getlogin_r:\n"
     "push rdi\n"
@@ -4754,6 +4902,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getpagesize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getpagesize\n"
     ".type __load_and_call_getpagesize @function\n"
     "__load_and_call_getpagesize:\n"
     "push rdi\n"
@@ -4786,6 +4935,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getpeername]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getpeername\n"
     ".type __load_and_call_getpeername @function\n"
     "__load_and_call_getpeername:\n"
     "push rdi\n"
@@ -4818,6 +4968,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getpid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getpid\n"
     ".type __load_and_call_getpid @function\n"
     "__load_and_call_getpid:\n"
     "push rdi\n"
@@ -4850,6 +5001,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getppid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getppid\n"
     ".type __load_and_call_getppid @function\n"
     "__load_and_call_getppid:\n"
     "push rdi\n"
@@ -4882,6 +5034,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getpriority]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getpriority\n"
     ".type __load_and_call_getpriority @function\n"
     "__load_and_call_getpriority:\n"
     "push rdi\n"
@@ -4914,6 +5067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getrlimit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getrlimit\n"
     ".type __load_and_call_getrlimit @function\n"
     "__load_and_call_getrlimit:\n"
     "push rdi\n"
@@ -4946,6 +5100,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getrusage]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getrusage\n"
     ".type __load_and_call_getrusage @function\n"
     "__load_and_call_getrusage:\n"
     "push rdi\n"
@@ -4978,6 +5133,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getsid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getsid\n"
     ".type __load_and_call_getsid @function\n"
     "__load_and_call_getsid:\n"
     "push rdi\n"
@@ -5010,6 +5166,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getsockname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getsockname\n"
     ".type __load_and_call_getsockname @function\n"
     "__load_and_call_getsockname:\n"
     "push rdi\n"
@@ -5042,6 +5199,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getsockopt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getsockopt\n"
     ".type __load_and_call_getsockopt @function\n"
     "__load_and_call_getsockopt:\n"
     "push rdi\n"
@@ -5074,6 +5232,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gettimeofday]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gettimeofday\n"
     ".type __load_and_call_gettimeofday @function\n"
     "__load_and_call_gettimeofday:\n"
     "push rdi\n"
@@ -5106,6 +5265,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getuid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getuid\n"
     ".type __load_and_call_getuid @function\n"
     "__load_and_call_getuid:\n"
     "push rdi\n"
@@ -5138,6 +5298,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_htonl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_htonl\n"
     ".type __load_and_call_htonl @function\n"
     "__load_and_call_htonl:\n"
     "push rdi\n"
@@ -5170,6 +5331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_htons]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_htons\n"
     ".type __load_and_call_htons @function\n"
     "__load_and_call_htons:\n"
     "push rdi\n"
@@ -5202,6 +5364,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_inet_ntop]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_inet_ntop\n"
     ".type __load_and_call_inet_ntop @function\n"
     "__load_and_call_inet_ntop:\n"
     "push rdi\n"
@@ -5234,6 +5397,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_inet_pton]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_inet_pton\n"
     ".type __load_and_call_inet_pton @function\n"
     "__load_and_call_inet_pton:\n"
     "push rdi\n"
@@ -5266,6 +5430,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ioctl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ioctl\n"
     ".type __load_and_call_ioctl @function\n"
     "__load_and_call_ioctl:\n"
     "push rdi\n"
@@ -5298,6 +5463,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ipmimgr_call]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ipmimgr_call\n"
     ".type __load_and_call_ipmimgr_call @function\n"
     "__load_and_call_ipmimgr_call:\n"
     "push rdi\n"
@@ -5330,6 +5496,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_is_in_sandbox]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_is_in_sandbox\n"
     ".type __load_and_call_is_in_sandbox @function\n"
     "__load_and_call_is_in_sandbox:\n"
     "push rdi\n"
@@ -5362,6 +5529,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_issetugid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_issetugid\n"
     ".type __load_and_call_issetugid @function\n"
     "__load_and_call_issetugid:\n"
     "push rdi\n"
@@ -5394,6 +5562,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_kevent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_kevent\n"
     ".type __load_and_call_kevent @function\n"
     "__load_and_call_kevent:\n"
     "push rdi\n"
@@ -5426,6 +5595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_kill]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_kill\n"
     ".type __load_and_call_kill @function\n"
     "__load_and_call_kill:\n"
     "push rdi\n"
@@ -5458,6 +5628,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_kqueue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_kqueue\n"
     ".type __load_and_call_kqueue @function\n"
     "__load_and_call_kqueue:\n"
     "push rdi\n"
@@ -5490,6 +5661,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_close]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_close\n"
     ".type __load_and_call_ksem_close @function\n"
     "__load_and_call_ksem_close:\n"
     "push rdi\n"
@@ -5522,6 +5694,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_destroy\n"
     ".type __load_and_call_ksem_destroy @function\n"
     "__load_and_call_ksem_destroy:\n"
     "push rdi\n"
@@ -5554,6 +5727,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_getvalue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_getvalue\n"
     ".type __load_and_call_ksem_getvalue @function\n"
     "__load_and_call_ksem_getvalue:\n"
     "push rdi\n"
@@ -5586,6 +5760,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_init\n"
     ".type __load_and_call_ksem_init @function\n"
     "__load_and_call_ksem_init:\n"
     "push rdi\n"
@@ -5618,6 +5793,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_open]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_open\n"
     ".type __load_and_call_ksem_open @function\n"
     "__load_and_call_ksem_open:\n"
     "push rdi\n"
@@ -5650,6 +5826,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_post]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_post\n"
     ".type __load_and_call_ksem_post @function\n"
     "__load_and_call_ksem_post:\n"
     "push rdi\n"
@@ -5682,6 +5859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_timedwait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_timedwait\n"
     ".type __load_and_call_ksem_timedwait @function\n"
     "__load_and_call_ksem_timedwait:\n"
     "push rdi\n"
@@ -5714,6 +5892,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_trywait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_trywait\n"
     ".type __load_and_call_ksem_trywait @function\n"
     "__load_and_call_ksem_trywait:\n"
     "push rdi\n"
@@ -5746,6 +5925,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_unlink]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_unlink\n"
     ".type __load_and_call_ksem_unlink @function\n"
     "__load_and_call_ksem_unlink:\n"
     "push rdi\n"
@@ -5778,6 +5958,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ksem_wait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ksem_wait\n"
     ".type __load_and_call_ksem_wait @function\n"
     "__load_and_call_ksem_wait:\n"
     "push rdi\n"
@@ -5810,6 +5991,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_create]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ktimer_create\n"
     ".type __load_and_call_ktimer_create @function\n"
     "__load_and_call_ktimer_create:\n"
     "push rdi\n"
@@ -5842,6 +6024,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_delete]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ktimer_delete\n"
     ".type __load_and_call_ktimer_delete @function\n"
     "__load_and_call_ktimer_delete:\n"
     "push rdi\n"
@@ -5874,6 +6057,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_getoverrun]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ktimer_getoverrun\n"
     ".type __load_and_call_ktimer_getoverrun @function\n"
     "__load_and_call_ktimer_getoverrun:\n"
     "push rdi\n"
@@ -5906,6 +6090,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_gettime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ktimer_gettime\n"
     ".type __load_and_call_ktimer_gettime @function\n"
     "__load_and_call_ktimer_gettime:\n"
     "push rdi\n"
@@ -5938,6 +6123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ktimer_settime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ktimer_settime\n"
     ".type __load_and_call_ktimer_settime @function\n"
     "__load_and_call_ktimer_settime:\n"
     "push rdi\n"
@@ -5970,6 +6156,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_listen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_listen\n"
     ".type __load_and_call_listen @function\n"
     "__load_and_call_listen:\n"
     "push rdi\n"
@@ -6002,6 +6189,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lseek]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lseek\n"
     ".type __load_and_call_lseek @function\n"
     "__load_and_call_lseek:\n"
     "push rdi\n"
@@ -6034,6 +6222,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lstat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lstat\n"
     ".type __load_and_call_lstat @function\n"
     "__load_and_call_lstat:\n"
     "push rdi\n"
@@ -6066,6 +6255,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_madvise]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_madvise\n"
     ".type __load_and_call_madvise @function\n"
     "__load_and_call_madvise:\n"
     "push rdi\n"
@@ -6098,6 +6288,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mdbg_service]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mdbg_service\n"
     ".type __load_and_call_mdbg_service @function\n"
     "__load_and_call_mdbg_service:\n"
     "push rdi\n"
@@ -6130,6 +6321,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mincore]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mincore\n"
     ".type __load_and_call_mincore @function\n"
     "__load_and_call_mincore:\n"
     "push rdi\n"
@@ -6162,6 +6354,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mkdir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mkdir\n"
     ".type __load_and_call_mkdir @function\n"
     "__load_and_call_mkdir:\n"
     "push rdi\n"
@@ -6194,6 +6387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mlock\n"
     ".type __load_and_call_mlock @function\n"
     "__load_and_call_mlock:\n"
     "push rdi\n"
@@ -6226,6 +6420,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mlockall]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mlockall\n"
     ".type __load_and_call_mlockall @function\n"
     "__load_and_call_mlockall:\n"
     "push rdi\n"
@@ -6258,6 +6453,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mmap]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mmap\n"
     ".type __load_and_call_mmap @function\n"
     "__load_and_call_mmap:\n"
     "push rdi\n"
@@ -6290,6 +6486,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mprotect]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mprotect\n"
     ".type __load_and_call_mprotect @function\n"
     "__load_and_call_mprotect:\n"
     "push rdi\n"
@@ -6322,6 +6519,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_msync]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_msync\n"
     ".type __load_and_call_msync @function\n"
     "__load_and_call_msync:\n"
     "push rdi\n"
@@ -6354,6 +6552,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_munlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_munlock\n"
     ".type __load_and_call_munlock @function\n"
     "__load_and_call_munlock:\n"
     "push rdi\n"
@@ -6386,6 +6585,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_munlockall]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_munlockall\n"
     ".type __load_and_call_munlockall @function\n"
     "__load_and_call_munlockall:\n"
     "push rdi\n"
@@ -6418,6 +6618,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_munmap]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_munmap\n"
     ".type __load_and_call_munmap @function\n"
     "__load_and_call_munmap:\n"
     "push rdi\n"
@@ -6450,6 +6651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nanosleep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nanosleep\n"
     ".type __load_and_call_nanosleep @function\n"
     "__load_and_call_nanosleep:\n"
     "push rdi\n"
@@ -6482,6 +6684,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ntohl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ntohl\n"
     ".type __load_and_call_ntohl @function\n"
     "__load_and_call_ntohl:\n"
     "push rdi\n"
@@ -6514,6 +6717,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ntohs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ntohs\n"
     ".type __load_and_call_ntohs @function\n"
     "__load_and_call_ntohs:\n"
     "push rdi\n"
@@ -6546,6 +6750,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_open]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_open\n"
     ".type __load_and_call_open @function\n"
     "__load_and_call_open:\n"
     "push rdi\n"
@@ -6578,6 +6783,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_openintr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_openintr\n"
     ".type __load_and_call_openintr @function\n"
     "__load_and_call_openintr:\n"
     "push rdi\n"
@@ -6610,6 +6816,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pause]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pause\n"
     ".type __load_and_call_pause @function\n"
     "__load_and_call_pause:\n"
     "push rdi\n"
@@ -6642,6 +6849,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_physhm_open]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_physhm_open\n"
     ".type __load_and_call_physhm_open @function\n"
     "__load_and_call_physhm_open:\n"
     "push rdi\n"
@@ -6674,6 +6882,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_physhm_unlink]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_physhm_unlink\n"
     ".type __load_and_call_physhm_unlink @function\n"
     "__load_and_call_physhm_unlink:\n"
     "push rdi\n"
@@ -6706,6 +6915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pipe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pipe\n"
     ".type __load_and_call_pipe @function\n"
     "__load_and_call_pipe:\n"
     "push rdi\n"
@@ -6738,6 +6948,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_poll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_poll\n"
     ".type __load_and_call_poll @function\n"
     "__load_and_call_poll:\n"
     "push rdi\n"
@@ -6770,6 +6981,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pread\n"
     ".type __load_and_call_pread @function\n"
     "__load_and_call_pread:\n"
     "push rdi\n"
@@ -6802,6 +7014,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_preadv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_preadv\n"
     ".type __load_and_call_preadv @function\n"
     "__load_and_call_preadv:\n"
     "push rdi\n"
@@ -6834,6 +7047,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_profil]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_profil\n"
     ".type __load_and_call_profil @function\n"
     "__load_and_call_profil:\n"
     "push rdi\n"
@@ -6866,6 +7080,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pselect]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pselect\n"
     ".type __load_and_call_pselect @function\n"
     "__load_and_call_pselect:\n"
     "push rdi\n"
@@ -6898,6 +7113,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_atfork]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_atfork\n"
     ".type __load_and_call_pthread_atfork @function\n"
     "__load_and_call_pthread_atfork:\n"
     "push rdi\n"
@@ -6930,6 +7146,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_destroy\n"
     ".type __load_and_call_pthread_attr_destroy @function\n"
     "__load_and_call_pthread_attr_destroy:\n"
     "push rdi\n"
@@ -6962,6 +7179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_get_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_get_np\n"
     ".type __load_and_call_pthread_attr_get_np @function\n"
     "__load_and_call_pthread_attr_get_np:\n"
     "push rdi\n"
@@ -6994,6 +7212,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getaffinity_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getaffinity_np\n"
     ".type __load_and_call_pthread_attr_getaffinity_np @function\n"
     "__load_and_call_pthread_attr_getaffinity_np:\n"
     "push rdi\n"
@@ -7026,6 +7245,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getdetachstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getdetachstate\n"
     ".type __load_and_call_pthread_attr_getdetachstate @function\n"
     "__load_and_call_pthread_attr_getdetachstate:\n"
     "push rdi\n"
@@ -7058,6 +7278,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getguardsize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getguardsize\n"
     ".type __load_and_call_pthread_attr_getguardsize @function\n"
     "__load_and_call_pthread_attr_getguardsize:\n"
     "push rdi\n"
@@ -7090,6 +7311,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getinheritsched]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getinheritsched\n"
     ".type __load_and_call_pthread_attr_getinheritsched @function\n"
     "__load_and_call_pthread_attr_getinheritsched:\n"
     "push rdi\n"
@@ -7122,6 +7344,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getschedparam\n"
     ".type __load_and_call_pthread_attr_getschedparam @function\n"
     "__load_and_call_pthread_attr_getschedparam:\n"
     "push rdi\n"
@@ -7154,6 +7377,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getschedpolicy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getschedpolicy\n"
     ".type __load_and_call_pthread_attr_getschedpolicy @function\n"
     "__load_and_call_pthread_attr_getschedpolicy:\n"
     "push rdi\n"
@@ -7186,6 +7410,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getscope]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getscope\n"
     ".type __load_and_call_pthread_attr_getscope @function\n"
     "__load_and_call_pthread_attr_getscope:\n"
     "push rdi\n"
@@ -7218,6 +7443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getsolosched_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getsolosched_np\n"
     ".type __load_and_call_pthread_attr_getsolosched_np @function\n"
     "__load_and_call_pthread_attr_getsolosched_np:\n"
     "push rdi\n"
@@ -7250,6 +7476,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getstack]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getstack\n"
     ".type __load_and_call_pthread_attr_getstack @function\n"
     "__load_and_call_pthread_attr_getstack:\n"
     "push rdi\n"
@@ -7282,6 +7509,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getstackaddr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getstackaddr\n"
     ".type __load_and_call_pthread_attr_getstackaddr @function\n"
     "__load_and_call_pthread_attr_getstackaddr:\n"
     "push rdi\n"
@@ -7314,6 +7542,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_getstacksize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_getstacksize\n"
     ".type __load_and_call_pthread_attr_getstacksize @function\n"
     "__load_and_call_pthread_attr_getstacksize:\n"
     "push rdi\n"
@@ -7346,6 +7575,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_init\n"
     ".type __load_and_call_pthread_attr_init @function\n"
     "__load_and_call_pthread_attr_init:\n"
     "push rdi\n"
@@ -7378,6 +7608,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setaffinity_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setaffinity_np\n"
     ".type __load_and_call_pthread_attr_setaffinity_np @function\n"
     "__load_and_call_pthread_attr_setaffinity_np:\n"
     "push rdi\n"
@@ -7410,6 +7641,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setcreatesuspend_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setcreatesuspend_np\n"
     ".type __load_and_call_pthread_attr_setcreatesuspend_np @function\n"
     "__load_and_call_pthread_attr_setcreatesuspend_np:\n"
     "push rdi\n"
@@ -7442,6 +7674,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setdetachstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setdetachstate\n"
     ".type __load_and_call_pthread_attr_setdetachstate @function\n"
     "__load_and_call_pthread_attr_setdetachstate:\n"
     "push rdi\n"
@@ -7474,6 +7707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setguardsize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setguardsize\n"
     ".type __load_and_call_pthread_attr_setguardsize @function\n"
     "__load_and_call_pthread_attr_setguardsize:\n"
     "push rdi\n"
@@ -7506,6 +7740,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setinheritsched]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setinheritsched\n"
     ".type __load_and_call_pthread_attr_setinheritsched @function\n"
     "__load_and_call_pthread_attr_setinheritsched:\n"
     "push rdi\n"
@@ -7538,6 +7773,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setschedparam\n"
     ".type __load_and_call_pthread_attr_setschedparam @function\n"
     "__load_and_call_pthread_attr_setschedparam:\n"
     "push rdi\n"
@@ -7570,6 +7806,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setschedpolicy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setschedpolicy\n"
     ".type __load_and_call_pthread_attr_setschedpolicy @function\n"
     "__load_and_call_pthread_attr_setschedpolicy:\n"
     "push rdi\n"
@@ -7602,6 +7839,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setscope]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setscope\n"
     ".type __load_and_call_pthread_attr_setscope @function\n"
     "__load_and_call_pthread_attr_setscope:\n"
     "push rdi\n"
@@ -7634,6 +7872,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setsolosched_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setsolosched_np\n"
     ".type __load_and_call_pthread_attr_setsolosched_np @function\n"
     "__load_and_call_pthread_attr_setsolosched_np:\n"
     "push rdi\n"
@@ -7666,6 +7905,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setstack]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setstack\n"
     ".type __load_and_call_pthread_attr_setstack @function\n"
     "__load_and_call_pthread_attr_setstack:\n"
     "push rdi\n"
@@ -7698,6 +7938,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setstackaddr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setstackaddr\n"
     ".type __load_and_call_pthread_attr_setstackaddr @function\n"
     "__load_and_call_pthread_attr_setstackaddr:\n"
     "push rdi\n"
@@ -7730,6 +7971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_attr_setstacksize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_attr_setstacksize\n"
     ".type __load_and_call_pthread_attr_setstacksize @function\n"
     "__load_and_call_pthread_attr_setstacksize:\n"
     "push rdi\n"
@@ -7762,6 +8004,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrier_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_barrier_destroy\n"
     ".type __load_and_call_pthread_barrier_destroy @function\n"
     "__load_and_call_pthread_barrier_destroy:\n"
     "push rdi\n"
@@ -7794,6 +8037,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrier_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_barrier_init\n"
     ".type __load_and_call_pthread_barrier_init @function\n"
     "__load_and_call_pthread_barrier_init:\n"
     "push rdi\n"
@@ -7826,6 +8070,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrier_setname_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_barrier_setname_np\n"
     ".type __load_and_call_pthread_barrier_setname_np @function\n"
     "__load_and_call_pthread_barrier_setname_np:\n"
     "push rdi\n"
@@ -7858,6 +8103,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrier_wait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_barrier_wait\n"
     ".type __load_and_call_pthread_barrier_wait @function\n"
     "__load_and_call_pthread_barrier_wait:\n"
     "push rdi\n"
@@ -7890,6 +8136,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrierattr_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_barrierattr_destroy\n"
     ".type __load_and_call_pthread_barrierattr_destroy @function\n"
     "__load_and_call_pthread_barrierattr_destroy:\n"
     "push rdi\n"
@@ -7922,6 +8169,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrierattr_getpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_barrierattr_getpshared\n"
     ".type __load_and_call_pthread_barrierattr_getpshared @function\n"
     "__load_and_call_pthread_barrierattr_getpshared:\n"
     "push rdi\n"
@@ -7954,6 +8202,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrierattr_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_barrierattr_init\n"
     ".type __load_and_call_pthread_barrierattr_init @function\n"
     "__load_and_call_pthread_barrierattr_init:\n"
     "push rdi\n"
@@ -7986,6 +8235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_barrierattr_setpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_barrierattr_setpshared\n"
     ".type __load_and_call_pthread_barrierattr_setpshared @function\n"
     "__load_and_call_pthread_barrierattr_setpshared:\n"
     "push rdi\n"
@@ -8018,6 +8268,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cancel]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cancel\n"
     ".type __load_and_call_pthread_cancel @function\n"
     "__load_and_call_pthread_cancel:\n"
     "push rdi\n"
@@ -8050,6 +8301,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cleanup_pop]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cleanup_pop\n"
     ".type __load_and_call_pthread_cleanup_pop @function\n"
     "__load_and_call_pthread_cleanup_pop:\n"
     "push rdi\n"
@@ -8082,6 +8334,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cleanup_push]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cleanup_push\n"
     ".type __load_and_call_pthread_cleanup_push @function\n"
     "__load_and_call_pthread_cleanup_push:\n"
     "push rdi\n"
@@ -8114,6 +8367,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_broadcast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_broadcast\n"
     ".type __load_and_call_pthread_cond_broadcast @function\n"
     "__load_and_call_pthread_cond_broadcast:\n"
     "push rdi\n"
@@ -8146,6 +8400,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_destroy\n"
     ".type __load_and_call_pthread_cond_destroy @function\n"
     "__load_and_call_pthread_cond_destroy:\n"
     "push rdi\n"
@@ -8178,6 +8433,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_init\n"
     ".type __load_and_call_pthread_cond_init @function\n"
     "__load_and_call_pthread_cond_init:\n"
     "push rdi\n"
@@ -8210,6 +8466,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_reltimedwait_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_reltimedwait_np\n"
     ".type __load_and_call_pthread_cond_reltimedwait_np @function\n"
     "__load_and_call_pthread_cond_reltimedwait_np:\n"
     "push rdi\n"
@@ -8242,6 +8499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_setname_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_setname_np\n"
     ".type __load_and_call_pthread_cond_setname_np @function\n"
     "__load_and_call_pthread_cond_setname_np:\n"
     "push rdi\n"
@@ -8274,6 +8532,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_signal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_signal\n"
     ".type __load_and_call_pthread_cond_signal @function\n"
     "__load_and_call_pthread_cond_signal:\n"
     "push rdi\n"
@@ -8306,6 +8565,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_signalto_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_signalto_np\n"
     ".type __load_and_call_pthread_cond_signalto_np @function\n"
     "__load_and_call_pthread_cond_signalto_np:\n"
     "push rdi\n"
@@ -8338,6 +8598,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_timedwait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_timedwait\n"
     ".type __load_and_call_pthread_cond_timedwait @function\n"
     "__load_and_call_pthread_cond_timedwait:\n"
     "push rdi\n"
@@ -8370,6 +8631,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_cond_wait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_cond_wait\n"
     ".type __load_and_call_pthread_cond_wait @function\n"
     "__load_and_call_pthread_cond_wait:\n"
     "push rdi\n"
@@ -8402,6 +8664,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_condattr_destroy\n"
     ".type __load_and_call_pthread_condattr_destroy @function\n"
     "__load_and_call_pthread_condattr_destroy:\n"
     "push rdi\n"
@@ -8434,6 +8697,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_getclock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_condattr_getclock\n"
     ".type __load_and_call_pthread_condattr_getclock @function\n"
     "__load_and_call_pthread_condattr_getclock:\n"
     "push rdi\n"
@@ -8466,6 +8730,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_getpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_condattr_getpshared\n"
     ".type __load_and_call_pthread_condattr_getpshared @function\n"
     "__load_and_call_pthread_condattr_getpshared:\n"
     "push rdi\n"
@@ -8498,6 +8763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_condattr_init\n"
     ".type __load_and_call_pthread_condattr_init @function\n"
     "__load_and_call_pthread_condattr_init:\n"
     "push rdi\n"
@@ -8530,6 +8796,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_setclock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_condattr_setclock\n"
     ".type __load_and_call_pthread_condattr_setclock @function\n"
     "__load_and_call_pthread_condattr_setclock:\n"
     "push rdi\n"
@@ -8562,6 +8829,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_condattr_setpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_condattr_setpshared\n"
     ".type __load_and_call_pthread_condattr_setpshared @function\n"
     "__load_and_call_pthread_condattr_setpshared:\n"
     "push rdi\n"
@@ -8594,6 +8862,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_create]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_create\n"
     ".type __load_and_call_pthread_create @function\n"
     "__load_and_call_pthread_create:\n"
     "push rdi\n"
@@ -8626,6 +8895,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_create_name_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_create_name_np\n"
     ".type __load_and_call_pthread_create_name_np @function\n"
     "__load_and_call_pthread_create_name_np:\n"
     "push rdi\n"
@@ -8658,6 +8928,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_detach]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_detach\n"
     ".type __load_and_call_pthread_detach @function\n"
     "__load_and_call_pthread_detach:\n"
     "push rdi\n"
@@ -8690,6 +8961,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_equal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_equal\n"
     ".type __load_and_call_pthread_equal @function\n"
     "__load_and_call_pthread_equal:\n"
     "push rdi\n"
@@ -8722,6 +8994,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_exit\n"
     ".type __load_and_call_pthread_exit @function\n"
     "__load_and_call_pthread_exit:\n"
     "push rdi\n"
@@ -8754,6 +9027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_get_specificarray_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_get_specificarray_np\n"
     ".type __load_and_call_pthread_get_specificarray_np @function\n"
     "__load_and_call_pthread_get_specificarray_np:\n"
     "push rdi\n"
@@ -8786,6 +9060,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_get_user_context_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_get_user_context_np\n"
     ".type __load_and_call_pthread_get_user_context_np @function\n"
     "__load_and_call_pthread_get_user_context_np:\n"
     "push rdi\n"
@@ -8818,6 +9093,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getaffinity_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getaffinity_np\n"
     ".type __load_and_call_pthread_getaffinity_np @function\n"
     "__load_and_call_pthread_getaffinity_np:\n"
     "push rdi\n"
@@ -8850,6 +9126,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getconcurrency]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getconcurrency\n"
     ".type __load_and_call_pthread_getconcurrency @function\n"
     "__load_and_call_pthread_getconcurrency:\n"
     "push rdi\n"
@@ -8882,6 +9159,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getcpuclockid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getcpuclockid\n"
     ".type __load_and_call_pthread_getcpuclockid @function\n"
     "__load_and_call_pthread_getcpuclockid:\n"
     "push rdi\n"
@@ -8914,6 +9192,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getname_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getname_np\n"
     ".type __load_and_call_pthread_getname_np @function\n"
     "__load_and_call_pthread_getname_np:\n"
     "push rdi\n"
@@ -8946,6 +9225,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getprio]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getprio\n"
     ".type __load_and_call_pthread_getprio @function\n"
     "__load_and_call_pthread_getprio:\n"
     "push rdi\n"
@@ -8978,6 +9258,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getschedparam\n"
     ".type __load_and_call_pthread_getschedparam @function\n"
     "__load_and_call_pthread_getschedparam:\n"
     "push rdi\n"
@@ -9010,6 +9291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getspecific]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getspecific\n"
     ".type __load_and_call_pthread_getspecific @function\n"
     "__load_and_call_pthread_getspecific:\n"
     "push rdi\n"
@@ -9042,6 +9324,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getstack_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getstack_np\n"
     ".type __load_and_call_pthread_getstack_np @function\n"
     "__load_and_call_pthread_getstack_np:\n"
     "push rdi\n"
@@ -9074,6 +9357,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_getthreadid_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_getthreadid_np\n"
     ".type __load_and_call_pthread_getthreadid_np @function\n"
     "__load_and_call_pthread_getthreadid_np:\n"
     "push rdi\n"
@@ -9106,6 +9390,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_join]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_join\n"
     ".type __load_and_call_pthread_join @function\n"
     "__load_and_call_pthread_join:\n"
     "push rdi\n"
@@ -9138,6 +9423,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_key_create]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_key_create\n"
     ".type __load_and_call_pthread_key_create @function\n"
     "__load_and_call_pthread_key_create:\n"
     "push rdi\n"
@@ -9170,6 +9456,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_key_delete]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_key_delete\n"
     ".type __load_and_call_pthread_key_delete @function\n"
     "__load_and_call_pthread_key_delete:\n"
     "push rdi\n"
@@ -9202,6 +9489,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_kill]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_kill\n"
     ".type __load_and_call_pthread_kill @function\n"
     "__load_and_call_pthread_kill:\n"
     "push rdi\n"
@@ -9234,6 +9522,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_main_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_main_np\n"
     ".type __load_and_call_pthread_main_np @function\n"
     "__load_and_call_pthread_main_np:\n"
     "push rdi\n"
@@ -9266,6 +9555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_multi_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_multi_np\n"
     ".type __load_and_call_pthread_multi_np @function\n"
     "__load_and_call_pthread_multi_np:\n"
     "push rdi\n"
@@ -9298,6 +9588,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_destroy\n"
     ".type __load_and_call_pthread_mutex_destroy @function\n"
     "__load_and_call_pthread_mutex_destroy:\n"
     "push rdi\n"
@@ -9330,6 +9621,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_getprioceiling]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_getprioceiling\n"
     ".type __load_and_call_pthread_mutex_getprioceiling @function\n"
     "__load_and_call_pthread_mutex_getprioceiling:\n"
     "push rdi\n"
@@ -9362,6 +9654,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_getspinloops_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_getspinloops_np\n"
     ".type __load_and_call_pthread_mutex_getspinloops_np @function\n"
     "__load_and_call_pthread_mutex_getspinloops_np:\n"
     "push rdi\n"
@@ -9394,6 +9687,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_getyieldloops_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_getyieldloops_np\n"
     ".type __load_and_call_pthread_mutex_getyieldloops_np @function\n"
     "__load_and_call_pthread_mutex_getyieldloops_np:\n"
     "push rdi\n"
@@ -9426,6 +9720,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_init\n"
     ".type __load_and_call_pthread_mutex_init @function\n"
     "__load_and_call_pthread_mutex_init:\n"
     "push rdi\n"
@@ -9458,6 +9753,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_init_for_mono]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_init_for_mono\n"
     ".type __load_and_call_pthread_mutex_init_for_mono @function\n"
     "__load_and_call_pthread_mutex_init_for_mono:\n"
     "push rdi\n"
@@ -9490,6 +9786,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_isowned_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_isowned_np\n"
     ".type __load_and_call_pthread_mutex_isowned_np @function\n"
     "__load_and_call_pthread_mutex_isowned_np:\n"
     "push rdi\n"
@@ -9522,6 +9819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_lock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_lock\n"
     ".type __load_and_call_pthread_mutex_lock @function\n"
     "__load_and_call_pthread_mutex_lock:\n"
     "push rdi\n"
@@ -9554,6 +9852,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_reltimedlock_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_reltimedlock_np\n"
     ".type __load_and_call_pthread_mutex_reltimedlock_np @function\n"
     "__load_and_call_pthread_mutex_reltimedlock_np:\n"
     "push rdi\n"
@@ -9586,6 +9885,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_setname_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_setname_np\n"
     ".type __load_and_call_pthread_mutex_setname_np @function\n"
     "__load_and_call_pthread_mutex_setname_np:\n"
     "push rdi\n"
@@ -9618,6 +9918,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_setprioceiling]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_setprioceiling\n"
     ".type __load_and_call_pthread_mutex_setprioceiling @function\n"
     "__load_and_call_pthread_mutex_setprioceiling:\n"
     "push rdi\n"
@@ -9650,6 +9951,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_setspinloops_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_setspinloops_np\n"
     ".type __load_and_call_pthread_mutex_setspinloops_np @function\n"
     "__load_and_call_pthread_mutex_setspinloops_np:\n"
     "push rdi\n"
@@ -9682,6 +9984,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_setyieldloops_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_setyieldloops_np\n"
     ".type __load_and_call_pthread_mutex_setyieldloops_np @function\n"
     "__load_and_call_pthread_mutex_setyieldloops_np:\n"
     "push rdi\n"
@@ -9714,6 +10017,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_timedlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_timedlock\n"
     ".type __load_and_call_pthread_mutex_timedlock @function\n"
     "__load_and_call_pthread_mutex_timedlock:\n"
     "push rdi\n"
@@ -9746,6 +10050,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_trylock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_trylock\n"
     ".type __load_and_call_pthread_mutex_trylock @function\n"
     "__load_and_call_pthread_mutex_trylock:\n"
     "push rdi\n"
@@ -9778,6 +10083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutex_unlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutex_unlock\n"
     ".type __load_and_call_pthread_mutex_unlock @function\n"
     "__load_and_call_pthread_mutex_unlock:\n"
     "push rdi\n"
@@ -9810,6 +10116,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_destroy\n"
     ".type __load_and_call_pthread_mutexattr_destroy @function\n"
     "__load_and_call_pthread_mutexattr_destroy:\n"
     "push rdi\n"
@@ -9842,6 +10149,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getgen_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_getgen_np\n"
     ".type __load_and_call_pthread_mutexattr_getgen_np @function\n"
     "__load_and_call_pthread_mutexattr_getgen_np:\n"
     "push rdi\n"
@@ -9874,6 +10182,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getkind_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_getkind_np\n"
     ".type __load_and_call_pthread_mutexattr_getkind_np @function\n"
     "__load_and_call_pthread_mutexattr_getkind_np:\n"
     "push rdi\n"
@@ -9906,6 +10215,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getprioceiling]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_getprioceiling\n"
     ".type __load_and_call_pthread_mutexattr_getprioceiling @function\n"
     "__load_and_call_pthread_mutexattr_getprioceiling:\n"
     "push rdi\n"
@@ -9938,6 +10248,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getprotocol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_getprotocol\n"
     ".type __load_and_call_pthread_mutexattr_getprotocol @function\n"
     "__load_and_call_pthread_mutexattr_getprotocol:\n"
     "push rdi\n"
@@ -9970,6 +10281,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_getpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_getpshared\n"
     ".type __load_and_call_pthread_mutexattr_getpshared @function\n"
     "__load_and_call_pthread_mutexattr_getpshared:\n"
     "push rdi\n"
@@ -10002,6 +10314,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_gettype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_gettype\n"
     ".type __load_and_call_pthread_mutexattr_gettype @function\n"
     "__load_and_call_pthread_mutexattr_gettype:\n"
     "push rdi\n"
@@ -10034,6 +10347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_init\n"
     ".type __load_and_call_pthread_mutexattr_init @function\n"
     "__load_and_call_pthread_mutexattr_init:\n"
     "push rdi\n"
@@ -10066,6 +10380,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setgen_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_setgen_np\n"
     ".type __load_and_call_pthread_mutexattr_setgen_np @function\n"
     "__load_and_call_pthread_mutexattr_setgen_np:\n"
     "push rdi\n"
@@ -10098,6 +10413,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setkind_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_setkind_np\n"
     ".type __load_and_call_pthread_mutexattr_setkind_np @function\n"
     "__load_and_call_pthread_mutexattr_setkind_np:\n"
     "push rdi\n"
@@ -10130,6 +10446,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setprioceiling]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_setprioceiling\n"
     ".type __load_and_call_pthread_mutexattr_setprioceiling @function\n"
     "__load_and_call_pthread_mutexattr_setprioceiling:\n"
     "push rdi\n"
@@ -10162,6 +10479,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setprotocol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_setprotocol\n"
     ".type __load_and_call_pthread_mutexattr_setprotocol @function\n"
     "__load_and_call_pthread_mutexattr_setprotocol:\n"
     "push rdi\n"
@@ -10194,6 +10512,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_setpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_setpshared\n"
     ".type __load_and_call_pthread_mutexattr_setpshared @function\n"
     "__load_and_call_pthread_mutexattr_setpshared:\n"
     "push rdi\n"
@@ -10226,6 +10545,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_mutexattr_settype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_mutexattr_settype\n"
     ".type __load_and_call_pthread_mutexattr_settype @function\n"
     "__load_and_call_pthread_mutexattr_settype:\n"
     "push rdi\n"
@@ -10258,6 +10578,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_once]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_once\n"
     ".type __load_and_call_pthread_once @function\n"
     "__load_and_call_pthread_once:\n"
     "push rdi\n"
@@ -10290,6 +10611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rename_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rename_np\n"
     ".type __load_and_call_pthread_rename_np @function\n"
     "__load_and_call_pthread_rename_np:\n"
     "push rdi\n"
@@ -10322,6 +10644,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_resume_all_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_resume_all_np\n"
     ".type __load_and_call_pthread_resume_all_np @function\n"
     "__load_and_call_pthread_resume_all_np:\n"
     "push rdi\n"
@@ -10354,6 +10677,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_resume_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_resume_np\n"
     ".type __load_and_call_pthread_resume_np @function\n"
     "__load_and_call_pthread_resume_np:\n"
     "push rdi\n"
@@ -10386,6 +10710,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_resume_user_context_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_resume_user_context_np\n"
     ".type __load_and_call_pthread_resume_user_context_np @function\n"
     "__load_and_call_pthread_resume_user_context_np:\n"
     "push rdi\n"
@@ -10418,6 +10743,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_destroy\n"
     ".type __load_and_call_pthread_rwlock_destroy @function\n"
     "__load_and_call_pthread_rwlock_destroy:\n"
     "push rdi\n"
@@ -10450,6 +10776,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_init\n"
     ".type __load_and_call_pthread_rwlock_init @function\n"
     "__load_and_call_pthread_rwlock_init:\n"
     "push rdi\n"
@@ -10482,6 +10809,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_rdlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_rdlock\n"
     ".type __load_and_call_pthread_rwlock_rdlock @function\n"
     "__load_and_call_pthread_rwlock_rdlock:\n"
     "push rdi\n"
@@ -10514,6 +10842,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_reltimedrdlock_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_reltimedrdlock_np\n"
     ".type __load_and_call_pthread_rwlock_reltimedrdlock_np @function\n"
     "__load_and_call_pthread_rwlock_reltimedrdlock_np:\n"
     "push rdi\n"
@@ -10546,6 +10875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_reltimedwrlock_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_reltimedwrlock_np\n"
     ".type __load_and_call_pthread_rwlock_reltimedwrlock_np @function\n"
     "__load_and_call_pthread_rwlock_reltimedwrlock_np:\n"
     "push rdi\n"
@@ -10578,6 +10908,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_setname_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_setname_np\n"
     ".type __load_and_call_pthread_rwlock_setname_np @function\n"
     "__load_and_call_pthread_rwlock_setname_np:\n"
     "push rdi\n"
@@ -10610,6 +10941,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_timedrdlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_timedrdlock\n"
     ".type __load_and_call_pthread_rwlock_timedrdlock @function\n"
     "__load_and_call_pthread_rwlock_timedrdlock:\n"
     "push rdi\n"
@@ -10642,6 +10974,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_timedwrlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_timedwrlock\n"
     ".type __load_and_call_pthread_rwlock_timedwrlock @function\n"
     "__load_and_call_pthread_rwlock_timedwrlock:\n"
     "push rdi\n"
@@ -10674,6 +11007,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_tryrdlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_tryrdlock\n"
     ".type __load_and_call_pthread_rwlock_tryrdlock @function\n"
     "__load_and_call_pthread_rwlock_tryrdlock:\n"
     "push rdi\n"
@@ -10706,6 +11040,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_trywrlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_trywrlock\n"
     ".type __load_and_call_pthread_rwlock_trywrlock @function\n"
     "__load_and_call_pthread_rwlock_trywrlock:\n"
     "push rdi\n"
@@ -10738,6 +11073,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_unlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_unlock\n"
     ".type __load_and_call_pthread_rwlock_unlock @function\n"
     "__load_and_call_pthread_rwlock_unlock:\n"
     "push rdi\n"
@@ -10770,6 +11106,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlock_wrlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlock_wrlock\n"
     ".type __load_and_call_pthread_rwlock_wrlock @function\n"
     "__load_and_call_pthread_rwlock_wrlock:\n"
     "push rdi\n"
@@ -10802,6 +11139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlockattr_destroy\n"
     ".type __load_and_call_pthread_rwlockattr_destroy @function\n"
     "__load_and_call_pthread_rwlockattr_destroy:\n"
     "push rdi\n"
@@ -10834,6 +11172,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_getpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlockattr_getpshared\n"
     ".type __load_and_call_pthread_rwlockattr_getpshared @function\n"
     "__load_and_call_pthread_rwlockattr_getpshared:\n"
     "push rdi\n"
@@ -10866,6 +11205,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_gettype_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlockattr_gettype_np\n"
     ".type __load_and_call_pthread_rwlockattr_gettype_np @function\n"
     "__load_and_call_pthread_rwlockattr_gettype_np:\n"
     "push rdi\n"
@@ -10898,6 +11238,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlockattr_init\n"
     ".type __load_and_call_pthread_rwlockattr_init @function\n"
     "__load_and_call_pthread_rwlockattr_init:\n"
     "push rdi\n"
@@ -10930,6 +11271,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_setpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlockattr_setpshared\n"
     ".type __load_and_call_pthread_rwlockattr_setpshared @function\n"
     "__load_and_call_pthread_rwlockattr_setpshared:\n"
     "push rdi\n"
@@ -10962,6 +11304,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_rwlockattr_settype_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_rwlockattr_settype_np\n"
     ".type __load_and_call_pthread_rwlockattr_settype_np @function\n"
     "__load_and_call_pthread_rwlockattr_settype_np:\n"
     "push rdi\n"
@@ -10994,6 +11337,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_self]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_self\n"
     ".type __load_and_call_pthread_self @function\n"
     "__load_and_call_pthread_self:\n"
     "push rdi\n"
@@ -11026,6 +11370,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_set_defaultstacksize_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_set_defaultstacksize_np\n"
     ".type __load_and_call_pthread_set_defaultstacksize_np @function\n"
     "__load_and_call_pthread_set_defaultstacksize_np:\n"
     "push rdi\n"
@@ -11058,6 +11403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_set_name_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_set_name_np\n"
     ".type __load_and_call_pthread_set_name_np @function\n"
     "__load_and_call_pthread_set_name_np:\n"
     "push rdi\n"
@@ -11090,6 +11436,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_set_user_context_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_set_user_context_np\n"
     ".type __load_and_call_pthread_set_user_context_np @function\n"
     "__load_and_call_pthread_set_user_context_np:\n"
     "push rdi\n"
@@ -11122,6 +11469,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setaffinity_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_setaffinity_np\n"
     ".type __load_and_call_pthread_setaffinity_np @function\n"
     "__load_and_call_pthread_setaffinity_np:\n"
     "push rdi\n"
@@ -11154,6 +11502,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setcancelstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_setcancelstate\n"
     ".type __load_and_call_pthread_setcancelstate @function\n"
     "__load_and_call_pthread_setcancelstate:\n"
     "push rdi\n"
@@ -11186,6 +11535,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setcanceltype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_setcanceltype\n"
     ".type __load_and_call_pthread_setcanceltype @function\n"
     "__load_and_call_pthread_setcanceltype:\n"
     "push rdi\n"
@@ -11218,6 +11568,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setconcurrency]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_setconcurrency\n"
     ".type __load_and_call_pthread_setconcurrency @function\n"
     "__load_and_call_pthread_setconcurrency:\n"
     "push rdi\n"
@@ -11250,6 +11601,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setprio]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_setprio\n"
     ".type __load_and_call_pthread_setprio @function\n"
     "__load_and_call_pthread_setprio:\n"
     "push rdi\n"
@@ -11282,6 +11634,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_setschedparam\n"
     ".type __load_and_call_pthread_setschedparam @function\n"
     "__load_and_call_pthread_setschedparam:\n"
     "push rdi\n"
@@ -11314,6 +11667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_setspecific]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_setspecific\n"
     ".type __load_and_call_pthread_setspecific @function\n"
     "__load_and_call_pthread_setspecific:\n"
     "push rdi\n"
@@ -11346,6 +11700,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_sigmask]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_sigmask\n"
     ".type __load_and_call_pthread_sigmask @function\n"
     "__load_and_call_pthread_sigmask:\n"
     "push rdi\n"
@@ -11378,6 +11733,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_single_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_single_np\n"
     ".type __load_and_call_pthread_single_np @function\n"
     "__load_and_call_pthread_single_np:\n"
     "push rdi\n"
@@ -11410,6 +11766,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_spin_destroy\n"
     ".type __load_and_call_pthread_spin_destroy @function\n"
     "__load_and_call_pthread_spin_destroy:\n"
     "push rdi\n"
@@ -11442,6 +11799,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_spin_init\n"
     ".type __load_and_call_pthread_spin_init @function\n"
     "__load_and_call_pthread_spin_init:\n"
     "push rdi\n"
@@ -11474,6 +11832,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_lock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_spin_lock\n"
     ".type __load_and_call_pthread_spin_lock @function\n"
     "__load_and_call_pthread_spin_lock:\n"
     "push rdi\n"
@@ -11506,6 +11865,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_trylock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_spin_trylock\n"
     ".type __load_and_call_pthread_spin_trylock @function\n"
     "__load_and_call_pthread_spin_trylock:\n"
     "push rdi\n"
@@ -11538,6 +11898,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_spin_unlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_spin_unlock\n"
     ".type __load_and_call_pthread_spin_unlock @function\n"
     "__load_and_call_pthread_spin_unlock:\n"
     "push rdi\n"
@@ -11570,6 +11931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_suspend_all_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_suspend_all_np\n"
     ".type __load_and_call_pthread_suspend_all_np @function\n"
     "__load_and_call_pthread_suspend_all_np:\n"
     "push rdi\n"
@@ -11602,6 +11964,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_suspend_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_suspend_np\n"
     ".type __load_and_call_pthread_suspend_np @function\n"
     "__load_and_call_pthread_suspend_np:\n"
     "push rdi\n"
@@ -11634,6 +11997,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_suspend_user_context_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_suspend_user_context_np\n"
     ".type __load_and_call_pthread_suspend_user_context_np @function\n"
     "__load_and_call_pthread_suspend_user_context_np:\n"
     "push rdi\n"
@@ -11666,6 +12030,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_switch_add_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_switch_add_np\n"
     ".type __load_and_call_pthread_switch_add_np @function\n"
     "__load_and_call_pthread_switch_add_np:\n"
     "push rdi\n"
@@ -11698,6 +12063,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_switch_delete_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_switch_delete_np\n"
     ".type __load_and_call_pthread_switch_delete_np @function\n"
     "__load_and_call_pthread_switch_delete_np:\n"
     "push rdi\n"
@@ -11730,6 +12096,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_testcancel]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_testcancel\n"
     ".type __load_and_call_pthread_testcancel @function\n"
     "__load_and_call_pthread_testcancel:\n"
     "push rdi\n"
@@ -11762,6 +12129,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_timedjoin_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_timedjoin_np\n"
     ".type __load_and_call_pthread_timedjoin_np @function\n"
     "__load_and_call_pthread_timedjoin_np:\n"
     "push rdi\n"
@@ -11794,6 +12162,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pthread_yield]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pthread_yield\n"
     ".type __load_and_call_pthread_yield @function\n"
     "__load_and_call_pthread_yield:\n"
     "push rdi\n"
@@ -11826,6 +12195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pwrite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pwrite\n"
     ".type __load_and_call_pwrite @function\n"
     "__load_and_call_pwrite:\n"
     "push rdi\n"
@@ -11858,6 +12228,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pwritev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pwritev\n"
     ".type __load_and_call_pwritev @function\n"
     "__load_and_call_pwritev:\n"
     "push rdi\n"
@@ -11890,6 +12261,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_raise]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_raise\n"
     ".type __load_and_call_raise @function\n"
     "__load_and_call_raise:\n"
     "push rdi\n"
@@ -11922,6 +12294,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_read]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_read\n"
     ".type __load_and_call_read @function\n"
     "__load_and_call_read:\n"
     "push rdi\n"
@@ -11954,6 +12327,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_readv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_readv\n"
     ".type __load_and_call_readv @function\n"
     "__load_and_call_readv:\n"
     "push rdi\n"
@@ -11986,6 +12360,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_recv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_recv\n"
     ".type __load_and_call_recv @function\n"
     "__load_and_call_recv:\n"
     "push rdi\n"
@@ -12018,6 +12393,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_recvfrom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_recvfrom\n"
     ".type __load_and_call_recvfrom @function\n"
     "__load_and_call_recvfrom:\n"
     "push rdi\n"
@@ -12050,6 +12426,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_recvmsg]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_recvmsg\n"
     ".type __load_and_call_recvmsg @function\n"
     "__load_and_call_recvmsg:\n"
     "push rdi\n"
@@ -12082,6 +12459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rename]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rename\n"
     ".type __load_and_call_rename @function\n"
     "__load_and_call_rename:\n"
     "push rdi\n"
@@ -12114,6 +12492,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rfork_thread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rfork_thread\n"
     ".type __load_and_call_rfork_thread @function\n"
     "__load_and_call_rfork_thread:\n"
     "push rdi\n"
@@ -12146,6 +12525,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rmdir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rmdir\n"
     ".type __load_and_call_rmdir @function\n"
     "__load_and_call_rmdir:\n"
     "push rdi\n"
@@ -12178,6 +12558,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rtld_printf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rtld_printf\n"
     ".type __load_and_call_rtld_printf @function\n"
     "__load_and_call_rtld_printf:\n"
     "push rdi\n"
@@ -12210,6 +12591,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rtprio_thread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rtprio_thread\n"
     ".type __load_and_call_rtprio_thread @function\n"
     "__load_and_call_rtprio_thread:\n"
     "push rdi\n"
@@ -12242,6 +12624,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddAmprEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddAmprEvent\n"
     ".type __load_and_call_sceKernelAddAmprEvent @function\n"
     "__load_and_call_sceKernelAddAmprEvent:\n"
     "push rdi\n"
@@ -12274,6 +12657,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddCpumodeEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddCpumodeEvent\n"
     ".type __load_and_call_sceKernelAddCpumodeEvent @function\n"
     "__load_and_call_sceKernelAddCpumodeEvent:\n"
     "push rdi\n"
@@ -12306,6 +12690,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddFileEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddFileEvent\n"
     ".type __load_and_call_sceKernelAddFileEvent @function\n"
     "__load_and_call_sceKernelAddFileEvent:\n"
     "push rdi\n"
@@ -12338,6 +12723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddGpuExceptionEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddGpuExceptionEvent\n"
     ".type __load_and_call_sceKernelAddGpuExceptionEvent @function\n"
     "__load_and_call_sceKernelAddGpuExceptionEvent:\n"
     "push rdi\n"
@@ -12370,6 +12756,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddHRTimerEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddHRTimerEvent\n"
     ".type __load_and_call_sceKernelAddHRTimerEvent @function\n"
     "__load_and_call_sceKernelAddHRTimerEvent:\n"
     "push rdi\n"
@@ -12402,6 +12789,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddProcessToCanvasMap]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddProcessToCanvasMap\n"
     ".type __load_and_call_sceKernelAddProcessToCanvasMap @function\n"
     "__load_and_call_sceKernelAddProcessToCanvasMap:\n"
     "push rdi\n"
@@ -12434,6 +12822,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddReadEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddReadEvent\n"
     ".type __load_and_call_sceKernelAddReadEvent @function\n"
     "__load_and_call_sceKernelAddReadEvent:\n"
     "push rdi\n"
@@ -12466,6 +12855,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddTimerEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddTimerEvent\n"
     ".type __load_and_call_sceKernelAddTimerEvent @function\n"
     "__load_and_call_sceKernelAddTimerEvent:\n"
     "push rdi\n"
@@ -12498,6 +12888,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddUserEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddUserEvent\n"
     ".type __load_and_call_sceKernelAddUserEvent @function\n"
     "__load_and_call_sceKernelAddUserEvent:\n"
     "push rdi\n"
@@ -12530,6 +12921,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddUserEventEdge]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddUserEventEdge\n"
     ".type __load_and_call_sceKernelAddUserEventEdge @function\n"
     "__load_and_call_sceKernelAddUserEventEdge:\n"
     "push rdi\n"
@@ -12562,6 +12954,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAddWriteEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAddWriteEvent\n"
     ".type __load_and_call_sceKernelAddWriteEvent @function\n"
     "__load_and_call_sceKernelAddWriteEvent:\n"
     "push rdi\n"
@@ -12594,6 +12987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioCancelRequest]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioCancelRequest\n"
     ".type __load_and_call_sceKernelAioCancelRequest @function\n"
     "__load_and_call_sceKernelAioCancelRequest:\n"
     "push rdi\n"
@@ -12626,6 +13020,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioCancelRequests]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioCancelRequests\n"
     ".type __load_and_call_sceKernelAioCancelRequests @function\n"
     "__load_and_call_sceKernelAioCancelRequests:\n"
     "push rdi\n"
@@ -12658,6 +13053,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioDeleteRequest]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioDeleteRequest\n"
     ".type __load_and_call_sceKernelAioDeleteRequest @function\n"
     "__load_and_call_sceKernelAioDeleteRequest:\n"
     "push rdi\n"
@@ -12690,6 +13086,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioDeleteRequests]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioDeleteRequests\n"
     ".type __load_and_call_sceKernelAioDeleteRequests @function\n"
     "__load_and_call_sceKernelAioDeleteRequests:\n"
     "push rdi\n"
@@ -12722,6 +13119,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioInitializeImpl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioInitializeImpl\n"
     ".type __load_and_call_sceKernelAioInitializeImpl @function\n"
     "__load_and_call_sceKernelAioInitializeImpl:\n"
     "push rdi\n"
@@ -12754,6 +13152,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioInitializeParam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioInitializeParam\n"
     ".type __load_and_call_sceKernelAioInitializeParam @function\n"
     "__load_and_call_sceKernelAioInitializeParam:\n"
     "push rdi\n"
@@ -12786,6 +13185,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioPollRequest]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioPollRequest\n"
     ".type __load_and_call_sceKernelAioPollRequest @function\n"
     "__load_and_call_sceKernelAioPollRequest:\n"
     "push rdi\n"
@@ -12818,6 +13218,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioPollRequests]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioPollRequests\n"
     ".type __load_and_call_sceKernelAioPollRequests @function\n"
     "__load_and_call_sceKernelAioPollRequests:\n"
     "push rdi\n"
@@ -12850,6 +13251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSetParam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioSetParam\n"
     ".type __load_and_call_sceKernelAioSetParam @function\n"
     "__load_and_call_sceKernelAioSetParam:\n"
     "push rdi\n"
@@ -12882,6 +13284,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSubmitReadCommands]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioSubmitReadCommands\n"
     ".type __load_and_call_sceKernelAioSubmitReadCommands @function\n"
     "__load_and_call_sceKernelAioSubmitReadCommands:\n"
     "push rdi\n"
@@ -12914,6 +13317,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSubmitReadCommandsMultiple]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioSubmitReadCommandsMultiple\n"
     ".type __load_and_call_sceKernelAioSubmitReadCommandsMultiple @function\n"
     "__load_and_call_sceKernelAioSubmitReadCommandsMultiple:\n"
     "push rdi\n"
@@ -12946,6 +13350,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSubmitWriteCommands]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioSubmitWriteCommands\n"
     ".type __load_and_call_sceKernelAioSubmitWriteCommands @function\n"
     "__load_and_call_sceKernelAioSubmitWriteCommands:\n"
     "push rdi\n"
@@ -12978,6 +13383,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioSubmitWriteCommandsMultiple]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioSubmitWriteCommandsMultiple\n"
     ".type __load_and_call_sceKernelAioSubmitWriteCommandsMultiple @function\n"
     "__load_and_call_sceKernelAioSubmitWriteCommandsMultiple:\n"
     "push rdi\n"
@@ -13010,6 +13416,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioWaitRequest]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioWaitRequest\n"
     ".type __load_and_call_sceKernelAioWaitRequest @function\n"
     "__load_and_call_sceKernelAioWaitRequest:\n"
     "push rdi\n"
@@ -13042,6 +13449,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAioWaitRequests]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAioWaitRequests\n"
     ".type __load_and_call_sceKernelAioWaitRequests @function\n"
     "__load_and_call_sceKernelAioWaitRequests:\n"
     "push rdi\n"
@@ -13074,6 +13482,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAllocateDirectMemory\n"
     ".type __load_and_call_sceKernelAllocateDirectMemory @function\n"
     "__load_and_call_sceKernelAllocateDirectMemory:\n"
     "push rdi\n"
@@ -13106,6 +13515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateDirectMemory2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAllocateDirectMemory2\n"
     ".type __load_and_call_sceKernelAllocateDirectMemory2 @function\n"
     "__load_and_call_sceKernelAllocateDirectMemory2:\n"
     "push rdi\n"
@@ -13138,6 +13548,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateDirectMemoryForApp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAllocateDirectMemoryForApp\n"
     ".type __load_and_call_sceKernelAllocateDirectMemoryForApp @function\n"
     "__load_and_call_sceKernelAllocateDirectMemoryForApp:\n"
     "push rdi\n"
@@ -13170,6 +13581,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateDirectMemoryForMiniApp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAllocateDirectMemoryForMiniApp\n"
     ".type __load_and_call_sceKernelAllocateDirectMemoryForMiniApp @function\n"
     "__load_and_call_sceKernelAllocateDirectMemoryForMiniApp:\n"
     "push rdi\n"
@@ -13202,6 +13614,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateMainDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAllocateMainDirectMemory\n"
     ".type __load_and_call_sceKernelAllocateMainDirectMemory @function\n"
     "__load_and_call_sceKernelAllocateMainDirectMemory:\n"
     "push rdi\n"
@@ -13234,6 +13647,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateToolMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAllocateToolMemory\n"
     ".type __load_and_call_sceKernelAllocateToolMemory @function\n"
     "__load_and_call_sceKernelAllocateToolMemory:\n"
     "push rdi\n"
@@ -13266,6 +13680,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAllocateTraceDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAllocateTraceDirectMemory\n"
     ".type __load_and_call_sceKernelAllocateTraceDirectMemory @function\n"
     "__load_and_call_sceKernelAllocateTraceDirectMemory:\n"
     "push rdi\n"
@@ -13298,6 +13713,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprCtrl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprCtrl\n"
     ".type __load_and_call_sceKernelAprCtrl @function\n"
     "__load_and_call_sceKernelAprCtrl:\n"
     "push rdi\n"
@@ -13330,6 +13746,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprGetFileSize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprGetFileSize\n"
     ".type __load_and_call_sceKernelAprGetFileSize @function\n"
     "__load_and_call_sceKernelAprGetFileSize:\n"
     "push rdi\n"
@@ -13362,6 +13779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprGetFileStat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprGetFileStat\n"
     ".type __load_and_call_sceKernelAprGetFileStat @function\n"
     "__load_and_call_sceKernelAprGetFileStat:\n"
     "push rdi\n"
@@ -13394,6 +13812,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprResolveFilepathsToIds]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprResolveFilepathsToIds\n"
     ".type __load_and_call_sceKernelAprResolveFilepathsToIds @function\n"
     "__load_and_call_sceKernelAprResolveFilepathsToIds:\n"
     "push rdi\n"
@@ -13426,6 +13845,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprResolveFilepathsToIdsAndFileSizes]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizes\n"
     ".type __load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizes @function\n"
     "__load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizes:\n"
     "push rdi\n"
@@ -13458,6 +13878,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach\n"
     ".type __load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach @function\n"
     "__load_and_call_sceKernelAprResolveFilepathsToIdsAndFileSizesForEach:\n"
     "push rdi\n"
@@ -13490,6 +13911,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprResolveFilepathsToIdsForEach]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprResolveFilepathsToIdsForEach\n"
     ".type __load_and_call_sceKernelAprResolveFilepathsToIdsForEach @function\n"
     "__load_and_call_sceKernelAprResolveFilepathsToIdsForEach:\n"
     "push rdi\n"
@@ -13522,6 +13944,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprResolveFilepathsWithPrefixToIds]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIds\n"
     ".type __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIds @function\n"
     "__load_and_call_sceKernelAprResolveFilepathsWithPrefixToIds:\n"
     "push rdi\n"
@@ -13554,6 +13977,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes\n"
     ".type __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes @function\n"
     "__load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizes:\n"
     "push rdi\n"
@@ -13586,6 +14010,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach\n"
     ".type __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach @function\n"
     "__load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsAndFileSizesForEach:\n"
     "push rdi\n"
@@ -13618,6 +14043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprResolveFilepathsWithPrefixToIdsForEach]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsForEach\n"
     ".type __load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsForEach @function\n"
     "__load_and_call_sceKernelAprResolveFilepathsWithPrefixToIdsForEach:\n"
     "push rdi\n"
@@ -13650,6 +14076,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprSubmitCommandBuffer]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprSubmitCommandBuffer\n"
     ".type __load_and_call_sceKernelAprSubmitCommandBuffer @function\n"
     "__load_and_call_sceKernelAprSubmitCommandBuffer:\n"
     "push rdi\n"
@@ -13682,6 +14109,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprSubmitCommandBufferAndGetId]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprSubmitCommandBufferAndGetId\n"
     ".type __load_and_call_sceKernelAprSubmitCommandBufferAndGetId @function\n"
     "__load_and_call_sceKernelAprSubmitCommandBufferAndGetId:\n"
     "push rdi\n"
@@ -13714,6 +14142,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprSubmitCommandBufferAndGetResult]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprSubmitCommandBufferAndGetResult\n"
     ".type __load_and_call_sceKernelAprSubmitCommandBufferAndGetResult @function\n"
     "__load_and_call_sceKernelAprSubmitCommandBufferAndGetResult:\n"
     "push rdi\n"
@@ -13746,6 +14175,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprSubmitCommandBufferAndGetResult_TEST]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprSubmitCommandBufferAndGetResult_TEST\n"
     ".type __load_and_call_sceKernelAprSubmitCommandBufferAndGetResult_TEST @function\n"
     "__load_and_call_sceKernelAprSubmitCommandBufferAndGetResult_TEST:\n"
     "push rdi\n"
@@ -13778,6 +14208,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprSubmitCommandBuffer_TEST]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprSubmitCommandBuffer_TEST\n"
     ".type __load_and_call_sceKernelAprSubmitCommandBuffer_TEST @function\n"
     "__load_and_call_sceKernelAprSubmitCommandBuffer_TEST:\n"
     "push rdi\n"
@@ -13810,6 +14241,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAprWaitCommandBuffer]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAprWaitCommandBuffer\n"
     ".type __load_and_call_sceKernelAprWaitCommandBuffer @function\n"
     "__load_and_call_sceKernelAprWaitCommandBuffer:\n"
     "push rdi\n"
@@ -13842,6 +14274,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAvailableDirectMemorySize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAvailableDirectMemorySize\n"
     ".type __load_and_call_sceKernelAvailableDirectMemorySize @function\n"
     "__load_and_call_sceKernelAvailableDirectMemorySize:\n"
     "push rdi\n"
@@ -13874,6 +14307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAvailableFlexibleMemorySize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAvailableFlexibleMemorySize\n"
     ".type __load_and_call_sceKernelAvailableFlexibleMemorySize @function\n"
     "__load_and_call_sceKernelAvailableFlexibleMemorySize:\n"
     "push rdi\n"
@@ -13906,6 +14340,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelAvailableToolMemorySize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelAvailableToolMemorySize\n"
     ".type __load_and_call_sceKernelAvailableToolMemorySize @function\n"
     "__load_and_call_sceKernelAvailableToolMemorySize:\n"
     "push rdi\n"
@@ -13938,6 +14373,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelBacktraceSelf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelBacktraceSelf\n"
     ".type __load_and_call_sceKernelBacktraceSelf @function\n"
     "__load_and_call_sceKernelBacktraceSelf:\n"
     "push rdi\n"
@@ -13970,6 +14406,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelBatchMap]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelBatchMap\n"
     ".type __load_and_call_sceKernelBatchMap @function\n"
     "__load_and_call_sceKernelBatchMap:\n"
     "push rdi\n"
@@ -14002,6 +14439,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelBatchMap2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelBatchMap2\n"
     ".type __load_and_call_sceKernelBatchMap2 @function\n"
     "__load_and_call_sceKernelBatchMap2:\n"
     "push rdi\n"
@@ -14034,6 +14472,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCallIndirectBuffer]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCallIndirectBuffer\n"
     ".type __load_and_call_sceKernelCallIndirectBuffer @function\n"
     "__load_and_call_sceKernelCallIndirectBuffer:\n"
     "push rdi\n"
@@ -14066,6 +14505,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCallIndirectBuffer2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCallIndirectBuffer2\n"
     ".type __load_and_call_sceKernelCallIndirectBuffer2 @function\n"
     "__load_and_call_sceKernelCallIndirectBuffer2:\n"
     "push rdi\n"
@@ -14098,6 +14538,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCancelEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCancelEventFlag\n"
     ".type __load_and_call_sceKernelCancelEventFlag @function\n"
     "__load_and_call_sceKernelCancelEventFlag:\n"
     "push rdi\n"
@@ -14130,6 +14571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCancelSema]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCancelSema\n"
     ".type __load_and_call_sceKernelCancelSema @function\n"
     "__load_and_call_sceKernelCancelSema:\n"
     "push rdi\n"
@@ -14162,6 +14604,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCheckReachability]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCheckReachability\n"
     ".type __load_and_call_sceKernelCheckReachability @function\n"
     "__load_and_call_sceKernelCheckReachability:\n"
     "push rdi\n"
@@ -14194,6 +14637,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCheckedReleaseDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCheckedReleaseDirectMemory\n"
     ".type __load_and_call_sceKernelCheckedReleaseDirectMemory @function\n"
     "__load_and_call_sceKernelCheckedReleaseDirectMemory:\n"
     "push rdi\n"
@@ -14226,6 +14670,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelChmod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelChmod\n"
     ".type __load_and_call_sceKernelChmod @function\n"
     "__load_and_call_sceKernelChmod:\n"
     "push rdi\n"
@@ -14258,6 +14703,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClearBootReqNotifyCount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelClearBootReqNotifyCount\n"
     ".type __load_and_call_sceKernelClearBootReqNotifyCount @function\n"
     "__load_and_call_sceKernelClearBootReqNotifyCount:\n"
     "push rdi\n"
@@ -14290,6 +14736,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClearEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelClearEventFlag\n"
     ".type __load_and_call_sceKernelClearEventFlag @function\n"
     "__load_and_call_sceKernelClearEventFlag:\n"
     "push rdi\n"
@@ -14322,6 +14769,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClearGameDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelClearGameDirectMemory\n"
     ".type __load_and_call_sceKernelClearGameDirectMemory @function\n"
     "__load_and_call_sceKernelClearGameDirectMemory:\n"
     "push rdi\n"
@@ -14354,6 +14802,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClockGetres]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelClockGetres\n"
     ".type __load_and_call_sceKernelClockGetres @function\n"
     "__load_and_call_sceKernelClockGetres:\n"
     "push rdi\n"
@@ -14386,6 +14835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClockGettime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelClockGettime\n"
     ".type __load_and_call_sceKernelClockGettime @function\n"
     "__load_and_call_sceKernelClockGettime:\n"
     "push rdi\n"
@@ -14418,6 +14868,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelClose]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelClose\n"
     ".type __load_and_call_sceKernelClose @function\n"
     "__load_and_call_sceKernelClose:\n"
     "push rdi\n"
@@ -14450,6 +14901,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCloseEport]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCloseEport\n"
     ".type __load_and_call_sceKernelCloseEport @function\n"
     "__load_and_call_sceKernelCloseEport:\n"
     "push rdi\n"
@@ -14482,6 +14934,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCloseEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCloseEventFlag\n"
     ".type __load_and_call_sceKernelCloseEventFlag @function\n"
     "__load_and_call_sceKernelCloseEventFlag:\n"
     "push rdi\n"
@@ -14514,6 +14967,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCloseSema]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCloseSema\n"
     ".type __load_and_call_sceKernelCloseSema @function\n"
     "__load_and_call_sceKernelCloseSema:\n"
     "push rdi\n"
@@ -14546,6 +15000,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelConfiguredFlexibleMemorySize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelConfiguredFlexibleMemorySize\n"
     ".type __load_and_call_sceKernelConfiguredFlexibleMemorySize @function\n"
     "__load_and_call_sceKernelConfiguredFlexibleMemorySize:\n"
     "push rdi\n"
@@ -14578,6 +15033,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelConvertLocaltimeToUtc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelConvertLocaltimeToUtc\n"
     ".type __load_and_call_sceKernelConvertLocaltimeToUtc @function\n"
     "__load_and_call_sceKernelConvertLocaltimeToUtc:\n"
     "push rdi\n"
@@ -14610,6 +15066,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelConvertUtcToLocaltime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelConvertUtcToLocaltime\n"
     ".type __load_and_call_sceKernelConvertUtcToLocaltime @function\n"
     "__load_and_call_sceKernelConvertUtcToLocaltime:\n"
     "push rdi\n"
@@ -14642,6 +15099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCreateEport]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCreateEport\n"
     ".type __load_and_call_sceKernelCreateEport @function\n"
     "__load_and_call_sceKernelCreateEport:\n"
     "push rdi\n"
@@ -14674,6 +15132,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCreateEqueue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCreateEqueue\n"
     ".type __load_and_call_sceKernelCreateEqueue @function\n"
     "__load_and_call_sceKernelCreateEqueue:\n"
     "push rdi\n"
@@ -14706,6 +15165,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCreateEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCreateEventFlag\n"
     ".type __load_and_call_sceKernelCreateEventFlag @function\n"
     "__load_and_call_sceKernelCreateEventFlag:\n"
     "push rdi\n"
@@ -14738,6 +15198,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelCreateSema]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelCreateSema\n"
     ".type __load_and_call_sceKernelCreateSema @function\n"
     "__load_and_call_sceKernelCreateSema:\n"
     "push rdi\n"
@@ -14770,6 +15231,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugAcquireAndUpdateDebugRegister]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugAcquireAndUpdateDebugRegister\n"
     ".type __load_and_call_sceKernelDebugAcquireAndUpdateDebugRegister @function\n"
     "__load_and_call_sceKernelDebugAcquireAndUpdateDebugRegister:\n"
     "push rdi\n"
@@ -14802,6 +15264,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugGetAppStatus]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugGetAppStatus\n"
     ".type __load_and_call_sceKernelDebugGetAppStatus @function\n"
     "__load_and_call_sceKernelDebugGetAppStatus:\n"
     "push rdi\n"
@@ -14834,6 +15297,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugGetPauseCount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugGetPauseCount\n"
     ".type __load_and_call_sceKernelDebugGetPauseCount @function\n"
     "__load_and_call_sceKernelDebugGetPauseCount:\n"
     "push rdi\n"
@@ -14866,6 +15330,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugGpuPaDebugIsInProgress]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugGpuPaDebugIsInProgress\n"
     ".type __load_and_call_sceKernelDebugGpuPaDebugIsInProgress @function\n"
     "__load_and_call_sceKernelDebugGpuPaDebugIsInProgress:\n"
     "push rdi\n"
@@ -14898,6 +15363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugOutText]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugOutText\n"
     ".type __load_and_call_sceKernelDebugOutText @function\n"
     "__load_and_call_sceKernelDebugOutText:\n"
     "push rdi\n"
@@ -14930,6 +15396,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugRaiseException]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugRaiseException\n"
     ".type __load_and_call_sceKernelDebugRaiseException @function\n"
     "__load_and_call_sceKernelDebugRaiseException:\n"
     "push rdi\n"
@@ -14962,6 +15429,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugRaiseExceptionOnReleaseMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugRaiseExceptionOnReleaseMode\n"
     ".type __load_and_call_sceKernelDebugRaiseExceptionOnReleaseMode @function\n"
     "__load_and_call_sceKernelDebugRaiseExceptionOnReleaseMode:\n"
     "push rdi\n"
@@ -14994,6 +15462,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugRaiseExceptionWithContext]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugRaiseExceptionWithContext\n"
     ".type __load_and_call_sceKernelDebugRaiseExceptionWithContext @function\n"
     "__load_and_call_sceKernelDebugRaiseExceptionWithContext:\n"
     "push rdi\n"
@@ -15026,6 +15495,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugRaiseExceptionWithInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugRaiseExceptionWithInfo\n"
     ".type __load_and_call_sceKernelDebugRaiseExceptionWithInfo @function\n"
     "__load_and_call_sceKernelDebugRaiseExceptionWithInfo:\n"
     "push rdi\n"
@@ -15058,6 +15528,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDebugReleaseDebugContext]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDebugReleaseDebugContext\n"
     ".type __load_and_call_sceKernelDebugReleaseDebugContext @function\n"
     "__load_and_call_sceKernelDebugReleaseDebugContext:\n"
     "push rdi\n"
@@ -15090,6 +15561,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteAmprEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteAmprEvent\n"
     ".type __load_and_call_sceKernelDeleteAmprEvent @function\n"
     "__load_and_call_sceKernelDeleteAmprEvent:\n"
     "push rdi\n"
@@ -15122,6 +15594,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteCpumodeEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteCpumodeEvent\n"
     ".type __load_and_call_sceKernelDeleteCpumodeEvent @function\n"
     "__load_and_call_sceKernelDeleteCpumodeEvent:\n"
     "push rdi\n"
@@ -15154,6 +15627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteEport]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteEport\n"
     ".type __load_and_call_sceKernelDeleteEport @function\n"
     "__load_and_call_sceKernelDeleteEport:\n"
     "push rdi\n"
@@ -15186,6 +15660,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteEqueue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteEqueue\n"
     ".type __load_and_call_sceKernelDeleteEqueue @function\n"
     "__load_and_call_sceKernelDeleteEqueue:\n"
     "push rdi\n"
@@ -15218,6 +15693,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteEventFlag\n"
     ".type __load_and_call_sceKernelDeleteEventFlag @function\n"
     "__load_and_call_sceKernelDeleteEventFlag:\n"
     "push rdi\n"
@@ -15250,6 +15726,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteFileEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteFileEvent\n"
     ".type __load_and_call_sceKernelDeleteFileEvent @function\n"
     "__load_and_call_sceKernelDeleteFileEvent:\n"
     "push rdi\n"
@@ -15282,6 +15759,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteGpuExceptionEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteGpuExceptionEvent\n"
     ".type __load_and_call_sceKernelDeleteGpuExceptionEvent @function\n"
     "__load_and_call_sceKernelDeleteGpuExceptionEvent:\n"
     "push rdi\n"
@@ -15314,6 +15792,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteHRTimerEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteHRTimerEvent\n"
     ".type __load_and_call_sceKernelDeleteHRTimerEvent @function\n"
     "__load_and_call_sceKernelDeleteHRTimerEvent:\n"
     "push rdi\n"
@@ -15346,6 +15825,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteProcessFromCanvasMap]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteProcessFromCanvasMap\n"
     ".type __load_and_call_sceKernelDeleteProcessFromCanvasMap @function\n"
     "__load_and_call_sceKernelDeleteProcessFromCanvasMap:\n"
     "push rdi\n"
@@ -15378,6 +15858,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteReadEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteReadEvent\n"
     ".type __load_and_call_sceKernelDeleteReadEvent @function\n"
     "__load_and_call_sceKernelDeleteReadEvent:\n"
     "push rdi\n"
@@ -15410,6 +15891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteSema]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteSema\n"
     ".type __load_and_call_sceKernelDeleteSema @function\n"
     "__load_and_call_sceKernelDeleteSema:\n"
     "push rdi\n"
@@ -15442,6 +15924,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteTimerEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteTimerEvent\n"
     ".type __load_and_call_sceKernelDeleteTimerEvent @function\n"
     "__load_and_call_sceKernelDeleteTimerEvent:\n"
     "push rdi\n"
@@ -15474,6 +15957,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteUserEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteUserEvent\n"
     ".type __load_and_call_sceKernelDeleteUserEvent @function\n"
     "__load_and_call_sceKernelDeleteUserEvent:\n"
     "push rdi\n"
@@ -15506,6 +15990,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDeleteWriteEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDeleteWriteEvent\n"
     ".type __load_and_call_sceKernelDeleteWriteEvent @function\n"
     "__load_and_call_sceKernelDeleteWriteEvent:\n"
     "push rdi\n"
@@ -15538,6 +16023,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDirectMemoryQuery]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDirectMemoryQuery\n"
     ".type __load_and_call_sceKernelDirectMemoryQuery @function\n"
     "__load_and_call_sceKernelDirectMemoryQuery:\n"
     "push rdi\n"
@@ -15570,6 +16056,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDirectMemoryQueryForId]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDirectMemoryQueryForId\n"
     ".type __load_and_call_sceKernelDirectMemoryQueryForId @function\n"
     "__load_and_call_sceKernelDirectMemoryQueryForId:\n"
     "push rdi\n"
@@ -15602,6 +16089,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelDlsym]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelDlsym\n"
     ".type __load_and_call_sceKernelDlsym @function\n"
     "__load_and_call_sceKernelDlsym:\n"
     "push rdi\n"
@@ -15634,6 +16122,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEnableDmemAliasing]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelEnableDmemAliasing\n"
     ".type __load_and_call_sceKernelEnableDmemAliasing @function\n"
     "__load_and_call_sceKernelEnableDmemAliasing:\n"
     "push rdi\n"
@@ -15666,6 +16155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEnableDmemAliasing2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelEnableDmemAliasing2\n"
     ".type __load_and_call_sceKernelEnableDmemAliasing2 @function\n"
     "__load_and_call_sceKernelEnableDmemAliasing2:\n"
     "push rdi\n"
@@ -15698,6 +16188,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEnablePthreadObjectCheck]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelEnablePthreadObjectCheck\n"
     ".type __load_and_call_sceKernelEnablePthreadObjectCheck @function\n"
     "__load_and_call_sceKernelEnablePthreadObjectCheck:\n"
     "push rdi\n"
@@ -15730,6 +16221,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelError]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelError\n"
     ".type __load_and_call_sceKernelError @function\n"
     "__load_and_call_sceKernelError:\n"
     "push rdi\n"
@@ -15762,6 +16254,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEventLogInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelEventLogInit\n"
     ".type __load_and_call_sceKernelEventLogInit @function\n"
     "__load_and_call_sceKernelEventLogInit:\n"
     "push rdi\n"
@@ -15794,6 +16287,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEventLogPread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelEventLogPread\n"
     ".type __load_and_call_sceKernelEventLogPread @function\n"
     "__load_and_call_sceKernelEventLogPread:\n"
     "push rdi\n"
@@ -15826,6 +16320,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEventLogRead]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelEventLogRead\n"
     ".type __load_and_call_sceKernelEventLogRead @function\n"
     "__load_and_call_sceKernelEventLogRead:\n"
     "push rdi\n"
@@ -15858,6 +16353,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelEventLogWrite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelEventLogWrite\n"
     ".type __load_and_call_sceKernelEventLogWrite @function\n"
     "__load_and_call_sceKernelEventLogWrite:\n"
     "push rdi\n"
@@ -15890,6 +16386,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFchmod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelFchmod\n"
     ".type __load_and_call_sceKernelFchmod @function\n"
     "__load_and_call_sceKernelFchmod:\n"
     "push rdi\n"
@@ -15922,6 +16419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFcntl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelFcntl\n"
     ".type __load_and_call_sceKernelFcntl @function\n"
     "__load_and_call_sceKernelFcntl:\n"
     "push rdi\n"
@@ -15954,6 +16452,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFdatasync]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelFdatasync\n"
     ".type __load_and_call_sceKernelFdatasync @function\n"
     "__load_and_call_sceKernelFdatasync:\n"
     "push rdi\n"
@@ -15986,6 +16485,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelFlock\n"
     ".type __load_and_call_sceKernelFlock @function\n"
     "__load_and_call_sceKernelFlock:\n"
     "push rdi\n"
@@ -16018,6 +16518,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFstat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelFstat\n"
     ".type __load_and_call_sceKernelFstat @function\n"
     "__load_and_call_sceKernelFstat:\n"
     "push rdi\n"
@@ -16050,6 +16551,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFsync]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelFsync\n"
     ".type __load_and_call_sceKernelFsync @function\n"
     "__load_and_call_sceKernelFsync:\n"
     "push rdi\n"
@@ -16082,6 +16584,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFtruncate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelFtruncate\n"
     ".type __load_and_call_sceKernelFtruncate @function\n"
     "__load_and_call_sceKernelFtruncate:\n"
     "push rdi\n"
@@ -16114,6 +16617,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelFutimes]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelFutimes\n"
     ".type __load_and_call_sceKernelFutimes @function\n"
     "__load_and_call_sceKernelFutimes:\n"
     "push rdi\n"
@@ -16146,6 +16650,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAllowedSdkVersionOnSystem]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetAllowedSdkVersionOnSystem\n"
     ".type __load_and_call_sceKernelGetAllowedSdkVersionOnSystem @function\n"
     "__load_and_call_sceKernelGetAllowedSdkVersionOnSystem:\n"
     "push rdi\n"
@@ -16178,6 +16683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAppCategoryType]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetAppCategoryType\n"
     ".type __load_and_call_sceKernelGetAppCategoryType @function\n"
     "__load_and_call_sceKernelGetAppCategoryType:\n"
     "push rdi\n"
@@ -16210,6 +16716,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAppInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetAppInfo\n"
     ".type __load_and_call_sceKernelGetAppInfo @function\n"
     "__load_and_call_sceKernelGetAppInfo:\n"
     "push rdi\n"
@@ -16242,6 +16749,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAslrStatus]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetAslrStatus\n"
     ".type __load_and_call_sceKernelGetAslrStatus @function\n"
     "__load_and_call_sceKernelGetAslrStatus:\n"
     "push rdi\n"
@@ -16274,6 +16782,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetAutoUpdateVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetAutoUpdateVersion\n"
     ".type __load_and_call_sceKernelGetAutoUpdateVersion @function\n"
     "__load_and_call_sceKernelGetAutoUpdateVersion:\n"
     "push rdi\n"
@@ -16306,6 +16815,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBackupRestoreMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetBackupRestoreMode\n"
     ".type __load_and_call_sceKernelGetBackupRestoreMode @function\n"
     "__load_and_call_sceKernelGetBackupRestoreMode:\n"
     "push rdi\n"
@@ -16338,6 +16848,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBackupRestoreModeOfNextBoot]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetBackupRestoreModeOfNextBoot\n"
     ".type __load_and_call_sceKernelGetBackupRestoreModeOfNextBoot @function\n"
     "__load_and_call_sceKernelGetBackupRestoreModeOfNextBoot:\n"
     "push rdi\n"
@@ -16370,6 +16881,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBasicProductShape]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetBasicProductShape\n"
     ".type __load_and_call_sceKernelGetBasicProductShape @function\n"
     "__load_and_call_sceKernelGetBasicProductShape:\n"
     "push rdi\n"
@@ -16402,6 +16914,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBetaUpdateTestForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetBetaUpdateTestForRcmgr\n"
     ".type __load_and_call_sceKernelGetBetaUpdateTestForRcmgr @function\n"
     "__load_and_call_sceKernelGetBetaUpdateTestForRcmgr:\n"
     "push rdi\n"
@@ -16434,6 +16947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBioUsageAll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetBioUsageAll\n"
     ".type __load_and_call_sceKernelGetBioUsageAll @function\n"
     "__load_and_call_sceKernelGetBioUsageAll:\n"
     "push rdi\n"
@@ -16466,6 +16980,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBootReqNotifyCount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetBootReqNotifyCount\n"
     ".type __load_and_call_sceKernelGetBootReqNotifyCount @function\n"
     "__load_and_call_sceKernelGetBootReqNotifyCount:\n"
     "push rdi\n"
@@ -16498,6 +17013,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetBuildNumber]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetBuildNumber\n"
     ".type __load_and_call_sceKernelGetBuildNumber @function\n"
     "__load_and_call_sceKernelGetBuildNumber:\n"
     "push rdi\n"
@@ -16530,6 +17046,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCallRecord]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCallRecord\n"
     ".type __load_and_call_sceKernelGetCallRecord @function\n"
     "__load_and_call_sceKernelGetCallRecord:\n"
     "push rdi\n"
@@ -16562,6 +17079,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCompiledSdkVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCompiledSdkVersion\n"
     ".type __load_and_call_sceKernelGetCompiledSdkVersion @function\n"
     "__load_and_call_sceKernelGetCompiledSdkVersion:\n"
     "push rdi\n"
@@ -16594,6 +17112,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCompiledSdkVersionByPath]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCompiledSdkVersionByPath\n"
     ".type __load_and_call_sceKernelGetCompiledSdkVersionByPath @function\n"
     "__load_and_call_sceKernelGetCompiledSdkVersionByPath:\n"
     "push rdi\n"
@@ -16626,6 +17145,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCompiledSdkVersionByPid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCompiledSdkVersionByPid\n"
     ".type __load_and_call_sceKernelGetCompiledSdkVersionByPid @function\n"
     "__load_and_call_sceKernelGetCompiledSdkVersionByPid:\n"
     "push rdi\n"
@@ -16658,6 +17178,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuFrequency]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpuFrequency\n"
     ".type __load_and_call_sceKernelGetCpuFrequency @function\n"
     "__load_and_call_sceKernelGetCpuFrequency:\n"
     "push rdi\n"
@@ -16690,6 +17211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuTemperature]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpuTemperature\n"
     ".type __load_and_call_sceKernelGetCpuTemperature @function\n"
     "__load_and_call_sceKernelGetCpuTemperature:\n"
     "push rdi\n"
@@ -16722,6 +17244,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsage]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpuUsage\n"
     ".type __load_and_call_sceKernelGetCpuUsage @function\n"
     "__load_and_call_sceKernelGetCpuUsage:\n"
     "push rdi\n"
@@ -16754,6 +17277,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsageAll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpuUsageAll\n"
     ".type __load_and_call_sceKernelGetCpuUsageAll @function\n"
     "__load_and_call_sceKernelGetCpuUsageAll:\n"
     "push rdi\n"
@@ -16786,6 +17310,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsageProc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpuUsageProc\n"
     ".type __load_and_call_sceKernelGetCpuUsageProc @function\n"
     "__load_and_call_sceKernelGetCpuUsageProc:\n"
     "push rdi\n"
@@ -16818,6 +17343,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsageProc2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpuUsageProc2\n"
     ".type __load_and_call_sceKernelGetCpuUsageProc2 @function\n"
     "__load_and_call_sceKernelGetCpuUsageProc2:\n"
     "push rdi\n"
@@ -16850,6 +17376,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpuUsageThread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpuUsageThread\n"
     ".type __load_and_call_sceKernelGetCpuUsageThread @function\n"
     "__load_and_call_sceKernelGetCpuUsageThread:\n"
     "push rdi\n"
@@ -16882,6 +17409,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpumode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpumode\n"
     ".type __load_and_call_sceKernelGetCpumode @function\n"
     "__load_and_call_sceKernelGetCpumode:\n"
     "push rdi\n"
@@ -16914,6 +17442,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCpumodeGame]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCpumodeGame\n"
     ".type __load_and_call_sceKernelGetCpumodeGame @function\n"
     "__load_and_call_sceKernelGetCpumodeGame:\n"
     "push rdi\n"
@@ -16946,6 +17475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetCurrentCpu]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetCurrentCpu\n"
     ".type __load_and_call_sceKernelGetCurrentCpu @function\n"
     "__load_and_call_sceKernelGetCurrentCpu:\n"
     "push rdi\n"
@@ -16978,6 +17508,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDataTransferMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetDataTransferMode\n"
     ".type __load_and_call_sceKernelGetDataTransferMode @function\n"
     "__load_and_call_sceKernelGetDataTransferMode:\n"
     "push rdi\n"
@@ -17010,6 +17541,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDebugMenuMiniModeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetDebugMenuMiniModeForRcmgr\n"
     ".type __load_and_call_sceKernelGetDebugMenuMiniModeForRcmgr @function\n"
     "__load_and_call_sceKernelGetDebugMenuMiniModeForRcmgr:\n"
     "push rdi\n"
@@ -17042,6 +17574,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDebugMenuModeForPsmForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetDebugMenuModeForPsmForRcmgr\n"
     ".type __load_and_call_sceKernelGetDebugMenuModeForPsmForRcmgr @function\n"
     "__load_and_call_sceKernelGetDebugMenuModeForPsmForRcmgr:\n"
     "push rdi\n"
@@ -17074,6 +17607,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDebugMenuModeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetDebugMenuModeForRcmgr\n"
     ".type __load_and_call_sceKernelGetDebugMenuModeForRcmgr @function\n"
     "__load_and_call_sceKernelGetDebugMenuModeForRcmgr:\n"
     "push rdi\n"
@@ -17106,6 +17640,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDefaultToolMemorySize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetDefaultToolMemorySize\n"
     ".type __load_and_call_sceKernelGetDefaultToolMemorySize @function\n"
     "__load_and_call_sceKernelGetDefaultToolMemorySize:\n"
     "push rdi\n"
@@ -17138,6 +17673,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDirectMemorySize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetDirectMemorySize\n"
     ".type __load_and_call_sceKernelGetDirectMemorySize @function\n"
     "__load_and_call_sceKernelGetDirectMemorySize:\n"
     "push rdi\n"
@@ -17170,6 +17706,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetDirectMemoryType]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetDirectMemoryType\n"
     ".type __load_and_call_sceKernelGetDirectMemoryType @function\n"
     "__load_and_call_sceKernelGetDirectMemoryType:\n"
     "push rdi\n"
@@ -17202,6 +17739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventData]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetEventData\n"
     ".type __load_and_call_sceKernelGetEventData @function\n"
     "__load_and_call_sceKernelGetEventData:\n"
     "push rdi\n"
@@ -17234,6 +17772,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventError]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetEventError\n"
     ".type __load_and_call_sceKernelGetEventError @function\n"
     "__load_and_call_sceKernelGetEventError:\n"
     "push rdi\n"
@@ -17266,6 +17805,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventFflags]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetEventFflags\n"
     ".type __load_and_call_sceKernelGetEventFflags @function\n"
     "__load_and_call_sceKernelGetEventFflags:\n"
     "push rdi\n"
@@ -17298,6 +17838,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventFilter]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetEventFilter\n"
     ".type __load_and_call_sceKernelGetEventFilter @function\n"
     "__load_and_call_sceKernelGetEventFilter:\n"
     "push rdi\n"
@@ -17330,6 +17871,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventId]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetEventId\n"
     ".type __load_and_call_sceKernelGetEventId @function\n"
     "__load_and_call_sceKernelGetEventId:\n"
     "push rdi\n"
@@ -17362,6 +17904,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetEventUserData]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetEventUserData\n"
     ".type __load_and_call_sceKernelGetEventUserData @function\n"
     "__load_and_call_sceKernelGetEventUserData:\n"
     "push rdi\n"
@@ -17394,6 +17937,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetExecutableModuleHandle]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetExecutableModuleHandle\n"
     ".type __load_and_call_sceKernelGetExecutableModuleHandle @function\n"
     "__load_and_call_sceKernelGetExecutableModuleHandle:\n"
     "push rdi\n"
@@ -17426,6 +17970,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetExtLibcHandle]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetExtLibcHandle\n"
     ".type __load_and_call_sceKernelGetExtLibcHandle @function\n"
     "__load_and_call_sceKernelGetExtLibcHandle:\n"
     "push rdi\n"
@@ -17458,6 +18003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetFakeFinalizeMenuForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetFakeFinalizeMenuForRcmgr\n"
     ".type __load_and_call_sceKernelGetFakeFinalizeMenuForRcmgr @function\n"
     "__load_and_call_sceKernelGetFakeFinalizeMenuForRcmgr:\n"
     "push rdi\n"
@@ -17490,6 +18036,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetFlagedUpdaterForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetFlagedUpdaterForRcmgr\n"
     ".type __load_and_call_sceKernelGetFlagedUpdaterForRcmgr @function\n"
     "__load_and_call_sceKernelGetFlagedUpdaterForRcmgr:\n"
     "push rdi\n"
@@ -17522,6 +18069,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetForceUpdateModeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetForceUpdateModeForRcmgr\n"
     ".type __load_and_call_sceKernelGetForceUpdateModeForRcmgr @function\n"
     "__load_and_call_sceKernelGetForceUpdateModeForRcmgr:\n"
     "push rdi\n"
@@ -17554,6 +18102,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetFsSandboxRandomWord]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetFsSandboxRandomWord\n"
     ".type __load_and_call_sceKernelGetFsSandboxRandomWord @function\n"
     "__load_and_call_sceKernelGetFsSandboxRandomWord:\n"
     "push rdi\n"
@@ -17586,6 +18135,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetGPI]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetGPI\n"
     ".type __load_and_call_sceKernelGetGPI @function\n"
     "__load_and_call_sceKernelGetGPI:\n"
     "push rdi\n"
@@ -17618,6 +18168,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetGPO]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetGPO\n"
     ".type __load_and_call_sceKernelGetGPO @function\n"
     "__load_and_call_sceKernelGetGPO:\n"
     "push rdi\n"
@@ -17650,6 +18201,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetHwFeatureInfoForDecid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetHwFeatureInfoForDecid\n"
     ".type __load_and_call_sceKernelGetHwFeatureInfoForDecid @function\n"
     "__load_and_call_sceKernelGetHwFeatureInfoForDecid:\n"
     "push rdi\n"
@@ -17682,6 +18234,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetIdPs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetIdPs\n"
     ".type __load_and_call_sceKernelGetIdPs @function\n"
     "__load_and_call_sceKernelGetIdPs:\n"
     "push rdi\n"
@@ -17714,6 +18267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetIdTableCurrentCount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetIdTableCurrentCount\n"
     ".type __load_and_call_sceKernelGetIdTableCurrentCount @function\n"
     "__load_and_call_sceKernelGetIdTableCurrentCount:\n"
     "push rdi\n"
@@ -17746,6 +18300,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetIoreq]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetIoreq\n"
     ".type __load_and_call_sceKernelGetIoreq @function\n"
     "__load_and_call_sceKernelGetIoreq:\n"
     "push rdi\n"
@@ -17778,6 +18333,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetIpcPath]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetIpcPath\n"
     ".type __load_and_call_sceKernelGetIpcPath @function\n"
     "__load_and_call_sceKernelGetIpcPath:\n"
     "push rdi\n"
@@ -17810,6 +18366,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetKnobs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetKnobs\n"
     ".type __load_and_call_sceKernelGetKnobs @function\n"
     "__load_and_call_sceKernelGetKnobs:\n"
     "push rdi\n"
@@ -17842,6 +18399,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetLibkernelTextLocation]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetLibkernelTextLocation\n"
     ".type __load_and_call_sceKernelGetLibkernelTextLocation @function\n"
     "__load_and_call_sceKernelGetLibkernelTextLocation:\n"
     "push rdi\n"
@@ -17874,6 +18432,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetMainSocId]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetMainSocId\n"
     ".type __load_and_call_sceKernelGetMainSocId @function\n"
     "__load_and_call_sceKernelGetMainSocId:\n"
     "push rdi\n"
@@ -17906,6 +18465,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetModuleInfo\n"
     ".type __load_and_call_sceKernelGetModuleInfo @function\n"
     "__load_and_call_sceKernelGetModuleInfo:\n"
     "push rdi\n"
@@ -17938,6 +18498,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleInfoForUnwind]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetModuleInfoForUnwind\n"
     ".type __load_and_call_sceKernelGetModuleInfoForUnwind @function\n"
     "__load_and_call_sceKernelGetModuleInfoForUnwind:\n"
     "push rdi\n"
@@ -17970,6 +18531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleInfoFromAddr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetModuleInfoFromAddr\n"
     ".type __load_and_call_sceKernelGetModuleInfoFromAddr @function\n"
     "__load_and_call_sceKernelGetModuleInfoFromAddr:\n"
     "push rdi\n"
@@ -18002,6 +18564,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleInfoInternal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetModuleInfoInternal\n"
     ".type __load_and_call_sceKernelGetModuleInfoInternal @function\n"
     "__load_and_call_sceKernelGetModuleInfoInternal:\n"
     "push rdi\n"
@@ -18034,6 +18597,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleList]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetModuleList\n"
     ".type __load_and_call_sceKernelGetModuleList @function\n"
     "__load_and_call_sceKernelGetModuleList:\n"
     "push rdi\n"
@@ -18066,6 +18630,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetModuleListInternal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetModuleListInternal\n"
     ".type __load_and_call_sceKernelGetModuleListInternal @function\n"
     "__load_and_call_sceKernelGetModuleListInternal:\n"
     "push rdi\n"
@@ -18098,6 +18663,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetOpenPsIdForSystem]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetOpenPsIdForSystem\n"
     ".type __load_and_call_sceKernelGetOpenPsIdForSystem @function\n"
     "__load_and_call_sceKernelGetOpenPsIdForSystem:\n"
     "push rdi\n"
@@ -18130,6 +18696,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPageTableStats]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPageTableStats\n"
     ".type __load_and_call_sceKernelGetPageTableStats @function\n"
     "__load_and_call_sceKernelGetPageTableStats:\n"
     "push rdi\n"
@@ -18162,6 +18729,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPagingStatsOfAllObjects]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPagingStatsOfAllObjects\n"
     ".type __load_and_call_sceKernelGetPagingStatsOfAllObjects @function\n"
     "__load_and_call_sceKernelGetPagingStatsOfAllObjects:\n"
     "push rdi\n"
@@ -18194,6 +18762,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPagingStatsOfAllThreads]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPagingStatsOfAllThreads\n"
     ".type __load_and_call_sceKernelGetPagingStatsOfAllThreads @function\n"
     "__load_and_call_sceKernelGetPagingStatsOfAllThreads:\n"
     "push rdi\n"
@@ -18226,6 +18795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPhysPageSize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPhysPageSize\n"
     ".type __load_and_call_sceKernelGetPhysPageSize @function\n"
     "__load_and_call_sceKernelGetPhysPageSize:\n"
     "push rdi\n"
@@ -18258,6 +18828,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPrefixVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPrefixVersion\n"
     ".type __load_and_call_sceKernelGetPrefixVersion @function\n"
     "__load_and_call_sceKernelGetPrefixVersion:\n"
     "push rdi\n"
@@ -18290,6 +18861,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcParam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProcParam\n"
     ".type __load_and_call_sceKernelGetProcParam @function\n"
     "__load_and_call_sceKernelGetProcParam:\n"
     "push rdi\n"
@@ -18322,6 +18894,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessAbiType]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProcessAbiType\n"
     ".type __load_and_call_sceKernelGetProcessAbiType @function\n"
     "__load_and_call_sceKernelGetProcessAbiType:\n"
     "push rdi\n"
@@ -18354,6 +18927,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessName]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProcessName\n"
     ".type __load_and_call_sceKernelGetProcessName @function\n"
     "__load_and_call_sceKernelGetProcessName:\n"
     "push rdi\n"
@@ -18386,6 +18960,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessTime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProcessTime\n"
     ".type __load_and_call_sceKernelGetProcessTime @function\n"
     "__load_and_call_sceKernelGetProcessTime:\n"
     "push rdi\n"
@@ -18418,6 +18993,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessTimeCounter]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProcessTimeCounter\n"
     ".type __load_and_call_sceKernelGetProcessTimeCounter @function\n"
     "__load_and_call_sceKernelGetProcessTimeCounter:\n"
     "push rdi\n"
@@ -18450,6 +19026,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessTimeCounterFrequency]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProcessTimeCounterFrequency\n"
     ".type __load_and_call_sceKernelGetProcessTimeCounterFrequency @function\n"
     "__load_and_call_sceKernelGetProcessTimeCounterFrequency:\n"
     "push rdi\n"
@@ -18482,6 +19059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProcessType]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProcessType\n"
     ".type __load_and_call_sceKernelGetProcessType @function\n"
     "__load_and_call_sceKernelGetProcessType:\n"
     "push rdi\n"
@@ -18514,6 +19092,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProductCode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProductCode\n"
     ".type __load_and_call_sceKernelGetProductCode @function\n"
     "__load_and_call_sceKernelGetProductCode:\n"
     "push rdi\n"
@@ -18546,6 +19125,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProductStr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProductStr\n"
     ".type __load_and_call_sceKernelGetProductStr @function\n"
     "__load_and_call_sceKernelGetProductStr:\n"
     "push rdi\n"
@@ -18578,6 +19158,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetProsperoSystemSwVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetProsperoSystemSwVersion\n"
     ".type __load_and_call_sceKernelGetProsperoSystemSwVersion @function\n"
     "__load_and_call_sceKernelGetProsperoSystemSwVersion:\n"
     "push rdi\n"
@@ -18610,6 +19191,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPrtAperture]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPrtAperture\n"
     ".type __load_and_call_sceKernelGetPrtAperture @function\n"
     "__load_and_call_sceKernelGetPrtAperture:\n"
     "push rdi\n"
@@ -18642,6 +19224,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPs4SystemSwVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPs4SystemSwVersion\n"
     ".type __load_and_call_sceKernelGetPs4SystemSwVersion @function\n"
     "__load_and_call_sceKernelGetPs4SystemSwVersion:\n"
     "push rdi\n"
@@ -18674,6 +19257,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPsmIntdevModeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPsmIntdevModeForRcmgr\n"
     ".type __load_and_call_sceKernelGetPsmIntdevModeForRcmgr @function\n"
     "__load_and_call_sceKernelGetPsmIntdevModeForRcmgr:\n"
     "push rdi\n"
@@ -18706,6 +19290,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetPsnAccessTraceLogForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetPsnAccessTraceLogForRcmgr\n"
     ".type __load_and_call_sceKernelGetPsnAccessTraceLogForRcmgr @function\n"
     "__load_and_call_sceKernelGetPsnAccessTraceLogForRcmgr:\n"
     "push rdi\n"
@@ -18738,6 +19323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetQafExpirationTimeNotafterForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetQafExpirationTimeNotafterForRcmgr\n"
     ".type __load_and_call_sceKernelGetQafExpirationTimeNotafterForRcmgr @function\n"
     "__load_and_call_sceKernelGetQafExpirationTimeNotafterForRcmgr:\n"
     "push rdi\n"
@@ -18770,6 +19356,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetQafExpirationTimeNotbeforeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetQafExpirationTimeNotbeforeForRcmgr\n"
     ".type __load_and_call_sceKernelGetQafExpirationTimeNotbeforeForRcmgr @function\n"
     "__load_and_call_sceKernelGetQafExpirationTimeNotbeforeForRcmgr:\n"
     "push rdi\n"
@@ -18802,6 +19389,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetQafGenerationForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetQafGenerationForRcmgr\n"
     ".type __load_and_call_sceKernelGetQafGenerationForRcmgr @function\n"
     "__load_and_call_sceKernelGetQafGenerationForRcmgr:\n"
     "push rdi\n"
@@ -18834,6 +19422,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetQafNameForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetQafNameForRcmgr\n"
     ".type __load_and_call_sceKernelGetQafNameForRcmgr @function\n"
     "__load_and_call_sceKernelGetQafNameForRcmgr:\n"
     "push rdi\n"
@@ -18866,6 +19455,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetRenderingMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetRenderingMode\n"
     ".type __load_and_call_sceKernelGetRenderingMode @function\n"
     "__load_and_call_sceKernelGetRenderingMode:\n"
     "push rdi\n"
@@ -18898,6 +19488,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetResidentCount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetResidentCount\n"
     ".type __load_and_call_sceKernelGetResidentCount @function\n"
     "__load_and_call_sceKernelGetResidentCount:\n"
     "push rdi\n"
@@ -18930,6 +19521,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetResidentFmemCount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetResidentFmemCount\n"
     ".type __load_and_call_sceKernelGetResidentFmemCount @function\n"
     "__load_and_call_sceKernelGetResidentFmemCount:\n"
     "push rdi\n"
@@ -18962,6 +19554,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSafemode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSafemode\n"
     ".type __load_and_call_sceKernelGetSafemode @function\n"
     "__load_and_call_sceKernelGetSafemode:\n"
     "push rdi\n"
@@ -18994,6 +19587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSanitizerMallocReplace]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSanitizerMallocReplace\n"
     ".type __load_and_call_sceKernelGetSanitizerMallocReplace @function\n"
     "__load_and_call_sceKernelGetSanitizerMallocReplace:\n"
     "push rdi\n"
@@ -19026,6 +19620,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSanitizerMallocReplaceExternal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSanitizerMallocReplaceExternal\n"
     ".type __load_and_call_sceKernelGetSanitizerMallocReplaceExternal @function\n"
     "__load_and_call_sceKernelGetSanitizerMallocReplaceExternal:\n"
     "push rdi\n"
@@ -19058,6 +19653,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSanitizerNewReplace]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSanitizerNewReplace\n"
     ".type __load_and_call_sceKernelGetSanitizerNewReplace @function\n"
     "__load_and_call_sceKernelGetSanitizerNewReplace:\n"
     "push rdi\n"
@@ -19090,6 +19686,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSanitizerNewReplaceExternal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSanitizerNewReplaceExternal\n"
     ".type __load_and_call_sceKernelGetSanitizerNewReplaceExternal @function\n"
     "__load_and_call_sceKernelGetSanitizerNewReplaceExternal:\n"
     "push rdi\n"
@@ -19122,6 +19719,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSocClock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSocClock\n"
     ".type __load_and_call_sceKernelGetSocClock @function\n"
     "__load_and_call_sceKernelGetSocClock:\n"
     "push rdi\n"
@@ -19154,6 +19752,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSocPowerConsumption]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSocPowerConsumption\n"
     ".type __load_and_call_sceKernelGetSocPowerConsumption @function\n"
     "__load_and_call_sceKernelGetSocPowerConsumption:\n"
     "push rdi\n"
@@ -19186,6 +19785,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSocSensorTemperature]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSocSensorTemperature\n"
     ".type __load_and_call_sceKernelGetSocSensorTemperature @function\n"
     "__load_and_call_sceKernelGetSocSensorTemperature:\n"
     "push rdi\n"
@@ -19218,6 +19818,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSpecialIForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSpecialIForRcmgr\n"
     ".type __load_and_call_sceKernelGetSpecialIForRcmgr @function\n"
     "__load_and_call_sceKernelGetSpecialIForRcmgr:\n"
     "push rdi\n"
@@ -19250,6 +19851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSubsysId]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSubsysId\n"
     ".type __load_and_call_sceKernelGetSubsysId @function\n"
     "__load_and_call_sceKernelGetSubsysId:\n"
     "push rdi\n"
@@ -19282,6 +19884,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSubsysSubId]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSubsysSubId\n"
     ".type __load_and_call_sceKernelGetSubsysSubId @function\n"
     "__load_and_call_sceKernelGetSubsysSubId:\n"
     "push rdi\n"
@@ -19314,6 +19917,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSystemExVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSystemExVersion\n"
     ".type __load_and_call_sceKernelGetSystemExVersion @function\n"
     "__load_and_call_sceKernelGetSystemExVersion:\n"
     "push rdi\n"
@@ -19346,6 +19950,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSystemLevelDebuggerModeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSystemLevelDebuggerModeForRcmgr\n"
     ".type __load_and_call_sceKernelGetSystemLevelDebuggerModeForRcmgr @function\n"
     "__load_and_call_sceKernelGetSystemLevelDebuggerModeForRcmgr:\n"
     "push rdi\n"
@@ -19378,6 +19983,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSystemSwBeta]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSystemSwBeta\n"
     ".type __load_and_call_sceKernelGetSystemSwBeta @function\n"
     "__load_and_call_sceKernelGetSystemSwBeta:\n"
     "push rdi\n"
@@ -19410,6 +20016,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetSystemSwVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetSystemSwVersion\n"
     ".type __load_and_call_sceKernelGetSystemSwVersion @function\n"
     "__load_and_call_sceKernelGetSystemSwVersion:\n"
     "push rdi\n"
@@ -19442,6 +20049,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetThreadName]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetThreadName\n"
     ".type __load_and_call_sceKernelGetThreadName @function\n"
     "__load_and_call_sceKernelGetThreadName:\n"
     "push rdi\n"
@@ -19474,6 +20082,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetTraceMemoryStats]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetTraceMemoryStats\n"
     ".type __load_and_call_sceKernelGetTraceMemoryStats @function\n"
     "__load_and_call_sceKernelGetTraceMemoryStats:\n"
     "push rdi\n"
@@ -19506,6 +20115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetTscFrequency]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetTscFrequency\n"
     ".type __load_and_call_sceKernelGetTscFrequency @function\n"
     "__load_and_call_sceKernelGetTscFrequency:\n"
     "push rdi\n"
@@ -19538,6 +20148,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUniversalMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUniversalMode\n"
     ".type __load_and_call_sceKernelGetUniversalMode @function\n"
     "__load_and_call_sceKernelGetUniversalMode:\n"
     "push rdi\n"
@@ -19570,6 +20181,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUpdVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUpdVersion\n"
     ".type __load_and_call_sceKernelGetUpdVersion @function\n"
     "__load_and_call_sceKernelGetUpdVersion:\n"
     "push rdi\n"
@@ -19602,6 +20214,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenDataExecutionForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenDataExecutionForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenDataExecutionForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenDataExecutionForRcmgr:\n"
     "push rdi\n"
@@ -19634,6 +20247,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenExpirationTimeNotafterForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenExpirationTimeNotafterForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenExpirationTimeNotafterForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenExpirationTimeNotafterForRcmgr:\n"
     "push rdi\n"
@@ -19666,6 +20280,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenExpirationTimeNotbeforeForRcmgr:\n"
     "push rdi\n"
@@ -19698,6 +20313,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenFakeSharefactoryForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenFakeSharefactoryForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenFakeSharefactoryForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenFakeSharefactoryForRcmgr:\n"
     "push rdi\n"
@@ -19730,6 +20346,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenFlagedUpdaterForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenFlagedUpdaterForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenFlagedUpdaterForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenFlagedUpdaterForRcmgr:\n"
     "push rdi\n"
@@ -19762,6 +20379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenNpEnvSwitchingForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenNpEnvSwitchingForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenNpEnvSwitchingForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenNpEnvSwitchingForRcmgr:\n"
     "push rdi\n"
@@ -19794,6 +20412,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenSaveDataRepairForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenSaveDataRepairForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenSaveDataRepairForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenSaveDataRepairForRcmgr:\n"
     "push rdi\n"
@@ -19826,6 +20445,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenStoreModeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenStoreModeForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenStoreModeForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenStoreModeForRcmgr:\n"
     "push rdi\n"
@@ -19858,6 +20478,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenUseSoftwagnerForAcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenUseSoftwagnerForAcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenUseSoftwagnerForAcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenUseSoftwagnerForAcmgr:\n"
     "push rdi\n"
@@ -19890,6 +20511,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenUseSoftwagnerForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenUseSoftwagnerForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenUseSoftwagnerForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenUseSoftwagnerForRcmgr:\n"
     "push rdi\n"
@@ -19922,6 +20544,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr\n"
     ".type __load_and_call_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr @function\n"
     "__load_and_call_sceKernelGetUtokenWeakenedPortRestrictionForRcmgr:\n"
     "push rdi\n"
@@ -19954,6 +20577,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetVrCaptureSize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetVrCaptureSize\n"
     ".type __load_and_call_sceKernelGetVrCaptureSize @function\n"
     "__load_and_call_sceKernelGetVrCaptureSize:\n"
     "push rdi\n"
@@ -19986,6 +20610,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetdents]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetdents\n"
     ".type __load_and_call_sceKernelGetdents @function\n"
     "__load_and_call_sceKernelGetdents:\n"
     "push rdi\n"
@@ -20018,6 +20643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGetdirentries]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGetdirentries\n"
     ".type __load_and_call_sceKernelGetdirentries @function\n"
     "__load_and_call_sceKernelGetdirentries:\n"
     "push rdi\n"
@@ -20050,6 +20676,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGettimeofday]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGettimeofday\n"
     ".type __load_and_call_sceKernelGettimeofday @function\n"
     "__load_and_call_sceKernelGettimeofday:\n"
     "push rdi\n"
@@ -20082,6 +20709,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGettimezone]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGettimezone\n"
     ".type __load_and_call_sceKernelGettimezone @function\n"
     "__load_and_call_sceKernelGettimezone:\n"
     "push rdi\n"
@@ -20114,6 +20742,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelGiveDirectMemoryToMapper]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelGiveDirectMemoryToMapper\n"
     ".type __load_and_call_sceKernelGiveDirectMemoryToMapper @function\n"
     "__load_and_call_sceKernelGiveDirectMemoryToMapper:\n"
     "push rdi\n"
@@ -20146,6 +20775,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelHasNeoMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelHasNeoMode\n"
     ".type __load_and_call_sceKernelHasNeoMode @function\n"
     "__load_and_call_sceKernelHasNeoMode:\n"
     "push rdi\n"
@@ -20178,6 +20808,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelHwGetBdDriveInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelHwGetBdDriveInfo\n"
     ".type __load_and_call_sceKernelHwGetBdDriveInfo @function\n"
     "__load_and_call_sceKernelHwGetBdDriveInfo:\n"
     "push rdi\n"
@@ -20210,6 +20841,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelHwHasOpticalOut]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelHwHasOpticalOut\n"
     ".type __load_and_call_sceKernelHwHasOpticalOut @function\n"
     "__load_and_call_sceKernelHwHasOpticalOut:\n"
     "push rdi\n"
@@ -20242,6 +20874,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelHwHasWlanBt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelHwHasWlanBt\n"
     ".type __load_and_call_sceKernelHwHasWlanBt @function\n"
     "__load_and_call_sceKernelHwHasWlanBt:\n"
     "push rdi\n"
@@ -20274,6 +20907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccControlBDPowerState]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccControlBDPowerState\n"
     ".type __load_and_call_sceKernelIccControlBDPowerState @function\n"
     "__load_and_call_sceKernelIccControlBDPowerState:\n"
     "push rdi\n"
@@ -20306,6 +20940,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccControlUSBPowerState]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccControlUSBPowerState\n"
     ".type __load_and_call_sceKernelIccControlUSBPowerState @function\n"
     "__load_and_call_sceKernelIccControlUSBPowerState:\n"
     "push rdi\n"
@@ -20338,6 +20973,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetBDPowerState]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetBDPowerState\n"
     ".type __load_and_call_sceKernelIccGetBDPowerState @function\n"
     "__load_and_call_sceKernelIccGetBDPowerState:\n"
     "push rdi\n"
@@ -20370,6 +21006,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetCPMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetCPMode\n"
     ".type __load_and_call_sceKernelIccGetCPMode @function\n"
     "__load_and_call_sceKernelIccGetCPMode:\n"
     "push rdi\n"
@@ -20402,6 +21039,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetCountTime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetCountTime\n"
     ".type __load_and_call_sceKernelIccGetCountTime @function\n"
     "__load_and_call_sceKernelIccGetCountTime:\n"
     "push rdi\n"
@@ -20434,6 +21072,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetCpuInfoBit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetCpuInfoBit\n"
     ".type __load_and_call_sceKernelIccGetCpuInfoBit @function\n"
     "__load_and_call_sceKernelIccGetCpuInfoBit:\n"
     "push rdi\n"
@@ -20466,6 +21105,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetErrLog]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetErrLog\n"
     ".type __load_and_call_sceKernelIccGetErrLog @function\n"
     "__load_and_call_sceKernelIccGetErrLog:\n"
     "push rdi\n"
@@ -20498,6 +21138,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetHwInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetHwInfo\n"
     ".type __load_and_call_sceKernelIccGetHwInfo @function\n"
     "__load_and_call_sceKernelIccGetHwInfo:\n"
     "push rdi\n"
@@ -20530,6 +21171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetPowerNumberOfBootShutdown]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetPowerNumberOfBootShutdown\n"
     ".type __load_and_call_sceKernelIccGetPowerNumberOfBootShutdown @function\n"
     "__load_and_call_sceKernelIccGetPowerNumberOfBootShutdown:\n"
     "push rdi\n"
@@ -20562,6 +21204,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetPowerOperatingTime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetPowerOperatingTime\n"
     ".type __load_and_call_sceKernelIccGetPowerOperatingTime @function\n"
     "__load_and_call_sceKernelIccGetPowerOperatingTime:\n"
     "push rdi\n"
@@ -20594,6 +21237,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetPowerUpCause]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetPowerUpCause\n"
     ".type __load_and_call_sceKernelIccGetPowerUpCause @function\n"
     "__load_and_call_sceKernelIccGetPowerUpCause:\n"
     "push rdi\n"
@@ -20626,6 +21270,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetSysEventLog]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetSysEventLog\n"
     ".type __load_and_call_sceKernelIccGetSysEventLog @function\n"
     "__load_and_call_sceKernelIccGetSysEventLog:\n"
     "push rdi\n"
@@ -20658,6 +21303,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetThermalAlert]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetThermalAlert\n"
     ".type __load_and_call_sceKernelIccGetThermalAlert @function\n"
     "__load_and_call_sceKernelIccGetThermalAlert:\n"
     "push rdi\n"
@@ -20690,6 +21336,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccGetUSBPowerState]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccGetUSBPowerState\n"
     ".type __load_and_call_sceKernelIccGetUSBPowerState @function\n"
     "__load_and_call_sceKernelIccGetUSBPowerState:\n"
     "push rdi\n"
@@ -20722,6 +21369,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorBootDone]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccIndicatorBootDone\n"
     ".type __load_and_call_sceKernelIccIndicatorBootDone @function\n"
     "__load_and_call_sceKernelIccIndicatorBootDone:\n"
     "push rdi\n"
@@ -20754,6 +21402,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorShutdown]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccIndicatorShutdown\n"
     ".type __load_and_call_sceKernelIccIndicatorShutdown @function\n"
     "__load_and_call_sceKernelIccIndicatorShutdown:\n"
     "push rdi\n"
@@ -20786,6 +21435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorStandby]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccIndicatorStandby\n"
     ".type __load_and_call_sceKernelIccIndicatorStandby @function\n"
     "__load_and_call_sceKernelIccIndicatorStandby:\n"
     "push rdi\n"
@@ -20818,6 +21468,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorStandbyBoot]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccIndicatorStandbyBoot\n"
     ".type __load_and_call_sceKernelIccIndicatorStandbyBoot @function\n"
     "__load_and_call_sceKernelIccIndicatorStandbyBoot:\n"
     "push rdi\n"
@@ -20850,6 +21501,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccIndicatorStandbyShutdown]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccIndicatorStandbyShutdown\n"
     ".type __load_and_call_sceKernelIccIndicatorStandbyShutdown @function\n"
     "__load_and_call_sceKernelIccIndicatorStandbyShutdown:\n"
     "push rdi\n"
@@ -20882,6 +21534,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccNotifyBootStatus]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccNotifyBootStatus\n"
     ".type __load_and_call_sceKernelIccNotifyBootStatus @function\n"
     "__load_and_call_sceKernelIccNotifyBootStatus:\n"
     "push rdi\n"
@@ -20914,6 +21567,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccNvsFlush]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccNvsFlush\n"
     ".type __load_and_call_sceKernelIccNvsFlush @function\n"
     "__load_and_call_sceKernelIccNvsFlush:\n"
     "push rdi\n"
@@ -20946,6 +21600,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccReadPowerBootMessage]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccReadPowerBootMessage\n"
     ".type __load_and_call_sceKernelIccReadPowerBootMessage @function\n"
     "__load_and_call_sceKernelIccReadPowerBootMessage:\n"
     "push rdi\n"
@@ -20978,6 +21633,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccSetBuzzer]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccSetBuzzer\n"
     ".type __load_and_call_sceKernelIccSetBuzzer @function\n"
     "__load_and_call_sceKernelIccSetBuzzer:\n"
     "push rdi\n"
@@ -21010,6 +21666,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccSetCPMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccSetCPMode\n"
     ".type __load_and_call_sceKernelIccSetCPMode @function\n"
     "__load_and_call_sceKernelIccSetCPMode:\n"
     "push rdi\n"
@@ -21042,6 +21699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccSetCpuInfoBit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccSetCpuInfoBit\n"
     ".type __load_and_call_sceKernelIccSetCpuInfoBit @function\n"
     "__load_and_call_sceKernelIccSetCpuInfoBit:\n"
     "push rdi\n"
@@ -21074,6 +21732,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIccSetDownloadMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIccSetDownloadMode\n"
     ".type __load_and_call_sceKernelIccSetDownloadMode @function\n"
     "__load_and_call_sceKernelIccSetDownloadMode:\n"
     "push rdi\n"
@@ -21106,6 +21765,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInstallExceptionHandler]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInstallExceptionHandler\n"
     ".type __load_and_call_sceKernelInstallExceptionHandler @function\n"
     "__load_and_call_sceKernelInstallExceptionHandler:\n"
     "push rdi\n"
@@ -21138,6 +21798,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalGetKmemStatistics]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalGetKmemStatistics\n"
     ".type __load_and_call_sceKernelInternalGetKmemStatistics @function\n"
     "__load_and_call_sceKernelInternalGetKmemStatistics:\n"
     "push rdi\n"
@@ -21170,6 +21831,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalGetMapStatistics]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalGetMapStatistics\n"
     ".type __load_and_call_sceKernelInternalGetMapStatistics @function\n"
     "__load_and_call_sceKernelInternalGetMapStatistics:\n"
     "push rdi\n"
@@ -21202,6 +21864,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalHeapPrintBacktraceWithModuleInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalHeapPrintBacktraceWithModuleInfo\n"
     ".type __load_and_call_sceKernelInternalHeapPrintBacktraceWithModuleInfo @function\n"
     "__load_and_call_sceKernelInternalHeapPrintBacktraceWithModuleInfo:\n"
     "push rdi\n"
@@ -21234,6 +21897,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalMapDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalMapDirectMemory\n"
     ".type __load_and_call_sceKernelInternalMapDirectMemory @function\n"
     "__load_and_call_sceKernelInternalMapDirectMemory:\n"
     "push rdi\n"
@@ -21266,6 +21930,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalMapNamedDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalMapNamedDirectMemory\n"
     ".type __load_and_call_sceKernelInternalMapNamedDirectMemory @function\n"
     "__load_and_call_sceKernelInternalMapNamedDirectMemory:\n"
     "push rdi\n"
@@ -21298,6 +21963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalMemoryGetAvailableSize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalMemoryGetAvailableSize\n"
     ".type __load_and_call_sceKernelInternalMemoryGetAvailableSize @function\n"
     "__load_and_call_sceKernelInternalMemoryGetAvailableSize:\n"
     "push rdi\n"
@@ -21330,6 +21996,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalMemoryGetModuleSegmentInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalMemoryGetModuleSegmentInfo\n"
     ".type __load_and_call_sceKernelInternalMemoryGetModuleSegmentInfo @function\n"
     "__load_and_call_sceKernelInternalMemoryGetModuleSegmentInfo:\n"
     "push rdi\n"
@@ -21362,6 +22029,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalResumeDirectMemoryRelease]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalResumeDirectMemoryRelease\n"
     ".type __load_and_call_sceKernelInternalResumeDirectMemoryRelease @function\n"
     "__load_and_call_sceKernelInternalResumeDirectMemoryRelease:\n"
     "push rdi\n"
@@ -21394,6 +22062,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelInternalSuspendDirectMemoryRelease]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelInternalSuspendDirectMemoryRelease\n"
     ".type __load_and_call_sceKernelInternalSuspendDirectMemoryRelease @function\n"
     "__load_and_call_sceKernelInternalSuspendDirectMemoryRelease:\n"
     "push rdi\n"
@@ -21426,6 +22095,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsAddressSanitizerEnabled]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsAddressSanitizerEnabled\n"
     ".type __load_and_call_sceKernelIsAddressSanitizerEnabled @function\n"
     "__load_and_call_sceKernelIsAddressSanitizerEnabled:\n"
     "push rdi\n"
@@ -21458,6 +22128,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsAllowedToSelectDvdRegion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsAllowedToSelectDvdRegion\n"
     ".type __load_and_call_sceKernelIsAllowedToSelectDvdRegion @function\n"
     "__load_and_call_sceKernelIsAllowedToSelectDvdRegion:\n"
     "push rdi\n"
@@ -21490,6 +22161,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsAuthenticNeo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsAuthenticNeo\n"
     ".type __load_and_call_sceKernelIsAuthenticNeo @function\n"
     "__load_and_call_sceKernelIsAuthenticNeo:\n"
     "push rdi\n"
@@ -21522,6 +22194,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsCEX]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsCEX\n"
     ".type __load_and_call_sceKernelIsCEX @function\n"
     "__load_and_call_sceKernelIsCEX:\n"
     "push rdi\n"
@@ -21554,6 +22227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsDebuggerAttached]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsDebuggerAttached\n"
     ".type __load_and_call_sceKernelIsDebuggerAttached @function\n"
     "__load_and_call_sceKernelIsDebuggerAttached:\n"
     "push rdi\n"
@@ -21586,6 +22260,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsDevKit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsDevKit\n"
     ".type __load_and_call_sceKernelIsDevKit @function\n"
     "__load_and_call_sceKernelIsDevKit:\n"
     "push rdi\n"
@@ -21618,6 +22293,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsExperimentalBeta]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsExperimentalBeta\n"
     ".type __load_and_call_sceKernelIsExperimentalBeta @function\n"
     "__load_and_call_sceKernelIsExperimentalBeta:\n"
     "push rdi\n"
@@ -21650,6 +22326,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineCEX]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsGenuineCEX\n"
     ".type __load_and_call_sceKernelIsGenuineCEX @function\n"
     "__load_and_call_sceKernelIsGenuineCEX:\n"
     "push rdi\n"
@@ -21682,6 +22359,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineDevKit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsGenuineDevKit\n"
     ".type __load_and_call_sceKernelIsGenuineDevKit @function\n"
     "__load_and_call_sceKernelIsGenuineDevKit:\n"
     "push rdi\n"
@@ -21714,6 +22392,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineKratosCex]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsGenuineKratosCex\n"
     ".type __load_and_call_sceKernelIsGenuineKratosCex @function\n"
     "__load_and_call_sceKernelIsGenuineKratosCex:\n"
     "push rdi\n"
@@ -21746,6 +22425,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineN]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsGenuineN\n"
     ".type __load_and_call_sceKernelIsGenuineN @function\n"
     "__load_and_call_sceKernelIsGenuineN:\n"
     "push rdi\n"
@@ -21778,6 +22458,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsGenuineTestKit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsGenuineTestKit\n"
     ".type __load_and_call_sceKernelIsGenuineTestKit @function\n"
     "__load_and_call_sceKernelIsGenuineTestKit:\n"
     "push rdi\n"
@@ -21810,6 +22491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsInSandbox]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsInSandbox\n"
     ".type __load_and_call_sceKernelIsInSandbox @function\n"
     "__load_and_call_sceKernelIsInSandbox:\n"
     "push rdi\n"
@@ -21842,6 +22524,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsKratos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsKratos\n"
     ".type __load_and_call_sceKernelIsKratos @function\n"
     "__load_and_call_sceKernelIsKratos:\n"
     "push rdi\n"
@@ -21874,6 +22557,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsMainOnStanbyMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsMainOnStanbyMode\n"
     ".type __load_and_call_sceKernelIsMainOnStanbyMode @function\n"
     "__load_and_call_sceKernelIsMainOnStanbyMode:\n"
     "push rdi\n"
@@ -21906,6 +22590,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsMainOnStandbyMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsMainOnStandbyMode\n"
     ".type __load_and_call_sceKernelIsMainOnStandbyMode @function\n"
     "__load_and_call_sceKernelIsMainOnStandbyMode:\n"
     "push rdi\n"
@@ -21938,6 +22623,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsNeoMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsNeoMode\n"
     ".type __load_and_call_sceKernelIsNeoMode @function\n"
     "__load_and_call_sceKernelIsNeoMode:\n"
     "push rdi\n"
@@ -21970,6 +22656,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsPs4Process]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsPs4Process\n"
     ".type __load_and_call_sceKernelIsPs4Process @function\n"
     "__load_and_call_sceKernelIsPs4Process:\n"
     "push rdi\n"
@@ -22002,6 +22689,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsStack]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsStack\n"
     ".type __load_and_call_sceKernelIsStack @function\n"
     "__load_and_call_sceKernelIsStack:\n"
     "push rdi\n"
@@ -22034,6 +22722,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelIsTestKit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelIsTestKit\n"
     ".type __load_and_call_sceKernelIsTestKit @function\n"
     "__load_and_call_sceKernelIsTestKit:\n"
     "push rdi\n"
@@ -22066,6 +22755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelJitCreateAliasOfSharedMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelJitCreateAliasOfSharedMemory\n"
     ".type __load_and_call_sceKernelJitCreateAliasOfSharedMemory @function\n"
     "__load_and_call_sceKernelJitCreateAliasOfSharedMemory:\n"
     "push rdi\n"
@@ -22098,6 +22788,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelJitCreateSharedMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelJitCreateSharedMemory\n"
     ".type __load_and_call_sceKernelJitCreateSharedMemory @function\n"
     "__load_and_call_sceKernelJitCreateSharedMemory:\n"
     "push rdi\n"
@@ -22130,6 +22821,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelJitGetSharedMemoryInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelJitGetSharedMemoryInfo\n"
     ".type __load_and_call_sceKernelJitGetSharedMemoryInfo @function\n"
     "__load_and_call_sceKernelJitGetSharedMemoryInfo:\n"
     "push rdi\n"
@@ -22162,6 +22854,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelJitMapSharedMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelJitMapSharedMemory\n"
     ".type __load_and_call_sceKernelJitMapSharedMemory @function\n"
     "__load_and_call_sceKernelJitMapSharedMemory:\n"
     "push rdi\n"
@@ -22194,6 +22887,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelKernelHeapUsage]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelKernelHeapUsage\n"
     ".type __load_and_call_sceKernelKernelHeapUsage @function\n"
     "__load_and_call_sceKernelKernelHeapUsage:\n"
     "push rdi\n"
@@ -22226,6 +22920,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLoadStartModule]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelLoadStartModule\n"
     ".type __load_and_call_sceKernelLoadStartModule @function\n"
     "__load_and_call_sceKernelLoadStartModule:\n"
     "push rdi\n"
@@ -22258,6 +22953,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLoadStartModuleForSysmodule]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelLoadStartModuleForSysmodule\n"
     ".type __load_and_call_sceKernelLoadStartModuleForSysmodule @function\n"
     "__load_and_call_sceKernelLoadStartModuleForSysmodule:\n"
     "push rdi\n"
@@ -22290,6 +22986,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLseek]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelLseek\n"
     ".type __load_and_call_sceKernelLseek @function\n"
     "__load_and_call_sceKernelLseek:\n"
     "push rdi\n"
@@ -22322,6 +23019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsAllocateBlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelLwfsAllocateBlock\n"
     ".type __load_and_call_sceKernelLwfsAllocateBlock @function\n"
     "__load_and_call_sceKernelLwfsAllocateBlock:\n"
     "push rdi\n"
@@ -22354,6 +23052,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsLseek]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelLwfsLseek\n"
     ".type __load_and_call_sceKernelLwfsLseek @function\n"
     "__load_and_call_sceKernelLwfsLseek:\n"
     "push rdi\n"
@@ -22386,6 +23085,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsSetAttribute]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelLwfsSetAttribute\n"
     ".type __load_and_call_sceKernelLwfsSetAttribute @function\n"
     "__load_and_call_sceKernelLwfsSetAttribute:\n"
     "push rdi\n"
@@ -22418,6 +23118,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsTrimBlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelLwfsTrimBlock\n"
     ".type __load_and_call_sceKernelLwfsTrimBlock @function\n"
     "__load_and_call_sceKernelLwfsTrimBlock:\n"
     "push rdi\n"
@@ -22450,6 +23151,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelLwfsWrite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelLwfsWrite\n"
     ".type __load_and_call_sceKernelLwfsWrite @function\n"
     "__load_and_call_sceKernelLwfsWrite:\n"
     "push rdi\n"
@@ -22482,6 +23184,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapDirectMemory\n"
     ".type __load_and_call_sceKernelMapDirectMemory @function\n"
     "__load_and_call_sceKernelMapDirectMemory:\n"
     "push rdi\n"
@@ -22514,6 +23217,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapDirectMemory2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapDirectMemory2\n"
     ".type __load_and_call_sceKernelMapDirectMemory2 @function\n"
     "__load_and_call_sceKernelMapDirectMemory2:\n"
     "push rdi\n"
@@ -22546,6 +23250,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapFlexibleMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapFlexibleMemory\n"
     ".type __load_and_call_sceKernelMapFlexibleMemory @function\n"
     "__load_and_call_sceKernelMapFlexibleMemory:\n"
     "push rdi\n"
@@ -22578,6 +23283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapNamedDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapNamedDirectMemory\n"
     ".type __load_and_call_sceKernelMapNamedDirectMemory @function\n"
     "__load_and_call_sceKernelMapNamedDirectMemory:\n"
     "push rdi\n"
@@ -22610,6 +23316,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapNamedFlexibleMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapNamedFlexibleMemory\n"
     ".type __load_and_call_sceKernelMapNamedFlexibleMemory @function\n"
     "__load_and_call_sceKernelMapNamedFlexibleMemory:\n"
     "push rdi\n"
@@ -22642,6 +23349,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapNamedSystemFlexibleMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapNamedSystemFlexibleMemory\n"
     ".type __load_and_call_sceKernelMapNamedSystemFlexibleMemory @function\n"
     "__load_and_call_sceKernelMapNamedSystemFlexibleMemory:\n"
     "push rdi\n"
@@ -22674,6 +23382,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapSanitizerShadowMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapSanitizerShadowMemory\n"
     ".type __load_and_call_sceKernelMapSanitizerShadowMemory @function\n"
     "__load_and_call_sceKernelMapSanitizerShadowMemory:\n"
     "push rdi\n"
@@ -22706,6 +23415,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapToolMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapToolMemory\n"
     ".type __load_and_call_sceKernelMapToolMemory @function\n"
     "__load_and_call_sceKernelMapToolMemory:\n"
     "push rdi\n"
@@ -22738,6 +23448,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapTraceMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapTraceMemory\n"
     ".type __load_and_call_sceKernelMapTraceMemory @function\n"
     "__load_and_call_sceKernelMapTraceMemory:\n"
     "push rdi\n"
@@ -22770,6 +23481,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMapperGetParam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMapperGetParam\n"
     ".type __load_and_call_sceKernelMapperGetParam @function\n"
     "__load_and_call_sceKernelMapperGetParam:\n"
     "push rdi\n"
@@ -22802,6 +23514,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolBatch]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMemoryPoolBatch\n"
     ".type __load_and_call_sceKernelMemoryPoolBatch @function\n"
     "__load_and_call_sceKernelMemoryPoolBatch:\n"
     "push rdi\n"
@@ -22834,6 +23547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolCommit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMemoryPoolCommit\n"
     ".type __load_and_call_sceKernelMemoryPoolCommit @function\n"
     "__load_and_call_sceKernelMemoryPoolCommit:\n"
     "push rdi\n"
@@ -22866,6 +23580,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolDecommit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMemoryPoolDecommit\n"
     ".type __load_and_call_sceKernelMemoryPoolDecommit @function\n"
     "__load_and_call_sceKernelMemoryPoolDecommit:\n"
     "push rdi\n"
@@ -22898,6 +23613,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolExpand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMemoryPoolExpand\n"
     ".type __load_and_call_sceKernelMemoryPoolExpand @function\n"
     "__load_and_call_sceKernelMemoryPoolExpand:\n"
     "push rdi\n"
@@ -22930,6 +23646,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolGetBlockStats]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMemoryPoolGetBlockStats\n"
     ".type __load_and_call_sceKernelMemoryPoolGetBlockStats @function\n"
     "__load_and_call_sceKernelMemoryPoolGetBlockStats:\n"
     "push rdi\n"
@@ -22962,6 +23679,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolMove]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMemoryPoolMove\n"
     ".type __load_and_call_sceKernelMemoryPoolMove @function\n"
     "__load_and_call_sceKernelMemoryPoolMove:\n"
     "push rdi\n"
@@ -22994,6 +23712,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMemoryPoolReserve]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMemoryPoolReserve\n"
     ".type __load_and_call_sceKernelMemoryPoolReserve @function\n"
     "__load_and_call_sceKernelMemoryPoolReserve:\n"
     "push rdi\n"
@@ -23026,6 +23745,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMkdir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMkdir\n"
     ".type __load_and_call_sceKernelMkdir @function\n"
     "__load_and_call_sceKernelMkdir:\n"
     "push rdi\n"
@@ -23058,6 +23778,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMlock\n"
     ".type __load_and_call_sceKernelMlock @function\n"
     "__load_and_call_sceKernelMlock:\n"
     "push rdi\n"
@@ -23090,6 +23811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMlockall]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMlockall\n"
     ".type __load_and_call_sceKernelMlockall @function\n"
     "__load_and_call_sceKernelMlockall:\n"
     "push rdi\n"
@@ -23122,6 +23844,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMmap]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMmap\n"
     ".type __load_and_call_sceKernelMmap @function\n"
     "__load_and_call_sceKernelMmap:\n"
     "push rdi\n"
@@ -23154,6 +23877,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMprotect]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMprotect\n"
     ".type __load_and_call_sceKernelMprotect @function\n"
     "__load_and_call_sceKernelMprotect:\n"
     "push rdi\n"
@@ -23186,6 +23910,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMsync]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMsync\n"
     ".type __load_and_call_sceKernelMsync @function\n"
     "__load_and_call_sceKernelMsync:\n"
     "push rdi\n"
@@ -23218,6 +23943,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMtypeprotect]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMtypeprotect\n"
     ".type __load_and_call_sceKernelMtypeprotect @function\n"
     "__load_and_call_sceKernelMtypeprotect:\n"
     "push rdi\n"
@@ -23250,6 +23976,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMunlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMunlock\n"
     ".type __load_and_call_sceKernelMunlock @function\n"
     "__load_and_call_sceKernelMunlock:\n"
     "push rdi\n"
@@ -23282,6 +24009,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMunlockall]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMunlockall\n"
     ".type __load_and_call_sceKernelMunlockall @function\n"
     "__load_and_call_sceKernelMunlockall:\n"
     "push rdi\n"
@@ -23314,6 +24042,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelMunmap]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelMunmap\n"
     ".type __load_and_call_sceKernelMunmap @function\n"
     "__load_and_call_sceKernelMunmap:\n"
     "push rdi\n"
@@ -23346,6 +24075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNanosleep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelNanosleep\n"
     ".type __load_and_call_sceKernelNanosleep @function\n"
     "__load_and_call_sceKernelNanosleep:\n"
     "push rdi\n"
@@ -23378,6 +24108,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNormalizePath]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelNormalizePath\n"
     ".type __load_and_call_sceKernelNormalizePath @function\n"
     "__load_and_call_sceKernelNormalizePath:\n"
     "push rdi\n"
@@ -23410,6 +24141,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNotifyAppStateChanged]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelNotifyAppStateChanged\n"
     ".type __load_and_call_sceKernelNotifyAppStateChanged @function\n"
     "__load_and_call_sceKernelNotifyAppStateChanged:\n"
     "push rdi\n"
@@ -23442,6 +24174,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNotifySystemSuspendResumeProgress]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelNotifySystemSuspendResumeProgress\n"
     ".type __load_and_call_sceKernelNotifySystemSuspendResumeProgress @function\n"
     "__load_and_call_sceKernelNotifySystemSuspendResumeProgress:\n"
     "push rdi\n"
@@ -23474,6 +24207,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelNotifySystemSuspendStart]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelNotifySystemSuspendStart\n"
     ".type __load_and_call_sceKernelNotifySystemSuspendStart @function\n"
     "__load_and_call_sceKernelNotifySystemSuspendStart:\n"
     "push rdi\n"
@@ -23506,6 +24240,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelOpen\n"
     ".type __load_and_call_sceKernelOpen @function\n"
     "__load_and_call_sceKernelOpen:\n"
     "push rdi\n"
@@ -23538,6 +24273,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpenEport]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelOpenEport\n"
     ".type __load_and_call_sceKernelOpenEport @function\n"
     "__load_and_call_sceKernelOpenEport:\n"
     "push rdi\n"
@@ -23570,6 +24306,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpenEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelOpenEventFlag\n"
     ".type __load_and_call_sceKernelOpenEventFlag @function\n"
     "__load_and_call_sceKernelOpenEventFlag:\n"
     "push rdi\n"
@@ -23602,6 +24339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpenInternal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelOpenInternal\n"
     ".type __load_and_call_sceKernelOpenInternal @function\n"
     "__load_and_call_sceKernelOpenInternal:\n"
     "push rdi\n"
@@ -23634,6 +24372,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelOpenSema]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelOpenSema\n"
     ".type __load_and_call_sceKernelOpenSema @function\n"
     "__load_and_call_sceKernelOpenSema:\n"
     "push rdi\n"
@@ -23666,6 +24405,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPollEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelPollEventFlag\n"
     ".type __load_and_call_sceKernelPollEventFlag @function\n"
     "__load_and_call_sceKernelPollEventFlag:\n"
     "push rdi\n"
@@ -23698,6 +24438,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPollSema]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelPollSema\n"
     ".type __load_and_call_sceKernelPollSema @function\n"
     "__load_and_call_sceKernelPollSema:\n"
     "push rdi\n"
@@ -23730,6 +24471,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelPread\n"
     ".type __load_and_call_sceKernelPread @function\n"
     "__load_and_call_sceKernelPread:\n"
     "push rdi\n"
@@ -23762,6 +24504,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPreadv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelPreadv\n"
     ".type __load_and_call_sceKernelPreadv @function\n"
     "__load_and_call_sceKernelPreadv:\n"
     "push rdi\n"
@@ -23794,6 +24537,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPrintBacktraceWithModuleInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelPrintBacktraceWithModuleInfo\n"
     ".type __load_and_call_sceKernelPrintBacktraceWithModuleInfo @function\n"
     "__load_and_call_sceKernelPrintBacktraceWithModuleInfo:\n"
     "push rdi\n"
@@ -23826,6 +24570,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelProtectDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelProtectDirectMemory\n"
     ".type __load_and_call_sceKernelProtectDirectMemory @function\n"
     "__load_and_call_sceKernelProtectDirectMemory:\n"
     "push rdi\n"
@@ -23858,6 +24603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelProtectDirectMemoryForPID]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelProtectDirectMemoryForPID\n"
     ".type __load_and_call_sceKernelProtectDirectMemoryForPID @function\n"
     "__load_and_call_sceKernelProtectDirectMemoryForPID:\n"
     "push rdi\n"
@@ -23890,6 +24636,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPwrite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelPwrite\n"
     ".type __load_and_call_sceKernelPwrite @function\n"
     "__load_and_call_sceKernelPwrite:\n"
     "push rdi\n"
@@ -23922,6 +24669,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelPwritev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelPwritev\n"
     ".type __load_and_call_sceKernelPwritev @function\n"
     "__load_and_call_sceKernelPwritev:\n"
     "push rdi\n"
@@ -23954,6 +24702,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelQueryMemoryProtection]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelQueryMemoryProtection\n"
     ".type __load_and_call_sceKernelQueryMemoryProtection @function\n"
     "__load_and_call_sceKernelQueryMemoryProtection:\n"
     "push rdi\n"
@@ -23986,6 +24735,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelQueryToolMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelQueryToolMemory\n"
     ".type __load_and_call_sceKernelQueryToolMemory @function\n"
     "__load_and_call_sceKernelQueryToolMemory:\n"
     "push rdi\n"
@@ -24018,6 +24768,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelQueryTraceMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelQueryTraceMemory\n"
     ".type __load_and_call_sceKernelQueryTraceMemory @function\n"
     "__load_and_call_sceKernelQueryTraceMemory:\n"
     "push rdi\n"
@@ -24050,6 +24801,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRaiseException]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelRaiseException\n"
     ".type __load_and_call_sceKernelRaiseException @function\n"
     "__load_and_call_sceKernelRaiseException:\n"
     "push rdi\n"
@@ -24082,6 +24834,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRandomizedPath]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelRandomizedPath\n"
     ".type __load_and_call_sceKernelRandomizedPath @function\n"
     "__load_and_call_sceKernelRandomizedPath:\n"
     "push rdi\n"
@@ -24114,6 +24867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRdup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelRdup\n"
     ".type __load_and_call_sceKernelRdup @function\n"
     "__load_and_call_sceKernelRdup:\n"
     "push rdi\n"
@@ -24146,6 +24900,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRead]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelRead\n"
     ".type __load_and_call_sceKernelRead @function\n"
     "__load_and_call_sceKernelRead:\n"
     "push rdi\n"
@@ -24178,6 +24933,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReadTsc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReadTsc\n"
     ".type __load_and_call_sceKernelReadTsc @function\n"
     "__load_and_call_sceKernelReadTsc:\n"
     "push rdi\n"
@@ -24210,6 +24966,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReadv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReadv\n"
     ".type __load_and_call_sceKernelReadv @function\n"
     "__load_and_call_sceKernelReadv:\n"
     "push rdi\n"
@@ -24242,6 +24999,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReboot]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReboot\n"
     ".type __load_and_call_sceKernelReboot @function\n"
     "__load_and_call_sceKernelReboot:\n"
     "push rdi\n"
@@ -24274,6 +25032,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReleaseDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReleaseDirectMemory\n"
     ".type __load_and_call_sceKernelReleaseDirectMemory @function\n"
     "__load_and_call_sceKernelReleaseDirectMemory:\n"
     "push rdi\n"
@@ -24306,6 +25065,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReleaseFlexibleMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReleaseFlexibleMemory\n"
     ".type __load_and_call_sceKernelReleaseFlexibleMemory @function\n"
     "__load_and_call_sceKernelReleaseFlexibleMemory:\n"
     "push rdi\n"
@@ -24338,6 +25098,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReleaseToolMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReleaseToolMemory\n"
     ".type __load_and_call_sceKernelReleaseToolMemory @function\n"
     "__load_and_call_sceKernelReleaseToolMemory:\n"
     "push rdi\n"
@@ -24370,6 +25131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReleaseTraceDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReleaseTraceDirectMemory\n"
     ".type __load_and_call_sceKernelReleaseTraceDirectMemory @function\n"
     "__load_and_call_sceKernelReleaseTraceDirectMemory:\n"
     "push rdi\n"
@@ -24402,6 +25164,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRemoveExceptionHandler]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelRemoveExceptionHandler\n"
     ".type __load_and_call_sceKernelRemoveExceptionHandler @function\n"
     "__load_and_call_sceKernelRemoveExceptionHandler:\n"
     "push rdi\n"
@@ -24434,6 +25197,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRename]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelRename\n"
     ".type __load_and_call_sceKernelRename @function\n"
     "__load_and_call_sceKernelRename:\n"
     "push rdi\n"
@@ -24466,6 +25230,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReportUnpatchedFunctionCall]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReportUnpatchedFunctionCall\n"
     ".type __load_and_call_sceKernelReportUnpatchedFunctionCall @function\n"
     "__load_and_call_sceKernelReportUnpatchedFunctionCall:\n"
     "push rdi\n"
@@ -24498,6 +25263,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReserve2mbPage]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReserve2mbPage\n"
     ".type __load_and_call_sceKernelReserve2mbPage @function\n"
     "__load_and_call_sceKernelReserve2mbPage:\n"
     "push rdi\n"
@@ -24530,6 +25296,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReserveSystemDirectMemory]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReserveSystemDirectMemory\n"
     ".type __load_and_call_sceKernelReserveSystemDirectMemory @function\n"
     "__load_and_call_sceKernelReserveSystemDirectMemory:\n"
     "push rdi\n"
@@ -24562,6 +25329,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelReserveVirtualRange]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelReserveVirtualRange\n"
     ".type __load_and_call_sceKernelReserveVirtualRange @function\n"
     "__load_and_call_sceKernelReserveVirtualRange:\n"
     "push rdi\n"
@@ -24594,6 +25362,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelResumeDirectMemoryRelease]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelResumeDirectMemoryRelease\n"
     ".type __load_and_call_sceKernelResumeDirectMemoryRelease @function\n"
     "__load_and_call_sceKernelResumeDirectMemoryRelease:\n"
     "push rdi\n"
@@ -24626,6 +25395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRmdir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelRmdir\n"
     ".type __load_and_call_sceKernelRmdir @function\n"
     "__load_and_call_sceKernelRmdir:\n"
     "push rdi\n"
@@ -24658,6 +25428,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelRtldControl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelRtldControl\n"
     ".type __load_and_call_sceKernelRtldControl @function\n"
     "__load_and_call_sceKernelRtldControl:\n"
     "push rdi\n"
@@ -24690,6 +25461,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSandboxPath]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSandboxPath\n"
     ".type __load_and_call_sceKernelSandboxPath @function\n"
     "__load_and_call_sceKernelSandboxPath:\n"
     "push rdi\n"
@@ -24722,6 +25494,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSendNotificationRequest]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSendNotificationRequest\n"
     ".type __load_and_call_sceKernelSendNotificationRequest @function\n"
     "__load_and_call_sceKernelSendNotificationRequest:\n"
     "push rdi\n"
@@ -24754,6 +25527,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetAppInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetAppInfo\n"
     ".type __load_and_call_sceKernelSetAppInfo @function\n"
     "__load_and_call_sceKernelSetAppInfo:\n"
     "push rdi\n"
@@ -24786,6 +25560,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetBackupRestoreMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetBackupRestoreMode\n"
     ".type __load_and_call_sceKernelSetBackupRestoreMode @function\n"
     "__load_and_call_sceKernelSetBackupRestoreMode:\n"
     "push rdi\n"
@@ -24818,6 +25593,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetBaseModeClock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetBaseModeClock\n"
     ".type __load_and_call_sceKernelSetBaseModeClock @function\n"
     "__load_and_call_sceKernelSetBaseModeClock:\n"
     "push rdi\n"
@@ -24850,6 +25626,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetBesteffort]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetBesteffort\n"
     ".type __load_and_call_sceKernelSetBesteffort @function\n"
     "__load_and_call_sceKernelSetBesteffort:\n"
     "push rdi\n"
@@ -24882,6 +25659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetBootReqNotify]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetBootReqNotify\n"
     ".type __load_and_call_sceKernelSetBootReqNotify @function\n"
     "__load_and_call_sceKernelSetBootReqNotify:\n"
     "push rdi\n"
@@ -24914,6 +25692,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetCallRecord]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetCallRecord\n"
     ".type __load_and_call_sceKernelSetCallRecord @function\n"
     "__load_and_call_sceKernelSetCallRecord:\n"
     "push rdi\n"
@@ -24946,6 +25725,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetCompressionAttribute]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetCompressionAttribute\n"
     ".type __load_and_call_sceKernelSetCompressionAttribute @function\n"
     "__load_and_call_sceKernelSetCompressionAttribute:\n"
     "push rdi\n"
@@ -24978,6 +25758,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetCpumodeGame]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetCpumodeGame\n"
     ".type __load_and_call_sceKernelSetCpumodeGame @function\n"
     "__load_and_call_sceKernelSetCpumodeGame:\n"
     "push rdi\n"
@@ -25010,6 +25791,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetDataTransferMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetDataTransferMode\n"
     ".type __load_and_call_sceKernelSetDataTransferMode @function\n"
     "__load_and_call_sceKernelSetDataTransferMode:\n"
     "push rdi\n"
@@ -25042,6 +25824,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetEventFlag\n"
     ".type __load_and_call_sceKernelSetEventFlag @function\n"
     "__load_and_call_sceKernelSetEventFlag:\n"
     "push rdi\n"
@@ -25074,6 +25857,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetFsstParam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetFsstParam\n"
     ".type __load_and_call_sceKernelSetFsstParam @function\n"
     "__load_and_call_sceKernelSetFsstParam:\n"
     "push rdi\n"
@@ -25106,6 +25890,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetGPI]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetGPI\n"
     ".type __load_and_call_sceKernelSetGPI @function\n"
     "__load_and_call_sceKernelSetGPI:\n"
     "push rdi\n"
@@ -25138,6 +25923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetGPO]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetGPO\n"
     ".type __load_and_call_sceKernelSetGPO @function\n"
     "__load_and_call_sceKernelSetGPO:\n"
     "push rdi\n"
@@ -25170,6 +25956,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetGameDirectMemoryLimit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetGameDirectMemoryLimit\n"
     ".type __load_and_call_sceKernelSetGameDirectMemoryLimit @function\n"
     "__load_and_call_sceKernelSetGameDirectMemoryLimit:\n"
     "push rdi\n"
@@ -25202,6 +25989,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetGpuCu]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetGpuCu\n"
     ".type __load_and_call_sceKernelSetGpuCu @function\n"
     "__load_and_call_sceKernelSetGpuCu:\n"
     "push rdi\n"
@@ -25234,6 +26022,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetIoreq]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetIoreq\n"
     ".type __load_and_call_sceKernelSetIoreq @function\n"
     "__load_and_call_sceKernelSetIoreq:\n"
     "push rdi\n"
@@ -25266,6 +26055,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetKnobs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetKnobs\n"
     ".type __load_and_call_sceKernelSetKnobs @function\n"
     "__load_and_call_sceKernelSetKnobs:\n"
     "push rdi\n"
@@ -25298,6 +26088,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetMemoryPstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetMemoryPstate\n"
     ".type __load_and_call_sceKernelSetMemoryPstate @function\n"
     "__load_and_call_sceKernelSetMemoryPstate:\n"
     "push rdi\n"
@@ -25330,6 +26121,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetNeoModeClock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetNeoModeClock\n"
     ".type __load_and_call_sceKernelSetNeoModeClock @function\n"
     "__load_and_call_sceKernelSetNeoModeClock:\n"
     "push rdi\n"
@@ -25362,6 +26154,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetPhysFmemLimit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetPhysFmemLimit\n"
     ".type __load_and_call_sceKernelSetPhysFmemLimit @function\n"
     "__load_and_call_sceKernelSetPhysFmemLimit:\n"
     "push rdi\n"
@@ -25394,6 +26187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetProcessName]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetProcessName\n"
     ".type __load_and_call_sceKernelSetProcessName @function\n"
     "__load_and_call_sceKernelSetProcessName:\n"
     "push rdi\n"
@@ -25426,6 +26220,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetProcessProperty]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetProcessProperty\n"
     ".type __load_and_call_sceKernelSetProcessProperty @function\n"
     "__load_and_call_sceKernelSetProcessProperty:\n"
     "push rdi\n"
@@ -25458,6 +26253,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetProcessPropertyString]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetProcessPropertyString\n"
     ".type __load_and_call_sceKernelSetProcessPropertyString @function\n"
     "__load_and_call_sceKernelSetProcessPropertyString:\n"
     "push rdi\n"
@@ -25490,6 +26286,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetPrtAperture]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetPrtAperture\n"
     ".type __load_and_call_sceKernelSetPrtAperture @function\n"
     "__load_and_call_sceKernelSetPrtAperture:\n"
     "push rdi\n"
@@ -25522,6 +26319,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetSafemode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetSafemode\n"
     ".type __load_and_call_sceKernelSetSafemode @function\n"
     "__load_and_call_sceKernelSetSafemode:\n"
     "push rdi\n"
@@ -25554,6 +26352,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetTimezoneInfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetTimezoneInfo\n"
     ".type __load_and_call_sceKernelSetTimezoneInfo @function\n"
     "__load_and_call_sceKernelSetTimezoneInfo:\n"
     "push rdi\n"
@@ -25586,6 +26385,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetVirtualRangeName]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetVirtualRangeName\n"
     ".type __load_and_call_sceKernelSetVirtualRangeName @function\n"
     "__load_and_call_sceKernelSetVirtualRangeName:\n"
     "push rdi\n"
@@ -25618,6 +26418,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSetVmContainer]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSetVmContainer\n"
     ".type __load_and_call_sceKernelSetVmContainer @function\n"
     "__load_and_call_sceKernelSetVmContainer:\n"
     "push rdi\n"
@@ -25650,6 +26451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSettimeofday]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSettimeofday\n"
     ".type __load_and_call_sceKernelSettimeofday @function\n"
     "__load_and_call_sceKernelSettimeofday:\n"
     "push rdi\n"
@@ -25682,6 +26484,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSignalSema]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSignalSema\n"
     ".type __load_and_call_sceKernelSignalSema @function\n"
     "__load_and_call_sceKernelSignalSema:\n"
     "push rdi\n"
@@ -25714,6 +26517,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSleep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSleep\n"
     ".type __load_and_call_sceKernelSleep @function\n"
     "__load_and_call_sceKernelSleep:\n"
     "push rdi\n"
@@ -25746,6 +26550,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSlvNotifyError]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSlvNotifyError\n"
     ".type __load_and_call_sceKernelSlvNotifyError @function\n"
     "__load_and_call_sceKernelSlvNotifyError:\n"
     "push rdi\n"
@@ -25778,6 +26583,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStat\n"
     ".type __load_and_call_sceKernelStat @function\n"
     "__load_and_call_sceKernelStat:\n"
     "push rdi\n"
@@ -25810,6 +26616,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStopUnloadModule]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStopUnloadModule\n"
     ".type __load_and_call_sceKernelStopUnloadModule @function\n"
     "__load_and_call_sceKernelStopUnloadModule:\n"
     "push rdi\n"
@@ -25842,6 +26649,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStreamWriteActivate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStreamWriteActivate\n"
     ".type __load_and_call_sceKernelStreamWriteActivate @function\n"
     "__load_and_call_sceKernelStreamWriteActivate:\n"
     "push rdi\n"
@@ -25874,6 +26682,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStreamWriteCreate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStreamWriteCreate\n"
     ".type __load_and_call_sceKernelStreamWriteCreate @function\n"
     "__load_and_call_sceKernelStreamWriteCreate:\n"
     "push rdi\n"
@@ -25906,6 +26715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStreamWriteDeactivate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStreamWriteDeactivate\n"
     ".type __load_and_call_sceKernelStreamWriteDeactivate @function\n"
     "__load_and_call_sceKernelStreamWriteDeactivate:\n"
     "push rdi\n"
@@ -25938,6 +26748,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStreamWriteDelete]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStreamWriteDelete\n"
     ".type __load_and_call_sceKernelStreamWriteDelete @function\n"
     "__load_and_call_sceKernelStreamWriteDelete:\n"
     "push rdi\n"
@@ -25970,6 +26781,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStreamWriteRead]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStreamWriteRead\n"
     ".type __load_and_call_sceKernelStreamWriteRead @function\n"
     "__load_and_call_sceKernelStreamWriteRead:\n"
     "push rdi\n"
@@ -26002,6 +26814,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStreamWriteStat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStreamWriteStat\n"
     ".type __load_and_call_sceKernelStreamWriteStat @function\n"
     "__load_and_call_sceKernelStreamWriteStat:\n"
     "push rdi\n"
@@ -26034,6 +26847,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelStreamWriteWrite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelStreamWriteWrite\n"
     ".type __load_and_call_sceKernelStreamWriteWrite @function\n"
     "__load_and_call_sceKernelStreamWriteWrite:\n"
     "push rdi\n"
@@ -26066,6 +26880,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSuspendDirectMemoryRelease]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSuspendDirectMemoryRelease\n"
     ".type __load_and_call_sceKernelSuspendDirectMemoryRelease @function\n"
     "__load_and_call_sceKernelSuspendDirectMemoryRelease:\n"
     "push rdi\n"
@@ -26098,6 +26913,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelSync]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelSync\n"
     ".type __load_and_call_sceKernelSync @function\n"
     "__load_and_call_sceKernelSync:\n"
     "push rdi\n"
@@ -26130,6 +26946,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTerminateSysCore]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelTerminateSysCore\n"
     ".type __load_and_call_sceKernelTerminateSysCore @function\n"
     "__load_and_call_sceKernelTerminateSysCore:\n"
     "push rdi\n"
@@ -26162,6 +26979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTitleWorkaroundIsEnabled]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelTitleWorkaroundIsEnabled\n"
     ".type __load_and_call_sceKernelTitleWorkaroundIsEnabled @function\n"
     "__load_and_call_sceKernelTitleWorkaroundIsEnabled:\n"
     "push rdi\n"
@@ -26194,6 +27012,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTitleWorkdaroundIsEnabled]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelTitleWorkdaroundIsEnabled\n"
     ".type __load_and_call_sceKernelTitleWorkdaroundIsEnabled @function\n"
     "__load_and_call_sceKernelTitleWorkdaroundIsEnabled:\n"
     "push rdi\n"
@@ -26226,6 +27045,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTraceMemoryTypeProtect]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelTraceMemoryTypeProtect\n"
     ".type __load_and_call_sceKernelTraceMemoryTypeProtect @function\n"
     "__load_and_call_sceKernelTraceMemoryTypeProtect:\n"
     "push rdi\n"
@@ -26258,6 +27078,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTriggerEport]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelTriggerEport\n"
     ".type __load_and_call_sceKernelTriggerEport @function\n"
     "__load_and_call_sceKernelTriggerEport:\n"
     "push rdi\n"
@@ -26290,6 +27111,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTriggerUserEvent]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelTriggerUserEvent\n"
     ".type __load_and_call_sceKernelTriggerUserEvent @function\n"
     "__load_and_call_sceKernelTriggerUserEvent:\n"
     "push rdi\n"
@@ -26322,6 +27144,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelTruncate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelTruncate\n"
     ".type __load_and_call_sceKernelTruncate @function\n"
     "__load_and_call_sceKernelTruncate:\n"
     "push rdi\n"
@@ -26354,6 +27177,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelUnlink]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelUnlink\n"
     ".type __load_and_call_sceKernelUnlink @function\n"
     "__load_and_call_sceKernelUnlink:\n"
     "push rdi\n"
@@ -26386,6 +27210,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelUsleep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelUsleep\n"
     ".type __load_and_call_sceKernelUsleep @function\n"
     "__load_and_call_sceKernelUsleep:\n"
     "push rdi\n"
@@ -26418,6 +27243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelUtimes]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelUtimes\n"
     ".type __load_and_call_sceKernelUtimes @function\n"
     "__load_and_call_sceKernelUtimes:\n"
     "push rdi\n"
@@ -26450,6 +27276,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelUuidCreate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelUuidCreate\n"
     ".type __load_and_call_sceKernelUuidCreate @function\n"
     "__load_and_call_sceKernelUuidCreate:\n"
     "push rdi\n"
@@ -26482,6 +27309,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelVirtualQuery]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelVirtualQuery\n"
     ".type __load_and_call_sceKernelVirtualQuery @function\n"
     "__load_and_call_sceKernelVirtualQuery:\n"
     "push rdi\n"
@@ -26514,6 +27342,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelVirtualQueryAll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelVirtualQueryAll\n"
     ".type __load_and_call_sceKernelVirtualQueryAll @function\n"
     "__load_and_call_sceKernelVirtualQueryAll:\n"
     "push rdi\n"
@@ -26546,6 +27375,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWaitCommandBufferCompletion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWaitCommandBufferCompletion\n"
     ".type __load_and_call_sceKernelWaitCommandBufferCompletion @function\n"
     "__load_and_call_sceKernelWaitCommandBufferCompletion:\n"
     "push rdi\n"
@@ -26578,6 +27408,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWaitEqueue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWaitEqueue\n"
     ".type __load_and_call_sceKernelWaitEqueue @function\n"
     "__load_and_call_sceKernelWaitEqueue:\n"
     "push rdi\n"
@@ -26610,6 +27441,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWaitEventFlag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWaitEventFlag\n"
     ".type __load_and_call_sceKernelWaitEventFlag @function\n"
     "__load_and_call_sceKernelWaitEventFlag:\n"
     "push rdi\n"
@@ -26642,6 +27474,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWaitSema]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWaitSema\n"
     ".type __load_and_call_sceKernelWaitSema @function\n"
     "__load_and_call_sceKernelWaitSema:\n"
     "push rdi\n"
@@ -26674,6 +27507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWrite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWrite\n"
     ".type __load_and_call_sceKernelWrite @function\n"
     "__load_and_call_sceKernelWrite:\n"
     "push rdi\n"
@@ -26706,6 +27540,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteEventQueueOnCompletionCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteEventQueueOnCompletionCommand\n"
     ".type __load_and_call_sceKernelWriteEventQueueOnCompletionCommand @function\n"
     "__load_and_call_sceKernelWriteEventQueueOnCompletionCommand:\n"
     "push rdi\n"
@@ -26738,6 +27573,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteMapCommand\n"
     ".type __load_and_call_sceKernelWriteMapCommand @function\n"
     "__load_and_call_sceKernelWriteMapCommand:\n"
     "push rdi\n"
@@ -26770,6 +27606,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapCommand2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteMapCommand2\n"
     ".type __load_and_call_sceKernelWriteMapCommand2 @function\n"
     "__load_and_call_sceKernelWriteMapCommand2:\n"
     "push rdi\n"
@@ -26802,6 +27639,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapDirectCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteMapDirectCommand\n"
     ".type __load_and_call_sceKernelWriteMapDirectCommand @function\n"
     "__load_and_call_sceKernelWriteMapDirectCommand:\n"
     "push rdi\n"
@@ -26834,6 +27672,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapDirectWithGpuMaskIdCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteMapDirectWithGpuMaskIdCommand\n"
     ".type __load_and_call_sceKernelWriteMapDirectWithGpuMaskIdCommand @function\n"
     "__load_and_call_sceKernelWriteMapDirectWithGpuMaskIdCommand:\n"
     "push rdi\n"
@@ -26866,6 +27705,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMapWithGpuMaskIdCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteMapWithGpuMaskIdCommand\n"
     ".type __load_and_call_sceKernelWriteMapWithGpuMaskIdCommand @function\n"
     "__load_and_call_sceKernelWriteMapWithGpuMaskIdCommand:\n"
     "push rdi\n"
@@ -26898,6 +27738,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteModifyMtypeProtectCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteModifyMtypeProtectCommand\n"
     ".type __load_and_call_sceKernelWriteModifyMtypeProtectCommand @function\n"
     "__load_and_call_sceKernelWriteModifyMtypeProtectCommand:\n"
     "push rdi\n"
@@ -26930,6 +27771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand\n"
     ".type __load_and_call_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand @function\n"
     "__load_and_call_sceKernelWriteModifyMtypeProtectWithGpuMaskIdCommand:\n"
     "push rdi\n"
@@ -26962,6 +27804,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteModifyProtectCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteModifyProtectCommand\n"
     ".type __load_and_call_sceKernelWriteModifyProtectCommand @function\n"
     "__load_and_call_sceKernelWriteModifyProtectCommand:\n"
     "push rdi\n"
@@ -26994,6 +27837,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteModifyProtectWithGpuMaskIdCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteModifyProtectWithGpuMaskIdCommand\n"
     ".type __load_and_call_sceKernelWriteModifyProtectWithGpuMaskIdCommand @function\n"
     "__load_and_call_sceKernelWriteModifyProtectWithGpuMaskIdCommand:\n"
     "push rdi\n"
@@ -27026,6 +27870,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMultiMapCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteMultiMapCommand\n"
     ".type __load_and_call_sceKernelWriteMultiMapCommand @function\n"
     "__load_and_call_sceKernelWriteMultiMapCommand:\n"
     "push rdi\n"
@@ -27058,6 +27903,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteMultiMapWithGpuMaskIdCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteMultiMapWithGpuMaskIdCommand\n"
     ".type __load_and_call_sceKernelWriteMultiMapWithGpuMaskIdCommand @function\n"
     "__load_and_call_sceKernelWriteMultiMapWithGpuMaskIdCommand:\n"
     "push rdi\n"
@@ -27090,6 +27936,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteRemapCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteRemapCommand\n"
     ".type __load_and_call_sceKernelWriteRemapCommand @function\n"
     "__load_and_call_sceKernelWriteRemapCommand:\n"
     "push rdi\n"
@@ -27122,6 +27969,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteRemapWithGpuMaskIdCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteRemapWithGpuMaskIdCommand\n"
     ".type __load_and_call_sceKernelWriteRemapWithGpuMaskIdCommand @function\n"
     "__load_and_call_sceKernelWriteRemapWithGpuMaskIdCommand:\n"
     "push rdi\n"
@@ -27154,6 +28002,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteSdkEventLog]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteSdkEventLog\n"
     ".type __load_and_call_sceKernelWriteSdkEventLog @function\n"
     "__load_and_call_sceKernelWriteSdkEventLog:\n"
     "push rdi\n"
@@ -27186,6 +28035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteSdkEventLogV]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteSdkEventLogV\n"
     ".type __load_and_call_sceKernelWriteSdkEventLogV @function\n"
     "__load_and_call_sceKernelWriteSdkEventLogV:\n"
     "push rdi\n"
@@ -27218,6 +28068,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteUnmapCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteUnmapCommand\n"
     ".type __load_and_call_sceKernelWriteUnmapCommand @function\n"
     "__load_and_call_sceKernelWriteUnmapCommand:\n"
     "push rdi\n"
@@ -27250,6 +28101,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteWaitOnAddressCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteWaitOnAddressCommand\n"
     ".type __load_and_call_sceKernelWriteWaitOnAddressCommand @function\n"
     "__load_and_call_sceKernelWriteWaitOnAddressCommand:\n"
     "push rdi\n"
@@ -27282,6 +28134,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteWaitOnCounterCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteWaitOnCounterCommand\n"
     ".type __load_and_call_sceKernelWriteWaitOnCounterCommand @function\n"
     "__load_and_call_sceKernelWriteWaitOnCounterCommand:\n"
     "push rdi\n"
@@ -27314,6 +28167,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteWriteAddressCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteWriteAddressCommand\n"
     ".type __load_and_call_sceKernelWriteWriteAddressCommand @function\n"
     "__load_and_call_sceKernelWriteWriteAddressCommand:\n"
     "push rdi\n"
@@ -27346,6 +28200,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWriteWriteCounterCommand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWriteWriteCounterCommand\n"
     ".type __load_and_call_sceKernelWriteWriteCounterCommand @function\n"
     "__load_and_call_sceKernelWriteWriteCounterCommand:\n"
     "push rdi\n"
@@ -27378,6 +28233,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelWritev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelWritev\n"
     ".type __load_and_call_sceKernelWritev @function\n"
     "__load_and_call_sceKernelWritev:\n"
     "push rdi\n"
@@ -27410,6 +28266,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceKernelYieldCpumode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceKernelYieldCpumode\n"
     ".type __load_and_call_sceKernelYieldCpumode @function\n"
     "__load_and_call_sceKernelYieldCpumode:\n"
     "push rdi\n"
@@ -27442,6 +28299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceCreateForMonoMutex]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceCreateForMonoMutex\n"
     ".type __load_and_call_sceLibcMspaceCreateForMonoMutex @function\n"
     "__load_and_call_sceLibcMspaceCreateForMonoMutex:\n"
     "push rdi\n"
@@ -27474,6 +28332,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAtfork]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAtfork\n"
     ".type __load_and_call_scePthreadAtfork @function\n"
     "__load_and_call_scePthreadAtfork:\n"
     "push rdi\n"
@@ -27506,6 +28365,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrDestroy\n"
     ".type __load_and_call_scePthreadAttrDestroy @function\n"
     "__load_and_call_scePthreadAttrDestroy:\n"
     "push rdi\n"
@@ -27538,6 +28398,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGet]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGet\n"
     ".type __load_and_call_scePthreadAttrGet @function\n"
     "__load_and_call_scePthreadAttrGet:\n"
     "push rdi\n"
@@ -27570,6 +28431,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetaffinity]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetaffinity\n"
     ".type __load_and_call_scePthreadAttrGetaffinity @function\n"
     "__load_and_call_scePthreadAttrGetaffinity:\n"
     "push rdi\n"
@@ -27602,6 +28464,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetdetachstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetdetachstate\n"
     ".type __load_and_call_scePthreadAttrGetdetachstate @function\n"
     "__load_and_call_scePthreadAttrGetdetachstate:\n"
     "push rdi\n"
@@ -27634,6 +28497,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetguardsize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetguardsize\n"
     ".type __load_and_call_scePthreadAttrGetguardsize @function\n"
     "__load_and_call_scePthreadAttrGetguardsize:\n"
     "push rdi\n"
@@ -27666,6 +28530,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetinheritsched]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetinheritsched\n"
     ".type __load_and_call_scePthreadAttrGetinheritsched @function\n"
     "__load_and_call_scePthreadAttrGetinheritsched:\n"
     "push rdi\n"
@@ -27698,6 +28563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetschedparam\n"
     ".type __load_and_call_scePthreadAttrGetschedparam @function\n"
     "__load_and_call_scePthreadAttrGetschedparam:\n"
     "push rdi\n"
@@ -27730,6 +28596,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetschedpolicy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetschedpolicy\n"
     ".type __load_and_call_scePthreadAttrGetschedpolicy @function\n"
     "__load_and_call_scePthreadAttrGetschedpolicy:\n"
     "push rdi\n"
@@ -27762,6 +28629,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetscope]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetscope\n"
     ".type __load_and_call_scePthreadAttrGetscope @function\n"
     "__load_and_call_scePthreadAttrGetscope:\n"
     "push rdi\n"
@@ -27794,6 +28662,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetsolosched]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetsolosched\n"
     ".type __load_and_call_scePthreadAttrGetsolosched @function\n"
     "__load_and_call_scePthreadAttrGetsolosched:\n"
     "push rdi\n"
@@ -27826,6 +28695,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetstack]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetstack\n"
     ".type __load_and_call_scePthreadAttrGetstack @function\n"
     "__load_and_call_scePthreadAttrGetstack:\n"
     "push rdi\n"
@@ -27858,6 +28728,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetstackaddr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetstackaddr\n"
     ".type __load_and_call_scePthreadAttrGetstackaddr @function\n"
     "__load_and_call_scePthreadAttrGetstackaddr:\n"
     "push rdi\n"
@@ -27890,6 +28761,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrGetstacksize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrGetstacksize\n"
     ".type __load_and_call_scePthreadAttrGetstacksize @function\n"
     "__load_and_call_scePthreadAttrGetstacksize:\n"
     "push rdi\n"
@@ -27922,6 +28794,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrInit\n"
     ".type __load_and_call_scePthreadAttrInit @function\n"
     "__load_and_call_scePthreadAttrInit:\n"
     "push rdi\n"
@@ -27954,6 +28827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetaffinity]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetaffinity\n"
     ".type __load_and_call_scePthreadAttrSetaffinity @function\n"
     "__load_and_call_scePthreadAttrSetaffinity:\n"
     "push rdi\n"
@@ -27986,6 +28860,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetcreatesuspend]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetcreatesuspend\n"
     ".type __load_and_call_scePthreadAttrSetcreatesuspend @function\n"
     "__load_and_call_scePthreadAttrSetcreatesuspend:\n"
     "push rdi\n"
@@ -28018,6 +28893,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetdetachstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetdetachstate\n"
     ".type __load_and_call_scePthreadAttrSetdetachstate @function\n"
     "__load_and_call_scePthreadAttrSetdetachstate:\n"
     "push rdi\n"
@@ -28050,6 +28926,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetguardsize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetguardsize\n"
     ".type __load_and_call_scePthreadAttrSetguardsize @function\n"
     "__load_and_call_scePthreadAttrSetguardsize:\n"
     "push rdi\n"
@@ -28082,6 +28959,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetinheritsched]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetinheritsched\n"
     ".type __load_and_call_scePthreadAttrSetinheritsched @function\n"
     "__load_and_call_scePthreadAttrSetinheritsched:\n"
     "push rdi\n"
@@ -28114,6 +28992,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetschedparam\n"
     ".type __load_and_call_scePthreadAttrSetschedparam @function\n"
     "__load_and_call_scePthreadAttrSetschedparam:\n"
     "push rdi\n"
@@ -28146,6 +29025,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetschedpolicy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetschedpolicy\n"
     ".type __load_and_call_scePthreadAttrSetschedpolicy @function\n"
     "__load_and_call_scePthreadAttrSetschedpolicy:\n"
     "push rdi\n"
@@ -28178,6 +29058,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetscope]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetscope\n"
     ".type __load_and_call_scePthreadAttrSetscope @function\n"
     "__load_and_call_scePthreadAttrSetscope:\n"
     "push rdi\n"
@@ -28210,6 +29091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetsolosched]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetsolosched\n"
     ".type __load_and_call_scePthreadAttrSetsolosched @function\n"
     "__load_and_call_scePthreadAttrSetsolosched:\n"
     "push rdi\n"
@@ -28242,6 +29124,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetstack]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetstack\n"
     ".type __load_and_call_scePthreadAttrSetstack @function\n"
     "__load_and_call_scePthreadAttrSetstack:\n"
     "push rdi\n"
@@ -28274,6 +29157,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetstackaddr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetstackaddr\n"
     ".type __load_and_call_scePthreadAttrSetstackaddr @function\n"
     "__load_and_call_scePthreadAttrSetstackaddr:\n"
     "push rdi\n"
@@ -28306,6 +29190,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadAttrSetstacksize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadAttrSetstacksize\n"
     ".type __load_and_call_scePthreadAttrSetstacksize @function\n"
     "__load_and_call_scePthreadAttrSetstacksize:\n"
     "push rdi\n"
@@ -28338,6 +29223,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadBarrierDestroy\n"
     ".type __load_and_call_scePthreadBarrierDestroy @function\n"
     "__load_and_call_scePthreadBarrierDestroy:\n"
     "push rdi\n"
@@ -28370,6 +29256,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadBarrierInit\n"
     ".type __load_and_call_scePthreadBarrierInit @function\n"
     "__load_and_call_scePthreadBarrierInit:\n"
     "push rdi\n"
@@ -28402,6 +29289,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierWait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadBarrierWait\n"
     ".type __load_and_call_scePthreadBarrierWait @function\n"
     "__load_and_call_scePthreadBarrierWait:\n"
     "push rdi\n"
@@ -28434,6 +29322,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierattrDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadBarrierattrDestroy\n"
     ".type __load_and_call_scePthreadBarrierattrDestroy @function\n"
     "__load_and_call_scePthreadBarrierattrDestroy:\n"
     "push rdi\n"
@@ -28466,6 +29355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierattrGetpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadBarrierattrGetpshared\n"
     ".type __load_and_call_scePthreadBarrierattrGetpshared @function\n"
     "__load_and_call_scePthreadBarrierattrGetpshared:\n"
     "push rdi\n"
@@ -28498,6 +29388,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierattrInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadBarrierattrInit\n"
     ".type __load_and_call_scePthreadBarrierattrInit @function\n"
     "__load_and_call_scePthreadBarrierattrInit:\n"
     "push rdi\n"
@@ -28530,6 +29421,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadBarrierattrSetpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadBarrierattrSetpshared\n"
     ".type __load_and_call_scePthreadBarrierattrSetpshared @function\n"
     "__load_and_call_scePthreadBarrierattrSetpshared:\n"
     "push rdi\n"
@@ -28562,6 +29454,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCancel]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCancel\n"
     ".type __load_and_call_scePthreadCancel @function\n"
     "__load_and_call_scePthreadCancel:\n"
     "push rdi\n"
@@ -28594,6 +29487,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondBroadcast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondBroadcast\n"
     ".type __load_and_call_scePthreadCondBroadcast @function\n"
     "__load_and_call_scePthreadCondBroadcast:\n"
     "push rdi\n"
@@ -28626,6 +29520,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondDestroy\n"
     ".type __load_and_call_scePthreadCondDestroy @function\n"
     "__load_and_call_scePthreadCondDestroy:\n"
     "push rdi\n"
@@ -28658,6 +29553,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondInit\n"
     ".type __load_and_call_scePthreadCondInit @function\n"
     "__load_and_call_scePthreadCondInit:\n"
     "push rdi\n"
@@ -28690,6 +29586,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondSignal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondSignal\n"
     ".type __load_and_call_scePthreadCondSignal @function\n"
     "__load_and_call_scePthreadCondSignal:\n"
     "push rdi\n"
@@ -28722,6 +29619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondSignalto]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondSignalto\n"
     ".type __load_and_call_scePthreadCondSignalto @function\n"
     "__load_and_call_scePthreadCondSignalto:\n"
     "push rdi\n"
@@ -28754,6 +29652,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondTimedwait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondTimedwait\n"
     ".type __load_and_call_scePthreadCondTimedwait @function\n"
     "__load_and_call_scePthreadCondTimedwait:\n"
     "push rdi\n"
@@ -28786,6 +29685,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondWait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondWait\n"
     ".type __load_and_call_scePthreadCondWait @function\n"
     "__load_and_call_scePthreadCondWait:\n"
     "push rdi\n"
@@ -28818,6 +29718,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondattrDestroy\n"
     ".type __load_and_call_scePthreadCondattrDestroy @function\n"
     "__load_and_call_scePthreadCondattrDestroy:\n"
     "push rdi\n"
@@ -28850,6 +29751,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrGetclock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondattrGetclock\n"
     ".type __load_and_call_scePthreadCondattrGetclock @function\n"
     "__load_and_call_scePthreadCondattrGetclock:\n"
     "push rdi\n"
@@ -28882,6 +29784,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrGetpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondattrGetpshared\n"
     ".type __load_and_call_scePthreadCondattrGetpshared @function\n"
     "__load_and_call_scePthreadCondattrGetpshared:\n"
     "push rdi\n"
@@ -28914,6 +29817,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondattrInit\n"
     ".type __load_and_call_scePthreadCondattrInit @function\n"
     "__load_and_call_scePthreadCondattrInit:\n"
     "push rdi\n"
@@ -28946,6 +29850,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrSetclock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondattrSetclock\n"
     ".type __load_and_call_scePthreadCondattrSetclock @function\n"
     "__load_and_call_scePthreadCondattrSetclock:\n"
     "push rdi\n"
@@ -28978,6 +29883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCondattrSetpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCondattrSetpshared\n"
     ".type __load_and_call_scePthreadCondattrSetpshared @function\n"
     "__load_and_call_scePthreadCondattrSetpshared:\n"
     "push rdi\n"
@@ -29010,6 +29916,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadCreate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadCreate\n"
     ".type __load_and_call_scePthreadCreate @function\n"
     "__load_and_call_scePthreadCreate:\n"
     "push rdi\n"
@@ -29042,6 +29949,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadDetach]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadDetach\n"
     ".type __load_and_call_scePthreadDetach @function\n"
     "__load_and_call_scePthreadDetach:\n"
     "push rdi\n"
@@ -29074,6 +29982,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadEqual]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadEqual\n"
     ".type __load_and_call_scePthreadEqual @function\n"
     "__load_and_call_scePthreadEqual:\n"
     "push rdi\n"
@@ -29106,6 +30015,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadExit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadExit\n"
     ".type __load_and_call_scePthreadExit @function\n"
     "__load_and_call_scePthreadExit:\n"
     "push rdi\n"
@@ -29138,6 +30048,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetaffinity]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadGetaffinity\n"
     ".type __load_and_call_scePthreadGetaffinity @function\n"
     "__load_and_call_scePthreadGetaffinity:\n"
     "push rdi\n"
@@ -29170,6 +30081,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetconcurrency]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadGetconcurrency\n"
     ".type __load_and_call_scePthreadGetconcurrency @function\n"
     "__load_and_call_scePthreadGetconcurrency:\n"
     "push rdi\n"
@@ -29202,6 +30114,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetcpuclockid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadGetcpuclockid\n"
     ".type __load_and_call_scePthreadGetcpuclockid @function\n"
     "__load_and_call_scePthreadGetcpuclockid:\n"
     "push rdi\n"
@@ -29234,6 +30147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadGetname\n"
     ".type __load_and_call_scePthreadGetname @function\n"
     "__load_and_call_scePthreadGetname:\n"
     "push rdi\n"
@@ -29266,6 +30180,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetprio]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadGetprio\n"
     ".type __load_and_call_scePthreadGetprio @function\n"
     "__load_and_call_scePthreadGetprio:\n"
     "push rdi\n"
@@ -29298,6 +30213,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadGetschedparam\n"
     ".type __load_and_call_scePthreadGetschedparam @function\n"
     "__load_and_call_scePthreadGetschedparam:\n"
     "push rdi\n"
@@ -29330,6 +30246,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetspecific]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadGetspecific\n"
     ".type __load_and_call_scePthreadGetspecific @function\n"
     "__load_and_call_scePthreadGetspecific:\n"
     "push rdi\n"
@@ -29362,6 +30279,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadGetthreadid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadGetthreadid\n"
     ".type __load_and_call_scePthreadGetthreadid @function\n"
     "__load_and_call_scePthreadGetthreadid:\n"
     "push rdi\n"
@@ -29394,6 +30312,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadJoin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadJoin\n"
     ".type __load_and_call_scePthreadJoin @function\n"
     "__load_and_call_scePthreadJoin:\n"
     "push rdi\n"
@@ -29426,6 +30345,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadKeyCreate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadKeyCreate\n"
     ".type __load_and_call_scePthreadKeyCreate @function\n"
     "__load_and_call_scePthreadKeyCreate:\n"
     "push rdi\n"
@@ -29458,6 +30378,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadKeyDelete]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadKeyDelete\n"
     ".type __load_and_call_scePthreadKeyDelete @function\n"
     "__load_and_call_scePthreadKeyDelete:\n"
     "push rdi\n"
@@ -29490,6 +30411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMain]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMain\n"
     ".type __load_and_call_scePthreadMain @function\n"
     "__load_and_call_scePthreadMain:\n"
     "push rdi\n"
@@ -29522,6 +30444,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMulti]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMulti\n"
     ".type __load_and_call_scePthreadMulti @function\n"
     "__load_and_call_scePthreadMulti:\n"
     "push rdi\n"
@@ -29554,6 +30477,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexDestroy\n"
     ".type __load_and_call_scePthreadMutexDestroy @function\n"
     "__load_and_call_scePthreadMutexDestroy:\n"
     "push rdi\n"
@@ -29586,6 +30510,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexGetprioceiling]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexGetprioceiling\n"
     ".type __load_and_call_scePthreadMutexGetprioceiling @function\n"
     "__load_and_call_scePthreadMutexGetprioceiling:\n"
     "push rdi\n"
@@ -29618,6 +30543,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexGetspinloops]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexGetspinloops\n"
     ".type __load_and_call_scePthreadMutexGetspinloops @function\n"
     "__load_and_call_scePthreadMutexGetspinloops:\n"
     "push rdi\n"
@@ -29650,6 +30576,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexGetyieldloops]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexGetyieldloops\n"
     ".type __load_and_call_scePthreadMutexGetyieldloops @function\n"
     "__load_and_call_scePthreadMutexGetyieldloops:\n"
     "push rdi\n"
@@ -29682,6 +30609,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexInit\n"
     ".type __load_and_call_scePthreadMutexInit @function\n"
     "__load_and_call_scePthreadMutexInit:\n"
     "push rdi\n"
@@ -29714,6 +30642,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexInitForInternalLibc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexInitForInternalLibc\n"
     ".type __load_and_call_scePthreadMutexInitForInternalLibc @function\n"
     "__load_and_call_scePthreadMutexInitForInternalLibc:\n"
     "push rdi\n"
@@ -29746,6 +30675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexIsowned]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexIsowned\n"
     ".type __load_and_call_scePthreadMutexIsowned @function\n"
     "__load_and_call_scePthreadMutexIsowned:\n"
     "push rdi\n"
@@ -29778,6 +30708,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexLock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexLock\n"
     ".type __load_and_call_scePthreadMutexLock @function\n"
     "__load_and_call_scePthreadMutexLock:\n"
     "push rdi\n"
@@ -29810,6 +30741,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexSetprioceiling]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexSetprioceiling\n"
     ".type __load_and_call_scePthreadMutexSetprioceiling @function\n"
     "__load_and_call_scePthreadMutexSetprioceiling:\n"
     "push rdi\n"
@@ -29842,6 +30774,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexSetspinloops]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexSetspinloops\n"
     ".type __load_and_call_scePthreadMutexSetspinloops @function\n"
     "__load_and_call_scePthreadMutexSetspinloops:\n"
     "push rdi\n"
@@ -29874,6 +30807,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexSetyieldloops]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexSetyieldloops\n"
     ".type __load_and_call_scePthreadMutexSetyieldloops @function\n"
     "__load_and_call_scePthreadMutexSetyieldloops:\n"
     "push rdi\n"
@@ -29906,6 +30840,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexTimedlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexTimedlock\n"
     ".type __load_and_call_scePthreadMutexTimedlock @function\n"
     "__load_and_call_scePthreadMutexTimedlock:\n"
     "push rdi\n"
@@ -29938,6 +30873,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexTrylock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexTrylock\n"
     ".type __load_and_call_scePthreadMutexTrylock @function\n"
     "__load_and_call_scePthreadMutexTrylock:\n"
     "push rdi\n"
@@ -29970,6 +30906,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexUnlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexUnlock\n"
     ".type __load_and_call_scePthreadMutexUnlock @function\n"
     "__load_and_call_scePthreadMutexUnlock:\n"
     "push rdi\n"
@@ -30002,6 +30939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrDestroy\n"
     ".type __load_and_call_scePthreadMutexattrDestroy @function\n"
     "__load_and_call_scePthreadMutexattrDestroy:\n"
     "push rdi\n"
@@ -30034,6 +30972,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetgen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrGetgen\n"
     ".type __load_and_call_scePthreadMutexattrGetgen @function\n"
     "__load_and_call_scePthreadMutexattrGetgen:\n"
     "push rdi\n"
@@ -30066,6 +31005,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetkind]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrGetkind\n"
     ".type __load_and_call_scePthreadMutexattrGetkind @function\n"
     "__load_and_call_scePthreadMutexattrGetkind:\n"
     "push rdi\n"
@@ -30098,6 +31038,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetprioceiling]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrGetprioceiling\n"
     ".type __load_and_call_scePthreadMutexattrGetprioceiling @function\n"
     "__load_and_call_scePthreadMutexattrGetprioceiling:\n"
     "push rdi\n"
@@ -30130,6 +31071,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetprotocol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrGetprotocol\n"
     ".type __load_and_call_scePthreadMutexattrGetprotocol @function\n"
     "__load_and_call_scePthreadMutexattrGetprotocol:\n"
     "push rdi\n"
@@ -30162,6 +31104,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGetpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrGetpshared\n"
     ".type __load_and_call_scePthreadMutexattrGetpshared @function\n"
     "__load_and_call_scePthreadMutexattrGetpshared:\n"
     "push rdi\n"
@@ -30194,6 +31137,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrGettype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrGettype\n"
     ".type __load_and_call_scePthreadMutexattrGettype @function\n"
     "__load_and_call_scePthreadMutexattrGettype:\n"
     "push rdi\n"
@@ -30226,6 +31170,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrInit\n"
     ".type __load_and_call_scePthreadMutexattrInit @function\n"
     "__load_and_call_scePthreadMutexattrInit:\n"
     "push rdi\n"
@@ -30258,6 +31203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrInitForInternalLibc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrInitForInternalLibc\n"
     ".type __load_and_call_scePthreadMutexattrInitForInternalLibc @function\n"
     "__load_and_call_scePthreadMutexattrInitForInternalLibc:\n"
     "push rdi\n"
@@ -30290,6 +31236,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetgen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrSetgen\n"
     ".type __load_and_call_scePthreadMutexattrSetgen @function\n"
     "__load_and_call_scePthreadMutexattrSetgen:\n"
     "push rdi\n"
@@ -30322,6 +31269,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetkind]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrSetkind\n"
     ".type __load_and_call_scePthreadMutexattrSetkind @function\n"
     "__load_and_call_scePthreadMutexattrSetkind:\n"
     "push rdi\n"
@@ -30354,6 +31302,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetprioceiling]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrSetprioceiling\n"
     ".type __load_and_call_scePthreadMutexattrSetprioceiling @function\n"
     "__load_and_call_scePthreadMutexattrSetprioceiling:\n"
     "push rdi\n"
@@ -30386,6 +31335,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetprotocol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrSetprotocol\n"
     ".type __load_and_call_scePthreadMutexattrSetprotocol @function\n"
     "__load_and_call_scePthreadMutexattrSetprotocol:\n"
     "push rdi\n"
@@ -30418,6 +31368,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSetpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrSetpshared\n"
     ".type __load_and_call_scePthreadMutexattrSetpshared @function\n"
     "__load_and_call_scePthreadMutexattrSetpshared:\n"
     "push rdi\n"
@@ -30450,6 +31401,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadMutexattrSettype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadMutexattrSettype\n"
     ".type __load_and_call_scePthreadMutexattrSettype @function\n"
     "__load_and_call_scePthreadMutexattrSettype:\n"
     "push rdi\n"
@@ -30482,6 +31434,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadOnce]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadOnce\n"
     ".type __load_and_call_scePthreadOnce @function\n"
     "__load_and_call_scePthreadOnce:\n"
     "push rdi\n"
@@ -30514,6 +31467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRename]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRename\n"
     ".type __load_and_call_scePthreadRename @function\n"
     "__load_and_call_scePthreadRename:\n"
     "push rdi\n"
@@ -30546,6 +31500,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadResume]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadResume\n"
     ".type __load_and_call_scePthreadResume @function\n"
     "__load_and_call_scePthreadResume:\n"
     "push rdi\n"
@@ -30578,6 +31533,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadResumeAll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadResumeAll\n"
     ".type __load_and_call_scePthreadResumeAll @function\n"
     "__load_and_call_scePthreadResumeAll:\n"
     "push rdi\n"
@@ -30610,6 +31566,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockDestroy\n"
     ".type __load_and_call_scePthreadRwlockDestroy @function\n"
     "__load_and_call_scePthreadRwlockDestroy:\n"
     "push rdi\n"
@@ -30642,6 +31599,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockInit\n"
     ".type __load_and_call_scePthreadRwlockInit @function\n"
     "__load_and_call_scePthreadRwlockInit:\n"
     "push rdi\n"
@@ -30674,6 +31632,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockRdlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockRdlock\n"
     ".type __load_and_call_scePthreadRwlockRdlock @function\n"
     "__load_and_call_scePthreadRwlockRdlock:\n"
     "push rdi\n"
@@ -30706,6 +31665,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockTimedrdlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockTimedrdlock\n"
     ".type __load_and_call_scePthreadRwlockTimedrdlock @function\n"
     "__load_and_call_scePthreadRwlockTimedrdlock:\n"
     "push rdi\n"
@@ -30738,6 +31698,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockTimedwrlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockTimedwrlock\n"
     ".type __load_and_call_scePthreadRwlockTimedwrlock @function\n"
     "__load_and_call_scePthreadRwlockTimedwrlock:\n"
     "push rdi\n"
@@ -30770,6 +31731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockTryrdlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockTryrdlock\n"
     ".type __load_and_call_scePthreadRwlockTryrdlock @function\n"
     "__load_and_call_scePthreadRwlockTryrdlock:\n"
     "push rdi\n"
@@ -30802,6 +31764,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockTrywrlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockTrywrlock\n"
     ".type __load_and_call_scePthreadRwlockTrywrlock @function\n"
     "__load_and_call_scePthreadRwlockTrywrlock:\n"
     "push rdi\n"
@@ -30834,6 +31797,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockUnlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockUnlock\n"
     ".type __load_and_call_scePthreadRwlockUnlock @function\n"
     "__load_and_call_scePthreadRwlockUnlock:\n"
     "push rdi\n"
@@ -30866,6 +31830,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockWrlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockWrlock\n"
     ".type __load_and_call_scePthreadRwlockWrlock @function\n"
     "__load_and_call_scePthreadRwlockWrlock:\n"
     "push rdi\n"
@@ -30898,6 +31863,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockattrDestroy\n"
     ".type __load_and_call_scePthreadRwlockattrDestroy @function\n"
     "__load_and_call_scePthreadRwlockattrDestroy:\n"
     "push rdi\n"
@@ -30930,6 +31896,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrGetpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockattrGetpshared\n"
     ".type __load_and_call_scePthreadRwlockattrGetpshared @function\n"
     "__load_and_call_scePthreadRwlockattrGetpshared:\n"
     "push rdi\n"
@@ -30962,6 +31929,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrGettype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockattrGettype\n"
     ".type __load_and_call_scePthreadRwlockattrGettype @function\n"
     "__load_and_call_scePthreadRwlockattrGettype:\n"
     "push rdi\n"
@@ -30994,6 +31962,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockattrInit\n"
     ".type __load_and_call_scePthreadRwlockattrInit @function\n"
     "__load_and_call_scePthreadRwlockattrInit:\n"
     "push rdi\n"
@@ -31026,6 +31995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrSetpshared]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockattrSetpshared\n"
     ".type __load_and_call_scePthreadRwlockattrSetpshared @function\n"
     "__load_and_call_scePthreadRwlockattrSetpshared:\n"
     "push rdi\n"
@@ -31058,6 +32028,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadRwlockattrSettype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadRwlockattrSettype\n"
     ".type __load_and_call_scePthreadRwlockattrSettype @function\n"
     "__load_and_call_scePthreadRwlockattrSettype:\n"
     "push rdi\n"
@@ -31090,6 +32061,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSelf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSelf\n"
     ".type __load_and_call_scePthreadSelf @function\n"
     "__load_and_call_scePthreadSelf:\n"
     "push rdi\n"
@@ -31122,6 +32094,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSemDestroy\n"
     ".type __load_and_call_scePthreadSemDestroy @function\n"
     "__load_and_call_scePthreadSemDestroy:\n"
     "push rdi\n"
@@ -31154,6 +32127,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemGetvalue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSemGetvalue\n"
     ".type __load_and_call_scePthreadSemGetvalue @function\n"
     "__load_and_call_scePthreadSemGetvalue:\n"
     "push rdi\n"
@@ -31186,6 +32160,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemInit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSemInit\n"
     ".type __load_and_call_scePthreadSemInit @function\n"
     "__load_and_call_scePthreadSemInit:\n"
     "push rdi\n"
@@ -31218,6 +32193,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemPost]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSemPost\n"
     ".type __load_and_call_scePthreadSemPost @function\n"
     "__load_and_call_scePthreadSemPost:\n"
     "push rdi\n"
@@ -31250,6 +32226,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemTimedwait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSemTimedwait\n"
     ".type __load_and_call_scePthreadSemTimedwait @function\n"
     "__load_and_call_scePthreadSemTimedwait:\n"
     "push rdi\n"
@@ -31282,6 +32259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemTrywait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSemTrywait\n"
     ".type __load_and_call_scePthreadSemTrywait @function\n"
     "__load_and_call_scePthreadSemTrywait:\n"
     "push rdi\n"
@@ -31314,6 +32292,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSemWait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSemWait\n"
     ".type __load_and_call_scePthreadSemWait @function\n"
     "__load_and_call_scePthreadSemWait:\n"
     "push rdi\n"
@@ -31346,6 +32325,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetBesteffort]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetBesteffort\n"
     ".type __load_and_call_scePthreadSetBesteffort @function\n"
     "__load_and_call_scePthreadSetBesteffort:\n"
     "push rdi\n"
@@ -31378,6 +32358,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetDefaultstacksize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetDefaultstacksize\n"
     ".type __load_and_call_scePthreadSetDefaultstacksize @function\n"
     "__load_and_call_scePthreadSetDefaultstacksize:\n"
     "push rdi\n"
@@ -31410,6 +32391,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetName]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetName\n"
     ".type __load_and_call_scePthreadSetName @function\n"
     "__load_and_call_scePthreadSetName:\n"
     "push rdi\n"
@@ -31442,6 +32424,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetaffinity]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetaffinity\n"
     ".type __load_and_call_scePthreadSetaffinity @function\n"
     "__load_and_call_scePthreadSetaffinity:\n"
     "push rdi\n"
@@ -31474,6 +32457,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetcancelstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetcancelstate\n"
     ".type __load_and_call_scePthreadSetcancelstate @function\n"
     "__load_and_call_scePthreadSetcancelstate:\n"
     "push rdi\n"
@@ -31506,6 +32490,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetcanceltype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetcanceltype\n"
     ".type __load_and_call_scePthreadSetcanceltype @function\n"
     "__load_and_call_scePthreadSetcanceltype:\n"
     "push rdi\n"
@@ -31538,6 +32523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetconcurrency]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetconcurrency\n"
     ".type __load_and_call_scePthreadSetconcurrency @function\n"
     "__load_and_call_scePthreadSetconcurrency:\n"
     "push rdi\n"
@@ -31570,6 +32556,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetprio]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetprio\n"
     ".type __load_and_call_scePthreadSetprio @function\n"
     "__load_and_call_scePthreadSetprio:\n"
     "push rdi\n"
@@ -31602,6 +32589,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetschedparam\n"
     ".type __load_and_call_scePthreadSetschedparam @function\n"
     "__load_and_call_scePthreadSetschedparam:\n"
     "push rdi\n"
@@ -31634,6 +32622,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSetspecific]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSetspecific\n"
     ".type __load_and_call_scePthreadSetspecific @function\n"
     "__load_and_call_scePthreadSetspecific:\n"
     "push rdi\n"
@@ -31666,6 +32655,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSingle]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSingle\n"
     ".type __load_and_call_scePthreadSingle @function\n"
     "__load_and_call_scePthreadSingle:\n"
     "push rdi\n"
@@ -31698,6 +32688,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSuspend]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSuspend\n"
     ".type __load_and_call_scePthreadSuspend @function\n"
     "__load_and_call_scePthreadSuspend:\n"
     "push rdi\n"
@@ -31730,6 +32721,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadSuspendAll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadSuspendAll\n"
     ".type __load_and_call_scePthreadSuspendAll @function\n"
     "__load_and_call_scePthreadSuspendAll:\n"
     "push rdi\n"
@@ -31762,6 +32754,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadTestcancel]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadTestcancel\n"
     ".type __load_and_call_scePthreadTestcancel @function\n"
     "__load_and_call_scePthreadTestcancel:\n"
     "push rdi\n"
@@ -31794,6 +32787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadTimedjoin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadTimedjoin\n"
     ".type __load_and_call_scePthreadTimedjoin @function\n"
     "__load_and_call_scePthreadTimedjoin:\n"
     "push rdi\n"
@@ -31826,6 +32820,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scePthreadYield]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scePthreadYield\n"
     ".type __load_and_call_scePthreadYield @function\n"
     "__load_and_call_scePthreadYield:\n"
     "push rdi\n"
@@ -31858,6 +32853,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_get_priority_max]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sched_get_priority_max\n"
     ".type __load_and_call_sched_get_priority_max @function\n"
     "__load_and_call_sched_get_priority_max:\n"
     "push rdi\n"
@@ -31890,6 +32886,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_get_priority_min]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sched_get_priority_min\n"
     ".type __load_and_call_sched_get_priority_min @function\n"
     "__load_and_call_sched_get_priority_min:\n"
     "push rdi\n"
@@ -31922,6 +32919,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_getparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sched_getparam\n"
     ".type __load_and_call_sched_getparam @function\n"
     "__load_and_call_sched_getparam:\n"
     "push rdi\n"
@@ -31954,6 +32952,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_getscheduler]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sched_getscheduler\n"
     ".type __load_and_call_sched_getscheduler @function\n"
     "__load_and_call_sched_getscheduler:\n"
     "push rdi\n"
@@ -31986,6 +32985,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_rr_get_interval]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sched_rr_get_interval\n"
     ".type __load_and_call_sched_rr_get_interval @function\n"
     "__load_and_call_sched_rr_get_interval:\n"
     "push rdi\n"
@@ -32018,6 +33018,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_setparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sched_setparam\n"
     ".type __load_and_call_sched_setparam @function\n"
     "__load_and_call_sched_setparam:\n"
     "push rdi\n"
@@ -32050,6 +33051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_setscheduler]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sched_setscheduler\n"
     ".type __load_and_call_sched_setscheduler @function\n"
     "__load_and_call_sched_setscheduler:\n"
     "push rdi\n"
@@ -32082,6 +33084,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sched_yield]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sched_yield\n"
     ".type __load_and_call_sched_yield @function\n"
     "__load_and_call_sched_yield:\n"
     "push rdi\n"
@@ -32114,6 +33117,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_select]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_select\n"
     ".type __load_and_call_select @function\n"
     "__load_and_call_select:\n"
     "push rdi\n"
@@ -32146,6 +33150,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_close]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_close\n"
     ".type __load_and_call_sem_close @function\n"
     "__load_and_call_sem_close:\n"
     "push rdi\n"
@@ -32178,6 +33183,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_destroy\n"
     ".type __load_and_call_sem_destroy @function\n"
     "__load_and_call_sem_destroy:\n"
     "push rdi\n"
@@ -32210,6 +33216,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_getvalue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_getvalue\n"
     ".type __load_and_call_sem_getvalue @function\n"
     "__load_and_call_sem_getvalue:\n"
     "push rdi\n"
@@ -32242,6 +33249,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_init\n"
     ".type __load_and_call_sem_init @function\n"
     "__load_and_call_sem_init:\n"
     "push rdi\n"
@@ -32274,6 +33282,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_open]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_open\n"
     ".type __load_and_call_sem_open @function\n"
     "__load_and_call_sem_open:\n"
     "push rdi\n"
@@ -32306,6 +33315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_post]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_post\n"
     ".type __load_and_call_sem_post @function\n"
     "__load_and_call_sem_post:\n"
     "push rdi\n"
@@ -32338,6 +33348,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_reltimedwait_np]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_reltimedwait_np\n"
     ".type __load_and_call_sem_reltimedwait_np @function\n"
     "__load_and_call_sem_reltimedwait_np:\n"
     "push rdi\n"
@@ -32370,6 +33381,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_setname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_setname\n"
     ".type __load_and_call_sem_setname @function\n"
     "__load_and_call_sem_setname:\n"
     "push rdi\n"
@@ -32402,6 +33414,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_timedwait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_timedwait\n"
     ".type __load_and_call_sem_timedwait @function\n"
     "__load_and_call_sem_timedwait:\n"
     "push rdi\n"
@@ -32434,6 +33447,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_trywait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_trywait\n"
     ".type __load_and_call_sem_trywait @function\n"
     "__load_and_call_sem_trywait:\n"
     "push rdi\n"
@@ -32466,6 +33480,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_unlink]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_unlink\n"
     ".type __load_and_call_sem_unlink @function\n"
     "__load_and_call_sem_unlink:\n"
     "push rdi\n"
@@ -32498,6 +33513,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sem_wait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sem_wait\n"
     ".type __load_and_call_sem_wait @function\n"
     "__load_and_call_sem_wait:\n"
     "push rdi\n"
@@ -32530,6 +33546,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_send]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_send\n"
     ".type __load_and_call_send @function\n"
     "__load_and_call_send:\n"
     "push rdi\n"
@@ -32562,6 +33579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sendfile]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sendfile\n"
     ".type __load_and_call_sendfile @function\n"
     "__load_and_call_sendfile:\n"
     "push rdi\n"
@@ -32594,6 +33612,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sendmsg]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sendmsg\n"
     ".type __load_and_call_sendmsg @function\n"
     "__load_and_call_sendmsg:\n"
     "push rdi\n"
@@ -32626,6 +33645,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sendto]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sendto\n"
     ".type __load_and_call_sendto @function\n"
     "__load_and_call_sendto:\n"
     "push rdi\n"
@@ -32658,6 +33678,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_set_phys_fmem_limit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_set_phys_fmem_limit\n"
     ".type __load_and_call_set_phys_fmem_limit @function\n"
     "__load_and_call_set_phys_fmem_limit:\n"
     "push rdi\n"
@@ -32690,6 +33711,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setcontext]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setcontext\n"
     ".type __load_and_call_setcontext @function\n"
     "__load_and_call_setcontext:\n"
     "push rdi\n"
@@ -32722,6 +33744,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setegid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setegid\n"
     ".type __load_and_call_setegid @function\n"
     "__load_and_call_setegid:\n"
     "push rdi\n"
@@ -32754,6 +33777,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_seteuid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_seteuid\n"
     ".type __load_and_call_seteuid @function\n"
     "__load_and_call_seteuid:\n"
     "push rdi\n"
@@ -32786,6 +33810,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setgroups]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setgroups\n"
     ".type __load_and_call_setgroups @function\n"
     "__load_and_call_setgroups:\n"
     "push rdi\n"
@@ -32818,6 +33843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setitimer]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setitimer\n"
     ".type __load_and_call_setitimer @function\n"
     "__load_and_call_setitimer:\n"
     "push rdi\n"
@@ -32850,6 +33876,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setpriority]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setpriority\n"
     ".type __load_and_call_setpriority @function\n"
     "__load_and_call_setpriority:\n"
     "push rdi\n"
@@ -32882,6 +33909,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setregid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setregid\n"
     ".type __load_and_call_setregid @function\n"
     "__load_and_call_setregid:\n"
     "push rdi\n"
@@ -32914,6 +33942,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setreuid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setreuid\n"
     ".type __load_and_call_setreuid @function\n"
     "__load_and_call_setreuid:\n"
     "push rdi\n"
@@ -32946,6 +33975,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setrlimit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setrlimit\n"
     ".type __load_and_call_setrlimit @function\n"
     "__load_and_call_setrlimit:\n"
     "push rdi\n"
@@ -32978,6 +34008,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setsockopt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setsockopt\n"
     ".type __load_and_call_setsockopt @function\n"
     "__load_and_call_setsockopt:\n"
     "push rdi\n"
@@ -33010,6 +34041,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_settimeofday]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_settimeofday\n"
     ".type __load_and_call_settimeofday @function\n"
     "__load_and_call_settimeofday:\n"
     "push rdi\n"
@@ -33042,6 +34074,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setuid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setuid\n"
     ".type __load_and_call_setuid @function\n"
     "__load_and_call_setuid:\n"
     "push rdi\n"
@@ -33074,6 +34107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_shm_open]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_shm_open\n"
     ".type __load_and_call_shm_open @function\n"
     "__load_and_call_shm_open:\n"
     "push rdi\n"
@@ -33106,6 +34140,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_shm_unlink]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_shm_unlink\n"
     ".type __load_and_call_shm_unlink @function\n"
     "__load_and_call_shm_unlink:\n"
     "push rdi\n"
@@ -33138,6 +34173,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_shutdown]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_shutdown\n"
     ".type __load_and_call_shutdown @function\n"
     "__load_and_call_shutdown:\n"
     "push rdi\n"
@@ -33170,6 +34206,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigaction]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigaction\n"
     ".type __load_and_call_sigaction @function\n"
     "__load_and_call_sigaction:\n"
     "push rdi\n"
@@ -33202,6 +34239,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigaddset]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigaddset\n"
     ".type __load_and_call_sigaddset @function\n"
     "__load_and_call_sigaddset:\n"
     "push rdi\n"
@@ -33234,6 +34272,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigaltstack]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigaltstack\n"
     ".type __load_and_call_sigaltstack @function\n"
     "__load_and_call_sigaltstack:\n"
     "push rdi\n"
@@ -33266,6 +34305,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigdelset]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigdelset\n"
     ".type __load_and_call_sigdelset @function\n"
     "__load_and_call_sigdelset:\n"
     "push rdi\n"
@@ -33298,6 +34338,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigemptyset]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigemptyset\n"
     ".type __load_and_call_sigemptyset @function\n"
     "__load_and_call_sigemptyset:\n"
     "push rdi\n"
@@ -33330,6 +34371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigfillset]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigfillset\n"
     ".type __load_and_call_sigfillset @function\n"
     "__load_and_call_sigfillset:\n"
     "push rdi\n"
@@ -33362,6 +34404,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigismember]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigismember\n"
     ".type __load_and_call_sigismember @function\n"
     "__load_and_call_sigismember:\n"
     "push rdi\n"
@@ -33394,6 +34437,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_siglongjmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_siglongjmp\n"
     ".type __load_and_call_siglongjmp @function\n"
     "__load_and_call_siglongjmp:\n"
     "push rdi\n"
@@ -33426,6 +34470,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_signal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_signal\n"
     ".type __load_and_call_signal @function\n"
     "__load_and_call_signal:\n"
     "push rdi\n"
@@ -33458,6 +34503,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigpending]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigpending\n"
     ".type __load_and_call_sigpending @function\n"
     "__load_and_call_sigpending:\n"
     "push rdi\n"
@@ -33490,6 +34536,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigprocmask]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigprocmask\n"
     ".type __load_and_call_sigprocmask @function\n"
     "__load_and_call_sigprocmask:\n"
     "push rdi\n"
@@ -33522,6 +34569,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigqueue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigqueue\n"
     ".type __load_and_call_sigqueue @function\n"
     "__load_and_call_sigqueue:\n"
     "push rdi\n"
@@ -33554,6 +34602,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigreturn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigreturn\n"
     ".type __load_and_call_sigreturn @function\n"
     "__load_and_call_sigreturn:\n"
     "push rdi\n"
@@ -33586,6 +34635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigsetjmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigsetjmp\n"
     ".type __load_and_call_sigsetjmp @function\n"
     "__load_and_call_sigsetjmp:\n"
     "push rdi\n"
@@ -33618,6 +34668,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigsuspend]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigsuspend\n"
     ".type __load_and_call_sigsuspend @function\n"
     "__load_and_call_sigsuspend:\n"
     "push rdi\n"
@@ -33650,6 +34701,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigtimedwait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigtimedwait\n"
     ".type __load_and_call_sigtimedwait @function\n"
     "__load_and_call_sigtimedwait:\n"
     "push rdi\n"
@@ -33682,6 +34734,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigwait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigwait\n"
     ".type __load_and_call_sigwait @function\n"
     "__load_and_call_sigwait:\n"
     "push rdi\n"
@@ -33714,6 +34767,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigwaitinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigwaitinfo\n"
     ".type __load_and_call_sigwaitinfo @function\n"
     "__load_and_call_sigwaitinfo:\n"
     "push rdi\n"
@@ -33746,6 +34800,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sleep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sleep\n"
     ".type __load_and_call_sleep @function\n"
     "__load_and_call_sleep:\n"
     "push rdi\n"
@@ -33778,6 +34833,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_socket]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_socket\n"
     ".type __load_and_call_socket @function\n"
     "__load_and_call_socket:\n"
     "push rdi\n"
@@ -33810,6 +34866,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_socketpair]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_socketpair\n"
     ".type __load_and_call_socketpair @function\n"
     "__load_and_call_socketpair:\n"
     "push rdi\n"
@@ -33842,6 +34899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_stat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_stat\n"
     ".type __load_and_call_stat @function\n"
     "__load_and_call_stat:\n"
     "push rdi\n"
@@ -33874,6 +34932,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_swapcontext]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_swapcontext\n"
     ".type __load_and_call_swapcontext @function\n"
     "__load_and_call_swapcontext:\n"
     "push rdi\n"
@@ -33906,6 +34965,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sync]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sync\n"
     ".type __load_and_call_sync @function\n"
     "__load_and_call_sync:\n"
     "push rdi\n"
@@ -33938,6 +34998,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetIntdevModeForInternalLibc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysKernelGetIntdevModeForInternalLibc\n"
     ".type __load_and_call_sysKernelGetIntdevModeForInternalLibc @function\n"
     "__load_and_call_sysKernelGetIntdevModeForInternalLibc:\n"
     "push rdi\n"
@@ -33970,6 +35031,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetIntdevModeForRcmgr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysKernelGetIntdevModeForRcmgr\n"
     ".type __load_and_call_sysKernelGetIntdevModeForRcmgr @function\n"
     "__load_and_call_sysKernelGetIntdevModeForRcmgr:\n"
     "push rdi\n"
@@ -34002,6 +35064,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetLowerLimitSysexVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysKernelGetLowerLimitSysexVersion\n"
     ".type __load_and_call_sysKernelGetLowerLimitSysexVersion @function\n"
     "__load_and_call_sysKernelGetLowerLimitSysexVersion:\n"
     "push rdi\n"
@@ -34034,6 +35097,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetLowerLimitUpdVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysKernelGetLowerLimitUpdVersion\n"
     ".type __load_and_call_sysKernelGetLowerLimitUpdVersion @function\n"
     "__load_and_call_sysKernelGetLowerLimitUpdVersion:\n"
     "push rdi\n"
@@ -34066,6 +35130,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetManufacturingMode]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysKernelGetManufacturingMode\n"
     ".type __load_and_call_sysKernelGetManufacturingMode @function\n"
     "__load_and_call_sysKernelGetManufacturingMode:\n"
     "push rdi\n"
@@ -34098,6 +35163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysKernelGetUpdVersion]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysKernelGetUpdVersion\n"
     ".type __load_and_call_sysKernelGetUpdVersion @function\n"
     "__load_and_call_sysKernelGetUpdVersion:\n"
     "push rdi\n"
@@ -34130,6 +35196,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysarch]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysarch\n"
     ".type __load_and_call_sysarch @function\n"
     "__load_and_call_sysarch:\n"
     "push rdi\n"
@@ -34162,6 +35229,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysconf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysconf\n"
     ".type __load_and_call_sysconf @function\n"
     "__load_and_call_sysconf:\n"
     "push rdi\n"
@@ -34194,6 +35262,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysctl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysctl\n"
     ".type __load_and_call_sysctl @function\n"
     "__load_and_call_sysctl:\n"
     "push rdi\n"
@@ -34226,6 +35295,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysctlbyname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysctlbyname\n"
     ".type __load_and_call_sysctlbyname @function\n"
     "__load_and_call_sysctlbyname:\n"
     "push rdi\n"
@@ -34258,6 +35328,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sysctlnametomib]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sysctlnametomib\n"
     ".type __load_and_call_sysctlnametomib @function\n"
     "__load_and_call_sysctlnametomib:\n"
     "push rdi\n"
@@ -34290,6 +35361,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_system]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_system\n"
     ".type __load_and_call_system @function\n"
     "__load_and_call_system:\n"
     "push rdi\n"
@@ -34322,6 +35394,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcdrain]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcdrain\n"
     ".type __load_and_call_tcdrain @function\n"
     "__load_and_call_tcdrain:\n"
     "push rdi\n"
@@ -34354,6 +35427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcflow]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcflow\n"
     ".type __load_and_call_tcflow @function\n"
     "__load_and_call_tcflow:\n"
     "push rdi\n"
@@ -34386,6 +35460,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcflush]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcflush\n"
     ".type __load_and_call_tcflush @function\n"
     "__load_and_call_tcflush:\n"
     "push rdi\n"
@@ -34418,6 +35493,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcgetattr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcgetattr\n"
     ".type __load_and_call_tcgetattr @function\n"
     "__load_and_call_tcgetattr:\n"
     "push rdi\n"
@@ -34450,6 +35526,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcgetpgrp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcgetpgrp\n"
     ".type __load_and_call_tcgetpgrp @function\n"
     "__load_and_call_tcgetpgrp:\n"
     "push rdi\n"
@@ -34482,6 +35559,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcgetsid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcgetsid\n"
     ".type __load_and_call_tcgetsid @function\n"
     "__load_and_call_tcgetsid:\n"
     "push rdi\n"
@@ -34514,6 +35592,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcsendbreak]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcsendbreak\n"
     ".type __load_and_call_tcsendbreak @function\n"
     "__load_and_call_tcsendbreak:\n"
     "push rdi\n"
@@ -34546,6 +35625,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcsetattr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcsetattr\n"
     ".type __load_and_call_tcsetattr @function\n"
     "__load_and_call_tcsetattr:\n"
     "push rdi\n"
@@ -34578,6 +35658,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcsetpgrp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcsetpgrp\n"
     ".type __load_and_call_tcsetpgrp @function\n"
     "__load_and_call_tcsetpgrp:\n"
     "push rdi\n"
@@ -34610,6 +35691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tcsetsid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tcsetsid\n"
     ".type __load_and_call_tcsetsid @function\n"
     "__load_and_call_tcsetsid:\n"
     "push rdi\n"
@@ -34642,6 +35724,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_truncate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_truncate\n"
     ".type __load_and_call_truncate @function\n"
     "__load_and_call_truncate:\n"
     "push rdi\n"
@@ -34674,6 +35757,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_unlink]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_unlink\n"
     ".type __load_and_call_unlink @function\n"
     "__load_and_call_unlink:\n"
     "push rdi\n"
@@ -34706,6 +35790,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_usleep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_usleep\n"
     ".type __load_and_call_usleep @function\n"
     "__load_and_call_usleep:\n"
     "push rdi\n"
@@ -34738,6 +35823,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_utimes]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_utimes\n"
     ".type __load_and_call_utimes @function\n"
     "__load_and_call_utimes:\n"
     "push rdi\n"
@@ -34770,6 +35856,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_uuidgen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_uuidgen\n"
     ".type __load_and_call_uuidgen @function\n"
     "__load_and_call_uuidgen:\n"
     "push rdi\n"
@@ -34802,6 +35889,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wait\n"
     ".type __load_and_call_wait @function\n"
     "__load_and_call_wait:\n"
     "push rdi\n"
@@ -34834,6 +35922,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wait3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wait3\n"
     ".type __load_and_call_wait3 @function\n"
     "__load_and_call_wait3:\n"
     "push rdi\n"
@@ -34866,6 +35955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_waitpid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_waitpid\n"
     ".type __load_and_call_waitpid @function\n"
     "__load_and_call_waitpid:\n"
     "push rdi\n"
@@ -34898,6 +35988,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_write]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_write\n"
     ".type __load_and_call_write @function\n"
     "__load_and_call_write:\n"
     "push rdi\n"
@@ -34930,6 +36021,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_writev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_writev\n"
     ".type __load_and_call_writev @function\n"
     "__load_and_call_writev:\n"
     "push rdi\n"

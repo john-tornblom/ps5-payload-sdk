@@ -76,6 +76,7 @@ asm(".intel_syntax noprefix\\n"
     "jmp qword ptr [rip + __ptr_$name]\\n");
 
 asm(".intel_syntax noprefix\\n"
+    ".local __load_and_call_$name\\n"
     ".type __load_and_call_$name @function\\n"
     "__load_and_call_$name:\\n"
     "push rdi\\n"

@@ -28,6 +28,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Assert]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Assert\n"
     ".type __load_and_call__Assert @function\n"
     "__load_and_call__Assert:\n"
     "push rdi\n"
@@ -60,6 +61,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atan\n"
     ".type __load_and_call__Atan @function\n"
     "__load_and_call__Atan:\n"
     "push rdi\n"
@@ -92,6 +94,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_strong]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_strong\n"
     ".type __load_and_call__Atomic_compare_exchange_strong @function\n"
     "__load_and_call__Atomic_compare_exchange_strong:\n"
     "push rdi\n"
@@ -124,6 +127,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_strong_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_strong_1\n"
     ".type __load_and_call__Atomic_compare_exchange_strong_1 @function\n"
     "__load_and_call__Atomic_compare_exchange_strong_1:\n"
     "push rdi\n"
@@ -156,6 +160,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_strong_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_strong_2\n"
     ".type __load_and_call__Atomic_compare_exchange_strong_2 @function\n"
     "__load_and_call__Atomic_compare_exchange_strong_2:\n"
     "push rdi\n"
@@ -188,6 +193,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_strong_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_strong_4\n"
     ".type __load_and_call__Atomic_compare_exchange_strong_4 @function\n"
     "__load_and_call__Atomic_compare_exchange_strong_4:\n"
     "push rdi\n"
@@ -220,6 +226,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_strong_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_strong_8\n"
     ".type __load_and_call__Atomic_compare_exchange_strong_8 @function\n"
     "__load_and_call__Atomic_compare_exchange_strong_8:\n"
     "push rdi\n"
@@ -252,6 +259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_weak]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_weak\n"
     ".type __load_and_call__Atomic_compare_exchange_weak @function\n"
     "__load_and_call__Atomic_compare_exchange_weak:\n"
     "push rdi\n"
@@ -284,6 +292,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_weak_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_weak_1\n"
     ".type __load_and_call__Atomic_compare_exchange_weak_1 @function\n"
     "__load_and_call__Atomic_compare_exchange_weak_1:\n"
     "push rdi\n"
@@ -316,6 +325,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_weak_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_weak_2\n"
     ".type __load_and_call__Atomic_compare_exchange_weak_2 @function\n"
     "__load_and_call__Atomic_compare_exchange_weak_2:\n"
     "push rdi\n"
@@ -348,6 +358,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_weak_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_weak_4\n"
     ".type __load_and_call__Atomic_compare_exchange_weak_4 @function\n"
     "__load_and_call__Atomic_compare_exchange_weak_4:\n"
     "push rdi\n"
@@ -380,6 +391,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_compare_exchange_weak_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_compare_exchange_weak_8\n"
     ".type __load_and_call__Atomic_compare_exchange_weak_8 @function\n"
     "__load_and_call__Atomic_compare_exchange_weak_8:\n"
     "push rdi\n"
@@ -412,6 +424,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_copy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_copy\n"
     ".type __load_and_call__Atomic_copy @function\n"
     "__load_and_call__Atomic_copy:\n"
     "push rdi\n"
@@ -444,6 +457,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_exchange]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_exchange\n"
     ".type __load_and_call__Atomic_exchange @function\n"
     "__load_and_call__Atomic_exchange:\n"
     "push rdi\n"
@@ -476,6 +490,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_exchange_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_exchange_1\n"
     ".type __load_and_call__Atomic_exchange_1 @function\n"
     "__load_and_call__Atomic_exchange_1:\n"
     "push rdi\n"
@@ -508,6 +523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_exchange_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_exchange_2\n"
     ".type __load_and_call__Atomic_exchange_2 @function\n"
     "__load_and_call__Atomic_exchange_2:\n"
     "push rdi\n"
@@ -540,6 +556,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_exchange_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_exchange_4\n"
     ".type __load_and_call__Atomic_exchange_4 @function\n"
     "__load_and_call__Atomic_exchange_4:\n"
     "push rdi\n"
@@ -572,6 +589,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_exchange_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_exchange_8\n"
     ".type __load_and_call__Atomic_exchange_8 @function\n"
     "__load_and_call__Atomic_exchange_8:\n"
     "push rdi\n"
@@ -604,6 +622,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_add_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_add_1\n"
     ".type __load_and_call__Atomic_fetch_add_1 @function\n"
     "__load_and_call__Atomic_fetch_add_1:\n"
     "push rdi\n"
@@ -636,6 +655,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_add_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_add_2\n"
     ".type __load_and_call__Atomic_fetch_add_2 @function\n"
     "__load_and_call__Atomic_fetch_add_2:\n"
     "push rdi\n"
@@ -668,6 +688,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_add_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_add_4\n"
     ".type __load_and_call__Atomic_fetch_add_4 @function\n"
     "__load_and_call__Atomic_fetch_add_4:\n"
     "push rdi\n"
@@ -700,6 +721,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_add_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_add_8\n"
     ".type __load_and_call__Atomic_fetch_add_8 @function\n"
     "__load_and_call__Atomic_fetch_add_8:\n"
     "push rdi\n"
@@ -732,6 +754,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_and_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_and_1\n"
     ".type __load_and_call__Atomic_fetch_and_1 @function\n"
     "__load_and_call__Atomic_fetch_and_1:\n"
     "push rdi\n"
@@ -764,6 +787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_and_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_and_2\n"
     ".type __load_and_call__Atomic_fetch_and_2 @function\n"
     "__load_and_call__Atomic_fetch_and_2:\n"
     "push rdi\n"
@@ -796,6 +820,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_and_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_and_4\n"
     ".type __load_and_call__Atomic_fetch_and_4 @function\n"
     "__load_and_call__Atomic_fetch_and_4:\n"
     "push rdi\n"
@@ -828,6 +853,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_and_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_and_8\n"
     ".type __load_and_call__Atomic_fetch_and_8 @function\n"
     "__load_and_call__Atomic_fetch_and_8:\n"
     "push rdi\n"
@@ -860,6 +886,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_or_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_or_1\n"
     ".type __load_and_call__Atomic_fetch_or_1 @function\n"
     "__load_and_call__Atomic_fetch_or_1:\n"
     "push rdi\n"
@@ -892,6 +919,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_or_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_or_2\n"
     ".type __load_and_call__Atomic_fetch_or_2 @function\n"
     "__load_and_call__Atomic_fetch_or_2:\n"
     "push rdi\n"
@@ -924,6 +952,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_or_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_or_4\n"
     ".type __load_and_call__Atomic_fetch_or_4 @function\n"
     "__load_and_call__Atomic_fetch_or_4:\n"
     "push rdi\n"
@@ -956,6 +985,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_or_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_or_8\n"
     ".type __load_and_call__Atomic_fetch_or_8 @function\n"
     "__load_and_call__Atomic_fetch_or_8:\n"
     "push rdi\n"
@@ -988,6 +1018,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_sub_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_sub_1\n"
     ".type __load_and_call__Atomic_fetch_sub_1 @function\n"
     "__load_and_call__Atomic_fetch_sub_1:\n"
     "push rdi\n"
@@ -1020,6 +1051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_sub_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_sub_2\n"
     ".type __load_and_call__Atomic_fetch_sub_2 @function\n"
     "__load_and_call__Atomic_fetch_sub_2:\n"
     "push rdi\n"
@@ -1052,6 +1084,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_sub_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_sub_4\n"
     ".type __load_and_call__Atomic_fetch_sub_4 @function\n"
     "__load_and_call__Atomic_fetch_sub_4:\n"
     "push rdi\n"
@@ -1084,6 +1117,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_sub_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_sub_8\n"
     ".type __load_and_call__Atomic_fetch_sub_8 @function\n"
     "__load_and_call__Atomic_fetch_sub_8:\n"
     "push rdi\n"
@@ -1116,6 +1150,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_xor_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_xor_1\n"
     ".type __load_and_call__Atomic_fetch_xor_1 @function\n"
     "__load_and_call__Atomic_fetch_xor_1:\n"
     "push rdi\n"
@@ -1148,6 +1183,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_xor_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_xor_2\n"
     ".type __load_and_call__Atomic_fetch_xor_2 @function\n"
     "__load_and_call__Atomic_fetch_xor_2:\n"
     "push rdi\n"
@@ -1180,6 +1216,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_xor_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_xor_4\n"
     ".type __load_and_call__Atomic_fetch_xor_4 @function\n"
     "__load_and_call__Atomic_fetch_xor_4:\n"
     "push rdi\n"
@@ -1212,6 +1249,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_fetch_xor_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_fetch_xor_8\n"
     ".type __load_and_call__Atomic_fetch_xor_8 @function\n"
     "__load_and_call__Atomic_fetch_xor_8:\n"
     "push rdi\n"
@@ -1244,6 +1282,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_flag_clear]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_flag_clear\n"
     ".type __load_and_call__Atomic_flag_clear @function\n"
     "__load_and_call__Atomic_flag_clear:\n"
     "push rdi\n"
@@ -1276,6 +1315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_flag_test_and_set]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_flag_test_and_set\n"
     ".type __load_and_call__Atomic_flag_test_and_set @function\n"
     "__load_and_call__Atomic_flag_test_and_set:\n"
     "push rdi\n"
@@ -1308,6 +1348,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_is_lock_free_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_is_lock_free_1\n"
     ".type __load_and_call__Atomic_is_lock_free_1 @function\n"
     "__load_and_call__Atomic_is_lock_free_1:\n"
     "push rdi\n"
@@ -1340,6 +1381,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_is_lock_free_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_is_lock_free_2\n"
     ".type __load_and_call__Atomic_is_lock_free_2 @function\n"
     "__load_and_call__Atomic_is_lock_free_2:\n"
     "push rdi\n"
@@ -1372,6 +1414,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_is_lock_free_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_is_lock_free_4\n"
     ".type __load_and_call__Atomic_is_lock_free_4 @function\n"
     "__load_and_call__Atomic_is_lock_free_4:\n"
     "push rdi\n"
@@ -1404,6 +1447,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_is_lock_free_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_is_lock_free_8\n"
     ".type __load_and_call__Atomic_is_lock_free_8 @function\n"
     "__load_and_call__Atomic_is_lock_free_8:\n"
     "push rdi\n"
@@ -1436,6 +1480,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_load_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_load_1\n"
     ".type __load_and_call__Atomic_load_1 @function\n"
     "__load_and_call__Atomic_load_1:\n"
     "push rdi\n"
@@ -1468,6 +1513,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_load_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_load_2\n"
     ".type __load_and_call__Atomic_load_2 @function\n"
     "__load_and_call__Atomic_load_2:\n"
     "push rdi\n"
@@ -1500,6 +1546,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_load_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_load_4\n"
     ".type __load_and_call__Atomic_load_4 @function\n"
     "__load_and_call__Atomic_load_4:\n"
     "push rdi\n"
@@ -1532,6 +1579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_load_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_load_8\n"
     ".type __load_and_call__Atomic_load_8 @function\n"
     "__load_and_call__Atomic_load_8:\n"
     "push rdi\n"
@@ -1564,6 +1612,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_signal_fence]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_signal_fence\n"
     ".type __load_and_call__Atomic_signal_fence @function\n"
     "__load_and_call__Atomic_signal_fence:\n"
     "push rdi\n"
@@ -1596,6 +1645,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_store_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_store_1\n"
     ".type __load_and_call__Atomic_store_1 @function\n"
     "__load_and_call__Atomic_store_1:\n"
     "push rdi\n"
@@ -1628,6 +1678,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_store_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_store_2\n"
     ".type __load_and_call__Atomic_store_2 @function\n"
     "__load_and_call__Atomic_store_2:\n"
     "push rdi\n"
@@ -1660,6 +1711,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_store_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_store_4\n"
     ".type __load_and_call__Atomic_store_4 @function\n"
     "__load_and_call__Atomic_store_4:\n"
     "push rdi\n"
@@ -1692,6 +1744,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_store_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_store_8\n"
     ".type __load_and_call__Atomic_store_8 @function\n"
     "__load_and_call__Atomic_store_8:\n"
     "push rdi\n"
@@ -1724,6 +1777,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atomic_thread_fence]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atomic_thread_fence\n"
     ".type __load_and_call__Atomic_thread_fence @function\n"
     "__load_and_call__Atomic_thread_fence:\n"
     "push rdi\n"
@@ -1756,6 +1810,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atqexit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atqexit\n"
     ".type __load_and_call__Atqexit @function\n"
     "__load_and_call__Atqexit:\n"
     "push rdi\n"
@@ -1788,6 +1843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Atthreadexit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Atthreadexit\n"
     ".type __load_and_call__Atthreadexit @function\n"
     "__load_and_call__Atthreadexit:\n"
     "push rdi\n"
@@ -1820,6 +1876,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Btowc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Btowc\n"
     ".type __load_and_call__Btowc @function\n"
     "__load_and_call__Btowc:\n"
     "push rdi\n"
@@ -1852,6 +1909,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__CStrftime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__CStrftime\n"
     ".type __load_and_call__CStrftime @function\n"
     "__load_and_call__CStrftime:\n"
     "push rdi\n"
@@ -1884,6 +1942,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__CStrxfrm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__CStrxfrm\n"
     ".type __load_and_call__CStrxfrm @function\n"
     "__load_and_call__CStrxfrm:\n"
     "push rdi\n"
@@ -1916,6 +1975,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__CWcsxfrm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__CWcsxfrm\n"
     ".type __load_and_call__CWcsxfrm @function\n"
     "__load_and_call__CWcsxfrm:\n"
     "push rdi\n"
@@ -1948,6 +2008,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Call_once]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Call_once\n"
     ".type __load_and_call__Call_once @function\n"
     "__load_and_call__Call_once:\n"
     "push rdi\n"
@@ -1980,6 +2041,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Call_onceEx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Call_onceEx\n"
     ".type __load_and_call__Call_onceEx @function\n"
     "__load_and_call__Call_onceEx:\n"
     "push rdi\n"
@@ -2012,6 +2074,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Closreg]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Closreg\n"
     ".type __load_and_call__Closreg @function\n"
     "__load_and_call__Closreg:\n"
     "push rdi\n"
@@ -2044,6 +2107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_broadcast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_broadcast\n"
     ".type __load_and_call__Cnd_broadcast @function\n"
     "__load_and_call__Cnd_broadcast:\n"
     "push rdi\n"
@@ -2076,6 +2140,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_destroy\n"
     ".type __load_and_call__Cnd_destroy @function\n"
     "__load_and_call__Cnd_destroy:\n"
     "push rdi\n"
@@ -2108,6 +2173,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_do_broadcast_at_thread_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_do_broadcast_at_thread_exit\n"
     ".type __load_and_call__Cnd_do_broadcast_at_thread_exit @function\n"
     "__load_and_call__Cnd_do_broadcast_at_thread_exit:\n"
     "push rdi\n"
@@ -2140,6 +2206,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_init\n"
     ".type __load_and_call__Cnd_init @function\n"
     "__load_and_call__Cnd_init:\n"
     "push rdi\n"
@@ -2172,6 +2239,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_init_with_name]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_init_with_name\n"
     ".type __load_and_call__Cnd_init_with_name @function\n"
     "__load_and_call__Cnd_init_with_name:\n"
     "push rdi\n"
@@ -2204,6 +2272,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_register_at_thread_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_register_at_thread_exit\n"
     ".type __load_and_call__Cnd_register_at_thread_exit @function\n"
     "__load_and_call__Cnd_register_at_thread_exit:\n"
     "push rdi\n"
@@ -2236,6 +2305,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_signal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_signal\n"
     ".type __load_and_call__Cnd_signal @function\n"
     "__load_and_call__Cnd_signal:\n"
     "push rdi\n"
@@ -2268,6 +2338,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_timedwait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_timedwait\n"
     ".type __load_and_call__Cnd_timedwait @function\n"
     "__load_and_call__Cnd_timedwait:\n"
     "push rdi\n"
@@ -2300,6 +2371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_unregister_at_thread_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_unregister_at_thread_exit\n"
     ".type __load_and_call__Cnd_unregister_at_thread_exit @function\n"
     "__load_and_call__Cnd_unregister_at_thread_exit:\n"
     "push rdi\n"
@@ -2332,6 +2404,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cnd_wait]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cnd_wait\n"
     ".type __load_and_call__Cnd_wait @function\n"
     "__load_and_call__Cnd_wait:\n"
     "push rdi\n"
@@ -2364,6 +2437,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Cosh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Cosh\n"
     ".type __load_and_call__Cosh @function\n"
     "__load_and_call__Cosh:\n"
     "push rdi\n"
@@ -2396,6 +2470,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Daysto]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Daysto\n"
     ".type __load_and_call__Daysto @function\n"
     "__load_and_call__Daysto:\n"
     "push rdi\n"
@@ -2428,6 +2503,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Dclass]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Dclass\n"
     ".type __load_and_call__Dclass @function\n"
     "__load_and_call__Dclass:\n"
     "push rdi\n"
@@ -2460,6 +2536,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Deletegloballocale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Deletegloballocale\n"
     ".type __load_and_call__Deletegloballocale @function\n"
     "__load_and_call__Deletegloballocale:\n"
     "push rdi\n"
@@ -2492,6 +2569,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Dint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Dint\n"
     ".type __load_and_call__Dint @function\n"
     "__load_and_call__Dint:\n"
     "push rdi\n"
@@ -2524,6 +2602,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Divide]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Divide\n"
     ".type __load_and_call__Divide @function\n"
     "__load_and_call__Divide:\n"
     "push rdi\n"
@@ -2556,6 +2635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Dnorm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Dnorm\n"
     ".type __load_and_call__Dnorm @function\n"
     "__load_and_call__Dnorm:\n"
     "push rdi\n"
@@ -2588,6 +2668,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Do_call]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Do_call\n"
     ".type __load_and_call__Do_call @function\n"
     "__load_and_call__Do_call:\n"
     "push rdi\n"
@@ -2620,6 +2701,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Dscale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Dscale\n"
     ".type __load_and_call__Dscale @function\n"
     "__load_and_call__Dscale:\n"
     "push rdi\n"
@@ -2652,6 +2734,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Dsign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Dsign\n"
     ".type __load_and_call__Dsign @function\n"
     "__load_and_call__Dsign:\n"
     "push rdi\n"
@@ -2684,6 +2767,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Dtento]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Dtento\n"
     ".type __load_and_call__Dtento @function\n"
     "__load_and_call__Dtento:\n"
     "push rdi\n"
@@ -2716,6 +2800,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Dtest]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Dtest\n"
     ".type __load_and_call__Dtest @function\n"
     "__load_and_call__Dtest:\n"
     "push rdi\n"
@@ -2748,6 +2833,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Dunscale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Dunscale\n"
     ".type __load_and_call__Dunscale @function\n"
     "__load_and_call__Dunscale:\n"
     "push rdi\n"
@@ -2780,6 +2866,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Erfc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Erfc\n"
     ".type __load_and_call__Erfc @function\n"
     "__load_and_call__Erfc:\n"
     "push rdi\n"
@@ -2812,6 +2899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Exit\n"
     ".type __load_and_call__Exit @function\n"
     "__load_and_call__Exit:\n"
     "push rdi\n"
@@ -2844,6 +2932,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Exp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Exp\n"
     ".type __load_and_call__Exp @function\n"
     "__load_and_call__Exp:\n"
     "push rdi\n"
@@ -2876,6 +2965,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FAtan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FAtan\n"
     ".type __load_and_call__FAtan @function\n"
     "__load_and_call__FAtan:\n"
     "push rdi\n"
@@ -2908,6 +2998,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FCosh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FCosh\n"
     ".type __load_and_call__FCosh @function\n"
     "__load_and_call__FCosh:\n"
     "push rdi\n"
@@ -2940,6 +3031,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDclass]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDclass\n"
     ".type __load_and_call__FDclass @function\n"
     "__load_and_call__FDclass:\n"
     "push rdi\n"
@@ -2972,6 +3064,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDint\n"
     ".type __load_and_call__FDint @function\n"
     "__load_and_call__FDint:\n"
     "push rdi\n"
@@ -3004,6 +3097,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDivide]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDivide\n"
     ".type __load_and_call__FDivide @function\n"
     "__load_and_call__FDivide:\n"
     "push rdi\n"
@@ -3036,6 +3130,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDnorm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDnorm\n"
     ".type __load_and_call__FDnorm @function\n"
     "__load_and_call__FDnorm:\n"
     "push rdi\n"
@@ -3068,6 +3163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDscale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDscale\n"
     ".type __load_and_call__FDscale @function\n"
     "__load_and_call__FDscale:\n"
     "push rdi\n"
@@ -3100,6 +3196,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDsign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDsign\n"
     ".type __load_and_call__FDsign @function\n"
     "__load_and_call__FDsign:\n"
     "push rdi\n"
@@ -3132,6 +3229,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDtento]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDtento\n"
     ".type __load_and_call__FDtento @function\n"
     "__load_and_call__FDtento:\n"
     "push rdi\n"
@@ -3164,6 +3262,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDtest]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDtest\n"
     ".type __load_and_call__FDtest @function\n"
     "__load_and_call__FDtest:\n"
     "push rdi\n"
@@ -3196,6 +3295,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FDunscale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FDunscale\n"
     ".type __load_and_call__FDunscale @function\n"
     "__load_and_call__FDunscale:\n"
     "push rdi\n"
@@ -3228,6 +3328,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FErfc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FErfc\n"
     ".type __load_and_call__FErfc @function\n"
     "__load_and_call__FErfc:\n"
     "push rdi\n"
@@ -3260,6 +3361,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FExp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FExp\n"
     ".type __load_and_call__FExp @function\n"
     "__load_and_call__FExp:\n"
     "push rdi\n"
@@ -3292,6 +3394,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FFpcomp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FFpcomp\n"
     ".type __load_and_call__FFpcomp @function\n"
     "__load_and_call__FFpcomp:\n"
     "push rdi\n"
@@ -3324,6 +3427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FHypot]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FHypot\n"
     ".type __load_and_call__FHypot @function\n"
     "__load_and_call__FHypot:\n"
     "push rdi\n"
@@ -3356,6 +3460,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FLog]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FLog\n"
     ".type __load_and_call__FLog @function\n"
     "__load_and_call__FLog:\n"
     "push rdi\n"
@@ -3388,6 +3493,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FLogpoly]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FLogpoly\n"
     ".type __load_and_call__FLogpoly @function\n"
     "__load_and_call__FLogpoly:\n"
     "push rdi\n"
@@ -3420,6 +3526,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FPlsw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FPlsw\n"
     ".type __load_and_call__FPlsw @function\n"
     "__load_and_call__FPlsw:\n"
     "push rdi\n"
@@ -3452,6 +3559,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FPmsw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FPmsw\n"
     ".type __load_and_call__FPmsw @function\n"
     "__load_and_call__FPmsw:\n"
     "push rdi\n"
@@ -3484,6 +3592,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FPoly]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FPoly\n"
     ".type __load_and_call__FPoly @function\n"
     "__load_and_call__FPoly:\n"
     "push rdi\n"
@@ -3516,6 +3625,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FPow]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FPow\n"
     ".type __load_and_call__FPow @function\n"
     "__load_and_call__FPow:\n"
     "push rdi\n"
@@ -3548,6 +3658,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FQuad]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FQuad\n"
     ".type __load_and_call__FQuad @function\n"
     "__load_and_call__FQuad:\n"
     "push rdi\n"
@@ -3580,6 +3691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FQuadph]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FQuadph\n"
     ".type __load_and_call__FQuadph @function\n"
     "__load_and_call__FQuadph:\n"
     "push rdi\n"
@@ -3612,6 +3724,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FRecip]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FRecip\n"
     ".type __load_and_call__FRecip @function\n"
     "__load_and_call__FRecip:\n"
     "push rdi\n"
@@ -3644,6 +3757,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FRint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FRint\n"
     ".type __load_and_call__FRint @function\n"
     "__load_and_call__FRint:\n"
     "push rdi\n"
@@ -3676,6 +3790,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FSin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FSin\n"
     ".type __load_and_call__FSin @function\n"
     "__load_and_call__FSin:\n"
     "push rdi\n"
@@ -3708,6 +3823,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FSincos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FSincos\n"
     ".type __load_and_call__FSincos @function\n"
     "__load_and_call__FSincos:\n"
     "push rdi\n"
@@ -3740,6 +3856,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FSinh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FSinh\n"
     ".type __load_and_call__FSinh @function\n"
     "__load_and_call__FSinh:\n"
     "push rdi\n"
@@ -3772,6 +3889,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FTan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FTan\n"
     ".type __load_and_call__FTan @function\n"
     "__load_and_call__FTan:\n"
     "push rdi\n"
@@ -3804,6 +3922,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FTgamma]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FTgamma\n"
     ".type __load_and_call__FTgamma @function\n"
     "__load_and_call__FTgamma:\n"
     "push rdi\n"
@@ -3836,6 +3955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_addh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_addh\n"
     ".type __load_and_call__FXp_addh @function\n"
     "__load_and_call__FXp_addh:\n"
     "push rdi\n"
@@ -3868,6 +3988,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_addx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_addx\n"
     ".type __load_and_call__FXp_addx @function\n"
     "__load_and_call__FXp_addx:\n"
     "push rdi\n"
@@ -3900,6 +4021,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_getw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_getw\n"
     ".type __load_and_call__FXp_getw @function\n"
     "__load_and_call__FXp_getw:\n"
     "push rdi\n"
@@ -3932,6 +4054,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_invx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_invx\n"
     ".type __load_and_call__FXp_invx @function\n"
     "__load_and_call__FXp_invx:\n"
     "push rdi\n"
@@ -3964,6 +4087,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_ldexpx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_ldexpx\n"
     ".type __load_and_call__FXp_ldexpx @function\n"
     "__load_and_call__FXp_ldexpx:\n"
     "push rdi\n"
@@ -3996,6 +4120,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_movx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_movx\n"
     ".type __load_and_call__FXp_movx @function\n"
     "__load_and_call__FXp_movx:\n"
     "push rdi\n"
@@ -4028,6 +4153,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_mulh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_mulh\n"
     ".type __load_and_call__FXp_mulh @function\n"
     "__load_and_call__FXp_mulh:\n"
     "push rdi\n"
@@ -4060,6 +4186,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_mulx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_mulx\n"
     ".type __load_and_call__FXp_mulx @function\n"
     "__load_and_call__FXp_mulx:\n"
     "push rdi\n"
@@ -4092,6 +4219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_setn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_setn\n"
     ".type __load_and_call__FXp_setn @function\n"
     "__load_and_call__FXp_setn:\n"
     "push rdi\n"
@@ -4124,6 +4252,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_setw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_setw\n"
     ".type __load_and_call__FXp_setw @function\n"
     "__load_and_call__FXp_setw:\n"
     "push rdi\n"
@@ -4156,6 +4285,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_sqrtx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_sqrtx\n"
     ".type __load_and_call__FXp_sqrtx @function\n"
     "__load_and_call__FXp_sqrtx:\n"
     "push rdi\n"
@@ -4188,6 +4318,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__FXp_subx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__FXp_subx\n"
     ".type __load_and_call__FXp_subx @function\n"
     "__load_and_call__FXp_subx:\n"
     "push rdi\n"
@@ -4220,6 +4351,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fac_tidy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fac_tidy\n"
     ".type __load_and_call__Fac_tidy @function\n"
     "__load_and_call__Fac_tidy:\n"
     "push rdi\n"
@@ -4252,6 +4384,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fail_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fail_s\n"
     ".type __load_and_call__Fail_s @function\n"
     "__load_and_call__Fail_s:\n"
     "push rdi\n"
@@ -4284,6 +4417,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Feraise]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Feraise\n"
     ".type __load_and_call__Feraise @function\n"
     "__load_and_call__Feraise:\n"
     "push rdi\n"
@@ -4316,6 +4450,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_add_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_add_8\n"
     ".type __load_and_call__Fetch_add_8 @function\n"
     "__load_and_call__Fetch_add_8:\n"
     "push rdi\n"
@@ -4348,6 +4483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_and_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_and_8\n"
     ".type __load_and_call__Fetch_and_8 @function\n"
     "__load_and_call__Fetch_and_8:\n"
     "push rdi\n"
@@ -4380,6 +4516,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_and_seq_cst_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_and_seq_cst_1\n"
     ".type __load_and_call__Fetch_and_seq_cst_1 @function\n"
     "__load_and_call__Fetch_and_seq_cst_1:\n"
     "push rdi\n"
@@ -4412,6 +4549,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_and_seq_cst_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_and_seq_cst_2\n"
     ".type __load_and_call__Fetch_and_seq_cst_2 @function\n"
     "__load_and_call__Fetch_and_seq_cst_2:\n"
     "push rdi\n"
@@ -4444,6 +4582,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_and_seq_cst_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_and_seq_cst_4\n"
     ".type __load_and_call__Fetch_and_seq_cst_4 @function\n"
     "__load_and_call__Fetch_and_seq_cst_4:\n"
     "push rdi\n"
@@ -4476,6 +4615,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_or_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_or_8\n"
     ".type __load_and_call__Fetch_or_8 @function\n"
     "__load_and_call__Fetch_or_8:\n"
     "push rdi\n"
@@ -4508,6 +4648,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_or_seq_cst_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_or_seq_cst_1\n"
     ".type __load_and_call__Fetch_or_seq_cst_1 @function\n"
     "__load_and_call__Fetch_or_seq_cst_1:\n"
     "push rdi\n"
@@ -4540,6 +4681,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_or_seq_cst_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_or_seq_cst_2\n"
     ".type __load_and_call__Fetch_or_seq_cst_2 @function\n"
     "__load_and_call__Fetch_or_seq_cst_2:\n"
     "push rdi\n"
@@ -4572,6 +4714,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_or_seq_cst_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_or_seq_cst_4\n"
     ".type __load_and_call__Fetch_or_seq_cst_4 @function\n"
     "__load_and_call__Fetch_or_seq_cst_4:\n"
     "push rdi\n"
@@ -4604,6 +4747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_xor_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_xor_8\n"
     ".type __load_and_call__Fetch_xor_8 @function\n"
     "__load_and_call__Fetch_xor_8:\n"
     "push rdi\n"
@@ -4636,6 +4780,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_xor_seq_cst_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_xor_seq_cst_1\n"
     ".type __load_and_call__Fetch_xor_seq_cst_1 @function\n"
     "__load_and_call__Fetch_xor_seq_cst_1:\n"
     "push rdi\n"
@@ -4668,6 +4813,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_xor_seq_cst_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_xor_seq_cst_2\n"
     ".type __load_and_call__Fetch_xor_seq_cst_2 @function\n"
     "__load_and_call__Fetch_xor_seq_cst_2:\n"
     "push rdi\n"
@@ -4700,6 +4846,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fetch_xor_seq_cst_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fetch_xor_seq_cst_4\n"
     ".type __load_and_call__Fetch_xor_seq_cst_4 @function\n"
     "__load_and_call__Fetch_xor_seq_cst_4:\n"
     "push rdi\n"
@@ -4732,6 +4879,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fgpos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fgpos\n"
     ".type __load_and_call__Fgpos @function\n"
     "__load_and_call__Fgpos:\n"
     "push rdi\n"
@@ -4764,6 +4912,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fltrounds]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fltrounds\n"
     ".type __load_and_call__Fltrounds @function\n"
     "__load_and_call__Fltrounds:\n"
     "push rdi\n"
@@ -4796,6 +4945,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fofind]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fofind\n"
     ".type __load_and_call__Fofind @function\n"
     "__load_and_call__Fofind:\n"
     "push rdi\n"
@@ -4828,6 +4978,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fofree]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fofree\n"
     ".type __load_and_call__Fofree @function\n"
     "__load_and_call__Fofree:\n"
     "push rdi\n"
@@ -4860,6 +5011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fopen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fopen\n"
     ".type __load_and_call__Fopen @function\n"
     "__load_and_call__Fopen:\n"
     "push rdi\n"
@@ -4892,6 +5044,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Foprep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Foprep\n"
     ".type __load_and_call__Foprep @function\n"
     "__load_and_call__Foprep:\n"
     "push rdi\n"
@@ -4924,6 +5077,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fpcomp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fpcomp\n"
     ".type __load_and_call__Fpcomp @function\n"
     "__load_and_call__Fpcomp:\n"
     "push rdi\n"
@@ -4956,6 +5110,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Frprep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Frprep\n"
     ".type __load_and_call__Frprep @function\n"
     "__load_and_call__Frprep:\n"
     "push rdi\n"
@@ -4988,6 +5143,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fspos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fspos\n"
     ".type __load_and_call__Fspos @function\n"
     "__load_and_call__Fspos:\n"
     "push rdi\n"
@@ -5020,6 +5176,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Fwprep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Fwprep\n"
     ".type __load_and_call__Fwprep @function\n"
     "__load_and_call__Fwprep:\n"
     "push rdi\n"
@@ -5052,6 +5209,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Genld]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Genld\n"
     ".type __load_and_call__Genld @function\n"
     "__load_and_call__Genld:\n"
     "push rdi\n"
@@ -5084,6 +5242,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Gentime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Gentime\n"
     ".type __load_and_call__Gentime @function\n"
     "__load_and_call__Gentime:\n"
     "push rdi\n"
@@ -5116,6 +5275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getcloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getcloc\n"
     ".type __load_and_call__Getcloc @function\n"
     "__load_and_call__Getcloc:\n"
     "push rdi\n"
@@ -5148,6 +5308,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getctyptab]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getctyptab\n"
     ".type __load_and_call__Getctyptab @function\n"
     "__load_and_call__Getctyptab:\n"
     "push rdi\n"
@@ -5180,6 +5341,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getdst]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getdst\n"
     ".type __load_and_call__Getdst @function\n"
     "__load_and_call__Getdst:\n"
     "push rdi\n"
@@ -5212,6 +5374,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Geterrno]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Geterrno\n"
     ".type __load_and_call__Geterrno @function\n"
     "__load_and_call__Geterrno:\n"
     "push rdi\n"
@@ -5244,6 +5407,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getfld]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getfld\n"
     ".type __load_and_call__Getfld @function\n"
     "__load_and_call__Getfld:\n"
     "push rdi\n"
@@ -5276,6 +5440,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getfloat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getfloat\n"
     ".type __load_and_call__Getfloat @function\n"
     "__load_and_call__Getfloat:\n"
     "push rdi\n"
@@ -5308,6 +5473,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getgloballocale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getgloballocale\n"
     ".type __load_and_call__Getgloballocale @function\n"
     "__load_and_call__Getgloballocale:\n"
     "push rdi\n"
@@ -5340,6 +5506,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getint\n"
     ".type __load_and_call__Getint @function\n"
     "__load_and_call__Getint:\n"
     "push rdi\n"
@@ -5372,6 +5539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getmbcurmax]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getmbcurmax\n"
     ".type __load_and_call__Getmbcurmax @function\n"
     "__load_and_call__Getmbcurmax:\n"
     "push rdi\n"
@@ -5404,6 +5572,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getpcostate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getpcostate\n"
     ".type __load_and_call__Getpcostate @function\n"
     "__load_and_call__Getpcostate:\n"
     "push rdi\n"
@@ -5436,6 +5605,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getpctype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getpctype\n"
     ".type __load_and_call__Getpctype @function\n"
     "__load_and_call__Getpctype:\n"
     "push rdi\n"
@@ -5468,6 +5638,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getpmbstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getpmbstate\n"
     ".type __load_and_call__Getpmbstate @function\n"
     "__load_and_call__Getpmbstate:\n"
     "push rdi\n"
@@ -5500,6 +5671,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getptimes]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getptimes\n"
     ".type __load_and_call__Getptimes @function\n"
     "__load_and_call__Getptimes:\n"
     "push rdi\n"
@@ -5532,6 +5704,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getptolower]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getptolower\n"
     ".type __load_and_call__Getptolower @function\n"
     "__load_and_call__Getptolower:\n"
     "push rdi\n"
@@ -5564,6 +5737,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getptoupper]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getptoupper\n"
     ".type __load_and_call__Getptoupper @function\n"
     "__load_and_call__Getptoupper:\n"
     "push rdi\n"
@@ -5596,6 +5770,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getpwcostate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getpwcostate\n"
     ".type __load_and_call__Getpwcostate @function\n"
     "__load_and_call__Getpwcostate:\n"
     "push rdi\n"
@@ -5628,6 +5803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getpwcstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getpwcstate\n"
     ".type __load_and_call__Getpwcstate @function\n"
     "__load_and_call__Getpwcstate:\n"
     "push rdi\n"
@@ -5660,6 +5836,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getpwctrtab]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getpwctrtab\n"
     ".type __load_and_call__Getpwctrtab @function\n"
     "__load_and_call__Getpwctrtab:\n"
     "push rdi\n"
@@ -5692,6 +5869,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getpwctytab]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getpwctytab\n"
     ".type __load_and_call__Getpwctytab @function\n"
     "__load_and_call__Getpwctytab:\n"
     "push rdi\n"
@@ -5724,6 +5902,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getstr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getstr\n"
     ".type __load_and_call__Getstr @function\n"
     "__load_and_call__Getstr:\n"
     "push rdi\n"
@@ -5756,6 +5935,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Gettime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Gettime\n"
     ".type __load_and_call__Gettime @function\n"
     "__load_and_call__Gettime:\n"
     "push rdi\n"
@@ -5788,6 +5968,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Getzone]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Getzone\n"
     ".type __load_and_call__Getzone @function\n"
     "__load_and_call__Getzone:\n"
     "push rdi\n"
@@ -5820,6 +6001,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Hypot]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Hypot\n"
     ".type __load_and_call__Hypot @function\n"
     "__load_and_call__Hypot:\n"
     "push rdi\n"
@@ -5852,6 +6034,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Isdst]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Isdst\n"
     ".type __load_and_call__Isdst @function\n"
     "__load_and_call__Isdst:\n"
     "push rdi\n"
@@ -5884,6 +6067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Iswctype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Iswctype\n"
     ".type __load_and_call__Iswctype @function\n"
     "__load_and_call__Iswctype:\n"
     "push rdi\n"
@@ -5916,6 +6100,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LAtan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LAtan\n"
     ".type __load_and_call__LAtan @function\n"
     "__load_and_call__LAtan:\n"
     "push rdi\n"
@@ -5948,6 +6133,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LCosh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LCosh\n"
     ".type __load_and_call__LCosh @function\n"
     "__load_and_call__LCosh:\n"
     "push rdi\n"
@@ -5980,6 +6166,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDclass]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDclass\n"
     ".type __load_and_call__LDclass @function\n"
     "__load_and_call__LDclass:\n"
     "push rdi\n"
@@ -6012,6 +6199,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDint\n"
     ".type __load_and_call__LDint @function\n"
     "__load_and_call__LDint:\n"
     "push rdi\n"
@@ -6044,6 +6232,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDivide]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDivide\n"
     ".type __load_and_call__LDivide @function\n"
     "__load_and_call__LDivide:\n"
     "push rdi\n"
@@ -6076,6 +6265,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDnorm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDnorm\n"
     ".type __load_and_call__LDnorm @function\n"
     "__load_and_call__LDnorm:\n"
     "push rdi\n"
@@ -6108,6 +6298,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDscale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDscale\n"
     ".type __load_and_call__LDscale @function\n"
     "__load_and_call__LDscale:\n"
     "push rdi\n"
@@ -6140,6 +6331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDsign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDsign\n"
     ".type __load_and_call__LDsign @function\n"
     "__load_and_call__LDsign:\n"
     "push rdi\n"
@@ -6172,6 +6364,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDtento]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDtento\n"
     ".type __load_and_call__LDtento @function\n"
     "__load_and_call__LDtento:\n"
     "push rdi\n"
@@ -6204,6 +6397,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDtest]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDtest\n"
     ".type __load_and_call__LDtest @function\n"
     "__load_and_call__LDtest:\n"
     "push rdi\n"
@@ -6236,6 +6430,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LDunscale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LDunscale\n"
     ".type __load_and_call__LDunscale @function\n"
     "__load_and_call__LDunscale:\n"
     "push rdi\n"
@@ -6268,6 +6463,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LErfc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LErfc\n"
     ".type __load_and_call__LErfc @function\n"
     "__load_and_call__LErfc:\n"
     "push rdi\n"
@@ -6300,6 +6496,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LExp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LExp\n"
     ".type __load_and_call__LExp @function\n"
     "__load_and_call__LExp:\n"
     "push rdi\n"
@@ -6332,6 +6529,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LFpcomp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LFpcomp\n"
     ".type __load_and_call__LFpcomp @function\n"
     "__load_and_call__LFpcomp:\n"
     "push rdi\n"
@@ -6364,6 +6562,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LHypot]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LHypot\n"
     ".type __load_and_call__LHypot @function\n"
     "__load_and_call__LHypot:\n"
     "push rdi\n"
@@ -6396,6 +6595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LLog]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LLog\n"
     ".type __load_and_call__LLog @function\n"
     "__load_and_call__LLog:\n"
     "push rdi\n"
@@ -6428,6 +6628,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LLogpoly]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LLogpoly\n"
     ".type __load_and_call__LLogpoly @function\n"
     "__load_and_call__LLogpoly:\n"
     "push rdi\n"
@@ -6460,6 +6661,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LPlsw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LPlsw\n"
     ".type __load_and_call__LPlsw @function\n"
     "__load_and_call__LPlsw:\n"
     "push rdi\n"
@@ -6492,6 +6694,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LPmsw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LPmsw\n"
     ".type __load_and_call__LPmsw @function\n"
     "__load_and_call__LPmsw:\n"
     "push rdi\n"
@@ -6524,6 +6727,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LPoly]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LPoly\n"
     ".type __load_and_call__LPoly @function\n"
     "__load_and_call__LPoly:\n"
     "push rdi\n"
@@ -6556,6 +6760,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LPow]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LPow\n"
     ".type __load_and_call__LPow @function\n"
     "__load_and_call__LPow:\n"
     "push rdi\n"
@@ -6588,6 +6793,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LQuad]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LQuad\n"
     ".type __load_and_call__LQuad @function\n"
     "__load_and_call__LQuad:\n"
     "push rdi\n"
@@ -6620,6 +6826,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LQuadph]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LQuadph\n"
     ".type __load_and_call__LQuadph @function\n"
     "__load_and_call__LQuadph:\n"
     "push rdi\n"
@@ -6652,6 +6859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LRecip]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LRecip\n"
     ".type __load_and_call__LRecip @function\n"
     "__load_and_call__LRecip:\n"
     "push rdi\n"
@@ -6684,6 +6892,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LRint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LRint\n"
     ".type __load_and_call__LRint @function\n"
     "__load_and_call__LRint:\n"
     "push rdi\n"
@@ -6716,6 +6925,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LSin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LSin\n"
     ".type __load_and_call__LSin @function\n"
     "__load_and_call__LSin:\n"
     "push rdi\n"
@@ -6748,6 +6958,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LSincos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LSincos\n"
     ".type __load_and_call__LSincos @function\n"
     "__load_and_call__LSincos:\n"
     "push rdi\n"
@@ -6780,6 +6991,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LSinh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LSinh\n"
     ".type __load_and_call__LSinh @function\n"
     "__load_and_call__LSinh:\n"
     "push rdi\n"
@@ -6812,6 +7024,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LTan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LTan\n"
     ".type __load_and_call__LTan @function\n"
     "__load_and_call__LTan:\n"
     "push rdi\n"
@@ -6844,6 +7057,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LTgamma]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LTgamma\n"
     ".type __load_and_call__LTgamma @function\n"
     "__load_and_call__LTgamma:\n"
     "push rdi\n"
@@ -6876,6 +7090,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_addh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_addh\n"
     ".type __load_and_call__LXp_addh @function\n"
     "__load_and_call__LXp_addh:\n"
     "push rdi\n"
@@ -6908,6 +7123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_addx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_addx\n"
     ".type __load_and_call__LXp_addx @function\n"
     "__load_and_call__LXp_addx:\n"
     "push rdi\n"
@@ -6940,6 +7156,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_getw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_getw\n"
     ".type __load_and_call__LXp_getw @function\n"
     "__load_and_call__LXp_getw:\n"
     "push rdi\n"
@@ -6972,6 +7189,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_invx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_invx\n"
     ".type __load_and_call__LXp_invx @function\n"
     "__load_and_call__LXp_invx:\n"
     "push rdi\n"
@@ -7004,6 +7222,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_ldexpx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_ldexpx\n"
     ".type __load_and_call__LXp_ldexpx @function\n"
     "__load_and_call__LXp_ldexpx:\n"
     "push rdi\n"
@@ -7036,6 +7255,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_movx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_movx\n"
     ".type __load_and_call__LXp_movx @function\n"
     "__load_and_call__LXp_movx:\n"
     "push rdi\n"
@@ -7068,6 +7288,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_mulh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_mulh\n"
     ".type __load_and_call__LXp_mulh @function\n"
     "__load_and_call__LXp_mulh:\n"
     "push rdi\n"
@@ -7100,6 +7321,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_mulx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_mulx\n"
     ".type __load_and_call__LXp_mulx @function\n"
     "__load_and_call__LXp_mulx:\n"
     "push rdi\n"
@@ -7132,6 +7354,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_setn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_setn\n"
     ".type __load_and_call__LXp_setn @function\n"
     "__load_and_call__LXp_setn:\n"
     "push rdi\n"
@@ -7164,6 +7387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_setw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_setw\n"
     ".type __load_and_call__LXp_setw @function\n"
     "__load_and_call__LXp_setw:\n"
     "push rdi\n"
@@ -7196,6 +7420,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_sqrtx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_sqrtx\n"
     ".type __load_and_call__LXp_sqrtx @function\n"
     "__load_and_call__LXp_sqrtx:\n"
     "push rdi\n"
@@ -7228,6 +7453,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__LXp_subx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__LXp_subx\n"
     ".type __load_and_call__LXp_subx @function\n"
     "__load_and_call__LXp_subx:\n"
     "push rdi\n"
@@ -7260,6 +7486,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Ldtob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Ldtob\n"
     ".type __load_and_call__Ldtob @function\n"
     "__load_and_call__Ldtob:\n"
     "push rdi\n"
@@ -7292,6 +7519,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Litob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Litob\n"
     ".type __load_and_call__Litob @function\n"
     "__load_and_call__Litob:\n"
     "push rdi\n"
@@ -7324,6 +7552,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Lock_shared_ptr_spin_lock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Lock_shared_ptr_spin_lock\n"
     ".type __load_and_call__Lock_shared_ptr_spin_lock @function\n"
     "__load_and_call__Lock_shared_ptr_spin_lock:\n"
     "push rdi\n"
@@ -7356,6 +7585,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Lock_spin_lock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Lock_spin_lock\n"
     ".type __load_and_call__Lock_spin_lock @function\n"
     "__load_and_call__Lock_spin_lock:\n"
     "push rdi\n"
@@ -7388,6 +7618,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Lockfilelock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Lockfilelock\n"
     ".type __load_and_call__Lockfilelock @function\n"
     "__load_and_call__Lockfilelock:\n"
     "push rdi\n"
@@ -7420,6 +7651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Locksyslock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Locksyslock\n"
     ".type __load_and_call__Locksyslock @function\n"
     "__load_and_call__Locksyslock:\n"
     "push rdi\n"
@@ -7452,6 +7684,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Locsum]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Locsum\n"
     ".type __load_and_call__Locsum @function\n"
     "__load_and_call__Locsum:\n"
     "push rdi\n"
@@ -7484,6 +7717,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Locterm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Locterm\n"
     ".type __load_and_call__Locterm @function\n"
     "__load_and_call__Locterm:\n"
     "push rdi\n"
@@ -7516,6 +7750,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Locvar]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Locvar\n"
     ".type __load_and_call__Locvar @function\n"
     "__load_and_call__Locvar:\n"
     "push rdi\n"
@@ -7548,6 +7783,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Log]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Log\n"
     ".type __load_and_call__Log @function\n"
     "__load_and_call__Log:\n"
     "push rdi\n"
@@ -7580,6 +7816,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Logpoly]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Logpoly\n"
     ".type __load_and_call__Logpoly @function\n"
     "__load_and_call__Logpoly:\n"
     "push rdi\n"
@@ -7612,6 +7849,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Makeloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Makeloc\n"
     ".type __load_and_call__Makeloc @function\n"
     "__load_and_call__Makeloc:\n"
     "push rdi\n"
@@ -7644,6 +7882,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Makestab]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Makestab\n"
     ".type __load_and_call__Makestab @function\n"
     "__load_and_call__Makestab:\n"
     "push rdi\n"
@@ -7676,6 +7915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Makewct]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Makewct\n"
     ".type __load_and_call__Makewct @function\n"
     "__load_and_call__Makewct:\n"
     "push rdi\n"
@@ -7708,6 +7948,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mbtowc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mbtowc\n"
     ".type __load_and_call__Mbtowc @function\n"
     "__load_and_call__Mbtowc:\n"
     "push rdi\n"
@@ -7740,6 +7981,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mbtowcx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mbtowcx\n"
     ".type __load_and_call__Mbtowcx @function\n"
     "__load_and_call__Mbtowcx:\n"
     "push rdi\n"
@@ -7772,6 +8014,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtx_current_owns]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtx_current_owns\n"
     ".type __load_and_call__Mtx_current_owns @function\n"
     "__load_and_call__Mtx_current_owns:\n"
     "push rdi\n"
@@ -7804,6 +8047,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtx_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtx_destroy\n"
     ".type __load_and_call__Mtx_destroy @function\n"
     "__load_and_call__Mtx_destroy:\n"
     "push rdi\n"
@@ -7836,6 +8080,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtx_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtx_init\n"
     ".type __load_and_call__Mtx_init @function\n"
     "__load_and_call__Mtx_init:\n"
     "push rdi\n"
@@ -7868,6 +8113,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtx_init_with_name]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtx_init_with_name\n"
     ".type __load_and_call__Mtx_init_with_name @function\n"
     "__load_and_call__Mtx_init_with_name:\n"
     "push rdi\n"
@@ -7900,6 +8146,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtx_lock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtx_lock\n"
     ".type __load_and_call__Mtx_lock @function\n"
     "__load_and_call__Mtx_lock:\n"
     "push rdi\n"
@@ -7932,6 +8179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtx_timedlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtx_timedlock\n"
     ".type __load_and_call__Mtx_timedlock @function\n"
     "__load_and_call__Mtx_timedlock:\n"
     "push rdi\n"
@@ -7964,6 +8212,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtx_trylock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtx_trylock\n"
     ".type __load_and_call__Mtx_trylock @function\n"
     "__load_and_call__Mtx_trylock:\n"
     "push rdi\n"
@@ -7996,6 +8245,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtx_unlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtx_unlock\n"
     ".type __load_and_call__Mtx_unlock @function\n"
     "__load_and_call__Mtx_unlock:\n"
     "push rdi\n"
@@ -8028,6 +8278,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtxdst]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtxdst\n"
     ".type __load_and_call__Mtxdst @function\n"
     "__load_and_call__Mtxdst:\n"
     "push rdi\n"
@@ -8060,6 +8311,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtxinit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtxinit\n"
     ".type __load_and_call__Mtxinit @function\n"
     "__load_and_call__Mtxinit:\n"
     "push rdi\n"
@@ -8092,6 +8344,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtxlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtxlock\n"
     ".type __load_and_call__Mtxlock @function\n"
     "__load_and_call__Mtxlock:\n"
     "push rdi\n"
@@ -8124,6 +8377,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Mtxunlock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Mtxunlock\n"
     ".type __load_and_call__Mtxunlock @function\n"
     "__load_and_call__Mtxunlock:\n"
     "push rdi\n"
@@ -8156,6 +8410,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Nnl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Nnl\n"
     ".type __load_and_call__Nnl @function\n"
     "__load_and_call__Nnl:\n"
     "push rdi\n"
@@ -8188,6 +8443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Plsw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Plsw\n"
     ".type __load_and_call__Plsw @function\n"
     "__load_and_call__Plsw:\n"
     "push rdi\n"
@@ -8220,6 +8476,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Pmsw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Pmsw\n"
     ".type __load_and_call__Pmsw @function\n"
     "__load_and_call__Pmsw:\n"
     "push rdi\n"
@@ -8252,6 +8509,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Poly]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Poly\n"
     ".type __load_and_call__Poly @function\n"
     "__load_and_call__Poly:\n"
     "push rdi\n"
@@ -8284,6 +8542,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Pow]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Pow\n"
     ".type __load_and_call__Pow @function\n"
     "__load_and_call__Pow:\n"
     "push rdi\n"
@@ -8316,6 +8575,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Printf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Printf\n"
     ".type __load_and_call__Printf @function\n"
     "__load_and_call__Printf:\n"
     "push rdi\n"
@@ -8348,6 +8608,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Putfld]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Putfld\n"
     ".type __load_and_call__Putfld @function\n"
     "__load_and_call__Putfld:\n"
     "push rdi\n"
@@ -8380,6 +8641,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Putstr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Putstr\n"
     ".type __load_and_call__Putstr @function\n"
     "__load_and_call__Putstr:\n"
     "push rdi\n"
@@ -8412,6 +8674,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Puttxt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Puttxt\n"
     ".type __load_and_call__Puttxt @function\n"
     "__load_and_call__Puttxt:\n"
     "push rdi\n"
@@ -8444,6 +8707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Quad]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Quad\n"
     ".type __load_and_call__Quad @function\n"
     "__load_and_call__Quad:\n"
     "push rdi\n"
@@ -8476,6 +8740,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Quadph]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Quadph\n"
     ".type __load_and_call__Quadph @function\n"
     "__load_and_call__Quadph:\n"
     "push rdi\n"
@@ -8508,6 +8773,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Readloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Readloc\n"
     ".type __load_and_call__Readloc @function\n"
     "__load_and_call__Readloc:\n"
     "push rdi\n"
@@ -8540,6 +8806,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Recip]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Recip\n"
     ".type __load_and_call__Recip @function\n"
     "__load_and_call__Recip:\n"
     "push rdi\n"
@@ -8572,6 +8839,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Restore_state]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Restore_state\n"
     ".type __load_and_call__Restore_state @function\n"
     "__load_and_call__Restore_state:\n"
     "push rdi\n"
@@ -8604,6 +8872,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Rint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Rint\n"
     ".type __load_and_call__Rint @function\n"
     "__load_and_call__Rint:\n"
     "push rdi\n"
@@ -8636,6 +8905,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Save_state]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Save_state\n"
     ".type __load_and_call__Save_state @function\n"
     "__load_and_call__Save_state:\n"
     "push rdi\n"
@@ -8668,6 +8938,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Scanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Scanf\n"
     ".type __load_and_call__Scanf @function\n"
     "__load_and_call__Scanf:\n"
     "push rdi\n"
@@ -8700,6 +8971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Setgloballocale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Setgloballocale\n"
     ".type __load_and_call__Setgloballocale @function\n"
     "__load_and_call__Setgloballocale:\n"
     "push rdi\n"
@@ -8732,6 +9004,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Sin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Sin\n"
     ".type __load_and_call__Sin @function\n"
     "__load_and_call__Sin:\n"
     "push rdi\n"
@@ -8764,6 +9037,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Sincos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Sincos\n"
     ".type __load_and_call__Sincos @function\n"
     "__load_and_call__Sincos:\n"
     "push rdi\n"
@@ -8796,6 +9070,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Sinh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Sinh\n"
     ".type __load_and_call__Sinh @function\n"
     "__load_and_call__Sinh:\n"
     "push rdi\n"
@@ -8828,6 +9103,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Skip]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Skip\n"
     ".type __load_and_call__Skip @function\n"
     "__load_and_call__Skip:\n"
     "push rdi\n"
@@ -8860,6 +9136,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stod\n"
     ".type __load_and_call__Stod @function\n"
     "__load_and_call__Stod:\n"
     "push rdi\n"
@@ -8892,6 +9169,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stodx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stodx\n"
     ".type __load_and_call__Stodx @function\n"
     "__load_and_call__Stodx:\n"
     "push rdi\n"
@@ -8924,6 +9202,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stof]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stof\n"
     ".type __load_and_call__Stof @function\n"
     "__load_and_call__Stof:\n"
     "push rdi\n"
@@ -8956,6 +9235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stoflt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stoflt\n"
     ".type __load_and_call__Stoflt @function\n"
     "__load_and_call__Stoflt:\n"
     "push rdi\n"
@@ -8988,6 +9268,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stofx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stofx\n"
     ".type __load_and_call__Stofx @function\n"
     "__load_and_call__Stofx:\n"
     "push rdi\n"
@@ -9020,6 +9301,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stold]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stold\n"
     ".type __load_and_call__Stold @function\n"
     "__load_and_call__Stold:\n"
     "push rdi\n"
@@ -9052,6 +9334,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stoldx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stoldx\n"
     ".type __load_and_call__Stoldx @function\n"
     "__load_and_call__Stoldx:\n"
     "push rdi\n"
@@ -9084,6 +9367,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stoll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stoll\n"
     ".type __load_and_call__Stoll @function\n"
     "__load_and_call__Stoll:\n"
     "push rdi\n"
@@ -9116,6 +9400,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stollx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stollx\n"
     ".type __load_and_call__Stollx @function\n"
     "__load_and_call__Stollx:\n"
     "push rdi\n"
@@ -9148,6 +9433,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stolx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stolx\n"
     ".type __load_and_call__Stolx @function\n"
     "__load_and_call__Stolx:\n"
     "push rdi\n"
@@ -9180,6 +9466,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stopfx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stopfx\n"
     ".type __load_and_call__Stopfx @function\n"
     "__load_and_call__Stopfx:\n"
     "push rdi\n"
@@ -9212,6 +9499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stoul]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stoul\n"
     ".type __load_and_call__Stoul @function\n"
     "__load_and_call__Stoul:\n"
     "push rdi\n"
@@ -9244,6 +9532,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stoull]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stoull\n"
     ".type __load_and_call__Stoull @function\n"
     "__load_and_call__Stoull:\n"
     "push rdi\n"
@@ -9276,6 +9565,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stoullx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stoullx\n"
     ".type __load_and_call__Stoullx @function\n"
     "__load_and_call__Stoullx:\n"
     "push rdi\n"
@@ -9308,6 +9598,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stoulx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stoulx\n"
     ".type __load_and_call__Stoulx @function\n"
     "__load_and_call__Stoulx:\n"
     "push rdi\n"
@@ -9340,6 +9631,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Stoxflt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Stoxflt\n"
     ".type __load_and_call__Stoxflt @function\n"
     "__load_and_call__Stoxflt:\n"
     "push rdi\n"
@@ -9372,6 +9664,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Strcollx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Strcollx\n"
     ".type __load_and_call__Strcollx @function\n"
     "__load_and_call__Strcollx:\n"
     "push rdi\n"
@@ -9404,6 +9697,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Strerror]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Strerror\n"
     ".type __load_and_call__Strerror @function\n"
     "__load_and_call__Strerror:\n"
     "push rdi\n"
@@ -9436,6 +9730,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Strxfrmx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Strxfrmx\n"
     ".type __load_and_call__Strxfrmx @function\n"
     "__load_and_call__Strxfrmx:\n"
     "push rdi\n"
@@ -9468,6 +9763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Tan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Tan\n"
     ".type __load_and_call__Tan @function\n"
     "__load_and_call__Tan:\n"
     "push rdi\n"
@@ -9500,6 +9796,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Tgamma]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Tgamma\n"
     ".type __load_and_call__Tgamma @function\n"
     "__load_and_call__Tgamma:\n"
     "push rdi\n"
@@ -9532,6 +9829,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_abort]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_abort\n"
     ".type __load_and_call__Thrd_abort @function\n"
     "__load_and_call__Thrd_abort:\n"
     "push rdi\n"
@@ -9564,6 +9862,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_create]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_create\n"
     ".type __load_and_call__Thrd_create @function\n"
     "__load_and_call__Thrd_create:\n"
     "push rdi\n"
@@ -9596,6 +9895,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_current]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_current\n"
     ".type __load_and_call__Thrd_current @function\n"
     "__load_and_call__Thrd_current:\n"
     "push rdi\n"
@@ -9628,6 +9928,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_detach]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_detach\n"
     ".type __load_and_call__Thrd_detach @function\n"
     "__load_and_call__Thrd_detach:\n"
     "push rdi\n"
@@ -9660,6 +9961,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_equal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_equal\n"
     ".type __load_and_call__Thrd_equal @function\n"
     "__load_and_call__Thrd_equal:\n"
     "push rdi\n"
@@ -9692,6 +9994,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_exit\n"
     ".type __load_and_call__Thrd_exit @function\n"
     "__load_and_call__Thrd_exit:\n"
     "push rdi\n"
@@ -9724,6 +10027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_id]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_id\n"
     ".type __load_and_call__Thrd_id @function\n"
     "__load_and_call__Thrd_id:\n"
     "push rdi\n"
@@ -9756,6 +10060,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_join]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_join\n"
     ".type __load_and_call__Thrd_join @function\n"
     "__load_and_call__Thrd_join:\n"
     "push rdi\n"
@@ -9788,6 +10093,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_lt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_lt\n"
     ".type __load_and_call__Thrd_lt @function\n"
     "__load_and_call__Thrd_lt:\n"
     "push rdi\n"
@@ -9820,6 +10126,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_sleep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_sleep\n"
     ".type __load_and_call__Thrd_sleep @function\n"
     "__load_and_call__Thrd_sleep:\n"
     "push rdi\n"
@@ -9852,6 +10159,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_start]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_start\n"
     ".type __load_and_call__Thrd_start @function\n"
     "__load_and_call__Thrd_start:\n"
     "push rdi\n"
@@ -9884,6 +10192,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_start_with_attr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_start_with_attr\n"
     ".type __load_and_call__Thrd_start_with_attr @function\n"
     "__load_and_call__Thrd_start_with_attr:\n"
     "push rdi\n"
@@ -9916,6 +10225,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_start_with_name]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_start_with_name\n"
     ".type __load_and_call__Thrd_start_with_name @function\n"
     "__load_and_call__Thrd_start_with_name:\n"
     "push rdi\n"
@@ -9948,6 +10258,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_start_with_name_attr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_start_with_name_attr\n"
     ".type __load_and_call__Thrd_start_with_name_attr @function\n"
     "__load_and_call__Thrd_start_with_name_attr:\n"
     "push rdi\n"
@@ -9980,6 +10291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Thrd_yield]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Thrd_yield\n"
     ".type __load_and_call__Thrd_yield @function\n"
     "__load_and_call__Thrd_yield:\n"
     "push rdi\n"
@@ -10012,6 +10324,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Towctrans]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Towctrans\n"
     ".type __load_and_call__Towctrans @function\n"
     "__load_and_call__Towctrans:\n"
     "push rdi\n"
@@ -10044,6 +10357,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Tss_create]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Tss_create\n"
     ".type __load_and_call__Tss_create @function\n"
     "__load_and_call__Tss_create:\n"
     "push rdi\n"
@@ -10076,6 +10390,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Tss_delete]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Tss_delete\n"
     ".type __load_and_call__Tss_delete @function\n"
     "__load_and_call__Tss_delete:\n"
     "push rdi\n"
@@ -10108,6 +10423,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Tss_get]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Tss_get\n"
     ".type __load_and_call__Tss_get @function\n"
     "__load_and_call__Tss_get:\n"
     "push rdi\n"
@@ -10140,6 +10456,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Tss_set]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Tss_set\n"
     ".type __load_and_call__Tss_set @function\n"
     "__load_and_call__Tss_set:\n"
     "push rdi\n"
@@ -10172,6 +10489,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Ttotm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Ttotm\n"
     ".type __load_and_call__Ttotm @function\n"
     "__load_and_call__Ttotm:\n"
     "push rdi\n"
@@ -10204,6 +10522,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Tzoff]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Tzoff\n"
     ".type __load_and_call__Tzoff @function\n"
     "__load_and_call__Tzoff:\n"
     "push rdi\n"
@@ -10236,6 +10555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Unlock_shared_ptr_spin_lock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Unlock_shared_ptr_spin_lock\n"
     ".type __load_and_call__Unlock_shared_ptr_spin_lock @function\n"
     "__load_and_call__Unlock_shared_ptr_spin_lock:\n"
     "push rdi\n"
@@ -10268,6 +10588,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Unlock_spin_lock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Unlock_spin_lock\n"
     ".type __load_and_call__Unlock_spin_lock @function\n"
     "__load_and_call__Unlock_spin_lock:\n"
     "push rdi\n"
@@ -10300,6 +10621,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Unlockfilelock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Unlockfilelock\n"
     ".type __load_and_call__Unlockfilelock @function\n"
     "__load_and_call__Unlockfilelock:\n"
     "push rdi\n"
@@ -10332,6 +10654,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Unlocksyslock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Unlocksyslock\n"
     ".type __load_and_call__Unlocksyslock @function\n"
     "__load_and_call__Unlocksyslock:\n"
     "push rdi\n"
@@ -10364,6 +10687,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Unwind_Backtrace]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Unwind_Backtrace\n"
     ".type __load_and_call__Unwind_Backtrace @function\n"
     "__load_and_call__Unwind_Backtrace:\n"
     "push rdi\n"
@@ -10396,6 +10720,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Unwind_GetIP]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Unwind_GetIP\n"
     ".type __load_and_call__Unwind_GetIP @function\n"
     "__load_and_call__Unwind_GetIP:\n"
     "push rdi\n"
@@ -10428,6 +10753,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Unwind_Resume]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Unwind_Resume\n"
     ".type __load_and_call__Unwind_Resume @function\n"
     "__load_and_call__Unwind_Resume:\n"
     "push rdi\n"
@@ -10460,6 +10786,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Unwind_Resume_or_Rethrow]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Unwind_Resume_or_Rethrow\n"
     ".type __load_and_call__Unwind_Resume_or_Rethrow @function\n"
     "__load_and_call__Unwind_Resume_or_Rethrow:\n"
     "push rdi\n"
@@ -10492,6 +10819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Vacopy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Vacopy\n"
     ".type __load_and_call__Vacopy @function\n"
     "__load_and_call__Vacopy:\n"
     "push rdi\n"
@@ -10524,6 +10852,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WFrprep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WFrprep\n"
     ".type __load_and_call__WFrprep @function\n"
     "__load_and_call__WFrprep:\n"
     "push rdi\n"
@@ -10556,6 +10885,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WFwprep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WFwprep\n"
     ".type __load_and_call__WFwprep @function\n"
     "__load_and_call__WFwprep:\n"
     "push rdi\n"
@@ -10588,6 +10918,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WGenld]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WGenld\n"
     ".type __load_and_call__WGenld @function\n"
     "__load_and_call__WGenld:\n"
     "push rdi\n"
@@ -10620,6 +10951,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WGetfld]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WGetfld\n"
     ".type __load_and_call__WGetfld @function\n"
     "__load_and_call__WGetfld:\n"
     "push rdi\n"
@@ -10652,6 +10984,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WGetfloat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WGetfloat\n"
     ".type __load_and_call__WGetfloat @function\n"
     "__load_and_call__WGetfloat:\n"
     "push rdi\n"
@@ -10684,6 +11017,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WGetint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WGetint\n"
     ".type __load_and_call__WGetint @function\n"
     "__load_and_call__WGetint:\n"
     "push rdi\n"
@@ -10716,6 +11050,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WGetstr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WGetstr\n"
     ".type __load_and_call__WGetstr @function\n"
     "__load_and_call__WGetstr:\n"
     "push rdi\n"
@@ -10748,6 +11083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WLdtob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WLdtob\n"
     ".type __load_and_call__WLdtob @function\n"
     "__load_and_call__WLdtob:\n"
     "push rdi\n"
@@ -10780,6 +11116,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WLitob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WLitob\n"
     ".type __load_and_call__WLitob @function\n"
     "__load_and_call__WLitob:\n"
     "push rdi\n"
@@ -10812,6 +11149,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WPrintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WPrintf\n"
     ".type __load_and_call__WPrintf @function\n"
     "__load_and_call__WPrintf:\n"
     "push rdi\n"
@@ -10844,6 +11182,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WPutfld]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WPutfld\n"
     ".type __load_and_call__WPutfld @function\n"
     "__load_and_call__WPutfld:\n"
     "push rdi\n"
@@ -10876,6 +11215,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WPutstr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WPutstr\n"
     ".type __load_and_call__WPutstr @function\n"
     "__load_and_call__WPutstr:\n"
     "push rdi\n"
@@ -10908,6 +11248,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WPuttxt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WPuttxt\n"
     ".type __load_and_call__WPuttxt @function\n"
     "__load_and_call__WPuttxt:\n"
     "push rdi\n"
@@ -10940,6 +11281,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WScanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WScanf\n"
     ".type __load_and_call__WScanf @function\n"
     "__load_and_call__WScanf:\n"
     "push rdi\n"
@@ -10972,6 +11314,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStod\n"
     ".type __load_and_call__WStod @function\n"
     "__load_and_call__WStod:\n"
     "push rdi\n"
@@ -11004,6 +11347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStodx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStodx\n"
     ".type __load_and_call__WStodx @function\n"
     "__load_and_call__WStodx:\n"
     "push rdi\n"
@@ -11036,6 +11380,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStof]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStof\n"
     ".type __load_and_call__WStof @function\n"
     "__load_and_call__WStof:\n"
     "push rdi\n"
@@ -11068,6 +11413,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStoflt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStoflt\n"
     ".type __load_and_call__WStoflt @function\n"
     "__load_and_call__WStoflt:\n"
     "push rdi\n"
@@ -11100,6 +11446,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStofx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStofx\n"
     ".type __load_and_call__WStofx @function\n"
     "__load_and_call__WStofx:\n"
     "push rdi\n"
@@ -11132,6 +11479,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStold]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStold\n"
     ".type __load_and_call__WStold @function\n"
     "__load_and_call__WStold:\n"
     "push rdi\n"
@@ -11164,6 +11512,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStoldx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStoldx\n"
     ".type __load_and_call__WStoldx @function\n"
     "__load_and_call__WStoldx:\n"
     "push rdi\n"
@@ -11196,6 +11545,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStoll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStoll\n"
     ".type __load_and_call__WStoll @function\n"
     "__load_and_call__WStoll:\n"
     "push rdi\n"
@@ -11228,6 +11578,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStopfx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStopfx\n"
     ".type __load_and_call__WStopfx @function\n"
     "__load_and_call__WStopfx:\n"
     "push rdi\n"
@@ -11260,6 +11611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStoul]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStoul\n"
     ".type __load_and_call__WStoul @function\n"
     "__load_and_call__WStoul:\n"
     "push rdi\n"
@@ -11292,6 +11644,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStoull]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStoull\n"
     ".type __load_and_call__WStoull @function\n"
     "__load_and_call__WStoull:\n"
     "push rdi\n"
@@ -11324,6 +11677,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__WStoxflt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__WStoxflt\n"
     ".type __load_and_call__WStoxflt @function\n"
     "__load_and_call__WStoxflt:\n"
     "push rdi\n"
@@ -11356,6 +11710,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Wcscollx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Wcscollx\n"
     ".type __load_and_call__Wcscollx @function\n"
     "__load_and_call__Wcscollx:\n"
     "push rdi\n"
@@ -11388,6 +11743,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Wcsftime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Wcsftime\n"
     ".type __load_and_call__Wcsftime @function\n"
     "__load_and_call__Wcsftime:\n"
     "push rdi\n"
@@ -11420,6 +11776,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Wcsxfrmx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Wcsxfrmx\n"
     ".type __load_and_call__Wcsxfrmx @function\n"
     "__load_and_call__Wcsxfrmx:\n"
     "push rdi\n"
@@ -11452,6 +11809,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Wctob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Wctob\n"
     ".type __load_and_call__Wctob @function\n"
     "__load_and_call__Wctob:\n"
     "push rdi\n"
@@ -11484,6 +11842,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Wctomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Wctomb\n"
     ".type __load_and_call__Wctomb @function\n"
     "__load_and_call__Wctomb:\n"
     "push rdi\n"
@@ -11516,6 +11875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Wctombx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Wctombx\n"
     ".type __load_and_call__Wctombx @function\n"
     "__load_and_call__Wctombx:\n"
     "push rdi\n"
@@ -11548,6 +11908,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_addh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_addh\n"
     ".type __load_and_call__Xp_addh @function\n"
     "__load_and_call__Xp_addh:\n"
     "push rdi\n"
@@ -11580,6 +11941,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_addx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_addx\n"
     ".type __load_and_call__Xp_addx @function\n"
     "__load_and_call__Xp_addx:\n"
     "push rdi\n"
@@ -11612,6 +11974,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_getw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_getw\n"
     ".type __load_and_call__Xp_getw @function\n"
     "__load_and_call__Xp_getw:\n"
     "push rdi\n"
@@ -11644,6 +12007,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_invx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_invx\n"
     ".type __load_and_call__Xp_invx @function\n"
     "__load_and_call__Xp_invx:\n"
     "push rdi\n"
@@ -11676,6 +12040,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_ldexpx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_ldexpx\n"
     ".type __load_and_call__Xp_ldexpx @function\n"
     "__load_and_call__Xp_ldexpx:\n"
     "push rdi\n"
@@ -11708,6 +12073,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_movx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_movx\n"
     ".type __load_and_call__Xp_movx @function\n"
     "__load_and_call__Xp_movx:\n"
     "push rdi\n"
@@ -11740,6 +12106,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_mulh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_mulh\n"
     ".type __load_and_call__Xp_mulh @function\n"
     "__load_and_call__Xp_mulh:\n"
     "push rdi\n"
@@ -11772,6 +12139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_mulx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_mulx\n"
     ".type __load_and_call__Xp_mulx @function\n"
     "__load_and_call__Xp_mulx:\n"
     "push rdi\n"
@@ -11804,6 +12172,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_setn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_setn\n"
     ".type __load_and_call__Xp_setn @function\n"
     "__load_and_call__Xp_setn:\n"
     "push rdi\n"
@@ -11836,6 +12205,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_setw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_setw\n"
     ".type __load_and_call__Xp_setw @function\n"
     "__load_and_call__Xp_setw:\n"
     "push rdi\n"
@@ -11868,6 +12238,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_sqrtx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_sqrtx\n"
     ".type __load_and_call__Xp_sqrtx @function\n"
     "__load_and_call__Xp_sqrtx:\n"
     "push rdi\n"
@@ -11900,6 +12271,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xp_subx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xp_subx\n"
     ".type __load_and_call__Xp_subx @function\n"
     "__load_and_call__Xp_subx:\n"
     "push rdi\n"
@@ -11932,6 +12304,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xtime_diff_to_ts]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xtime_diff_to_ts\n"
     ".type __load_and_call__Xtime_diff_to_ts @function\n"
     "__load_and_call__Xtime_diff_to_ts:\n"
     "push rdi\n"
@@ -11964,6 +12337,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xtime_get_ticks]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xtime_get_ticks\n"
     ".type __load_and_call__Xtime_get_ticks @function\n"
     "__load_and_call__Xtime_get_ticks:\n"
     "push rdi\n"
@@ -11996,6 +12370,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Xtime_to_ts]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Xtime_to_ts\n"
     ".type __load_and_call__Xtime_to_ts @function\n"
     "__load_and_call__Xtime_to_ts:\n"
     "push rdi\n"
@@ -12028,6 +12403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv116__enum_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv116__enum_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv116__enum_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv116__enum_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12060,6 +12436,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv116__enum_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv116__enum_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv116__enum_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv116__enum_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12092,6 +12469,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv116__enum_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv116__enum_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv116__enum_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv116__enum_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12124,6 +12502,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__array_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__array_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__array_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__array_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12156,6 +12535,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__array_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__array_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__array_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__array_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12188,6 +12568,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__array_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__array_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__array_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__array_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12220,6 +12601,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__class_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__class_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__class_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__class_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12252,6 +12634,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__class_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__class_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__class_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__class_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12284,6 +12667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__class_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__class_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__class_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__class_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12316,6 +12700,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__pbase_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__pbase_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__pbase_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__pbase_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12348,6 +12733,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__pbase_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__pbase_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__pbase_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__pbase_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12380,6 +12766,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv117__pbase_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv117__pbase_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv117__pbase_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv117__pbase_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12412,6 +12799,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv119__pointer_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv119__pointer_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv119__pointer_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv119__pointer_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12444,6 +12832,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv119__pointer_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv119__pointer_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv119__pointer_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv119__pointer_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12476,6 +12865,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv119__pointer_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv119__pointer_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv119__pointer_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv119__pointer_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12508,6 +12898,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv120__function_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv120__function_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv120__function_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv120__function_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12540,6 +12931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv120__function_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv120__function_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv120__function_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv120__function_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12572,6 +12964,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv120__function_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv120__function_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv120__function_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv120__function_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12604,6 +12997,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv120__si_class_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv120__si_class_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv120__si_class_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv120__si_class_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12636,6 +13030,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv120__si_class_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv120__si_class_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv120__si_class_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv120__si_class_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12668,6 +13063,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv120__si_class_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv120__si_class_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv120__si_class_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv120__si_class_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12700,6 +13096,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv121__vmi_class_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12732,6 +13129,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv121__vmi_class_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12764,6 +13162,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv121__vmi_class_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv121__vmi_class_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12796,6 +13195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv123__fundamental_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv123__fundamental_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv123__fundamental_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv123__fundamental_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12828,6 +13228,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv123__fundamental_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv123__fundamental_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv123__fundamental_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv123__fundamental_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12860,6 +13261,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv123__fundamental_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv123__fundamental_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv123__fundamental_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv123__fundamental_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12892,6 +13294,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev\n"
     ".type __load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev @function\n"
     "__load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev:\n"
     "push rdi\n"
@@ -12924,6 +13327,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev\n"
     ".type __load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev @function\n"
     "__load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev:\n"
     "push rdi\n"
@@ -12956,6 +13360,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev\n"
     ".type __load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev @function\n"
     "__load_and_call__ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev:\n"
     "push rdi\n"
@@ -12988,6 +13393,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN6Dinkum7codecvt10_Cvt_checkEmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN6Dinkum7codecvt10_Cvt_checkEmm\n"
     ".type __load_and_call__ZN6Dinkum7codecvt10_Cvt_checkEmm @function\n"
     "__load_and_call__ZN6Dinkum7codecvt10_Cvt_checkEmm:\n"
     "push rdi\n"
@@ -13020,6 +13426,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN6Dinkum7threads10lock_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN6Dinkum7threads10lock_errorD0Ev\n"
     ".type __load_and_call__ZN6Dinkum7threads10lock_errorD0Ev @function\n"
     "__load_and_call__ZN6Dinkum7threads10lock_errorD0Ev:\n"
     "push rdi\n"
@@ -13052,6 +13459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN6Dinkum7threads10lock_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN6Dinkum7threads10lock_errorD1Ev\n"
     ".type __load_and_call__ZN6Dinkum7threads10lock_errorD1Ev @function\n"
     "__load_and_call__ZN6Dinkum7threads10lock_errorD1Ev:\n"
     "push rdi\n"
@@ -13084,6 +13492,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN6Dinkum7threads17_Throw_lock_errorEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN6Dinkum7threads17_Throw_lock_errorEv\n"
     ".type __load_and_call__ZN6Dinkum7threads17_Throw_lock_errorEv @function\n"
     "__load_and_call__ZN6Dinkum7threads17_Throw_lock_errorEv:\n"
     "push rdi\n"
@@ -13116,6 +13525,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN6Dinkum7threads21_Throw_resource_errorEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN6Dinkum7threads21_Throw_resource_errorEv\n"
     ".type __load_and_call__ZN6Dinkum7threads21_Throw_resource_errorEv @function\n"
     "__load_and_call__ZN6Dinkum7threads21_Throw_resource_errorEv:\n"
     "push rdi\n"
@@ -13148,6 +13558,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN6Dinkum7threads21thread_resource_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN6Dinkum7threads21thread_resource_errorD0Ev\n"
     ".type __load_and_call__ZN6Dinkum7threads21thread_resource_errorD0Ev @function\n"
     "__load_and_call__ZN6Dinkum7threads21thread_resource_errorD0Ev:\n"
     "push rdi\n"
@@ -13180,6 +13591,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZN6Dinkum7threads21thread_resource_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZN6Dinkum7threads21thread_resource_errorD1Ev\n"
     ".type __load_and_call__ZN6Dinkum7threads21thread_resource_errorD1Ev @function\n"
     "__load_and_call__ZN6Dinkum7threads21thread_resource_errorD1Ev:\n"
     "push rdi\n"
@@ -13212,6 +13624,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSbIwSt11char_traitsIwESaIwEE5_XlenEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSbIwSt11char_traitsIwESaIwEE5_XlenEv\n"
     ".type __load_and_call__ZNKSbIwSt11char_traitsIwESaIwEE5_XlenEv @function\n"
     "__load_and_call__ZNKSbIwSt11char_traitsIwESaIwEE5_XlenEv:\n"
     "push rdi\n"
@@ -13244,6 +13657,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSbIwSt11char_traitsIwESaIwEE5_XranEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSbIwSt11char_traitsIwESaIwEE5_XranEv\n"
     ".type __load_and_call__ZNKSbIwSt11char_traitsIwESaIwEE5_XranEv @function\n"
     "__load_and_call__ZNKSbIwSt11char_traitsIwESaIwEE5_XranEv:\n"
     "push rdi\n"
@@ -13276,6 +13690,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSs5_XlenEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSs5_XlenEv\n"
     ".type __load_and_call__ZNKSs5_XlenEv @function\n"
     "__load_and_call__ZNKSs5_XlenEv:\n"
     "push rdi\n"
@@ -13308,6 +13723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSs5_XranEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSs5_XranEv\n"
     ".type __load_and_call__ZNKSs5_XranEv @function\n"
     "__load_and_call__ZNKSs5_XranEv:\n"
     "push rdi\n"
@@ -13340,6 +13756,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt10bad_typeid4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt10bad_typeid4whatEv\n"
     ".type __load_and_call__ZNKSt10bad_typeid4whatEv @function\n"
     "__load_and_call__ZNKSt10bad_typeid4whatEv:\n"
     "push rdi\n"
@@ -13372,6 +13789,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt10bad_typeid8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt10bad_typeid8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt10bad_typeid8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt10bad_typeid8_DoraiseEv:\n"
     "push rdi\n"
@@ -13404,6 +13822,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt11logic_error4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt11logic_error4whatEv\n"
     ".type __load_and_call__ZNKSt11logic_error4whatEv @function\n"
     "__load_and_call__ZNKSt11logic_error4whatEv:\n"
     "push rdi\n"
@@ -13436,6 +13855,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt11logic_error8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt11logic_error8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt11logic_error8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt11logic_error8_DoraiseEv:\n"
     "push rdi\n"
@@ -13468,6 +13888,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt12bad_weak_ptr4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt12bad_weak_ptr4whatEv\n"
     ".type __load_and_call__ZNKSt12bad_weak_ptr4whatEv @function\n"
     "__load_and_call__ZNKSt12bad_weak_ptr4whatEv:\n"
     "push rdi\n"
@@ -13500,6 +13921,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt12codecvt_base11do_encodingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt12codecvt_base11do_encodingEv\n"
     ".type __load_and_call__ZNKSt12codecvt_base11do_encodingEv @function\n"
     "__load_and_call__ZNKSt12codecvt_base11do_encodingEv:\n"
     "push rdi\n"
@@ -13532,6 +13954,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt12codecvt_base13do_max_lengthEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt12codecvt_base13do_max_lengthEv\n"
     ".type __load_and_call__ZNKSt12codecvt_base13do_max_lengthEv @function\n"
     "__load_and_call__ZNKSt12codecvt_base13do_max_lengthEv:\n"
     "push rdi\n"
@@ -13564,6 +13987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt12future_error4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt12future_error4whatEv\n"
     ".type __load_and_call__ZNKSt12future_error4whatEv @function\n"
     "__load_and_call__ZNKSt12future_error4whatEv:\n"
     "push rdi\n"
@@ -13596,6 +14020,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt12future_error8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt12future_error8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt12future_error8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt12future_error8_DoraiseEv:\n"
     "push rdi\n"
@@ -13628,6 +14053,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt12system_error8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt12system_error8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt12system_error8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt12system_error8_DoraiseEv:\n"
     "push rdi\n"
@@ -13660,6 +14086,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt13bad_exception8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt13bad_exception8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt13bad_exception8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt13bad_exception8_DoraiseEv:\n"
     "push rdi\n"
@@ -13692,6 +14119,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt13runtime_error4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt13runtime_error4whatEv\n"
     ".type __load_and_call__ZNKSt13runtime_error4whatEv @function\n"
     "__load_and_call__ZNKSt13runtime_error4whatEv:\n"
     "push rdi\n"
@@ -13724,6 +14152,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt14error_category10equivalentERKSt10error_codei]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt14error_category10equivalentERKSt10error_codei\n"
     ".type __load_and_call__ZNKSt14error_category10equivalentERKSt10error_codei @function\n"
     "__load_and_call__ZNKSt14error_category10equivalentERKSt10error_codei:\n"
     "push rdi\n"
@@ -13756,6 +14185,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt14error_category10equivalentEiRKSt15error_condition]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt14error_category10equivalentEiRKSt15error_condition\n"
     ".type __load_and_call__ZNKSt14error_category10equivalentEiRKSt15error_condition @function\n"
     "__load_and_call__ZNKSt14error_category10equivalentEiRKSt15error_condition:\n"
     "push rdi\n"
@@ -13788,6 +14218,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt14error_category23default_error_conditionEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt14error_category23default_error_conditionEi\n"
     ".type __load_and_call__ZNKSt14error_category23default_error_conditionEi @function\n"
     "__load_and_call__ZNKSt14error_category23default_error_conditionEi:\n"
     "push rdi\n"
@@ -13820,6 +14251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt17bad_function_call4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt17bad_function_call4whatEv\n"
     ".type __load_and_call__ZNKSt17bad_function_call4whatEv @function\n"
     "__load_and_call__ZNKSt17bad_function_call4whatEv:\n"
     "push rdi\n"
@@ -13852,6 +14284,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt18bad_variant_access4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt18bad_variant_access4whatEv\n"
     ".type __load_and_call__ZNKSt18bad_variant_access4whatEv @function\n"
     "__load_and_call__ZNKSt18bad_variant_access4whatEv:\n"
     "push rdi\n"
@@ -13884,6 +14317,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt19istreambuf_iteratorIcSt11char_traitsIcEE5equalERKS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt19istreambuf_iteratorIcSt11char_traitsIcEE5equalERKS2_\n"
     ".type __load_and_call__ZNKSt19istreambuf_iteratorIcSt11char_traitsIcEE5equalERKS2_ @function\n"
     "__load_and_call__ZNKSt19istreambuf_iteratorIcSt11char_traitsIcEE5equalERKS2_:\n"
     "push rdi\n"
@@ -13916,6 +14350,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt19istreambuf_iteratorIwSt11char_traitsIwEE5equalERKS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt19istreambuf_iteratorIwSt11char_traitsIwEE5equalERKS2_\n"
     ".type __load_and_call__ZNKSt19istreambuf_iteratorIwSt11char_traitsIwEE5equalERKS2_ @function\n"
     "__load_and_call__ZNKSt19istreambuf_iteratorIwSt11char_traitsIwEE5equalERKS2_:\n"
     "push rdi\n"
@@ -13948,6 +14383,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt22_Future_error_category4nameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt22_Future_error_category4nameEv\n"
     ".type __load_and_call__ZNKSt22_Future_error_category4nameEv @function\n"
     "__load_and_call__ZNKSt22_Future_error_category4nameEv:\n"
     "push rdi\n"
@@ -13980,6 +14416,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt22_Future_error_category7messageEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt22_Future_error_category7messageEi\n"
     ".type __load_and_call__ZNKSt22_Future_error_category7messageEi @function\n"
     "__load_and_call__ZNKSt22_Future_error_category7messageEi:\n"
     "push rdi\n"
@@ -14012,6 +14449,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt22_System_error_category23default_error_conditionEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt22_System_error_category23default_error_conditionEi\n"
     ".type __load_and_call__ZNKSt22_System_error_category23default_error_conditionEi @function\n"
     "__load_and_call__ZNKSt22_System_error_category23default_error_conditionEi:\n"
     "push rdi\n"
@@ -14044,6 +14482,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt22_System_error_category4nameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt22_System_error_category4nameEv\n"
     ".type __load_and_call__ZNKSt22_System_error_category4nameEv @function\n"
     "__load_and_call__ZNKSt22_System_error_category4nameEv:\n"
     "push rdi\n"
@@ -14076,6 +14515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt22_System_error_category7messageEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt22_System_error_category7messageEi\n"
     ".type __load_and_call__ZNKSt22_System_error_category7messageEi @function\n"
     "__load_and_call__ZNKSt22_System_error_category7messageEi:\n"
     "push rdi\n"
@@ -14108,6 +14548,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt23_Generic_error_category4nameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt23_Generic_error_category4nameEv\n"
     ".type __load_and_call__ZNKSt23_Generic_error_category4nameEv @function\n"
     "__load_and_call__ZNKSt23_Generic_error_category4nameEv:\n"
     "push rdi\n"
@@ -14140,6 +14581,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt23_Generic_error_category7messageEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt23_Generic_error_category7messageEi\n"
     ".type __load_and_call__ZNKSt23_Generic_error_category7messageEi @function\n"
     "__load_and_call__ZNKSt23_Generic_error_category7messageEi:\n"
     "push rdi\n"
@@ -14172,6 +14614,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt24_Iostream_error_category4nameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt24_Iostream_error_category4nameEv\n"
     ".type __load_and_call__ZNKSt24_Iostream_error_category4nameEv @function\n"
     "__load_and_call__ZNKSt24_Iostream_error_category4nameEv:\n"
     "push rdi\n"
@@ -14204,6 +14647,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt24_Iostream_error_category7messageEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt24_Iostream_error_category7messageEi\n"
     ".type __load_and_call__ZNKSt24_Iostream_error_category7messageEi @function\n"
     "__load_and_call__ZNKSt24_Iostream_error_category7messageEi:\n"
     "push rdi\n"
@@ -14236,6 +14680,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIcE10do_tolowerEPcPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIcE10do_tolowerEPcPKc\n"
     ".type __load_and_call__ZNKSt5ctypeIcE10do_tolowerEPcPKc @function\n"
     "__load_and_call__ZNKSt5ctypeIcE10do_tolowerEPcPKc:\n"
     "push rdi\n"
@@ -14268,6 +14713,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIcE10do_tolowerEc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIcE10do_tolowerEc\n"
     ".type __load_and_call__ZNKSt5ctypeIcE10do_tolowerEc @function\n"
     "__load_and_call__ZNKSt5ctypeIcE10do_tolowerEc:\n"
     "push rdi\n"
@@ -14300,6 +14746,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIcE10do_toupperEPcPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIcE10do_toupperEPcPKc\n"
     ".type __load_and_call__ZNKSt5ctypeIcE10do_toupperEPcPKc @function\n"
     "__load_and_call__ZNKSt5ctypeIcE10do_toupperEPcPKc:\n"
     "push rdi\n"
@@ -14332,6 +14779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIcE10do_toupperEc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIcE10do_toupperEc\n"
     ".type __load_and_call__ZNKSt5ctypeIcE10do_toupperEc @function\n"
     "__load_and_call__ZNKSt5ctypeIcE10do_toupperEc:\n"
     "push rdi\n"
@@ -14364,6 +14812,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIcE8do_widenEPKcS2_Pc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIcE8do_widenEPKcS2_Pc\n"
     ".type __load_and_call__ZNKSt5ctypeIcE8do_widenEPKcS2_Pc @function\n"
     "__load_and_call__ZNKSt5ctypeIcE8do_widenEPKcS2_Pc:\n"
     "push rdi\n"
@@ -14396,6 +14845,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIcE8do_widenEc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIcE8do_widenEc\n"
     ".type __load_and_call__ZNKSt5ctypeIcE8do_widenEc @function\n"
     "__load_and_call__ZNKSt5ctypeIcE8do_widenEc:\n"
     "push rdi\n"
@@ -14428,6 +14878,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc\n"
     ".type __load_and_call__ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc @function\n"
     "__load_and_call__ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc:\n"
     "push rdi\n"
@@ -14460,6 +14911,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIcE9do_narrowEcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIcE9do_narrowEcc\n"
     ".type __load_and_call__ZNKSt5ctypeIcE9do_narrowEcc @function\n"
     "__load_and_call__ZNKSt5ctypeIcE9do_narrowEcc:\n"
     "push rdi\n"
@@ -14492,6 +14944,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE10do_scan_isEsPKwS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE10do_scan_isEsPKwS2_\n"
     ".type __load_and_call__ZNKSt5ctypeIwE10do_scan_isEsPKwS2_ @function\n"
     "__load_and_call__ZNKSt5ctypeIwE10do_scan_isEsPKwS2_:\n"
     "push rdi\n"
@@ -14524,6 +14977,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE10do_tolowerEPwPKw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE10do_tolowerEPwPKw\n"
     ".type __load_and_call__ZNKSt5ctypeIwE10do_tolowerEPwPKw @function\n"
     "__load_and_call__ZNKSt5ctypeIwE10do_tolowerEPwPKw:\n"
     "push rdi\n"
@@ -14556,6 +15010,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE10do_tolowerEw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE10do_tolowerEw\n"
     ".type __load_and_call__ZNKSt5ctypeIwE10do_tolowerEw @function\n"
     "__load_and_call__ZNKSt5ctypeIwE10do_tolowerEw:\n"
     "push rdi\n"
@@ -14588,6 +15043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE10do_toupperEPwPKw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE10do_toupperEPwPKw\n"
     ".type __load_and_call__ZNKSt5ctypeIwE10do_toupperEPwPKw @function\n"
     "__load_and_call__ZNKSt5ctypeIwE10do_toupperEPwPKw:\n"
     "push rdi\n"
@@ -14620,6 +15076,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE10do_toupperEw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE10do_toupperEw\n"
     ".type __load_and_call__ZNKSt5ctypeIwE10do_toupperEw @function\n"
     "__load_and_call__ZNKSt5ctypeIwE10do_toupperEw:\n"
     "push rdi\n"
@@ -14652,6 +15109,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE11do_scan_notEsPKwS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE11do_scan_notEsPKwS2_\n"
     ".type __load_and_call__ZNKSt5ctypeIwE11do_scan_notEsPKwS2_ @function\n"
     "__load_and_call__ZNKSt5ctypeIwE11do_scan_notEsPKwS2_:\n"
     "push rdi\n"
@@ -14684,6 +15142,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE5do_isEPKwS2_Ps]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE5do_isEPKwS2_Ps\n"
     ".type __load_and_call__ZNKSt5ctypeIwE5do_isEPKwS2_Ps @function\n"
     "__load_and_call__ZNKSt5ctypeIwE5do_isEPKwS2_Ps:\n"
     "push rdi\n"
@@ -14716,6 +15175,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE5do_isEsw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE5do_isEsw\n"
     ".type __load_and_call__ZNKSt5ctypeIwE5do_isEsw @function\n"
     "__load_and_call__ZNKSt5ctypeIwE5do_isEsw:\n"
     "push rdi\n"
@@ -14748,6 +15208,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE8do_widenEPKcS2_Pw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE8do_widenEPKcS2_Pw\n"
     ".type __load_and_call__ZNKSt5ctypeIwE8do_widenEPKcS2_Pw @function\n"
     "__load_and_call__ZNKSt5ctypeIwE8do_widenEPKcS2_Pw:\n"
     "push rdi\n"
@@ -14780,6 +15241,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE8do_widenEc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE8do_widenEc\n"
     ".type __load_and_call__ZNKSt5ctypeIwE8do_widenEc @function\n"
     "__load_and_call__ZNKSt5ctypeIwE8do_widenEc:\n"
     "push rdi\n"
@@ -14812,6 +15274,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE9do_narrowEPKwS2_cPc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE9do_narrowEPKwS2_cPc\n"
     ".type __load_and_call__ZNKSt5ctypeIwE9do_narrowEPKwS2_cPc @function\n"
     "__load_and_call__ZNKSt5ctypeIwE9do_narrowEPKwS2_cPc:\n"
     "push rdi\n"
@@ -14844,6 +15307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt5ctypeIwE9do_narrowEwc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt5ctypeIwE9do_narrowEwc\n"
     ".type __load_and_call__ZNKSt5ctypeIwE9do_narrowEwc @function\n"
     "__load_and_call__ZNKSt5ctypeIwE9do_narrowEwc:\n"
     "push rdi\n"
@@ -14876,6 +15340,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE11do_groupingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE11do_groupingEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE11do_groupingEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE11do_groupingEv:\n"
     "push rdi\n"
@@ -14908,6 +15373,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE13do_neg_formatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE13do_neg_formatEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE13do_neg_formatEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE13do_neg_formatEv:\n"
     "push rdi\n"
@@ -14940,6 +15406,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE13do_pos_formatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE13do_pos_formatEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE13do_pos_formatEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE13do_pos_formatEv:\n"
     "push rdi\n"
@@ -14972,6 +15439,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE14do_curr_symbolEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE14do_curr_symbolEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE14do_curr_symbolEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE14do_curr_symbolEv:\n"
     "push rdi\n"
@@ -15004,6 +15472,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE14do_frac_digitsEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE14do_frac_digitsEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE14do_frac_digitsEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE14do_frac_digitsEv:\n"
     "push rdi\n"
@@ -15036,6 +15505,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE16do_decimal_pointEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE16do_decimal_pointEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE16do_decimal_pointEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE16do_decimal_pointEv:\n"
     "push rdi\n"
@@ -15068,6 +15538,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE16do_negative_signEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE16do_negative_signEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE16do_negative_signEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE16do_negative_signEv:\n"
     "push rdi\n"
@@ -15100,6 +15571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE16do_positive_signEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE16do_positive_signEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE16do_positive_signEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE16do_positive_signEv:\n"
     "push rdi\n"
@@ -15132,6 +15604,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIcE16do_thousands_sepEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIcE16do_thousands_sepEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIcE16do_thousands_sepEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIcE16do_thousands_sepEv:\n"
     "push rdi\n"
@@ -15164,6 +15637,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE11do_groupingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE11do_groupingEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE11do_groupingEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE11do_groupingEv:\n"
     "push rdi\n"
@@ -15196,6 +15670,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE13do_neg_formatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE13do_neg_formatEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE13do_neg_formatEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE13do_neg_formatEv:\n"
     "push rdi\n"
@@ -15228,6 +15703,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE13do_pos_formatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE13do_pos_formatEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE13do_pos_formatEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE13do_pos_formatEv:\n"
     "push rdi\n"
@@ -15260,6 +15736,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE14do_curr_symbolEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE14do_curr_symbolEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE14do_curr_symbolEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE14do_curr_symbolEv:\n"
     "push rdi\n"
@@ -15292,6 +15769,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE14do_frac_digitsEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE14do_frac_digitsEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE14do_frac_digitsEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE14do_frac_digitsEv:\n"
     "push rdi\n"
@@ -15324,6 +15802,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE16do_decimal_pointEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE16do_decimal_pointEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE16do_decimal_pointEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE16do_decimal_pointEv:\n"
     "push rdi\n"
@@ -15356,6 +15835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE16do_negative_signEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE16do_negative_signEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE16do_negative_signEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE16do_negative_signEv:\n"
     "push rdi\n"
@@ -15388,6 +15868,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE16do_positive_signEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE16do_positive_signEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE16do_positive_signEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE16do_positive_signEv:\n"
     "push rdi\n"
@@ -15420,6 +15901,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7_MpunctIwE16do_thousands_sepEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7_MpunctIwE16do_thousands_sepEv\n"
     ".type __load_and_call__ZNKSt7_MpunctIwE16do_thousands_sepEv @function\n"
     "__load_and_call__ZNKSt7_MpunctIwE16do_thousands_sepEv:\n"
     "push rdi\n"
@@ -15452,6 +15934,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDic9_MbstatetE10do_unshiftERS0_PcS3_RS3_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDic9_MbstatetE10do_unshiftERS0_PcS3_RS3_\n"
     ".type __load_and_call__ZNKSt7codecvtIDic9_MbstatetE10do_unshiftERS0_PcS3_RS3_ @function\n"
     "__load_and_call__ZNKSt7codecvtIDic9_MbstatetE10do_unshiftERS0_PcS3_RS3_:\n"
     "push rdi\n"
@@ -15484,6 +15967,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDic9_MbstatetE11do_encodingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDic9_MbstatetE11do_encodingEv\n"
     ".type __load_and_call__ZNKSt7codecvtIDic9_MbstatetE11do_encodingEv @function\n"
     "__load_and_call__ZNKSt7codecvtIDic9_MbstatetE11do_encodingEv:\n"
     "push rdi\n"
@@ -15516,6 +16000,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDic9_MbstatetE13do_max_lengthEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDic9_MbstatetE13do_max_lengthEv\n"
     ".type __load_and_call__ZNKSt7codecvtIDic9_MbstatetE13do_max_lengthEv @function\n"
     "__load_and_call__ZNKSt7codecvtIDic9_MbstatetE13do_max_lengthEv:\n"
     "push rdi\n"
@@ -15548,6 +16033,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDic9_MbstatetE16do_always_noconvEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDic9_MbstatetE16do_always_noconvEv\n"
     ".type __load_and_call__ZNKSt7codecvtIDic9_MbstatetE16do_always_noconvEv @function\n"
     "__load_and_call__ZNKSt7codecvtIDic9_MbstatetE16do_always_noconvEv:\n"
     "push rdi\n"
@@ -15580,6 +16066,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDic9_MbstatetE5do_inERS0_PKcS4_RS4_PDiS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDic9_MbstatetE5do_inERS0_PKcS4_RS4_PDiS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIDic9_MbstatetE5do_inERS0_PKcS4_RS4_PDiS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIDic9_MbstatetE5do_inERS0_PKcS4_RS4_PDiS6_RS6_:\n"
     "push rdi\n"
@@ -15612,6 +16099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDic9_MbstatetE6do_outERS0_PKDiS4_RS4_PcS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDic9_MbstatetE6do_outERS0_PKDiS4_RS4_PcS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIDic9_MbstatetE6do_outERS0_PKDiS4_RS4_PcS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIDic9_MbstatetE6do_outERS0_PKDiS4_RS4_PcS6_RS6_:\n"
     "push rdi\n"
@@ -15644,6 +16132,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDic9_MbstatetE9do_lengthERS0_PKcS4_m]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDic9_MbstatetE9do_lengthERS0_PKcS4_m\n"
     ".type __load_and_call__ZNKSt7codecvtIDic9_MbstatetE9do_lengthERS0_PKcS4_m @function\n"
     "__load_and_call__ZNKSt7codecvtIDic9_MbstatetE9do_lengthERS0_PKcS4_m:\n"
     "push rdi\n"
@@ -15676,6 +16165,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDsc9_MbstatetE10do_unshiftERS0_PcS3_RS3_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE10do_unshiftERS0_PcS3_RS3_\n"
     ".type __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE10do_unshiftERS0_PcS3_RS3_ @function\n"
     "__load_and_call__ZNKSt7codecvtIDsc9_MbstatetE10do_unshiftERS0_PcS3_RS3_:\n"
     "push rdi\n"
@@ -15708,6 +16198,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDsc9_MbstatetE11do_encodingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE11do_encodingEv\n"
     ".type __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE11do_encodingEv @function\n"
     "__load_and_call__ZNKSt7codecvtIDsc9_MbstatetE11do_encodingEv:\n"
     "push rdi\n"
@@ -15740,6 +16231,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDsc9_MbstatetE13do_max_lengthEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE13do_max_lengthEv\n"
     ".type __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE13do_max_lengthEv @function\n"
     "__load_and_call__ZNKSt7codecvtIDsc9_MbstatetE13do_max_lengthEv:\n"
     "push rdi\n"
@@ -15772,6 +16264,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDsc9_MbstatetE16do_always_noconvEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE16do_always_noconvEv\n"
     ".type __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE16do_always_noconvEv @function\n"
     "__load_and_call__ZNKSt7codecvtIDsc9_MbstatetE16do_always_noconvEv:\n"
     "push rdi\n"
@@ -15804,6 +16297,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDsc9_MbstatetE5do_inERS0_PKcS4_RS4_PDsS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE5do_inERS0_PKcS4_RS4_PDsS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE5do_inERS0_PKcS4_RS4_PDsS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIDsc9_MbstatetE5do_inERS0_PKcS4_RS4_PDsS6_RS6_:\n"
     "push rdi\n"
@@ -15836,6 +16330,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDsc9_MbstatetE6do_outERS0_PKDsS4_RS4_PcS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE6do_outERS0_PKDsS4_RS4_PcS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE6do_outERS0_PKDsS4_RS4_PcS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIDsc9_MbstatetE6do_outERS0_PKDsS4_RS4_PcS6_RS6_:\n"
     "push rdi\n"
@@ -15868,6 +16363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIDsc9_MbstatetE9do_lengthERS0_PKcS4_m]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE9do_lengthERS0_PKcS4_m\n"
     ".type __load_and_call__ZNKSt7codecvtIDsc9_MbstatetE9do_lengthERS0_PKcS4_m @function\n"
     "__load_and_call__ZNKSt7codecvtIDsc9_MbstatetE9do_lengthERS0_PKcS4_m:\n"
     "push rdi\n"
@@ -15900,6 +16396,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE10do_unshiftERS0_PcS3_RS3_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE10do_unshiftERS0_PcS3_RS3_\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE10do_unshiftERS0_PcS3_RS3_ @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE10do_unshiftERS0_PcS3_RS3_:\n"
     "push rdi\n"
@@ -15932,6 +16429,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE16do_always_noconvEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE16do_always_noconvEv\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE16do_always_noconvEv @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE16do_always_noconvEv:\n"
     "push rdi\n"
@@ -15964,6 +16462,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE2inERS0_PKcS4_RS4_PcS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE2inERS0_PKcS4_RS4_PcS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE2inERS0_PKcS4_RS4_PcS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE2inERS0_PKcS4_RS4_PcS6_RS6_:\n"
     "push rdi\n"
@@ -15996,6 +16495,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE3outERS0_PKcS4_RS4_PcS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE3outERS0_PKcS4_RS4_PcS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE3outERS0_PKcS4_RS4_PcS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE3outERS0_PKcS4_RS4_PcS6_RS6_:\n"
     "push rdi\n"
@@ -16028,6 +16528,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE5do_inERS0_PKcS4_RS4_PcS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE5do_inERS0_PKcS4_RS4_PcS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE5do_inERS0_PKcS4_RS4_PcS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE5do_inERS0_PKcS4_RS4_PcS6_RS6_:\n"
     "push rdi\n"
@@ -16060,6 +16561,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE6do_outERS0_PKcS4_RS4_PcS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE6do_outERS0_PKcS4_RS4_PcS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE6do_outERS0_PKcS4_RS4_PcS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE6do_outERS0_PKcS4_RS4_PcS6_RS6_:\n"
     "push rdi\n"
@@ -16092,6 +16594,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE6lengthERS0_PKcS4_m]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE6lengthERS0_PKcS4_m\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE6lengthERS0_PKcS4_m @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE6lengthERS0_PKcS4_m:\n"
     "push rdi\n"
@@ -16124,6 +16627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE7unshiftERS0_PcS3_RS3_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE7unshiftERS0_PcS3_RS3_\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE7unshiftERS0_PcS3_RS3_ @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE7unshiftERS0_PcS3_RS3_:\n"
     "push rdi\n"
@@ -16156,6 +16660,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIcc9_MbstatetE9do_lengthERS0_PKcS4_m]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIcc9_MbstatetE9do_lengthERS0_PKcS4_m\n"
     ".type __load_and_call__ZNKSt7codecvtIcc9_MbstatetE9do_lengthERS0_PKcS4_m @function\n"
     "__load_and_call__ZNKSt7codecvtIcc9_MbstatetE9do_lengthERS0_PKcS4_m:\n"
     "push rdi\n"
@@ -16188,6 +16693,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIwc9_MbstatetE10do_unshiftERS0_PcS3_RS3_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIwc9_MbstatetE10do_unshiftERS0_PcS3_RS3_\n"
     ".type __load_and_call__ZNKSt7codecvtIwc9_MbstatetE10do_unshiftERS0_PcS3_RS3_ @function\n"
     "__load_and_call__ZNKSt7codecvtIwc9_MbstatetE10do_unshiftERS0_PcS3_RS3_:\n"
     "push rdi\n"
@@ -16220,6 +16726,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIwc9_MbstatetE11do_encodingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIwc9_MbstatetE11do_encodingEv\n"
     ".type __load_and_call__ZNKSt7codecvtIwc9_MbstatetE11do_encodingEv @function\n"
     "__load_and_call__ZNKSt7codecvtIwc9_MbstatetE11do_encodingEv:\n"
     "push rdi\n"
@@ -16252,6 +16759,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIwc9_MbstatetE13do_max_lengthEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIwc9_MbstatetE13do_max_lengthEv\n"
     ".type __load_and_call__ZNKSt7codecvtIwc9_MbstatetE13do_max_lengthEv @function\n"
     "__load_and_call__ZNKSt7codecvtIwc9_MbstatetE13do_max_lengthEv:\n"
     "push rdi\n"
@@ -16284,6 +16792,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIwc9_MbstatetE16do_always_noconvEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIwc9_MbstatetE16do_always_noconvEv\n"
     ".type __load_and_call__ZNKSt7codecvtIwc9_MbstatetE16do_always_noconvEv @function\n"
     "__load_and_call__ZNKSt7codecvtIwc9_MbstatetE16do_always_noconvEv:\n"
     "push rdi\n"
@@ -16316,6 +16825,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIwc9_MbstatetE5do_inERS0_PKcS4_RS4_PwS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIwc9_MbstatetE5do_inERS0_PKcS4_RS4_PwS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIwc9_MbstatetE5do_inERS0_PKcS4_RS4_PwS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIwc9_MbstatetE5do_inERS0_PKcS4_RS4_PwS6_RS6_:\n"
     "push rdi\n"
@@ -16348,6 +16858,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIwc9_MbstatetE6do_outERS0_PKwS4_RS4_PcS6_RS6_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIwc9_MbstatetE6do_outERS0_PKwS4_RS4_PcS6_RS6_\n"
     ".type __load_and_call__ZNKSt7codecvtIwc9_MbstatetE6do_outERS0_PKwS4_RS4_PcS6_RS6_ @function\n"
     "__load_and_call__ZNKSt7codecvtIwc9_MbstatetE6do_outERS0_PKwS4_RS4_PcS6_RS6_:\n"
     "push rdi\n"
@@ -16380,6 +16891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7codecvtIwc9_MbstatetE9do_lengthERS0_PKcS4_m]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7codecvtIwc9_MbstatetE9do_lengthERS0_PKcS4_m\n"
     ".type __load_and_call__ZNKSt7codecvtIwc9_MbstatetE9do_lengthERS0_PKcS4_m @function\n"
     "__load_and_call__ZNKSt7codecvtIwc9_MbstatetE9do_lengthERS0_PKcS4_m:\n"
     "push rdi\n"
@@ -16412,6 +16924,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIcE10do_compareEPKcS2_S2_S2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIcE10do_compareEPKcS2_S2_S2_\n"
     ".type __load_and_call__ZNKSt7collateIcE10do_compareEPKcS2_S2_S2_ @function\n"
     "__load_and_call__ZNKSt7collateIcE10do_compareEPKcS2_S2_S2_:\n"
     "push rdi\n"
@@ -16444,6 +16957,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIcE12do_transformEPKcS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIcE12do_transformEPKcS2_\n"
     ".type __load_and_call__ZNKSt7collateIcE12do_transformEPKcS2_ @function\n"
     "__load_and_call__ZNKSt7collateIcE12do_transformEPKcS2_:\n"
     "push rdi\n"
@@ -16476,6 +16990,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIcE4hashEPKcS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIcE4hashEPKcS2_\n"
     ".type __load_and_call__ZNKSt7collateIcE4hashEPKcS2_ @function\n"
     "__load_and_call__ZNKSt7collateIcE4hashEPKcS2_:\n"
     "push rdi\n"
@@ -16508,6 +17023,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIcE7compareEPKcS2_S2_S2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIcE7compareEPKcS2_S2_S2_\n"
     ".type __load_and_call__ZNKSt7collateIcE7compareEPKcS2_S2_S2_ @function\n"
     "__load_and_call__ZNKSt7collateIcE7compareEPKcS2_S2_S2_:\n"
     "push rdi\n"
@@ -16540,6 +17056,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIcE7do_hashEPKcS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIcE7do_hashEPKcS2_\n"
     ".type __load_and_call__ZNKSt7collateIcE7do_hashEPKcS2_ @function\n"
     "__load_and_call__ZNKSt7collateIcE7do_hashEPKcS2_:\n"
     "push rdi\n"
@@ -16572,6 +17089,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIcE9transformEPKcS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIcE9transformEPKcS2_\n"
     ".type __load_and_call__ZNKSt7collateIcE9transformEPKcS2_ @function\n"
     "__load_and_call__ZNKSt7collateIcE9transformEPKcS2_:\n"
     "push rdi\n"
@@ -16604,6 +17122,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIwE10do_compareEPKwS2_S2_S2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIwE10do_compareEPKwS2_S2_S2_\n"
     ".type __load_and_call__ZNKSt7collateIwE10do_compareEPKwS2_S2_S2_ @function\n"
     "__load_and_call__ZNKSt7collateIwE10do_compareEPKwS2_S2_S2_:\n"
     "push rdi\n"
@@ -16636,6 +17155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIwE12do_transformEPKwS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIwE12do_transformEPKwS2_\n"
     ".type __load_and_call__ZNKSt7collateIwE12do_transformEPKwS2_ @function\n"
     "__load_and_call__ZNKSt7collateIwE12do_transformEPKwS2_:\n"
     "push rdi\n"
@@ -16668,6 +17188,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIwE4hashEPKwS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIwE4hashEPKwS2_\n"
     ".type __load_and_call__ZNKSt7collateIwE4hashEPKwS2_ @function\n"
     "__load_and_call__ZNKSt7collateIwE4hashEPKwS2_:\n"
     "push rdi\n"
@@ -16700,6 +17221,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIwE7compareEPKwS2_S2_S2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIwE7compareEPKwS2_S2_S2_\n"
     ".type __load_and_call__ZNKSt7collateIwE7compareEPKwS2_S2_S2_ @function\n"
     "__load_and_call__ZNKSt7collateIwE7compareEPKwS2_S2_S2_:\n"
     "push rdi\n"
@@ -16732,6 +17254,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIwE7do_hashEPKwS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIwE7do_hashEPKwS2_\n"
     ".type __load_and_call__ZNKSt7collateIwE7do_hashEPKwS2_ @function\n"
     "__load_and_call__ZNKSt7collateIwE7do_hashEPKwS2_:\n"
     "push rdi\n"
@@ -16764,6 +17287,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7collateIwE9transformEPKwS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7collateIwE9transformEPKwS2_\n"
     ".type __load_and_call__ZNKSt7collateIwE9transformEPKwS2_ @function\n"
     "__load_and_call__ZNKSt7collateIwE9transformEPKwS2_:\n"
     "push rdi\n"
@@ -16796,6 +17320,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv:\n"
     "push rdi\n"
@@ -16828,6 +17353,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb:\n"
     "push rdi\n"
@@ -16860,6 +17386,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd:\n"
     "push rdi\n"
@@ -16892,6 +17419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe:\n"
     "push rdi\n"
@@ -16924,6 +17452,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf:\n"
     "push rdi\n"
@@ -16956,6 +17485,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj:\n"
     "push rdi\n"
@@ -16988,6 +17518,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl:\n"
     "push rdi\n"
@@ -17020,6 +17551,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm:\n"
     "push rdi\n"
@@ -17052,6 +17584,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt:\n"
     "push rdi\n"
@@ -17084,6 +17617,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx:\n"
     "push rdi\n"
@@ -17116,6 +17650,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy:\n"
     "push rdi\n"
@@ -17148,6 +17683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv:\n"
     "push rdi\n"
@@ -17180,6 +17716,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb:\n"
     "push rdi\n"
@@ -17212,6 +17749,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd:\n"
     "push rdi\n"
@@ -17244,6 +17782,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe:\n"
     "push rdi\n"
@@ -17276,6 +17815,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf:\n"
     "push rdi\n"
@@ -17308,6 +17848,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj:\n"
     "push rdi\n"
@@ -17340,6 +17881,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl:\n"
     "push rdi\n"
@@ -17372,6 +17914,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm:\n"
     "push rdi\n"
@@ -17404,6 +17947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt:\n"
     "push rdi\n"
@@ -17436,6 +17980,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx:\n"
     "push rdi\n"
@@ -17468,6 +18013,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy:\n"
     "push rdi\n"
@@ -17500,6 +18046,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetffldEPcRS3_S6_RSt8ios_basePi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetffldEPcRS3_S6_RSt8ios_basePi\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetffldEPcRS3_S6_RSt8ios_basePi @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetffldEPcRS3_S6_RSt8ios_basePi:\n"
     "push rdi\n"
@@ -17532,6 +18079,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale:\n"
     "push rdi\n"
@@ -17564,6 +18112,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE9_GetffldxEPcRS3_S6_RSt8ios_basePi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE9_GetffldxEPcRS3_S6_RSt8ios_basePi\n"
     ".type __load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE9_GetffldxEPcRS3_S6_RSt8ios_basePi @function\n"
     "__load_and_call__ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE9_GetffldxEPcRS3_S6_RSt8ios_basePi:\n"
     "push rdi\n"
@@ -17596,6 +18145,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv:\n"
     "push rdi\n"
@@ -17628,6 +18178,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb:\n"
     "push rdi\n"
@@ -17660,6 +18211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd:\n"
     "push rdi\n"
@@ -17692,6 +18244,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe:\n"
     "push rdi\n"
@@ -17724,6 +18277,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf:\n"
     "push rdi\n"
@@ -17756,6 +18310,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj:\n"
     "push rdi\n"
@@ -17788,6 +18343,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl:\n"
     "push rdi\n"
@@ -17820,6 +18376,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm:\n"
     "push rdi\n"
@@ -17852,6 +18409,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt:\n"
     "push rdi\n"
@@ -17884,6 +18442,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx:\n"
     "push rdi\n"
@@ -17916,6 +18475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy:\n"
     "push rdi\n"
@@ -17948,6 +18508,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv:\n"
     "push rdi\n"
@@ -17980,6 +18541,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb:\n"
     "push rdi\n"
@@ -18012,6 +18574,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd:\n"
     "push rdi\n"
@@ -18044,6 +18607,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe:\n"
     "push rdi\n"
@@ -18076,6 +18640,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf:\n"
     "push rdi\n"
@@ -18108,6 +18673,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj:\n"
     "push rdi\n"
@@ -18140,6 +18706,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl:\n"
     "push rdi\n"
@@ -18172,6 +18739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm:\n"
     "push rdi\n"
@@ -18204,6 +18772,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt:\n"
     "push rdi\n"
@@ -18236,6 +18805,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx:\n"
     "push rdi\n"
@@ -18268,6 +18838,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy:\n"
     "push rdi\n"
@@ -18300,6 +18871,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetffldEPcRS3_S6_RSt8ios_basePi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetffldEPcRS3_S6_RSt8ios_basePi\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetffldEPcRS3_S6_RSt8ios_basePi @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetffldEPcRS3_S6_RSt8ios_basePi:\n"
     "push rdi\n"
@@ -18332,6 +18904,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale:\n"
     "push rdi\n"
@@ -18364,6 +18937,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE9_GetffldxEPcRS3_S6_RSt8ios_basePi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE9_GetffldxEPcRS3_S6_RSt8ios_basePi\n"
     ".type __load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE9_GetffldxEPcRS3_S6_RSt8ios_basePi @function\n"
     "__load_and_call__ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE9_GetffldxEPcRS3_S6_RSt8ios_basePi:\n"
     "push rdi\n"
@@ -18396,6 +18970,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPKv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPKv\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPKv @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPKv:\n"
     "push rdi\n"
@@ -18428,6 +19003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecb\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecb @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecb:\n"
     "push rdi\n"
@@ -18460,6 +19036,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecd\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecd @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecd:\n"
     "push rdi\n"
@@ -18492,6 +19069,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basece]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basece\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basece @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basece:\n"
     "push rdi\n"
@@ -18524,6 +19102,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecl\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecl @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecl:\n"
     "push rdi\n"
@@ -18556,6 +19135,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecm\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecm @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecm:\n"
     "push rdi\n"
@@ -18588,6 +19168,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecx\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecx @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecx:\n"
     "push rdi\n"
@@ -18620,6 +19201,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecy\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecy @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecy:\n"
     "push rdi\n"
@@ -18652,6 +19234,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_PutES3_PKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_PutES3_PKcm\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_PutES3_PKcm @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_PutES3_PKcm:\n"
     "push rdi\n"
@@ -18684,6 +19267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_RepES3_cm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_RepES3_cm\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_RepES3_cm @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_RepES3_cm:\n"
     "push rdi\n"
@@ -18716,6 +19300,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FfmtEPccNSt5_IosbIiE9_FmtflagsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FfmtEPccNSt5_IosbIiE9_FmtflagsE\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FfmtEPccNSt5_IosbIiE9_FmtflagsE @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FfmtEPccNSt5_IosbIiE9_FmtflagsE:\n"
     "push rdi\n"
@@ -18748,6 +19333,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcm\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcm @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcm:\n"
     "push rdi\n"
@@ -18780,6 +19366,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcmmmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcmmmm\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcmmmm @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcmmmm:\n"
     "push rdi\n"
@@ -18812,6 +19399,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IfmtEPcPKcNSt5_IosbIiE9_FmtflagsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IfmtEPcPKcNSt5_IosbIiE9_FmtflagsE\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IfmtEPcPKcNSt5_IosbIiE9_FmtflagsE @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IfmtEPcPKcNSt5_IosbIiE9_FmtflagsE:\n"
     "push rdi\n"
@@ -18844,6 +19432,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcm\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcm @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcm:\n"
     "push rdi\n"
@@ -18876,6 +19465,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv:\n"
     "push rdi\n"
@@ -18908,6 +19498,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb:\n"
     "push rdi\n"
@@ -18940,6 +19531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd:\n"
     "push rdi\n"
@@ -18972,6 +19564,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece:\n"
     "push rdi\n"
@@ -19004,6 +19597,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl:\n"
     "push rdi\n"
@@ -19036,6 +19630,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm:\n"
     "push rdi\n"
@@ -19068,6 +19663,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx:\n"
     "push rdi\n"
@@ -19100,6 +19696,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy\n"
     ".type __load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy @function\n"
     "__load_and_call__ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy:\n"
     "push rdi\n"
@@ -19132,6 +19729,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPKv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPKv\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPKv @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPKv:\n"
     "push rdi\n"
@@ -19164,6 +19762,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewb\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewb @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewb:\n"
     "push rdi\n"
@@ -19196,6 +19795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewd\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewd @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewd:\n"
     "push rdi\n"
@@ -19228,6 +19828,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewe\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewe @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewe:\n"
     "push rdi\n"
@@ -19260,6 +19861,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewl\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewl @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewl:\n"
     "push rdi\n"
@@ -19292,6 +19894,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewm\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewm @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewm:\n"
     "push rdi\n"
@@ -19324,6 +19927,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewx\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewx @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewx:\n"
     "push rdi\n"
@@ -19356,6 +19960,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewy\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewy @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewy:\n"
     "push rdi\n"
@@ -19388,6 +19993,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_PutES3_PKwm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_PutES3_PKwm\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_PutES3_PKwm @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_PutES3_PKwm:\n"
     "push rdi\n"
@@ -19420,6 +20026,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_RepES3_wm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_RepES3_wm\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_RepES3_wm @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_RepES3_wm:\n"
     "push rdi\n"
@@ -19452,6 +20059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FfmtEPccNSt5_IosbIiE9_FmtflagsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FfmtEPccNSt5_IosbIiE9_FmtflagsE\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FfmtEPccNSt5_IosbIiE9_FmtflagsE @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FfmtEPccNSt5_IosbIiE9_FmtflagsE:\n"
     "push rdi\n"
@@ -19484,6 +20092,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcm\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcm @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcm:\n"
     "push rdi\n"
@@ -19516,6 +20125,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcmmmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcmmmm\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcmmmm @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcmmmm:\n"
     "push rdi\n"
@@ -19548,6 +20158,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IfmtEPcPKcNSt5_IosbIiE9_FmtflagsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IfmtEPcPKcNSt5_IosbIiE9_FmtflagsE\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IfmtEPcPKcNSt5_IosbIiE9_FmtflagsE @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IfmtEPcPKcNSt5_IosbIiE9_FmtflagsE:\n"
     "push rdi\n"
@@ -19580,6 +20191,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IputES3_RSt8ios_basewPcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IputES3_RSt8ios_basewPcm\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IputES3_RSt8ios_basewPcm @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IputES3_RSt8ios_basewPcm:\n"
     "push rdi\n"
@@ -19612,6 +20224,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPKv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPKv\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPKv @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPKv:\n"
     "push rdi\n"
@@ -19644,6 +20257,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewb\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewb @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewb:\n"
     "push rdi\n"
@@ -19676,6 +20290,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewd\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewd @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewd:\n"
     "push rdi\n"
@@ -19708,6 +20323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewe\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewe @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewe:\n"
     "push rdi\n"
@@ -19740,6 +20356,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewl\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewl @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewl:\n"
     "push rdi\n"
@@ -19772,6 +20389,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewm\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewm @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewm:\n"
     "push rdi\n"
@@ -19804,6 +20422,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewx\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewx @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewx:\n"
     "push rdi\n"
@@ -19836,6 +20455,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewy\n"
     ".type __load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewy @function\n"
     "__load_and_call__ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewy:\n"
     "push rdi\n"
@@ -19868,6 +20488,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8bad_cast4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8bad_cast4whatEv\n"
     ".type __load_and_call__ZNKSt8bad_cast4whatEv @function\n"
     "__load_and_call__ZNKSt8bad_cast4whatEv:\n"
     "push rdi\n"
@@ -19900,6 +20521,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8bad_cast8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8bad_cast8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt8bad_cast8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt8bad_cast8_DoraiseEv:\n"
     "push rdi\n"
@@ -19932,6 +20554,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8ios_base7failure8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8ios_base7failure8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt8ios_base7failure8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt8ios_base7failure8_DoraiseEv:\n"
     "push rdi\n"
@@ -19964,6 +20587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIcE3getEiiiRKSs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIcE3getEiiiRKSs\n"
     ".type __load_and_call__ZNKSt8messagesIcE3getEiiiRKSs @function\n"
     "__load_and_call__ZNKSt8messagesIcE3getEiiiRKSs:\n"
     "push rdi\n"
@@ -19996,6 +20620,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIcE4openERKSsRKSt6locale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIcE4openERKSsRKSt6locale\n"
     ".type __load_and_call__ZNKSt8messagesIcE4openERKSsRKSt6locale @function\n"
     "__load_and_call__ZNKSt8messagesIcE4openERKSsRKSt6locale:\n"
     "push rdi\n"
@@ -20028,6 +20653,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIcE5closeEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIcE5closeEi\n"
     ".type __load_and_call__ZNKSt8messagesIcE5closeEi @function\n"
     "__load_and_call__ZNKSt8messagesIcE5closeEi:\n"
     "push rdi\n"
@@ -20060,6 +20686,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIcE6do_getEiiiRKSs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIcE6do_getEiiiRKSs\n"
     ".type __load_and_call__ZNKSt8messagesIcE6do_getEiiiRKSs @function\n"
     "__load_and_call__ZNKSt8messagesIcE6do_getEiiiRKSs:\n"
     "push rdi\n"
@@ -20092,6 +20719,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIcE7do_openERKSsRKSt6locale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIcE7do_openERKSsRKSt6locale\n"
     ".type __load_and_call__ZNKSt8messagesIcE7do_openERKSsRKSt6locale @function\n"
     "__load_and_call__ZNKSt8messagesIcE7do_openERKSsRKSt6locale:\n"
     "push rdi\n"
@@ -20124,6 +20752,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIcE8do_closeEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIcE8do_closeEi\n"
     ".type __load_and_call__ZNKSt8messagesIcE8do_closeEi @function\n"
     "__load_and_call__ZNKSt8messagesIcE8do_closeEi:\n"
     "push rdi\n"
@@ -20156,6 +20785,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIwE3getEiiiRKSbIwSt11char_traitsIwESaIwEE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIwE3getEiiiRKSbIwSt11char_traitsIwESaIwEE\n"
     ".type __load_and_call__ZNKSt8messagesIwE3getEiiiRKSbIwSt11char_traitsIwESaIwEE @function\n"
     "__load_and_call__ZNKSt8messagesIwE3getEiiiRKSbIwSt11char_traitsIwESaIwEE:\n"
     "push rdi\n"
@@ -20188,6 +20818,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIwE4openERKSsRKSt6locale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIwE4openERKSsRKSt6locale\n"
     ".type __load_and_call__ZNKSt8messagesIwE4openERKSsRKSt6locale @function\n"
     "__load_and_call__ZNKSt8messagesIwE4openERKSsRKSt6locale:\n"
     "push rdi\n"
@@ -20220,6 +20851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIwE5closeEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIwE5closeEi\n"
     ".type __load_and_call__ZNKSt8messagesIwE5closeEi @function\n"
     "__load_and_call__ZNKSt8messagesIwE5closeEi:\n"
     "push rdi\n"
@@ -20252,6 +20884,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIwE6do_getEiiiRKSbIwSt11char_traitsIwESaIwEE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIwE6do_getEiiiRKSbIwSt11char_traitsIwESaIwEE\n"
     ".type __load_and_call__ZNKSt8messagesIwE6do_getEiiiRKSbIwSt11char_traitsIwESaIwEE @function\n"
     "__load_and_call__ZNKSt8messagesIwE6do_getEiiiRKSbIwSt11char_traitsIwESaIwEE:\n"
     "push rdi\n"
@@ -20284,6 +20917,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIwE7do_openERKSsRKSt6locale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIwE7do_openERKSsRKSt6locale\n"
     ".type __load_and_call__ZNKSt8messagesIwE7do_openERKSsRKSt6locale @function\n"
     "__load_and_call__ZNKSt8messagesIwE7do_openERKSsRKSt6locale:\n"
     "push rdi\n"
@@ -20316,6 +20950,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8messagesIwE8do_closeEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8messagesIwE8do_closeEi\n"
     ".type __load_and_call__ZNKSt8messagesIwE8do_closeEi @function\n"
     "__load_and_call__ZNKSt8messagesIwE8do_closeEi:\n"
     "push rdi\n"
@@ -20348,6 +20983,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE11do_groupingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE11do_groupingEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE11do_groupingEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE11do_groupingEv:\n"
     "push rdi\n"
@@ -20380,6 +21016,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE11do_truenameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE11do_truenameEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE11do_truenameEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE11do_truenameEv:\n"
     "push rdi\n"
@@ -20412,6 +21049,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE12do_falsenameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE12do_falsenameEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE12do_falsenameEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE12do_falsenameEv:\n"
     "push rdi\n"
@@ -20444,6 +21082,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE13decimal_pointEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE13decimal_pointEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE13decimal_pointEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE13decimal_pointEv:\n"
     "push rdi\n"
@@ -20476,6 +21115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE13thousands_sepEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE13thousands_sepEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE13thousands_sepEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE13thousands_sepEv:\n"
     "push rdi\n"
@@ -20508,6 +21148,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE16do_decimal_pointEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE16do_decimal_pointEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE16do_decimal_pointEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE16do_decimal_pointEv:\n"
     "push rdi\n"
@@ -20540,6 +21181,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE16do_thousands_sepEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE16do_thousands_sepEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE16do_thousands_sepEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE16do_thousands_sepEv:\n"
     "push rdi\n"
@@ -20572,6 +21214,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE8groupingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE8groupingEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE8groupingEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE8groupingEv:\n"
     "push rdi\n"
@@ -20604,6 +21247,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE8truenameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE8truenameEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE8truenameEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE8truenameEv:\n"
     "push rdi\n"
@@ -20636,6 +21280,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIcE9falsenameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIcE9falsenameEv\n"
     ".type __load_and_call__ZNKSt8numpunctIcE9falsenameEv @function\n"
     "__load_and_call__ZNKSt8numpunctIcE9falsenameEv:\n"
     "push rdi\n"
@@ -20668,6 +21313,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE11do_groupingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE11do_groupingEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE11do_groupingEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE11do_groupingEv:\n"
     "push rdi\n"
@@ -20700,6 +21346,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE11do_truenameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE11do_truenameEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE11do_truenameEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE11do_truenameEv:\n"
     "push rdi\n"
@@ -20732,6 +21379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE12do_falsenameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE12do_falsenameEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE12do_falsenameEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE12do_falsenameEv:\n"
     "push rdi\n"
@@ -20764,6 +21412,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE13decimal_pointEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE13decimal_pointEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE13decimal_pointEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE13decimal_pointEv:\n"
     "push rdi\n"
@@ -20796,6 +21445,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE13thousands_sepEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE13thousands_sepEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE13thousands_sepEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE13thousands_sepEv:\n"
     "push rdi\n"
@@ -20828,6 +21478,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE16do_decimal_pointEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE16do_decimal_pointEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE16do_decimal_pointEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE16do_decimal_pointEv:\n"
     "push rdi\n"
@@ -20860,6 +21511,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE16do_thousands_sepEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE16do_thousands_sepEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE16do_thousands_sepEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE16do_thousands_sepEv:\n"
     "push rdi\n"
@@ -20892,6 +21544,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE8groupingEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE8groupingEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE8groupingEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE8groupingEv:\n"
     "push rdi\n"
@@ -20924,6 +21577,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE8truenameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE8truenameEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE8truenameEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE8truenameEv:\n"
     "push rdi\n"
@@ -20956,6 +21610,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8numpunctIwE9falsenameEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8numpunctIwE9falsenameEv\n"
     ".type __load_and_call__ZNKSt8numpunctIwE9falsenameEv @function\n"
     "__load_and_call__ZNKSt8numpunctIwE9falsenameEv:\n"
     "push rdi\n"
@@ -20988,6 +21643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE10date_orderEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE10date_orderEv\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE10date_orderEv @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE10date_orderEv:\n"
     "push rdi\n"
@@ -21020,6 +21676,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21052,6 +21709,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21084,6 +21742,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11do_get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21116,6 +21775,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE11get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21148,6 +21808,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE13do_date_orderEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE13do_date_orderEv\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE13do_date_orderEv @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE13do_date_orderEv:\n"
     "push rdi\n"
@@ -21180,6 +21841,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE13get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE13get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE13get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE13get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21212,6 +21874,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE14do_get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE14do_get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE14do_get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE14do_get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21244,6 +21907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16do_get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16do_get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16do_get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16do_get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21276,6 +21940,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKcSE_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKcSE_\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKcSE_ @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKcSE_:\n"
     "push rdi\n"
@@ -21308,6 +21973,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc:\n"
     "push rdi\n"
@@ -21340,6 +22006,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc:\n"
     "push rdi\n"
@@ -21372,6 +22039,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetfmtES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetfmtES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKc\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetfmtES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKc @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetfmtES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKc:\n"
     "push rdi\n"
@@ -21404,6 +22072,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetintERS3_S5_iiRiRKSt5ctypeIcE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetintERS3_S5_iiRiRKSt5ctypeIcE\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetintERS3_S5_iiRiRKSt5ctypeIcE @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetintERS3_S5_iiRiRKSt5ctypeIcE:\n"
     "push rdi\n"
@@ -21436,6 +22105,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21468,6 +22138,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21500,6 +22171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21532,6 +22204,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE10date_orderEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE10date_orderEv\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE10date_orderEv @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE10date_orderEv:\n"
     "push rdi\n"
@@ -21564,6 +22237,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21596,6 +22270,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21628,6 +22303,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11do_get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21660,6 +22336,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE11get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21692,6 +22369,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE13do_date_orderEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE13do_date_orderEv\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE13do_date_orderEv @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE13do_date_orderEv:\n"
     "push rdi\n"
@@ -21724,6 +22402,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE13get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE13get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE13get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE13get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21756,6 +22435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE14do_get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE14do_get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE14do_get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE14do_get_weekdayES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21788,6 +22468,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE16do_get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE16do_get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE16do_get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE16do_get_monthnameES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -21820,6 +22501,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKwSE_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKwSE_\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKwSE_ @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKwSE_:\n"
     "push rdi\n"
@@ -21852,6 +22534,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc:\n"
     "push rdi\n"
@@ -21884,6 +22567,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmcc:\n"
     "push rdi\n"
@@ -21916,6 +22600,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetfmtES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetfmtES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKc\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetfmtES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKc @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetfmtES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKc:\n"
     "push rdi\n"
@@ -21948,6 +22633,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetintERS3_S5_iiRiRKSt5ctypeIwE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetintERS3_S5_iiRiRKSt5ctypeIwE\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetintERS3_S5_iiRiRKSt5ctypeIwE @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetintERS3_S5_iiRiRKSt5ctypeIwE:\n"
     "push rdi\n"
@@ -21980,6 +22666,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_dateES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -22012,6 +22699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_timeES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -22044,6 +22732,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm\n"
     ".type __load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm @function\n"
     "__load_and_call__ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8get_yearES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tm:\n"
     "push rdi\n"
@@ -22076,6 +22765,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPK2tmPKcSB_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPK2tmPKcSB_\n"
     ".type __load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPK2tmPKcSB_ @function\n"
     "__load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPK2tmPKcSB_:\n"
     "push rdi\n"
@@ -22108,6 +22798,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPK2tmcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPK2tmcc\n"
     ".type __load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPK2tmcc @function\n"
     "__load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_RSt8ios_basecPK2tmcc:\n"
     "push rdi\n"
@@ -22140,6 +22831,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPK2tmcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPK2tmcc\n"
     ".type __load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPK2tmcc @function\n"
     "__load_and_call__ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPK2tmcc:\n"
     "push rdi\n"
@@ -22172,6 +22864,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmPKwSB_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmPKwSB_\n"
     ".type __load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmPKwSB_ @function\n"
     "__load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmPKwSB_:\n"
     "push rdi\n"
@@ -22204,6 +22897,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmcc\n"
     ".type __load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmcc @function\n"
     "__load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmcc:\n"
     "push rdi\n"
@@ -22236,6 +22930,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPK2tmcc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPK2tmcc\n"
     ".type __load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPK2tmcc @function\n"
     "__load_and_call__ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPK2tmcc:\n"
     "push rdi\n"
@@ -22268,6 +22963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9bad_alloc4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9bad_alloc4whatEv\n"
     ".type __load_and_call__ZNKSt9bad_alloc4whatEv @function\n"
     "__load_and_call__ZNKSt9bad_alloc4whatEv:\n"
     "push rdi\n"
@@ -22300,6 +22996,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9bad_alloc8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9bad_alloc8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt9bad_alloc8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt9bad_alloc8_DoraiseEv:\n"
     "push rdi\n"
@@ -22332,6 +23029,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9exception4whatEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9exception4whatEv\n"
     ".type __load_and_call__ZNKSt9exception4whatEv @function\n"
     "__load_and_call__ZNKSt9exception4whatEv:\n"
     "push rdi\n"
@@ -22364,6 +23062,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9exception6_RaiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9exception6_RaiseEv\n"
     ".type __load_and_call__ZNKSt9exception6_RaiseEv @function\n"
     "__load_and_call__ZNKSt9exception6_RaiseEv:\n"
     "push rdi\n"
@@ -22396,6 +23095,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9exception8_DoraiseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9exception8_DoraiseEv\n"
     ".type __load_and_call__ZNKSt9exception8_DoraiseEv @function\n"
     "__load_and_call__ZNKSt9exception8_DoraiseEv:\n"
     "push rdi\n"
@@ -22428,6 +23128,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSs\n"
     ".type __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSs @function\n"
     "__load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSs:\n"
     "push rdi\n"
@@ -22460,6 +23161,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe\n"
     ".type __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe @function\n"
     "__load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe:\n"
     "push rdi\n"
@@ -22492,6 +23194,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSs\n"
     ".type __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSs @function\n"
     "__load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSs:\n"
     "push rdi\n"
@@ -22524,6 +23227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe\n"
     ".type __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe @function\n"
     "__load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe:\n"
     "push rdi\n"
@@ -22556,6 +23260,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetmfldERS3_S5_bRSt8ios_basePc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetmfldERS3_S5_bRSt8ios_basePc\n"
     ".type __load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetmfldERS3_S5_bRSt8ios_basePc @function\n"
     "__load_and_call__ZNKSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetmfldERS3_S5_bRSt8ios_basePc:\n"
     "push rdi\n"
@@ -22588,6 +23293,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSbIwS2_SaIwEE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSbIwS2_SaIwEE\n"
     ".type __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSbIwS2_SaIwEE @function\n"
     "__load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSbIwS2_SaIwEE:\n"
     "push rdi\n"
@@ -22620,6 +23326,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe\n"
     ".type __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe @function\n"
     "__load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE3getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe:\n"
     "push rdi\n"
@@ -22652,6 +23359,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSbIwS2_SaIwEE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSbIwS2_SaIwEE\n"
     ".type __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSbIwS2_SaIwEE @function\n"
     "__load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERSbIwS2_SaIwEE:\n"
     "push rdi\n"
@@ -22684,6 +23392,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe\n"
     ".type __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe @function\n"
     "__load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_bRSt8ios_baseRNSt5_IosbIiE8_IostateERe:\n"
     "push rdi\n"
@@ -22716,6 +23425,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetmfldERS3_S5_bRSt8ios_basePw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetmfldERS3_S5_bRSt8ios_basePw\n"
     ".type __load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetmfldERS3_S5_bRSt8ios_basePw @function\n"
     "__load_and_call__ZNKSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetmfldERS3_S5_bRSt8ios_basePw:\n"
     "push rdi\n"
@@ -22748,6 +23458,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_bRSt8ios_basecRKSs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_bRSt8ios_basecRKSs\n"
     ".type __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_bRSt8ios_basecRKSs @function\n"
     "__load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_bRSt8ios_basecRKSs:\n"
     "push rdi\n"
@@ -22780,6 +23491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_bRSt8ios_basece]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_bRSt8ios_basece\n"
     ".type __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_bRSt8ios_basece @function\n"
     "__load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE3putES3_bRSt8ios_basece:\n"
     "push rdi\n"
@@ -22812,6 +23524,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_bRSt8ios_basecRKSs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_bRSt8ios_basecRKSs\n"
     ".type __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_bRSt8ios_basecRKSs @function\n"
     "__load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_bRSt8ios_basecRKSs:\n"
     "push rdi\n"
@@ -22844,6 +23557,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_bRSt8ios_basece]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_bRSt8ios_basece\n"
     ".type __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_bRSt8ios_basece @function\n"
     "__load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_bRSt8ios_basece:\n"
     "push rdi\n"
@@ -22876,6 +23590,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE8_PutmfldES3_bRSt8ios_basecbSsc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE8_PutmfldES3_bRSt8ios_basecbSsc\n"
     ".type __load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE8_PutmfldES3_bRSt8ios_basecbSsc @function\n"
     "__load_and_call__ZNKSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE8_PutmfldES3_bRSt8ios_basecbSsc:\n"
     "push rdi\n"
@@ -22908,6 +23623,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_bRSt8ios_basewRKSbIwS2_SaIwEE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_bRSt8ios_basewRKSbIwS2_SaIwEE\n"
     ".type __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_bRSt8ios_basewRKSbIwS2_SaIwEE @function\n"
     "__load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_bRSt8ios_basewRKSbIwS2_SaIwEE:\n"
     "push rdi\n"
@@ -22940,6 +23656,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_bRSt8ios_basewe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_bRSt8ios_basewe\n"
     ".type __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_bRSt8ios_basewe @function\n"
     "__load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_bRSt8ios_basewe:\n"
     "push rdi\n"
@@ -22972,6 +23689,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_bRSt8ios_basewRKSbIwS2_SaIwEE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_bRSt8ios_basewRKSbIwS2_SaIwEE\n"
     ".type __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_bRSt8ios_basewRKSbIwS2_SaIwEE @function\n"
     "__load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_bRSt8ios_basewRKSbIwS2_SaIwEE:\n"
     "push rdi\n"
@@ -23004,6 +23722,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_bRSt8ios_basewe]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_bRSt8ios_basewe\n"
     ".type __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_bRSt8ios_basewe @function\n"
     "__load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_bRSt8ios_basewe:\n"
     "push rdi\n"
@@ -23036,6 +23755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE8_PutmfldES3_bRSt8ios_basewbSbIwS2_SaIwEEw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE8_PutmfldES3_bRSt8ios_basewbSbIwS2_SaIwEEw\n"
     ".type __load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE8_PutmfldES3_bRSt8ios_basewbSbIwS2_SaIwEEw @function\n"
     "__load_and_call__ZNKSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE8_PutmfldES3_bRSt8ios_basewbSbIwS2_SaIwEEw:\n"
     "push rdi\n"
@@ -23068,6 +23788,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSbIwSt11char_traitsIwESaIwEE5_CopyEmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE5_CopyEmm\n"
     ".type __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE5_CopyEmm @function\n"
     "__load_and_call__ZNSbIwSt11char_traitsIwESaIwEE5_CopyEmm:\n"
     "push rdi\n"
@@ -23100,6 +23821,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSbIwSt11char_traitsIwESaIwEE5eraseEmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE5eraseEmm\n"
     ".type __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE5eraseEmm @function\n"
     "__load_and_call__ZNSbIwSt11char_traitsIwESaIwEE5eraseEmm:\n"
     "push rdi\n"
@@ -23132,6 +23854,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSbIwSt11char_traitsIwESaIwEE6appendERKS2_mm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6appendERKS2_mm\n"
     ".type __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6appendERKS2_mm @function\n"
     "__load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6appendERKS2_mm:\n"
     "push rdi\n"
@@ -23164,6 +23887,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSbIwSt11char_traitsIwESaIwEE6appendEmw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6appendEmw\n"
     ".type __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6appendEmw @function\n"
     "__load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6appendEmw:\n"
     "push rdi\n"
@@ -23196,6 +23920,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSbIwSt11char_traitsIwESaIwEE6assignEPKwm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignEPKwm\n"
     ".type __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignEPKwm @function\n"
     "__load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignEPKwm:\n"
     "push rdi\n"
@@ -23228,6 +23953,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_mm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_mm\n"
     ".type __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_mm @function\n"
     "__load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_mm:\n"
     "push rdi\n"
@@ -23260,6 +23986,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSbIwSt11char_traitsIwESaIwEE6assignEmw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignEmw\n"
     ".type __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignEmw @function\n"
     "__load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6assignEmw:\n"
     "push rdi\n"
@@ -23292,6 +24019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSbIwSt11char_traitsIwESaIwEE6insertEmmw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6insertEmmw\n"
     ".type __load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6insertEmmw @function\n"
     "__load_and_call__ZNSbIwSt11char_traitsIwESaIwEE6insertEmmw:\n"
     "push rdi\n"
@@ -23324,6 +24052,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSiD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSiD0Ev\n"
     ".type __load_and_call__ZNSiD0Ev @function\n"
     "__load_and_call__ZNSiD0Ev:\n"
     "push rdi\n"
@@ -23356,6 +24085,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSiD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSiD1Ev\n"
     ".type __load_and_call__ZNSiD1Ev @function\n"
     "__load_and_call__ZNSiD1Ev:\n"
     "push rdi\n"
@@ -23388,6 +24118,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSo6sentryC2ERSo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSo6sentryC2ERSo\n"
     ".type __load_and_call__ZNSo6sentryC2ERSo @function\n"
     "__load_and_call__ZNSo6sentryC2ERSo:\n"
     "push rdi\n"
@@ -23420,6 +24151,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSo6sentryD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSo6sentryD2Ev\n"
     ".type __load_and_call__ZNSo6sentryD2Ev @function\n"
     "__load_and_call__ZNSo6sentryD2Ev:\n"
     "push rdi\n"
@@ -23452,6 +24184,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSoD0Ev\n"
     ".type __load_and_call__ZNSoD0Ev @function\n"
     "__load_and_call__ZNSoD0Ev:\n"
     "push rdi\n"
@@ -23484,6 +24217,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSoD1Ev\n"
     ".type __load_and_call__ZNSoD1Ev @function\n"
     "__load_and_call__ZNSoD1Ev:\n"
     "push rdi\n"
@@ -23516,6 +24250,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSs5_CopyEmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSs5_CopyEmm\n"
     ".type __load_and_call__ZNSs5_CopyEmm @function\n"
     "__load_and_call__ZNSs5_CopyEmm:\n"
     "push rdi\n"
@@ -23548,6 +24283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSs5eraseEmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSs5eraseEmm\n"
     ".type __load_and_call__ZNSs5eraseEmm @function\n"
     "__load_and_call__ZNSs5eraseEmm:\n"
     "push rdi\n"
@@ -23580,6 +24316,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSs6appendERKSsmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSs6appendERKSsmm\n"
     ".type __load_and_call__ZNSs6appendERKSsmm @function\n"
     "__load_and_call__ZNSs6appendERKSsmm:\n"
     "push rdi\n"
@@ -23612,6 +24349,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSs6appendEmc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSs6appendEmc\n"
     ".type __load_and_call__ZNSs6appendEmc @function\n"
     "__load_and_call__ZNSs6appendEmc:\n"
     "push rdi\n"
@@ -23644,6 +24382,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSs6assignEPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSs6assignEPKcm\n"
     ".type __load_and_call__ZNSs6assignEPKcm @function\n"
     "__load_and_call__ZNSs6assignEPKcm:\n"
     "push rdi\n"
@@ -23676,6 +24415,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSs6assignERKSsmm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSs6assignERKSsmm\n"
     ".type __load_and_call__ZNSs6assignERKSsmm @function\n"
     "__load_and_call__ZNSs6assignERKSsmm:\n"
     "push rdi\n"
@@ -23708,6 +24448,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSs6assignEmc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSs6assignEmc\n"
     ".type __load_and_call__ZNSs6assignEmc @function\n"
     "__load_and_call__ZNSs6assignEmc:\n"
     "push rdi\n"
@@ -23740,6 +24481,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSs6insertEmmc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSs6insertEmmc\n"
     ".type __load_and_call__ZNSs6insertEmmc @function\n"
     "__load_and_call__ZNSs6insertEmmc:\n"
     "push rdi\n"
@@ -23772,6 +24514,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10bad_typeidD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10bad_typeidD0Ev\n"
     ".type __load_and_call__ZNSt10bad_typeidD0Ev @function\n"
     "__load_and_call__ZNSt10bad_typeidD0Ev:\n"
     "push rdi\n"
@@ -23804,6 +24547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10bad_typeidD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10bad_typeidD1Ev\n"
     ".type __load_and_call__ZNSt10bad_typeidD1Ev @function\n"
     "__load_and_call__ZNSt10bad_typeidD1Ev:\n"
     "push rdi\n"
@@ -23836,6 +24580,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10bad_typeidD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10bad_typeidD2Ev\n"
     ".type __load_and_call__ZNSt10bad_typeidD2Ev @function\n"
     "__load_and_call__ZNSt10bad_typeidD2Ev:\n"
     "push rdi\n"
@@ -23868,6 +24613,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem10_Close_dirEPv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem10_Close_dirEPv\n"
     ".type __load_and_call__ZNSt10filesystem10_Close_dirEPv @function\n"
     "__load_and_call__ZNSt10filesystem10_Close_dirEPv:\n"
     "push rdi\n"
@@ -23900,6 +24646,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem10_Copy_fileEPKcS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem10_Copy_fileEPKcS1_\n"
     ".type __load_and_call__ZNSt10filesystem10_Copy_fileEPKcS1_ @function\n"
     "__load_and_call__ZNSt10filesystem10_Copy_fileEPKcS1_:\n"
     "push rdi\n"
@@ -23932,6 +24679,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem10_File_sizeEPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem10_File_sizeEPKc\n"
     ".type __load_and_call__ZNSt10filesystem10_File_sizeEPKc @function\n"
     "__load_and_call__ZNSt10filesystem10_File_sizeEPKc:\n"
     "push rdi\n"
@@ -23964,6 +24712,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem10_File_sizeEPKcPi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem10_File_sizeEPKcPi\n"
     ".type __load_and_call__ZNSt10filesystem10_File_sizeEPKcPi @function\n"
     "__load_and_call__ZNSt10filesystem10_File_sizeEPKcPi:\n"
     "push rdi\n"
@@ -23996,6 +24745,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem11_EquivalentEPKcS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem11_EquivalentEPKcS1_\n"
     ".type __load_and_call__ZNSt10filesystem11_EquivalentEPKcS1_ @function\n"
     "__load_and_call__ZNSt10filesystem11_EquivalentEPKcS1_:\n"
     "push rdi\n"
@@ -24028,6 +24778,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem11_Remove_dirEPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem11_Remove_dirEPKc\n"
     ".type __load_and_call__ZNSt10filesystem11_Remove_dirEPKc @function\n"
     "__load_and_call__ZNSt10filesystem11_Remove_dirEPKc:\n"
     "push rdi\n"
@@ -24060,6 +24811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem12_Current_getERA260_c]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem12_Current_getERA260_c\n"
     ".type __load_and_call__ZNSt10filesystem12_Current_getERA260_c @function\n"
     "__load_and_call__ZNSt10filesystem12_Current_getERA260_c:\n"
     "push rdi\n"
@@ -24092,6 +24844,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem12_Current_setEPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem12_Current_setEPKc\n"
     ".type __load_and_call__ZNSt10filesystem12_Current_setEPKc @function\n"
     "__load_and_call__ZNSt10filesystem12_Current_setEPKc:\n"
     "push rdi\n"
@@ -24124,6 +24877,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem13_Current_set2EPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem13_Current_set2EPKc\n"
     ".type __load_and_call__ZNSt10filesystem13_Current_set2EPKc @function\n"
     "__load_and_call__ZNSt10filesystem13_Current_set2EPKc:\n"
     "push rdi\n"
@@ -24156,6 +24910,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem16_Last_write_timeEPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem16_Last_write_timeEPKc\n"
     ".type __load_and_call__ZNSt10filesystem16_Last_write_timeEPKc @function\n"
     "__load_and_call__ZNSt10filesystem16_Last_write_timeEPKc:\n"
     "push rdi\n"
@@ -24188,6 +24943,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem16_Last_write_timeEPKcPlS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem16_Last_write_timeEPKcPlS2_\n"
     ".type __load_and_call__ZNSt10filesystem16_Last_write_timeEPKcPlS2_ @function\n"
     "__load_and_call__ZNSt10filesystem16_Last_write_timeEPKcPlS2_:\n"
     "push rdi\n"
@@ -24220,6 +24976,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem18_Xfilesystem_errorEPKcRKNS_4pathES4_St10error_code]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcRKNS_4pathES4_St10error_code\n"
     ".type __load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcRKNS_4pathES4_St10error_code @function\n"
     "__load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcRKNS_4pathES4_St10error_code:\n"
     "push rdi\n"
@@ -24252,6 +25009,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem18_Xfilesystem_errorEPKcRKNS_4pathESt10error_code]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcRKNS_4pathESt10error_code\n"
     ".type __load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcRKNS_4pathESt10error_code @function\n"
     "__load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcRKNS_4pathESt10error_code:\n"
     "push rdi\n"
@@ -24284,6 +25042,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem18_Xfilesystem_errorEPKcSt10error_code]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcSt10error_code\n"
     ".type __load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcSt10error_code @function\n"
     "__load_and_call__ZNSt10filesystem18_Xfilesystem_errorEPKcSt10error_code:\n"
     "push rdi\n"
@@ -24316,6 +25075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem20_Set_last_write_timeEPKcl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem20_Set_last_write_timeEPKcl\n"
     ".type __load_and_call__ZNSt10filesystem20_Set_last_write_timeEPKcl @function\n"
     "__load_and_call__ZNSt10filesystem20_Set_last_write_timeEPKcl:\n"
     "push rdi\n"
@@ -24348,6 +25108,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem5_StatEPKcPNS_5permsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem5_StatEPKcPNS_5permsE\n"
     ".type __load_and_call__ZNSt10filesystem5_StatEPKcPNS_5permsE @function\n"
     "__load_and_call__ZNSt10filesystem5_StatEPKcPNS_5permsE:\n"
     "push rdi\n"
@@ -24380,6 +25141,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem5_StatEPKcPNS_5permsEPi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem5_StatEPKcPNS_5permsEPi\n"
     ".type __load_and_call__ZNSt10filesystem5_StatEPKcPNS_5permsEPi @function\n"
     "__load_and_call__ZNSt10filesystem5_StatEPKcPNS_5permsEPi:\n"
     "push rdi\n"
@@ -24412,6 +25174,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem6_ChmodEPKcNS_5permsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem6_ChmodEPKcNS_5permsE\n"
     ".type __load_and_call__ZNSt10filesystem6_ChmodEPKcNS_5permsE @function\n"
     "__load_and_call__ZNSt10filesystem6_ChmodEPKcNS_5permsE:\n"
     "push rdi\n"
@@ -24444,6 +25207,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem6_LstatEPKcPNS_5permsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem6_LstatEPKcPNS_5permsE\n"
     ".type __load_and_call__ZNSt10filesystem6_LstatEPKcPNS_5permsE @function\n"
     "__load_and_call__ZNSt10filesystem6_LstatEPKcPNS_5permsE:\n"
     "push rdi\n"
@@ -24476,6 +25240,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem6_LstatEPKcPNS_5permsEPi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem6_LstatEPKcPNS_5permsEPi\n"
     ".type __load_and_call__ZNSt10filesystem6_LstatEPKcPNS_5permsEPi @function\n"
     "__load_and_call__ZNSt10filesystem6_LstatEPKcPNS_5permsEPi:\n"
     "push rdi\n"
@@ -24508,6 +25273,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem7_RenameEPKcS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem7_RenameEPKcS1_\n"
     ".type __load_and_call__ZNSt10filesystem7_RenameEPKcS1_ @function\n"
     "__load_and_call__ZNSt10filesystem7_RenameEPKcS1_:\n"
     "push rdi\n"
@@ -24540,6 +25306,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem7_ResizeEPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem7_ResizeEPKcm\n"
     ".type __load_and_call__ZNSt10filesystem7_ResizeEPKcm @function\n"
     "__load_and_call__ZNSt10filesystem7_ResizeEPKcm:\n"
     "push rdi\n"
@@ -24572,6 +25339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem7_UnlinkEPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem7_UnlinkEPKc\n"
     ".type __load_and_call__ZNSt10filesystem7_UnlinkEPKc @function\n"
     "__load_and_call__ZNSt10filesystem7_UnlinkEPKc:\n"
     "push rdi\n"
@@ -24604,6 +25372,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem8_StatvfsEPKcRNS_10space_infoE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem8_StatvfsEPKcRNS_10space_infoE\n"
     ".type __load_and_call__ZNSt10filesystem8_StatvfsEPKcRNS_10space_infoE @function\n"
     "__load_and_call__ZNSt10filesystem8_StatvfsEPKcRNS_10space_infoE:\n"
     "push rdi\n"
@@ -24636,6 +25405,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem9_Make_dirEPKcS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem9_Make_dirEPKcS1_\n"
     ".type __load_and_call__ZNSt10filesystem9_Make_dirEPKcS1_ @function\n"
     "__load_and_call__ZNSt10filesystem9_Make_dirEPKcS1_:\n"
     "push rdi\n"
@@ -24668,6 +25438,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem9_Open_dirERA260_cPKcRiRNS_9file_typeE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem9_Open_dirERA260_cPKcRiRNS_9file_typeE\n"
     ".type __load_and_call__ZNSt10filesystem9_Open_dirERA260_cPKcRiRNS_9file_typeE @function\n"
     "__load_and_call__ZNSt10filesystem9_Open_dirERA260_cPKcRiRNS_9file_typeE:\n"
     "push rdi\n"
@@ -24700,6 +25471,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10filesystem9_Read_dirERA260_cPvRNS_9file_typeE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10filesystem9_Read_dirERA260_cPvRNS_9file_typeE\n"
     ".type __load_and_call__ZNSt10filesystem9_Read_dirERA260_cPvRNS_9file_typeE @function\n"
     "__load_and_call__ZNSt10filesystem9_Read_dirERA260_cPvRNS_9file_typeE:\n"
     "push rdi\n"
@@ -24732,6 +25504,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -24764,6 +25537,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EEC1EPKcm\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EEC1EPKcm @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EEC1EPKcm:\n"
     "push rdi\n"
@@ -24796,6 +25570,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EEC1ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EEC1ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EEC1ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EEC1ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -24828,6 +25603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EEC1Em\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EEC1Em @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EEC1Em:\n"
     "push rdi\n"
@@ -24860,6 +25636,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EEC2EPKcm\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EEC2EPKcm @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EEC2EPKcm:\n"
     "push rdi\n"
@@ -24892,6 +25669,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EEC2ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EEC2ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EEC2ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EEC2ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -24924,6 +25702,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EEC2Em\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EEC2Em @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EEC2Em:\n"
     "push rdi\n"
@@ -24956,6 +25735,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EED0Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EED0Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EED0Ev:\n"
     "push rdi\n"
@@ -24988,6 +25768,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EED1Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EED1Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EED1Ev:\n"
     "push rdi\n"
@@ -25020,6 +25801,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb0EED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb0EED2Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb0EED2Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb0EED2Ev:\n"
     "push rdi\n"
@@ -25052,6 +25834,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -25084,6 +25867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EEC1EPKcm\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EEC1EPKcm @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EEC1EPKcm:\n"
     "push rdi\n"
@@ -25116,6 +25900,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EEC1ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EEC1ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EEC1ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EEC1ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -25148,6 +25933,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EEC1Em\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EEC1Em @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EEC1Em:\n"
     "push rdi\n"
@@ -25180,6 +25966,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EEC2EPKcm\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EEC2EPKcm @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EEC2EPKcm:\n"
     "push rdi\n"
@@ -25212,6 +25999,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EEC2ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EEC2ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EEC2ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EEC2ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -25244,6 +26032,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EEC2Em\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EEC2Em @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EEC2Em:\n"
     "push rdi\n"
@@ -25276,6 +26065,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EED0Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EED0Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EED0Ev:\n"
     "push rdi\n"
@@ -25308,6 +26098,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EED1Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EED1Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EED1Ev:\n"
     "push rdi\n"
@@ -25340,6 +26131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIcLb1EED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIcLb1EED2Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIcLb1EED2Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIcLb1EED2Ev:\n"
     "push rdi\n"
@@ -25372,6 +26164,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -25404,6 +26197,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EEC1EPKcm\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EEC1EPKcm @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EEC1EPKcm:\n"
     "push rdi\n"
@@ -25436,6 +26230,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EEC1ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EEC1ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EEC1ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EEC1ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -25468,6 +26263,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EEC1Em\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EEC1Em @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EEC1Em:\n"
     "push rdi\n"
@@ -25500,6 +26296,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EEC2EPKcm\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EEC2EPKcm @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EEC2EPKcm:\n"
     "push rdi\n"
@@ -25532,6 +26329,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EEC2ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EEC2ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EEC2ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EEC2ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -25564,6 +26362,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EEC2Em\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EEC2Em @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EEC2Em:\n"
     "push rdi\n"
@@ -25596,6 +26395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EED0Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EED0Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EED0Ev:\n"
     "push rdi\n"
@@ -25628,6 +26428,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EED1Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EED1Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EED1Ev:\n"
     "push rdi\n"
@@ -25660,6 +26461,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb0EED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb0EED2Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb0EED2Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb0EED2Ev:\n"
     "push rdi\n"
@@ -25692,6 +26494,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -25724,6 +26527,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EEC1EPKcm\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EEC1EPKcm @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EEC1EPKcm:\n"
     "push rdi\n"
@@ -25756,6 +26560,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EEC1ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EEC1ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EEC1ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EEC1ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -25788,6 +26593,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EEC1Em\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EEC1Em @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EEC1Em:\n"
     "push rdi\n"
@@ -25820,6 +26626,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EEC2EPKcm\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EEC2EPKcm @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EEC2EPKcm:\n"
     "push rdi\n"
@@ -25852,6 +26659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EEC2ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EEC2ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EEC2ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EEC2ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -25884,6 +26692,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EEC2Em\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EEC2Em @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EEC2Em:\n"
     "push rdi\n"
@@ -25916,6 +26725,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EED0Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EED0Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EED0Ev:\n"
     "push rdi\n"
@@ -25948,6 +26758,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EED1Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EED1Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EED1Ev:\n"
     "push rdi\n"
@@ -25980,6 +26791,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt10moneypunctIwLb1EED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt10moneypunctIwLb1EED2Ev\n"
     ".type __load_and_call__ZNSt10moneypunctIwLb1EED2Ev @function\n"
     "__load_and_call__ZNSt10moneypunctIwLb1EED2Ev:\n"
     "push rdi\n"
@@ -26012,6 +26824,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11logic_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11logic_errorD0Ev\n"
     ".type __load_and_call__ZNSt11logic_errorD0Ev @function\n"
     "__load_and_call__ZNSt11logic_errorD0Ev:\n"
     "push rdi\n"
@@ -26044,6 +26857,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11logic_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11logic_errorD1Ev\n"
     ".type __load_and_call__ZNSt11logic_errorD1Ev @function\n"
     "__load_and_call__ZNSt11logic_errorD1Ev:\n"
     "push rdi\n"
@@ -26076,6 +26890,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11logic_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11logic_errorD2Ev\n"
     ".type __load_and_call__ZNSt11logic_errorD2Ev @function\n"
     "__load_and_call__ZNSt11logic_errorD2Ev:\n"
     "push rdi\n"
@@ -26108,6 +26923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11range_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11range_errorD0Ev\n"
     ".type __load_and_call__ZNSt11range_errorD0Ev @function\n"
     "__load_and_call__ZNSt11range_errorD0Ev:\n"
     "push rdi\n"
@@ -26140,6 +26956,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11range_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11range_errorD1Ev\n"
     ".type __load_and_call__ZNSt11range_errorD1Ev @function\n"
     "__load_and_call__ZNSt11range_errorD1Ev:\n"
     "push rdi\n"
@@ -26172,6 +26989,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11range_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11range_errorD2Ev\n"
     ".type __load_and_call__ZNSt11range_errorD2Ev @function\n"
     "__load_and_call__ZNSt11range_errorD2Ev:\n"
     "push rdi\n"
@@ -26204,6 +27022,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11regex_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11regex_errorD0Ev\n"
     ".type __load_and_call__ZNSt11regex_errorD0Ev @function\n"
     "__load_and_call__ZNSt11regex_errorD0Ev:\n"
     "push rdi\n"
@@ -26236,6 +27055,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11regex_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11regex_errorD1Ev\n"
     ".type __load_and_call__ZNSt11regex_errorD1Ev @function\n"
     "__load_and_call__ZNSt11regex_errorD1Ev:\n"
     "push rdi\n"
@@ -26268,6 +27088,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt11regex_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt11regex_errorD2Ev\n"
     ".type __load_and_call__ZNSt11regex_errorD2Ev @function\n"
     "__load_and_call__ZNSt11regex_errorD2Ev:\n"
     "push rdi\n"
@@ -26300,6 +27121,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12bad_weak_ptrD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12bad_weak_ptrD0Ev\n"
     ".type __load_and_call__ZNSt12bad_weak_ptrD0Ev @function\n"
     "__load_and_call__ZNSt12bad_weak_ptrD0Ev:\n"
     "push rdi\n"
@@ -26332,6 +27154,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12bad_weak_ptrD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12bad_weak_ptrD1Ev\n"
     ".type __load_and_call__ZNSt12bad_weak_ptrD1Ev @function\n"
     "__load_and_call__ZNSt12bad_weak_ptrD1Ev:\n"
     "push rdi\n"
@@ -26364,6 +27187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12bad_weak_ptrD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12bad_weak_ptrD2Ev\n"
     ".type __load_and_call__ZNSt12bad_weak_ptrD2Ev @function\n"
     "__load_and_call__ZNSt12bad_weak_ptrD2Ev:\n"
     "push rdi\n"
@@ -26396,6 +27220,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12domain_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12domain_errorD0Ev\n"
     ".type __load_and_call__ZNSt12domain_errorD0Ev @function\n"
     "__load_and_call__ZNSt12domain_errorD0Ev:\n"
     "push rdi\n"
@@ -26428,6 +27253,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12domain_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12domain_errorD1Ev\n"
     ".type __load_and_call__ZNSt12domain_errorD1Ev @function\n"
     "__load_and_call__ZNSt12domain_errorD1Ev:\n"
     "push rdi\n"
@@ -26460,6 +27286,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12domain_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12domain_errorD2Ev\n"
     ".type __load_and_call__ZNSt12domain_errorD2Ev @function\n"
     "__load_and_call__ZNSt12domain_errorD2Ev:\n"
     "push rdi\n"
@@ -26492,6 +27319,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12future_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12future_errorD0Ev\n"
     ".type __load_and_call__ZNSt12future_errorD0Ev @function\n"
     "__load_and_call__ZNSt12future_errorD0Ev:\n"
     "push rdi\n"
@@ -26524,6 +27352,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12future_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12future_errorD1Ev\n"
     ".type __load_and_call__ZNSt12future_errorD1Ev @function\n"
     "__load_and_call__ZNSt12future_errorD1Ev:\n"
     "push rdi\n"
@@ -26556,6 +27385,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12future_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12future_errorD2Ev\n"
     ".type __load_and_call__ZNSt12future_errorD2Ev @function\n"
     "__load_and_call__ZNSt12future_errorD2Ev:\n"
     "push rdi\n"
@@ -26588,6 +27418,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12length_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12length_errorD0Ev\n"
     ".type __load_and_call__ZNSt12length_errorD0Ev @function\n"
     "__load_and_call__ZNSt12length_errorD0Ev:\n"
     "push rdi\n"
@@ -26620,6 +27451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12length_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12length_errorD1Ev\n"
     ".type __load_and_call__ZNSt12length_errorD1Ev @function\n"
     "__load_and_call__ZNSt12length_errorD1Ev:\n"
     "push rdi\n"
@@ -26652,6 +27484,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12length_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12length_errorD2Ev\n"
     ".type __load_and_call__ZNSt12length_errorD2Ev @function\n"
     "__load_and_call__ZNSt12length_errorD2Ev:\n"
     "push rdi\n"
@@ -26684,6 +27517,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12out_of_rangeD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12out_of_rangeD0Ev\n"
     ".type __load_and_call__ZNSt12out_of_rangeD0Ev @function\n"
     "__load_and_call__ZNSt12out_of_rangeD0Ev:\n"
     "push rdi\n"
@@ -26716,6 +27550,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12out_of_rangeD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12out_of_rangeD1Ev\n"
     ".type __load_and_call__ZNSt12out_of_rangeD1Ev @function\n"
     "__load_and_call__ZNSt12out_of_rangeD1Ev:\n"
     "push rdi\n"
@@ -26748,6 +27583,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12out_of_rangeD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12out_of_rangeD2Ev\n"
     ".type __load_and_call__ZNSt12out_of_rangeD2Ev @function\n"
     "__load_and_call__ZNSt12out_of_rangeD2Ev:\n"
     "push rdi\n"
@@ -26780,6 +27616,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12system_errorC2ESt10error_codePKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12system_errorC2ESt10error_codePKc\n"
     ".type __load_and_call__ZNSt12system_errorC2ESt10error_codePKc @function\n"
     "__load_and_call__ZNSt12system_errorC2ESt10error_codePKc:\n"
     "push rdi\n"
@@ -26812,6 +27649,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12system_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12system_errorD0Ev\n"
     ".type __load_and_call__ZNSt12system_errorD0Ev @function\n"
     "__load_and_call__ZNSt12system_errorD0Ev:\n"
     "push rdi\n"
@@ -26844,6 +27682,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12system_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12system_errorD1Ev\n"
     ".type __load_and_call__ZNSt12system_errorD1Ev @function\n"
     "__load_and_call__ZNSt12system_errorD1Ev:\n"
     "push rdi\n"
@@ -26876,6 +27715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt12system_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt12system_errorD2Ev\n"
     ".type __load_and_call__ZNSt12system_errorD2Ev @function\n"
     "__load_and_call__ZNSt12system_errorD2Ev:\n"
     "push rdi\n"
@@ -26908,6 +27748,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13bad_exceptionD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13bad_exceptionD0Ev\n"
     ".type __load_and_call__ZNSt13bad_exceptionD0Ev @function\n"
     "__load_and_call__ZNSt13bad_exceptionD0Ev:\n"
     "push rdi\n"
@@ -26940,6 +27781,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13bad_exceptionD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13bad_exceptionD1Ev\n"
     ".type __load_and_call__ZNSt13bad_exceptionD1Ev @function\n"
     "__load_and_call__ZNSt13bad_exceptionD1Ev:\n"
     "push rdi\n"
@@ -26972,6 +27814,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13bad_exceptionD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13bad_exceptionD2Ev\n"
     ".type __load_and_call__ZNSt13bad_exceptionD2Ev @function\n"
     "__load_and_call__ZNSt13bad_exceptionD2Ev:\n"
     "push rdi\n"
@@ -27004,6 +27847,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE4syncEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE4syncEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE4syncEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE4syncEv:\n"
     "push rdi\n"
@@ -27036,6 +27880,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE5_LockEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5_LockEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5_LockEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5_LockEv:\n"
     "push rdi\n"
@@ -27068,6 +27913,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE5imbueERKSt6locale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5imbueERKSt6locale\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5imbueERKSt6locale @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5imbueERKSt6locale:\n"
     "push rdi\n"
@@ -27100,6 +27946,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE5uflowEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5uflowEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5uflowEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE5uflowEv:\n"
     "push rdi\n"
@@ -27132,6 +27979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE6setbufEPci]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE6setbufEPci\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE6setbufEPci @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE6setbufEPci:\n"
     "push rdi\n"
@@ -27164,6 +28012,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE7_UnlockEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7_UnlockEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7_UnlockEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7_UnlockEv:\n"
     "push rdi\n"
@@ -27196,6 +28045,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE:\n"
     "push rdi\n"
@@ -27228,6 +28078,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE:\n"
     "push rdi\n"
@@ -27260,6 +28111,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE8overflowEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE8overflowEi\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE8overflowEi @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE8overflowEi:\n"
     "push rdi\n"
@@ -27292,6 +28144,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE9_EndwriteEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9_EndwriteEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9_EndwriteEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9_EndwriteEv:\n"
     "push rdi\n"
@@ -27324,6 +28177,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE9pbackfailEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9pbackfailEi\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9pbackfailEi @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9pbackfailEi:\n"
     "push rdi\n"
@@ -27356,6 +28210,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEE9underflowEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9underflowEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9underflowEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEE9underflowEv:\n"
     "push rdi\n"
@@ -27388,6 +28243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED0Ev\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED0Ev @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED0Ev:\n"
     "push rdi\n"
@@ -27420,6 +28276,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev:\n"
     "push rdi\n"
@@ -27452,6 +28309,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIcSt11char_traitsIcEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED2Ev\n"
     ".type __load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED2Ev @function\n"
     "__load_and_call__ZNSt13basic_filebufIcSt11char_traitsIcEED2Ev:\n"
     "push rdi\n"
@@ -27484,6 +28342,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE4syncEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE4syncEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE4syncEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE4syncEv:\n"
     "push rdi\n"
@@ -27516,6 +28375,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE5_LockEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5_LockEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5_LockEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5_LockEv:\n"
     "push rdi\n"
@@ -27548,6 +28408,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE5imbueERKSt6locale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5imbueERKSt6locale\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5imbueERKSt6locale @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5imbueERKSt6locale:\n"
     "push rdi\n"
@@ -27580,6 +28441,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE5uflowEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5uflowEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5uflowEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE5uflowEv:\n"
     "push rdi\n"
@@ -27612,6 +28474,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE6setbufEPwi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE6setbufEPwi\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE6setbufEPwi @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE6setbufEPwi:\n"
     "push rdi\n"
@@ -27644,6 +28507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE7_UnlockEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7_UnlockEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7_UnlockEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7_UnlockEv:\n"
     "push rdi\n"
@@ -27676,6 +28540,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE:\n"
     "push rdi\n"
@@ -27708,6 +28573,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE:\n"
     "push rdi\n"
@@ -27740,6 +28606,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE8overflowEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE8overflowEi\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE8overflowEi @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE8overflowEi:\n"
     "push rdi\n"
@@ -27772,6 +28639,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE9_EndwriteEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9_EndwriteEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9_EndwriteEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9_EndwriteEv:\n"
     "push rdi\n"
@@ -27804,6 +28672,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE9pbackfailEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9pbackfailEi\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9pbackfailEi @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9pbackfailEi:\n"
     "push rdi\n"
@@ -27836,6 +28705,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEE9underflowEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9underflowEv\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9underflowEv @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEE9underflowEv:\n"
     "push rdi\n"
@@ -27868,6 +28738,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED0Ev\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED0Ev @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED0Ev:\n"
     "push rdi\n"
@@ -27900,6 +28771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED1Ev\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED1Ev @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED1Ev:\n"
     "push rdi\n"
@@ -27932,6 +28804,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_filebufIwSt11char_traitsIwEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED2Ev\n"
     ".type __load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED2Ev @function\n"
     "__load_and_call__ZNSt13basic_filebufIwSt11char_traitsIwEED2Ev:\n"
     "push rdi\n"
@@ -27964,6 +28837,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_istreamIwSt11char_traitsIwEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_istreamIwSt11char_traitsIwEED0Ev\n"
     ".type __load_and_call__ZNSt13basic_istreamIwSt11char_traitsIwEED0Ev @function\n"
     "__load_and_call__ZNSt13basic_istreamIwSt11char_traitsIwEED0Ev:\n"
     "push rdi\n"
@@ -27996,6 +28870,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_istreamIwSt11char_traitsIwEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_istreamIwSt11char_traitsIwEED1Ev\n"
     ".type __load_and_call__ZNSt13basic_istreamIwSt11char_traitsIwEED1Ev @function\n"
     "__load_and_call__ZNSt13basic_istreamIwSt11char_traitsIwEED1Ev:\n"
     "push rdi\n"
@@ -28028,6 +28903,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_ostreamIwSt11char_traitsIwEE6sentryC2ERS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEE6sentryC2ERS2_\n"
     ".type __load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEE6sentryC2ERS2_ @function\n"
     "__load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEE6sentryC2ERS2_:\n"
     "push rdi\n"
@@ -28060,6 +28936,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_ostreamIwSt11char_traitsIwEE6sentryD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEE6sentryD2Ev\n"
     ".type __load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEE6sentryD2Ev @function\n"
     "__load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEE6sentryD2Ev:\n"
     "push rdi\n"
@@ -28092,6 +28969,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_ostreamIwSt11char_traitsIwEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEED0Ev\n"
     ".type __load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEED0Ev @function\n"
     "__load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEED0Ev:\n"
     "push rdi\n"
@@ -28124,6 +29002,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13basic_ostreamIwSt11char_traitsIwEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEED1Ev\n"
     ".type __load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEED1Ev @function\n"
     "__load_and_call__ZNSt13basic_ostreamIwSt11char_traitsIwEED1Ev:\n"
     "push rdi\n"
@@ -28156,6 +29035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13runtime_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13runtime_errorD0Ev\n"
     ".type __load_and_call__ZNSt13runtime_errorD0Ev @function\n"
     "__load_and_call__ZNSt13runtime_errorD0Ev:\n"
     "push rdi\n"
@@ -28188,6 +29068,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13runtime_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13runtime_errorD1Ev\n"
     ".type __load_and_call__ZNSt13runtime_errorD1Ev @function\n"
     "__load_and_call__ZNSt13runtime_errorD1Ev:\n"
     "push rdi\n"
@@ -28220,6 +29101,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt13runtime_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt13runtime_errorD2Ev\n"
     ".type __load_and_call__ZNSt13runtime_errorD2Ev @function\n"
     "__load_and_call__ZNSt13runtime_errorD2Ev:\n"
     "push rdi\n"
@@ -28252,6 +29134,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt14error_categoryD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt14error_categoryD2Ev\n"
     ".type __load_and_call__ZNSt14error_categoryD2Ev @function\n"
     "__load_and_call__ZNSt14error_categoryD2Ev:\n"
     "push rdi\n"
@@ -28284,6 +29167,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt14overflow_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt14overflow_errorD0Ev\n"
     ".type __load_and_call__ZNSt14overflow_errorD0Ev @function\n"
     "__load_and_call__ZNSt14overflow_errorD0Ev:\n"
     "push rdi\n"
@@ -28316,6 +29200,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt14overflow_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt14overflow_errorD1Ev\n"
     ".type __load_and_call__ZNSt14overflow_errorD1Ev @function\n"
     "__load_and_call__ZNSt14overflow_errorD1Ev:\n"
     "push rdi\n"
@@ -28348,6 +29233,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt14overflow_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt14overflow_errorD2Ev\n"
     ".type __load_and_call__ZNSt14overflow_errorD2Ev @function\n"
     "__load_and_call__ZNSt14overflow_errorD2Ev:\n"
     "push rdi\n"
@@ -28380,6 +29266,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci\n"
     ".type __load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci @function\n"
     "__load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci:\n"
     "push rdi\n"
@@ -28412,6 +29299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci\n"
     ".type __load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci @function\n"
     "__load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci:\n"
     "push rdi\n"
@@ -28444,6 +29332,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv\n"
     ".type __load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv @function\n"
     "__load_and_call__ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv:\n"
     "push rdi\n"
@@ -28476,6 +29365,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15basic_streambufIwSt11char_traitsIwEE6xsgetnEPwi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE6xsgetnEPwi\n"
     ".type __load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE6xsgetnEPwi @function\n"
     "__load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE6xsgetnEPwi:\n"
     "push rdi\n"
@@ -28508,6 +29398,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15basic_streambufIwSt11char_traitsIwEE6xsputnEPKwi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE6xsputnEPKwi\n"
     ".type __load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE6xsputnEPKwi @function\n"
     "__load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE6xsputnEPKwi:\n"
     "push rdi\n"
@@ -28540,6 +29431,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15basic_streambufIwSt11char_traitsIwEE9showmanycEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE9showmanycEv\n"
     ".type __load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE9showmanycEv @function\n"
     "__load_and_call__ZNSt15basic_streambufIwSt11char_traitsIwEE9showmanycEv:\n"
     "push rdi\n"
@@ -28572,6 +29464,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15underflow_errorD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15underflow_errorD0Ev\n"
     ".type __load_and_call__ZNSt15underflow_errorD0Ev @function\n"
     "__load_and_call__ZNSt15underflow_errorD0Ev:\n"
     "push rdi\n"
@@ -28604,6 +29497,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15underflow_errorD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15underflow_errorD1Ev\n"
     ".type __load_and_call__ZNSt15underflow_errorD1Ev @function\n"
     "__load_and_call__ZNSt15underflow_errorD1Ev:\n"
     "push rdi\n"
@@ -28636,6 +29530,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt15underflow_errorD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt15underflow_errorD2Ev\n"
     ".type __load_and_call__ZNSt15underflow_errorD2Ev @function\n"
     "__load_and_call__ZNSt15underflow_errorD2Ev:\n"
     "push rdi\n"
@@ -28668,6 +29563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt16invalid_argumentD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt16invalid_argumentD0Ev\n"
     ".type __load_and_call__ZNSt16invalid_argumentD0Ev @function\n"
     "__load_and_call__ZNSt16invalid_argumentD0Ev:\n"
     "push rdi\n"
@@ -28700,6 +29596,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt16invalid_argumentD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt16invalid_argumentD1Ev\n"
     ".type __load_and_call__ZNSt16invalid_argumentD1Ev @function\n"
     "__load_and_call__ZNSt16invalid_argumentD1Ev:\n"
     "push rdi\n"
@@ -28732,6 +29629,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt16invalid_argumentD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt16invalid_argumentD2Ev\n"
     ".type __load_and_call__ZNSt16invalid_argumentD2Ev @function\n"
     "__load_and_call__ZNSt16invalid_argumentD2Ev:\n"
     "push rdi\n"
@@ -28764,6 +29662,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt16nested_exceptionD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt16nested_exceptionD0Ev\n"
     ".type __load_and_call__ZNSt16nested_exceptionD0Ev @function\n"
     "__load_and_call__ZNSt16nested_exceptionD0Ev:\n"
     "push rdi\n"
@@ -28796,6 +29695,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt16nested_exceptionD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt16nested_exceptionD1Ev\n"
     ".type __load_and_call__ZNSt16nested_exceptionD1Ev @function\n"
     "__load_and_call__ZNSt16nested_exceptionD1Ev:\n"
     "push rdi\n"
@@ -28828,6 +29728,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt16nested_exceptionD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt16nested_exceptionD2Ev\n"
     ".type __load_and_call__ZNSt16nested_exceptionD2Ev @function\n"
     "__load_and_call__ZNSt16nested_exceptionD2Ev:\n"
     "push rdi\n"
@@ -28860,6 +29761,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt17bad_function_callD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt17bad_function_callD0Ev\n"
     ".type __load_and_call__ZNSt17bad_function_callD0Ev @function\n"
     "__load_and_call__ZNSt17bad_function_callD0Ev:\n"
     "push rdi\n"
@@ -28892,6 +29794,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt17bad_function_callD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt17bad_function_callD1Ev\n"
     ".type __load_and_call__ZNSt17bad_function_callD1Ev @function\n"
     "__load_and_call__ZNSt17bad_function_callD1Ev:\n"
     "push rdi\n"
@@ -28924,6 +29827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt17bad_function_callD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt17bad_function_callD2Ev\n"
     ".type __load_and_call__ZNSt17bad_function_callD2Ev @function\n"
     "__load_and_call__ZNSt17bad_function_callD2Ev:\n"
     "push rdi\n"
@@ -28956,6 +29860,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt18bad_variant_accessD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt18bad_variant_accessD0Ev\n"
     ".type __load_and_call__ZNSt18bad_variant_accessD0Ev @function\n"
     "__load_and_call__ZNSt18bad_variant_accessD0Ev:\n"
     "push rdi\n"
@@ -28988,6 +29893,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt18bad_variant_accessD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt18bad_variant_accessD1Ev\n"
     ".type __load_and_call__ZNSt18bad_variant_accessD1Ev @function\n"
     "__load_and_call__ZNSt18bad_variant_accessD1Ev:\n"
     "push rdi\n"
@@ -29020,6 +29926,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt20bad_array_new_lengthD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt20bad_array_new_lengthD0Ev\n"
     ".type __load_and_call__ZNSt20bad_array_new_lengthD0Ev @function\n"
     "__load_and_call__ZNSt20bad_array_new_lengthD0Ev:\n"
     "push rdi\n"
@@ -29052,6 +29959,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt20bad_array_new_lengthD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt20bad_array_new_lengthD1Ev\n"
     ".type __load_and_call__ZNSt20bad_array_new_lengthD1Ev @function\n"
     "__load_and_call__ZNSt20bad_array_new_lengthD1Ev:\n"
     "push rdi\n"
@@ -29084,6 +29992,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt20bad_array_new_lengthD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt20bad_array_new_lengthD2Ev\n"
     ".type __load_and_call__ZNSt20bad_array_new_lengthD2Ev @function\n"
     "__load_and_call__ZNSt20bad_array_new_lengthD2Ev:\n"
     "push rdi\n"
@@ -29116,6 +30025,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt22_Future_error_categoryD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt22_Future_error_categoryD0Ev\n"
     ".type __load_and_call__ZNSt22_Future_error_categoryD0Ev @function\n"
     "__load_and_call__ZNSt22_Future_error_categoryD0Ev:\n"
     "push rdi\n"
@@ -29148,6 +30058,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt22_Future_error_categoryD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt22_Future_error_categoryD1Ev\n"
     ".type __load_and_call__ZNSt22_Future_error_categoryD1Ev @function\n"
     "__load_and_call__ZNSt22_Future_error_categoryD1Ev:\n"
     "push rdi\n"
@@ -29180,6 +30091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt22_System_error_categoryD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt22_System_error_categoryD0Ev\n"
     ".type __load_and_call__ZNSt22_System_error_categoryD0Ev @function\n"
     "__load_and_call__ZNSt22_System_error_categoryD0Ev:\n"
     "push rdi\n"
@@ -29212,6 +30124,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt22_System_error_categoryD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt22_System_error_categoryD1Ev\n"
     ".type __load_and_call__ZNSt22_System_error_categoryD1Ev @function\n"
     "__load_and_call__ZNSt22_System_error_categoryD1Ev:\n"
     "push rdi\n"
@@ -29244,6 +30157,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt23_Generic_error_categoryD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt23_Generic_error_categoryD0Ev\n"
     ".type __load_and_call__ZNSt23_Generic_error_categoryD0Ev @function\n"
     "__load_and_call__ZNSt23_Generic_error_categoryD0Ev:\n"
     "push rdi\n"
@@ -29276,6 +30190,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt23_Generic_error_categoryD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt23_Generic_error_categoryD1Ev\n"
     ".type __load_and_call__ZNSt23_Generic_error_categoryD1Ev @function\n"
     "__load_and_call__ZNSt23_Generic_error_categoryD1Ev:\n"
     "push rdi\n"
@@ -29308,6 +30223,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt24_Iostream_error_categoryD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt24_Iostream_error_categoryD0Ev\n"
     ".type __load_and_call__ZNSt24_Iostream_error_categoryD0Ev @function\n"
     "__load_and_call__ZNSt24_Iostream_error_categoryD0Ev:\n"
     "push rdi\n"
@@ -29340,6 +30256,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt24_Iostream_error_categoryD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt24_Iostream_error_categoryD1Ev\n"
     ".type __load_and_call__ZNSt24_Iostream_error_categoryD1Ev @function\n"
     "__load_and_call__ZNSt24_Iostream_error_categoryD1Ev:\n"
     "push rdi\n"
@@ -29372,6 +30289,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt3pmr19new_delete_resourceEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt3pmr19new_delete_resourceEv\n"
     ".type __load_and_call__ZNSt3pmr19new_delete_resourceEv @function\n"
     "__load_and_call__ZNSt3pmr19new_delete_resourceEv:\n"
     "push rdi\n"
@@ -29404,6 +30322,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt3pmr20get_default_resourceEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt3pmr20get_default_resourceEv\n"
     ".type __load_and_call__ZNSt3pmr20get_default_resourceEv @function\n"
     "__load_and_call__ZNSt3pmr20get_default_resourceEv:\n"
     "push rdi\n"
@@ -29436,6 +30355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt3pmr20null_memory_resourceEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt3pmr20null_memory_resourceEv\n"
     ".type __load_and_call__ZNSt3pmr20null_memory_resourceEv @function\n"
     "__load_and_call__ZNSt3pmr20null_memory_resourceEv:\n"
     "push rdi\n"
@@ -29468,6 +30388,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt3pmr20set_default_resourceEPNS_15memory_resourceE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt3pmr20set_default_resourceEPNS_15memory_resourceE\n"
     ".type __load_and_call__ZNSt3pmr20set_default_resourceEPNS_15memory_resourceE @function\n"
     "__load_and_call__ZNSt3pmr20set_default_resourceEPNS_15memory_resourceE:\n"
     "push rdi\n"
@@ -29500,6 +30421,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_Pad7_LaunchEPKcPP12pthread_attrPP7pthread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_Pad7_LaunchEPKcPP12pthread_attrPP7pthread\n"
     ".type __load_and_call__ZNSt4_Pad7_LaunchEPKcPP12pthread_attrPP7pthread @function\n"
     "__load_and_call__ZNSt4_Pad7_LaunchEPKcPP12pthread_attrPP7pthread:\n"
     "push rdi\n"
@@ -29532,6 +30454,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_Pad7_LaunchEPKcPP7pthread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_Pad7_LaunchEPKcPP7pthread\n"
     ".type __load_and_call__ZNSt4_Pad7_LaunchEPKcPP7pthread @function\n"
     "__load_and_call__ZNSt4_Pad7_LaunchEPKcPP7pthread:\n"
     "push rdi\n"
@@ -29564,6 +30487,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_Pad7_LaunchEPP12pthread_attrPP7pthread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_Pad7_LaunchEPP12pthread_attrPP7pthread\n"
     ".type __load_and_call__ZNSt4_Pad7_LaunchEPP12pthread_attrPP7pthread @function\n"
     "__load_and_call__ZNSt4_Pad7_LaunchEPP12pthread_attrPP7pthread:\n"
     "push rdi\n"
@@ -29596,6 +30520,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_Pad7_LaunchEPP7pthread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_Pad7_LaunchEPP7pthread\n"
     ".type __load_and_call__ZNSt4_Pad7_LaunchEPP7pthread @function\n"
     "__load_and_call__ZNSt4_Pad7_LaunchEPP7pthread:\n"
     "push rdi\n"
@@ -29628,6 +30553,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_Pad8_ReleaseEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_Pad8_ReleaseEv\n"
     ".type __load_and_call__ZNSt4_Pad8_ReleaseEv @function\n"
     "__load_and_call__ZNSt4_Pad8_ReleaseEv:\n"
     "push rdi\n"
@@ -29660,6 +30586,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_PadC2EPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_PadC2EPKc\n"
     ".type __load_and_call__ZNSt4_PadC2EPKc @function\n"
     "__load_and_call__ZNSt4_PadC2EPKc:\n"
     "push rdi\n"
@@ -29692,6 +30619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_PadC2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_PadC2Ev\n"
     ".type __load_and_call__ZNSt4_PadC2Ev @function\n"
     "__load_and_call__ZNSt4_PadC2Ev:\n"
     "push rdi\n"
@@ -29724,6 +30652,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_PadD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_PadD1Ev\n"
     ".type __load_and_call__ZNSt4_PadD1Ev @function\n"
     "__load_and_call__ZNSt4_PadD1Ev:\n"
     "push rdi\n"
@@ -29756,6 +30685,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt4_PadD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt4_PadD2Ev\n"
     ".type __load_and_call__ZNSt4_PadD2Ev @function\n"
     "__load_and_call__ZNSt4_PadD2Ev:\n"
     "push rdi\n"
@@ -29788,6 +30718,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt5ctypeIcED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt5ctypeIcED0Ev\n"
     ".type __load_and_call__ZNSt5ctypeIcED0Ev @function\n"
     "__load_and_call__ZNSt5ctypeIcED0Ev:\n"
     "push rdi\n"
@@ -29820,6 +30751,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt5ctypeIcED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt5ctypeIcED1Ev\n"
     ".type __load_and_call__ZNSt5ctypeIcED1Ev @function\n"
     "__load_and_call__ZNSt5ctypeIcED1Ev:\n"
     "push rdi\n"
@@ -29852,6 +30784,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt5ctypeIwED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt5ctypeIwED0Ev\n"
     ".type __load_and_call__ZNSt5ctypeIwED0Ev @function\n"
     "__load_and_call__ZNSt5ctypeIwED0Ev:\n"
     "push rdi\n"
@@ -29884,6 +30817,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt5ctypeIwED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt5ctypeIwED1Ev\n"
     ".type __load_and_call__ZNSt5ctypeIwED1Ev @function\n"
     "__load_and_call__ZNSt5ctypeIwED1Ev:\n"
     "push rdi\n"
@@ -29916,6 +30850,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_Mutex5_LockEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_Mutex5_LockEv\n"
     ".type __load_and_call__ZNSt6_Mutex5_LockEv @function\n"
     "__load_and_call__ZNSt6_Mutex5_LockEv:\n"
     "push rdi\n"
@@ -29948,6 +30883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_Mutex7_UnlockEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_Mutex7_UnlockEv\n"
     ".type __load_and_call__ZNSt6_Mutex7_UnlockEv @function\n"
     "__load_and_call__ZNSt6_Mutex7_UnlockEv:\n"
     "push rdi\n"
@@ -29980,6 +30916,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_MutexC1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_MutexC1Ev\n"
     ".type __load_and_call__ZNSt6_MutexC1Ev @function\n"
     "__load_and_call__ZNSt6_MutexC1Ev:\n"
     "push rdi\n"
@@ -30012,6 +30949,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_MutexC2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_MutexC2Ev\n"
     ".type __load_and_call__ZNSt6_MutexC2Ev @function\n"
     "__load_and_call__ZNSt6_MutexC2Ev:\n"
     "push rdi\n"
@@ -30044,6 +30982,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_MutexD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_MutexD1Ev\n"
     ".type __load_and_call__ZNSt6_MutexD1Ev @function\n"
     "__load_and_call__ZNSt6_MutexD1Ev:\n"
     "push rdi\n"
@@ -30076,6 +31015,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_MutexD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_MutexD2Ev\n"
     ".type __load_and_call__ZNSt6_MutexD2Ev @function\n"
     "__load_and_call__ZNSt6_MutexD2Ev:\n"
     "push rdi\n"
@@ -30108,6 +31048,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_WinitC1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_WinitC1Ev\n"
     ".type __load_and_call__ZNSt6_WinitC1Ev @function\n"
     "__load_and_call__ZNSt6_WinitC1Ev:\n"
     "push rdi\n"
@@ -30140,6 +31081,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_WinitC2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_WinitC2Ev\n"
     ".type __load_and_call__ZNSt6_WinitC2Ev @function\n"
     "__load_and_call__ZNSt6_WinitC2Ev:\n"
     "push rdi\n"
@@ -30172,6 +31114,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_WinitD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_WinitD1Ev\n"
     ".type __load_and_call__ZNSt6_WinitD1Ev @function\n"
     "__load_and_call__ZNSt6_WinitD1Ev:\n"
     "push rdi\n"
@@ -30204,6 +31147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6_WinitD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6_WinitD2Ev\n"
     ".type __load_and_call__ZNSt6_WinitD2Ev @function\n"
     "__load_and_call__ZNSt6_WinitD2Ev:\n"
     "push rdi\n"
@@ -30236,6 +31180,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale16_GetgloballocaleEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale16_GetgloballocaleEv\n"
     ".type __load_and_call__ZNSt6locale16_GetgloballocaleEv @function\n"
     "__load_and_call__ZNSt6locale16_GetgloballocaleEv:\n"
     "push rdi\n"
@@ -30268,6 +31213,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale16_SetgloballocaleEPv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale16_SetgloballocaleEPv\n"
     ".type __load_and_call__ZNSt6locale16_SetgloballocaleEPv @function\n"
     "__load_and_call__ZNSt6locale16_SetgloballocaleEPv:\n"
     "push rdi\n"
@@ -30300,6 +31246,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale5_InitEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale5_InitEv\n"
     ".type __load_and_call__ZNSt6locale5_InitEv @function\n"
     "__load_and_call__ZNSt6locale5_InitEv:\n"
     "push rdi\n"
@@ -30332,6 +31279,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale5emptyEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale5emptyEv\n"
     ".type __load_and_call__ZNSt6locale5emptyEv @function\n"
     "__load_and_call__ZNSt6locale5emptyEv:\n"
     "push rdi\n"
@@ -30364,6 +31312,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale5facet7_DecrefEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale5facet7_DecrefEv\n"
     ".type __load_and_call__ZNSt6locale5facet7_DecrefEv @function\n"
     "__load_and_call__ZNSt6locale5facet7_DecrefEv:\n"
     "push rdi\n"
@@ -30396,6 +31345,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale5facet7_IncrefEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale5facet7_IncrefEv\n"
     ".type __load_and_call__ZNSt6locale5facet7_IncrefEv @function\n"
     "__load_and_call__ZNSt6locale5facet7_IncrefEv:\n"
     "push rdi\n"
@@ -30428,6 +31378,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale5facet9_RegisterEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale5facet9_RegisterEv\n"
     ".type __load_and_call__ZNSt6locale5facet9_RegisterEv @function\n"
     "__load_and_call__ZNSt6locale5facet9_RegisterEv:\n"
     "push rdi\n"
@@ -30460,6 +31411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale6globalERKS_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale6globalERKS_\n"
     ".type __load_and_call__ZNSt6locale6globalERKS_ @function\n"
     "__load_and_call__ZNSt6locale6globalERKS_:\n"
     "push rdi\n"
@@ -30492,6 +31444,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_Locimp7_AddfacEPNS_5facetEm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_Locimp7_AddfacEPNS_5facetEm\n"
     ".type __load_and_call__ZNSt6locale7_Locimp7_AddfacEPNS_5facetEm @function\n"
     "__load_and_call__ZNSt6locale7_Locimp7_AddfacEPNS_5facetEm:\n"
     "push rdi\n"
@@ -30524,6 +31477,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_Locimp8_MakelocERKSt8_LocinfoiPS0_PKS_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_Locimp8_MakelocERKSt8_LocinfoiPS0_PKS_\n"
     ".type __load_and_call__ZNSt6locale7_Locimp8_MakelocERKSt8_LocinfoiPS0_PKS_ @function\n"
     "__load_and_call__ZNSt6locale7_Locimp8_MakelocERKSt8_LocinfoiPS0_PKS_:\n"
     "push rdi\n"
@@ -30556,6 +31510,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_Locimp9_MakewlocERKSt8_LocinfoiPS0_PKS_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_Locimp9_MakewlocERKSt8_LocinfoiPS0_PKS_\n"
     ".type __load_and_call__ZNSt6locale7_Locimp9_MakewlocERKSt8_LocinfoiPS0_PKS_ @function\n"
     "__load_and_call__ZNSt6locale7_Locimp9_MakewlocERKSt8_LocinfoiPS0_PKS_:\n"
     "push rdi\n"
@@ -30588,6 +31543,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_Locimp9_MakexlocERKSt8_LocinfoiPS0_PKS_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_Locimp9_MakexlocERKSt8_LocinfoiPS0_PKS_\n"
     ".type __load_and_call__ZNSt6locale7_Locimp9_MakexlocERKSt8_LocinfoiPS0_PKS_ @function\n"
     "__load_and_call__ZNSt6locale7_Locimp9_MakexlocERKSt8_LocinfoiPS0_PKS_:\n"
     "push rdi\n"
@@ -30620,6 +31576,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_LocimpC1ERKS0_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_LocimpC1ERKS0_\n"
     ".type __load_and_call__ZNSt6locale7_LocimpC1ERKS0_ @function\n"
     "__load_and_call__ZNSt6locale7_LocimpC1ERKS0_:\n"
     "push rdi\n"
@@ -30652,6 +31609,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_LocimpC1Eb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_LocimpC1Eb\n"
     ".type __load_and_call__ZNSt6locale7_LocimpC1Eb @function\n"
     "__load_and_call__ZNSt6locale7_LocimpC1Eb:\n"
     "push rdi\n"
@@ -30684,6 +31642,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_LocimpC2ERKS0_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_LocimpC2ERKS0_\n"
     ".type __load_and_call__ZNSt6locale7_LocimpC2ERKS0_ @function\n"
     "__load_and_call__ZNSt6locale7_LocimpC2ERKS0_:\n"
     "push rdi\n"
@@ -30716,6 +31675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_LocimpC2Eb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_LocimpC2Eb\n"
     ".type __load_and_call__ZNSt6locale7_LocimpC2Eb @function\n"
     "__load_and_call__ZNSt6locale7_LocimpC2Eb:\n"
     "push rdi\n"
@@ -30748,6 +31708,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_LocimpD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_LocimpD0Ev\n"
     ".type __load_and_call__ZNSt6locale7_LocimpD0Ev @function\n"
     "__load_and_call__ZNSt6locale7_LocimpD0Ev:\n"
     "push rdi\n"
@@ -30780,6 +31741,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_LocimpD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_LocimpD1Ev\n"
     ".type __load_and_call__ZNSt6locale7_LocimpD1Ev @function\n"
     "__load_and_call__ZNSt6locale7_LocimpD1Ev:\n"
     "push rdi\n"
@@ -30812,6 +31774,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7_LocimpD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7_LocimpD2Ev\n"
     ".type __load_and_call__ZNSt6locale7_LocimpD2Ev @function\n"
     "__load_and_call__ZNSt6locale7_LocimpD2Ev:\n"
     "push rdi\n"
@@ -30844,6 +31807,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6locale7classicEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6locale7classicEv\n"
     ".type __load_and_call__ZNSt6locale7classicEv @function\n"
     "__load_and_call__ZNSt6locale7classicEv:\n"
     "push rdi\n"
@@ -30876,6 +31840,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6localeD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6localeD1Ev\n"
     ".type __load_and_call__ZNSt6localeD1Ev @function\n"
     "__load_and_call__ZNSt6localeD1Ev:\n"
     "push rdi\n"
@@ -30908,6 +31873,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt6thread20hardware_concurrencyEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt6thread20hardware_concurrencyEv\n"
     ".type __load_and_call__ZNSt6thread20hardware_concurrencyEv @function\n"
     "__load_and_call__ZNSt6thread20hardware_concurrencyEv:\n"
     "push rdi\n"
@@ -30940,6 +31906,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIcE5_InitERKSt8_Locinfob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIcE5_InitERKSt8_Locinfob\n"
     ".type __load_and_call__ZNSt7_MpunctIcE5_InitERKSt8_Locinfob @function\n"
     "__load_and_call__ZNSt7_MpunctIcE5_InitERKSt8_Locinfob:\n"
     "push rdi\n"
@@ -30972,6 +31939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIcEC2EPKcmbb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIcEC2EPKcmbb\n"
     ".type __load_and_call__ZNSt7_MpunctIcEC2EPKcmbb @function\n"
     "__load_and_call__ZNSt7_MpunctIcEC2EPKcmbb:\n"
     "push rdi\n"
@@ -31004,6 +31972,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIcEC2Emb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIcEC2Emb\n"
     ".type __load_and_call__ZNSt7_MpunctIcEC2Emb @function\n"
     "__load_and_call__ZNSt7_MpunctIcEC2Emb:\n"
     "push rdi\n"
@@ -31036,6 +32005,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIcED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIcED0Ev\n"
     ".type __load_and_call__ZNSt7_MpunctIcED0Ev @function\n"
     "__load_and_call__ZNSt7_MpunctIcED0Ev:\n"
     "push rdi\n"
@@ -31068,6 +32038,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIcED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIcED1Ev\n"
     ".type __load_and_call__ZNSt7_MpunctIcED1Ev @function\n"
     "__load_and_call__ZNSt7_MpunctIcED1Ev:\n"
     "push rdi\n"
@@ -31100,6 +32071,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIwE5_InitERKSt8_Locinfob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIwE5_InitERKSt8_Locinfob\n"
     ".type __load_and_call__ZNSt7_MpunctIwE5_InitERKSt8_Locinfob @function\n"
     "__load_and_call__ZNSt7_MpunctIwE5_InitERKSt8_Locinfob:\n"
     "push rdi\n"
@@ -31132,6 +32104,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIwEC2EPKcmbb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIwEC2EPKcmbb\n"
     ".type __load_and_call__ZNSt7_MpunctIwEC2EPKcmbb @function\n"
     "__load_and_call__ZNSt7_MpunctIwEC2EPKcmbb:\n"
     "push rdi\n"
@@ -31164,6 +32137,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIwEC2Emb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIwEC2Emb\n"
     ".type __load_and_call__ZNSt7_MpunctIwEC2Emb @function\n"
     "__load_and_call__ZNSt7_MpunctIwEC2Emb:\n"
     "push rdi\n"
@@ -31196,6 +32170,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIwED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIwED0Ev\n"
     ".type __load_and_call__ZNSt7_MpunctIwED0Ev @function\n"
     "__load_and_call__ZNSt7_MpunctIwED0Ev:\n"
     "push rdi\n"
@@ -31228,6 +32203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7_MpunctIwED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7_MpunctIwED1Ev\n"
     ".type __load_and_call__ZNSt7_MpunctIwED1Ev @function\n"
     "__load_and_call__ZNSt7_MpunctIwED1Ev:\n"
     "push rdi\n"
@@ -31260,6 +32236,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIDic9_MbstatetED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIDic9_MbstatetED0Ev\n"
     ".type __load_and_call__ZNSt7codecvtIDic9_MbstatetED0Ev @function\n"
     "__load_and_call__ZNSt7codecvtIDic9_MbstatetED0Ev:\n"
     "push rdi\n"
@@ -31292,6 +32269,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIDic9_MbstatetED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIDic9_MbstatetED1Ev\n"
     ".type __load_and_call__ZNSt7codecvtIDic9_MbstatetED1Ev @function\n"
     "__load_and_call__ZNSt7codecvtIDic9_MbstatetED1Ev:\n"
     "push rdi\n"
@@ -31324,6 +32302,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIDsc9_MbstatetED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIDsc9_MbstatetED0Ev\n"
     ".type __load_and_call__ZNSt7codecvtIDsc9_MbstatetED0Ev @function\n"
     "__load_and_call__ZNSt7codecvtIDsc9_MbstatetED0Ev:\n"
     "push rdi\n"
@@ -31356,6 +32335,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIDsc9_MbstatetED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIDsc9_MbstatetED1Ev\n"
     ".type __load_and_call__ZNSt7codecvtIDsc9_MbstatetED1Ev @function\n"
     "__load_and_call__ZNSt7codecvtIDsc9_MbstatetED1Ev:\n"
     "push rdi\n"
@@ -31388,6 +32368,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -31420,6 +32401,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetE7_GetcatEPPKNSt6locale5facetEPKS2_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetE7_GetcatEPPKNSt6locale5facetEPKS2_\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetE7_GetcatEPPKNSt6locale5facetEPKS2_ @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetE7_GetcatEPPKNSt6locale5facetEPKS2_:\n"
     "push rdi\n"
@@ -31452,6 +32434,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -31484,6 +32467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetEC1Em\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetEC1Em @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetEC1Em:\n"
     "push rdi\n"
@@ -31516,6 +32500,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -31548,6 +32533,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetEC2Em\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetEC2Em @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetEC2Em:\n"
     "push rdi\n"
@@ -31580,6 +32566,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetED0Ev\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetED0Ev @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetED0Ev:\n"
     "push rdi\n"
@@ -31612,6 +32599,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetED1Ev\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetED1Ev @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetED1Ev:\n"
     "push rdi\n"
@@ -31644,6 +32632,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIcc9_MbstatetED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIcc9_MbstatetED2Ev\n"
     ".type __load_and_call__ZNSt7codecvtIcc9_MbstatetED2Ev @function\n"
     "__load_and_call__ZNSt7codecvtIcc9_MbstatetED2Ev:\n"
     "push rdi\n"
@@ -31676,6 +32665,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIwc9_MbstatetED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIwc9_MbstatetED0Ev\n"
     ".type __load_and_call__ZNSt7codecvtIwc9_MbstatetED0Ev @function\n"
     "__load_and_call__ZNSt7codecvtIwc9_MbstatetED0Ev:\n"
     "push rdi\n"
@@ -31708,6 +32698,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7codecvtIwc9_MbstatetED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7codecvtIwc9_MbstatetED1Ev\n"
     ".type __load_and_call__ZNSt7codecvtIwc9_MbstatetED1Ev @function\n"
     "__load_and_call__ZNSt7codecvtIwc9_MbstatetED1Ev:\n"
     "push rdi\n"
@@ -31740,6 +32731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt7collateIcE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt7collateIcE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -31772,6 +32764,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt7collateIcE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt7collateIcE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -31804,6 +32797,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcEC1EPKcm\n"
     ".type __load_and_call__ZNSt7collateIcEC1EPKcm @function\n"
     "__load_and_call__ZNSt7collateIcEC1EPKcm:\n"
     "push rdi\n"
@@ -31836,6 +32830,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7collateIcEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7collateIcEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -31868,6 +32863,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcEC1Em\n"
     ".type __load_and_call__ZNSt7collateIcEC1Em @function\n"
     "__load_and_call__ZNSt7collateIcEC1Em:\n"
     "push rdi\n"
@@ -31900,6 +32896,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcEC2EPKcm\n"
     ".type __load_and_call__ZNSt7collateIcEC2EPKcm @function\n"
     "__load_and_call__ZNSt7collateIcEC2EPKcm:\n"
     "push rdi\n"
@@ -31932,6 +32929,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7collateIcEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7collateIcEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -31964,6 +32962,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcEC2Em\n"
     ".type __load_and_call__ZNSt7collateIcEC2Em @function\n"
     "__load_and_call__ZNSt7collateIcEC2Em:\n"
     "push rdi\n"
@@ -31996,6 +32995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcED0Ev\n"
     ".type __load_and_call__ZNSt7collateIcED0Ev @function\n"
     "__load_and_call__ZNSt7collateIcED0Ev:\n"
     "push rdi\n"
@@ -32028,6 +33028,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcED1Ev\n"
     ".type __load_and_call__ZNSt7collateIcED1Ev @function\n"
     "__load_and_call__ZNSt7collateIcED1Ev:\n"
     "push rdi\n"
@@ -32060,6 +33061,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIcED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIcED2Ev\n"
     ".type __load_and_call__ZNSt7collateIcED2Ev @function\n"
     "__load_and_call__ZNSt7collateIcED2Ev:\n"
     "push rdi\n"
@@ -32092,6 +33094,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt7collateIwE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt7collateIwE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -32124,6 +33127,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt7collateIwE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt7collateIwE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -32156,6 +33160,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwEC1EPKcm\n"
     ".type __load_and_call__ZNSt7collateIwEC1EPKcm @function\n"
     "__load_and_call__ZNSt7collateIwEC1EPKcm:\n"
     "push rdi\n"
@@ -32188,6 +33193,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7collateIwEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7collateIwEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -32220,6 +33226,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwEC1Em\n"
     ".type __load_and_call__ZNSt7collateIwEC1Em @function\n"
     "__load_and_call__ZNSt7collateIwEC1Em:\n"
     "push rdi\n"
@@ -32252,6 +33259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwEC2EPKcm\n"
     ".type __load_and_call__ZNSt7collateIwEC2EPKcm @function\n"
     "__load_and_call__ZNSt7collateIwEC2EPKcm:\n"
     "push rdi\n"
@@ -32284,6 +33292,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7collateIwEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7collateIwEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -32316,6 +33325,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwEC2Em\n"
     ".type __load_and_call__ZNSt7collateIwEC2Em @function\n"
     "__load_and_call__ZNSt7collateIwEC2Em:\n"
     "push rdi\n"
@@ -32348,6 +33358,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwED0Ev\n"
     ".type __load_and_call__ZNSt7collateIwED0Ev @function\n"
     "__load_and_call__ZNSt7collateIwED0Ev:\n"
     "push rdi\n"
@@ -32380,6 +33391,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwED1Ev\n"
     ".type __load_and_call__ZNSt7collateIwED1Ev @function\n"
     "__load_and_call__ZNSt7collateIwED1Ev:\n"
     "push rdi\n"
@@ -32412,6 +33424,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7collateIwED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7collateIwED2Ev\n"
     ".type __load_and_call__ZNSt7collateIwED2Ev @function\n"
     "__load_and_call__ZNSt7collateIwED2Ev:\n"
     "push rdi\n"
@@ -32444,6 +33457,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -32476,6 +33490,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -32508,6 +33523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -32540,6 +33556,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em:\n"
     "push rdi\n"
@@ -32572,6 +33589,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -32604,6 +33622,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em:\n"
     "push rdi\n"
@@ -32636,6 +33655,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev:\n"
     "push rdi\n"
@@ -32668,6 +33688,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev:\n"
     "push rdi\n"
@@ -32700,6 +33721,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev\n"
     ".type __load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev @function\n"
     "__load_and_call__ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev:\n"
     "push rdi\n"
@@ -32732,6 +33754,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -32764,6 +33787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -32796,6 +33820,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -32828,6 +33853,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em:\n"
     "push rdi\n"
@@ -32860,6 +33886,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -32892,6 +33919,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em:\n"
     "push rdi\n"
@@ -32924,6 +33952,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev:\n"
     "push rdi\n"
@@ -32956,6 +33985,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev:\n"
     "push rdi\n"
@@ -32988,6 +34018,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev\n"
     ".type __load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev @function\n"
     "__load_and_call__ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev:\n"
     "push rdi\n"
@@ -33020,6 +34051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -33052,6 +34084,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -33084,6 +34117,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -33116,6 +34150,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em:\n"
     "push rdi\n"
@@ -33148,6 +34183,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -33180,6 +34216,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em:\n"
     "push rdi\n"
@@ -33212,6 +34249,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev:\n"
     "push rdi\n"
@@ -33244,6 +34282,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev:\n"
     "push rdi\n"
@@ -33276,6 +34315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev\n"
     ".type __load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev @function\n"
     "__load_and_call__ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev:\n"
     "push rdi\n"
@@ -33308,6 +34348,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -33340,6 +34381,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -33372,6 +34414,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -33404,6 +34447,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em:\n"
     "push rdi\n"
@@ -33436,6 +34480,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -33468,6 +34513,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em:\n"
     "push rdi\n"
@@ -33500,6 +34546,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev:\n"
     "push rdi\n"
@@ -33532,6 +34579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev:\n"
     "push rdi\n"
@@ -33564,6 +34612,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev\n"
     ".type __load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev @function\n"
     "__load_and_call__ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev:\n"
     "push rdi\n"
@@ -33596,6 +34645,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_Locinfo8_AddcatsEiPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_Locinfo8_AddcatsEiPKc\n"
     ".type __load_and_call__ZNSt8_Locinfo8_AddcatsEiPKc @function\n"
     "__load_and_call__ZNSt8_Locinfo8_AddcatsEiPKc:\n"
     "push rdi\n"
@@ -33628,6 +34678,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_LocinfoC1EPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_LocinfoC1EPKc\n"
     ".type __load_and_call__ZNSt8_LocinfoC1EPKc @function\n"
     "__load_and_call__ZNSt8_LocinfoC1EPKc:\n"
     "push rdi\n"
@@ -33660,6 +34711,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_LocinfoC1ERKSs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_LocinfoC1ERKSs\n"
     ".type __load_and_call__ZNSt8_LocinfoC1ERKSs @function\n"
     "__load_and_call__ZNSt8_LocinfoC1ERKSs:\n"
     "push rdi\n"
@@ -33692,6 +34744,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_LocinfoC1EiPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_LocinfoC1EiPKc\n"
     ".type __load_and_call__ZNSt8_LocinfoC1EiPKc @function\n"
     "__load_and_call__ZNSt8_LocinfoC1EiPKc:\n"
     "push rdi\n"
@@ -33724,6 +34777,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_LocinfoC2EPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_LocinfoC2EPKc\n"
     ".type __load_and_call__ZNSt8_LocinfoC2EPKc @function\n"
     "__load_and_call__ZNSt8_LocinfoC2EPKc:\n"
     "push rdi\n"
@@ -33756,6 +34810,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_LocinfoC2ERKSs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_LocinfoC2ERKSs\n"
     ".type __load_and_call__ZNSt8_LocinfoC2ERKSs @function\n"
     "__load_and_call__ZNSt8_LocinfoC2ERKSs:\n"
     "push rdi\n"
@@ -33788,6 +34843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_LocinfoC2EiPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_LocinfoC2EiPKc\n"
     ".type __load_and_call__ZNSt8_LocinfoC2EiPKc @function\n"
     "__load_and_call__ZNSt8_LocinfoC2EiPKc:\n"
     "push rdi\n"
@@ -33820,6 +34876,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_LocinfoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_LocinfoD1Ev\n"
     ".type __load_and_call__ZNSt8_LocinfoD1Ev @function\n"
     "__load_and_call__ZNSt8_LocinfoD1Ev:\n"
     "push rdi\n"
@@ -33852,6 +34909,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8_LocinfoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8_LocinfoD2Ev\n"
     ".type __load_and_call__ZNSt8_LocinfoD2Ev @function\n"
     "__load_and_call__ZNSt8_LocinfoD2Ev:\n"
     "push rdi\n"
@@ -33884,6 +34942,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8bad_castD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8bad_castD0Ev\n"
     ".type __load_and_call__ZNSt8bad_castD0Ev @function\n"
     "__load_and_call__ZNSt8bad_castD0Ev:\n"
     "push rdi\n"
@@ -33916,6 +34975,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8bad_castD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8bad_castD1Ev\n"
     ".type __load_and_call__ZNSt8bad_castD1Ev @function\n"
     "__load_and_call__ZNSt8bad_castD1Ev:\n"
     "push rdi\n"
@@ -33948,6 +35008,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8bad_castD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8bad_castD2Ev\n"
     ".type __load_and_call__ZNSt8bad_castD2Ev @function\n"
     "__load_and_call__ZNSt8bad_castD2Ev:\n"
     "push rdi\n"
@@ -33980,6 +35041,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base4InitC1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base4InitC1Ev\n"
     ".type __load_and_call__ZNSt8ios_base4InitC1Ev @function\n"
     "__load_and_call__ZNSt8ios_base4InitC1Ev:\n"
     "push rdi\n"
@@ -34012,6 +35074,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base4InitC2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base4InitC2Ev\n"
     ".type __load_and_call__ZNSt8ios_base4InitC2Ev @function\n"
     "__load_and_call__ZNSt8ios_base4InitC2Ev:\n"
     "push rdi\n"
@@ -34044,6 +35107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base4InitD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base4InitD1Ev\n"
     ".type __load_and_call__ZNSt8ios_base4InitD1Ev @function\n"
     "__load_and_call__ZNSt8ios_base4InitD1Ev:\n"
     "push rdi\n"
@@ -34076,6 +35140,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base4InitD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base4InitD2Ev\n"
     ".type __load_and_call__ZNSt8ios_base4InitD2Ev @function\n"
     "__load_and_call__ZNSt8ios_base4InitD2Ev:\n"
     "push rdi\n"
@@ -34108,6 +35173,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb\n"
     ".type __load_and_call__ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb @function\n"
     "__load_and_call__ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb:\n"
     "push rdi\n"
@@ -34140,6 +35206,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base7_AddstdEPS_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base7_AddstdEPS_\n"
     ".type __load_and_call__ZNSt8ios_base7_AddstdEPS_ @function\n"
     "__load_and_call__ZNSt8ios_base7_AddstdEPS_:\n"
     "push rdi\n"
@@ -34172,6 +35239,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base7failureD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base7failureD0Ev\n"
     ".type __load_and_call__ZNSt8ios_base7failureD0Ev @function\n"
     "__load_and_call__ZNSt8ios_base7failureD0Ev:\n"
     "push rdi\n"
@@ -34204,6 +35272,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base7failureD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base7failureD1Ev\n"
     ".type __load_and_call__ZNSt8ios_base7failureD1Ev @function\n"
     "__load_and_call__ZNSt8ios_base7failureD1Ev:\n"
     "push rdi\n"
@@ -34236,6 +35305,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_base7failureD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_base7failureD2Ev\n"
     ".type __load_and_call__ZNSt8ios_base7failureD2Ev @function\n"
     "__load_and_call__ZNSt8ios_base7failureD2Ev:\n"
     "push rdi\n"
@@ -34268,6 +35338,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_baseD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_baseD0Ev\n"
     ".type __load_and_call__ZNSt8ios_baseD0Ev @function\n"
     "__load_and_call__ZNSt8ios_baseD0Ev:\n"
     "push rdi\n"
@@ -34300,6 +35371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_baseD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_baseD1Ev\n"
     ".type __load_and_call__ZNSt8ios_baseD1Ev @function\n"
     "__load_and_call__ZNSt8ios_baseD1Ev:\n"
     "push rdi\n"
@@ -34332,6 +35404,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8ios_baseD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8ios_baseD2Ev\n"
     ".type __load_and_call__ZNSt8ios_baseD2Ev @function\n"
     "__load_and_call__ZNSt8ios_baseD2Ev:\n"
     "push rdi\n"
@@ -34364,6 +35437,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt8messagesIcE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt8messagesIcE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -34396,6 +35470,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt8messagesIcE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt8messagesIcE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -34428,6 +35503,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcEC1EPKcm\n"
     ".type __load_and_call__ZNSt8messagesIcEC1EPKcm @function\n"
     "__load_and_call__ZNSt8messagesIcEC1EPKcm:\n"
     "push rdi\n"
@@ -34460,6 +35536,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8messagesIcEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8messagesIcEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -34492,6 +35569,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcEC1Em\n"
     ".type __load_and_call__ZNSt8messagesIcEC1Em @function\n"
     "__load_and_call__ZNSt8messagesIcEC1Em:\n"
     "push rdi\n"
@@ -34524,6 +35602,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcEC2EPKcm\n"
     ".type __load_and_call__ZNSt8messagesIcEC2EPKcm @function\n"
     "__load_and_call__ZNSt8messagesIcEC2EPKcm:\n"
     "push rdi\n"
@@ -34556,6 +35635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8messagesIcEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8messagesIcEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -34588,6 +35668,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcEC2Em\n"
     ".type __load_and_call__ZNSt8messagesIcEC2Em @function\n"
     "__load_and_call__ZNSt8messagesIcEC2Em:\n"
     "push rdi\n"
@@ -34620,6 +35701,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcED0Ev\n"
     ".type __load_and_call__ZNSt8messagesIcED0Ev @function\n"
     "__load_and_call__ZNSt8messagesIcED0Ev:\n"
     "push rdi\n"
@@ -34652,6 +35734,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcED1Ev\n"
     ".type __load_and_call__ZNSt8messagesIcED1Ev @function\n"
     "__load_and_call__ZNSt8messagesIcED1Ev:\n"
     "push rdi\n"
@@ -34684,6 +35767,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIcED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIcED2Ev\n"
     ".type __load_and_call__ZNSt8messagesIcED2Ev @function\n"
     "__load_and_call__ZNSt8messagesIcED2Ev:\n"
     "push rdi\n"
@@ -34716,6 +35800,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt8messagesIwE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt8messagesIwE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -34748,6 +35833,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt8messagesIwE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt8messagesIwE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -34780,6 +35866,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwEC1EPKcm\n"
     ".type __load_and_call__ZNSt8messagesIwEC1EPKcm @function\n"
     "__load_and_call__ZNSt8messagesIwEC1EPKcm:\n"
     "push rdi\n"
@@ -34812,6 +35899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8messagesIwEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8messagesIwEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -34844,6 +35932,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwEC1Em\n"
     ".type __load_and_call__ZNSt8messagesIwEC1Em @function\n"
     "__load_and_call__ZNSt8messagesIwEC1Em:\n"
     "push rdi\n"
@@ -34876,6 +35965,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwEC2EPKcm\n"
     ".type __load_and_call__ZNSt8messagesIwEC2EPKcm @function\n"
     "__load_and_call__ZNSt8messagesIwEC2EPKcm:\n"
     "push rdi\n"
@@ -34908,6 +35998,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8messagesIwEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8messagesIwEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -34940,6 +36031,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwEC2Em\n"
     ".type __load_and_call__ZNSt8messagesIwEC2Em @function\n"
     "__load_and_call__ZNSt8messagesIwEC2Em:\n"
     "push rdi\n"
@@ -34972,6 +36064,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwED0Ev\n"
     ".type __load_and_call__ZNSt8messagesIwED0Ev @function\n"
     "__load_and_call__ZNSt8messagesIwED0Ev:\n"
     "push rdi\n"
@@ -35004,6 +36097,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwED1Ev\n"
     ".type __load_and_call__ZNSt8messagesIwED1Ev @function\n"
     "__load_and_call__ZNSt8messagesIwED1Ev:\n"
     "push rdi\n"
@@ -35036,6 +36130,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8messagesIwED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8messagesIwED2Ev\n"
     ".type __load_and_call__ZNSt8messagesIwED2Ev @function\n"
     "__load_and_call__ZNSt8messagesIwED2Ev:\n"
     "push rdi\n"
@@ -35068,6 +36163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcE5_InitERKSt8_Locinfob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcE5_InitERKSt8_Locinfob\n"
     ".type __load_and_call__ZNSt8numpunctIcE5_InitERKSt8_Locinfob @function\n"
     "__load_and_call__ZNSt8numpunctIcE5_InitERKSt8_Locinfob:\n"
     "push rdi\n"
@@ -35100,6 +36196,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcE5_TidyEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcE5_TidyEv\n"
     ".type __load_and_call__ZNSt8numpunctIcE5_TidyEv @function\n"
     "__load_and_call__ZNSt8numpunctIcE5_TidyEv:\n"
     "push rdi\n"
@@ -35132,6 +36229,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -35164,6 +36262,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcEC1EPKcmb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcEC1EPKcmb\n"
     ".type __load_and_call__ZNSt8numpunctIcEC1EPKcmb @function\n"
     "__load_and_call__ZNSt8numpunctIcEC1EPKcmb:\n"
     "push rdi\n"
@@ -35196,6 +36295,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcEC1ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcEC1ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt8numpunctIcEC1ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt8numpunctIcEC1ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -35228,6 +36328,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcEC1Em\n"
     ".type __load_and_call__ZNSt8numpunctIcEC1Em @function\n"
     "__load_and_call__ZNSt8numpunctIcEC1Em:\n"
     "push rdi\n"
@@ -35260,6 +36361,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcEC2EPKcmb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcEC2EPKcmb\n"
     ".type __load_and_call__ZNSt8numpunctIcEC2EPKcmb @function\n"
     "__load_and_call__ZNSt8numpunctIcEC2EPKcmb:\n"
     "push rdi\n"
@@ -35292,6 +36394,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcEC2ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcEC2ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt8numpunctIcEC2ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt8numpunctIcEC2ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -35324,6 +36427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcEC2Em\n"
     ".type __load_and_call__ZNSt8numpunctIcEC2Em @function\n"
     "__load_and_call__ZNSt8numpunctIcEC2Em:\n"
     "push rdi\n"
@@ -35356,6 +36460,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcED0Ev\n"
     ".type __load_and_call__ZNSt8numpunctIcED0Ev @function\n"
     "__load_and_call__ZNSt8numpunctIcED0Ev:\n"
     "push rdi\n"
@@ -35388,6 +36493,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcED1Ev\n"
     ".type __load_and_call__ZNSt8numpunctIcED1Ev @function\n"
     "__load_and_call__ZNSt8numpunctIcED1Ev:\n"
     "push rdi\n"
@@ -35420,6 +36526,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIcED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIcED2Ev\n"
     ".type __load_and_call__ZNSt8numpunctIcED2Ev @function\n"
     "__load_and_call__ZNSt8numpunctIcED2Ev:\n"
     "push rdi\n"
@@ -35452,6 +36559,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwE5_InitERKSt8_Locinfob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwE5_InitERKSt8_Locinfob\n"
     ".type __load_and_call__ZNSt8numpunctIwE5_InitERKSt8_Locinfob @function\n"
     "__load_and_call__ZNSt8numpunctIwE5_InitERKSt8_Locinfob:\n"
     "push rdi\n"
@@ -35484,6 +36592,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwE5_TidyEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwE5_TidyEv\n"
     ".type __load_and_call__ZNSt8numpunctIwE5_TidyEv @function\n"
     "__load_and_call__ZNSt8numpunctIwE5_TidyEv:\n"
     "push rdi\n"
@@ -35516,6 +36625,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwE7_GetcatEPPKNSt6locale5facetEPKS1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwE7_GetcatEPPKNSt6locale5facetEPKS1_\n"
     ".type __load_and_call__ZNSt8numpunctIwE7_GetcatEPPKNSt6locale5facetEPKS1_ @function\n"
     "__load_and_call__ZNSt8numpunctIwE7_GetcatEPPKNSt6locale5facetEPKS1_:\n"
     "push rdi\n"
@@ -35548,6 +36658,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwEC1EPKcmb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwEC1EPKcmb\n"
     ".type __load_and_call__ZNSt8numpunctIwEC1EPKcmb @function\n"
     "__load_and_call__ZNSt8numpunctIwEC1EPKcmb:\n"
     "push rdi\n"
@@ -35580,6 +36691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwEC1ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwEC1ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt8numpunctIwEC1ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt8numpunctIwEC1ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -35612,6 +36724,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwEC1Em\n"
     ".type __load_and_call__ZNSt8numpunctIwEC1Em @function\n"
     "__load_and_call__ZNSt8numpunctIwEC1Em:\n"
     "push rdi\n"
@@ -35644,6 +36757,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwEC2EPKcmb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwEC2EPKcmb\n"
     ".type __load_and_call__ZNSt8numpunctIwEC2EPKcmb @function\n"
     "__load_and_call__ZNSt8numpunctIwEC2EPKcmb:\n"
     "push rdi\n"
@@ -35676,6 +36790,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwEC2ERKSt8_Locinfomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwEC2ERKSt8_Locinfomb\n"
     ".type __load_and_call__ZNSt8numpunctIwEC2ERKSt8_Locinfomb @function\n"
     "__load_and_call__ZNSt8numpunctIwEC2ERKSt8_Locinfomb:\n"
     "push rdi\n"
@@ -35708,6 +36823,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwEC2Em\n"
     ".type __load_and_call__ZNSt8numpunctIwEC2Em @function\n"
     "__load_and_call__ZNSt8numpunctIwEC2Em:\n"
     "push rdi\n"
@@ -35740,6 +36856,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwED0Ev\n"
     ".type __load_and_call__ZNSt8numpunctIwED0Ev @function\n"
     "__load_and_call__ZNSt8numpunctIwED0Ev:\n"
     "push rdi\n"
@@ -35772,6 +36889,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwED1Ev\n"
     ".type __load_and_call__ZNSt8numpunctIwED1Ev @function\n"
     "__load_and_call__ZNSt8numpunctIwED1Ev:\n"
     "push rdi\n"
@@ -35804,6 +36922,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8numpunctIwED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8numpunctIwED2Ev\n"
     ".type __load_and_call__ZNSt8numpunctIwED2Ev @function\n"
     "__load_and_call__ZNSt8numpunctIwED2Ev:\n"
     "push rdi\n"
@@ -35836,6 +36955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_TidyEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_TidyEv\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_TidyEv @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_TidyEv:\n"
     "push rdi\n"
@@ -35868,6 +36988,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -35900,6 +37021,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1EPKcm\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1EPKcm @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1EPKcm:\n"
     "push rdi\n"
@@ -35932,6 +37054,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -35964,6 +37087,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em:\n"
     "push rdi\n"
@@ -35996,6 +37120,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2EPKcm\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2EPKcm @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2EPKcm:\n"
     "push rdi\n"
@@ -36028,6 +37153,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -36060,6 +37186,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em:\n"
     "push rdi\n"
@@ -36092,6 +37219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev:\n"
     "push rdi\n"
@@ -36124,6 +37252,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev:\n"
     "push rdi\n"
@@ -36156,6 +37285,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev\n"
     ".type __load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev @function\n"
     "__load_and_call__ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev:\n"
     "push rdi\n"
@@ -36188,6 +37318,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_TidyEv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_TidyEv\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_TidyEv @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_TidyEv:\n"
     "push rdi\n"
@@ -36220,6 +37351,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -36252,6 +37384,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1EPKcm\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1EPKcm @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1EPKcm:\n"
     "push rdi\n"
@@ -36284,6 +37417,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -36316,6 +37450,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em:\n"
     "push rdi\n"
@@ -36348,6 +37483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2EPKcm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2EPKcm\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2EPKcm @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2EPKcm:\n"
     "push rdi\n"
@@ -36380,6 +37516,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -36412,6 +37549,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em:\n"
     "push rdi\n"
@@ -36444,6 +37582,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev:\n"
     "push rdi\n"
@@ -36476,6 +37615,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev:\n"
     "push rdi\n"
@@ -36508,6 +37648,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev\n"
     ".type __load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev @function\n"
     "__load_and_call__ZNSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev:\n"
     "push rdi\n"
@@ -36540,6 +37681,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -36572,6 +37714,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -36604,6 +37747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -36636,6 +37780,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em:\n"
     "push rdi\n"
@@ -36668,6 +37813,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -36700,6 +37846,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em:\n"
     "push rdi\n"
@@ -36732,6 +37879,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev:\n"
     "push rdi\n"
@@ -36764,6 +37912,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev:\n"
     "push rdi\n"
@@ -36796,6 +37945,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev\n"
     ".type __load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev @function\n"
     "__load_and_call__ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev:\n"
     "push rdi\n"
@@ -36828,6 +37978,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -36860,6 +38011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -36892,6 +38044,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -36924,6 +38077,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em:\n"
     "push rdi\n"
@@ -36956,6 +38110,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -36988,6 +38143,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em:\n"
     "push rdi\n"
@@ -37020,6 +38176,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev:\n"
     "push rdi\n"
@@ -37052,6 +38209,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev:\n"
     "push rdi\n"
@@ -37084,6 +38242,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev\n"
     ".type __load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev @function\n"
     "__load_and_call__ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev:\n"
     "push rdi\n"
@@ -37116,6 +38275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9bad_allocD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9bad_allocD0Ev\n"
     ".type __load_and_call__ZNSt9bad_allocD0Ev @function\n"
     "__load_and_call__ZNSt9bad_allocD0Ev:\n"
     "push rdi\n"
@@ -37148,6 +38308,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9bad_allocD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9bad_allocD1Ev\n"
     ".type __load_and_call__ZNSt9bad_allocD1Ev @function\n"
     "__load_and_call__ZNSt9bad_allocD1Ev:\n"
     "push rdi\n"
@@ -37180,6 +38341,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9bad_allocD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9bad_allocD2Ev\n"
     ".type __load_and_call__ZNSt9bad_allocD2Ev @function\n"
     "__load_and_call__ZNSt9bad_allocD2Ev:\n"
     "push rdi\n"
@@ -37212,6 +38374,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_Eb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_Eb\n"
     ".type __load_and_call__ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_Eb @function\n"
     "__load_and_call__ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_Eb:\n"
     "push rdi\n"
@@ -37244,6 +38407,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9basic_iosIwSt11char_traitsIwEE4initEPSt15basic_streambufIwS1_Eb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9basic_iosIwSt11char_traitsIwEE4initEPSt15basic_streambufIwS1_Eb\n"
     ".type __load_and_call__ZNSt9basic_iosIwSt11char_traitsIwEE4initEPSt15basic_streambufIwS1_Eb @function\n"
     "__load_and_call__ZNSt9basic_iosIwSt11char_traitsIwEE4initEPSt15basic_streambufIwS1_Eb:\n"
     "push rdi\n"
@@ -37276,6 +38440,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9exception18_Set_raise_handlerEPFvRKS_E]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9exception18_Set_raise_handlerEPFvRKS_E\n"
     ".type __load_and_call__ZNSt9exception18_Set_raise_handlerEPFvRKS_E @function\n"
     "__load_and_call__ZNSt9exception18_Set_raise_handlerEPFvRKS_E:\n"
     "push rdi\n"
@@ -37308,6 +38473,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9exceptionD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9exceptionD0Ev\n"
     ".type __load_and_call__ZNSt9exceptionD0Ev @function\n"
     "__load_and_call__ZNSt9exceptionD0Ev:\n"
     "push rdi\n"
@@ -37340,6 +38506,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9exceptionD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9exceptionD1Ev\n"
     ".type __load_and_call__ZNSt9exceptionD1Ev @function\n"
     "__load_and_call__ZNSt9exceptionD1Ev:\n"
     "push rdi\n"
@@ -37372,6 +38539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9exceptionD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9exceptionD2Ev\n"
     ".type __load_and_call__ZNSt9exceptionD2Ev @function\n"
     "__load_and_call__ZNSt9exceptionD2Ev:\n"
     "push rdi\n"
@@ -37404,6 +38572,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -37436,6 +38605,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -37468,6 +38638,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -37500,6 +38671,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC1Em:\n"
     "push rdi\n"
@@ -37532,6 +38704,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -37564,6 +38737,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEC2Em:\n"
     "push rdi\n"
@@ -37596,6 +38770,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev:\n"
     "push rdi\n"
@@ -37628,6 +38803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev:\n"
     "push rdi\n"
@@ -37660,6 +38836,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev\n"
     ".type __load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev @function\n"
     "__load_and_call__ZNSt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED2Ev:\n"
     "push rdi\n"
@@ -37692,6 +38869,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -37724,6 +38902,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -37756,6 +38935,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -37788,6 +38968,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC1Em:\n"
     "push rdi\n"
@@ -37820,6 +39001,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -37852,6 +39034,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEC2Em:\n"
     "push rdi\n"
@@ -37884,6 +39067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev:\n"
     "push rdi\n"
@@ -37916,6 +39100,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev:\n"
     "push rdi\n"
@@ -37948,6 +39133,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev\n"
     ".type __load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev @function\n"
     "__load_and_call__ZNSt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED2Ev:\n"
     "push rdi\n"
@@ -37980,6 +39166,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_PutES3_St22_String_const_iteratorISt11_String_valISt13_Simple_typesIcEEEm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_PutES3_St22_String_const_iteratorISt11_String_valISt13_Simple_typesIcEEEm\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_PutES3_St22_String_const_iteratorISt11_String_valISt13_Simple_typesIcEEEm @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_PutES3_St22_String_const_iteratorISt11_String_valISt13_Simple_typesIcEEEm:\n"
     "push rdi\n"
@@ -38012,6 +39199,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_RepES3_cm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_RepES3_cm\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_RepES3_cm @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE4_RepES3_cm:\n"
     "push rdi\n"
@@ -38044,6 +39232,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -38076,6 +39265,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -38108,6 +39298,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -38140,6 +39331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC1Em:\n"
     "push rdi\n"
@@ -38172,6 +39364,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -38204,6 +39397,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEC2Em:\n"
     "push rdi\n"
@@ -38236,6 +39430,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev:\n"
     "push rdi\n"
@@ -38268,6 +39463,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev:\n"
     "push rdi\n"
@@ -38300,6 +39496,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev\n"
     ".type __load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev @function\n"
     "__load_and_call__ZNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED2Ev:\n"
     "push rdi\n"
@@ -38332,6 +39529,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_PutES3_St22_String_const_iteratorISt11_String_valISt13_Simple_typesIwEEEm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_PutES3_St22_String_const_iteratorISt11_String_valISt13_Simple_typesIwEEEm\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_PutES3_St22_String_const_iteratorISt11_String_valISt13_Simple_typesIwEEEm @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_PutES3_St22_String_const_iteratorISt11_String_valISt13_Simple_typesIwEEEm:\n"
     "push rdi\n"
@@ -38364,6 +39562,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_RepES3_wm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_RepES3_wm\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_RepES3_wm @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE4_RepES3_wm:\n"
     "push rdi\n"
@@ -38396,6 +39595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_InitERKSt8_Locinfo:\n"
     "push rdi\n"
@@ -38428,6 +39628,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_ @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetEPKS5_:\n"
     "push rdi\n"
@@ -38460,6 +39661,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -38492,6 +39694,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC1Em:\n"
     "push rdi\n"
@@ -38524,6 +39727,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2ERKSt8_Locinfom:\n"
     "push rdi\n"
@@ -38556,6 +39760,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em:\n"
     "push rdi\n"
@@ -38588,6 +39793,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev:\n"
     "push rdi\n"
@@ -38620,6 +39826,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev:\n"
     "push rdi\n"
@@ -38652,6 +39859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev\n"
     ".type __load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev @function\n"
     "__load_and_call__ZNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev:\n"
     "push rdi\n"
@@ -38684,6 +39892,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9type_infoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9type_infoD0Ev\n"
     ".type __load_and_call__ZNSt9type_infoD0Ev @function\n"
     "__load_and_call__ZNSt9type_infoD0Ev:\n"
     "push rdi\n"
@@ -38716,6 +39925,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9type_infoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9type_infoD1Ev\n"
     ".type __load_and_call__ZNSt9type_infoD1Ev @function\n"
     "__load_and_call__ZNSt9type_infoD1Ev:\n"
     "push rdi\n"
@@ -38748,6 +39958,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZNSt9type_infoD2Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZNSt9type_infoD2Ev\n"
     ".type __load_and_call__ZNSt9type_infoD2Ev @function\n"
     "__load_and_call__ZNSt9type_infoD2Ev:\n"
     "push rdi\n"
@@ -38780,6 +39991,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt10_GetloctxtIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEiRT0_S5_mPKT_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt10_GetloctxtIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEiRT0_S5_mPKT_\n"
     ".type __load_and_call__ZSt10_GetloctxtIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEiRT0_S5_mPKT_ @function\n"
     "__load_and_call__ZSt10_GetloctxtIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEiRT0_S5_mPKT_:\n"
     "push rdi\n"
@@ -38812,6 +40024,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt10_GetloctxtIcSt19istreambuf_iteratorIwSt11char_traitsIwEEEiRT0_S5_mPKT_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt10_GetloctxtIcSt19istreambuf_iteratorIwSt11char_traitsIwEEEiRT0_S5_mPKT_\n"
     ".type __load_and_call__ZSt10_GetloctxtIcSt19istreambuf_iteratorIwSt11char_traitsIwEEEiRT0_S5_mPKT_ @function\n"
     "__load_and_call__ZSt10_GetloctxtIcSt19istreambuf_iteratorIwSt11char_traitsIwEEEiRT0_S5_mPKT_:\n"
     "push rdi\n"
@@ -38844,6 +40057,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt10_GetloctxtIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEiRT0_S5_mPKT_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt10_GetloctxtIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEiRT0_S5_mPKT_\n"
     ".type __load_and_call__ZSt10_GetloctxtIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEiRT0_S5_mPKT_ @function\n"
     "__load_and_call__ZSt10_GetloctxtIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEiRT0_S5_mPKT_:\n"
     "push rdi\n"
@@ -38876,6 +40090,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt10_Rng_abortPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt10_Rng_abortPKc\n"
     ".type __load_and_call__ZSt10_Rng_abortPKc @function\n"
     "__load_and_call__ZSt10_Rng_abortPKc:\n"
     "push rdi\n"
@@ -38908,6 +40123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt10unexpectedv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt10unexpectedv\n"
     ".type __load_and_call__ZSt10unexpectedv @function\n"
     "__load_and_call__ZSt10unexpectedv:\n"
     "push rdi\n"
@@ -38940,6 +40156,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt11_Xbad_allocv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt11_Xbad_allocv\n"
     ".type __load_and_call__ZSt11_Xbad_allocv @function\n"
     "__load_and_call__ZSt11_Xbad_allocv:\n"
     "push rdi\n"
@@ -38972,6 +40189,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt11setiosflagsNSt5_IosbIiE9_FmtflagsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt11setiosflagsNSt5_IosbIiE9_FmtflagsE\n"
     ".type __load_and_call__ZSt11setiosflagsNSt5_IosbIiE9_FmtflagsE @function\n"
     "__load_and_call__ZSt11setiosflagsNSt5_IosbIiE9_FmtflagsE:\n"
     "push rdi\n"
@@ -39004,6 +40222,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt12setprecisioni]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt12setprecisioni\n"
     ".type __load_and_call__ZSt12setprecisioni @function\n"
     "__load_and_call__ZSt12setprecisioni:\n"
     "push rdi\n"
@@ -39036,6 +40255,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt13_Execute_onceRSt9once_flagPFiPvS1_PS1_ES1_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt13_Execute_onceRSt9once_flagPFiPvS1_PS1_ES1_\n"
     ".type __load_and_call__ZSt13_Execute_onceRSt9once_flagPFiPvS1_PS1_ES1_ @function\n"
     "__load_and_call__ZSt13_Execute_onceRSt9once_flagPFiPvS1_PS1_ES1_:\n"
     "push rdi\n"
@@ -39068,6 +40288,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt13_Syserror_mapi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt13_Syserror_mapi\n"
     ".type __load_and_call__ZSt13_Syserror_mapi @function\n"
     "__load_and_call__ZSt13_Syserror_mapi:\n"
     "push rdi\n"
@@ -39100,6 +40321,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt13_Xregex_errorNSt15regex_constants10error_typeE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt13_Xregex_errorNSt15regex_constants10error_typeE\n"
     ".type __load_and_call__ZSt13_Xregex_errorNSt15regex_constants10error_typeE @function\n"
     "__load_and_call__ZSt13_Xregex_errorNSt15regex_constants10error_typeE:\n"
     "push rdi\n"
@@ -39132,6 +40354,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt13get_terminatev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt13get_terminatev\n"
     ".type __load_and_call__ZSt13get_terminatev @function\n"
     "__load_and_call__ZSt13get_terminatev:\n"
     "push rdi\n"
@@ -39164,6 +40387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt13resetiosflagsNSt5_IosbIiE9_FmtflagsE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt13resetiosflagsNSt5_IosbIiE9_FmtflagsE\n"
     ".type __load_and_call__ZSt13resetiosflagsNSt5_IosbIiE9_FmtflagsE @function\n"
     "__load_and_call__ZSt13resetiosflagsNSt5_IosbIiE9_FmtflagsE:\n"
     "push rdi\n"
@@ -39196,6 +40420,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt13set_terminatePFvvE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt13set_terminatePFvvE\n"
     ".type __load_and_call__ZSt13set_terminatePFvvE @function\n"
     "__load_and_call__ZSt13set_terminatePFvvE:\n"
     "push rdi\n"
@@ -39228,6 +40453,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt14_Atomic_assertPKcS0_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt14_Atomic_assertPKcS0_\n"
     ".type __load_and_call__ZSt14_Atomic_assertPKcS0_ @function\n"
     "__load_and_call__ZSt14_Atomic_assertPKcS0_:\n"
     "push rdi\n"
@@ -39260,6 +40486,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt14_Debug_messagePKcS0_j]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt14_Debug_messagePKcS0_j\n"
     ".type __load_and_call__ZSt14_Debug_messagePKcS0_j @function\n"
     "__load_and_call__ZSt14_Debug_messagePKcS0_j:\n"
     "push rdi\n"
@@ -39292,6 +40519,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt14_Random_devicev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt14_Random_devicev\n"
     ".type __load_and_call__ZSt14_Random_devicev @function\n"
     "__load_and_call__ZSt14_Random_devicev:\n"
     "push rdi\n"
@@ -39324,6 +40552,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt14_Throw_C_errori]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt14_Throw_C_errori\n"
     ".type __load_and_call__ZSt14_Throw_C_errori @function\n"
     "__load_and_call__ZSt14_Throw_C_errori:\n"
     "push rdi\n"
@@ -39356,6 +40585,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt14_Xlength_errorPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt14_Xlength_errorPKc\n"
     ".type __load_and_call__ZSt14_Xlength_errorPKc @function\n"
     "__load_and_call__ZSt14_Xlength_errorPKc:\n"
     "push rdi\n"
@@ -39388,6 +40618,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt14_Xout_of_rangePKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt14_Xout_of_rangePKc\n"
     ".type __load_and_call__ZSt14_Xout_of_rangePKc @function\n"
     "__load_and_call__ZSt14_Xout_of_rangePKc:\n"
     "push rdi\n"
@@ -39420,6 +40651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt14get_unexpectedv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt14get_unexpectedv\n"
     ".type __load_and_call__ZSt14get_unexpectedv @function\n"
     "__load_and_call__ZSt14get_unexpectedv:\n"
     "push rdi\n"
@@ -39452,6 +40684,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt14set_unexpectedPFvvE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt14set_unexpectedPFvvE\n"
     ".type __load_and_call__ZSt14set_unexpectedPFvvE @function\n"
     "__load_and_call__ZSt14set_unexpectedPFvvE:\n"
     "push rdi\n"
@@ -39484,6 +40717,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt15_Xruntime_errorPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt15_Xruntime_errorPKc\n"
     ".type __load_and_call__ZSt15_Xruntime_errorPKc @function\n"
     "__load_and_call__ZSt15_Xruntime_errorPKc:\n"
     "push rdi\n"
@@ -39516,6 +40750,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt15_sceLibcLocinfoPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt15_sceLibcLocinfoPKc\n"
     ".type __load_and_call__ZSt15_sceLibcLocinfoPKc @function\n"
     "__load_and_call__ZSt15_sceLibcLocinfoPKc:\n"
     "push rdi\n"
@@ -39548,6 +40783,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt15future_categoryv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt15future_categoryv\n"
     ".type __load_and_call__ZSt15future_categoryv @function\n"
     "__load_and_call__ZSt15future_categoryv:\n"
     "push rdi\n"
@@ -39580,6 +40816,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt15get_new_handlerv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt15get_new_handlerv\n"
     ".type __load_and_call__ZSt15get_new_handlerv @function\n"
     "__load_and_call__ZSt15get_new_handlerv:\n"
     "push rdi\n"
@@ -39612,6 +40849,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt15set_new_handlerPFvvE]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt15set_new_handlerPFvvE\n"
     ".type __load_and_call__ZSt15set_new_handlerPFvvE @function\n"
     "__load_and_call__ZSt15set_new_handlerPFvvE:\n"
     "push rdi\n"
@@ -39644,6 +40882,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt15system_categoryv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt15system_categoryv\n"
     ".type __load_and_call__ZSt15system_categoryv @function\n"
     "__load_and_call__ZSt15system_categoryv:\n"
     "push rdi\n"
@@ -39676,6 +40915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt16_Throw_Cpp_errori]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt16_Throw_Cpp_errori\n"
     ".type __load_and_call__ZSt16_Throw_Cpp_errori @function\n"
     "__load_and_call__ZSt16_Throw_Cpp_errori:\n"
     "push rdi\n"
@@ -39708,6 +40948,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt16_Xoverflow_errorPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt16_Xoverflow_errorPKc\n"
     ".type __load_and_call__ZSt16_Xoverflow_errorPKc @function\n"
     "__load_and_call__ZSt16_Xoverflow_errorPKc:\n"
     "push rdi\n"
@@ -39740,6 +40981,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt16generic_categoryv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt16generic_categoryv\n"
     ".type __load_and_call__ZSt16generic_categoryv @function\n"
     "__load_and_call__ZSt16generic_categoryv:\n"
     "push rdi\n"
@@ -39772,6 +41014,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt17_Future_error_mapi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt17_Future_error_mapi\n"
     ".type __load_and_call__ZSt17_Future_error_mapi @function\n"
     "__load_and_call__ZSt17_Future_error_mapi:\n"
     "push rdi\n"
@@ -39804,6 +41047,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt17iostream_categoryv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt17iostream_categoryv\n"
     ".type __load_and_call__ZSt17iostream_categoryv @function\n"
     "__load_and_call__ZSt17iostream_categoryv:\n"
     "push rdi\n"
@@ -39836,6 +41080,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt18_Xinvalid_argumentPKc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt18_Xinvalid_argumentPKc\n"
     ".type __load_and_call__ZSt18_Xinvalid_argumentPKc @function\n"
     "__load_and_call__ZSt18_Xinvalid_argumentPKc:\n"
     "push rdi\n"
@@ -39868,6 +41113,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt18uncaught_exceptionv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt18uncaught_exceptionv\n"
     ".type __load_and_call__ZSt18uncaught_exceptionv @function\n"
     "__load_and_call__ZSt18uncaught_exceptionv:\n"
     "push rdi\n"
@@ -39900,6 +41146,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt19_Throw_future_errorRKSt10error_code]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt19_Throw_future_errorRKSt10error_code\n"
     ".type __load_and_call__ZSt19_Throw_future_errorRKSt10error_code @function\n"
     "__load_and_call__ZSt19_Throw_future_errorRKSt10error_code:\n"
     "push rdi\n"
@@ -39932,6 +41179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt19_Xbad_function_callv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt19_Xbad_function_callv\n"
     ".type __load_and_call__ZSt19_Xbad_function_callv @function\n"
     "__load_and_call__ZSt19_Xbad_function_callv:\n"
     "push rdi\n"
@@ -39964,6 +41212,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt22_Get_future_error_whati]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt22_Get_future_error_whati\n"
     ".type __load_and_call__ZSt22_Get_future_error_whati @function\n"
     "__load_and_call__ZSt22_Get_future_error_whati:\n"
     "push rdi\n"
@@ -39996,6 +41245,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt22_Random_device_entropyv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt22_Random_device_entropyv\n"
     ".type __load_and_call__ZSt22_Random_device_entropyv @function\n"
     "__load_and_call__ZSt22_Random_device_entropyv:\n"
     "push rdi\n"
@@ -40028,6 +41278,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt25_Rethrow_future_exceptionSt13exception_ptr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt25_Rethrow_future_exceptionSt13exception_ptr\n"
     ".type __load_and_call__ZSt25_Rethrow_future_exceptionSt13exception_ptr @function\n"
     "__load_and_call__ZSt25_Rethrow_future_exceptionSt13exception_ptr:\n"
     "push rdi\n"
@@ -40060,6 +41311,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt4setwi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt4setwi\n"
     ".type __load_and_call__ZSt4setwi @function\n"
     "__load_and_call__ZSt4setwi:\n"
     "push rdi\n"
@@ -40092,6 +41344,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt6_ThrowRKSt9exception]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt6_ThrowRKSt9exception\n"
     ".type __load_and_call__ZSt6_ThrowRKSt9exception @function\n"
     "__load_and_call__ZSt6_ThrowRKSt9exception:\n"
     "push rdi\n"
@@ -40124,6 +41377,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt7_FiopenPKcNSt5_IosbIiE9_OpenmodeEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt7_FiopenPKcNSt5_IosbIiE9_OpenmodeEi\n"
     ".type __load_and_call__ZSt7_FiopenPKcNSt5_IosbIiE9_OpenmodeEi @function\n"
     "__load_and_call__ZSt7_FiopenPKcNSt5_IosbIiE9_OpenmodeEi:\n"
     "push rdi\n"
@@ -40156,6 +41410,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt7_FiopenPKwNSt5_IosbIiE9_OpenmodeEi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt7_FiopenPKwNSt5_IosbIiE9_OpenmodeEi\n"
     ".type __load_and_call__ZSt7_FiopenPKwNSt5_IosbIiE9_OpenmodeEi @function\n"
     "__load_and_call__ZSt7_FiopenPKwNSt5_IosbIiE9_OpenmodeEi:\n"
     "push rdi\n"
@@ -40188,6 +41443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt7_MP_AddPyy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt7_MP_AddPyy\n"
     ".type __load_and_call__ZSt7_MP_AddPyy @function\n"
     "__load_and_call__ZSt7_MP_AddPyy:\n"
     "push rdi\n"
@@ -40220,6 +41476,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt7_MP_GetPy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt7_MP_GetPy\n"
     ".type __load_and_call__ZSt7_MP_GetPy @function\n"
     "__load_and_call__ZSt7_MP_GetPy:\n"
     "push rdi\n"
@@ -40252,6 +41509,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt7_MP_MulPyyy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt7_MP_MulPyyy\n"
     ".type __load_and_call__ZSt7_MP_MulPyyy @function\n"
     "__load_and_call__ZSt7_MP_MulPyyy:\n"
     "push rdi\n"
@@ -40284,6 +41542,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt7_MP_RemPyy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt7_MP_RemPyy\n"
     ".type __load_and_call__ZSt7_MP_RemPyy @function\n"
     "__load_and_call__ZSt7_MP_RemPyy:\n"
     "push rdi\n"
@@ -40316,6 +41575,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt7setbasei]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt7setbasei\n"
     ".type __load_and_call__ZSt7setbasei @function\n"
     "__load_and_call__ZSt7setbasei:\n"
     "push rdi\n"
@@ -40348,6 +41608,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt8_XLgammad]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt8_XLgammad\n"
     ".type __load_and_call__ZSt8_XLgammad @function\n"
     "__load_and_call__ZSt8_XLgammad:\n"
     "push rdi\n"
@@ -40380,6 +41641,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt8_XLgammae]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt8_XLgammae\n"
     ".type __load_and_call__ZSt8_XLgammae @function\n"
     "__load_and_call__ZSt8_XLgammae:\n"
     "push rdi\n"
@@ -40412,6 +41674,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt8_XLgammaf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt8_XLgammaf\n"
     ".type __load_and_call__ZSt8_XLgammaf @function\n"
     "__load_and_call__ZSt8_XLgammaf:\n"
     "push rdi\n"
@@ -40444,6 +41707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt9_LStrcollIcEiPKT_S2_S2_S2_PKSt8_Collvec]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt9_LStrcollIcEiPKT_S2_S2_S2_PKSt8_Collvec\n"
     ".type __load_and_call__ZSt9_LStrcollIcEiPKT_S2_S2_S2_PKSt8_Collvec @function\n"
     "__load_and_call__ZSt9_LStrcollIcEiPKT_S2_S2_S2_PKSt8_Collvec:\n"
     "push rdi\n"
@@ -40476,6 +41740,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt9_LStrcollIwEiPKT_S2_S2_S2_PKSt8_Collvec]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt9_LStrcollIwEiPKT_S2_S2_S2_PKSt8_Collvec\n"
     ".type __load_and_call__ZSt9_LStrcollIwEiPKT_S2_S2_S2_PKSt8_Collvec @function\n"
     "__load_and_call__ZSt9_LStrcollIwEiPKT_S2_S2_S2_PKSt8_Collvec:\n"
     "push rdi\n"
@@ -40508,6 +41773,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt9_LStrxfrmIcEmPT_S1_PKS0_S3_PKSt8_Collvec]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt9_LStrxfrmIcEmPT_S1_PKS0_S3_PKSt8_Collvec\n"
     ".type __load_and_call__ZSt9_LStrxfrmIcEmPT_S1_PKS0_S3_PKSt8_Collvec @function\n"
     "__load_and_call__ZSt9_LStrxfrmIcEmPT_S1_PKS0_S3_PKSt8_Collvec:\n"
     "push rdi\n"
@@ -40540,6 +41806,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt9_LStrxfrmIwEmPT_S1_PKS0_S3_PKSt8_Collvec]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt9_LStrxfrmIwEmPT_S1_PKS0_S3_PKSt8_Collvec\n"
     ".type __load_and_call__ZSt9_LStrxfrmIwEmPT_S1_PKS0_S3_PKSt8_Collvec @function\n"
     "__load_and_call__ZSt9_LStrxfrmIwEmPT_S1_PKS0_S3_PKSt8_Collvec:\n"
     "push rdi\n"
@@ -40572,6 +41839,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZSt9terminatev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZSt9terminatev\n"
     ".type __load_and_call__ZSt9terminatev @function\n"
     "__load_and_call__ZSt9terminatev:\n"
     "push rdi\n"
@@ -40604,6 +41872,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZTv0_n24_NSiD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZTv0_n24_NSiD0Ev\n"
     ".type __load_and_call__ZTv0_n24_NSiD0Ev @function\n"
     "__load_and_call__ZTv0_n24_NSiD0Ev:\n"
     "push rdi\n"
@@ -40636,6 +41905,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZTv0_n24_NSiD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZTv0_n24_NSiD1Ev\n"
     ".type __load_and_call__ZTv0_n24_NSiD1Ev @function\n"
     "__load_and_call__ZTv0_n24_NSiD1Ev:\n"
     "push rdi\n"
@@ -40668,6 +41938,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZTv0_n24_NSoD0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZTv0_n24_NSoD0Ev\n"
     ".type __load_and_call__ZTv0_n24_NSoD0Ev @function\n"
     "__load_and_call__ZTv0_n24_NSoD0Ev:\n"
     "push rdi\n"
@@ -40700,6 +41971,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZTv0_n24_NSoD1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZTv0_n24_NSoD1Ev\n"
     ".type __load_and_call__ZTv0_n24_NSoD1Ev @function\n"
     "__load_and_call__ZTv0_n24_NSoD1Ev:\n"
     "push rdi\n"
@@ -40732,6 +42004,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZTv0_n24_NSt13basic_istreamIwSt11char_traitsIwEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZTv0_n24_NSt13basic_istreamIwSt11char_traitsIwEED0Ev\n"
     ".type __load_and_call__ZTv0_n24_NSt13basic_istreamIwSt11char_traitsIwEED0Ev @function\n"
     "__load_and_call__ZTv0_n24_NSt13basic_istreamIwSt11char_traitsIwEED0Ev:\n"
     "push rdi\n"
@@ -40764,6 +42037,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZTv0_n24_NSt13basic_istreamIwSt11char_traitsIwEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZTv0_n24_NSt13basic_istreamIwSt11char_traitsIwEED1Ev\n"
     ".type __load_and_call__ZTv0_n24_NSt13basic_istreamIwSt11char_traitsIwEED1Ev @function\n"
     "__load_and_call__ZTv0_n24_NSt13basic_istreamIwSt11char_traitsIwEED1Ev:\n"
     "push rdi\n"
@@ -40796,6 +42070,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZTv0_n24_NSt13basic_ostreamIwSt11char_traitsIwEED0Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZTv0_n24_NSt13basic_ostreamIwSt11char_traitsIwEED0Ev\n"
     ".type __load_and_call__ZTv0_n24_NSt13basic_ostreamIwSt11char_traitsIwEED0Ev @function\n"
     "__load_and_call__ZTv0_n24_NSt13basic_ostreamIwSt11char_traitsIwEED0Ev:\n"
     "push rdi\n"
@@ -40828,6 +42103,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZTv0_n24_NSt13basic_ostreamIwSt11char_traitsIwEED1Ev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZTv0_n24_NSt13basic_ostreamIwSt11char_traitsIwEED1Ev\n"
     ".type __load_and_call__ZTv0_n24_NSt13basic_ostreamIwSt11char_traitsIwEED1Ev @function\n"
     "__load_and_call__ZTv0_n24_NSt13basic_ostreamIwSt11char_traitsIwEED1Ev:\n"
     "push rdi\n"
@@ -40860,6 +42136,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdaPv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdaPv\n"
     ".type __load_and_call__ZdaPv @function\n"
     "__load_and_call__ZdaPv:\n"
     "push rdi\n"
@@ -40892,6 +42169,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdaPvRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdaPvRKSt9nothrow_t\n"
     ".type __load_and_call__ZdaPvRKSt9nothrow_t @function\n"
     "__load_and_call__ZdaPvRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -40924,6 +42202,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdaPvS_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdaPvS_\n"
     ".type __load_and_call__ZdaPvS_ @function\n"
     "__load_and_call__ZdaPvS_:\n"
     "push rdi\n"
@@ -40956,6 +42235,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdaPvSt11align_val_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdaPvSt11align_val_t\n"
     ".type __load_and_call__ZdaPvSt11align_val_t @function\n"
     "__load_and_call__ZdaPvSt11align_val_t:\n"
     "push rdi\n"
@@ -40988,6 +42268,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdaPvSt11align_val_tRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdaPvSt11align_val_tRKSt9nothrow_t\n"
     ".type __load_and_call__ZdaPvSt11align_val_tRKSt9nothrow_t @function\n"
     "__load_and_call__ZdaPvSt11align_val_tRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41020,6 +42301,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdaPvm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdaPvm\n"
     ".type __load_and_call__ZdaPvm @function\n"
     "__load_and_call__ZdaPvm:\n"
     "push rdi\n"
@@ -41052,6 +42334,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdaPvmRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdaPvmRKSt9nothrow_t\n"
     ".type __load_and_call__ZdaPvmRKSt9nothrow_t @function\n"
     "__load_and_call__ZdaPvmRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41084,6 +42367,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdaPvmSt11align_val_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdaPvmSt11align_val_t\n"
     ".type __load_and_call__ZdaPvmSt11align_val_t @function\n"
     "__load_and_call__ZdaPvmSt11align_val_t:\n"
     "push rdi\n"
@@ -41116,6 +42400,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdlPv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdlPv\n"
     ".type __load_and_call__ZdlPv @function\n"
     "__load_and_call__ZdlPv:\n"
     "push rdi\n"
@@ -41148,6 +42433,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdlPvRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdlPvRKSt9nothrow_t\n"
     ".type __load_and_call__ZdlPvRKSt9nothrow_t @function\n"
     "__load_and_call__ZdlPvRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41180,6 +42466,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdlPvS_]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdlPvS_\n"
     ".type __load_and_call__ZdlPvS_ @function\n"
     "__load_and_call__ZdlPvS_:\n"
     "push rdi\n"
@@ -41212,6 +42499,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdlPvSt11align_val_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdlPvSt11align_val_t\n"
     ".type __load_and_call__ZdlPvSt11align_val_t @function\n"
     "__load_and_call__ZdlPvSt11align_val_t:\n"
     "push rdi\n"
@@ -41244,6 +42532,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdlPvSt11align_val_tRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdlPvSt11align_val_tRKSt9nothrow_t\n"
     ".type __load_and_call__ZdlPvSt11align_val_tRKSt9nothrow_t @function\n"
     "__load_and_call__ZdlPvSt11align_val_tRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41276,6 +42565,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdlPvm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdlPvm\n"
     ".type __load_and_call__ZdlPvm @function\n"
     "__load_and_call__ZdlPvm:\n"
     "push rdi\n"
@@ -41308,6 +42598,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdlPvmRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdlPvmRKSt9nothrow_t\n"
     ".type __load_and_call__ZdlPvmRKSt9nothrow_t @function\n"
     "__load_and_call__ZdlPvmRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41340,6 +42631,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZdlPvmSt11align_val_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZdlPvmSt11align_val_t\n"
     ".type __load_and_call__ZdlPvmSt11align_val_t @function\n"
     "__load_and_call__ZdlPvmSt11align_val_t:\n"
     "push rdi\n"
@@ -41372,6 +42664,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Znam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Znam\n"
     ".type __load_and_call__Znam @function\n"
     "__load_and_call__Znam:\n"
     "push rdi\n"
@@ -41404,6 +42697,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZnamRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZnamRKSt9nothrow_t\n"
     ".type __load_and_call__ZnamRKSt9nothrow_t @function\n"
     "__load_and_call__ZnamRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41436,6 +42730,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZnamSt11align_val_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZnamSt11align_val_t\n"
     ".type __load_and_call__ZnamSt11align_val_t @function\n"
     "__load_and_call__ZnamSt11align_val_t:\n"
     "push rdi\n"
@@ -41468,6 +42763,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZnamSt11align_val_tRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZnamSt11align_val_tRKSt9nothrow_t\n"
     ".type __load_and_call__ZnamSt11align_val_tRKSt9nothrow_t @function\n"
     "__load_and_call__ZnamSt11align_val_tRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41500,6 +42796,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__Znwm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__Znwm\n"
     ".type __load_and_call__Znwm @function\n"
     "__load_and_call__Znwm:\n"
     "push rdi\n"
@@ -41532,6 +42829,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZnwmRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZnwmRKSt9nothrow_t\n"
     ".type __load_and_call__ZnwmRKSt9nothrow_t @function\n"
     "__load_and_call__ZnwmRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41564,6 +42862,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZnwmSt11align_val_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZnwmSt11align_val_t\n"
     ".type __load_and_call__ZnwmSt11align_val_t @function\n"
     "__load_and_call__ZnwmSt11align_val_t:\n"
     "push rdi\n"
@@ -41596,6 +42895,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__ZnwmSt11align_val_tRKSt9nothrow_t]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__ZnwmSt11align_val_tRKSt9nothrow_t\n"
     ".type __load_and_call__ZnwmSt11align_val_tRKSt9nothrow_t @function\n"
     "__load_and_call__ZnwmSt11align_val_tRKSt9nothrow_t:\n"
     "push rdi\n"
@@ -41628,6 +42928,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___absvdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___absvdi2\n"
     ".type __load_and_call___absvdi2 @function\n"
     "__load_and_call___absvdi2:\n"
     "push rdi\n"
@@ -41660,6 +42961,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___absvsi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___absvsi2\n"
     ".type __load_and_call___absvsi2 @function\n"
     "__load_and_call___absvsi2:\n"
     "push rdi\n"
@@ -41692,6 +42994,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___absvti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___absvti2\n"
     ".type __load_and_call___absvti2 @function\n"
     "__load_and_call___absvti2:\n"
     "push rdi\n"
@@ -41724,6 +43027,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___adddf3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___adddf3\n"
     ".type __load_and_call___adddf3 @function\n"
     "__load_and_call___adddf3:\n"
     "push rdi\n"
@@ -41756,6 +43060,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___addsf3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___addsf3\n"
     ".type __load_and_call___addsf3 @function\n"
     "__load_and_call___addsf3:\n"
     "push rdi\n"
@@ -41788,6 +43093,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___addvdi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___addvdi3\n"
     ".type __load_and_call___addvdi3 @function\n"
     "__load_and_call___addvdi3:\n"
     "push rdi\n"
@@ -41820,6 +43126,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___addvsi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___addvsi3\n"
     ".type __load_and_call___addvsi3 @function\n"
     "__load_and_call___addvsi3:\n"
     "push rdi\n"
@@ -41852,6 +43159,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___addvti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___addvti3\n"
     ".type __load_and_call___addvti3 @function\n"
     "__load_and_call___addvti3:\n"
     "push rdi\n"
@@ -41884,6 +43192,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ashldi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ashldi3\n"
     ".type __load_and_call___ashldi3 @function\n"
     "__load_and_call___ashldi3:\n"
     "push rdi\n"
@@ -41916,6 +43225,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ashlti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ashlti3\n"
     ".type __load_and_call___ashlti3 @function\n"
     "__load_and_call___ashlti3:\n"
     "push rdi\n"
@@ -41948,6 +43258,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ashrdi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ashrdi3\n"
     ".type __load_and_call___ashrdi3 @function\n"
     "__load_and_call___ashrdi3:\n"
     "push rdi\n"
@@ -41980,6 +43291,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ashrti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ashrti3\n"
     ".type __load_and_call___ashrti3 @function\n"
     "__load_and_call___ashrti3:\n"
     "push rdi\n"
@@ -42012,6 +43324,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_compare_exchange]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_compare_exchange\n"
     ".type __load_and_call___atomic_compare_exchange @function\n"
     "__load_and_call___atomic_compare_exchange:\n"
     "push rdi\n"
@@ -42044,6 +43357,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_compare_exchange_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_compare_exchange_1\n"
     ".type __load_and_call___atomic_compare_exchange_1 @function\n"
     "__load_and_call___atomic_compare_exchange_1:\n"
     "push rdi\n"
@@ -42076,6 +43390,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_compare_exchange_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_compare_exchange_2\n"
     ".type __load_and_call___atomic_compare_exchange_2 @function\n"
     "__load_and_call___atomic_compare_exchange_2:\n"
     "push rdi\n"
@@ -42108,6 +43423,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_compare_exchange_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_compare_exchange_4\n"
     ".type __load_and_call___atomic_compare_exchange_4 @function\n"
     "__load_and_call___atomic_compare_exchange_4:\n"
     "push rdi\n"
@@ -42140,6 +43456,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_compare_exchange_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_compare_exchange_8\n"
     ".type __load_and_call___atomic_compare_exchange_8 @function\n"
     "__load_and_call___atomic_compare_exchange_8:\n"
     "push rdi\n"
@@ -42172,6 +43489,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_compare_exchange_n]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_compare_exchange_n\n"
     ".type __load_and_call___atomic_compare_exchange_n @function\n"
     "__load_and_call___atomic_compare_exchange_n:\n"
     "push rdi\n"
@@ -42204,6 +43522,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_exchange]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_exchange\n"
     ".type __load_and_call___atomic_exchange @function\n"
     "__load_and_call___atomic_exchange:\n"
     "push rdi\n"
@@ -42236,6 +43555,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_exchange_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_exchange_1\n"
     ".type __load_and_call___atomic_exchange_1 @function\n"
     "__load_and_call___atomic_exchange_1:\n"
     "push rdi\n"
@@ -42268,6 +43588,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_exchange_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_exchange_2\n"
     ".type __load_and_call___atomic_exchange_2 @function\n"
     "__load_and_call___atomic_exchange_2:\n"
     "push rdi\n"
@@ -42300,6 +43621,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_exchange_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_exchange_4\n"
     ".type __load_and_call___atomic_exchange_4 @function\n"
     "__load_and_call___atomic_exchange_4:\n"
     "push rdi\n"
@@ -42332,6 +43654,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_exchange_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_exchange_8\n"
     ".type __load_and_call___atomic_exchange_8 @function\n"
     "__load_and_call___atomic_exchange_8:\n"
     "push rdi\n"
@@ -42364,6 +43687,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_exchange_n]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_exchange_n\n"
     ".type __load_and_call___atomic_exchange_n @function\n"
     "__load_and_call___atomic_exchange_n:\n"
     "push rdi\n"
@@ -42396,6 +43720,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_add_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_add_1\n"
     ".type __load_and_call___atomic_fetch_add_1 @function\n"
     "__load_and_call___atomic_fetch_add_1:\n"
     "push rdi\n"
@@ -42428,6 +43753,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_add_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_add_2\n"
     ".type __load_and_call___atomic_fetch_add_2 @function\n"
     "__load_and_call___atomic_fetch_add_2:\n"
     "push rdi\n"
@@ -42460,6 +43786,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_add_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_add_4\n"
     ".type __load_and_call___atomic_fetch_add_4 @function\n"
     "__load_and_call___atomic_fetch_add_4:\n"
     "push rdi\n"
@@ -42492,6 +43819,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_add_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_add_8\n"
     ".type __load_and_call___atomic_fetch_add_8 @function\n"
     "__load_and_call___atomic_fetch_add_8:\n"
     "push rdi\n"
@@ -42524,6 +43852,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_and_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_and_1\n"
     ".type __load_and_call___atomic_fetch_and_1 @function\n"
     "__load_and_call___atomic_fetch_and_1:\n"
     "push rdi\n"
@@ -42556,6 +43885,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_and_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_and_2\n"
     ".type __load_and_call___atomic_fetch_and_2 @function\n"
     "__load_and_call___atomic_fetch_and_2:\n"
     "push rdi\n"
@@ -42588,6 +43918,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_and_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_and_4\n"
     ".type __load_and_call___atomic_fetch_and_4 @function\n"
     "__load_and_call___atomic_fetch_and_4:\n"
     "push rdi\n"
@@ -42620,6 +43951,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_and_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_and_8\n"
     ".type __load_and_call___atomic_fetch_and_8 @function\n"
     "__load_and_call___atomic_fetch_and_8:\n"
     "push rdi\n"
@@ -42652,6 +43984,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_or_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_or_1\n"
     ".type __load_and_call___atomic_fetch_or_1 @function\n"
     "__load_and_call___atomic_fetch_or_1:\n"
     "push rdi\n"
@@ -42684,6 +44017,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_or_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_or_2\n"
     ".type __load_and_call___atomic_fetch_or_2 @function\n"
     "__load_and_call___atomic_fetch_or_2:\n"
     "push rdi\n"
@@ -42716,6 +44050,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_or_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_or_4\n"
     ".type __load_and_call___atomic_fetch_or_4 @function\n"
     "__load_and_call___atomic_fetch_or_4:\n"
     "push rdi\n"
@@ -42748,6 +44083,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_or_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_or_8\n"
     ".type __load_and_call___atomic_fetch_or_8 @function\n"
     "__load_and_call___atomic_fetch_or_8:\n"
     "push rdi\n"
@@ -42780,6 +44116,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_sub_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_sub_1\n"
     ".type __load_and_call___atomic_fetch_sub_1 @function\n"
     "__load_and_call___atomic_fetch_sub_1:\n"
     "push rdi\n"
@@ -42812,6 +44149,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_sub_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_sub_2\n"
     ".type __load_and_call___atomic_fetch_sub_2 @function\n"
     "__load_and_call___atomic_fetch_sub_2:\n"
     "push rdi\n"
@@ -42844,6 +44182,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_sub_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_sub_4\n"
     ".type __load_and_call___atomic_fetch_sub_4 @function\n"
     "__load_and_call___atomic_fetch_sub_4:\n"
     "push rdi\n"
@@ -42876,6 +44215,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_sub_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_sub_8\n"
     ".type __load_and_call___atomic_fetch_sub_8 @function\n"
     "__load_and_call___atomic_fetch_sub_8:\n"
     "push rdi\n"
@@ -42908,6 +44248,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_xor_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_xor_1\n"
     ".type __load_and_call___atomic_fetch_xor_1 @function\n"
     "__load_and_call___atomic_fetch_xor_1:\n"
     "push rdi\n"
@@ -42940,6 +44281,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_xor_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_xor_2\n"
     ".type __load_and_call___atomic_fetch_xor_2 @function\n"
     "__load_and_call___atomic_fetch_xor_2:\n"
     "push rdi\n"
@@ -42972,6 +44314,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_xor_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_xor_4\n"
     ".type __load_and_call___atomic_fetch_xor_4 @function\n"
     "__load_and_call___atomic_fetch_xor_4:\n"
     "push rdi\n"
@@ -43004,6 +44347,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_fetch_xor_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_fetch_xor_8\n"
     ".type __load_and_call___atomic_fetch_xor_8 @function\n"
     "__load_and_call___atomic_fetch_xor_8:\n"
     "push rdi\n"
@@ -43036,6 +44380,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_is_lock_free]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_is_lock_free\n"
     ".type __load_and_call___atomic_is_lock_free @function\n"
     "__load_and_call___atomic_is_lock_free:\n"
     "push rdi\n"
@@ -43068,6 +44413,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_load]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_load\n"
     ".type __load_and_call___atomic_load @function\n"
     "__load_and_call___atomic_load:\n"
     "push rdi\n"
@@ -43100,6 +44446,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_load_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_load_1\n"
     ".type __load_and_call___atomic_load_1 @function\n"
     "__load_and_call___atomic_load_1:\n"
     "push rdi\n"
@@ -43132,6 +44479,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_load_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_load_2\n"
     ".type __load_and_call___atomic_load_2 @function\n"
     "__load_and_call___atomic_load_2:\n"
     "push rdi\n"
@@ -43164,6 +44512,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_load_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_load_4\n"
     ".type __load_and_call___atomic_load_4 @function\n"
     "__load_and_call___atomic_load_4:\n"
     "push rdi\n"
@@ -43196,6 +44545,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_load_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_load_8\n"
     ".type __load_and_call___atomic_load_8 @function\n"
     "__load_and_call___atomic_load_8:\n"
     "push rdi\n"
@@ -43228,6 +44578,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_load_n]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_load_n\n"
     ".type __load_and_call___atomic_load_n @function\n"
     "__load_and_call___atomic_load_n:\n"
     "push rdi\n"
@@ -43260,6 +44611,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_store]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_store\n"
     ".type __load_and_call___atomic_store @function\n"
     "__load_and_call___atomic_store:\n"
     "push rdi\n"
@@ -43292,6 +44644,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_store_1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_store_1\n"
     ".type __load_and_call___atomic_store_1 @function\n"
     "__load_and_call___atomic_store_1:\n"
     "push rdi\n"
@@ -43324,6 +44677,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_store_2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_store_2\n"
     ".type __load_and_call___atomic_store_2 @function\n"
     "__load_and_call___atomic_store_2:\n"
     "push rdi\n"
@@ -43356,6 +44710,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_store_4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_store_4\n"
     ".type __load_and_call___atomic_store_4 @function\n"
     "__load_and_call___atomic_store_4:\n"
     "push rdi\n"
@@ -43388,6 +44743,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_store_8]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_store_8\n"
     ".type __load_and_call___atomic_store_8 @function\n"
     "__load_and_call___atomic_store_8:\n"
     "push rdi\n"
@@ -43420,6 +44776,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___atomic_store_n]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___atomic_store_n\n"
     ".type __load_and_call___atomic_store_n @function\n"
     "__load_and_call___atomic_store_n:\n"
     "push rdi\n"
@@ -43452,6 +44809,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___clzdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___clzdi2\n"
     ".type __load_and_call___clzdi2 @function\n"
     "__load_and_call___clzdi2:\n"
     "push rdi\n"
@@ -43484,6 +44842,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___clzsi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___clzsi2\n"
     ".type __load_and_call___clzsi2 @function\n"
     "__load_and_call___clzsi2:\n"
     "push rdi\n"
@@ -43516,6 +44875,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___clzti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___clzti2\n"
     ".type __load_and_call___clzti2 @function\n"
     "__load_and_call___clzti2:\n"
     "push rdi\n"
@@ -43548,6 +44908,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cmpdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cmpdi2\n"
     ".type __load_and_call___cmpdi2 @function\n"
     "__load_and_call___cmpdi2:\n"
     "push rdi\n"
@@ -43580,6 +44941,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cmpti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cmpti2\n"
     ".type __load_and_call___cmpti2 @function\n"
     "__load_and_call___cmpti2:\n"
     "push rdi\n"
@@ -43612,6 +44974,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ctzdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ctzdi2\n"
     ".type __load_and_call___ctzdi2 @function\n"
     "__load_and_call___ctzdi2:\n"
     "push rdi\n"
@@ -43644,6 +45007,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ctzsi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ctzsi2\n"
     ".type __load_and_call___ctzsi2 @function\n"
     "__load_and_call___ctzsi2:\n"
     "push rdi\n"
@@ -43676,6 +45040,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ctzti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ctzti2\n"
     ".type __load_and_call___ctzti2 @function\n"
     "__load_and_call___ctzti2:\n"
     "push rdi\n"
@@ -43708,6 +45073,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_allocate_dependent_exception]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_allocate_dependent_exception\n"
     ".type __load_and_call___cxa_allocate_dependent_exception @function\n"
     "__load_and_call___cxa_allocate_dependent_exception:\n"
     "push rdi\n"
@@ -43740,6 +45106,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_allocate_exception]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_allocate_exception\n"
     ".type __load_and_call___cxa_allocate_exception @function\n"
     "__load_and_call___cxa_allocate_exception:\n"
     "push rdi\n"
@@ -43772,6 +45139,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_atexit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_atexit\n"
     ".type __load_and_call___cxa_atexit @function\n"
     "__load_and_call___cxa_atexit:\n"
     "push rdi\n"
@@ -43804,6 +45172,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_bad_cast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_bad_cast\n"
     ".type __load_and_call___cxa_bad_cast @function\n"
     "__load_and_call___cxa_bad_cast:\n"
     "push rdi\n"
@@ -43836,6 +45205,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_bad_typeid]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_bad_typeid\n"
     ".type __load_and_call___cxa_bad_typeid @function\n"
     "__load_and_call___cxa_bad_typeid:\n"
     "push rdi\n"
@@ -43868,6 +45238,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_begin_catch]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_begin_catch\n"
     ".type __load_and_call___cxa_begin_catch @function\n"
     "__load_and_call___cxa_begin_catch:\n"
     "push rdi\n"
@@ -43900,6 +45271,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_call_unexpected]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_call_unexpected\n"
     ".type __load_and_call___cxa_call_unexpected @function\n"
     "__load_and_call___cxa_call_unexpected:\n"
     "push rdi\n"
@@ -43932,6 +45304,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_current_exception_type]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_current_exception_type\n"
     ".type __load_and_call___cxa_current_exception_type @function\n"
     "__load_and_call___cxa_current_exception_type:\n"
     "push rdi\n"
@@ -43964,6 +45337,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_current_primary_exception]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_current_primary_exception\n"
     ".type __load_and_call___cxa_current_primary_exception @function\n"
     "__load_and_call___cxa_current_primary_exception:\n"
     "push rdi\n"
@@ -43996,6 +45370,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_decrement_exception_refcount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_decrement_exception_refcount\n"
     ".type __load_and_call___cxa_decrement_exception_refcount @function\n"
     "__load_and_call___cxa_decrement_exception_refcount:\n"
     "push rdi\n"
@@ -44028,6 +45403,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_demangle]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_demangle\n"
     ".type __load_and_call___cxa_demangle @function\n"
     "__load_and_call___cxa_demangle:\n"
     "push rdi\n"
@@ -44060,6 +45436,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_end_catch]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_end_catch\n"
     ".type __load_and_call___cxa_end_catch @function\n"
     "__load_and_call___cxa_end_catch:\n"
     "push rdi\n"
@@ -44092,6 +45469,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_finalize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_finalize\n"
     ".type __load_and_call___cxa_finalize @function\n"
     "__load_and_call___cxa_finalize:\n"
     "push rdi\n"
@@ -44124,6 +45502,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_free_dependent_exception]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_free_dependent_exception\n"
     ".type __load_and_call___cxa_free_dependent_exception @function\n"
     "__load_and_call___cxa_free_dependent_exception:\n"
     "push rdi\n"
@@ -44156,6 +45535,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_free_exception]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_free_exception\n"
     ".type __load_and_call___cxa_free_exception @function\n"
     "__load_and_call___cxa_free_exception:\n"
     "push rdi\n"
@@ -44188,6 +45568,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_get_exception_ptr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_get_exception_ptr\n"
     ".type __load_and_call___cxa_get_exception_ptr @function\n"
     "__load_and_call___cxa_get_exception_ptr:\n"
     "push rdi\n"
@@ -44220,6 +45601,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_get_globals]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_get_globals\n"
     ".type __load_and_call___cxa_get_globals @function\n"
     "__load_and_call___cxa_get_globals:\n"
     "push rdi\n"
@@ -44252,6 +45634,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_get_globals_fast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_get_globals_fast\n"
     ".type __load_and_call___cxa_get_globals_fast @function\n"
     "__load_and_call___cxa_get_globals_fast:\n"
     "push rdi\n"
@@ -44284,6 +45667,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_guard_abort]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_guard_abort\n"
     ".type __load_and_call___cxa_guard_abort @function\n"
     "__load_and_call___cxa_guard_abort:\n"
     "push rdi\n"
@@ -44316,6 +45700,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_guard_acquire]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_guard_acquire\n"
     ".type __load_and_call___cxa_guard_acquire @function\n"
     "__load_and_call___cxa_guard_acquire:\n"
     "push rdi\n"
@@ -44348,6 +45733,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_guard_release]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_guard_release\n"
     ".type __load_and_call___cxa_guard_release @function\n"
     "__load_and_call___cxa_guard_release:\n"
     "push rdi\n"
@@ -44380,6 +45766,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_increment_exception_refcount]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_increment_exception_refcount\n"
     ".type __load_and_call___cxa_increment_exception_refcount @function\n"
     "__load_and_call___cxa_increment_exception_refcount:\n"
     "push rdi\n"
@@ -44412,6 +45799,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_pure_virtual]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_pure_virtual\n"
     ".type __load_and_call___cxa_pure_virtual @function\n"
     "__load_and_call___cxa_pure_virtual:\n"
     "push rdi\n"
@@ -44444,6 +45832,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_rethrow]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_rethrow\n"
     ".type __load_and_call___cxa_rethrow @function\n"
     "__load_and_call___cxa_rethrow:\n"
     "push rdi\n"
@@ -44476,6 +45865,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_rethrow_primary_exception]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_rethrow_primary_exception\n"
     ".type __load_and_call___cxa_rethrow_primary_exception @function\n"
     "__load_and_call___cxa_rethrow_primary_exception:\n"
     "push rdi\n"
@@ -44508,6 +45898,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___cxa_throw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___cxa_throw\n"
     ".type __load_and_call___cxa_throw @function\n"
     "__load_and_call___cxa_throw:\n"
     "push rdi\n"
@@ -44540,6 +45931,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divdc3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divdc3\n"
     ".type __load_and_call___divdc3 @function\n"
     "__load_and_call___divdc3:\n"
     "push rdi\n"
@@ -44572,6 +45964,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divdf3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divdf3\n"
     ".type __load_and_call___divdf3 @function\n"
     "__load_and_call___divdf3:\n"
     "push rdi\n"
@@ -44604,6 +45997,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divdi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divdi3\n"
     ".type __load_and_call___divdi3 @function\n"
     "__load_and_call___divdi3:\n"
     "push rdi\n"
@@ -44636,6 +46030,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divmoddi4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divmoddi4\n"
     ".type __load_and_call___divmoddi4 @function\n"
     "__load_and_call___divmoddi4:\n"
     "push rdi\n"
@@ -44668,6 +46063,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divmodsi4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divmodsi4\n"
     ".type __load_and_call___divmodsi4 @function\n"
     "__load_and_call___divmodsi4:\n"
     "push rdi\n"
@@ -44700,6 +46096,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divsc3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divsc3\n"
     ".type __load_and_call___divsc3 @function\n"
     "__load_and_call___divsc3:\n"
     "push rdi\n"
@@ -44732,6 +46129,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divsf3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divsf3\n"
     ".type __load_and_call___divsf3 @function\n"
     "__load_and_call___divsf3:\n"
     "push rdi\n"
@@ -44764,6 +46162,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divsi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divsi3\n"
     ".type __load_and_call___divsi3 @function\n"
     "__load_and_call___divsi3:\n"
     "push rdi\n"
@@ -44796,6 +46195,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divti3\n"
     ".type __load_and_call___divti3 @function\n"
     "__load_and_call___divti3:\n"
     "push rdi\n"
@@ -44828,6 +46228,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___divxc3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___divxc3\n"
     ".type __load_and_call___divxc3 @function\n"
     "__load_and_call___divxc3:\n"
     "push rdi\n"
@@ -44860,6 +46261,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___dynamic_cast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___dynamic_cast\n"
     ".type __load_and_call___dynamic_cast @function\n"
     "__load_and_call___dynamic_cast:\n"
     "push rdi\n"
@@ -44892,6 +46294,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___eqdf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___eqdf2\n"
     ".type __load_and_call___eqdf2 @function\n"
     "__load_and_call___eqdf2:\n"
     "push rdi\n"
@@ -44924,6 +46327,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___eqsf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___eqsf2\n"
     ".type __load_and_call___eqsf2 @function\n"
     "__load_and_call___eqsf2:\n"
     "push rdi\n"
@@ -44956,6 +46360,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___extendsfdf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___extendsfdf2\n"
     ".type __load_and_call___extendsfdf2 @function\n"
     "__load_and_call___extendsfdf2:\n"
     "push rdi\n"
@@ -44988,6 +46393,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fedisableexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fedisableexcept\n"
     ".type __load_and_call___fedisableexcept @function\n"
     "__load_and_call___fedisableexcept:\n"
     "push rdi\n"
@@ -45020,6 +46426,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___feenableexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___feenableexcept\n"
     ".type __load_and_call___feenableexcept @function\n"
     "__load_and_call___feenableexcept:\n"
     "push rdi\n"
@@ -45052,6 +46459,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fflush]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fflush\n"
     ".type __load_and_call___fflush @function\n"
     "__load_and_call___fflush:\n"
     "push rdi\n"
@@ -45084,6 +46492,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ffsdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ffsdi2\n"
     ".type __load_and_call___ffsdi2 @function\n"
     "__load_and_call___ffsdi2:\n"
     "push rdi\n"
@@ -45116,6 +46525,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ffsti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ffsti2\n"
     ".type __load_and_call___ffsti2 @function\n"
     "__load_and_call___ffsti2:\n"
     "push rdi\n"
@@ -45148,6 +46558,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixdfdi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixdfdi\n"
     ".type __load_and_call___fixdfdi @function\n"
     "__load_and_call___fixdfdi:\n"
     "push rdi\n"
@@ -45180,6 +46591,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixdfsi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixdfsi\n"
     ".type __load_and_call___fixdfsi @function\n"
     "__load_and_call___fixdfsi:\n"
     "push rdi\n"
@@ -45212,6 +46624,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixdfti]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixdfti\n"
     ".type __load_and_call___fixdfti @function\n"
     "__load_and_call___fixdfti:\n"
     "push rdi\n"
@@ -45244,6 +46657,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixsfdi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixsfdi\n"
     ".type __load_and_call___fixsfdi @function\n"
     "__load_and_call___fixsfdi:\n"
     "push rdi\n"
@@ -45276,6 +46690,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixsfsi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixsfsi\n"
     ".type __load_and_call___fixsfsi @function\n"
     "__load_and_call___fixsfsi:\n"
     "push rdi\n"
@@ -45308,6 +46723,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixsfti]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixsfti\n"
     ".type __load_and_call___fixsfti @function\n"
     "__load_and_call___fixsfti:\n"
     "push rdi\n"
@@ -45340,6 +46756,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunsdfdi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunsdfdi\n"
     ".type __load_and_call___fixunsdfdi @function\n"
     "__load_and_call___fixunsdfdi:\n"
     "push rdi\n"
@@ -45372,6 +46789,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunsdfsi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunsdfsi\n"
     ".type __load_and_call___fixunsdfsi @function\n"
     "__load_and_call___fixunsdfsi:\n"
     "push rdi\n"
@@ -45404,6 +46822,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunsdfti]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunsdfti\n"
     ".type __load_and_call___fixunsdfti @function\n"
     "__load_and_call___fixunsdfti:\n"
     "push rdi\n"
@@ -45436,6 +46855,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunssfdi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunssfdi\n"
     ".type __load_and_call___fixunssfdi @function\n"
     "__load_and_call___fixunssfdi:\n"
     "push rdi\n"
@@ -45468,6 +46888,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunssfsi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunssfsi\n"
     ".type __load_and_call___fixunssfsi @function\n"
     "__load_and_call___fixunssfsi:\n"
     "push rdi\n"
@@ -45500,6 +46921,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunssfti]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunssfti\n"
     ".type __load_and_call___fixunssfti @function\n"
     "__load_and_call___fixunssfti:\n"
     "push rdi\n"
@@ -45532,6 +46954,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunsxfdi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunsxfdi\n"
     ".type __load_and_call___fixunsxfdi @function\n"
     "__load_and_call___fixunsxfdi:\n"
     "push rdi\n"
@@ -45564,6 +46987,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunsxfsi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunsxfsi\n"
     ".type __load_and_call___fixunsxfsi @function\n"
     "__load_and_call___fixunsxfsi:\n"
     "push rdi\n"
@@ -45596,6 +47020,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixunsxfti]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixunsxfti\n"
     ".type __load_and_call___fixunsxfti @function\n"
     "__load_and_call___fixunsxfti:\n"
     "push rdi\n"
@@ -45628,6 +47053,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixxfdi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixxfdi\n"
     ".type __load_and_call___fixxfdi @function\n"
     "__load_and_call___fixxfdi:\n"
     "push rdi\n"
@@ -45660,6 +47086,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fixxfti]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fixxfti\n"
     ".type __load_and_call___fixxfti @function\n"
     "__load_and_call___fixxfti:\n"
     "push rdi\n"
@@ -45692,6 +47119,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatdidf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatdidf\n"
     ".type __load_and_call___floatdidf @function\n"
     "__load_and_call___floatdidf:\n"
     "push rdi\n"
@@ -45724,6 +47152,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatdisf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatdisf\n"
     ".type __load_and_call___floatdisf @function\n"
     "__load_and_call___floatdisf:\n"
     "push rdi\n"
@@ -45756,6 +47185,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatdixf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatdixf\n"
     ".type __load_and_call___floatdixf @function\n"
     "__load_and_call___floatdixf:\n"
     "push rdi\n"
@@ -45788,6 +47218,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatsidf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatsidf\n"
     ".type __load_and_call___floatsidf @function\n"
     "__load_and_call___floatsidf:\n"
     "push rdi\n"
@@ -45820,6 +47251,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatsisf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatsisf\n"
     ".type __load_and_call___floatsisf @function\n"
     "__load_and_call___floatsisf:\n"
     "push rdi\n"
@@ -45852,6 +47284,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floattidf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floattidf\n"
     ".type __load_and_call___floattidf @function\n"
     "__load_and_call___floattidf:\n"
     "push rdi\n"
@@ -45884,6 +47317,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floattisf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floattisf\n"
     ".type __load_and_call___floattisf @function\n"
     "__load_and_call___floattisf:\n"
     "push rdi\n"
@@ -45916,6 +47350,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floattixf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floattixf\n"
     ".type __load_and_call___floattixf @function\n"
     "__load_and_call___floattixf:\n"
     "push rdi\n"
@@ -45948,6 +47383,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatundidf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatundidf\n"
     ".type __load_and_call___floatundidf @function\n"
     "__load_and_call___floatundidf:\n"
     "push rdi\n"
@@ -45980,6 +47416,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatundisf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatundisf\n"
     ".type __load_and_call___floatundisf @function\n"
     "__load_and_call___floatundisf:\n"
     "push rdi\n"
@@ -46012,6 +47449,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatundixf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatundixf\n"
     ".type __load_and_call___floatundixf @function\n"
     "__load_and_call___floatundixf:\n"
     "push rdi\n"
@@ -46044,6 +47482,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatunsidf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatunsidf\n"
     ".type __load_and_call___floatunsidf @function\n"
     "__load_and_call___floatunsidf:\n"
     "push rdi\n"
@@ -46076,6 +47515,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatunsisf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatunsisf\n"
     ".type __load_and_call___floatunsisf @function\n"
     "__load_and_call___floatunsisf:\n"
     "push rdi\n"
@@ -46108,6 +47548,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatuntidf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatuntidf\n"
     ".type __load_and_call___floatuntidf @function\n"
     "__load_and_call___floatuntidf:\n"
     "push rdi\n"
@@ -46140,6 +47581,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatuntisf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatuntisf\n"
     ".type __load_and_call___floatuntisf @function\n"
     "__load_and_call___floatuntisf:\n"
     "push rdi\n"
@@ -46172,6 +47614,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___floatuntixf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___floatuntixf\n"
     ".type __load_and_call___floatuntixf @function\n"
     "__load_and_call___floatuntixf:\n"
     "push rdi\n"
@@ -46204,6 +47647,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fpclassifyd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fpclassifyd\n"
     ".type __load_and_call___fpclassifyd @function\n"
     "__load_and_call___fpclassifyd:\n"
     "push rdi\n"
@@ -46236,6 +47680,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fpclassifyf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fpclassifyf\n"
     ".type __load_and_call___fpclassifyf @function\n"
     "__load_and_call___fpclassifyf:\n"
     "push rdi\n"
@@ -46268,6 +47713,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___fpclassifyl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___fpclassifyl\n"
     ".type __load_and_call___fpclassifyl @function\n"
     "__load_and_call___fpclassifyl:\n"
     "push rdi\n"
@@ -46300,6 +47746,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___gedf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___gedf2\n"
     ".type __load_and_call___gedf2 @function\n"
     "__load_and_call___gedf2:\n"
     "push rdi\n"
@@ -46332,6 +47779,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___gesf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___gesf2\n"
     ".type __load_and_call___gesf2 @function\n"
     "__load_and_call___gesf2:\n"
     "push rdi\n"
@@ -46364,6 +47812,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___gtdf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___gtdf2\n"
     ".type __load_and_call___gtdf2 @function\n"
     "__load_and_call___gtdf2:\n"
     "push rdi\n"
@@ -46396,6 +47845,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___gtsf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___gtsf2\n"
     ".type __load_and_call___gtsf2 @function\n"
     "__load_and_call___gtsf2:\n"
     "push rdi\n"
@@ -46428,6 +47878,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___gxx_personality_v0]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___gxx_personality_v0\n"
     ".type __load_and_call___gxx_personality_v0 @function\n"
     "__load_and_call___gxx_personality_v0:\n"
     "push rdi\n"
@@ -46460,6 +47911,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___inet_addr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___inet_addr\n"
     ".type __load_and_call___inet_addr @function\n"
     "__load_and_call___inet_addr:\n"
     "push rdi\n"
@@ -46492,6 +47944,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___inet_aton]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___inet_aton\n"
     ".type __load_and_call___inet_aton @function\n"
     "__load_and_call___inet_aton:\n"
     "push rdi\n"
@@ -46524,6 +47977,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___inet_ntoa]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___inet_ntoa\n"
     ".type __load_and_call___inet_ntoa @function\n"
     "__load_and_call___inet_ntoa:\n"
     "push rdi\n"
@@ -46556,6 +48010,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___inet_ntoa_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___inet_ntoa_r\n"
     ".type __load_and_call___inet_ntoa_r @function\n"
     "__load_and_call___inet_ntoa_r:\n"
     "push rdi\n"
@@ -46588,6 +48043,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isfinite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isfinite\n"
     ".type __load_and_call___isfinite @function\n"
     "__load_and_call___isfinite:\n"
     "push rdi\n"
@@ -46620,6 +48076,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isfinitef]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isfinitef\n"
     ".type __load_and_call___isfinitef @function\n"
     "__load_and_call___isfinitef:\n"
     "push rdi\n"
@@ -46652,6 +48109,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isfinitel]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isfinitel\n"
     ".type __load_and_call___isfinitel @function\n"
     "__load_and_call___isfinitel:\n"
     "push rdi\n"
@@ -46684,6 +48142,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isinf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isinf\n"
     ".type __load_and_call___isinf @function\n"
     "__load_and_call___isinf:\n"
     "push rdi\n"
@@ -46716,6 +48175,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isinff]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isinff\n"
     ".type __load_and_call___isinff @function\n"
     "__load_and_call___isinff:\n"
     "push rdi\n"
@@ -46748,6 +48208,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isinfl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isinfl\n"
     ".type __load_and_call___isinfl @function\n"
     "__load_and_call___isinfl:\n"
     "push rdi\n"
@@ -46780,6 +48241,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isnan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isnan\n"
     ".type __load_and_call___isnan @function\n"
     "__load_and_call___isnan:\n"
     "push rdi\n"
@@ -46812,6 +48274,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isnanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isnanf\n"
     ".type __load_and_call___isnanf @function\n"
     "__load_and_call___isnanf:\n"
     "push rdi\n"
@@ -46844,6 +48307,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isnanl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isnanl\n"
     ".type __load_and_call___isnanl @function\n"
     "__load_and_call___isnanl:\n"
     "push rdi\n"
@@ -46876,6 +48340,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isnormal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isnormal\n"
     ".type __load_and_call___isnormal @function\n"
     "__load_and_call___isnormal:\n"
     "push rdi\n"
@@ -46908,6 +48373,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isnormalf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isnormalf\n"
     ".type __load_and_call___isnormalf @function\n"
     "__load_and_call___isnormalf:\n"
     "push rdi\n"
@@ -46940,6 +48406,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___isnormall]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___isnormall\n"
     ".type __load_and_call___isnormall @function\n"
     "__load_and_call___isnormall:\n"
     "push rdi\n"
@@ -46972,6 +48439,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___kernel_cos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___kernel_cos\n"
     ".type __load_and_call___kernel_cos @function\n"
     "__load_and_call___kernel_cos:\n"
     "push rdi\n"
@@ -47004,6 +48472,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___kernel_cosdf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___kernel_cosdf\n"
     ".type __load_and_call___kernel_cosdf @function\n"
     "__load_and_call___kernel_cosdf:\n"
     "push rdi\n"
@@ -47036,6 +48505,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___kernel_rem_pio2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___kernel_rem_pio2\n"
     ".type __load_and_call___kernel_rem_pio2 @function\n"
     "__load_and_call___kernel_rem_pio2:\n"
     "push rdi\n"
@@ -47068,6 +48538,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___kernel_sin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___kernel_sin\n"
     ".type __load_and_call___kernel_sin @function\n"
     "__load_and_call___kernel_sin:\n"
     "push rdi\n"
@@ -47100,6 +48571,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___kernel_sindf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___kernel_sindf\n"
     ".type __load_and_call___kernel_sindf @function\n"
     "__load_and_call___kernel_sindf:\n"
     "push rdi\n"
@@ -47132,6 +48604,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ledf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ledf2\n"
     ".type __load_and_call___ledf2 @function\n"
     "__load_and_call___ledf2:\n"
     "push rdi\n"
@@ -47164,6 +48637,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___lesf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___lesf2\n"
     ".type __load_and_call___lesf2 @function\n"
     "__load_and_call___lesf2:\n"
     "push rdi\n"
@@ -47196,6 +48670,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___longjmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___longjmp\n"
     ".type __load_and_call___longjmp @function\n"
     "__load_and_call___longjmp:\n"
     "push rdi\n"
@@ -47228,6 +48703,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___lshrdi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___lshrdi3\n"
     ".type __load_and_call___lshrdi3 @function\n"
     "__load_and_call___lshrdi3:\n"
     "push rdi\n"
@@ -47260,6 +48736,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___lshrti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___lshrti3\n"
     ".type __load_and_call___lshrti3 @function\n"
     "__load_and_call___lshrti3:\n"
     "push rdi\n"
@@ -47292,6 +48769,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ltdf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ltdf2\n"
     ".type __load_and_call___ltdf2 @function\n"
     "__load_and_call___ltdf2:\n"
     "push rdi\n"
@@ -47324,6 +48802,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ltsf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ltsf2\n"
     ".type __load_and_call___ltsf2 @function\n"
     "__load_and_call___ltsf2:\n"
     "push rdi\n"
@@ -47356,6 +48835,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___moddi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___moddi3\n"
     ".type __load_and_call___moddi3 @function\n"
     "__load_and_call___moddi3:\n"
     "push rdi\n"
@@ -47388,6 +48868,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___modsi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___modsi3\n"
     ".type __load_and_call___modsi3 @function\n"
     "__load_and_call___modsi3:\n"
     "push rdi\n"
@@ -47420,6 +48901,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___modti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___modti3\n"
     ".type __load_and_call___modti3 @function\n"
     "__load_and_call___modti3:\n"
     "push rdi\n"
@@ -47452,6 +48934,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___muldc3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___muldc3\n"
     ".type __load_and_call___muldc3 @function\n"
     "__load_and_call___muldc3:\n"
     "push rdi\n"
@@ -47484,6 +48967,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___muldf3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___muldf3\n"
     ".type __load_and_call___muldf3 @function\n"
     "__load_and_call___muldf3:\n"
     "push rdi\n"
@@ -47516,6 +49000,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___muldi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___muldi3\n"
     ".type __load_and_call___muldi3 @function\n"
     "__load_and_call___muldi3:\n"
     "push rdi\n"
@@ -47548,6 +49033,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___mulodi4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___mulodi4\n"
     ".type __load_and_call___mulodi4 @function\n"
     "__load_and_call___mulodi4:\n"
     "push rdi\n"
@@ -47580,6 +49066,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___mulosi4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___mulosi4\n"
     ".type __load_and_call___mulosi4 @function\n"
     "__load_and_call___mulosi4:\n"
     "push rdi\n"
@@ -47612,6 +49099,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___muloti4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___muloti4\n"
     ".type __load_and_call___muloti4 @function\n"
     "__load_and_call___muloti4:\n"
     "push rdi\n"
@@ -47644,6 +49132,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___mulsc3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___mulsc3\n"
     ".type __load_and_call___mulsc3 @function\n"
     "__load_and_call___mulsc3:\n"
     "push rdi\n"
@@ -47676,6 +49165,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___mulsf3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___mulsf3\n"
     ".type __load_and_call___mulsf3 @function\n"
     "__load_and_call___mulsf3:\n"
     "push rdi\n"
@@ -47708,6 +49198,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___multi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___multi3\n"
     ".type __load_and_call___multi3 @function\n"
     "__load_and_call___multi3:\n"
     "push rdi\n"
@@ -47740,6 +49231,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___mulvdi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___mulvdi3\n"
     ".type __load_and_call___mulvdi3 @function\n"
     "__load_and_call___mulvdi3:\n"
     "push rdi\n"
@@ -47772,6 +49264,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___mulvsi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___mulvsi3\n"
     ".type __load_and_call___mulvsi3 @function\n"
     "__load_and_call___mulvsi3:\n"
     "push rdi\n"
@@ -47804,6 +49297,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___mulvti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___mulvti3\n"
     ".type __load_and_call___mulvti3 @function\n"
     "__load_and_call___mulvti3:\n"
     "push rdi\n"
@@ -47836,6 +49330,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___mulxc3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___mulxc3\n"
     ".type __load_and_call___mulxc3 @function\n"
     "__load_and_call___mulxc3:\n"
     "push rdi\n"
@@ -47868,6 +49363,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___nedf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___nedf2\n"
     ".type __load_and_call___nedf2 @function\n"
     "__load_and_call___nedf2:\n"
     "push rdi\n"
@@ -47900,6 +49396,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___negdf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___negdf2\n"
     ".type __load_and_call___negdf2 @function\n"
     "__load_and_call___negdf2:\n"
     "push rdi\n"
@@ -47932,6 +49429,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___negdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___negdi2\n"
     ".type __load_and_call___negdi2 @function\n"
     "__load_and_call___negdi2:\n"
     "push rdi\n"
@@ -47964,6 +49462,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___negsf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___negsf2\n"
     ".type __load_and_call___negsf2 @function\n"
     "__load_and_call___negsf2:\n"
     "push rdi\n"
@@ -47996,6 +49495,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___negti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___negti2\n"
     ".type __load_and_call___negti2 @function\n"
     "__load_and_call___negti2:\n"
     "push rdi\n"
@@ -48028,6 +49528,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___negvdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___negvdi2\n"
     ".type __load_and_call___negvdi2 @function\n"
     "__load_and_call___negvdi2:\n"
     "push rdi\n"
@@ -48060,6 +49561,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___negvsi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___negvsi2\n"
     ".type __load_and_call___negvsi2 @function\n"
     "__load_and_call___negvsi2:\n"
     "push rdi\n"
@@ -48092,6 +49594,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___negvti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___negvti2\n"
     ".type __load_and_call___negvti2 @function\n"
     "__load_and_call___negvti2:\n"
     "push rdi\n"
@@ -48124,6 +49627,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___nesf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___nesf2\n"
     ".type __load_and_call___nesf2 @function\n"
     "__load_and_call___nesf2:\n"
     "push rdi\n"
@@ -48156,6 +49660,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___opendir2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___opendir2\n"
     ".type __load_and_call___opendir2 @function\n"
     "__load_and_call___opendir2:\n"
     "push rdi\n"
@@ -48188,6 +49693,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___paritydi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___paritydi2\n"
     ".type __load_and_call___paritydi2 @function\n"
     "__load_and_call___paritydi2:\n"
     "push rdi\n"
@@ -48220,6 +49726,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___paritysi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___paritysi2\n"
     ".type __load_and_call___paritysi2 @function\n"
     "__load_and_call___paritysi2:\n"
     "push rdi\n"
@@ -48252,6 +49759,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___parityti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___parityti2\n"
     ".type __load_and_call___parityti2 @function\n"
     "__load_and_call___parityti2:\n"
     "push rdi\n"
@@ -48284,6 +49792,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___popcountdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___popcountdi2\n"
     ".type __load_and_call___popcountdi2 @function\n"
     "__load_and_call___popcountdi2:\n"
     "push rdi\n"
@@ -48316,6 +49825,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___popcountsi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___popcountsi2\n"
     ".type __load_and_call___popcountsi2 @function\n"
     "__load_and_call___popcountsi2:\n"
     "push rdi\n"
@@ -48348,6 +49858,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___popcountti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___popcountti2\n"
     ".type __load_and_call___popcountti2 @function\n"
     "__load_and_call___popcountti2:\n"
     "push rdi\n"
@@ -48380,6 +49891,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___powidf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___powidf2\n"
     ".type __load_and_call___powidf2 @function\n"
     "__load_and_call___powidf2:\n"
     "push rdi\n"
@@ -48412,6 +49924,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___powisf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___powisf2\n"
     ".type __load_and_call___powisf2 @function\n"
     "__load_and_call___powisf2:\n"
     "push rdi\n"
@@ -48444,6 +49957,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___powixf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___powixf2\n"
     ".type __load_and_call___powixf2 @function\n"
     "__load_and_call___powixf2:\n"
     "push rdi\n"
@@ -48476,6 +49990,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___signbit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___signbit\n"
     ".type __load_and_call___signbit @function\n"
     "__load_and_call___signbit:\n"
     "push rdi\n"
@@ -48508,6 +50023,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___signbitf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___signbitf\n"
     ".type __load_and_call___signbitf @function\n"
     "__load_and_call___signbitf:\n"
     "push rdi\n"
@@ -48540,6 +50056,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___signbitl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___signbitl\n"
     ".type __load_and_call___signbitl @function\n"
     "__load_and_call___signbitl:\n"
     "push rdi\n"
@@ -48572,6 +50089,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___srefill]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___srefill\n"
     ".type __load_and_call___srefill @function\n"
     "__load_and_call___srefill:\n"
     "push rdi\n"
@@ -48604,6 +50122,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___srget]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___srget\n"
     ".type __load_and_call___srget @function\n"
     "__load_and_call___srget:\n"
     "push rdi\n"
@@ -48636,6 +50155,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___subdf3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___subdf3\n"
     ".type __load_and_call___subdf3 @function\n"
     "__load_and_call___subdf3:\n"
     "push rdi\n"
@@ -48668,6 +50188,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___subsf3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___subsf3\n"
     ".type __load_and_call___subsf3 @function\n"
     "__load_and_call___subsf3:\n"
     "push rdi\n"
@@ -48700,6 +50221,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___subvdi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___subvdi3\n"
     ".type __load_and_call___subvdi3 @function\n"
     "__load_and_call___subvdi3:\n"
     "push rdi\n"
@@ -48732,6 +50254,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___subvsi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___subvsi3\n"
     ".type __load_and_call___subvsi3 @function\n"
     "__load_and_call___subvsi3:\n"
     "push rdi\n"
@@ -48764,6 +50287,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___subvti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___subvti3\n"
     ".type __load_and_call___subvti3 @function\n"
     "__load_and_call___subvti3:\n"
     "push rdi\n"
@@ -48796,6 +50320,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___swbuf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___swbuf\n"
     ".type __load_and_call___swbuf @function\n"
     "__load_and_call___swbuf:\n"
     "push rdi\n"
@@ -48828,6 +50353,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sync_fetch_and_add_16]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sync_fetch_and_add_16\n"
     ".type __load_and_call___sync_fetch_and_add_16 @function\n"
     "__load_and_call___sync_fetch_and_add_16:\n"
     "push rdi\n"
@@ -48860,6 +50386,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sync_fetch_and_and_16]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sync_fetch_and_and_16\n"
     ".type __load_and_call___sync_fetch_and_and_16 @function\n"
     "__load_and_call___sync_fetch_and_and_16:\n"
     "push rdi\n"
@@ -48892,6 +50419,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sync_fetch_and_or_16]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sync_fetch_and_or_16\n"
     ".type __load_and_call___sync_fetch_and_or_16 @function\n"
     "__load_and_call___sync_fetch_and_or_16:\n"
     "push rdi\n"
@@ -48924,6 +50452,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sync_fetch_and_sub_16]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sync_fetch_and_sub_16\n"
     ".type __load_and_call___sync_fetch_and_sub_16 @function\n"
     "__load_and_call___sync_fetch_and_sub_16:\n"
     "push rdi\n"
@@ -48956,6 +50485,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sync_fetch_and_xor_16]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sync_fetch_and_xor_16\n"
     ".type __load_and_call___sync_fetch_and_xor_16 @function\n"
     "__load_and_call___sync_fetch_and_xor_16:\n"
     "push rdi\n"
@@ -48988,6 +50518,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___sync_lock_test_and_set_16]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___sync_lock_test_and_set_16\n"
     ".type __load_and_call___sync_lock_test_and_set_16 @function\n"
     "__load_and_call___sync_lock_test_and_set_16:\n"
     "push rdi\n"
@@ -49020,6 +50551,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___truncdfsf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___truncdfsf2\n"
     ".type __load_and_call___truncdfsf2 @function\n"
     "__load_and_call___truncdfsf2:\n"
     "push rdi\n"
@@ -49052,6 +50584,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ucmpdi2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ucmpdi2\n"
     ".type __load_and_call___ucmpdi2 @function\n"
     "__load_and_call___ucmpdi2:\n"
     "push rdi\n"
@@ -49084,6 +50617,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___ucmpti2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___ucmpti2\n"
     ".type __load_and_call___ucmpti2 @function\n"
     "__load_and_call___ucmpti2:\n"
     "push rdi\n"
@@ -49116,6 +50650,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___udivdi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___udivdi3\n"
     ".type __load_and_call___udivdi3 @function\n"
     "__load_and_call___udivdi3:\n"
     "push rdi\n"
@@ -49148,6 +50683,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___udivmoddi4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___udivmoddi4\n"
     ".type __load_and_call___udivmoddi4 @function\n"
     "__load_and_call___udivmoddi4:\n"
     "push rdi\n"
@@ -49180,6 +50716,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___udivmodsi4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___udivmodsi4\n"
     ".type __load_and_call___udivmodsi4 @function\n"
     "__load_and_call___udivmodsi4:\n"
     "push rdi\n"
@@ -49212,6 +50749,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___udivmodti4]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___udivmodti4\n"
     ".type __load_and_call___udivmodti4 @function\n"
     "__load_and_call___udivmodti4:\n"
     "push rdi\n"
@@ -49244,6 +50782,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___udivsi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___udivsi3\n"
     ".type __load_and_call___udivsi3 @function\n"
     "__load_and_call___udivsi3:\n"
     "push rdi\n"
@@ -49276,6 +50815,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___udivti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___udivti3\n"
     ".type __load_and_call___udivti3 @function\n"
     "__load_and_call___udivti3:\n"
     "push rdi\n"
@@ -49308,6 +50848,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___umoddi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___umoddi3\n"
     ".type __load_and_call___umoddi3 @function\n"
     "__load_and_call___umoddi3:\n"
     "push rdi\n"
@@ -49340,6 +50881,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___umodsi3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___umodsi3\n"
     ".type __load_and_call___umodsi3 @function\n"
     "__load_and_call___umodsi3:\n"
     "push rdi\n"
@@ -49372,6 +50914,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___umodti3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___umodti3\n"
     ".type __load_and_call___umodti3 @function\n"
     "__load_and_call___umodti3:\n"
     "push rdi\n"
@@ -49404,6 +50947,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___unorddf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___unorddf2\n"
     ".type __load_and_call___unorddf2 @function\n"
     "__load_and_call___unorddf2:\n"
     "push rdi\n"
@@ -49436,6 +50980,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___unordsf2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___unordsf2\n"
     ".type __load_and_call___unordsf2 @function\n"
     "__load_and_call___unordsf2:\n"
     "push rdi\n"
@@ -49468,6 +51013,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr___vfprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call___vfprintf\n"
     ".type __load_and_call___vfprintf @function\n"
     "__load_and_call___vfprintf:\n"
     "push rdi\n"
@@ -49500,6 +51046,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__err]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__err\n"
     ".type __load_and_call__err @function\n"
     "__load_and_call__err:\n"
     "push rdi\n"
@@ -49532,6 +51079,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__getprogname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__getprogname\n"
     ".type __load_and_call__getprogname @function\n"
     "__load_and_call__getprogname:\n"
     "push rdi\n"
@@ -49564,6 +51112,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__init_env]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__init_env\n"
     ".type __load_and_call__init_env @function\n"
     "__load_and_call__init_env:\n"
     "push rdi\n"
@@ -49596,6 +51145,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__init_tls]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__init_tls\n"
     ".type __load_and_call__init_tls @function\n"
     "__load_and_call__init_tls:\n"
     "push rdi\n"
@@ -49628,6 +51178,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__malloc_finalize_lv2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__malloc_finalize_lv2\n"
     ".type __load_and_call__malloc_finalize_lv2 @function\n"
     "__load_and_call__malloc_finalize_lv2:\n"
     "push rdi\n"
@@ -49660,6 +51211,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__malloc_fini]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__malloc_fini\n"
     ".type __load_and_call__malloc_fini @function\n"
     "__load_and_call__malloc_fini:\n"
     "push rdi\n"
@@ -49692,6 +51244,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__malloc_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__malloc_init\n"
     ".type __load_and_call__malloc_init @function\n"
     "__load_and_call__malloc_init:\n"
     "push rdi\n"
@@ -49724,6 +51277,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__malloc_init_lv2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__malloc_init_lv2\n"
     ".type __load_and_call__malloc_init_lv2 @function\n"
     "__load_and_call__malloc_init_lv2:\n"
     "push rdi\n"
@@ -49756,6 +51310,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__malloc_postfork]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__malloc_postfork\n"
     ".type __load_and_call__malloc_postfork @function\n"
     "__load_and_call__malloc_postfork:\n"
     "push rdi\n"
@@ -49788,6 +51343,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__malloc_prefork]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__malloc_prefork\n"
     ".type __load_and_call__malloc_prefork @function\n"
     "__load_and_call__malloc_prefork:\n"
     "push rdi\n"
@@ -49820,6 +51376,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__malloc_thread_cleanup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__malloc_thread_cleanup\n"
     ".type __load_and_call__malloc_thread_cleanup @function\n"
     "__load_and_call__malloc_thread_cleanup:\n"
     "push rdi\n"
@@ -49852,6 +51409,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__new_setup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__new_setup\n"
     ".type __load_and_call__new_setup @function\n"
     "__load_and_call__new_setup:\n"
     "push rdi\n"
@@ -49884,6 +51442,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__readdir_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__readdir_unlocked\n"
     ".type __load_and_call__readdir_unlocked @function\n"
     "__load_and_call__readdir_unlocked:\n"
     "push rdi\n"
@@ -49916,6 +51475,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__reclaim_telldir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__reclaim_telldir\n"
     ".type __load_and_call__reclaim_telldir @function\n"
     "__load_and_call__reclaim_telldir:\n"
     "push rdi\n"
@@ -49948,6 +51508,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__rtld_addr_phdr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__rtld_addr_phdr\n"
     ".type __load_and_call__rtld_addr_phdr @function\n"
     "__load_and_call__rtld_addr_phdr:\n"
     "push rdi\n"
@@ -49980,6 +51541,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__rtld_atfork_post]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__rtld_atfork_post\n"
     ".type __load_and_call__rtld_atfork_post @function\n"
     "__load_and_call__rtld_atfork_post:\n"
     "push rdi\n"
@@ -50012,6 +51574,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__rtld_atfork_pre]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__rtld_atfork_pre\n"
     ".type __load_and_call__rtld_atfork_pre @function\n"
     "__load_and_call__rtld_atfork_pre:\n"
     "push rdi\n"
@@ -50044,6 +51607,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__rtld_error]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__rtld_error\n"
     ".type __load_and_call__rtld_error @function\n"
     "__load_and_call__rtld_error:\n"
     "push rdi\n"
@@ -50076,6 +51640,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__rtld_get_stack_prot]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__rtld_get_stack_prot\n"
     ".type __load_and_call__rtld_get_stack_prot @function\n"
     "__load_and_call__rtld_get_stack_prot:\n"
     "push rdi\n"
@@ -50108,6 +51673,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__rtld_thread_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__rtld_thread_init\n"
     ".type __load_and_call__rtld_thread_init @function\n"
     "__load_and_call__rtld_thread_init:\n"
     "push rdi\n"
@@ -50140,6 +51706,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__sceLibcGetMallocParam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__sceLibcGetMallocParam\n"
     ".type __load_and_call__sceLibcGetMallocParam @function\n"
     "__load_and_call__sceLibcGetMallocParam:\n"
     "push rdi\n"
@@ -50172,6 +51739,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__seekdir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__seekdir\n"
     ".type __load_and_call__seekdir @function\n"
     "__load_and_call__seekdir:\n"
     "push rdi\n"
@@ -50204,6 +51772,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__thread_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__thread_init\n"
     ".type __load_and_call__thread_init @function\n"
     "__load_and_call__thread_init:\n"
     "push rdi\n"
@@ -50236,6 +51805,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__thread_init_stub]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__thread_init_stub\n"
     ".type __load_and_call__thread_init_stub @function\n"
     "__load_and_call__thread_init_stub:\n"
     "push rdi\n"
@@ -50268,6 +51838,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr__warn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call__warn\n"
     ".type __load_and_call__warn @function\n"
     "__load_and_call__warn:\n"
     "push rdi\n"
@@ -50300,6 +51871,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_abort]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_abort\n"
     ".type __load_and_call_abort @function\n"
     "__load_and_call_abort:\n"
     "push rdi\n"
@@ -50332,6 +51904,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_abort_handler_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_abort_handler_s\n"
     ".type __load_and_call_abort_handler_s @function\n"
     "__load_and_call_abort_handler_s:\n"
     "push rdi\n"
@@ -50364,6 +51937,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_abs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_abs\n"
     ".type __load_and_call_abs @function\n"
     "__load_and_call_abs:\n"
     "push rdi\n"
@@ -50396,6 +51970,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_acos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_acos\n"
     ".type __load_and_call_acos @function\n"
     "__load_and_call_acos:\n"
     "push rdi\n"
@@ -50428,6 +52003,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_acosf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_acosf\n"
     ".type __load_and_call_acosf @function\n"
     "__load_and_call_acosf:\n"
     "push rdi\n"
@@ -50460,6 +52036,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_acosh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_acosh\n"
     ".type __load_and_call_acosh @function\n"
     "__load_and_call_acosh:\n"
     "push rdi\n"
@@ -50492,6 +52069,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_acoshf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_acoshf\n"
     ".type __load_and_call_acoshf @function\n"
     "__load_and_call_acoshf:\n"
     "push rdi\n"
@@ -50524,6 +52102,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_acoshl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_acoshl\n"
     ".type __load_and_call_acoshl @function\n"
     "__load_and_call_acoshl:\n"
     "push rdi\n"
@@ -50556,6 +52135,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_acosl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_acosl\n"
     ".type __load_and_call_acosl @function\n"
     "__load_and_call_acosl:\n"
     "push rdi\n"
@@ -50588,6 +52168,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_alarm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_alarm\n"
     ".type __load_and_call_alarm @function\n"
     "__load_and_call_alarm:\n"
     "push rdi\n"
@@ -50620,6 +52201,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_aligned_alloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_aligned_alloc\n"
     ".type __load_and_call_aligned_alloc @function\n"
     "__load_and_call_aligned_alloc:\n"
     "push rdi\n"
@@ -50652,6 +52234,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asctime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asctime\n"
     ".type __load_and_call_asctime @function\n"
     "__load_and_call_asctime:\n"
     "push rdi\n"
@@ -50684,6 +52267,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asctime_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asctime_s\n"
     ".type __load_and_call_asctime_s @function\n"
     "__load_and_call_asctime_s:\n"
     "push rdi\n"
@@ -50716,6 +52300,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asin\n"
     ".type __load_and_call_asin @function\n"
     "__load_and_call_asin:\n"
     "push rdi\n"
@@ -50748,6 +52333,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asinf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asinf\n"
     ".type __load_and_call_asinf @function\n"
     "__load_and_call_asinf:\n"
     "push rdi\n"
@@ -50780,6 +52366,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asinh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asinh\n"
     ".type __load_and_call_asinh @function\n"
     "__load_and_call_asinh:\n"
     "push rdi\n"
@@ -50812,6 +52399,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asinhf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asinhf\n"
     ".type __load_and_call_asinhf @function\n"
     "__load_and_call_asinhf:\n"
     "push rdi\n"
@@ -50844,6 +52432,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asinhl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asinhl\n"
     ".type __load_and_call_asinhl @function\n"
     "__load_and_call_asinhl:\n"
     "push rdi\n"
@@ -50876,6 +52465,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asinl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asinl\n"
     ".type __load_and_call_asinl @function\n"
     "__load_and_call_asinl:\n"
     "push rdi\n"
@@ -50908,6 +52498,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_asprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_asprintf\n"
     ".type __load_and_call_asprintf @function\n"
     "__load_and_call_asprintf:\n"
     "push rdi\n"
@@ -50940,6 +52531,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_at_quick_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_at_quick_exit\n"
     ".type __load_and_call_at_quick_exit @function\n"
     "__load_and_call_at_quick_exit:\n"
     "push rdi\n"
@@ -50972,6 +52564,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atan\n"
     ".type __load_and_call_atan @function\n"
     "__load_and_call_atan:\n"
     "push rdi\n"
@@ -51004,6 +52597,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atan2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atan2\n"
     ".type __load_and_call_atan2 @function\n"
     "__load_and_call_atan2:\n"
     "push rdi\n"
@@ -51036,6 +52630,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atan2f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atan2f\n"
     ".type __load_and_call_atan2f @function\n"
     "__load_and_call_atan2f:\n"
     "push rdi\n"
@@ -51068,6 +52663,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atan2l]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atan2l\n"
     ".type __load_and_call_atan2l @function\n"
     "__load_and_call_atan2l:\n"
     "push rdi\n"
@@ -51100,6 +52696,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atanf\n"
     ".type __load_and_call_atanf @function\n"
     "__load_and_call_atanf:\n"
     "push rdi\n"
@@ -51132,6 +52729,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atanh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atanh\n"
     ".type __load_and_call_atanh @function\n"
     "__load_and_call_atanh:\n"
     "push rdi\n"
@@ -51164,6 +52762,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atanhf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atanhf\n"
     ".type __load_and_call_atanhf @function\n"
     "__load_and_call_atanhf:\n"
     "push rdi\n"
@@ -51196,6 +52795,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atanhl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atanhl\n"
     ".type __load_and_call_atanhl @function\n"
     "__load_and_call_atanhl:\n"
     "push rdi\n"
@@ -51228,6 +52828,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atanl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atanl\n"
     ".type __load_and_call_atanl @function\n"
     "__load_and_call_atanl:\n"
     "push rdi\n"
@@ -51260,6 +52861,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atexit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atexit\n"
     ".type __load_and_call_atexit @function\n"
     "__load_and_call_atexit:\n"
     "push rdi\n"
@@ -51292,6 +52894,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atof]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atof\n"
     ".type __load_and_call_atof @function\n"
     "__load_and_call_atof:\n"
     "push rdi\n"
@@ -51324,6 +52927,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atoi]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atoi\n"
     ".type __load_and_call_atoi @function\n"
     "__load_and_call_atoi:\n"
     "push rdi\n"
@@ -51356,6 +52960,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atol\n"
     ".type __load_and_call_atol @function\n"
     "__load_and_call_atol:\n"
     "push rdi\n"
@@ -51388,6 +52993,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_atoll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_atoll\n"
     ".type __load_and_call_atoll @function\n"
     "__load_and_call_atoll:\n"
     "push rdi\n"
@@ -51420,6 +53026,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_basename]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_basename\n"
     ".type __load_and_call_basename @function\n"
     "__load_and_call_basename:\n"
     "push rdi\n"
@@ -51452,6 +53059,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_basename_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_basename_r\n"
     ".type __load_and_call_basename_r @function\n"
     "__load_and_call_basename_r:\n"
     "push rdi\n"
@@ -51484,6 +53092,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_bcmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_bcmp\n"
     ".type __load_and_call_bcmp @function\n"
     "__load_and_call_bcmp:\n"
     "push rdi\n"
@@ -51516,6 +53125,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_bcopy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_bcopy\n"
     ".type __load_and_call_bcopy @function\n"
     "__load_and_call_bcopy:\n"
     "push rdi\n"
@@ -51548,6 +53158,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_bsearch]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_bsearch\n"
     ".type __load_and_call_bsearch @function\n"
     "__load_and_call_bsearch:\n"
     "push rdi\n"
@@ -51580,6 +53191,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_bsearch_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_bsearch_s\n"
     ".type __load_and_call_bsearch_s @function\n"
     "__load_and_call_bsearch_s:\n"
     "push rdi\n"
@@ -51612,6 +53224,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_btowc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_btowc\n"
     ".type __load_and_call_btowc @function\n"
     "__load_and_call_btowc:\n"
     "push rdi\n"
@@ -51644,6 +53257,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_bzero]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_bzero\n"
     ".type __load_and_call_bzero @function\n"
     "__load_and_call_bzero:\n"
     "push rdi\n"
@@ -51676,6 +53290,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_c16rtomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_c16rtomb\n"
     ".type __load_and_call_c16rtomb @function\n"
     "__load_and_call_c16rtomb:\n"
     "push rdi\n"
@@ -51708,6 +53323,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_c32rtomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_c32rtomb\n"
     ".type __load_and_call_c32rtomb @function\n"
     "__load_and_call_c32rtomb:\n"
     "push rdi\n"
@@ -51740,6 +53356,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_calloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_calloc\n"
     ".type __load_and_call_calloc @function\n"
     "__load_and_call_calloc:\n"
     "push rdi\n"
@@ -51772,6 +53389,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cbrt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cbrt\n"
     ".type __load_and_call_cbrt @function\n"
     "__load_and_call_cbrt:\n"
     "push rdi\n"
@@ -51804,6 +53422,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cbrtf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cbrtf\n"
     ".type __load_and_call_cbrtf @function\n"
     "__load_and_call_cbrtf:\n"
     "push rdi\n"
@@ -51836,6 +53455,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cbrtl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cbrtl\n"
     ".type __load_and_call_cbrtl @function\n"
     "__load_and_call_cbrtl:\n"
     "push rdi\n"
@@ -51868,6 +53488,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ceil]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ceil\n"
     ".type __load_and_call_ceil @function\n"
     "__load_and_call_ceil:\n"
     "push rdi\n"
@@ -51900,6 +53521,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ceilf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ceilf\n"
     ".type __load_and_call_ceilf @function\n"
     "__load_and_call_ceilf:\n"
     "push rdi\n"
@@ -51932,6 +53554,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ceill]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ceill\n"
     ".type __load_and_call_ceill @function\n"
     "__load_and_call_ceill:\n"
     "push rdi\n"
@@ -51964,6 +53587,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clearerr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_clearerr\n"
     ".type __load_and_call_clearerr @function\n"
     "__load_and_call_clearerr:\n"
     "push rdi\n"
@@ -51996,6 +53620,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clearerr_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_clearerr_unlocked\n"
     ".type __load_and_call_clearerr_unlocked @function\n"
     "__load_and_call_clearerr_unlocked:\n"
     "push rdi\n"
@@ -52028,6 +53653,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_clock\n"
     ".type __load_and_call_clock @function\n"
     "__load_and_call_clock:\n"
     "push rdi\n"
@@ -52060,6 +53686,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_clock_1700]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_clock_1700\n"
     ".type __load_and_call_clock_1700 @function\n"
     "__load_and_call_clock_1700:\n"
     "push rdi\n"
@@ -52092,6 +53719,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_closedir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_closedir\n"
     ".type __load_and_call_closedir @function\n"
     "__load_and_call_closedir:\n"
     "push rdi\n"
@@ -52124,6 +53752,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_copysign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_copysign\n"
     ".type __load_and_call_copysign @function\n"
     "__load_and_call_copysign:\n"
     "push rdi\n"
@@ -52156,6 +53785,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_copysignf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_copysignf\n"
     ".type __load_and_call_copysignf @function\n"
     "__load_and_call_copysignf:\n"
     "push rdi\n"
@@ -52188,6 +53818,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_copysignl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_copysignl\n"
     ".type __load_and_call_copysignl @function\n"
     "__load_and_call_copysignl:\n"
     "push rdi\n"
@@ -52220,6 +53851,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cos\n"
     ".type __load_and_call_cos @function\n"
     "__load_and_call_cos:\n"
     "push rdi\n"
@@ -52252,6 +53884,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cosf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cosf\n"
     ".type __load_and_call_cosf @function\n"
     "__load_and_call_cosf:\n"
     "push rdi\n"
@@ -52284,6 +53917,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cosh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cosh\n"
     ".type __load_and_call_cosh @function\n"
     "__load_and_call_cosh:\n"
     "push rdi\n"
@@ -52316,6 +53950,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_coshf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_coshf\n"
     ".type __load_and_call_coshf @function\n"
     "__load_and_call_coshf:\n"
     "push rdi\n"
@@ -52348,6 +53983,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_coshl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_coshl\n"
     ".type __load_and_call_coshl @function\n"
     "__load_and_call_coshl:\n"
     "push rdi\n"
@@ -52380,6 +54016,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_cosl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_cosl\n"
     ".type __load_and_call_cosl @function\n"
     "__load_and_call_cosl:\n"
     "push rdi\n"
@@ -52412,6 +54049,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ctime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ctime\n"
     ".type __load_and_call_ctime @function\n"
     "__load_and_call_ctime:\n"
     "push rdi\n"
@@ -52444,6 +54082,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ctime_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ctime_s\n"
     ".type __load_and_call_ctime_s @function\n"
     "__load_and_call_ctime_s:\n"
     "push rdi\n"
@@ -52476,6 +54115,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_daemon]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_daemon\n"
     ".type __load_and_call_daemon @function\n"
     "__load_and_call_daemon:\n"
     "push rdi\n"
@@ -52508,6 +54148,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_devname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_devname\n"
     ".type __load_and_call_devname @function\n"
     "__load_and_call_devname:\n"
     "push rdi\n"
@@ -52540,6 +54181,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_devname_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_devname_r\n"
     ".type __load_and_call_devname_r @function\n"
     "__load_and_call_devname_r:\n"
     "push rdi\n"
@@ -52572,6 +54214,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_difftime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_difftime\n"
     ".type __load_and_call_difftime @function\n"
     "__load_and_call_difftime:\n"
     "push rdi\n"
@@ -52604,6 +54247,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dirname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dirname\n"
     ".type __load_and_call_dirname @function\n"
     "__load_and_call_dirname:\n"
     "push rdi\n"
@@ -52636,6 +54280,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_div]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_div\n"
     ".type __load_and_call_div @function\n"
     "__load_and_call_div:\n"
     "push rdi\n"
@@ -52668,6 +54313,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_drand48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_drand48\n"
     ".type __load_and_call_drand48 @function\n"
     "__load_and_call_drand48:\n"
     "push rdi\n"
@@ -52700,6 +54346,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_drem]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_drem\n"
     ".type __load_and_call_drem @function\n"
     "__load_and_call_drem:\n"
     "push rdi\n"
@@ -52732,6 +54379,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_dremf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_dremf\n"
     ".type __load_and_call_dremf @function\n"
     "__load_and_call_dremf:\n"
     "push rdi\n"
@@ -52764,6 +54412,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_erand48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_erand48\n"
     ".type __load_and_call_erand48 @function\n"
     "__load_and_call_erand48:\n"
     "push rdi\n"
@@ -52796,6 +54445,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_erf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_erf\n"
     ".type __load_and_call_erf @function\n"
     "__load_and_call_erf:\n"
     "push rdi\n"
@@ -52828,6 +54478,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_erfc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_erfc\n"
     ".type __load_and_call_erfc @function\n"
     "__load_and_call_erfc:\n"
     "push rdi\n"
@@ -52860,6 +54511,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_erfcf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_erfcf\n"
     ".type __load_and_call_erfcf @function\n"
     "__load_and_call_erfcf:\n"
     "push rdi\n"
@@ -52892,6 +54544,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_erfcl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_erfcl\n"
     ".type __load_and_call_erfcl @function\n"
     "__load_and_call_erfcl:\n"
     "push rdi\n"
@@ -52924,6 +54577,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_erff]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_erff\n"
     ".type __load_and_call_erff @function\n"
     "__load_and_call_erff:\n"
     "push rdi\n"
@@ -52956,6 +54610,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_erfl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_erfl\n"
     ".type __load_and_call_erfl @function\n"
     "__load_and_call_erfl:\n"
     "push rdi\n"
@@ -52988,6 +54643,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_err]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_err\n"
     ".type __load_and_call_err @function\n"
     "__load_and_call_err:\n"
     "push rdi\n"
@@ -53020,6 +54676,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_err_set_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_err_set_exit\n"
     ".type __load_and_call_err_set_exit @function\n"
     "__load_and_call_err_set_exit:\n"
     "push rdi\n"
@@ -53052,6 +54709,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_err_set_file]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_err_set_file\n"
     ".type __load_and_call_err_set_file @function\n"
     "__load_and_call_err_set_file:\n"
     "push rdi\n"
@@ -53084,6 +54742,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_errc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_errc\n"
     ".type __load_and_call_errc @function\n"
     "__load_and_call_errc:\n"
     "push rdi\n"
@@ -53116,6 +54775,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_errx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_errx\n"
     ".type __load_and_call_errx @function\n"
     "__load_and_call_errx:\n"
     "push rdi\n"
@@ -53148,6 +54808,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_exit\n"
     ".type __load_and_call_exit @function\n"
     "__load_and_call_exit:\n"
     "push rdi\n"
@@ -53180,6 +54841,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_exp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_exp\n"
     ".type __load_and_call_exp @function\n"
     "__load_and_call_exp:\n"
     "push rdi\n"
@@ -53212,6 +54874,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_exp2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_exp2\n"
     ".type __load_and_call_exp2 @function\n"
     "__load_and_call_exp2:\n"
     "push rdi\n"
@@ -53244,6 +54907,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_exp2f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_exp2f\n"
     ".type __load_and_call_exp2f @function\n"
     "__load_and_call_exp2f:\n"
     "push rdi\n"
@@ -53276,6 +54940,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_exp2l]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_exp2l\n"
     ".type __load_and_call_exp2l @function\n"
     "__load_and_call_exp2l:\n"
     "push rdi\n"
@@ -53308,6 +54973,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_expf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_expf\n"
     ".type __load_and_call_expf @function\n"
     "__load_and_call_expf:\n"
     "push rdi\n"
@@ -53340,6 +55006,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_expl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_expl\n"
     ".type __load_and_call_expl @function\n"
     "__load_and_call_expl:\n"
     "push rdi\n"
@@ -53372,6 +55039,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_expm1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_expm1\n"
     ".type __load_and_call_expm1 @function\n"
     "__load_and_call_expm1:\n"
     "push rdi\n"
@@ -53404,6 +55072,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_expm1f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_expm1f\n"
     ".type __load_and_call_expm1f @function\n"
     "__load_and_call_expm1f:\n"
     "push rdi\n"
@@ -53436,6 +55105,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_expm1l]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_expm1l\n"
     ".type __load_and_call_expm1l @function\n"
     "__load_and_call_expm1l:\n"
     "push rdi\n"
@@ -53468,6 +55138,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fabs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fabs\n"
     ".type __load_and_call_fabs @function\n"
     "__load_and_call_fabs:\n"
     "push rdi\n"
@@ -53500,6 +55171,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fabsf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fabsf\n"
     ".type __load_and_call_fabsf @function\n"
     "__load_and_call_fabsf:\n"
     "push rdi\n"
@@ -53532,6 +55204,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fabsl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fabsl\n"
     ".type __load_and_call_fabsl @function\n"
     "__load_and_call_fabsl:\n"
     "push rdi\n"
@@ -53564,6 +55237,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fclose]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fclose\n"
     ".type __load_and_call_fclose @function\n"
     "__load_and_call_fclose:\n"
     "push rdi\n"
@@ -53596,6 +55270,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fcloseall]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fcloseall\n"
     ".type __load_and_call_fcloseall @function\n"
     "__load_and_call_fcloseall:\n"
     "push rdi\n"
@@ -53628,6 +55303,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fdim]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fdim\n"
     ".type __load_and_call_fdim @function\n"
     "__load_and_call_fdim:\n"
     "push rdi\n"
@@ -53660,6 +55336,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fdimf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fdimf\n"
     ".type __load_and_call_fdimf @function\n"
     "__load_and_call_fdimf:\n"
     "push rdi\n"
@@ -53692,6 +55369,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fdiml]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fdiml\n"
     ".type __load_and_call_fdiml @function\n"
     "__load_and_call_fdiml:\n"
     "push rdi\n"
@@ -53724,6 +55402,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fdopen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fdopen\n"
     ".type __load_and_call_fdopen @function\n"
     "__load_and_call_fdopen:\n"
     "push rdi\n"
@@ -53756,6 +55435,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fdopendir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fdopendir\n"
     ".type __load_and_call_fdopendir @function\n"
     "__load_and_call_fdopendir:\n"
     "push rdi\n"
@@ -53788,6 +55468,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_feclearexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_feclearexcept\n"
     ".type __load_and_call_feclearexcept @function\n"
     "__load_and_call_feclearexcept:\n"
     "push rdi\n"
@@ -53820,6 +55501,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fedisableexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fedisableexcept\n"
     ".type __load_and_call_fedisableexcept @function\n"
     "__load_and_call_fedisableexcept:\n"
     "push rdi\n"
@@ -53852,6 +55534,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_feenableexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_feenableexcept\n"
     ".type __load_and_call_feenableexcept @function\n"
     "__load_and_call_feenableexcept:\n"
     "push rdi\n"
@@ -53884,6 +55567,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fegetenv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fegetenv\n"
     ".type __load_and_call_fegetenv @function\n"
     "__load_and_call_fegetenv:\n"
     "push rdi\n"
@@ -53916,6 +55600,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fegetexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fegetexcept\n"
     ".type __load_and_call_fegetexcept @function\n"
     "__load_and_call_fegetexcept:\n"
     "push rdi\n"
@@ -53948,6 +55633,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fegetexceptflag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fegetexceptflag\n"
     ".type __load_and_call_fegetexceptflag @function\n"
     "__load_and_call_fegetexceptflag:\n"
     "push rdi\n"
@@ -53980,6 +55666,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fegetround]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fegetround\n"
     ".type __load_and_call_fegetround @function\n"
     "__load_and_call_fegetround:\n"
     "push rdi\n"
@@ -54012,6 +55699,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fegettrapenable]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fegettrapenable\n"
     ".type __load_and_call_fegettrapenable @function\n"
     "__load_and_call_fegettrapenable:\n"
     "push rdi\n"
@@ -54044,6 +55732,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_feholdexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_feholdexcept\n"
     ".type __load_and_call_feholdexcept @function\n"
     "__load_and_call_feholdexcept:\n"
     "push rdi\n"
@@ -54076,6 +55765,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_feof]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_feof\n"
     ".type __load_and_call_feof @function\n"
     "__load_and_call_feof:\n"
     "push rdi\n"
@@ -54108,6 +55798,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_feof_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_feof_unlocked\n"
     ".type __load_and_call_feof_unlocked @function\n"
     "__load_and_call_feof_unlocked:\n"
     "push rdi\n"
@@ -54140,6 +55831,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_feraiseexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_feraiseexcept\n"
     ".type __load_and_call_feraiseexcept @function\n"
     "__load_and_call_feraiseexcept:\n"
     "push rdi\n"
@@ -54172,6 +55864,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ferror]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ferror\n"
     ".type __load_and_call_ferror @function\n"
     "__load_and_call_ferror:\n"
     "push rdi\n"
@@ -54204,6 +55897,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ferror_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ferror_unlocked\n"
     ".type __load_and_call_ferror_unlocked @function\n"
     "__load_and_call_ferror_unlocked:\n"
     "push rdi\n"
@@ -54236,6 +55930,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fesetenv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fesetenv\n"
     ".type __load_and_call_fesetenv @function\n"
     "__load_and_call_fesetenv:\n"
     "push rdi\n"
@@ -54268,6 +55963,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fesetexceptflag]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fesetexceptflag\n"
     ".type __load_and_call_fesetexceptflag @function\n"
     "__load_and_call_fesetexceptflag:\n"
     "push rdi\n"
@@ -54300,6 +55996,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fesetround]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fesetround\n"
     ".type __load_and_call_fesetround @function\n"
     "__load_and_call_fesetround:\n"
     "push rdi\n"
@@ -54332,6 +56029,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fesettrapenable]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fesettrapenable\n"
     ".type __load_and_call_fesettrapenable @function\n"
     "__load_and_call_fesettrapenable:\n"
     "push rdi\n"
@@ -54364,6 +56062,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fetestexcept]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fetestexcept\n"
     ".type __load_and_call_fetestexcept @function\n"
     "__load_and_call_fetestexcept:\n"
     "push rdi\n"
@@ -54396,6 +56095,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_feupdateenv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_feupdateenv\n"
     ".type __load_and_call_feupdateenv @function\n"
     "__load_and_call_feupdateenv:\n"
     "push rdi\n"
@@ -54428,6 +56128,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fflush]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fflush\n"
     ".type __load_and_call_fflush @function\n"
     "__load_and_call_fflush:\n"
     "push rdi\n"
@@ -54460,6 +56161,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fgetc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fgetc\n"
     ".type __load_and_call_fgetc @function\n"
     "__load_and_call_fgetc:\n"
     "push rdi\n"
@@ -54492,6 +56194,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fgetln]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fgetln\n"
     ".type __load_and_call_fgetln @function\n"
     "__load_and_call_fgetln:\n"
     "push rdi\n"
@@ -54524,6 +56227,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fgetpos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fgetpos\n"
     ".type __load_and_call_fgetpos @function\n"
     "__load_and_call_fgetpos:\n"
     "push rdi\n"
@@ -54556,6 +56260,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fgets]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fgets\n"
     ".type __load_and_call_fgets @function\n"
     "__load_and_call_fgets:\n"
     "push rdi\n"
@@ -54588,6 +56293,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fgetwc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fgetwc\n"
     ".type __load_and_call_fgetwc @function\n"
     "__load_and_call_fgetwc:\n"
     "push rdi\n"
@@ -54620,6 +56326,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fgetws]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fgetws\n"
     ".type __load_and_call_fgetws @function\n"
     "__load_and_call_fgetws:\n"
     "push rdi\n"
@@ -54652,6 +56359,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fileno]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fileno\n"
     ".type __load_and_call_fileno @function\n"
     "__load_and_call_fileno:\n"
     "push rdi\n"
@@ -54684,6 +56392,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fileno_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fileno_unlocked\n"
     ".type __load_and_call_fileno_unlocked @function\n"
     "__load_and_call_fileno_unlocked:\n"
     "push rdi\n"
@@ -54716,6 +56425,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_finite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_finite\n"
     ".type __load_and_call_finite @function\n"
     "__load_and_call_finite:\n"
     "push rdi\n"
@@ -54748,6 +56458,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_finitef]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_finitef\n"
     ".type __load_and_call_finitef @function\n"
     "__load_and_call_finitef:\n"
     "push rdi\n"
@@ -54780,6 +56491,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_flockfile]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_flockfile\n"
     ".type __load_and_call_flockfile @function\n"
     "__load_and_call_flockfile:\n"
     "push rdi\n"
@@ -54812,6 +56524,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_floor]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_floor\n"
     ".type __load_and_call_floor @function\n"
     "__load_and_call_floor:\n"
     "push rdi\n"
@@ -54844,6 +56557,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_floorf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_floorf\n"
     ".type __load_and_call_floorf @function\n"
     "__load_and_call_floorf:\n"
     "push rdi\n"
@@ -54876,6 +56590,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_floorl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_floorl\n"
     ".type __load_and_call_floorl @function\n"
     "__load_and_call_floorl:\n"
     "push rdi\n"
@@ -54908,6 +56623,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_flsl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_flsl\n"
     ".type __load_and_call_flsl @function\n"
     "__load_and_call_flsl:\n"
     "push rdi\n"
@@ -54940,6 +56656,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fma]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fma\n"
     ".type __load_and_call_fma @function\n"
     "__load_and_call_fma:\n"
     "push rdi\n"
@@ -54972,6 +56689,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmaf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmaf\n"
     ".type __load_and_call_fmaf @function\n"
     "__load_and_call_fmaf:\n"
     "push rdi\n"
@@ -55004,6 +56722,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmal\n"
     ".type __load_and_call_fmal @function\n"
     "__load_and_call_fmal:\n"
     "push rdi\n"
@@ -55036,6 +56755,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmax]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmax\n"
     ".type __load_and_call_fmax @function\n"
     "__load_and_call_fmax:\n"
     "push rdi\n"
@@ -55068,6 +56788,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmaxf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmaxf\n"
     ".type __load_and_call_fmaxf @function\n"
     "__load_and_call_fmaxf:\n"
     "push rdi\n"
@@ -55100,6 +56821,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmaxl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmaxl\n"
     ".type __load_and_call_fmaxl @function\n"
     "__load_and_call_fmaxl:\n"
     "push rdi\n"
@@ -55132,6 +56854,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmin\n"
     ".type __load_and_call_fmin @function\n"
     "__load_and_call_fmin:\n"
     "push rdi\n"
@@ -55164,6 +56887,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fminf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fminf\n"
     ".type __load_and_call_fminf @function\n"
     "__load_and_call_fminf:\n"
     "push rdi\n"
@@ -55196,6 +56920,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fminl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fminl\n"
     ".type __load_and_call_fminl @function\n"
     "__load_and_call_fminl:\n"
     "push rdi\n"
@@ -55228,6 +56953,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmod\n"
     ".type __load_and_call_fmod @function\n"
     "__load_and_call_fmod:\n"
     "push rdi\n"
@@ -55260,6 +56986,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmodf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmodf\n"
     ".type __load_and_call_fmodf @function\n"
     "__load_and_call_fmodf:\n"
     "push rdi\n"
@@ -55292,6 +57019,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fmodl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fmodl\n"
     ".type __load_and_call_fmodl @function\n"
     "__load_and_call_fmodl:\n"
     "push rdi\n"
@@ -55324,6 +57052,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fopen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fopen\n"
     ".type __load_and_call_fopen @function\n"
     "__load_and_call_fopen:\n"
     "push rdi\n"
@@ -55356,6 +57085,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fopen_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fopen_s\n"
     ".type __load_and_call_fopen_s @function\n"
     "__load_and_call_fopen_s:\n"
     "push rdi\n"
@@ -55388,6 +57118,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fprintf\n"
     ".type __load_and_call_fprintf @function\n"
     "__load_and_call_fprintf:\n"
     "push rdi\n"
@@ -55420,6 +57151,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fprintf_s\n"
     ".type __load_and_call_fprintf_s @function\n"
     "__load_and_call_fprintf_s:\n"
     "push rdi\n"
@@ -55452,6 +57184,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fpurge]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fpurge\n"
     ".type __load_and_call_fpurge @function\n"
     "__load_and_call_fpurge:\n"
     "push rdi\n"
@@ -55484,6 +57217,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fputc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fputc\n"
     ".type __load_and_call_fputc @function\n"
     "__load_and_call_fputc:\n"
     "push rdi\n"
@@ -55516,6 +57250,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fputs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fputs\n"
     ".type __load_and_call_fputs @function\n"
     "__load_and_call_fputs:\n"
     "push rdi\n"
@@ -55548,6 +57283,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fputwc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fputwc\n"
     ".type __load_and_call_fputwc @function\n"
     "__load_and_call_fputwc:\n"
     "push rdi\n"
@@ -55580,6 +57316,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fputws]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fputws\n"
     ".type __load_and_call_fputws @function\n"
     "__load_and_call_fputws:\n"
     "push rdi\n"
@@ -55612,6 +57349,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fread]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fread\n"
     ".type __load_and_call_fread @function\n"
     "__load_and_call_fread:\n"
     "push rdi\n"
@@ -55644,6 +57382,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_free]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_free\n"
     ".type __load_and_call_free @function\n"
     "__load_and_call_free:\n"
     "push rdi\n"
@@ -55676,6 +57415,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_freeifaddrs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_freeifaddrs\n"
     ".type __load_and_call_freeifaddrs @function\n"
     "__load_and_call_freeifaddrs:\n"
     "push rdi\n"
@@ -55708,6 +57448,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_freopen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_freopen\n"
     ".type __load_and_call_freopen @function\n"
     "__load_and_call_freopen:\n"
     "push rdi\n"
@@ -55740,6 +57481,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_freopen_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_freopen_s\n"
     ".type __load_and_call_freopen_s @function\n"
     "__load_and_call_freopen_s:\n"
     "push rdi\n"
@@ -55772,6 +57514,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_frexp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_frexp\n"
     ".type __load_and_call_frexp @function\n"
     "__load_and_call_frexp:\n"
     "push rdi\n"
@@ -55804,6 +57547,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_frexpf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_frexpf\n"
     ".type __load_and_call_frexpf @function\n"
     "__load_and_call_frexpf:\n"
     "push rdi\n"
@@ -55836,6 +57580,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_frexpl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_frexpl\n"
     ".type __load_and_call_frexpl @function\n"
     "__load_and_call_frexpl:\n"
     "push rdi\n"
@@ -55868,6 +57613,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fscanf\n"
     ".type __load_and_call_fscanf @function\n"
     "__load_and_call_fscanf:\n"
     "push rdi\n"
@@ -55900,6 +57646,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fscanf_s\n"
     ".type __load_and_call_fscanf_s @function\n"
     "__load_and_call_fscanf_s:\n"
     "push rdi\n"
@@ -55932,6 +57679,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fseek]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fseek\n"
     ".type __load_and_call_fseek @function\n"
     "__load_and_call_fseek:\n"
     "push rdi\n"
@@ -55964,6 +57712,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fseeko]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fseeko\n"
     ".type __load_and_call_fseeko @function\n"
     "__load_and_call_fseeko:\n"
     "push rdi\n"
@@ -55996,6 +57745,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fsetpos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fsetpos\n"
     ".type __load_and_call_fsetpos @function\n"
     "__load_and_call_fsetpos:\n"
     "push rdi\n"
@@ -56028,6 +57778,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fstatvfs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fstatvfs\n"
     ".type __load_and_call_fstatvfs @function\n"
     "__load_and_call_fstatvfs:\n"
     "push rdi\n"
@@ -56060,6 +57811,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ftell]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ftell\n"
     ".type __load_and_call_ftell @function\n"
     "__load_and_call_ftell:\n"
     "push rdi\n"
@@ -56092,6 +57844,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ftello]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ftello\n"
     ".type __load_and_call_ftello @function\n"
     "__load_and_call_ftello:\n"
     "push rdi\n"
@@ -56124,6 +57877,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ftrylockfile]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ftrylockfile\n"
     ".type __load_and_call_ftrylockfile @function\n"
     "__load_and_call_ftrylockfile:\n"
     "push rdi\n"
@@ -56156,6 +57910,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_funlockfile]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_funlockfile\n"
     ".type __load_and_call_funlockfile @function\n"
     "__load_and_call_funlockfile:\n"
     "push rdi\n"
@@ -56188,6 +57943,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fwide]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fwide\n"
     ".type __load_and_call_fwide @function\n"
     "__load_and_call_fwide:\n"
     "push rdi\n"
@@ -56220,6 +57976,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fwprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fwprintf\n"
     ".type __load_and_call_fwprintf @function\n"
     "__load_and_call_fwprintf:\n"
     "push rdi\n"
@@ -56252,6 +58009,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fwprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fwprintf_s\n"
     ".type __load_and_call_fwprintf_s @function\n"
     "__load_and_call_fwprintf_s:\n"
     "push rdi\n"
@@ -56284,6 +58042,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fwrite]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fwrite\n"
     ".type __load_and_call_fwrite @function\n"
     "__load_and_call_fwrite:\n"
     "push rdi\n"
@@ -56316,6 +58075,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fwscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fwscanf\n"
     ".type __load_and_call_fwscanf @function\n"
     "__load_and_call_fwscanf:\n"
     "push rdi\n"
@@ -56348,6 +58108,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_fwscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_fwscanf_s\n"
     ".type __load_and_call_fwscanf_s @function\n"
     "__load_and_call_fwscanf_s:\n"
     "push rdi\n"
@@ -56380,6 +58141,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gamma]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gamma\n"
     ".type __load_and_call_gamma @function\n"
     "__load_and_call_gamma:\n"
     "push rdi\n"
@@ -56412,6 +58174,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gamma_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gamma_r\n"
     ".type __load_and_call_gamma_r @function\n"
     "__load_and_call_gamma_r:\n"
     "push rdi\n"
@@ -56444,6 +58207,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gammaf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gammaf\n"
     ".type __load_and_call_gammaf @function\n"
     "__load_and_call_gammaf:\n"
     "push rdi\n"
@@ -56476,6 +58240,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gammaf_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gammaf_r\n"
     ".type __load_and_call_gammaf_r @function\n"
     "__load_and_call_gammaf_r:\n"
     "push rdi\n"
@@ -56508,6 +58273,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getc\n"
     ".type __load_and_call_getc @function\n"
     "__load_and_call_getc:\n"
     "push rdi\n"
@@ -56540,6 +58306,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getc_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getc_unlocked\n"
     ".type __load_and_call_getc_unlocked @function\n"
     "__load_and_call_getc_unlocked:\n"
     "push rdi\n"
@@ -56572,6 +58339,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getchar]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getchar\n"
     ".type __load_and_call_getchar @function\n"
     "__load_and_call_getchar:\n"
     "push rdi\n"
@@ -56604,6 +58372,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getchar_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getchar_unlocked\n"
     ".type __load_and_call_getchar_unlocked @function\n"
     "__load_and_call_getchar_unlocked:\n"
     "push rdi\n"
@@ -56636,6 +58405,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getcwd]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getcwd\n"
     ".type __load_and_call_getcwd @function\n"
     "__load_and_call_getcwd:\n"
     "push rdi\n"
@@ -56668,6 +58438,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getenv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getenv\n"
     ".type __load_and_call_getenv @function\n"
     "__load_and_call_getenv:\n"
     "push rdi\n"
@@ -56700,6 +58471,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gethostname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gethostname\n"
     ".type __load_and_call_gethostname @function\n"
     "__load_and_call_gethostname:\n"
     "push rdi\n"
@@ -56732,6 +58504,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getifaddrs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getifaddrs\n"
     ".type __load_and_call_getifaddrs @function\n"
     "__load_and_call_getifaddrs:\n"
     "push rdi\n"
@@ -56764,6 +58537,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getopt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getopt\n"
     ".type __load_and_call_getopt @function\n"
     "__load_and_call_getopt:\n"
     "push rdi\n"
@@ -56796,6 +58570,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getopt_long]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getopt_long\n"
     ".type __load_and_call_getopt_long @function\n"
     "__load_and_call_getopt_long:\n"
     "push rdi\n"
@@ -56828,6 +58603,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getopt_long_only]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getopt_long_only\n"
     ".type __load_and_call_getopt_long_only @function\n"
     "__load_and_call_getopt_long_only:\n"
     "push rdi\n"
@@ -56860,6 +58636,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getprogname]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getprogname\n"
     ".type __load_and_call_getprogname @function\n"
     "__load_and_call_getprogname:\n"
     "push rdi\n"
@@ -56892,6 +58669,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gets]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gets\n"
     ".type __load_and_call_gets @function\n"
     "__load_and_call_gets:\n"
     "push rdi\n"
@@ -56924,6 +58702,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gets_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gets_s\n"
     ".type __load_and_call_gets_s @function\n"
     "__load_and_call_gets_s:\n"
     "push rdi\n"
@@ -56956,6 +58735,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getw\n"
     ".type __load_and_call_getw @function\n"
     "__load_and_call_getw:\n"
     "push rdi\n"
@@ -56988,6 +58768,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getwc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getwc\n"
     ".type __load_and_call_getwc @function\n"
     "__load_and_call_getwc:\n"
     "push rdi\n"
@@ -57020,6 +58801,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_getwchar]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_getwchar\n"
     ".type __load_and_call_getwchar @function\n"
     "__load_and_call_getwchar:\n"
     "push rdi\n"
@@ -57052,6 +58834,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gmtime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gmtime\n"
     ".type __load_and_call_gmtime @function\n"
     "__load_and_call_gmtime:\n"
     "push rdi\n"
@@ -57084,6 +58867,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_gmtime_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_gmtime_s\n"
     ".type __load_and_call_gmtime_s @function\n"
     "__load_and_call_gmtime_s:\n"
     "push rdi\n"
@@ -57116,6 +58900,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_hypot]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_hypot\n"
     ".type __load_and_call_hypot @function\n"
     "__load_and_call_hypot:\n"
     "push rdi\n"
@@ -57148,6 +58933,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_hypot3]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_hypot3\n"
     ".type __load_and_call_hypot3 @function\n"
     "__load_and_call_hypot3:\n"
     "push rdi\n"
@@ -57180,6 +58966,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_hypot3f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_hypot3f\n"
     ".type __load_and_call_hypot3f @function\n"
     "__load_and_call_hypot3f:\n"
     "push rdi\n"
@@ -57212,6 +58999,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_hypot3l]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_hypot3l\n"
     ".type __load_and_call_hypot3l @function\n"
     "__load_and_call_hypot3l:\n"
     "push rdi\n"
@@ -57244,6 +59032,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_hypotf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_hypotf\n"
     ".type __load_and_call_hypotf @function\n"
     "__load_and_call_hypotf:\n"
     "push rdi\n"
@@ -57276,6 +59065,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_hypotl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_hypotl\n"
     ".type __load_and_call_hypotl @function\n"
     "__load_and_call_hypotl:\n"
     "push rdi\n"
@@ -57308,6 +59098,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ignore_handler_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ignore_handler_s\n"
     ".type __load_and_call_ignore_handler_s @function\n"
     "__load_and_call_ignore_handler_s:\n"
     "push rdi\n"
@@ -57340,6 +59131,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ilogb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ilogb\n"
     ".type __load_and_call_ilogb @function\n"
     "__load_and_call_ilogb:\n"
     "push rdi\n"
@@ -57372,6 +59164,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ilogbf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ilogbf\n"
     ".type __load_and_call_ilogbf @function\n"
     "__load_and_call_ilogbf:\n"
     "push rdi\n"
@@ -57404,6 +59197,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ilogbl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ilogbl\n"
     ".type __load_and_call_ilogbl @function\n"
     "__load_and_call_ilogbl:\n"
     "push rdi\n"
@@ -57436,6 +59230,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_imaxabs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_imaxabs\n"
     ".type __load_and_call_imaxabs @function\n"
     "__load_and_call_imaxabs:\n"
     "push rdi\n"
@@ -57468,6 +59263,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_imaxdiv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_imaxdiv\n"
     ".type __load_and_call_imaxdiv @function\n"
     "__load_and_call_imaxdiv:\n"
     "push rdi\n"
@@ -57500,6 +59296,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_index]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_index\n"
     ".type __load_and_call_index @function\n"
     "__load_and_call_index:\n"
     "push rdi\n"
@@ -57532,6 +59329,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_inet_addr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_inet_addr\n"
     ".type __load_and_call_inet_addr @function\n"
     "__load_and_call_inet_addr:\n"
     "push rdi\n"
@@ -57564,6 +59362,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_inet_aton]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_inet_aton\n"
     ".type __load_and_call_inet_aton @function\n"
     "__load_and_call_inet_aton:\n"
     "push rdi\n"
@@ -57596,6 +59395,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_inet_ntoa]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_inet_ntoa\n"
     ".type __load_and_call_inet_ntoa @function\n"
     "__load_and_call_inet_ntoa:\n"
     "push rdi\n"
@@ -57628,6 +59428,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_inet_ntoa_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_inet_ntoa_r\n"
     ".type __load_and_call_inet_ntoa_r @function\n"
     "__load_and_call_inet_ntoa_r:\n"
     "push rdi\n"
@@ -57660,6 +59461,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_initstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_initstate\n"
     ".type __load_and_call_initstate @function\n"
     "__load_and_call_initstate:\n"
     "push rdi\n"
@@ -57692,6 +59494,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isalnum]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isalnum\n"
     ".type __load_and_call_isalnum @function\n"
     "__load_and_call_isalnum:\n"
     "push rdi\n"
@@ -57724,6 +59527,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isalpha]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isalpha\n"
     ".type __load_and_call_isalpha @function\n"
     "__load_and_call_isalpha:\n"
     "push rdi\n"
@@ -57756,6 +59560,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isblank]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isblank\n"
     ".type __load_and_call_isblank @function\n"
     "__load_and_call_isblank:\n"
     "push rdi\n"
@@ -57788,6 +59593,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iscntrl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iscntrl\n"
     ".type __load_and_call_iscntrl @function\n"
     "__load_and_call_iscntrl:\n"
     "push rdi\n"
@@ -57820,6 +59626,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isdigit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isdigit\n"
     ".type __load_and_call_isdigit @function\n"
     "__load_and_call_isdigit:\n"
     "push rdi\n"
@@ -57852,6 +59659,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isgraph]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isgraph\n"
     ".type __load_and_call_isgraph @function\n"
     "__load_and_call_isgraph:\n"
     "push rdi\n"
@@ -57884,6 +59692,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isinf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isinf\n"
     ".type __load_and_call_isinf @function\n"
     "__load_and_call_isinf:\n"
     "push rdi\n"
@@ -57916,6 +59725,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_islower]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_islower\n"
     ".type __load_and_call_islower @function\n"
     "__load_and_call_islower:\n"
     "push rdi\n"
@@ -57948,6 +59758,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isnan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isnan\n"
     ".type __load_and_call_isnan @function\n"
     "__load_and_call_isnan:\n"
     "push rdi\n"
@@ -57980,6 +59791,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isnanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isnanf\n"
     ".type __load_and_call_isnanf @function\n"
     "__load_and_call_isnanf:\n"
     "push rdi\n"
@@ -58012,6 +59824,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isprint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isprint\n"
     ".type __load_and_call_isprint @function\n"
     "__load_and_call_isprint:\n"
     "push rdi\n"
@@ -58044,6 +59857,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ispunct]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ispunct\n"
     ".type __load_and_call_ispunct @function\n"
     "__load_and_call_ispunct:\n"
     "push rdi\n"
@@ -58076,6 +59890,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isspace]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isspace\n"
     ".type __load_and_call_isspace @function\n"
     "__load_and_call_isspace:\n"
     "push rdi\n"
@@ -58108,6 +59923,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isupper]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isupper\n"
     ".type __load_and_call_isupper @function\n"
     "__load_and_call_isupper:\n"
     "push rdi\n"
@@ -58140,6 +59956,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswalnum]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswalnum\n"
     ".type __load_and_call_iswalnum @function\n"
     "__load_and_call_iswalnum:\n"
     "push rdi\n"
@@ -58172,6 +59989,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswalpha]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswalpha\n"
     ".type __load_and_call_iswalpha @function\n"
     "__load_and_call_iswalpha:\n"
     "push rdi\n"
@@ -58204,6 +60022,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswblank]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswblank\n"
     ".type __load_and_call_iswblank @function\n"
     "__load_and_call_iswblank:\n"
     "push rdi\n"
@@ -58236,6 +60055,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswcntrl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswcntrl\n"
     ".type __load_and_call_iswcntrl @function\n"
     "__load_and_call_iswcntrl:\n"
     "push rdi\n"
@@ -58268,6 +60088,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswctype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswctype\n"
     ".type __load_and_call_iswctype @function\n"
     "__load_and_call_iswctype:\n"
     "push rdi\n"
@@ -58300,6 +60121,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswdigit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswdigit\n"
     ".type __load_and_call_iswdigit @function\n"
     "__load_and_call_iswdigit:\n"
     "push rdi\n"
@@ -58332,6 +60154,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswgraph]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswgraph\n"
     ".type __load_and_call_iswgraph @function\n"
     "__load_and_call_iswgraph:\n"
     "push rdi\n"
@@ -58364,6 +60187,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswlower]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswlower\n"
     ".type __load_and_call_iswlower @function\n"
     "__load_and_call_iswlower:\n"
     "push rdi\n"
@@ -58396,6 +60220,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswprint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswprint\n"
     ".type __load_and_call_iswprint @function\n"
     "__load_and_call_iswprint:\n"
     "push rdi\n"
@@ -58428,6 +60253,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswpunct]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswpunct\n"
     ".type __load_and_call_iswpunct @function\n"
     "__load_and_call_iswpunct:\n"
     "push rdi\n"
@@ -58460,6 +60286,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswspace]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswspace\n"
     ".type __load_and_call_iswspace @function\n"
     "__load_and_call_iswspace:\n"
     "push rdi\n"
@@ -58492,6 +60319,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswupper]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswupper\n"
     ".type __load_and_call_iswupper @function\n"
     "__load_and_call_iswupper:\n"
     "push rdi\n"
@@ -58524,6 +60352,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_iswxdigit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_iswxdigit\n"
     ".type __load_and_call_iswxdigit @function\n"
     "__load_and_call_iswxdigit:\n"
     "push rdi\n"
@@ -58556,6 +60385,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_isxdigit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_isxdigit\n"
     ".type __load_and_call_isxdigit @function\n"
     "__load_and_call_isxdigit:\n"
     "push rdi\n"
@@ -58588,6 +60418,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_j0]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_j0\n"
     ".type __load_and_call_j0 @function\n"
     "__load_and_call_j0:\n"
     "push rdi\n"
@@ -58620,6 +60451,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_j0f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_j0f\n"
     ".type __load_and_call_j0f @function\n"
     "__load_and_call_j0f:\n"
     "push rdi\n"
@@ -58652,6 +60484,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_j1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_j1\n"
     ".type __load_and_call_j1 @function\n"
     "__load_and_call_j1:\n"
     "push rdi\n"
@@ -58684,6 +60517,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_j1f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_j1f\n"
     ".type __load_and_call_j1f @function\n"
     "__load_and_call_j1f:\n"
     "push rdi\n"
@@ -58716,6 +60550,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_jn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_jn\n"
     ".type __load_and_call_jn @function\n"
     "__load_and_call_jn:\n"
     "push rdi\n"
@@ -58748,6 +60583,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_jnf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_jnf\n"
     ".type __load_and_call_jnf @function\n"
     "__load_and_call_jnf:\n"
     "push rdi\n"
@@ -58780,6 +60616,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_jrand48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_jrand48\n"
     ".type __load_and_call_jrand48 @function\n"
     "__load_and_call_jrand48:\n"
     "push rdi\n"
@@ -58812,6 +60649,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_labs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_labs\n"
     ".type __load_and_call_labs @function\n"
     "__load_and_call_labs:\n"
     "push rdi\n"
@@ -58844,6 +60682,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lcong48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lcong48\n"
     ".type __load_and_call_lcong48 @function\n"
     "__load_and_call_lcong48:\n"
     "push rdi\n"
@@ -58876,6 +60715,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ldexp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ldexp\n"
     ".type __load_and_call_ldexp @function\n"
     "__load_and_call_ldexp:\n"
     "push rdi\n"
@@ -58908,6 +60748,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ldexpf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ldexpf\n"
     ".type __load_and_call_ldexpf @function\n"
     "__load_and_call_ldexpf:\n"
     "push rdi\n"
@@ -58940,6 +60781,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ldexpl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ldexpl\n"
     ".type __load_and_call_ldexpl @function\n"
     "__load_and_call_ldexpl:\n"
     "push rdi\n"
@@ -58972,6 +60814,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ldiv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ldiv\n"
     ".type __load_and_call_ldiv @function\n"
     "__load_and_call_ldiv:\n"
     "push rdi\n"
@@ -59004,6 +60847,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lgamma]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lgamma\n"
     ".type __load_and_call_lgamma @function\n"
     "__load_and_call_lgamma:\n"
     "push rdi\n"
@@ -59036,6 +60880,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lgamma_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lgamma_r\n"
     ".type __load_and_call_lgamma_r @function\n"
     "__load_and_call_lgamma_r:\n"
     "push rdi\n"
@@ -59068,6 +60913,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lgammaf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lgammaf\n"
     ".type __load_and_call_lgammaf @function\n"
     "__load_and_call_lgammaf:\n"
     "push rdi\n"
@@ -59100,6 +60946,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lgammaf_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lgammaf_r\n"
     ".type __load_and_call_lgammaf_r @function\n"
     "__load_and_call_lgammaf_r:\n"
     "push rdi\n"
@@ -59132,6 +60979,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lgammal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lgammal\n"
     ".type __load_and_call_lgammal @function\n"
     "__load_and_call_lgammal:\n"
     "push rdi\n"
@@ -59164,6 +61012,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_llabs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_llabs\n"
     ".type __load_and_call_llabs @function\n"
     "__load_and_call_llabs:\n"
     "push rdi\n"
@@ -59196,6 +61045,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lldiv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lldiv\n"
     ".type __load_and_call_lldiv @function\n"
     "__load_and_call_lldiv:\n"
     "push rdi\n"
@@ -59228,6 +61078,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_llrint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_llrint\n"
     ".type __load_and_call_llrint @function\n"
     "__load_and_call_llrint:\n"
     "push rdi\n"
@@ -59260,6 +61111,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_llrintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_llrintf\n"
     ".type __load_and_call_llrintf @function\n"
     "__load_and_call_llrintf:\n"
     "push rdi\n"
@@ -59292,6 +61144,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_llrintl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_llrintl\n"
     ".type __load_and_call_llrintl @function\n"
     "__load_and_call_llrintl:\n"
     "push rdi\n"
@@ -59324,6 +61177,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_llround]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_llround\n"
     ".type __load_and_call_llround @function\n"
     "__load_and_call_llround:\n"
     "push rdi\n"
@@ -59356,6 +61210,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_llroundf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_llroundf\n"
     ".type __load_and_call_llroundf @function\n"
     "__load_and_call_llroundf:\n"
     "push rdi\n"
@@ -59388,6 +61243,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_llroundl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_llroundl\n"
     ".type __load_and_call_llroundl @function\n"
     "__load_and_call_llroundl:\n"
     "push rdi\n"
@@ -59420,6 +61276,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_localeconv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_localeconv\n"
     ".type __load_and_call_localeconv @function\n"
     "__load_and_call_localeconv:\n"
     "push rdi\n"
@@ -59452,6 +61309,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_localtime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_localtime\n"
     ".type __load_and_call_localtime @function\n"
     "__load_and_call_localtime:\n"
     "push rdi\n"
@@ -59484,6 +61342,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_localtime_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_localtime_s\n"
     ".type __load_and_call_localtime_s @function\n"
     "__load_and_call_localtime_s:\n"
     "push rdi\n"
@@ -59516,6 +61375,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log\n"
     ".type __load_and_call_log @function\n"
     "__load_and_call_log:\n"
     "push rdi\n"
@@ -59548,6 +61408,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log10]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log10\n"
     ".type __load_and_call_log10 @function\n"
     "__load_and_call_log10:\n"
     "push rdi\n"
@@ -59580,6 +61441,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log10f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log10f\n"
     ".type __load_and_call_log10f @function\n"
     "__load_and_call_log10f:\n"
     "push rdi\n"
@@ -59612,6 +61474,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log10l]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log10l\n"
     ".type __load_and_call_log10l @function\n"
     "__load_and_call_log10l:\n"
     "push rdi\n"
@@ -59644,6 +61507,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log1p]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log1p\n"
     ".type __load_and_call_log1p @function\n"
     "__load_and_call_log1p:\n"
     "push rdi\n"
@@ -59676,6 +61540,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log1pf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log1pf\n"
     ".type __load_and_call_log1pf @function\n"
     "__load_and_call_log1pf:\n"
     "push rdi\n"
@@ -59708,6 +61573,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log1pl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log1pl\n"
     ".type __load_and_call_log1pl @function\n"
     "__load_and_call_log1pl:\n"
     "push rdi\n"
@@ -59740,6 +61606,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log2\n"
     ".type __load_and_call_log2 @function\n"
     "__load_and_call_log2:\n"
     "push rdi\n"
@@ -59772,6 +61639,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log2f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log2f\n"
     ".type __load_and_call_log2f @function\n"
     "__load_and_call_log2f:\n"
     "push rdi\n"
@@ -59804,6 +61672,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_log2l]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_log2l\n"
     ".type __load_and_call_log2l @function\n"
     "__load_and_call_log2l:\n"
     "push rdi\n"
@@ -59836,6 +61705,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_logb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_logb\n"
     ".type __load_and_call_logb @function\n"
     "__load_and_call_logb:\n"
     "push rdi\n"
@@ -59868,6 +61738,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_logbf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_logbf\n"
     ".type __load_and_call_logbf @function\n"
     "__load_and_call_logbf:\n"
     "push rdi\n"
@@ -59900,6 +61771,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_logbl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_logbl\n"
     ".type __load_and_call_logbl @function\n"
     "__load_and_call_logbl:\n"
     "push rdi\n"
@@ -59932,6 +61804,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_logf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_logf\n"
     ".type __load_and_call_logf @function\n"
     "__load_and_call_logf:\n"
     "push rdi\n"
@@ -59964,6 +61837,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_logl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_logl\n"
     ".type __load_and_call_logl @function\n"
     "__load_and_call_logl:\n"
     "push rdi\n"
@@ -59996,6 +61870,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_longjmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_longjmp\n"
     ".type __load_and_call_longjmp @function\n"
     "__load_and_call_longjmp:\n"
     "push rdi\n"
@@ -60028,6 +61903,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lrand48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lrand48\n"
     ".type __load_and_call_lrand48 @function\n"
     "__load_and_call_lrand48:\n"
     "push rdi\n"
@@ -60060,6 +61936,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lrint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lrint\n"
     ".type __load_and_call_lrint @function\n"
     "__load_and_call_lrint:\n"
     "push rdi\n"
@@ -60092,6 +61969,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lrintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lrintf\n"
     ".type __load_and_call_lrintf @function\n"
     "__load_and_call_lrintf:\n"
     "push rdi\n"
@@ -60124,6 +62002,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lrintl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lrintl\n"
     ".type __load_and_call_lrintl @function\n"
     "__load_and_call_lrintl:\n"
     "push rdi\n"
@@ -60156,6 +62035,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lround]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lround\n"
     ".type __load_and_call_lround @function\n"
     "__load_and_call_lround:\n"
     "push rdi\n"
@@ -60188,6 +62068,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lroundf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lroundf\n"
     ".type __load_and_call_lroundf @function\n"
     "__load_and_call_lroundf:\n"
     "push rdi\n"
@@ -60220,6 +62101,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_lroundl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_lroundl\n"
     ".type __load_and_call_lroundl @function\n"
     "__load_and_call_lroundl:\n"
     "push rdi\n"
@@ -60252,6 +62134,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_makecontext]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_makecontext\n"
     ".type __load_and_call_makecontext @function\n"
     "__load_and_call_makecontext:\n"
     "push rdi\n"
@@ -60284,6 +62167,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc\n"
     ".type __load_and_call_malloc @function\n"
     "__load_and_call_malloc:\n"
     "push rdi\n"
@@ -60316,6 +62200,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_check_memory_bounds]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_check_memory_bounds\n"
     ".type __load_and_call_malloc_check_memory_bounds @function\n"
     "__load_and_call_malloc_check_memory_bounds:\n"
     "push rdi\n"
@@ -60348,6 +62233,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_finalize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_finalize\n"
     ".type __load_and_call_malloc_finalize @function\n"
     "__load_and_call_malloc_finalize:\n"
     "push rdi\n"
@@ -60380,6 +62266,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_get_footer_value]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_get_footer_value\n"
     ".type __load_and_call_malloc_get_footer_value @function\n"
     "__load_and_call_malloc_get_footer_value:\n"
     "push rdi\n"
@@ -60412,6 +62299,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_get_malloc_state]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_get_malloc_state\n"
     ".type __load_and_call_malloc_get_malloc_state @function\n"
     "__load_and_call_malloc_get_malloc_state:\n"
     "push rdi\n"
@@ -60444,6 +62332,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_initialize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_initialize\n"
     ".type __load_and_call_malloc_initialize @function\n"
     "__load_and_call_malloc_initialize:\n"
     "push rdi\n"
@@ -60476,6 +62365,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_report_memory_blocks]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_report_memory_blocks\n"
     ".type __load_and_call_malloc_report_memory_blocks @function\n"
     "__load_and_call_malloc_report_memory_blocks:\n"
     "push rdi\n"
@@ -60508,6 +62398,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_stats]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_stats\n"
     ".type __load_and_call_malloc_stats @function\n"
     "__load_and_call_malloc_stats:\n"
     "push rdi\n"
@@ -60540,6 +62431,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_stats_fast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_stats_fast\n"
     ".type __load_and_call_malloc_stats_fast @function\n"
     "__load_and_call_malloc_stats_fast:\n"
     "push rdi\n"
@@ -60572,6 +62464,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_malloc_usable_size]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_malloc_usable_size\n"
     ".type __load_and_call_malloc_usable_size @function\n"
     "__load_and_call_malloc_usable_size:\n"
     "push rdi\n"
@@ -60604,6 +62497,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mblen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mblen\n"
     ".type __load_and_call_mblen @function\n"
     "__load_and_call_mblen:\n"
     "push rdi\n"
@@ -60636,6 +62530,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbrlen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbrlen\n"
     ".type __load_and_call_mbrlen @function\n"
     "__load_and_call_mbrlen:\n"
     "push rdi\n"
@@ -60668,6 +62563,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbrtoc16]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbrtoc16\n"
     ".type __load_and_call_mbrtoc16 @function\n"
     "__load_and_call_mbrtoc16:\n"
     "push rdi\n"
@@ -60700,6 +62596,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbrtoc32]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbrtoc32\n"
     ".type __load_and_call_mbrtoc32 @function\n"
     "__load_and_call_mbrtoc32:\n"
     "push rdi\n"
@@ -60732,6 +62629,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbrtowc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbrtowc\n"
     ".type __load_and_call_mbrtowc @function\n"
     "__load_and_call_mbrtowc:\n"
     "push rdi\n"
@@ -60764,6 +62662,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbsinit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbsinit\n"
     ".type __load_and_call_mbsinit @function\n"
     "__load_and_call_mbsinit:\n"
     "push rdi\n"
@@ -60796,6 +62695,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbsrtowcs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbsrtowcs\n"
     ".type __load_and_call_mbsrtowcs @function\n"
     "__load_and_call_mbsrtowcs:\n"
     "push rdi\n"
@@ -60828,6 +62728,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbsrtowcs_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbsrtowcs_s\n"
     ".type __load_and_call_mbsrtowcs_s @function\n"
     "__load_and_call_mbsrtowcs_s:\n"
     "push rdi\n"
@@ -60860,6 +62761,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbstowcs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbstowcs\n"
     ".type __load_and_call_mbstowcs @function\n"
     "__load_and_call_mbstowcs:\n"
     "push rdi\n"
@@ -60892,6 +62794,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbstowcs_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbstowcs_s\n"
     ".type __load_and_call_mbstowcs_s @function\n"
     "__load_and_call_mbstowcs_s:\n"
     "push rdi\n"
@@ -60924,6 +62827,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mbtowc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mbtowc\n"
     ".type __load_and_call_mbtowc @function\n"
     "__load_and_call_mbtowc:\n"
     "push rdi\n"
@@ -60956,6 +62860,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memalign\n"
     ".type __load_and_call_memalign @function\n"
     "__load_and_call_memalign:\n"
     "push rdi\n"
@@ -60988,6 +62893,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memchr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memchr\n"
     ".type __load_and_call_memchr @function\n"
     "__load_and_call_memchr:\n"
     "push rdi\n"
@@ -61020,6 +62926,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memcmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memcmp\n"
     ".type __load_and_call_memcmp @function\n"
     "__load_and_call_memcmp:\n"
     "push rdi\n"
@@ -61052,6 +62959,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memcpy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memcpy\n"
     ".type __load_and_call_memcpy @function\n"
     "__load_and_call_memcpy:\n"
     "push rdi\n"
@@ -61084,6 +62992,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memcpy_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memcpy_s\n"
     ".type __load_and_call_memcpy_s @function\n"
     "__load_and_call_memcpy_s:\n"
     "push rdi\n"
@@ -61116,6 +63025,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memmove]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memmove\n"
     ".type __load_and_call_memmove @function\n"
     "__load_and_call_memmove:\n"
     "push rdi\n"
@@ -61148,6 +63058,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memmove_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memmove_s\n"
     ".type __load_and_call_memmove_s @function\n"
     "__load_and_call_memmove_s:\n"
     "push rdi\n"
@@ -61180,6 +63091,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memrchr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memrchr\n"
     ".type __load_and_call_memrchr @function\n"
     "__load_and_call_memrchr:\n"
     "push rdi\n"
@@ -61212,6 +63124,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memset]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memset\n"
     ".type __load_and_call_memset @function\n"
     "__load_and_call_memset:\n"
     "push rdi\n"
@@ -61244,6 +63157,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_memset_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_memset_s\n"
     ".type __load_and_call_memset_s @function\n"
     "__load_and_call_memset_s:\n"
     "push rdi\n"
@@ -61276,6 +63190,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mergesort]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mergesort\n"
     ".type __load_and_call_mergesort @function\n"
     "__load_and_call_mergesort:\n"
     "push rdi\n"
@@ -61308,6 +63223,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mktime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mktime\n"
     ".type __load_and_call_mktime @function\n"
     "__load_and_call_mktime:\n"
     "push rdi\n"
@@ -61340,6 +63256,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_modf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_modf\n"
     ".type __load_and_call_modf @function\n"
     "__load_and_call_modf:\n"
     "push rdi\n"
@@ -61372,6 +63289,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_modff]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_modff\n"
     ".type __load_and_call_modff @function\n"
     "__load_and_call_modff:\n"
     "push rdi\n"
@@ -61404,6 +63322,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_modfl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_modfl\n"
     ".type __load_and_call_modfl @function\n"
     "__load_and_call_modfl:\n"
     "push rdi\n"
@@ -61436,6 +63355,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_mrand48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_mrand48\n"
     ".type __load_and_call_mrand48 @function\n"
     "__load_and_call_mrand48:\n"
     "push rdi\n"
@@ -61468,6 +63388,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nan\n"
     ".type __load_and_call_nan @function\n"
     "__load_and_call_nan:\n"
     "push rdi\n"
@@ -61500,6 +63421,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nanf\n"
     ".type __load_and_call_nanf @function\n"
     "__load_and_call_nanf:\n"
     "push rdi\n"
@@ -61532,6 +63454,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nanl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nanl\n"
     ".type __load_and_call_nanl @function\n"
     "__load_and_call_nanl:\n"
     "push rdi\n"
@@ -61564,6 +63487,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nearbyint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nearbyint\n"
     ".type __load_and_call_nearbyint @function\n"
     "__load_and_call_nearbyint:\n"
     "push rdi\n"
@@ -61596,6 +63520,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nearbyintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nearbyintf\n"
     ".type __load_and_call_nearbyintf @function\n"
     "__load_and_call_nearbyintf:\n"
     "push rdi\n"
@@ -61628,6 +63553,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nearbyintl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nearbyintl\n"
     ".type __load_and_call_nearbyintl @function\n"
     "__load_and_call_nearbyintl:\n"
     "push rdi\n"
@@ -61660,6 +63586,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nextafter]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nextafter\n"
     ".type __load_and_call_nextafter @function\n"
     "__load_and_call_nextafter:\n"
     "push rdi\n"
@@ -61692,6 +63619,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nextafterf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nextafterf\n"
     ".type __load_and_call_nextafterf @function\n"
     "__load_and_call_nextafterf:\n"
     "push rdi\n"
@@ -61724,6 +63652,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nextafterl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nextafterl\n"
     ".type __load_and_call_nextafterl @function\n"
     "__load_and_call_nextafterl:\n"
     "push rdi\n"
@@ -61756,6 +63685,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nexttoward]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nexttoward\n"
     ".type __load_and_call_nexttoward @function\n"
     "__load_and_call_nexttoward:\n"
     "push rdi\n"
@@ -61788,6 +63718,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nexttowardf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nexttowardf\n"
     ".type __load_and_call_nexttowardf @function\n"
     "__load_and_call_nexttowardf:\n"
     "push rdi\n"
@@ -61820,6 +63751,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nexttowardl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nexttowardl\n"
     ".type __load_and_call_nexttowardl @function\n"
     "__load_and_call_nexttowardl:\n"
     "push rdi\n"
@@ -61852,6 +63784,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_nrand48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_nrand48\n"
     ".type __load_and_call_nrand48 @function\n"
     "__load_and_call_nrand48:\n"
     "push rdi\n"
@@ -61884,6 +63817,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_opendir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_opendir\n"
     ".type __load_and_call_opendir @function\n"
     "__load_and_call_opendir:\n"
     "push rdi\n"
@@ -61916,6 +63850,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_perror]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_perror\n"
     ".type __load_and_call_perror @function\n"
     "__load_and_call_perror:\n"
     "push rdi\n"
@@ -61948,6 +63883,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_memalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_memalign\n"
     ".type __load_and_call_posix_memalign @function\n"
     "__load_and_call_posix_memalign:\n"
     "push rdi\n"
@@ -61980,6 +63916,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawn\n"
     ".type __load_and_call_posix_spawn @function\n"
     "__load_and_call_posix_spawn:\n"
     "push rdi\n"
@@ -62012,6 +63949,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawn_file_actions_addclose]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawn_file_actions_addclose\n"
     ".type __load_and_call_posix_spawn_file_actions_addclose @function\n"
     "__load_and_call_posix_spawn_file_actions_addclose:\n"
     "push rdi\n"
@@ -62044,6 +63982,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawn_file_actions_adddup2]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawn_file_actions_adddup2\n"
     ".type __load_and_call_posix_spawn_file_actions_adddup2 @function\n"
     "__load_and_call_posix_spawn_file_actions_adddup2:\n"
     "push rdi\n"
@@ -62076,6 +64015,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawn_file_actions_addopen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawn_file_actions_addopen\n"
     ".type __load_and_call_posix_spawn_file_actions_addopen @function\n"
     "__load_and_call_posix_spawn_file_actions_addopen:\n"
     "push rdi\n"
@@ -62108,6 +64048,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawn_file_actions_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawn_file_actions_destroy\n"
     ".type __load_and_call_posix_spawn_file_actions_destroy @function\n"
     "__load_and_call_posix_spawn_file_actions_destroy:\n"
     "push rdi\n"
@@ -62140,6 +64081,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawn_file_actions_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawn_file_actions_init\n"
     ".type __load_and_call_posix_spawn_file_actions_init @function\n"
     "__load_and_call_posix_spawn_file_actions_init:\n"
     "push rdi\n"
@@ -62172,6 +64114,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_destroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_destroy\n"
     ".type __load_and_call_posix_spawnattr_destroy @function\n"
     "__load_and_call_posix_spawnattr_destroy:\n"
     "push rdi\n"
@@ -62204,6 +64147,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_getflags]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_getflags\n"
     ".type __load_and_call_posix_spawnattr_getflags @function\n"
     "__load_and_call_posix_spawnattr_getflags:\n"
     "push rdi\n"
@@ -62236,6 +64180,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_getpgroup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_getpgroup\n"
     ".type __load_and_call_posix_spawnattr_getpgroup @function\n"
     "__load_and_call_posix_spawnattr_getpgroup:\n"
     "push rdi\n"
@@ -62268,6 +64213,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_getschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_getschedparam\n"
     ".type __load_and_call_posix_spawnattr_getschedparam @function\n"
     "__load_and_call_posix_spawnattr_getschedparam:\n"
     "push rdi\n"
@@ -62300,6 +64246,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_getschedpolicy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_getschedpolicy\n"
     ".type __load_and_call_posix_spawnattr_getschedpolicy @function\n"
     "__load_and_call_posix_spawnattr_getschedpolicy:\n"
     "push rdi\n"
@@ -62332,6 +64279,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_getsigdefault]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_getsigdefault\n"
     ".type __load_and_call_posix_spawnattr_getsigdefault @function\n"
     "__load_and_call_posix_spawnattr_getsigdefault:\n"
     "push rdi\n"
@@ -62364,6 +64312,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_getsigmask]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_getsigmask\n"
     ".type __load_and_call_posix_spawnattr_getsigmask @function\n"
     "__load_and_call_posix_spawnattr_getsigmask:\n"
     "push rdi\n"
@@ -62396,6 +64345,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_init]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_init\n"
     ".type __load_and_call_posix_spawnattr_init @function\n"
     "__load_and_call_posix_spawnattr_init:\n"
     "push rdi\n"
@@ -62428,6 +64378,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_setflags]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_setflags\n"
     ".type __load_and_call_posix_spawnattr_setflags @function\n"
     "__load_and_call_posix_spawnattr_setflags:\n"
     "push rdi\n"
@@ -62460,6 +64411,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_setpgroup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_setpgroup\n"
     ".type __load_and_call_posix_spawnattr_setpgroup @function\n"
     "__load_and_call_posix_spawnattr_setpgroup:\n"
     "push rdi\n"
@@ -62492,6 +64444,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_setschedparam]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_setschedparam\n"
     ".type __load_and_call_posix_spawnattr_setschedparam @function\n"
     "__load_and_call_posix_spawnattr_setschedparam:\n"
     "push rdi\n"
@@ -62524,6 +64477,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_setschedpolicy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_setschedpolicy\n"
     ".type __load_and_call_posix_spawnattr_setschedpolicy @function\n"
     "__load_and_call_posix_spawnattr_setschedpolicy:\n"
     "push rdi\n"
@@ -62556,6 +64510,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_setsigdefault]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_setsigdefault\n"
     ".type __load_and_call_posix_spawnattr_setsigdefault @function\n"
     "__load_and_call_posix_spawnattr_setsigdefault:\n"
     "push rdi\n"
@@ -62588,6 +64543,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnattr_setsigmask]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnattr_setsigmask\n"
     ".type __load_and_call_posix_spawnattr_setsigmask @function\n"
     "__load_and_call_posix_spawnattr_setsigmask:\n"
     "push rdi\n"
@@ -62620,6 +64576,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_posix_spawnp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_posix_spawnp\n"
     ".type __load_and_call_posix_spawnp @function\n"
     "__load_and_call_posix_spawnp:\n"
     "push rdi\n"
@@ -62652,6 +64609,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_pow]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_pow\n"
     ".type __load_and_call_pow @function\n"
     "__load_and_call_pow:\n"
     "push rdi\n"
@@ -62684,6 +64642,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_powf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_powf\n"
     ".type __load_and_call_powf @function\n"
     "__load_and_call_powf:\n"
     "push rdi\n"
@@ -62716,6 +64675,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_powl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_powl\n"
     ".type __load_and_call_powl @function\n"
     "__load_and_call_powl:\n"
     "push rdi\n"
@@ -62748,6 +64708,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_printf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_printf\n"
     ".type __load_and_call_printf @function\n"
     "__load_and_call_printf:\n"
     "push rdi\n"
@@ -62780,6 +64741,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_printf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_printf_s\n"
     ".type __load_and_call_printf_s @function\n"
     "__load_and_call_printf_s:\n"
     "push rdi\n"
@@ -62812,6 +64774,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_psignal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_psignal\n"
     ".type __load_and_call_psignal @function\n"
     "__load_and_call_psignal:\n"
     "push rdi\n"
@@ -62844,6 +64807,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_putc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_putc\n"
     ".type __load_and_call_putc @function\n"
     "__load_and_call_putc:\n"
     "push rdi\n"
@@ -62876,6 +64840,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_putc_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_putc_unlocked\n"
     ".type __load_and_call_putc_unlocked @function\n"
     "__load_and_call_putc_unlocked:\n"
     "push rdi\n"
@@ -62908,6 +64873,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_putchar]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_putchar\n"
     ".type __load_and_call_putchar @function\n"
     "__load_and_call_putchar:\n"
     "push rdi\n"
@@ -62940,6 +64906,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_putchar_unlocked]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_putchar_unlocked\n"
     ".type __load_and_call_putchar_unlocked @function\n"
     "__load_and_call_putchar_unlocked:\n"
     "push rdi\n"
@@ -62972,6 +64939,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_putenv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_putenv\n"
     ".type __load_and_call_putenv @function\n"
     "__load_and_call_putenv:\n"
     "push rdi\n"
@@ -63004,6 +64972,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_puts]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_puts\n"
     ".type __load_and_call_puts @function\n"
     "__load_and_call_puts:\n"
     "push rdi\n"
@@ -63036,6 +65005,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_putw]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_putw\n"
     ".type __load_and_call_putw @function\n"
     "__load_and_call_putw:\n"
     "push rdi\n"
@@ -63068,6 +65038,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_putwc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_putwc\n"
     ".type __load_and_call_putwc @function\n"
     "__load_and_call_putwc:\n"
     "push rdi\n"
@@ -63100,6 +65071,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_putwchar]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_putwchar\n"
     ".type __load_and_call_putwchar @function\n"
     "__load_and_call_putwchar:\n"
     "push rdi\n"
@@ -63132,6 +65104,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_qsort]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_qsort\n"
     ".type __load_and_call_qsort @function\n"
     "__load_and_call_qsort:\n"
     "push rdi\n"
@@ -63164,6 +65137,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_qsort_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_qsort_s\n"
     ".type __load_and_call_qsort_s @function\n"
     "__load_and_call_qsort_s:\n"
     "push rdi\n"
@@ -63196,6 +65170,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_quick_exit]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_quick_exit\n"
     ".type __load_and_call_quick_exit @function\n"
     "__load_and_call_quick_exit:\n"
     "push rdi\n"
@@ -63228,6 +65203,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rand\n"
     ".type __load_and_call_rand @function\n"
     "__load_and_call_rand:\n"
     "push rdi\n"
@@ -63260,6 +65236,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rand_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rand_r\n"
     ".type __load_and_call_rand_r @function\n"
     "__load_and_call_rand_r:\n"
     "push rdi\n"
@@ -63292,6 +65269,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_random]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_random\n"
     ".type __load_and_call_random @function\n"
     "__load_and_call_random:\n"
     "push rdi\n"
@@ -63324,6 +65302,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_readdir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_readdir\n"
     ".type __load_and_call_readdir @function\n"
     "__load_and_call_readdir:\n"
     "push rdi\n"
@@ -63356,6 +65335,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_readdir_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_readdir_r\n"
     ".type __load_and_call_readdir_r @function\n"
     "__load_and_call_readdir_r:\n"
     "push rdi\n"
@@ -63388,6 +65368,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_realloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_realloc\n"
     ".type __load_and_call_realloc @function\n"
     "__load_and_call_realloc:\n"
     "push rdi\n"
@@ -63420,6 +65401,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_reallocalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_reallocalign\n"
     ".type __load_and_call_reallocalign @function\n"
     "__load_and_call_reallocalign:\n"
     "push rdi\n"
@@ -63452,6 +65434,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_reallocf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_reallocf\n"
     ".type __load_and_call_reallocf @function\n"
     "__load_and_call_reallocf:\n"
     "push rdi\n"
@@ -63484,6 +65467,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_realpath]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_realpath\n"
     ".type __load_and_call_realpath @function\n"
     "__load_and_call_realpath:\n"
     "push rdi\n"
@@ -63516,6 +65500,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_remainder]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_remainder\n"
     ".type __load_and_call_remainder @function\n"
     "__load_and_call_remainder:\n"
     "push rdi\n"
@@ -63548,6 +65533,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_remainderf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_remainderf\n"
     ".type __load_and_call_remainderf @function\n"
     "__load_and_call_remainderf:\n"
     "push rdi\n"
@@ -63580,6 +65566,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_remainderl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_remainderl\n"
     ".type __load_and_call_remainderl @function\n"
     "__load_and_call_remainderl:\n"
     "push rdi\n"
@@ -63612,6 +65599,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_remove]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_remove\n"
     ".type __load_and_call_remove @function\n"
     "__load_and_call_remove:\n"
     "push rdi\n"
@@ -63644,6 +65632,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_remquo]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_remquo\n"
     ".type __load_and_call_remquo @function\n"
     "__load_and_call_remquo:\n"
     "push rdi\n"
@@ -63676,6 +65665,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_remquof]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_remquof\n"
     ".type __load_and_call_remquof @function\n"
     "__load_and_call_remquof:\n"
     "push rdi\n"
@@ -63708,6 +65698,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_remquol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_remquol\n"
     ".type __load_and_call_remquol @function\n"
     "__load_and_call_remquol:\n"
     "push rdi\n"
@@ -63740,6 +65731,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rewind]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rewind\n"
     ".type __load_and_call_rewind @function\n"
     "__load_and_call_rewind:\n"
     "push rdi\n"
@@ -63772,6 +65764,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rewinddir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rewinddir\n"
     ".type __load_and_call_rewinddir @function\n"
     "__load_and_call_rewinddir:\n"
     "push rdi\n"
@@ -63804,6 +65797,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rindex]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rindex\n"
     ".type __load_and_call_rindex @function\n"
     "__load_and_call_rindex:\n"
     "push rdi\n"
@@ -63836,6 +65830,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rint]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rint\n"
     ".type __load_and_call_rint @function\n"
     "__load_and_call_rint:\n"
     "push rdi\n"
@@ -63868,6 +65863,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rintf\n"
     ".type __load_and_call_rintf @function\n"
     "__load_and_call_rintf:\n"
     "push rdi\n"
@@ -63900,6 +65896,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_rintl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_rintl\n"
     ".type __load_and_call_rintl @function\n"
     "__load_and_call_rintl:\n"
     "push rdi\n"
@@ -63932,6 +65929,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_round]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_round\n"
     ".type __load_and_call_round @function\n"
     "__load_and_call_round:\n"
     "push rdi\n"
@@ -63964,6 +65962,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_roundf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_roundf\n"
     ".type __load_and_call_roundf @function\n"
     "__load_and_call_roundf:\n"
     "push rdi\n"
@@ -63996,6 +65995,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_roundl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_roundl\n"
     ".type __load_and_call_roundl @function\n"
     "__load_and_call_roundl:\n"
     "push rdi\n"
@@ -64028,6 +66028,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scalb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scalb\n"
     ".type __load_and_call_scalb @function\n"
     "__load_and_call_scalb:\n"
     "push rdi\n"
@@ -64060,6 +66061,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scalbf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scalbf\n"
     ".type __load_and_call_scalbf @function\n"
     "__load_and_call_scalbf:\n"
     "push rdi\n"
@@ -64092,6 +66094,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scalbln]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scalbln\n"
     ".type __load_and_call_scalbln @function\n"
     "__load_and_call_scalbln:\n"
     "push rdi\n"
@@ -64124,6 +66127,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scalblnf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scalblnf\n"
     ".type __load_and_call_scalblnf @function\n"
     "__load_and_call_scalblnf:\n"
     "push rdi\n"
@@ -64156,6 +66160,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scalblnl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scalblnl\n"
     ".type __load_and_call_scalblnl @function\n"
     "__load_and_call_scalblnl:\n"
     "push rdi\n"
@@ -64188,6 +66193,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scalbn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scalbn\n"
     ".type __load_and_call_scalbn @function\n"
     "__load_and_call_scalbn:\n"
     "push rdi\n"
@@ -64220,6 +66226,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scalbnf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scalbnf\n"
     ".type __load_and_call_scalbnf @function\n"
     "__load_and_call_scalbnf:\n"
     "push rdi\n"
@@ -64252,6 +66259,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scalbnl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scalbnl\n"
     ".type __load_and_call_scalbnl @function\n"
     "__load_and_call_scalbnl:\n"
     "push rdi\n"
@@ -64284,6 +66292,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scanf\n"
     ".type __load_and_call_scanf @function\n"
     "__load_and_call_scanf:\n"
     "push rdi\n"
@@ -64316,6 +66325,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_scanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_scanf_s\n"
     ".type __load_and_call_scanf_s @function\n"
     "__load_and_call_scanf_s:\n"
     "push rdi\n"
@@ -64348,6 +66358,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcHeapGetAddressRanges]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcHeapGetAddressRanges\n"
     ".type __load_and_call_sceLibcHeapGetAddressRanges @function\n"
     "__load_and_call_sceLibcHeapGetAddressRanges:\n"
     "push rdi\n"
@@ -64380,6 +66391,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcHeapMutexCalloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcHeapMutexCalloc\n"
     ".type __load_and_call_sceLibcHeapMutexCalloc @function\n"
     "__load_and_call_sceLibcHeapMutexCalloc:\n"
     "push rdi\n"
@@ -64412,6 +66424,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcHeapMutexFree]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcHeapMutexFree\n"
     ".type __load_and_call_sceLibcHeapMutexFree @function\n"
     "__load_and_call_sceLibcHeapMutexFree:\n"
     "push rdi\n"
@@ -64444,6 +66457,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcHeapSetAddressRangeCallback]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcHeapSetAddressRangeCallback\n"
     ".type __load_and_call_sceLibcHeapSetAddressRangeCallback @function\n"
     "__load_and_call_sceLibcHeapSetAddressRangeCallback:\n"
     "push rdi\n"
@@ -64476,6 +66490,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcHeapSetTraceMarker]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcHeapSetTraceMarker\n"
     ".type __load_and_call_sceLibcHeapSetTraceMarker @function\n"
     "__load_and_call_sceLibcHeapSetTraceMarker:\n"
     "push rdi\n"
@@ -64508,6 +66523,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcHeapUnsetTraceMarker]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcHeapUnsetTraceMarker\n"
     ".type __load_and_call_sceLibcHeapUnsetTraceMarker @function\n"
     "__load_and_call_sceLibcHeapUnsetTraceMarker:\n"
     "push rdi\n"
@@ -64540,6 +66556,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcInternalMemoryGetWakeAddr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcInternalMemoryGetWakeAddr\n"
     ".type __load_and_call_sceLibcInternalMemoryGetWakeAddr @function\n"
     "__load_and_call_sceLibcInternalMemoryGetWakeAddr:\n"
     "push rdi\n"
@@ -64572,6 +66589,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcInternalMemoryMutexEnable]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcInternalMemoryMutexEnable\n"
     ".type __load_and_call_sceLibcInternalMemoryMutexEnable @function\n"
     "__load_and_call_sceLibcInternalMemoryMutexEnable:\n"
     "push rdi\n"
@@ -64604,6 +66622,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcInternalSetMallocCallback]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcInternalSetMallocCallback\n"
     ".type __load_and_call_sceLibcInternalSetMallocCallback @function\n"
     "__load_and_call_sceLibcInternalSetMallocCallback:\n"
     "push rdi\n"
@@ -64636,6 +66655,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceAlignedAlloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceAlignedAlloc\n"
     ".type __load_and_call_sceLibcMspaceAlignedAlloc @function\n"
     "__load_and_call_sceLibcMspaceAlignedAlloc:\n"
     "push rdi\n"
@@ -64668,6 +66688,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceCalloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceCalloc\n"
     ".type __load_and_call_sceLibcMspaceCalloc @function\n"
     "__load_and_call_sceLibcMspaceCalloc:\n"
     "push rdi\n"
@@ -64700,6 +66721,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceCreate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceCreate\n"
     ".type __load_and_call_sceLibcMspaceCreate @function\n"
     "__load_and_call_sceLibcMspaceCreate:\n"
     "push rdi\n"
@@ -64732,6 +66754,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceDestroy\n"
     ".type __load_and_call_sceLibcMspaceDestroy @function\n"
     "__load_and_call_sceLibcMspaceDestroy:\n"
     "push rdi\n"
@@ -64764,6 +66787,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceFree]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceFree\n"
     ".type __load_and_call_sceLibcMspaceFree @function\n"
     "__load_and_call_sceLibcMspaceFree:\n"
     "push rdi\n"
@@ -64796,6 +66820,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceGetAddressRanges]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceGetAddressRanges\n"
     ".type __load_and_call_sceLibcMspaceGetAddressRanges @function\n"
     "__load_and_call_sceLibcMspaceGetAddressRanges:\n"
     "push rdi\n"
@@ -64828,6 +66853,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceIsHeapEmpty]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceIsHeapEmpty\n"
     ".type __load_and_call_sceLibcMspaceIsHeapEmpty @function\n"
     "__load_and_call_sceLibcMspaceIsHeapEmpty:\n"
     "push rdi\n"
@@ -64860,6 +66886,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceMalloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceMalloc\n"
     ".type __load_and_call_sceLibcMspaceMalloc @function\n"
     "__load_and_call_sceLibcMspaceMalloc:\n"
     "push rdi\n"
@@ -64892,6 +66919,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceMallocStats]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceMallocStats\n"
     ".type __load_and_call_sceLibcMspaceMallocStats @function\n"
     "__load_and_call_sceLibcMspaceMallocStats:\n"
     "push rdi\n"
@@ -64924,6 +66952,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceMallocStatsFast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceMallocStatsFast\n"
     ".type __load_and_call_sceLibcMspaceMallocStatsFast @function\n"
     "__load_and_call_sceLibcMspaceMallocStatsFast:\n"
     "push rdi\n"
@@ -64956,6 +66985,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceMallocUsableSize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceMallocUsableSize\n"
     ".type __load_and_call_sceLibcMspaceMallocUsableSize @function\n"
     "__load_and_call_sceLibcMspaceMallocUsableSize:\n"
     "push rdi\n"
@@ -64988,6 +67018,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceMemalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceMemalign\n"
     ".type __load_and_call_sceLibcMspaceMemalign @function\n"
     "__load_and_call_sceLibcMspaceMemalign:\n"
     "push rdi\n"
@@ -65020,6 +67051,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspacePosixMemalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspacePosixMemalign\n"
     ".type __load_and_call_sceLibcMspacePosixMemalign @function\n"
     "__load_and_call_sceLibcMspacePosixMemalign:\n"
     "push rdi\n"
@@ -65052,6 +67084,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceRealloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceRealloc\n"
     ".type __load_and_call_sceLibcMspaceRealloc @function\n"
     "__load_and_call_sceLibcMspaceRealloc:\n"
     "push rdi\n"
@@ -65084,6 +67117,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceReallocalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceReallocalign\n"
     ".type __load_and_call_sceLibcMspaceReallocalign @function\n"
     "__load_and_call_sceLibcMspaceReallocalign:\n"
     "push rdi\n"
@@ -65116,6 +67150,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcMspaceSetMallocCallback]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcMspaceSetMallocCallback\n"
     ".type __load_and_call_sceLibcMspaceSetMallocCallback @function\n"
     "__load_and_call_sceLibcMspaceSetMallocCallback:\n"
     "push rdi\n"
@@ -65148,6 +67183,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceCalloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceCalloc\n"
     ".type __load_and_call_sceLibcPafMspaceCalloc @function\n"
     "__load_and_call_sceLibcPafMspaceCalloc:\n"
     "push rdi\n"
@@ -65180,6 +67216,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceCheckMemoryBounds]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceCheckMemoryBounds\n"
     ".type __load_and_call_sceLibcPafMspaceCheckMemoryBounds @function\n"
     "__load_and_call_sceLibcPafMspaceCheckMemoryBounds:\n"
     "push rdi\n"
@@ -65212,6 +67249,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceCreate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceCreate\n"
     ".type __load_and_call_sceLibcPafMspaceCreate @function\n"
     "__load_and_call_sceLibcPafMspaceCreate:\n"
     "push rdi\n"
@@ -65244,6 +67282,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceDestroy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceDestroy\n"
     ".type __load_and_call_sceLibcPafMspaceDestroy @function\n"
     "__load_and_call_sceLibcPafMspaceDestroy:\n"
     "push rdi\n"
@@ -65276,6 +67315,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceFree]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceFree\n"
     ".type __load_and_call_sceLibcPafMspaceFree @function\n"
     "__load_and_call_sceLibcPafMspaceFree:\n"
     "push rdi\n"
@@ -65308,6 +67348,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceGetFooterValue]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceGetFooterValue\n"
     ".type __load_and_call_sceLibcPafMspaceGetFooterValue @function\n"
     "__load_and_call_sceLibcPafMspaceGetFooterValue:\n"
     "push rdi\n"
@@ -65340,6 +67381,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceIsHeapEmpty]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceIsHeapEmpty\n"
     ".type __load_and_call_sceLibcPafMspaceIsHeapEmpty @function\n"
     "__load_and_call_sceLibcPafMspaceIsHeapEmpty:\n"
     "push rdi\n"
@@ -65372,6 +67414,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceMalloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceMalloc\n"
     ".type __load_and_call_sceLibcPafMspaceMalloc @function\n"
     "__load_and_call_sceLibcPafMspaceMalloc:\n"
     "push rdi\n"
@@ -65404,6 +67447,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceMallocStats]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceMallocStats\n"
     ".type __load_and_call_sceLibcPafMspaceMallocStats @function\n"
     "__load_and_call_sceLibcPafMspaceMallocStats:\n"
     "push rdi\n"
@@ -65436,6 +67480,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceMallocStatsFast]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceMallocStatsFast\n"
     ".type __load_and_call_sceLibcPafMspaceMallocStatsFast @function\n"
     "__load_and_call_sceLibcPafMspaceMallocStatsFast:\n"
     "push rdi\n"
@@ -65468,6 +67513,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceMallocUsableSize]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceMallocUsableSize\n"
     ".type __load_and_call_sceLibcPafMspaceMallocUsableSize @function\n"
     "__load_and_call_sceLibcPafMspaceMallocUsableSize:\n"
     "push rdi\n"
@@ -65500,6 +67546,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceMemalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceMemalign\n"
     ".type __load_and_call_sceLibcPafMspaceMemalign @function\n"
     "__load_and_call_sceLibcPafMspaceMemalign:\n"
     "push rdi\n"
@@ -65532,6 +67579,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspacePosixMemalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspacePosixMemalign\n"
     ".type __load_and_call_sceLibcPafMspacePosixMemalign @function\n"
     "__load_and_call_sceLibcPafMspacePosixMemalign:\n"
     "push rdi\n"
@@ -65564,6 +67612,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceRealloc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceRealloc\n"
     ".type __load_and_call_sceLibcPafMspaceRealloc @function\n"
     "__load_and_call_sceLibcPafMspaceRealloc:\n"
     "push rdi\n"
@@ -65596,6 +67645,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceReallocalign]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceReallocalign\n"
     ".type __load_and_call_sceLibcPafMspaceReallocalign @function\n"
     "__load_and_call_sceLibcPafMspaceReallocalign:\n"
     "push rdi\n"
@@ -65628,6 +67678,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceReportMemoryBlocks]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceReportMemoryBlocks\n"
     ".type __load_and_call_sceLibcPafMspaceReportMemoryBlocks @function\n"
     "__load_and_call_sceLibcPafMspaceReportMemoryBlocks:\n"
     "push rdi\n"
@@ -65660,6 +67711,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sceLibcPafMspaceTrim]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sceLibcPafMspaceTrim\n"
     ".type __load_and_call_sceLibcPafMspaceTrim @function\n"
     "__load_and_call_sceLibcPafMspaceTrim:\n"
     "push rdi\n"
@@ -65692,6 +67744,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_seed48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_seed48\n"
     ".type __load_and_call_seed48 @function\n"
     "__load_and_call_seed48:\n"
     "push rdi\n"
@@ -65724,6 +67777,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_seekdir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_seekdir\n"
     ".type __load_and_call_seekdir @function\n"
     "__load_and_call_seekdir:\n"
     "push rdi\n"
@@ -65756,6 +67810,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_set_constraint_handler_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_set_constraint_handler_s\n"
     ".type __load_and_call_set_constraint_handler_s @function\n"
     "__load_and_call_set_constraint_handler_s:\n"
     "push rdi\n"
@@ -65788,6 +67843,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setbuf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setbuf\n"
     ".type __load_and_call_setbuf @function\n"
     "__load_and_call_setbuf:\n"
     "push rdi\n"
@@ -65820,6 +67876,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setenv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setenv\n"
     ".type __load_and_call_setenv @function\n"
     "__load_and_call_setenv:\n"
     "push rdi\n"
@@ -65852,6 +67909,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setjmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setjmp\n"
     ".type __load_and_call_setjmp @function\n"
     "__load_and_call_setjmp:\n"
     "push rdi\n"
@@ -65884,6 +67942,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setlocale]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setlocale\n"
     ".type __load_and_call_setlocale @function\n"
     "__load_and_call_setlocale:\n"
     "push rdi\n"
@@ -65916,6 +67975,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setstate]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setstate\n"
     ".type __load_and_call_setstate @function\n"
     "__load_and_call_setstate:\n"
     "push rdi\n"
@@ -65948,6 +68008,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_setvbuf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_setvbuf\n"
     ".type __load_and_call_setvbuf @function\n"
     "__load_and_call_setvbuf:\n"
     "push rdi\n"
@@ -65980,6 +68041,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigblock]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigblock\n"
     ".type __load_and_call_sigblock @function\n"
     "__load_and_call_sigblock:\n"
     "push rdi\n"
@@ -66012,6 +68074,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_siginterrupt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_siginterrupt\n"
     ".type __load_and_call_siginterrupt @function\n"
     "__load_and_call_siginterrupt:\n"
     "push rdi\n"
@@ -66044,6 +68107,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_signalcontext]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_signalcontext\n"
     ".type __load_and_call_signalcontext @function\n"
     "__load_and_call_signalcontext:\n"
     "push rdi\n"
@@ -66076,6 +68140,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_significand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_significand\n"
     ".type __load_and_call_significand @function\n"
     "__load_and_call_significand:\n"
     "push rdi\n"
@@ -66108,6 +68173,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_significandf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_significandf\n"
     ".type __load_and_call_significandf @function\n"
     "__load_and_call_significandf:\n"
     "push rdi\n"
@@ -66140,6 +68206,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigsetmask]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigsetmask\n"
     ".type __load_and_call_sigsetmask @function\n"
     "__load_and_call_sigsetmask:\n"
     "push rdi\n"
@@ -66172,6 +68239,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sigvec]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sigvec\n"
     ".type __load_and_call_sigvec @function\n"
     "__load_and_call_sigvec:\n"
     "push rdi\n"
@@ -66204,6 +68272,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sin]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sin\n"
     ".type __load_and_call_sin @function\n"
     "__load_and_call_sin:\n"
     "push rdi\n"
@@ -66236,6 +68305,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sincos]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sincos\n"
     ".type __load_and_call_sincos @function\n"
     "__load_and_call_sincos:\n"
     "push rdi\n"
@@ -66268,6 +68338,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sincosf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sincosf\n"
     ".type __load_and_call_sincosf @function\n"
     "__load_and_call_sincosf:\n"
     "push rdi\n"
@@ -66300,6 +68371,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sinf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sinf\n"
     ".type __load_and_call_sinf @function\n"
     "__load_and_call_sinf:\n"
     "push rdi\n"
@@ -66332,6 +68404,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sinh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sinh\n"
     ".type __load_and_call_sinh @function\n"
     "__load_and_call_sinh:\n"
     "push rdi\n"
@@ -66364,6 +68437,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sinhf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sinhf\n"
     ".type __load_and_call_sinhf @function\n"
     "__load_and_call_sinhf:\n"
     "push rdi\n"
@@ -66396,6 +68470,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sinhl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sinhl\n"
     ".type __load_and_call_sinhl @function\n"
     "__load_and_call_sinhl:\n"
     "push rdi\n"
@@ -66428,6 +68503,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sinl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sinl\n"
     ".type __load_and_call_sinl @function\n"
     "__load_and_call_sinl:\n"
     "push rdi\n"
@@ -66460,6 +68536,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_snprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_snprintf\n"
     ".type __load_and_call_snprintf @function\n"
     "__load_and_call_snprintf:\n"
     "push rdi\n"
@@ -66492,6 +68569,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_snprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_snprintf_s\n"
     ".type __load_and_call_snprintf_s @function\n"
     "__load_and_call_snprintf_s:\n"
     "push rdi\n"
@@ -66524,6 +68602,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_snwprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_snwprintf_s\n"
     ".type __load_and_call_snwprintf_s @function\n"
     "__load_and_call_snwprintf_s:\n"
     "push rdi\n"
@@ -66556,6 +68635,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sprintf\n"
     ".type __load_and_call_sprintf @function\n"
     "__load_and_call_sprintf:\n"
     "push rdi\n"
@@ -66588,6 +68668,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sprintf_s\n"
     ".type __load_and_call_sprintf_s @function\n"
     "__load_and_call_sprintf_s:\n"
     "push rdi\n"
@@ -66620,6 +68701,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sqrt]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sqrt\n"
     ".type __load_and_call_sqrt @function\n"
     "__load_and_call_sqrt:\n"
     "push rdi\n"
@@ -66652,6 +68734,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sqrtf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sqrtf\n"
     ".type __load_and_call_sqrtf @function\n"
     "__load_and_call_sqrtf:\n"
     "push rdi\n"
@@ -66684,6 +68767,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sqrtl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sqrtl\n"
     ".type __load_and_call_sqrtl @function\n"
     "__load_and_call_sqrtl:\n"
     "push rdi\n"
@@ -66716,6 +68800,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_srand]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_srand\n"
     ".type __load_and_call_srand @function\n"
     "__load_and_call_srand:\n"
     "push rdi\n"
@@ -66748,6 +68833,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_srand48]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_srand48\n"
     ".type __load_and_call_srand48 @function\n"
     "__load_and_call_srand48:\n"
     "push rdi\n"
@@ -66780,6 +68866,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_srandom]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_srandom\n"
     ".type __load_and_call_srandom @function\n"
     "__load_and_call_srandom:\n"
     "push rdi\n"
@@ -66812,6 +68899,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_srandomdev]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_srandomdev\n"
     ".type __load_and_call_srandomdev @function\n"
     "__load_and_call_srandomdev:\n"
     "push rdi\n"
@@ -66844,6 +68932,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sscanf\n"
     ".type __load_and_call_sscanf @function\n"
     "__load_and_call_sscanf:\n"
     "push rdi\n"
@@ -66876,6 +68965,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_sscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_sscanf_s\n"
     ".type __load_and_call_sscanf_s @function\n"
     "__load_and_call_sscanf_s:\n"
     "push rdi\n"
@@ -66908,6 +68998,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_statvfs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_statvfs\n"
     ".type __load_and_call_statvfs @function\n"
     "__load_and_call_statvfs:\n"
     "push rdi\n"
@@ -66940,6 +69031,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_stpcpy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_stpcpy\n"
     ".type __load_and_call_stpcpy @function\n"
     "__load_and_call_stpcpy:\n"
     "push rdi\n"
@@ -66972,6 +69064,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strcasecmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strcasecmp\n"
     ".type __load_and_call_strcasecmp @function\n"
     "__load_and_call_strcasecmp:\n"
     "push rdi\n"
@@ -67004,6 +69097,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strcat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strcat\n"
     ".type __load_and_call_strcat @function\n"
     "__load_and_call_strcat:\n"
     "push rdi\n"
@@ -67036,6 +69130,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strcat_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strcat_s\n"
     ".type __load_and_call_strcat_s @function\n"
     "__load_and_call_strcat_s:\n"
     "push rdi\n"
@@ -67068,6 +69163,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strchr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strchr\n"
     ".type __load_and_call_strchr @function\n"
     "__load_and_call_strchr:\n"
     "push rdi\n"
@@ -67100,6 +69196,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strcmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strcmp\n"
     ".type __load_and_call_strcmp @function\n"
     "__load_and_call_strcmp:\n"
     "push rdi\n"
@@ -67132,6 +69229,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strcoll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strcoll\n"
     ".type __load_and_call_strcoll @function\n"
     "__load_and_call_strcoll:\n"
     "push rdi\n"
@@ -67164,6 +69262,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strcpy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strcpy\n"
     ".type __load_and_call_strcpy @function\n"
     "__load_and_call_strcpy:\n"
     "push rdi\n"
@@ -67196,6 +69295,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strcpy_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strcpy_s\n"
     ".type __load_and_call_strcpy_s @function\n"
     "__load_and_call_strcpy_s:\n"
     "push rdi\n"
@@ -67228,6 +69328,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strcspn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strcspn\n"
     ".type __load_and_call_strcspn @function\n"
     "__load_and_call_strcspn:\n"
     "push rdi\n"
@@ -67260,6 +69361,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strdup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strdup\n"
     ".type __load_and_call_strdup @function\n"
     "__load_and_call_strdup:\n"
     "push rdi\n"
@@ -67292,6 +69394,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strerror]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strerror\n"
     ".type __load_and_call_strerror @function\n"
     "__load_and_call_strerror:\n"
     "push rdi\n"
@@ -67324,6 +69427,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strerror_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strerror_r\n"
     ".type __load_and_call_strerror_r @function\n"
     "__load_and_call_strerror_r:\n"
     "push rdi\n"
@@ -67356,6 +69460,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strerror_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strerror_s\n"
     ".type __load_and_call_strerror_s @function\n"
     "__load_and_call_strerror_s:\n"
     "push rdi\n"
@@ -67388,6 +69493,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strerrorlen_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strerrorlen_s\n"
     ".type __load_and_call_strerrorlen_s @function\n"
     "__load_and_call_strerrorlen_s:\n"
     "push rdi\n"
@@ -67420,6 +69526,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strftime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strftime\n"
     ".type __load_and_call_strftime @function\n"
     "__load_and_call_strftime:\n"
     "push rdi\n"
@@ -67452,6 +69559,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strlcat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strlcat\n"
     ".type __load_and_call_strlcat @function\n"
     "__load_and_call_strlcat:\n"
     "push rdi\n"
@@ -67484,6 +69592,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strlcpy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strlcpy\n"
     ".type __load_and_call_strlcpy @function\n"
     "__load_and_call_strlcpy:\n"
     "push rdi\n"
@@ -67516,6 +69625,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strlen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strlen\n"
     ".type __load_and_call_strlen @function\n"
     "__load_and_call_strlen:\n"
     "push rdi\n"
@@ -67548,6 +69658,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strncasecmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strncasecmp\n"
     ".type __load_and_call_strncasecmp @function\n"
     "__load_and_call_strncasecmp:\n"
     "push rdi\n"
@@ -67580,6 +69691,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strncat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strncat\n"
     ".type __load_and_call_strncat @function\n"
     "__load_and_call_strncat:\n"
     "push rdi\n"
@@ -67612,6 +69724,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strncat_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strncat_s\n"
     ".type __load_and_call_strncat_s @function\n"
     "__load_and_call_strncat_s:\n"
     "push rdi\n"
@@ -67644,6 +69757,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strncmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strncmp\n"
     ".type __load_and_call_strncmp @function\n"
     "__load_and_call_strncmp:\n"
     "push rdi\n"
@@ -67676,6 +69790,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strncpy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strncpy\n"
     ".type __load_and_call_strncpy @function\n"
     "__load_and_call_strncpy:\n"
     "push rdi\n"
@@ -67708,6 +69823,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strncpy_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strncpy_s\n"
     ".type __load_and_call_strncpy_s @function\n"
     "__load_and_call_strncpy_s:\n"
     "push rdi\n"
@@ -67740,6 +69856,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strndup]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strndup\n"
     ".type __load_and_call_strndup @function\n"
     "__load_and_call_strndup:\n"
     "push rdi\n"
@@ -67772,6 +69889,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strnlen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strnlen\n"
     ".type __load_and_call_strnlen @function\n"
     "__load_and_call_strnlen:\n"
     "push rdi\n"
@@ -67804,6 +69922,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strnlen_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strnlen_s\n"
     ".type __load_and_call_strnlen_s @function\n"
     "__load_and_call_strnlen_s:\n"
     "push rdi\n"
@@ -67836,6 +69955,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strnstr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strnstr\n"
     ".type __load_and_call_strnstr @function\n"
     "__load_and_call_strnstr:\n"
     "push rdi\n"
@@ -67868,6 +69988,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strpbrk]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strpbrk\n"
     ".type __load_and_call_strpbrk @function\n"
     "__load_and_call_strpbrk:\n"
     "push rdi\n"
@@ -67900,6 +70021,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strrchr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strrchr\n"
     ".type __load_and_call_strrchr @function\n"
     "__load_and_call_strrchr:\n"
     "push rdi\n"
@@ -67932,6 +70054,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strsep]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strsep\n"
     ".type __load_and_call_strsep @function\n"
     "__load_and_call_strsep:\n"
     "push rdi\n"
@@ -67964,6 +70087,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strspn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strspn\n"
     ".type __load_and_call_strspn @function\n"
     "__load_and_call_strspn:\n"
     "push rdi\n"
@@ -67996,6 +70120,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strstr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strstr\n"
     ".type __load_and_call_strstr @function\n"
     "__load_and_call_strstr:\n"
     "push rdi\n"
@@ -68028,6 +70153,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtod\n"
     ".type __load_and_call_strtod @function\n"
     "__load_and_call_strtod:\n"
     "push rdi\n"
@@ -68060,6 +70186,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtof]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtof\n"
     ".type __load_and_call_strtof @function\n"
     "__load_and_call_strtof:\n"
     "push rdi\n"
@@ -68092,6 +70219,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtoimax]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtoimax\n"
     ".type __load_and_call_strtoimax @function\n"
     "__load_and_call_strtoimax:\n"
     "push rdi\n"
@@ -68124,6 +70252,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtok]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtok\n"
     ".type __load_and_call_strtok @function\n"
     "__load_and_call_strtok:\n"
     "push rdi\n"
@@ -68156,6 +70285,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtok_r]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtok_r\n"
     ".type __load_and_call_strtok_r @function\n"
     "__load_and_call_strtok_r:\n"
     "push rdi\n"
@@ -68188,6 +70318,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtok_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtok_s\n"
     ".type __load_and_call_strtok_s @function\n"
     "__load_and_call_strtok_s:\n"
     "push rdi\n"
@@ -68220,6 +70351,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtol\n"
     ".type __load_and_call_strtol @function\n"
     "__load_and_call_strtol:\n"
     "push rdi\n"
@@ -68252,6 +70384,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtold]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtold\n"
     ".type __load_and_call_strtold @function\n"
     "__load_and_call_strtold:\n"
     "push rdi\n"
@@ -68284,6 +70417,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtoll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtoll\n"
     ".type __load_and_call_strtoll @function\n"
     "__load_and_call_strtoll:\n"
     "push rdi\n"
@@ -68316,6 +70450,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtoul]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtoul\n"
     ".type __load_and_call_strtoul @function\n"
     "__load_and_call_strtoul:\n"
     "push rdi\n"
@@ -68348,6 +70483,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtoull]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtoull\n"
     ".type __load_and_call_strtoull @function\n"
     "__load_and_call_strtoull:\n"
     "push rdi\n"
@@ -68380,6 +70516,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtoumax]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtoumax\n"
     ".type __load_and_call_strtoumax @function\n"
     "__load_and_call_strtoumax:\n"
     "push rdi\n"
@@ -68412,6 +70549,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strtouq]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strtouq\n"
     ".type __load_and_call_strtouq @function\n"
     "__load_and_call_strtouq:\n"
     "push rdi\n"
@@ -68444,6 +70582,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_strxfrm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_strxfrm\n"
     ".type __load_and_call_strxfrm @function\n"
     "__load_and_call_strxfrm:\n"
     "push rdi\n"
@@ -68476,6 +70615,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_swprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_swprintf\n"
     ".type __load_and_call_swprintf @function\n"
     "__load_and_call_swprintf:\n"
     "push rdi\n"
@@ -68508,6 +70648,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_swprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_swprintf_s\n"
     ".type __load_and_call_swprintf_s @function\n"
     "__load_and_call_swprintf_s:\n"
     "push rdi\n"
@@ -68540,6 +70681,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_swscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_swscanf\n"
     ".type __load_and_call_swscanf @function\n"
     "__load_and_call_swscanf:\n"
     "push rdi\n"
@@ -68572,6 +70714,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_swscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_swscanf_s\n"
     ".type __load_and_call_swscanf_s @function\n"
     "__load_and_call_swscanf_s:\n"
     "push rdi\n"
@@ -68604,6 +70747,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_syslog]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_syslog\n"
     ".type __load_and_call_syslog @function\n"
     "__load_and_call_syslog:\n"
     "push rdi\n"
@@ -68636,6 +70780,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tan]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tan\n"
     ".type __load_and_call_tan @function\n"
     "__load_and_call_tan:\n"
     "push rdi\n"
@@ -68668,6 +70813,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tanf\n"
     ".type __load_and_call_tanf @function\n"
     "__load_and_call_tanf:\n"
     "push rdi\n"
@@ -68700,6 +70846,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tanh]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tanh\n"
     ".type __load_and_call_tanh @function\n"
     "__load_and_call_tanh:\n"
     "push rdi\n"
@@ -68732,6 +70879,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tanhf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tanhf\n"
     ".type __load_and_call_tanhf @function\n"
     "__load_and_call_tanhf:\n"
     "push rdi\n"
@@ -68764,6 +70912,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tanhl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tanhl\n"
     ".type __load_and_call_tanhl @function\n"
     "__load_and_call_tanhl:\n"
     "push rdi\n"
@@ -68796,6 +70945,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tanl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tanl\n"
     ".type __load_and_call_tanl @function\n"
     "__load_and_call_tanl:\n"
     "push rdi\n"
@@ -68828,6 +70978,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_telldir]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_telldir\n"
     ".type __load_and_call_telldir @function\n"
     "__load_and_call_telldir:\n"
     "push rdi\n"
@@ -68860,6 +71011,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tgamma]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tgamma\n"
     ".type __load_and_call_tgamma @function\n"
     "__load_and_call_tgamma:\n"
     "push rdi\n"
@@ -68892,6 +71044,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tgammaf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tgammaf\n"
     ".type __load_and_call_tgammaf @function\n"
     "__load_and_call_tgammaf:\n"
     "push rdi\n"
@@ -68924,6 +71077,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tgammal]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tgammal\n"
     ".type __load_and_call_tgammal @function\n"
     "__load_and_call_tgammal:\n"
     "push rdi\n"
@@ -68956,6 +71110,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_time]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_time\n"
     ".type __load_and_call_time @function\n"
     "__load_and_call_time:\n"
     "push rdi\n"
@@ -68988,6 +71143,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tolower]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tolower\n"
     ".type __load_and_call_tolower @function\n"
     "__load_and_call_tolower:\n"
     "push rdi\n"
@@ -69020,6 +71176,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_toupper]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_toupper\n"
     ".type __load_and_call_toupper @function\n"
     "__load_and_call_toupper:\n"
     "push rdi\n"
@@ -69052,6 +71209,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_towctrans]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_towctrans\n"
     ".type __load_and_call_towctrans @function\n"
     "__load_and_call_towctrans:\n"
     "push rdi\n"
@@ -69084,6 +71242,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_towlower]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_towlower\n"
     ".type __load_and_call_towlower @function\n"
     "__load_and_call_towlower:\n"
     "push rdi\n"
@@ -69116,6 +71275,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_towupper]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_towupper\n"
     ".type __load_and_call_towupper @function\n"
     "__load_and_call_towupper:\n"
     "push rdi\n"
@@ -69148,6 +71308,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_trunc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_trunc\n"
     ".type __load_and_call_trunc @function\n"
     "__load_and_call_trunc:\n"
     "push rdi\n"
@@ -69180,6 +71341,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_truncf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_truncf\n"
     ".type __load_and_call_truncf @function\n"
     "__load_and_call_truncf:\n"
     "push rdi\n"
@@ -69212,6 +71374,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_truncl]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_truncl\n"
     ".type __load_and_call_truncl @function\n"
     "__load_and_call_truncl:\n"
     "push rdi\n"
@@ -69244,6 +71407,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_tzset]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_tzset\n"
     ".type __load_and_call_tzset @function\n"
     "__load_and_call_tzset:\n"
     "push rdi\n"
@@ -69276,6 +71440,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ungetc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ungetc\n"
     ".type __load_and_call_ungetc @function\n"
     "__load_and_call_ungetc:\n"
     "push rdi\n"
@@ -69308,6 +71473,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ungetwc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ungetwc\n"
     ".type __load_and_call_ungetwc @function\n"
     "__load_and_call_ungetwc:\n"
     "push rdi\n"
@@ -69340,6 +71506,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_unsetenv]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_unsetenv\n"
     ".type __load_and_call_unsetenv @function\n"
     "__load_and_call_unsetenv:\n"
     "push rdi\n"
@@ -69372,6 +71539,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_utime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_utime\n"
     ".type __load_and_call_utime @function\n"
     "__load_and_call_utime:\n"
     "push rdi\n"
@@ -69404,6 +71572,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vasprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vasprintf\n"
     ".type __load_and_call_vasprintf @function\n"
     "__load_and_call_vasprintf:\n"
     "push rdi\n"
@@ -69436,6 +71605,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_verr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_verr\n"
     ".type __load_and_call_verr @function\n"
     "__load_and_call_verr:\n"
     "push rdi\n"
@@ -69468,6 +71638,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_verrc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_verrc\n"
     ".type __load_and_call_verrc @function\n"
     "__load_and_call_verrc:\n"
     "push rdi\n"
@@ -69500,6 +71671,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_verrx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_verrx\n"
     ".type __load_and_call_verrx @function\n"
     "__load_and_call_verrx:\n"
     "push rdi\n"
@@ -69532,6 +71704,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vfprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vfprintf\n"
     ".type __load_and_call_vfprintf @function\n"
     "__load_and_call_vfprintf:\n"
     "push rdi\n"
@@ -69564,6 +71737,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vfprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vfprintf_s\n"
     ".type __load_and_call_vfprintf_s @function\n"
     "__load_and_call_vfprintf_s:\n"
     "push rdi\n"
@@ -69596,6 +71770,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vfscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vfscanf\n"
     ".type __load_and_call_vfscanf @function\n"
     "__load_and_call_vfscanf:\n"
     "push rdi\n"
@@ -69628,6 +71803,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vfscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vfscanf_s\n"
     ".type __load_and_call_vfscanf_s @function\n"
     "__load_and_call_vfscanf_s:\n"
     "push rdi\n"
@@ -69660,6 +71836,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vfwprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vfwprintf\n"
     ".type __load_and_call_vfwprintf @function\n"
     "__load_and_call_vfwprintf:\n"
     "push rdi\n"
@@ -69692,6 +71869,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vfwprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vfwprintf_s\n"
     ".type __load_and_call_vfwprintf_s @function\n"
     "__load_and_call_vfwprintf_s:\n"
     "push rdi\n"
@@ -69724,6 +71902,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vfwscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vfwscanf\n"
     ".type __load_and_call_vfwscanf @function\n"
     "__load_and_call_vfwscanf:\n"
     "push rdi\n"
@@ -69756,6 +71935,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vfwscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vfwscanf_s\n"
     ".type __load_and_call_vfwscanf_s @function\n"
     "__load_and_call_vfwscanf_s:\n"
     "push rdi\n"
@@ -69788,6 +71968,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vprintf\n"
     ".type __load_and_call_vprintf @function\n"
     "__load_and_call_vprintf:\n"
     "push rdi\n"
@@ -69820,6 +72001,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vprintf_s\n"
     ".type __load_and_call_vprintf_s @function\n"
     "__load_and_call_vprintf_s:\n"
     "push rdi\n"
@@ -69852,6 +72034,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vscanf\n"
     ".type __load_and_call_vscanf @function\n"
     "__load_and_call_vscanf:\n"
     "push rdi\n"
@@ -69884,6 +72067,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vscanf_s\n"
     ".type __load_and_call_vscanf_s @function\n"
     "__load_and_call_vscanf_s:\n"
     "push rdi\n"
@@ -69916,6 +72100,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vsnprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vsnprintf\n"
     ".type __load_and_call_vsnprintf @function\n"
     "__load_and_call_vsnprintf:\n"
     "push rdi\n"
@@ -69948,6 +72133,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vsnprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vsnprintf_s\n"
     ".type __load_and_call_vsnprintf_s @function\n"
     "__load_and_call_vsnprintf_s:\n"
     "push rdi\n"
@@ -69980,6 +72166,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vsnwprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vsnwprintf_s\n"
     ".type __load_and_call_vsnwprintf_s @function\n"
     "__load_and_call_vsnwprintf_s:\n"
     "push rdi\n"
@@ -70012,6 +72199,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vsprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vsprintf\n"
     ".type __load_and_call_vsprintf @function\n"
     "__load_and_call_vsprintf:\n"
     "push rdi\n"
@@ -70044,6 +72232,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vsprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vsprintf_s\n"
     ".type __load_and_call_vsprintf_s @function\n"
     "__load_and_call_vsprintf_s:\n"
     "push rdi\n"
@@ -70076,6 +72265,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vsscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vsscanf\n"
     ".type __load_and_call_vsscanf @function\n"
     "__load_and_call_vsscanf:\n"
     "push rdi\n"
@@ -70108,6 +72298,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vsscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vsscanf_s\n"
     ".type __load_and_call_vsscanf_s @function\n"
     "__load_and_call_vsscanf_s:\n"
     "push rdi\n"
@@ -70140,6 +72331,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vswprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vswprintf\n"
     ".type __load_and_call_vswprintf @function\n"
     "__load_and_call_vswprintf:\n"
     "push rdi\n"
@@ -70172,6 +72364,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vswprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vswprintf_s\n"
     ".type __load_and_call_vswprintf_s @function\n"
     "__load_and_call_vswprintf_s:\n"
     "push rdi\n"
@@ -70204,6 +72397,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vswscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vswscanf\n"
     ".type __load_and_call_vswscanf @function\n"
     "__load_and_call_vswscanf:\n"
     "push rdi\n"
@@ -70236,6 +72430,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vswscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vswscanf_s\n"
     ".type __load_and_call_vswscanf_s @function\n"
     "__load_and_call_vswscanf_s:\n"
     "push rdi\n"
@@ -70268,6 +72463,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vsyslog]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vsyslog\n"
     ".type __load_and_call_vsyslog @function\n"
     "__load_and_call_vsyslog:\n"
     "push rdi\n"
@@ -70300,6 +72496,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vwarn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vwarn\n"
     ".type __load_and_call_vwarn @function\n"
     "__load_and_call_vwarn:\n"
     "push rdi\n"
@@ -70332,6 +72529,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vwarnc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vwarnc\n"
     ".type __load_and_call_vwarnc @function\n"
     "__load_and_call_vwarnc:\n"
     "push rdi\n"
@@ -70364,6 +72562,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vwarnx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vwarnx\n"
     ".type __load_and_call_vwarnx @function\n"
     "__load_and_call_vwarnx:\n"
     "push rdi\n"
@@ -70396,6 +72595,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vwprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vwprintf\n"
     ".type __load_and_call_vwprintf @function\n"
     "__load_and_call_vwprintf:\n"
     "push rdi\n"
@@ -70428,6 +72628,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vwprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vwprintf_s\n"
     ".type __load_and_call_vwprintf_s @function\n"
     "__load_and_call_vwprintf_s:\n"
     "push rdi\n"
@@ -70460,6 +72661,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vwscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vwscanf\n"
     ".type __load_and_call_vwscanf @function\n"
     "__load_and_call_vwscanf:\n"
     "push rdi\n"
@@ -70492,6 +72694,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_vwscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_vwscanf_s\n"
     ".type __load_and_call_vwscanf_s @function\n"
     "__load_and_call_vwscanf_s:\n"
     "push rdi\n"
@@ -70524,6 +72727,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_warn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_warn\n"
     ".type __load_and_call_warn @function\n"
     "__load_and_call_warn:\n"
     "push rdi\n"
@@ -70556,6 +72760,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_warnc]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_warnc\n"
     ".type __load_and_call_warnc @function\n"
     "__load_and_call_warnc:\n"
     "push rdi\n"
@@ -70588,6 +72793,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_warnx]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_warnx\n"
     ".type __load_and_call_warnx @function\n"
     "__load_and_call_warnx:\n"
     "push rdi\n"
@@ -70620,6 +72826,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcrtomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcrtomb\n"
     ".type __load_and_call_wcrtomb @function\n"
     "__load_and_call_wcrtomb:\n"
     "push rdi\n"
@@ -70652,6 +72859,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcrtomb_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcrtomb_s\n"
     ".type __load_and_call_wcrtomb_s @function\n"
     "__load_and_call_wcrtomb_s:\n"
     "push rdi\n"
@@ -70684,6 +72892,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcscat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcscat\n"
     ".type __load_and_call_wcscat @function\n"
     "__load_and_call_wcscat:\n"
     "push rdi\n"
@@ -70716,6 +72925,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcscat_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcscat_s\n"
     ".type __load_and_call_wcscat_s @function\n"
     "__load_and_call_wcscat_s:\n"
     "push rdi\n"
@@ -70748,6 +72958,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcschr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcschr\n"
     ".type __load_and_call_wcschr @function\n"
     "__load_and_call_wcschr:\n"
     "push rdi\n"
@@ -70780,6 +72991,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcscmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcscmp\n"
     ".type __load_and_call_wcscmp @function\n"
     "__load_and_call_wcscmp:\n"
     "push rdi\n"
@@ -70812,6 +73024,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcscoll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcscoll\n"
     ".type __load_and_call_wcscoll @function\n"
     "__load_and_call_wcscoll:\n"
     "push rdi\n"
@@ -70844,6 +73057,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcscpy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcscpy\n"
     ".type __load_and_call_wcscpy @function\n"
     "__load_and_call_wcscpy:\n"
     "push rdi\n"
@@ -70876,6 +73090,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcscpy_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcscpy_s\n"
     ".type __load_and_call_wcscpy_s @function\n"
     "__load_and_call_wcscpy_s:\n"
     "push rdi\n"
@@ -70908,6 +73123,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcscspn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcscspn\n"
     ".type __load_and_call_wcscspn @function\n"
     "__load_and_call_wcscspn:\n"
     "push rdi\n"
@@ -70940,6 +73156,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsftime]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsftime\n"
     ".type __load_and_call_wcsftime @function\n"
     "__load_and_call_wcsftime:\n"
     "push rdi\n"
@@ -70972,6 +73189,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcslen]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcslen\n"
     ".type __load_and_call_wcslen @function\n"
     "__load_and_call_wcslen:\n"
     "push rdi\n"
@@ -71004,6 +73222,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsncat]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsncat\n"
     ".type __load_and_call_wcsncat @function\n"
     "__load_and_call_wcsncat:\n"
     "push rdi\n"
@@ -71036,6 +73255,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsncat_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsncat_s\n"
     ".type __load_and_call_wcsncat_s @function\n"
     "__load_and_call_wcsncat_s:\n"
     "push rdi\n"
@@ -71068,6 +73288,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsncmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsncmp\n"
     ".type __load_and_call_wcsncmp @function\n"
     "__load_and_call_wcsncmp:\n"
     "push rdi\n"
@@ -71100,6 +73321,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsncpy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsncpy\n"
     ".type __load_and_call_wcsncpy @function\n"
     "__load_and_call_wcsncpy:\n"
     "push rdi\n"
@@ -71132,6 +73354,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsncpy_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsncpy_s\n"
     ".type __load_and_call_wcsncpy_s @function\n"
     "__load_and_call_wcsncpy_s:\n"
     "push rdi\n"
@@ -71164,6 +73387,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsnlen_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsnlen_s\n"
     ".type __load_and_call_wcsnlen_s @function\n"
     "__load_and_call_wcsnlen_s:\n"
     "push rdi\n"
@@ -71196,6 +73420,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcspbrk]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcspbrk\n"
     ".type __load_and_call_wcspbrk @function\n"
     "__load_and_call_wcspbrk:\n"
     "push rdi\n"
@@ -71228,6 +73453,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsrchr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsrchr\n"
     ".type __load_and_call_wcsrchr @function\n"
     "__load_and_call_wcsrchr:\n"
     "push rdi\n"
@@ -71260,6 +73486,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsrtombs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsrtombs\n"
     ".type __load_and_call_wcsrtombs @function\n"
     "__load_and_call_wcsrtombs:\n"
     "push rdi\n"
@@ -71292,6 +73519,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsrtombs_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsrtombs_s\n"
     ".type __load_and_call_wcsrtombs_s @function\n"
     "__load_and_call_wcsrtombs_s:\n"
     "push rdi\n"
@@ -71324,6 +73552,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsspn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsspn\n"
     ".type __load_and_call_wcsspn @function\n"
     "__load_and_call_wcsspn:\n"
     "push rdi\n"
@@ -71356,6 +73585,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsstr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsstr\n"
     ".type __load_and_call_wcsstr @function\n"
     "__load_and_call_wcsstr:\n"
     "push rdi\n"
@@ -71388,6 +73618,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstod]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstod\n"
     ".type __load_and_call_wcstod @function\n"
     "__load_and_call_wcstod:\n"
     "push rdi\n"
@@ -71420,6 +73651,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstof]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstof\n"
     ".type __load_and_call_wcstof @function\n"
     "__load_and_call_wcstof:\n"
     "push rdi\n"
@@ -71452,6 +73684,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstoimax]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstoimax\n"
     ".type __load_and_call_wcstoimax @function\n"
     "__load_and_call_wcstoimax:\n"
     "push rdi\n"
@@ -71484,6 +73717,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstok]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstok\n"
     ".type __load_and_call_wcstok @function\n"
     "__load_and_call_wcstok:\n"
     "push rdi\n"
@@ -71516,6 +73750,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstok_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstok_s\n"
     ".type __load_and_call_wcstok_s @function\n"
     "__load_and_call_wcstok_s:\n"
     "push rdi\n"
@@ -71548,6 +73783,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstol]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstol\n"
     ".type __load_and_call_wcstol @function\n"
     "__load_and_call_wcstol:\n"
     "push rdi\n"
@@ -71580,6 +73816,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstold]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstold\n"
     ".type __load_and_call_wcstold @function\n"
     "__load_and_call_wcstold:\n"
     "push rdi\n"
@@ -71612,6 +73849,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstoll]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstoll\n"
     ".type __load_and_call_wcstoll @function\n"
     "__load_and_call_wcstoll:\n"
     "push rdi\n"
@@ -71644,6 +73882,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstombs]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstombs\n"
     ".type __load_and_call_wcstombs @function\n"
     "__load_and_call_wcstombs:\n"
     "push rdi\n"
@@ -71676,6 +73915,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstombs_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstombs_s\n"
     ".type __load_and_call_wcstombs_s @function\n"
     "__load_and_call_wcstombs_s:\n"
     "push rdi\n"
@@ -71708,6 +73948,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstoul]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstoul\n"
     ".type __load_and_call_wcstoul @function\n"
     "__load_and_call_wcstoul:\n"
     "push rdi\n"
@@ -71740,6 +73981,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstoull]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstoull\n"
     ".type __load_and_call_wcstoull @function\n"
     "__load_and_call_wcstoull:\n"
     "push rdi\n"
@@ -71772,6 +74014,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcstoumax]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcstoumax\n"
     ".type __load_and_call_wcstoumax @function\n"
     "__load_and_call_wcstoumax:\n"
     "push rdi\n"
@@ -71804,6 +74047,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wcsxfrm]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wcsxfrm\n"
     ".type __load_and_call_wcsxfrm @function\n"
     "__load_and_call_wcsxfrm:\n"
     "push rdi\n"
@@ -71836,6 +74080,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wctob]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wctob\n"
     ".type __load_and_call_wctob @function\n"
     "__load_and_call_wctob:\n"
     "push rdi\n"
@@ -71868,6 +74113,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wctomb]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wctomb\n"
     ".type __load_and_call_wctomb @function\n"
     "__load_and_call_wctomb:\n"
     "push rdi\n"
@@ -71900,6 +74146,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wctomb_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wctomb_s\n"
     ".type __load_and_call_wctomb_s @function\n"
     "__load_and_call_wctomb_s:\n"
     "push rdi\n"
@@ -71932,6 +74179,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wctrans]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wctrans\n"
     ".type __load_and_call_wctrans @function\n"
     "__load_and_call_wctrans:\n"
     "push rdi\n"
@@ -71964,6 +74212,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wctype]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wctype\n"
     ".type __load_and_call_wctype @function\n"
     "__load_and_call_wctype:\n"
     "push rdi\n"
@@ -71996,6 +74245,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wmemchr]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wmemchr\n"
     ".type __load_and_call_wmemchr @function\n"
     "__load_and_call_wmemchr:\n"
     "push rdi\n"
@@ -72028,6 +74278,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wmemcmp]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wmemcmp\n"
     ".type __load_and_call_wmemcmp @function\n"
     "__load_and_call_wmemcmp:\n"
     "push rdi\n"
@@ -72060,6 +74311,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wmemcpy]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wmemcpy\n"
     ".type __load_and_call_wmemcpy @function\n"
     "__load_and_call_wmemcpy:\n"
     "push rdi\n"
@@ -72092,6 +74344,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wmemcpy_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wmemcpy_s\n"
     ".type __load_and_call_wmemcpy_s @function\n"
     "__load_and_call_wmemcpy_s:\n"
     "push rdi\n"
@@ -72124,6 +74377,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wmemmove]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wmemmove\n"
     ".type __load_and_call_wmemmove @function\n"
     "__load_and_call_wmemmove:\n"
     "push rdi\n"
@@ -72156,6 +74410,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wmemmove_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wmemmove_s\n"
     ".type __load_and_call_wmemmove_s @function\n"
     "__load_and_call_wmemmove_s:\n"
     "push rdi\n"
@@ -72188,6 +74443,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wmemset]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wmemset\n"
     ".type __load_and_call_wmemset @function\n"
     "__load_and_call_wmemset:\n"
     "push rdi\n"
@@ -72220,6 +74476,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wprintf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wprintf\n"
     ".type __load_and_call_wprintf @function\n"
     "__load_and_call_wprintf:\n"
     "push rdi\n"
@@ -72252,6 +74509,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wprintf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wprintf_s\n"
     ".type __load_and_call_wprintf_s @function\n"
     "__load_and_call_wprintf_s:\n"
     "push rdi\n"
@@ -72284,6 +74542,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wscanf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wscanf\n"
     ".type __load_and_call_wscanf @function\n"
     "__load_and_call_wscanf:\n"
     "push rdi\n"
@@ -72316,6 +74575,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_wscanf_s]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_wscanf_s\n"
     ".type __load_and_call_wscanf_s @function\n"
     "__load_and_call_wscanf_s:\n"
     "push rdi\n"
@@ -72348,6 +74608,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_xtime_get]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_xtime_get\n"
     ".type __load_and_call_xtime_get @function\n"
     "__load_and_call_xtime_get:\n"
     "push rdi\n"
@@ -72380,6 +74641,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_y0]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_y0\n"
     ".type __load_and_call_y0 @function\n"
     "__load_and_call_y0:\n"
     "push rdi\n"
@@ -72412,6 +74674,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_y0f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_y0f\n"
     ".type __load_and_call_y0f @function\n"
     "__load_and_call_y0f:\n"
     "push rdi\n"
@@ -72444,6 +74707,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_y1]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_y1\n"
     ".type __load_and_call_y1 @function\n"
     "__load_and_call_y1:\n"
     "push rdi\n"
@@ -72476,6 +74740,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_y1f]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_y1f\n"
     ".type __load_and_call_y1f @function\n"
     "__load_and_call_y1f:\n"
     "push rdi\n"
@@ -72508,6 +74773,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_yn]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_yn\n"
     ".type __load_and_call_yn @function\n"
     "__load_and_call_yn:\n"
     "push rdi\n"
@@ -72540,6 +74806,7 @@ asm(".intel_syntax noprefix\n"
     "jmp qword ptr [rip + __ptr_ynf]\n");
 
 asm(".intel_syntax noprefix\n"
+    ".local __load_and_call_ynf\n"
     ".type __load_and_call_ynf @function\n"
     "__load_and_call_ynf:\n"
     "push rdi\n"
