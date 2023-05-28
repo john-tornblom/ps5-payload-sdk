@@ -16,7 +16,7 @@
 
 CC      ?= cc
 LD      ?= ld
-CFLAGS  := -ffreestanding -fno-builtin -nostdlib
+CFLAGS  := -ffreestanding -fno-builtin -nostdlib -O2
 CFLAGS  += -mcmodel=large -fPIC -fno-plt -masm=intel
 DESTDIR ?= /opt/ps5-payload-sdk
 

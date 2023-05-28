@@ -16,7 +16,7 @@
 
 PYTHON ?= python3
 CC     := clang
-CFLAGS := -ffreestanding -fno-builtin -nostdlib
+CFLAGS := -ffreestanding -fno-builtin -nostdlib -O2
 CFLAGS += -mcmodel=large -fPIC -fno-plt -masm=intel
 
 SPRXS := $(wildcard *.sprx)
