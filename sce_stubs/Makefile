@@ -15,7 +15,7 @@
 # <http://www.gnu.org/licenses/>.
 
 PYTHON ?= python3
-CC     := clang
+CC     ?= cc
 CFLAGS := -ffreestanding -fno-builtin -nostdlib -O2
 CFLAGS += -mcmodel=large -fPIC -fno-plt -masm=intel
 
