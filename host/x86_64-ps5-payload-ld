@@ -23,8 +23,9 @@ if [[ -z "$PS5_PAYLOAD_LD" ]]; then
     PS5_PAYLOAD_LD=ld
 fi
 
-$PS5_PAYLOAD_LD -static \
-   -T "${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x" \
-   -L "${PS5_PAYLOAD_SDK}/usr/lib" \
-      $* \
-      "${PS5_PAYLOAD_SDK}/usr/lib/crt1.o"
+$PS5_PAYLOAD_LD \
+    -static \
+    -T "${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x" \
+    -L "${PS5_PAYLOAD_SDK}/usr/lib" \
+    $* \
+    "${PS5_PAYLOAD_SDK}/usr/lib/crt1.o"
