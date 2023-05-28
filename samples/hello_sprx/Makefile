@@ -10,7 +10,7 @@ ELF := hello_sprx.elf
 CC := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-cc
 LD := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-ld
 
-CFLAGS := -g -O2
+CFLAGS := -O2
 LDADD  := -lSceLibcInternal -lkernel_web -lSceRandom
 
 all: $(ELF)

@@ -10,7 +10,7 @@ ELF := list_files.elf
 CC := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-cc
 LD := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-ld
 
-CFLAGS := -g -O2
+CFLAGS := -O2
 LDADD  := -lkernel_web -lSceLibcInternal
 
 all: $(ELF)
