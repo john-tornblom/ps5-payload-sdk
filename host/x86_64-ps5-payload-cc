@@ -25,5 +25,6 @@ fi
 
 $PS5_PAYLOAD_CC \
     --sysroot "${PS5_PAYLOAD_SDK}" \
+    -D__FreeBSD__ -D__PROSPERO__ \
     -fPIC -fno-plt -mcmodel=large \
     $*
