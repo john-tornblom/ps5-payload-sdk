@@ -19,7 +19,11 @@ PS5_PAYLOAD_SDK="${BASH_SOURCE[0]}"
 PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
 PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
-ld -static \
+if [[ -z "$PS5_PAYLOAD_LD" ]]; then
+    PS5_PAYLOAD_LD=ld
+fi
+
+$PS5_PAYLOAD_LD -static \
    -T "${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x" \
    -L "${PS5_PAYLOAD_SDK}/usr/lib" \
       $* \
