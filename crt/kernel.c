@@ -27,7 +27,6 @@ along with this program; see the file COPYING. If not, see
 /**
  * libkernel symbols
  **/
-static int (*getpid)(void);
 static long (*_read)(int, void*, unsigned long);
 static long (*_write)(int, const void*, unsigned long);
 static int (*_getsockopt)(int, int, int, void *, unsigned int *);
@@ -86,11 +85,6 @@ kernel_get_fw_version(void) {
 __attribute__((constructor(101))) static void
 kernel_constructor(const payload_args_t *args) {
   int error = 0;
-
-  if((error=args->sceKernelDlsym(0x2001, "getpid", &getpid))) {
-    *args->payloadout = error;
-    return;
-  }
 
   if((error=args->sceKernelDlsym(0x2001, "_read", &_read))) {
     *args->payloadout = error;
@@ -191,7 +185,7 @@ kernel_constructor(const payload_args_t *args) {
  *
  **/
 static int
-kwrite(unsigned long addr, unsigned long *data) {
+kernel_write(unsigned long addr, unsigned long *data) {
   unsigned long victim_buf[3];
 
   victim_buf[0] = addr;
@@ -221,7 +215,7 @@ kernel_copyin(const void *udaddr, unsigned long kaddr, unsigned long len) {
   write_buf[0] = 0;
   write_buf[1] = 0x4000000000000000;
   write_buf[2] = 0;
-  if(kwrite(pipe_addr, (unsigned long *) &write_buf)) {
+  if(kernel_write(pipe_addr, (unsigned long *) &write_buf)) {
     return -1;
   }
 
@@ -229,7 +223,7 @@ kernel_copyin(const void *udaddr, unsigned long kaddr, unsigned long len) {
   write_buf[0] = kaddr;
   write_buf[1] = 0;
   write_buf[2] = 0;
-  if(kwrite(pipe_addr + 0x10, (unsigned long *) &write_buf)) {
+  if(kernel_write(pipe_addr + 0x10, (unsigned long *) &write_buf)) {
     return -1;
   }
 
@@ -253,7 +247,7 @@ kernel_copyout(unsigned long kaddr, void *udaddr, unsigned long len) {
   write_buf[0] = 0x4000000040000000;
   write_buf[1] = 0x4000000000000000;
   write_buf[2] = 0;
-  if(kwrite(pipe_addr, (unsigned long *) &write_buf)) {
+  if(kernel_write(pipe_addr, (unsigned long *) &write_buf)) {
     return -1;
   }
 
@@ -261,7 +255,7 @@ kernel_copyout(unsigned long kaddr, void *udaddr, unsigned long len) {
   write_buf[0] = kaddr;
   write_buf[1] = 0;
   write_buf[2] = 0;
-  if(kwrite(pipe_addr + 0x10, (unsigned long *) &write_buf)) {
+  if(kernel_write(pipe_addr + 0x10, (unsigned long *) &write_buf)) {
     return -1;
   }
 
