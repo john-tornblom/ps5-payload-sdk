@@ -25,8 +25,8 @@ extern void (*__init_array_end[])(payload_args_t*) __attribute__((weak));
 extern void (*__fini_array_start[])(void) __attribute__((weak));
 extern void (*__fini_array_end[])(void) __attribute__((weak));
 
-extern void* __bss_start[] __attribute__((weak));
-extern void* __bss_end[] __attribute__((weak));
+extern unsigned char __bss_start[] __attribute__((weak));
+extern unsigned char __bss_end[] __attribute__((weak));
 
 
 /**
