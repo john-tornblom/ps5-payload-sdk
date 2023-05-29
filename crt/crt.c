@@ -25,6 +25,9 @@ extern void (*__init_array_end[])(payload_args_t*) __attribute__((weak));
 extern void (*__fini_array_start[])(void) __attribute__((weak));
 extern void (*__fini_array_end[])(void) __attribute__((weak));
 
+extern void* __bss_start[] __attribute__((weak));
+extern void* __bss_end[] __attribute__((weak));
+
 
 /**
  * Entry point to the main program.
@@ -37,9 +40,13 @@ extern int main(int argc, char* argv[]);
  **/
 void
 _start(payload_args_t *args) {
+  void (*memset)(void*, int, unsigned long);
   unsigned long count;
 
-  *args->payloadout = 0;
+  // clear bss
+  if(!(*args->payloadout=args->sceKernelDlsym(0x2, "memset", &memset))) {
+    memset(__bss_start, 0, __bss_end - __bss_start);
+  }
 
   // run module constructors
   count = __init_array_end - __init_array_start;
