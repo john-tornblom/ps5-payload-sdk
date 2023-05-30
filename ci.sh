@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export DESTDIR=$(mktemp -d)
 trap 'rm -rf -- "$DESTDIR"' EXIT
