@@ -14,11 +14,15 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-MAKE ?= make
-SUBDIRS := crt sce_stubs
+MAKE    ?= make
+DESTDIR ?= /opt/ps5-payload-sdk
+
 TOPTARGETS := all clean install
+SUBDIRS    := crt sce_stubs host
+
 
 $(TOPTARGETS): $(SUBDIRS)
+
 $(SUBDIRS):
 	$(MAKE) -C $@ $(MAKECMDGOALS)
 
@@ -26,9 +30,7 @@ $(SUBDIRS):
 
 install: elf_x86_64.x
 	install -d $(DESTDIR)/ldscripts
-	install -d $(DESTDIR)/host
 	install elf_x86_64.x $(DESTDIR)/ldscripts
 	cp -r include_bsd/. $(DESTDIR)/usr/include
 	cp -r include_ps5/. $(DESTDIR)/usr/include/ps5
 	cp -r samples/. $(DESTDIR)/samples
-	cp -r host/. $(DESTDIR)/host

@@ -16,9 +16,11 @@
 
 CC      ?= cc
 LD      ?= ld
+DESTDIR ?= /opt/ps5-payload-sdk
+
 CFLAGS  := -ffreestanding -fno-builtin -nostdlib -O2
 CFLAGS  += -mcmodel=large -fPIC -fno-plt -masm=intel
-DESTDIR ?= /opt/ps5-payload-sdk
+
 
 all: crt1.o
 

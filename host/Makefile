@@ -14,41 +14,12 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-PYTHON  ?= python3
-CC      ?= cc
 DESTDIR ?= /opt/ps5-payload-sdk
 
-CFLAGS := -ffreestanding -fno-builtin -nostdlib -O2
-CFLAGS += -mcmodel=large -fPIC -fno-plt -masm=intel
-
-SPRXS := $(wildcard *.sprx)
-STUBS := $(SPRXS:.sprx=.c)
-
-SOURCES  := $(wildcard *.c)
-ARCHIVES := $(SOURCES:.c=.a)
-
-NID_DB_URL := https://raw.githubusercontent.com/astrelsky/GhidraOrbis/master/data/nid_db.xml
-
-
-all: $(SOURCES) $(ARCHIVES)
-
-stubs: nid_db.xml $(STUBS)
-
-nid_db.xml:
-	wget -O $@ $(NID_DB_URL)
-
-%.c: %.sprx
-	$(PYTHON) trampgen.py $*.sprx > $@
-
-%.o: %.c
-	$(CC) -c $(CFLAGS) -o $@ $^
-
-%.a: %.o
-	ar rcs $@ $^
+all:
 
 clean:
-	rm -f *.o *.a nid_db.xml
 
-install: $(ARCHIVES)
-	install -d $(DESTDIR)/usr/lib
-	install $(ARCHIVES) $(DESTDIR)/usr/lib
+install: x86_64-ps5-payload-cc x86_64-ps5-payload-ld
+	install -d $(DESTDIR)/host
+	install $^ $(DESTDIR)/host
