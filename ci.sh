@@ -3,7 +3,8 @@
 export DESTDIR=$(mktemp -d)
 trap 'rm -rf -- "$DESTDIR"' EXIT
 
-SAMPLES=("hello_sprx"
+SAMPLES=("elf_loader"
+	 "hello_sprx"
 	 "hello_stdio"
 	 "hello_world"
 	 "hwinfo"

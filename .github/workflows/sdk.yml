@@ -36,6 +36,7 @@ jobs:
 
     - name: Build
       run: |
+        make -C samples/elf_loader
         make -C samples/hello_sprx
         make -C samples/hello_stdio
         make -C samples/hello_world
