@@ -22,6 +22,7 @@ along with this program; see the file COPYING. If not, see
  **/
 extern void (*__init_array_start[])(payload_args_t*) __attribute__((weak));
 extern void (*__init_array_end[])(payload_args_t*) __attribute__((weak));
+
 extern void (*__fini_array_start[])(void) __attribute__((weak));
 extern void (*__fini_array_end[])(void) __attribute__((weak));
 
@@ -40,12 +41,13 @@ extern int main(int argc, char* argv[]);
  **/
 void
 _start(payload_args_t *args) {
-  void (*memset)(void*, int, unsigned long);
   unsigned long count;
 
+  *args->payloadout = 0;
+
   // clear bss
-  if(!(*args->payloadout=args->sceKernelDlsym(0x2, "memset", &memset))) {
-    memset(__bss_start, 0, __bss_end - __bss_start);
+  for(unsigned char* bss=__bss_start; bss<__bss_end; bss++) {
+    *bss = 0;
   }
 
   // run module constructors
