@@ -1,7 +1,6 @@
 #include "elfldr.h"
 #include "payload_elf.c"
 
-#include <stdio.h>
 
 int
 main() {
