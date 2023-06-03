@@ -24,7 +24,7 @@ if [[ -z "$PS5_PAYLOAD_LD" ]]; then
 fi
 
 $PS5_PAYLOAD_LD \
-    -static \
+    -pie \
     -T "${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x" \
     -L "${PS5_PAYLOAD_SDK}/usr/lib" \
     $* \

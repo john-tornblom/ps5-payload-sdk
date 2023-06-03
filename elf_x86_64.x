@@ -3,16 +3,16 @@ OUTPUT_ARCH(i386:x86-64)
 ENTRY(_start)
 
 PHDRS {
-	ph_text PT_LOAD FLAGS (0x1 | 0x4);
-	ph_data PT_LOAD FLAGS (0x2 | 0x4);
+	ph_text   PT_LOAD FLAGS (0x1 | 0x4);
+	ph_rodata PT_LOAD FLAGS (0x4);
+	ph_data   PT_LOAD FLAGS (0x2 | 0x4);
 }
 
 SECTIONS {
-	. = 0x920100000;
 	.text : { *(.text .text.*) } : ph_text
-	.rodata : { *(.rodata .rodata.*) }
 	. = ALIGN(0x4000);
-	. = 0x926100000;
+	.rodata : { *(.rodata .rodata.*) } : ph_rodata
+	. = ALIGN(0x4000);
 	.data : { *(.data .data.*) } : ph_data
 	.bss : {
 	    PROVIDE_HIDDEN(__bss_start = .);
