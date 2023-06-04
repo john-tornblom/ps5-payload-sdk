@@ -40,6 +40,5 @@ Unless otherwhise explicitly stated inside a file, the rest are licensed under
 the GPLv2.
 
 [issues]: https://github.com/john-tornblom/ps5-payload-sdk/issues/new
-[bjd-elf]: https://github.com/john-tornblom/bdj-sdk/tree/master/samples/ps5-elf-loader
-[webkit-elf]: https://github.com/Cryptogenic/PS5-IPV6-Kernel-Exploit
+[bjd-elf]: https://github.com/john-tornblom/bdj-sdk/tree/master/samples/ps5-payload-loader
 [PS5SDK]: https://github.com/PS5Dev/PS5SDK
