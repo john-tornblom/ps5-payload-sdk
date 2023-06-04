@@ -33,7 +33,7 @@ extern unsigned char __bss_end[] __attribute__((weak));
 /**
  * Entry point to the main program.
  **/
-extern int main(int argc, char* argv[]);
+extern int main(int argc, char* argv[], char *envp[]);
 
 
 /**
@@ -58,7 +58,7 @@ _start(payload_args_t *args) {
 
   // run payload if module constructors ran without error
   if(!*args->payloadout) {
-    *args->payloadout = main(0, 0);
+    *args->payloadout = main(0, 0, 0);
   }
 
   // run module destructors
