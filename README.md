@@ -7,7 +7,7 @@ from the [PS5SDK][PS5SDK] project.
 On Debian-flavored operating systems, you can invoke the following command to
 install dependencies used by the SDK.
 ```console
-john@localhost:ps5-payload-sdk$ sudo apt-get install wget build-essential python3 python3-pyelftools
+john@localhost:ps5-payload-sdk$ sudo apt-get install wget build-essential
 ```
 
 ## Building
@@ -26,6 +26,16 @@ john@localhost:ps5-payload-sdk$ export PS5_PAYLOAD_SDK=/opt/ps5-payload-sdk
 john@localhost:ps5-payload-sdk$ make -C samples/hello_world
 john@localhost:ps5-payload-sdk$ export PS5_HOST=ps5; export PS5_PORT=9020
 john@localhost:ps5-payload-sdk$ make -C samples/hello_world test
+```
+
+## Adding new SCE Libs
+If you have decrypted sprx files that you would like to interact with, you can
+build stubs for them as follows:
+```console
+john@localhost:ps5-payload-sdk$ sudo apt-get install python3 python3-pyelftools
+john@localhost:ps5-payload-sdk$ cp /path/to/sprx/libSceXYZ.sprx sce_stubs/
+john@localhost:ps5-payload-sdk$ make -C sce_stubs stubs
+john@localhost:ps5-payload-sdk$ make DESTDIR=/opt/ps5-payload-sdk install
 ```
 
 ## Reporting Bugs
