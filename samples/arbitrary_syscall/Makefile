@@ -14,25 +14,32 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-CC      ?= cc
-LD      ?= ld
-DESTDIR ?= /opt/ps5-payload-sdk
+ifndef PS5_PAYLOAD_SDK
+    $(error PS5_PAYLOAD_SDK is undefined)
+endif
 
-CFLAGS  := -ffreestanding -fno-builtin -nostdlib -O2
-CFLAGS  += -mcmodel=large -fPIC -fno-plt -masm=intel
+PS5_HOST ?= ps5
+PS5_PORT ?= 9020
 
+ELF := arbitrary_syscall.elf
 
-all: crt1.o
+CC := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-cc
+LD := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-ld
 
-crt1.o: crt.o kernel.o sprx.o syscall.o
-	$(LD) -r -o $@ $^
+CFLAGS := -O2
+LDADD  := -lSceLibcInternal
+
+all: $(ELF)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
-clean:
-	rm -f *.o
+$(ELF): main.o
+	$(LD) $^ $(LDADD) -o $@
 
-install: crt1.o
-	install -d $(DESTDIR)/usr/lib
-	install crt1.o $(DESTDIR)/usr/lib
+clean:
+	rm -f *.o $(ELF)
+
+test: $(ELF)
+	nc -q0 $(PS5_HOST) $(PS5_PORT) < $^
+
