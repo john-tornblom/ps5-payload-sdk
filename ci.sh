@@ -18,7 +18,8 @@
 export DESTDIR=$(mktemp -d)
 trap 'rm -rf -- "$DESTDIR"' EXIT
 
-SAMPLES=("elf_loader"
+SAMPLES=("arbitrary_syscall"
+         "elf_loader"
 	 "hello_sprx"
 	 "hello_stdio"
 	 "hello_world"
