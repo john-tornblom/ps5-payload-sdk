@@ -42,6 +42,7 @@ jobs:
         make -C samples/hello_stdio
         make -C samples/hello_world
         make -C samples/hwinfo
+        make -C samples/kernel_data_dump
         make -C samples/klog
         make -C samples/list_files
         make -C samples/mntinfo
