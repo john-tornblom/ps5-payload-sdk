@@ -23,16 +23,21 @@ along with this program; see the file COPYING. If not, see
 #include <ps5/kernel.h>
 
 
+#ifndef PHYS_PAGE_SIZE
+#define PHYS_PAGE_SIZE 0x1000
+#endif
+
+
 #ifndef NB_PAGES
-#define NB_PAGES 0x4000
+#define NB_PAGES 0x40000
 #endif
 
 
 int main() {
-  uint8_t buf[PAGE_SIZE];
+  uint8_t buf[PHYS_PAGE_SIZE];
 
   for(int i=0; i<NB_PAGES; i++) {
-    off_t offset = PAGE_SIZE * i;
+    off_t offset = sizeof(buf) * i;
     if(kernel_copyout(KERNEL_ADDRESS_DATA_BASE + offset, buf, sizeof(buf))) {
       perror("kernel_copyout");
       return -1;
