@@ -14,11 +14,9 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
-#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <machine/param.h>
 
 #include <ps5/kernel.h>
 
