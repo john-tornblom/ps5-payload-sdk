@@ -25,5 +25,5 @@ fi
 
 $PS5_PAYLOAD_CC \
     -ffreestanding -fno-builtin -nostdlib \
-    -fPIC -fno-plt \
+    -fPIE \
     $*

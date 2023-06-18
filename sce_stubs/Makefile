@@ -19,7 +19,7 @@ CC      ?= cc
 DESTDIR ?= /opt/ps5-payload-sdk
 
 CFLAGS := -ffreestanding -fno-builtin -nostdlib -O2
-CFLAGS += -mcmodel=large -fPIC -fno-plt -masm=intel
+CFLAGS += -fPIE -masm=intel
 
 SPRXS := $(wildcard *.sprx)
 STUBS := $(SPRXS:.sprx=.c)

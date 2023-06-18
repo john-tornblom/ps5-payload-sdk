@@ -19,7 +19,7 @@ LD      ?= ld
 DESTDIR ?= /opt/ps5-payload-sdk
 
 CFLAGS  := -ffreestanding -fno-builtin -nostdlib -O2
-CFLAGS  += -mcmodel=large -fPIC -fno-plt -masm=intel
+CFLAGS  += -fPIE -masm=intel
 
 
 all: crt1.o
@@ -35,4 +35,4 @@ clean:
 
 install: crt1.o
 	install -d $(DESTDIR)/usr/lib
-	install crt1.o $(DESTDIR)/usr/lib
+	install $^ $(DESTDIR)/usr/lib
