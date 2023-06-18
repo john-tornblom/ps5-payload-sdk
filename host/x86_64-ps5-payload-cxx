@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #   Copyright (C) 2023 John Törnblom
 #
 # This file is free software; you can redistribute it and/or modify it
@@ -14,16 +15,16 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-DESTDIR ?= /opt/ps5-payload-sdk
-TOOLS   := x86_64-ps5-payload-cc x86_64-ps5-baremetal-cc \
-	   x86_64-ps5-payload-cxx x86_64-ps5-baremetal-cxx \
-	   x86_64-ps5-payload-ld x86_64-ps5-baremetal-ld
+PS5_PAYLOAD_SDK="${BASH_SOURCE[0]}"
+PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
+PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
+if [[ -z "$PS5_PAYLOAD_CXX" ]]; then
+    PS5_PAYLOAD_CXX=g++
+fi
 
-all:
-
-clean:
-
-install: $(TOOLS)
-	install -d $(DESTDIR)/host
-	install $^ $(DESTDIR)/host
+$PS5_PAYLOAD_CXX \
+    --sysroot "${PS5_PAYLOAD_SDK}" \
+    -D__FreeBSD__ -D__PROSPERO__ \
+    -fPIE \
+    $*

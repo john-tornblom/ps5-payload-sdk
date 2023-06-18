@@ -18,19 +18,22 @@
 export DESTDIR=$(mktemp -d)
 trap 'rm -rf -- "$DESTDIR"' EXIT
 
-SAMPLES=("arbitrary_syscall"
-         "elf_loader"
-	 "hello_sprx"
-	 "hello_stdio"
-	 "hello_world"
-	 "hwinfo"
-	 "kernel_data_dump"
-	 "klog"
-	 "list_files"
-	 "mntinfo"
-	 "pipe_pirate"
-	 "ps"
-	 "remount")
+MAKE_SAMPLES=("arbitrary_syscall"
+              "elf_loader"
+	      "hello_sprx"
+	      "hello_stdio"
+	      "hello_world"
+	      "hwinfo"
+	      "kernel_data_dump"
+	      "klog"
+	      "list_files"
+	      "mntinfo"
+	      "pipe_pirate"
+	      "ps"
+	      "remount")
+
+CMAKE_SAMPLES=("hello_cmake"
+	      )
 
 CCLIST=("gcc"
 	"clang")
@@ -49,8 +52,15 @@ for CC in "${CCLIST[@]}"; do
 	    export PS5_PAYLOAD_CC
 	    for PS5_PAYLOAD_LD in "${LDLIST[@]}"; do
 		export PS5_PAYLOAD_LD
-		for SAMPLE in "${SAMPLES[@]}"; do
+		for SAMPLE in "${MAKE_SAMPLES[@]}"; do
 		    make -C samples/$SAMPLE clean all || exit 1
+		done
+
+		for SAMPLE in "${CMAKE_SAMPLES[@]}"; do
+		    cmake -B $DESTDIR/build/$SAMPLE \
+			  -DCMAKE_TOOLCHAIN_FILE=$PS5_PAYLOAD_SDK/cmake/toolchain.cmake \
+			  samples/$SAMPLE || exit 1
+		    make  -C $DESTDIR/build/$SAMPLE clean all || exit 1
 		done
 	    done
 	done

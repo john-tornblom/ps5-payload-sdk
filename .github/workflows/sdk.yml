@@ -26,7 +26,7 @@ jobs:
     - name: Setup SDK
       run: |
         sudo apt update
-        sudo apt install wget build-essential python3 python3-pyelftools
+        sudo apt install cmake wget build-essential python3 python3-pyelftools
         make
         make DESTDIR=${{ runner.tool_cache }}/ps5-payload-sdk install
         echo PS5_PAYLOAD_SDK=${{ runner.tool_cache }}/ps5-payload-sdk >> $GITHUB_ENV
@@ -49,6 +49,8 @@ jobs:
         make -C samples/pipe_pirate
         make -C samples/ps
         make -C samples/remount
+        cmake -B samples/hello_cmake
+        make  -C samples/hello_cmake
 
     - name: Upload SDK
       uses: actions/upload-artifact@v3
