@@ -21,7 +21,8 @@ PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
 CANDIDATES=("ld.lld-17"
             "ld.lld-16"
-            "ld.lld-15")
+            "ld.lld-15"
+            "ld.lld")
 
 for LD in "${CANDIDATES[@]}"; do
     if [ -x "$(command -v $LD)" ]; then

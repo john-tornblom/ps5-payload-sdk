@@ -25,7 +25,8 @@ fi
 
 CANDIDATES=("clang++-17"
             "clang++-16"
-            "clang++-15")
+            "clang++-15"
+            "clang++")
 
 for CXX in "${CANDIDATES[@]}"; do
     if [ -x "$(command -v $CXX)" ]; then
