@@ -20,9 +20,12 @@ along with this program; see the file COPYING. If not, see
 /**
  * External ependencies.
  **/
-static int (*sceKernelDlsym)() = 0;
-static int (*sceKernelStopUnloadModule)() = 0;
-static int (*sceSysmoduleLoadModuleByNameInternal)() = 0;
+static int (*sceKernelDlsym)(int, const char*, void*) = 0;
+static int (*sceKernelStopUnloadModule)(int, unsigned long, const void*,
+					unsigned int, const void*, void*) = 0;
+static int (*sceSysmoduleLoadModuleByNameInternal)(const char*, unsigned long,
+						   const void*, unsigned int,
+						   void*) = 0;
 
 
 /**
