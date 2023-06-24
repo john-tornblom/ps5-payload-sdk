@@ -31,15 +31,15 @@ set(CMAKE_SYSTEM_VERSION 9)
 set(CMAKE_CROSSCOMPILING 1)
 
 #
-# Use llvm/clang/ld.lld toolchain
+# Use llvm/clang/ld.lld version 15
 #
-set(CMAKE_ASM_COMPILER clang CACHE PATH "")
-set(CMAKE_C_COMPILER clang CACHE PATH "")
-set(CMAKE_CXX_COMPILER clang++ CACHE PATH "")
-set(CMAKE_LINKER ld.lld CACHE PATH "")
-set(CMAKE_AR llvm-ar CACHE PATH "")
-set(CMAKE_RANLIB llvm-ranlib CACHE PATH "")
-set(CMAKE_STRIP llvm-strip CACHE PATH "")
+set(CMAKE_ASM_COMPILER clang-15 CACHE PATH "")
+set(CMAKE_C_COMPILER clang-15 CACHE PATH "")
+set(CMAKE_CXX_COMPILER clang++-15 CACHE PATH "")
+set(CMAKE_LINKER ld.lld-15 CACHE PATH "")
+set(CMAKE_AR llvm-ar-15 CACHE PATH "")
+set(CMAKE_RANLIB llvm-ranlib-15 CACHE PATH "")
+set(CMAKE_STRIP llvm-strip-15 CACHE PATH "")
 
 #
 # Set sysroot and search paths
