@@ -19,7 +19,7 @@ DESTDIR ?= /opt/ps5-payload-sdk
 
 CC := clang
 LD := ld.lld
-AR := llvm-ar
+AR := ar
 
 CFLAGS := -ffreestanding -fno-builtin -nostdlib -O2
 CFLAGS += -fPIE -target x86_64-pc-none
