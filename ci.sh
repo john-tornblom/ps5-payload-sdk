@@ -55,14 +55,14 @@ for CC in "${CCLIST[@]}"; do
 		for SAMPLE in "${MAKE_SAMPLES[@]}"; do
 		    make -C samples/$SAMPLE clean all || exit 1
 		done
-
-		for SAMPLE in "${CMAKE_SAMPLES[@]}"; do
-		    cmake -B $DESTDIR/build/$SAMPLE \
-			  -DCMAKE_TOOLCHAIN_FILE=$PS5_PAYLOAD_SDK/cmake/toolchain.cmake \
-			  samples/$SAMPLE || exit 1
-		    make  -C $DESTDIR/build/$SAMPLE clean all || exit 1
-		done
 	    done
 	done
     done
+done
+
+for SAMPLE in "${CMAKE_SAMPLES[@]}"; do
+    cmake -B $DESTDIR/build/$SAMPLE \
+	  -DCMAKE_TOOLCHAIN_FILE=$PS5_PAYLOAD_SDK/cmake/toolchain.cmake \
+	  samples/$SAMPLE || exit 1
+    make  -C $DESTDIR/build/$SAMPLE clean all || exit 1
 done

@@ -31,15 +31,11 @@ set(CMAKE_SYSTEM_VERSION 9)
 set(CMAKE_CROSSCOMPILING 1)
 
 #
-# Use llvm/clang/ld.lld version 15
+# We rely on a llvm toolchain with target triple "x86_64-sie-ps5"
 #
-set(CMAKE_ASM_COMPILER clang-15 CACHE PATH "")
-set(CMAKE_C_COMPILER clang-15 CACHE PATH "")
-set(CMAKE_CXX_COMPILER clang++-15 CACHE PATH "")
-set(CMAKE_LINKER ld.lld-15 CACHE PATH "")
-set(CMAKE_AR llvm-ar-15 CACHE PATH "")
-set(CMAKE_RANLIB llvm-ranlib-15 CACHE PATH "")
-set(CMAKE_STRIP llvm-strip-15 CACHE PATH "")
+set(CMAKE_ASM_COMPILER_NAMES clang-17 clang-16 clang-15)
+set(CMAKE_C_COMPILER_NAMES clang-17 clang-16 clang-15)
+set(CMAKE_CXX_COMPILER_NAMES clang++-17 clang++-16 clang++-15)
 
 #
 # Set sysroot and search paths
