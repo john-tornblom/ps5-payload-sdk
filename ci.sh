@@ -18,6 +18,8 @@
 export DESTDIR=$(mktemp -d)
 trap 'rm -rf -- "$DESTDIR"' EXIT
 
+make clean install || exit 1
+
 MAKE_SAMPLES=("arbitrary_syscall"
               "elf_loader"
 	      "hello_sprx"
@@ -35,29 +37,10 @@ MAKE_SAMPLES=("arbitrary_syscall"
 CMAKE_SAMPLES=("hello_cmake"
 	      )
 
-CCLIST=("gcc"
-	"clang")
-
-LDLIST=("ld"
-	"ld.lld")
-
 export PS5_PAYLOAD_SDK=$DESTDIR
 
-for CC in "${CCLIST[@]}"; do
-    export CC
-    for LD in "${LDLIST[@]}"; do
-	export LD
-	make clean install || exit 1
-	for PS5_PAYLOAD_CC in "${CCLIST[@]}"; do
-	    export PS5_PAYLOAD_CC
-	    for PS5_PAYLOAD_LD in "${LDLIST[@]}"; do
-		export PS5_PAYLOAD_LD
-		for SAMPLE in "${MAKE_SAMPLES[@]}"; do
-		    make -C samples/$SAMPLE clean all || exit 1
-		done
-	    done
-	done
-    done
+for SAMPLE in "${MAKE_SAMPLES[@]}"; do
+    make -C samples/$SAMPLE clean all || exit 1
 done
 
 for SAMPLE in "${CMAKE_SAMPLES[@]}"; do

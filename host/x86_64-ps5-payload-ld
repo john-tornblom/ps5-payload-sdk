@@ -19,13 +19,19 @@ PS5_PAYLOAD_SDK="${BASH_SOURCE[0]}"
 PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
 PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
-if [[ -z "$PS5_PAYLOAD_LD" ]]; then
-    PS5_PAYLOAD_LD=ld
-fi
+CANDIDATES=("ld.lld-17"
+            "ld.lld-16"
+            "ld.lld-15")
 
-$PS5_PAYLOAD_LD \
-    -pie \
-    -T "${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x" \
-    -L "${PS5_PAYLOAD_SDK}/usr/lib" \
-    $* \
-    "${PS5_PAYLOAD_SDK}/usr/lib/crt1.o"
+for LD in "${CANDIDATES[@]}"; do
+    if [ -x "$(command -v $LD)" ]; then
+	exec $LD \
+	     -pie \
+	     -T "${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x" \
+	     -L "${PS5_PAYLOAD_SDK}/usr/lib" \
+	     $* \
+	     "${PS5_PAYLOAD_SDK}/usr/lib/crt1.o"
+    fi
+done
+
+exit 1

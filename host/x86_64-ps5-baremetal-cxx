@@ -19,11 +19,21 @@ PS5_PAYLOAD_SDK="${BASH_SOURCE[0]}"
 PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
 PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
-if [[ -z "$PS5_PAYLOAD_CXX" ]]; then
-    PS5_PAYLOAD_CXX=g++
+if [[ -z "$PS5_TARGET_TRIPLE" ]]; then
+    PS5_TARGET_TRIPLE=x86_64-pc-none
 fi
 
-$PS5_PAYLOAD_CXX \
-    -ffreestanding -fno-builtin -nostdlib -nostdlib++ \
-    -fPIE \
-    $*
+CANDIDATES=("clang++-17"
+            "clang++-16"
+            "clang++-15")
+
+for CXX in "${CANDIDATES[@]}"; do
+    if [ -x "$(command -v $CXX)" ]; then
+	exec $CXX \
+	     -target $PS5_TARGET_TRIPLE \
+	     -fPIE -fno-stack-protector -ffreestanding -fno-builtin -nostdlib -nostdlib++ \
+	     $*
+    fi
+done
+
+exit 1
