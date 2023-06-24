@@ -19,7 +19,8 @@
 #   cmake -DPS5_KERNEL_LIBRARY=kernel_sys
 #
 set(PS5_PAYLOAD_SDK "${CMAKE_CURRENT_LIST_DIR}/.." CACHE PATH "")
-set(PS5_KERNEL_LIBRARY kernel_web CACHE STRING "")
+set(PS5_KERNEL_LIBRARY "kernel_web" CACHE STRING "")
+set(PS5_TARGET_TRIPLE "x86_64-sie-ps5" CACHE STRING "")
 
 #
 # The PS5 is running a modified FreeBSD kernel on a x86_64 CPU
@@ -58,7 +59,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 #
 # Set flags for assembly programs
 #
-set(CMAKE_ASM_FLAGS_INIT "-target x86_64-sie-ps5")
+set(CMAKE_ASM_FLAGS_INIT "-target ${PS5_TARGET_TRIPLE}")
 set(CMAKE_ASM_LINK_EXECUTABLE
   "<CMAKE_LINKER> -pie -o <TARGET> <CMAKE_ASM_LINK_FLAGS> \
    -T${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x \
