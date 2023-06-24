@@ -68,7 +68,7 @@ set(CMAKE_ASM_LINK_EXECUTABLE
 #
 # Set flags for C programs
 #
-set(CMAKE_C_FLAGS_INIT "${CMAKE_ASM_FLAGS_INIT} -isystem ${PS5_PAYLOAD_SDK}/usr/include")
+set(CMAKE_C_FLAGS_INIT "${CMAKE_ASM_FLAGS_INIT} -fno-stack-protector -isystem ${PS5_PAYLOAD_SDK}/usr/include")
 set(CMAKE_C_STANDARD_LIBRARIES "-lSceLibcInternal -l${PS5_KERNEL_LIBRARY}")
 set(CMAKE_C_LINK_EXECUTABLE
   "<CMAKE_LINKER> -pie -o <TARGET> <CMAKE_C_LINK_FLAGS> \
