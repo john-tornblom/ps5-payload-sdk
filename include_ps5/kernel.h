@@ -53,4 +53,7 @@ intptr_t kernel_get_ucred(pid_t pid);
 uint64_t kernel_get_proc_authid(pid_t pid);
 int32_t  kernel_set_proc_authid(pid_t pid, uint64_t authid);
 
+int32_t kernel_get_qaflags(uint8_t qaflags[16]);
+int32_t kernel_set_qaflags(uint8_t qaflags[16]);
+
 #endif // PS5SDK_KERNEL_H

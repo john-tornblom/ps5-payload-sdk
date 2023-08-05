@@ -360,3 +360,21 @@ kernel_set_proc_authid(unsigned int pid, unsigned long authid) {
   return 0;
 }
 
+
+/**
+ *
+ **/
+int
+kernel_get_qaflags(unsigned char qaflags[16]) {
+  return kernel_copyout(KERNEL_ADDRESS_QA_FLAGS, qaflags, 16);
+}
+
+
+/**
+ *
+ **/
+int
+kernel_set_qaflags(unsigned char qaflags[16]) {
+  return kernel_copyin(qaflags, KERNEL_ADDRESS_QA_FLAGS, 16);
+}
+
