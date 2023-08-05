@@ -19,6 +19,7 @@ along with this program; see the file COPYING. If not, see
 
 #include <sys/types.h>
 
+// Absolute kernel pointers
 extern const intptr_t KERNEL_ADDRESS_DATA_BASE;
 extern const intptr_t KERNEL_ADDRESS_ALLPROC;
 
@@ -41,8 +42,8 @@ uint32_t kernel_get_fw_version(void);
 int32_t  kernel_copyin(const void *udaddr, intptr_t kaddr, size_t len);
 int32_t  kernel_copyout(const intptr_t kaddr, void *udaddr, size_t  len);
 
-intptr_t kernel_get_ucred(pid_t pid);
 intptr_t kernel_get_proc(pid_t pid);
+intptr_t kernel_get_ucred(pid_t pid);
 
 uint64_t kernel_get_proc_authid(pid_t pid);
 int32_t  kernel_set_proc_authid(pid_t pid, uint64_t authid);
