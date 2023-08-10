@@ -32,6 +32,7 @@ MAKE_SAMPLES=("arbitrary_syscall"
 	      "mntinfo"
 	      "pipe_pirate"
 	      "ps"
+	      "ptrace_elfldr"
 	      "remount")
 
 CMAKE_SAMPLES=("hello_cmake"

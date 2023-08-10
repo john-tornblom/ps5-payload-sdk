@@ -324,7 +324,7 @@ kernel_get_ucred(unsigned int pid) {
  *
  **/
 unsigned long
-kernel_get_proc_authid(unsigned int pid) {
+kernel_get_ucred_authid(unsigned int pid) {
   unsigned long authid = 0;
   unsigned long ucred = 0;
 
@@ -345,7 +345,7 @@ kernel_get_proc_authid(unsigned int pid) {
  *
  **/
 int
-kernel_set_proc_authid(unsigned int pid, unsigned long authid) {
+kernel_set_ucred_authid(unsigned int pid, unsigned long authid) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_ucred(pid))) {
@@ -354,6 +354,129 @@ kernel_set_proc_authid(unsigned int pid, unsigned long authid) {
 
   if(kernel_copyin(&authid, ucred + KERNEL_OFFSET_UCRED_CR_SCEAUTHID,
 		   sizeof(authid))) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_get_ucred_caps0(unsigned int pid) {
+  unsigned long caps = 0;
+  unsigned long ucred = 0;
+
+  if(!(ucred=kernel_get_ucred(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(ucred + KERNEL_OFFSET_UCRED_CR_SCECAPS0, &caps,
+		    sizeof(caps))) {
+    return 0;
+  }
+
+  return caps;
+}
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_get_ucred_caps1(unsigned int pid) {
+  unsigned long caps = 0;
+  unsigned long ucred = 0;
+
+  if(!(ucred=kernel_get_ucred(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(ucred + KERNEL_OFFSET_UCRED_CR_SCECAPS1, &caps,
+		    sizeof(caps))) {
+    return 0;
+  }
+
+  return caps;
+}
+
+
+/**
+ *
+ **/
+int
+kernel_set_ucred_caps1(unsigned int pid, unsigned long caps) {
+  unsigned long ucred = 0;
+
+  if(!(ucred=kernel_get_ucred(pid))) {
+    return -1;
+  }
+
+  if(kernel_copyin(&caps, ucred + KERNEL_OFFSET_UCRED_CR_SCECAPS1,
+		   sizeof(caps))) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
+/**
+ *
+ **/
+int
+kernel_set_ucred_caps0(unsigned int pid, unsigned long caps) {
+  unsigned long ucred = 0;
+
+  if(!(ucred=kernel_get_ucred(pid))) {
+    return -1;
+  }
+
+  if(kernel_copyin(&caps, ucred + KERNEL_OFFSET_UCRED_CR_SCECAPS0,
+		   sizeof(caps))) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_get_ucred_attrs(unsigned int pid) {
+  unsigned long ucred = 0;
+  unsigned long attrs = 0;
+
+  if(!(ucred=kernel_get_ucred(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(ucred + KERNEL_OFFSET_UCRED_CR_SCEATTR0, &attrs,
+		    sizeof(attrs))) {
+    return 0;
+  }
+
+  return attrs;
+}
+
+
+/**
+ *
+ **/
+int
+kernel_set_ucred_attrs(unsigned int pid, unsigned long attrs) {
+  unsigned long ucred = 0;
+
+  if(!(ucred=kernel_get_ucred(pid))) {
+    return -1;
+  }
+
+  if(kernel_copyin(&attrs, ucred + KERNEL_OFFSET_UCRED_CR_SCEATTR0,
+		   sizeof(attrs))) {
     return -1;
   }
 

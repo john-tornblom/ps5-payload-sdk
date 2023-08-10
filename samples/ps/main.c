@@ -42,7 +42,7 @@ main() {
       struct kinfo_proc *kp = (struct kinfo_proc*)buf;
       printf("%8u  %8u %8u %8u %8u %016lx   %11s  %s\n",
 	     kp->ki_pid, kp->ki_ppid, kp->ki_pgid, kp->ki_sid,
-	     kp->ki_uid, kernel_get_proc_authid(kp->ki_pid),
+	     kp->ki_uid, kernel_get_ucred_authid(kp->ki_pid),
 	     kp->ki_emul, kp->ki_comm);
     }
   }
