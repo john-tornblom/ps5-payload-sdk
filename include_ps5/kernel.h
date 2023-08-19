@@ -59,7 +59,7 @@ int32_t  kernel_set_ucred_caps0(pid_t pid, uint64_t caps);
 uint64_t kernel_get_ucred_caps1(pid_t pid);
 int32_t  kernel_set_ucred_caps1(pid_t pid, uint64_t caps);
 
-uint8_t kernel_get_ucred_attrs(pid_t pid);
+uint64_t kernel_get_ucred_attrs(pid_t pid);
 int32_t kernel_set_ucred_attrs(pid_t pid, uint64_t attr);
 
 int32_t kernel_get_qaflags(uint8_t qaflags[16]);

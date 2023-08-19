@@ -20,8 +20,9 @@ along with this program; see the file COPYING. If not, see
 #include <unistd.h>
 
 #include <sys/ptrace.h>
-#include <sys/wait.h>
+#include <sys/socket.h>
 #include <sys/syscall.h>
+#include <sys/wait.h>
 
 #include "ptrace.h"
 #include "dynlib.h"
@@ -29,7 +30,14 @@ along with this program; see the file COPYING. If not, see
 
 int
 pt_attach(pid_t pid) {
-  return syscall(SYS_ptrace, PT_ATTACH, pid, 0, 0);
+  if(syscall(SYS_ptrace, PT_ATTACH, pid, 0, 0)) {
+    return -1;
+  }
+  if(waitpid(pid, 0, 0) < 0) {
+    pt_detach(pid);
+    return -1;
+  }
+  return 0;
 }
 
 
@@ -51,6 +59,16 @@ pt_setregs(pid_t pid, const struct reg *r) {
 }
 
 
+int pt_getint(pid_t pid, intptr_t addr) {
+  return syscall(SYS_ptrace, PT_READ_D, pid, (caddr_t)addr, 0);
+}
+
+
+int pt_setint(pid_t pid, intptr_t addr, int val) {
+  return(int)syscall(SYS_ptrace, PT_WRITE_D, pid, (caddr_t)addr, val);
+}
+
+
 int
 pt_copyin(pid_t pid, void* buf, intptr_t addr, size_t len) {
   size_t rem = len % sizeof(int);
@@ -58,7 +76,7 @@ pt_copyin(pid_t pid, void* buf, intptr_t addr, size_t len) {
 
   for(size_t i=0; i<len-rem; i+=sizeof(int)) {
     memcpy(&val, buf, sizeof(val));
-    if(syscall(SYS_ptrace, PT_WRITE_D, pid, (caddr_t)addr, val)) {
+    if(pt_setint(pid, addr, val)) {
       return -1;
     }
     buf += sizeof(int);
@@ -66,13 +84,28 @@ pt_copyin(pid_t pid, void* buf, intptr_t addr, size_t len) {
   }
 
   if(rem) {
-    val = syscall(SYS_ptrace, PT_READ_D, pid, (caddr_t)addr, NULL);
+    val = pt_getint(pid, addr);
     memcpy(&val, buf, rem);
-    if(syscall(SYS_ptrace, PT_WRITE_D, pid, (caddr_t)addr, val)) {
+    if(pt_setint(pid, addr, val)) {
       return -1;
     }
   }
   return 0;
+}
+
+
+int pt_setlong(pid_t pid, intptr_t addr, long val) {
+  return pt_copyin(pid, &val, addr, sizeof(val));
+}
+
+
+int pt_setshort(pid_t pid, intptr_t addr, short val) {
+  return pt_copyin(pid, &val, addr, sizeof(val));
+}
+
+
+int pt_setchar(pid_t pid, intptr_t addr, char val) {
+  return pt_copyin(pid, &val, addr, sizeof(val));
 }
 
 
@@ -82,14 +115,14 @@ pt_copyout(pid_t pid, intptr_t addr, void* buf, size_t len) {
   int val;
 
   for(int i=0; i<len-rem; i+=sizeof(int)) {
-    val = syscall(SYS_ptrace, PT_READ_D, pid, (caddr_t)addr, NULL);
+    val = pt_getint(pid, addr);
     memcpy(buf, &val, sizeof(val));
     buf += sizeof(int);
     addr += sizeof(int);
   }
 
   if(rem) {
-    val = syscall(SYS_ptrace, PT_READ_D, pid, (caddr_t)addr, NULL);
+    val = pt_getint(pid, addr);
     memcpy(buf, &val, rem);
   }
 }
@@ -97,15 +130,15 @@ pt_copyout(pid_t pid, intptr_t addr, void* buf, size_t len) {
 
 static int
 pt_step(int pid) {
-  int status;
-
   if(syscall(SYS_ptrace, PT_STEP, pid, (caddr_t)1, 0)) {
     return -1;
   }
 
-  waitpid(pid, &status, 0);
+  if(waitpid(pid, 0, 0) < 0) {
+    return -1;
+  }
 
-  return status;
+  return 0;
 }
 
 
@@ -137,7 +170,9 @@ pt_call(pid_t pid, intptr_t addr, ...) {
 
   // single step until the function returns
   while(jmp_reg.r_rsp <= bak_reg.r_rsp) {
-    pt_step(pid);
+    if(pt_step(pid)) {
+      return -1;
+    }
     if(pt_getregs(pid, &jmp_reg)) {
       return -1;
     }
@@ -182,7 +217,9 @@ pt_syscall(pid_t pid, int sysno, ...) {
 
   // single step until the function returns
   while(jmp_reg.r_rsp <= bak_reg.r_rsp) {
-    pt_step(pid);
+    if(pt_step(pid)) {
+      return -1;
+    }
     if(pt_getregs(pid, &jmp_reg)) {
       return -1;
     }
@@ -231,6 +268,27 @@ pt_mprotect(pid_t pid, intptr_t addr, size_t len, int prot) {
 int
 pt_close(pid_t pid, int fd) {
   return (int)pt_syscall(pid, SYS_close, fd);
+}
+
+
+int
+pt_socket(pid_t pid, int domain, int type, int protocol) {
+  return (int)pt_syscall(pid, SYS_socket, domain, type, protocol);
+}
+
+
+int
+pt_setsockopt(pid_t pid, int fd, int level, int optname, intptr_t optval,
+	      socklen_t optlen) {
+  return (int)pt_syscall(pid, SYS_setsockopt, fd, level, optname, optval,
+			 optlen);
+}
+
+
+int
+pt_pipe(pid_t pid, intptr_t pipefd) {
+  intptr_t faddr = dynlib_resolve(pid, 0x2001, "-Jp7F+pXxNg");
+  return (int)pt_call(pid, faddr, pipefd);
 }
 
 

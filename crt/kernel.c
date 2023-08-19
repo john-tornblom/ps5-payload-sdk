@@ -47,6 +47,7 @@ unsigned long KERNEL_ADDRESS_UTOKEN_FLAGS   = 0;
 unsigned long KERNEL_ADDRESS_QA_FLAGS       = 0;
 
 const unsigned long KERNEL_OFFSET_PROC_P_UCRED = 0x40;
+const unsigned long KERNEL_OFFSET_PROC_P_FD    = 0x48;
 const unsigned long KERNEL_OFFSET_PROC_P_PID   = 0xBC;
 
 const unsigned long KERNEL_OFFSET_UCRED_CR_UID   = 0x04;

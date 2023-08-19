@@ -20,5 +20,14 @@ along with this program; see the file COPYING. If not, see
 #include <sys/types.h>
 
 
+/**
+ * Resolve a symbol with the given *nid* from an sprx with the given *handle*
+ * that is loaded in a process with the given pid.
+ **/
 intptr_t dynlib_resolve(pid_t pid, uint32_t handle, const char *nid);
+
+
+/**
+ * Resolve sceKernelDlsym() loaded in a process with the given pid.
+ **/
 intptr_t dynlib_resolve_sceKernelDlsym(pid_t pid);

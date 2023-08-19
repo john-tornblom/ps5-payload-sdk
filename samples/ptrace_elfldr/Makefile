@@ -26,41 +26,31 @@ LD := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-ld
 
 CFLAGS := -O2
 LDADD  := -lkernel_web -lSceLibcInternal
-
-# Build the payload for a bare-metal runtime environment
-CC_BM := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-baremetal-cc
-LD_BM := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-baremetal-ld
+OBJS   := elfldr.o ptrace.o dynlib.o
 
 
-all: pt-elfldr.elf
+all: elfldr-bootstrap.elf
 
-pt-elfldr.elf:  main.o elfldr.o ptrace.o dynlib.o
+elfldr-bootstrap.elf: main-bootstrap.o $(OBJS)
 	$(LD) $^ $(LDADD) -o $@
 
-elfldr.o: elfldr.c
+elfldr-socksever.elf: main-socksever.o $(OBJS)
+	$(LD) $^ $(LDADD) -o $@
+
+main-bootstrap.o: main.c elfldr-socksever_elf.c
+	$(CC) -DELFLDR_BOOTSRTAP -c $(CFLAGS) -o $@ $<
+
+main-socksever.o: main.c
+	$(CC) -DSOCKET_PORT=9021 -c $(CFLAGS) -o $@ $<
+
+%.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-dynlib.o: dynlib.c
-	$(CC) -c $(CFLAGS) -o $@ $<
-
-ptrace.o: ptrace.c
-	$(CC) -c $(CFLAGS) -o $@ $<
-
-main.o: main.c payload_elf.c
-	$(CC) -c $(CFLAGS) -o $@ $<
-
-payload_elf.c: payload.elf
+elfldr-socksever_elf.c: elfldr-socksever.elf
 	xxd -i $< > $@
 
-payload.elf: payload.o
-	$(LD_BM) $< -o $@
-
-payload.o: payload.c
-	$(CC_BM) -c -o $@ $<
-
 clean:
-	rm -f *.o *.elf payload_elf.c
+	rm -f *.o *.elf elfldr-socksever_elf.c
 
-test: pt-elfldr.elf
+test: elfldr-bootstrap.elf
 	nc -q0 $(PS5_HOST) $(PS5_PORT) < $^
-

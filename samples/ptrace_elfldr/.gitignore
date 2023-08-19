@@ -1,5 +1,4 @@
 *.elf
 *.o
 *~
-payload_elf.c
-
+elfldr-socksever_elf.c

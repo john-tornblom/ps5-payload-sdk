@@ -14,15 +14,29 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
+#include <stdarg.h>
+#include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
 #include <sys/mman.h>
+#include <sys/socket.h>
+#include <sys/socketvar.h>
+#include <sys/sysctl.h>
 #include <sys/user.h>
-#include <elf.h>
 
+#include <arpa/inet.h>
+#include <netinet/in.h>
+
+#include <elf.h>
+#include <ifaddrs.h>
+
+#include <ps5/kernel.h>
+
+#include "dynlib.h"
 #include "ptrace.h"
 
 
@@ -42,9 +56,243 @@ along with this program; see the file COPYING. If not, see
 
 
 /**
+ * IPv6 constants used to obtain kernel RW primitves.
+ **/
+#ifndef IPV6_2292PKTOPTIONS
+#define IPV6_2292PKTOPTIONS 25
+#endif
+
+
+/**
+ * Data structure used to send UI notifications.
+ **/
+typedef struct notify_request {
+  char useless1[45];
+  char message[3075];
+} notify_request_t;
+
+
+/**
+ * Send a UI notification request.
+ **/
+int sceKernelSendNotificationRequest(int, notify_request_t*, size_t, int);
+
+
+/**
+ * Get the kernel address of the given file descriptor.
+ **/
+static intptr_t
+kernel_get_file(pid_t pid, int fd) {
+  intptr_t fd_files;
+  intptr_t fde_file;
+  intptr_t file;
+  intptr_t proc;
+  intptr_t p_fd;
+
+  if(!(proc=kernel_get_proc(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(proc + offsetof(struct proc, p_fd),
+		    &p_fd, sizeof(p_fd))) {
+    return 0;
+  }
+
+  if(kernel_copyout(p_fd, &fd_files, sizeof(fd_files))) {
+    return 0;
+  }
+
+  if(kernel_copyout(fd_files + 8 + (0x30 * fd),
+		    &fde_file, sizeof(fde_file))) {
+    return 0;
+  }
+
+  if(kernel_copyout(fde_file, &file, sizeof(file))) {
+    return 0;
+  }
+
+  return file;
+}
+
+
+/**
+ * Increase the kernel refcount of an IPv6 UDP socket.
+ **/
+static int
+kernel_inc_so_count(pid_t pid, int fd) {
+  intptr_t file;
+  int so_count;
+
+  if(!(file=kernel_get_file(pid, fd))) {
+    return -1;
+  }
+
+  if(kernel_copyout(file, &so_count, sizeof(so_count))) {
+    return -1;
+  }
+
+  so_count++;
+  so_count = 0x100;
+  if(kernel_copyin(&so_count, file, sizeof(so_count))) {
+    return -1;
+  }
+  return 0;
+}
+
+
+/**
+ * 
+ **/
+static intptr_t
+kernel_get_inp6_outputopts(pid_t pid, int fd) {
+  intptr_t inp6_outputopts;
+  intptr_t so_pcb;
+  intptr_t file;
+
+  if(!(file=kernel_get_file(pid, fd))) {
+    return 0;
+  }
+
+  if(kernel_copyout(file + 0x18, &so_pcb, sizeof(so_pcb))) {
+    return 0;
+  }
+
+  if(kernel_copyout(so_pcb + 0x120, &inp6_outputopts,
+		    sizeof(inp6_outputopts))) {
+    return 0;
+  }
+
+  return inp6_outputopts;
+}
+
+
+/**
+ * Overlap IPv6 sockets to obtain kernel RW primtives just like the
+ * original PS5 kernel exploit.
+ **/
+static int
+kernel_overlap_sockets(pid_t pid, int master_sock, int victim_sock) {
+  intptr_t master_inp6_outputopts;
+  intptr_t victim_inp6_outputopts;
+  intptr_t pktinfo;
+  uint32_t tclass;
+
+  if(kernel_inc_so_count(pid, master_sock)) {
+    return -1;
+  }
+
+  if(!(master_inp6_outputopts=kernel_get_inp6_outputopts(pid, master_sock))) {
+    return -1;
+  }
+
+  if(kernel_inc_so_count(pid, victim_sock)) {
+    return -1;
+  }
+
+  if(!(victim_inp6_outputopts=kernel_get_inp6_outputopts(pid, victim_sock))) {
+    return -1;
+  }
+
+  pktinfo = victim_inp6_outputopts + 0x10;
+  if(kernel_copyin(&pktinfo, master_inp6_outputopts + 0x10,
+		   sizeof(pktinfo))) {
+
+    return -1;
+  }
+
+  tclass = 0x13370000;
+  if(kernel_copyin(&tclass, master_inp6_outputopts + 0xc0, sizeof(tclass))) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
+/**
+ * Get the name of a process with the given pid.
+ **/
+static int
+get_procname(pid_t pid, char name[COMMLEN+1]) {
+  int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, pid};
+  struct kinfo_proc *ki;
+  size_t ki_size = 1096;
+  char buf[ki_size];
+
+  if(sysctl(mib, 4, buf, &ki_size, NULL, 0) < 0) {
+    return -1;
+  }
+
+  ki = (struct kinfo_proc*)buf;
+  strncpy(name, ki->ki_comm, COMMLEN);
+  return 0;
+}
+
+
+
+/**
+ * Get the pid of a process with the given name.
+ **/
+static pid_t
+kernel_getpid_byname(const char *name) {
+  char other_name[MAXCOMLEN+1];
+  intptr_t p_comm;
+  intptr_t addr;
+  intptr_t next;
+  pid_t pid;
+
+  if(kernel_copyout(KERNEL_ADDRESS_ALLPROC, &addr, sizeof(addr))) {
+    return -1;
+  }
+
+  while(1) {
+    if(kernel_copyout(addr + offsetof(struct proc, p_pid),
+		      &pid, sizeof(pid))) {
+      return -1;
+    }
+
+    if(get_procname(pid, other_name)) {
+      return -1;
+    }
+
+    if(!strcmp(name, other_name)) {
+      break;
+    }
+
+    if(kernel_copyout(addr, &next, sizeof(next))) {
+      return -1;
+    }
+
+    if(!(addr=next)) {
+      return -1;
+    }
+  }
+
+  return pid;
+}
+
+
+/**
+ * Generate a UI notification.
+ **/
+static void
+elfldr_notify(const char *fmt, ...) {
+  notify_request_t req;
+  va_list args;
+
+  bzero(&req, sizeof req);
+  va_start(args, fmt);
+  vsnprintf(req.message, sizeof req.message, fmt, args);
+  va_end(args);
+
+  sceKernelSendNotificationRequest(0, &req, sizeof req, 0);
+}
+
+
+/**
  * Load an ELF into memory, and jump to its entry point.
  **/
-intptr_t
+static intptr_t
 elfldr_load(pid_t pid, uint8_t *elf, size_t size) {
   Elf64_Ehdr *ehdr = (Elf64_Ehdr*)elf;
   Elf64_Phdr *phdr = (Elf64_Phdr*)(elf + ehdr->e_phoff);
@@ -207,4 +455,239 @@ elfldr_load(pid_t pid, uint8_t *elf, size_t size) {
   } else {
     return base_addr + ehdr->e_entry;
   }
+}
+
+
+/**
+ * Create payload args for a process with the given pid.
+ **/
+static intptr_t
+elfldr_args(pid_t pid) {
+  int victim_sock;
+  int master_sock;
+  intptr_t buf;
+  int pipe0;
+  int pipe1;
+
+  if((buf=pt_mmap(pid, 0, PAGE_SIZE, PROT_READ | PROT_WRITE,
+		  MAP_ANONYMOUS | MAP_PRIVATE, -1, 0)) == -1) {
+    pt_perror(pid, "mmap");
+    return 0;
+  }
+
+  if((master_sock=pt_socket(pid, AF_INET6, SOCK_DGRAM, IPPROTO_UDP)) < 0) {
+    pt_perror(pid, "socket");
+    return 0;
+  }
+
+  pt_setint(pid, buf+0x00, 20);
+  pt_setint(pid, buf+0x04, IPPROTO_IPV6);
+  pt_setint(pid, buf+0x08, IPV6_TCLASS);
+  pt_setint(pid, buf+0x0c, 0);
+  pt_setint(pid, buf+0x10, 0);
+  pt_setint(pid, buf+0x14, 0);   
+  if(pt_setsockopt(pid, master_sock, IPPROTO_IPV6, IPV6_2292PKTOPTIONS, buf, 24)) {
+    pt_perror(pid, "setsockopt");
+    return 0;
+  }
+  
+  if((victim_sock=pt_socket(pid, AF_INET6, SOCK_DGRAM, IPPROTO_UDP)) < 0) {
+    pt_perror(pid, "socket");
+    return 0;
+  }
+
+  pt_setint(pid, buf+0x00, 0);
+  pt_setint(pid, buf+0x04, 0);
+  pt_setint(pid, buf+0x08, 0);
+  pt_setint(pid, buf+0x0c, 0);
+  pt_setint(pid, buf+0x10, 0);
+  if(pt_setsockopt(pid, victim_sock, IPPROTO_IPV6, IPV6_PKTINFO, buf, 20)) {
+    pt_perror(pid, "setsockopt");
+    return 0;
+  }
+
+  if(kernel_overlap_sockets(pid, master_sock, victim_sock)) {
+    perror("overlap");
+    return 0;
+  }
+
+  if(pt_pipe(pid, buf)) {
+    pt_perror(pid, "pipe");
+    return 0;
+  }
+  pipe0 = pt_getint(pid, buf);
+  pipe1 = pt_getint(pid, buf+4);
+
+  intptr_t args       = buf;
+  intptr_t dlsym      = dynlib_resolve_sceKernelDlsym(pid);
+  intptr_t rwpipe     = buf + 0x100;
+  intptr_t rwpair     = buf + 0x200;
+  intptr_t kpipe_addr = kernel_get_file(pid, pipe0);
+  intptr_t payloadout = buf + 0x300;
+
+  pt_setlong(pid, args + 0x00, dlsym);
+  pt_setlong(pid, args + 0x08, rwpipe);
+  pt_setlong(pid, args + 0x10, rwpair);
+  pt_setlong(pid, args + 0x18, kpipe_addr);
+  pt_setlong(pid, args + 0x20, KERNEL_ADDRESS_DATA_BASE);
+  pt_setlong(pid, args + 0x28, payloadout);
+  pt_setint(pid, rwpipe + 0, pipe0);
+  pt_setint(pid, rwpipe + 4, pipe1);
+  pt_setint(pid, rwpair + 0, master_sock);
+  pt_setint(pid, rwpair + 4, victim_sock);
+  pt_setint(pid, payloadout, 0);
+  
+  return args;
+}
+
+
+int
+elfldr_exec(const char* procname, uint8_t *elf, size_t size) {
+  uint64_t caps1;
+  struct reg r;
+  pid_t pid;
+
+  if((pid=kernel_getpid_byname(procname)) < 0) {
+    printf("%s is not running\n", procname);
+    return -1;
+  }
+  
+  if(pt_attach(pid)) {
+    perror("pt_attach");
+    return -1;
+  }
+
+  if(pt_getregs(pid, &r)) {
+    perror("pt_getregs");
+    pt_detach(pid);
+    return -1;
+  }
+
+  caps1 = kernel_get_ucred_caps1(pid);
+  kernel_set_ucred_caps1(pid, -1);
+  
+  if(!(r.r_rdi=elfldr_args(pid))) {
+    pt_detach(pid);
+    return -1;
+  }
+
+  if(!(r.r_rip=elfldr_load(pid, elf, size))) {
+    pt_detach(pid);
+    return -1;
+  }
+
+  kernel_set_ucred_caps1(pid, caps1);
+
+  if(pt_setregs(pid, &r)) {
+    perror("pt_setregs");
+    pt_detach(pid);
+    return -1;
+  }
+
+  if(pt_detach(pid)) {
+    perror("pt_detach");
+    return -1;
+  }
+
+  return 0;
+}
+
+
+/**
+ * Read an ELF file from socket.
+ **/
+static size_t
+elfldr_read(int connfd, uint8_t **data) {
+  uint8_t buf[0x4000];
+  off_t offset = 0;
+  ssize_t len;
+
+  *data = 0;
+  while((len=read(connfd, buf, sizeof(buf)))) {
+    *data = realloc(*data, offset + len);
+    if(*data == NULL) {
+      return -1;
+    }
+
+    memcpy(*data + offset, buf, len);
+    offset += len;
+  }
+  return offset;
+}
+
+
+int
+elfldr_serve(const char* procname, uint16_t port) {
+  struct sockaddr_in server_addr;
+  struct sockaddr_in client_addr;
+  char ip[INET_ADDRSTRLEN];
+  struct ifaddrs *ifaddr;
+  socklen_t addr_len;
+  uint8_t *elf;
+  size_t size;
+  int connfd;
+  int srvfd;
+
+  if(getifaddrs(&ifaddr) == -1) {
+    perror("getifaddrs");
+    return -1;
+  }
+
+  // Enumerate all AF_INET IPs
+  for(struct ifaddrs *ifa=ifaddr; ifa!=NULL; ifa=ifa->ifa_next) {
+    if(ifa->ifa_addr == NULL) {
+      continue;
+    }
+
+    if(ifa->ifa_addr->sa_family != AF_INET) {
+      continue;
+    }
+
+    struct sockaddr_in *in = (struct sockaddr_in*)ifa->ifa_addr;
+    inet_ntop(AF_INET, &(in->sin_addr), ip, sizeof(ip));
+    elfldr_notify("Serving ELF loader on %s:%d (%s)", ip, port, ifa->ifa_name);
+  }
+
+  freeifaddrs(ifaddr);
+
+  if((srvfd=socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+    perror("socket");
+    return -1;
+  }
+
+  if(setsockopt(srvfd, SOL_SOCKET, SO_REUSEADDR, &(int){1}, sizeof(int)) < 0) {
+    perror("setsockopt");
+    return -1;
+  }
+
+  memset(&server_addr, 0, sizeof(server_addr));
+  server_addr.sin_family = AF_INET;
+  server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+  server_addr.sin_port = htons(port);
+
+  if(bind(srvfd, (struct sockaddr*)&server_addr, sizeof(server_addr)) != 0) {
+    perror("bind");
+    return -1;
+  }
+
+  if(listen(srvfd, 5) != 0) {
+    perror("listen");
+    return -1;
+  }
+
+  addr_len = sizeof(client_addr);
+  while(1) {
+    if((connfd=accept(srvfd, (struct sockaddr*)&client_addr, &addr_len)) < 0) {
+      perror("accept");
+      continue;
+    }
+
+    if((size=elfldr_read(connfd, &elf))) {
+      elfldr_exec(procname, elf, size);
+    }
+    close(connfd);
+  }
+  close(srvfd);
+
+  return 0;
 }

@@ -60,6 +60,54 @@ void pt_copyout(pid_t pid, intptr_t addr, void* buf, size_t len);
 
 
 /**
+ * Read 1 byte from a remote process.
+ **/
+char pt_getchar(pid_t pid, intptr_t addr);
+
+
+/**
+ * Write 1 byte to a remote process.
+ **/
+int pt_setchar(pid_t pid, intptr_t addr, char val);
+
+
+/**
+ * Read 2 bytes from a remote process.
+ **/
+short pt_getshort(pid_t pid, intptr_t addr);
+
+
+/**
+ * Write 2 bytes to a remote process.
+ **/
+int pt_setshort(pid_t pid, intptr_t addr, short val);
+
+
+/**
+ * Read 4 bytes from a remote process.
+ **/
+int pt_getint(pid_t pid, intptr_t addr);
+
+
+/**
+ * Write 4 bytes to a remote process.
+ **/
+int pt_setint(pid_t pid, intptr_t addr, int val);
+
+
+/**
+ * Read 8 byte from a remote process.
+ **/
+long pt_getlong(pid_t pid, intptr_t addr);
+
+
+/**
+ * Write 8 bytes to a remote process.
+ **/
+int pt_setlong(pid_t pid, intptr_t addr, long val);
+
+
+/**
  * Invoke a a function in a process with the given pid.
  **/
 uint64_t pt_call(pid_t pid, intptr_t addr, ...);
@@ -115,3 +163,23 @@ void pt_perror(pid_t pid, const char *s);
  * close a file descriptor in the process with the given pid.
  **/
 int pt_close(pid_t pid, int fd);
+
+
+/**
+ * Create a socket in the process with the given pid.
+ **/
+int pt_socket(pid_t pid, int domain, int type, int protocol);
+
+
+/**
+ * Set the options of a socket in the remote process with the given pid.
+ **/
+int pt_setsockopt(pid_t pid, int fd, int level, int optname, intptr_t optval,
+		  socklen_t optlen);
+
+
+/**
+ * Create a pipe in the process with the given pid.
+ **/
+int pt_pipe(pid_t pid, intptr_t pipefd);
+

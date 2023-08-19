@@ -19,4 +19,14 @@ along with this program; see the file COPYING. If not, see
 #include <stdint.h>
 
 
-intptr_t elfldr_load(pid_t pid, uint8_t *elf, size_t size);
+/**
+ * Launch a socket server on the given port that execute ELFs
+ * within inside process with the given name.
+ **/
+int elfldr_serve(const char* procname, uint16_t port);
+
+
+/**
+ * Execute an ELF inside the process with the given name.
+ **/
+int elfldr_exec(const char* procname, uint8_t *elf, size_t size);
