@@ -26,7 +26,7 @@ along with this program; see the file COPYING. If not, see
  * Set uid of the running process to 0x1337.
  **/
 int main(void) {
-  uint64_t ucred = kernel_get_ucred(getpid());
+  uint64_t ucred = kernel_get_proc_ucred(getpid());
   uint32_t uid = 0x1337;
   
   printf("[+] UID = 0x%x\n", getuid());

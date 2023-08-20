@@ -543,12 +543,24 @@ elfldr_args(pid_t pid) {
 
 int
 elfldr_exec(const char* procname, uint8_t *elf, size_t size) {
-  uint64_t caps1;
+  uint8_t caps[16];
+  uint8_t buf[16];
   struct reg r;
   pid_t pid;
 
   if((pid=kernel_getpid_byname(procname)) < 0) {
     printf("%s is not running\n", procname);
+    return -1;
+  }
+
+  if(kernel_get_ucred_caps(pid, caps)) {
+    perror("kernel_get_ucred_caps");
+    return -1;
+  }
+
+  memset(buf, 0xff, sizeof(buf));
+  if(kernel_set_ucred_caps(pid, buf)) {
+    perror("kernel_set_ucred_caps");
     return -1;
   }
   
@@ -563,9 +575,6 @@ elfldr_exec(const char* procname, uint8_t *elf, size_t size) {
     return -1;
   }
 
-  caps1 = kernel_get_ucred_caps1(pid);
-  kernel_set_ucred_caps1(pid, -1);
-  
   if(!(r.r_rdi=elfldr_args(pid))) {
     pt_detach(pid);
     return -1;
@@ -576,7 +585,7 @@ elfldr_exec(const char* procname, uint8_t *elf, size_t size) {
     return -1;
   }
 
-  kernel_set_ucred_caps1(pid, caps1);
+  kernel_set_ucred_caps(pid, caps);
 
   if(pt_setregs(pid, &r)) {
     perror("pt_setregs");
