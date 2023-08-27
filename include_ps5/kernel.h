@@ -27,6 +27,7 @@ extern const intptr_t KERNEL_ADDRESS_ROOTVNODE;
 extern const intptr_t KERNEL_ADDRESS_SECURITY_FLAGS;
 extern const intptr_t KERNEL_ADDRESS_UTOKEN_FLAGS;
 extern const intptr_t KERNEL_ADDRESS_QA_FLAGS;
+extern const intptr_t KERNEL_ADDRESS_TARGETID;
 
 // Proc field offsets
 extern const off_t KERNEL_OFFSET_PROC_P_UCRED;
