@@ -101,6 +101,7 @@ mdbg_memop(int memop, mdbg_memop_args_t *args) {
 int
 mdbg_copyout(pid_t pid, intptr_t addr, void *buf, size_t len) {
   mdbg_memop_args_t args = {pid, addr, (intptr_t)buf, len};
+
   return mdbg_memop(MDBG_MEMOP_READ, &args);
 }
 
@@ -108,5 +109,6 @@ mdbg_copyout(pid_t pid, intptr_t addr, void *buf, size_t len) {
 int
 mdbg_copyin(pid_t pid, const void* buf, intptr_t addr, size_t len) {
   mdbg_memop_args_t args = {pid, (intptr_t)buf, addr, len};
+
   return mdbg_memop(MDBG_MEMOP_WRITE, &args);
 }
