@@ -693,6 +693,7 @@ elfldr_serve(const char* procname, uint16_t port) {
 
     if((size=elfldr_read(connfd, &elf))) {
       elfldr_exec(procname, elf, size);
+      free(elf);
     }
     close(connfd);
   }
