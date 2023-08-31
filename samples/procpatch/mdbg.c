@@ -15,6 +15,7 @@ along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
 #include <stdint.h>
+#include <string.h>
 #include <unistd.h>
 
 #include <ps5/kernel.h>
@@ -79,6 +80,7 @@ mdbg_memop(int memop, mdbg_memop_args_t *args) {
   }
 
   do {
+    memset(&res, 0, sizeof(res));
     if((err=syscall(573, &cmd, args, &res)) == -1) {
       ui_perror("mdbg");
       break;
@@ -86,7 +88,7 @@ mdbg_memop(int memop, mdbg_memop_args_t *args) {
     args->src += res.len;
     args->dst += res.len;
     args->len -= res.len;
-  } while(res.status != 0);
+  } while(res.status != 0 && args->len && res.len);
 
   if(kernel_set_ucred_authid(pid, authid)) {
     return -1;
