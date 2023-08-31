@@ -615,7 +615,7 @@ elfldr_read(int connfd, uint8_t **data) {
   while((len=read(connfd, buf, sizeof(buf)))) {
     *data = realloc(*data, offset + len);
     if(*data == NULL) {
-      return -1;
+      return 0;
     }
 
     memcpy(*data + offset, buf, len);
