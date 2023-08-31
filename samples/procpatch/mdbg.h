@@ -23,10 +23,10 @@ along with this program; see the file COPYING. If not, see
 /**
  *
  **/
-int mdbg_copyout(pid_t pid, intptr_t addr, void *data, size_t len);
+int mdbg_copyout(pid_t pid, intptr_t addr, void *buf, size_t len);
 
 
 /**
  *
  **/
-int mdbg_copyin(pid_t pid, const void *data, intptr_t addr, size_t len);
+int mdbg_copyin(pid_t pid, const void *buf, intptr_t addr, size_t len);
