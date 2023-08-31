@@ -22,61 +22,88 @@ along with this program; see the file COPYING. If not, see
 #include "ui.h"
 
 
-#define TESTING_MODE 1
+#define TEST_RUN_ONCE 1
 
 
-static int
-watchdog_loop(void) {
-  struct ptrace_vm_entry ve;
-  pid_t parent = getppid();
+typedef struct app_info {
+  uint32_t app_id;
+  uint64_t unknown1;
+  uint32_t app_type;
+  char     title_id[10];
+  char     unknown2[0x3c];
+} app_info_t;
+
+
+int sceKernelGetAppInfo(pid_t pid, app_info_t *info);
+
+
+static pid_t
+await_child(pid_t parent) {
   pid_t child = 0;
 
-  if(pt_attach(parent)) {
+  if(pt_attach(parent) < 0) {
     return -1;
   }
 
-  if(pt_follow_fork(parent)) {
-    return pt_detach(parent);
+  if(pt_follow_fork(parent) < 0) {
+    pt_detach(parent);
+    return -1;
   }
 
-  if(pt_continue(parent)) {
-    return pt_detach(parent);
+  if(pt_continue(parent) < 0) {
+    pt_detach(parent);
+    return -1;
   }
 
-  while(1) {
-    if((child=pt_await_child(parent)) < 0) {
-      return pt_detach(parent);
-    }
-
-    // TODO: do something interesting
-#ifdef TESTING_MODE
-    memset(&ve, 0, sizeof(ve));
-    if(!pt_vm_entry(child, &ve)) {
-      ui_notify("pid %d vm entry 0 starts at: 0x%lx\n", child, ve.pve_start);
-      uint8_t buf[ve.pve_end-ve.pve_start];
-      memset(buf, 0, sizeof(buf));
-      mdbg_copyout(child, ve.pve_start, buf, sizeof(buf));
-    }
-#endif
-
-    if(pt_detach(child)) {
-      return pt_detach(parent);
-    }
-
-#ifdef TESTING_MODE
-    break;
-#endif
+  if((child=pt_await_child(parent)) < 0) {
+    pt_detach(parent);
+    return -1;
   }
 
-  pt_detach(parent);
+  if(pt_detach(child) < 0) {
+    pt_detach(parent);
+    return -1;
+  }
 
-  return 0;
+  if(pt_detach(parent) < 0) {
+    return -1;
+  }
+
+  return child;
 }
 
 
 static void*
 watchdog_thread(void *args) {
-  watchdog_loop();
+  pid_t parent = getppid();
+  app_info_t info;
+  pid_t child;
+
+  ui_notify("procpatch sample started");
+  while(1) {
+    if((child=await_child(parent)) < 0) {
+      break;
+    }
+
+    memset(&info, 0, sizeof(info));
+    if(!sceKernelGetAppInfo(child, &info)) {
+      ui_notify("New application launch\n"
+		"----------------------\n"
+		"title_id = %s\n"
+		"app_id = 0x%x\n"
+		"app_type = 0x%x\n"
+		"pid = %d\n",
+		info.title_id, info.app_id, info.app_type, child);
+      //TODO: do something useful
+    } else {
+      ui_perror("sceKernelGetAppInfo");
+    }
+
+#ifdef TEST_RUN_ONCE
+    break;
+#endif
+  }
+
   return NULL;
 }
 
@@ -84,5 +111,8 @@ watchdog_thread(void *args) {
 int
 main() {
   pthread_t trd;
-  return pthread_create(&trd, NULL, &watchdog_thread, NULL);
+
+  pthread_create(&trd, NULL, &watchdog_thread, NULL);
+
+  return 0;
 }
