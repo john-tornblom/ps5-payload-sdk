@@ -18,6 +18,7 @@ along with this program; see the file COPYING. If not, see
 #include <string.h>
 
 #include "mdbg.h"
+#include "patch.h"
 #include "pt.h"
 #include "ui.h"
 
@@ -85,18 +86,19 @@ watchdog_thread(void *args) {
       break;
     }
 
+    if(pt_attach(child) < 0) {
+      break;
+    }
+
     memset(&info, 0, sizeof(info));
     if(!sceKernelGetAppInfo(child, &info)) {
-      ui_notify("New application launch\n"
-		"----------------------\n"
-		"title_id = %s\n"
-		"app_id = 0x%x\n"
-		"app_type = 0x%x\n"
-		"pid = %d\n",
-		info.title_id, info.app_id, info.app_type, child);
-      //TODO: do something useful
+      patch_app(child, info.app_id, info.app_type, info.title_id);
     } else {
       ui_perror("sceKernelGetAppInfo");
+    }
+
+    if(pt_detach(child) < 0) {
+      break;
     }
 
 #ifdef TEST_RUN_ONCE

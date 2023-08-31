@@ -18,6 +18,8 @@ along with this program; see the file COPYING. If not, see
 #include <stdio.h>
 #include <string.h>
 
+#include "ui.h"
+
 
 typedef struct notify_request {
   char useless[45];

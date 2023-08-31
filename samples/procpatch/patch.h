@@ -16,41 +16,13 @@ along with this program; see the file COPYING. If not, see
 
 #pragma once
 
+#include <stdint.h>
 #include <unistd.h>
-#include <sys/ptrace.h>
 
 
 /**
  *
  **/
-int pt_attach(pid_t pid);
+int patch_app(pid_t pid, uint32_t app_id, uint32_t app_type,
+	      const char* title_id);
 
-
-/**
- *
- **/
-int pt_detach(pid_t pid);
-
-
-/**
- *
- **/
-int pt_continue(pid_t pid);
-
-
-/**
- *
- **/
-int pt_follow_fork(pid_t pid);
-
-
-/**
- *
- **/
-pid_t pt_await_child(pid_t pid);
-
-
-/**
- *
- **/
-int pt_vm_entry(pid_t pid, struct ptrace_vm_entry *ve);

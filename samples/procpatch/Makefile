@@ -34,7 +34,7 @@ all: $(ELF)
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
-$(ELF): ui.o pt.o mdbg.o main.o
+$(ELF): ui.o pt.o mdbg.o patch.o main.o
 	$(LD) $^ $(LDADD) -o $@
 
 clean:
