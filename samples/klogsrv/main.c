@@ -35,6 +35,7 @@ typedef struct notify_request {
 
 
 int sceKernelSendNotificationRequest(int, notify_request_t*, size_t, int);
+int sceKernelSetProcessName(const char*);
 
 
 static void
@@ -203,5 +204,6 @@ serve_file(const char *path, uint16_t port) {
 
 int
 main() {
+  sceKernelSetProcessName("klogsrv.elf");
   return serve_file("/dev/klog", 3232);
 }
