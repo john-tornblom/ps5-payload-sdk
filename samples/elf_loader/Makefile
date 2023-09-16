@@ -19,7 +19,7 @@ ifndef PS5_PAYLOAD_SDK
 endif
 
 PS5_HOST ?= ps5
-PS5_PORT ?= 9020
+PS5_PORT ?= 9021
 
 CC := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-cc
 LD := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-payload-ld

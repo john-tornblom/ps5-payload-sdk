@@ -201,18 +201,7 @@ serve_file(const char *path, uint16_t port) {
 }
 
 
-static void*
-klog_serve(void *args) {
-  uint16_t port = (uint16_t)(long)args;
-  serve_file("/dev/klog", port);
-  return 0;
-}
-
-
 int
 main() {
-  uint16_t port = 3232;
-  pthread_t trd;
-
-  return pthread_create(&trd, NULL, klog_serve, (void*)(long)port);
+  return serve_file("/dev/klog", 3232);
 }

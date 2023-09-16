@@ -15,6 +15,7 @@ along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
 #include "payload.h"
+#include "syscall.h"
 
 
 /**
@@ -34,6 +35,18 @@ extern unsigned char __bss_end[] __attribute__((weak));
  * Entry point to the main program.
  **/
 extern int main(int argc, char* argv[], char *envp[]);
+
+
+static int
+fork(void) {
+  return syscall(2);
+}
+
+
+static void
+_exit(int exit_code) {
+  syscall(1, exit_code);
+}
 
 
 /**
@@ -56,9 +69,8 @@ _start(payload_args_t *args) {
     __init_array_start[i](args);
   }
 
-  // run payload if module constructors ran without error
-  if(!*args->payloadout) {
-    *args->payloadout = main(0, 0, 0);
+  if(fork() == 0) {
+    _exit(main(0, 0, 0));
   }
 
   // run module destructors

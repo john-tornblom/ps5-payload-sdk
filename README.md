@@ -1,6 +1,6 @@
 # PS5 Payload SDK
 This is an SDK for developing ELF payloads targeted at exploited PS5s running
-the [BD-J ELF loader][bjd-elf]. Several artifacts in this repository originate
+[ps5-payload-elfldr][elfldr]. Several artifacts in this repository originate
 from the [PS5SDK][PS5SDK] project.
 
 ## Prerequisites
@@ -24,7 +24,7 @@ john@localhost:ps5-payload-sdk$ make DESTDIR=/opt/ps5-payload-sdk install
 ```console
 john@localhost:ps5-payload-sdk$ export PS5_PAYLOAD_SDK=/opt/ps5-payload-sdk
 john@localhost:ps5-payload-sdk$ make -C samples/hello_world
-john@localhost:ps5-payload-sdk$ export PS5_HOST=ps5; export PS5_PORT=9020
+john@localhost:ps5-payload-sdk$ export PS5_HOST=ps5; export PS5_PORT=9021
 john@localhost:ps5-payload-sdk$ make -C samples/hello_world test
 ```
 
@@ -50,5 +50,5 @@ Unless otherwhise explicitly stated inside a file, the rest are licensed under
 the GPLv2.
 
 [issues]: https://github.com/john-tornblom/ps5-payload-sdk/issues/new
-[bjd-elf]: https://github.com/john-tornblom/bdj-sdk/tree/master/samples/ps5-payload-loader
+[elfldr]: https://github.com/john-tornblom/ps5-payload-elfldr
 [PS5SDK]: https://github.com/PS5Dev/PS5SDK

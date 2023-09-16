@@ -19,7 +19,7 @@ ifndef PS5_PAYLOAD_SDK
 endif
 
 PS5_HOST ?= ps5
-PS5_PORT ?= 9020
+PS5_PORT ?= 9021
 
 ELF := pipe_pirate.elf
 
