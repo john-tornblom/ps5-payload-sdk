@@ -61,6 +61,7 @@ serve_file_while_connected(const char *path, int server_fd) {
   fd_set temp_set;
   int client_fd;
   int file_fd;
+  int err = 0;
   char ch;
 
   if((file_fd=open(path, O_RDONLY)) < 0) {
@@ -93,7 +94,8 @@ serve_file_while_connected(const char *path, int server_fd) {
     if(FD_ISSET(server_fd, &temp_set)) {
       if((client_fd=accept(server_fd, NULL, NULL)) < 0) {
 	perror("accept");
-	continue;
+	err = -1;
+	break;
       }
       FD_SET(client_fd, &output_set);
       nb_connections++;
@@ -102,8 +104,9 @@ serve_file_while_connected(const char *path, int server_fd) {
     // new data from file
     if(FD_ISSET(file_fd, &temp_set)) {
       if(read(file_fd, &ch, 1) != 1) {
-	close(file_fd);
-	return -1;
+	perror("read");
+	err = -1;
+	break;
       }
 
       for(client_fd=0; client_fd<FD_SETSIZE; client_fd++) {
@@ -118,9 +121,15 @@ serve_file_while_connected(const char *path, int server_fd) {
     }
   } while(nb_connections > 0);
 
+  for(client_fd=0; client_fd<FD_SETSIZE; client_fd++) {
+    if(FD_ISSET(client_fd, &output_set)) {
+      FD_CLR(client_fd, &output_set);
+      close(client_fd);
+    }
+  }
   close(file_fd);
 
-  return 0;
+  return err;
 }
 
 
@@ -129,6 +138,7 @@ serve_file(const char *path, uint16_t port) {
   char ip[INET_ADDRSTRLEN];
   struct ifaddrs *ifaddr;
   struct sockaddr_in sin;
+  int ifaddr_wait = 1;
   fd_set set;
   int sockfd;
   int flags;
@@ -148,12 +158,22 @@ serve_file(const char *path, uint16_t port) {
       continue;
     }
 
+    // skip localhost
+    if(!strncmp("lo", ifa->ifa_name, 2)) {
+      continue;
+    }
+
     struct sockaddr_in *in = (struct sockaddr_in*)ifa->ifa_addr;
     inet_ntop(AF_INET, &(in->sin_addr), ip, sizeof(ip));
     notify("Serving /dev/klog on %s:%d (%s)", ip, port, ifa->ifa_name);
+    ifaddr_wait = 0;
   }
 
   freeifaddrs(ifaddr);
+
+  if(ifaddr_wait) {
+    return 0;
+  }
 
   if((sockfd=socket(AF_INET, SOCK_STREAM, 0)) < 0) {
     perror("socket");
@@ -205,5 +225,10 @@ serve_file(const char *path, uint16_t port) {
 int
 main() {
   sceKernelSetProcessName("klogsrv.elf");
-  return serve_file("/dev/klog", 3232);
+  while(1) {
+    serve_file("/dev/klog", 3232);
+    sleep(1);
+  }
+
+  return 0;
 }
