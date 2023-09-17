@@ -37,9 +37,28 @@ extern unsigned char __bss_end[] __attribute__((weak));
 extern int main(int argc, char* argv[], char *envp[]);
 
 
+
 static int
 fork(void) {
-  return syscall(2);
+  return (int)syscall(2);
+}
+
+
+static int
+set_procname(const char *s) {
+  return (int)syscall(0x1d0, -1, s);
+}
+
+
+static int
+getdtablesize(void) {
+  return (int)syscall(89);
+}
+
+
+static int
+close(int fd) {
+  return (int)syscall(6, fd);
 }
 
 
@@ -70,6 +89,15 @@ _start(payload_args_t *args) {
   }
 
   if(fork() == 0) {
+    set_procname("homebrew.elf"); //set proc name
+
+    // close open file descriptors inherited from parent
+    for(int i=3; i<getdtablesize(); i++) {
+      if(i != args->rwpair[0] && i != args->rwpair[1] &&
+	 i != args->rwpipe[0] && i != args->rwpipe[1]) {
+	close(i);
+      }
+    }
     _exit(main(0, 0, 0));
   }
 
