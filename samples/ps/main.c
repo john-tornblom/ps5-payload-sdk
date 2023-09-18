@@ -20,32 +20,47 @@ along with this program; see the file COPYING. If not, see
 #include <sys/user.h>
 #include <sys/sysctl.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include <ps5/kernel.h>
-
-#ifndef PID_MAX
-#define PID_MAX 99999
-#endif
 
 
 int
 main() {
-  int i, mib[4] = {1, 14, 1, 0};
-  size_t len;
-  char buf[10000];
+  int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PROC, 0};
+  size_t buf_size;
+  void *buf;
 
-  printf("     PID      PPID     PGID      SID      UID           AuthId          Emul  Command\n");
-  for(i=0; i<=PID_MAX; i++) {
-    len = sizeof(buf);
-    mib[3] = i;
-    if(sysctl(mib, 4, buf, &len, NULL, 0) != -1) {
-      struct kinfo_proc *kp = (struct kinfo_proc*)buf;
-      printf("%8u  %8u %8u %8u %8u %016lx   %11s  %s\n",
-	     kp->ki_pid, kp->ki_ppid, kp->ki_pgid, kp->ki_sid,
-	     kp->ki_uid, kernel_get_ucred_authid(kp->ki_pid),
-	     kp->ki_emul, kp->ki_comm);
-    }
+  // determine size of query response
+  if(sysctl(mib, 4, NULL, &buf_size, NULL, 0)) {
+    perror("sysctl");
+    return -1;
   }
+
+  // allocate memory for query response
+  if(!(buf=malloc(buf_size))) {
+    perror("malloc");
+    return -1;
+  }
+
+  // query the kernel for proc info
+  if(sysctl(mib, 4, buf, &buf_size, NULL, 0)) {
+    perror("sysctl");
+    return -1;
+  }
+
+  printf("     PID      PPID     PGID      SID      UID           AuthId     "
+	 "     Emul  Status  Command\n");
+  for(void *ptr=buf; ptr<(buf+buf_size);) {
+    struct kinfo_proc *ki = (struct kinfo_proc*)ptr;
+    ptr += ki->ki_structsize;
+    printf("%8u  %8u %8u %8u %8u %016lx   %11s      S%d  %s\n",
+	   ki->ki_pid, ki->ki_ppid, ki->ki_pgid, ki->ki_sid,
+	   ki->ki_uid, kernel_get_ucred_authid(ki->ki_pid),
+	   ki->ki_emul, ki->ki_stat, ki->ki_comm);
+  }
+
+  free(buf);
 
   return 0;
 }
