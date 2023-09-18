@@ -165,6 +165,12 @@ serve_file(const char *path, uint16_t port) {
 
     struct sockaddr_in *in = (struct sockaddr_in*)ifa->ifa_addr;
     inet_ntop(AF_INET, &(in->sin_addr), ip, sizeof(ip));
+
+    // skip interfaces without an ip
+    if(!strncmp("0.", ip, 2)) {
+      continue;
+    }
+
     notify("Serving /dev/klog on %s:%d (%s)", ip, port, ifa->ifa_name);
     ifaddr_wait = 0;
   }
