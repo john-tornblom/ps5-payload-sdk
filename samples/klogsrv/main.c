@@ -25,6 +25,7 @@ along with this program; see the file COPYING. If not, see
 #include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
+#include <sys/syscall.h>
 #include <unistd.h>
 
 
@@ -49,6 +50,7 @@ notify(const char *fmt, ...) {
   va_end(args);
 
   sceKernelSendNotificationRequest(0, &req, sizeof req, 0);
+  printf("[klogsrv.elf] %s\n", req.message);
 }
 
 
@@ -65,7 +67,7 @@ serve_file_while_connected(const char *path, int server_fd) {
   char ch;
 
   if((file_fd=open(path, O_RDONLY)) < 0) {
-    perror("open");
+    perror("[klogsrv.elf] open");
     return -1;
   }
 
@@ -85,7 +87,7 @@ serve_file_while_connected(const char *path, int server_fd) {
     case 0:
       continue;
     case -1:
-      perror("select");
+      perror("[klogsrv.elf] select");
       close(file_fd);
       return -1;
     }
@@ -93,7 +95,7 @@ serve_file_while_connected(const char *path, int server_fd) {
     // new connection
     if(FD_ISSET(server_fd, &temp_set)) {
       if((client_fd=accept(server_fd, NULL, NULL)) < 0) {
-	perror("accept");
+	perror("[klogsrv.elf] accept");
 	err = -1;
 	break;
       }
@@ -104,7 +106,7 @@ serve_file_while_connected(const char *path, int server_fd) {
     // new data from file
     if(FD_ISSET(file_fd, &temp_set)) {
       if(read(file_fd, &ch, 1) != 1) {
-	perror("read");
+	perror("[klogsrv.elf] read");
 	err = -1;
 	break;
       }
@@ -144,7 +146,7 @@ serve_file(const char *path, uint16_t port) {
   int flags;
 
   if(getifaddrs(&ifaddr) == -1) {
-    perror("getifaddrs");
+    perror("[klogsrv.elf] getifaddrs");
     return -1;
   }
 
@@ -182,12 +184,12 @@ serve_file(const char *path, uint16_t port) {
   }
 
   if((sockfd=socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-    perror("socket");
+    perror("[klogsrv.elf] socket");
     return -1;
   }
 
   if(setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &(int){1}, sizeof(int)) < 0) {
-    perror("setsockopt");
+    perror("[klogsrv.elf] setsockopt");
     return -1;
   }
 
@@ -197,12 +199,12 @@ serve_file(const char *path, uint16_t port) {
   sin.sin_port = htons(port);
 
   if(bind(sockfd, (struct sockaddr*)&sin, sizeof(sin)) < 0) {
-    perror("bind");
+    perror("[klogsrv.elf] bind");
     return -1;
   }
 
   if(listen(sockfd, 5) < 0) {
-    perror("listen");
+    perror("[klogsrv.elf] listen");
     return -1;
   }
 
@@ -211,7 +213,7 @@ serve_file(const char *path, uint16_t port) {
     FD_ZERO(&set);
     FD_SET(sockfd, &set);
     if(select(sockfd+1, &set, NULL, NULL, NULL) < 0) {
-      perror("select");
+      perror("[klogsrv.elf] select");
       return -1;
     }
 
@@ -230,11 +232,19 @@ serve_file(const char *path, uint16_t port) {
 
 int
 main() {
+  if(syscall(SYS_rfork, RFPROC | RFNOWAIT | RFCFDG)) {
+    return 0;
+  }
+  open("/dev/null", O_RDONLY);    // stdin
+  open("/dev/console", O_WRONLY); // stdout
+  open("/dev/console", O_WRONLY); // stderr
+
   sceKernelSetProcessName("klogsrv.elf");
   while(1) {
     serve_file("/dev/klog", 3232);
     sleep(1);
   }
+  _exit(0);
 
   return 0;
 }
