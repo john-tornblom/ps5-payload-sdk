@@ -88,18 +88,7 @@ _start(payload_args_t *args) {
     __init_array_start[i](args);
   }
 
-  if(fork() == 0) {
-    set_procname("homebrew.elf"); //set proc name
-
-    // close open file descriptors inherited from parent
-    for(int i=3; i<getdtablesize(); i++) {
-      if(i != args->rwpair[0] && i != args->rwpair[1] &&
-	 i != args->rwpipe[0] && i != args->rwpipe[1]) {
-	close(i);
-      }
-    }
-    _exit(main(0, 0, 0));
-  }
+  *args->payloadout = main(0, 0, 0);
 
   // run module destructors
   count = __fini_array_end - __fini_array_start;
