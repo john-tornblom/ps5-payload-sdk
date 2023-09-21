@@ -37,34 +37,20 @@ extern unsigned char __bss_end[] __attribute__((weak));
 extern int main(int argc, char* argv[], char *envp[]);
 
 
-
-static int
-fork(void) {
-  return (int)syscall(2);
-}
-
-
-static int
-set_procname(const char *s) {
-  return (int)syscall(0x1d0, -1, s);
-}
-
-
-static int
-getdtablesize(void) {
-  return (int)syscall(89);
-}
-
-
-static int
-close(int fd) {
-  return (int)syscall(6, fd);
-}
-
-
+/**
+ * For error reporting to /dev/klog and /dev/stdout
+ **/
+static char* (*strerror)(int) = 0;
+static void  (*printf)(const char*, ...) = 0;
 static void
-_exit(int exit_code) {
-  syscall(1, exit_code);
+kerror(const char *s, int error) {
+  printf("%s: %s\n", s, strerror(error));
+
+  syscall(0x259, 7, "<118>[homebrew] ", 0);
+  syscall(0x259, 7, s, 0);
+  syscall(0x259, 7, ": ", 0);
+  syscall(0x259, 7, strerror(error), 0);
+  syscall(0x259, 7, "\n", 0);
 }
 
 
@@ -75,20 +61,31 @@ void
 _start(payload_args_t *args) {
   unsigned long count;
 
-  *args->payloadout = 0;
-
-  // clear bss
   for(unsigned char* bss=__bss_start; bss<__bss_end; bss++) {
     *bss = 0;
+  }
+
+  if((*args->payloadout=args->sceKernelDlsym(0x2, "strerror", &strerror))) {
+    return;
+  }
+
+  if((*args->payloadout=args->sceKernelDlsym(0x2, "printf", &printf))) {
+    return;
   }
 
   // run module constructors
   count = __init_array_end - __init_array_start;
   for(int i=0; i<count; i++) {
     __init_array_start[i](args);
+    if(*args->payloadout) {
+      kerror("Unable to initialize payload", *args->payloadout);
+      break;
+    }
   }
 
-  *args->payloadout = main(0, 0, 0);
+  if(!*args->payloadout) {
+    *args->payloadout = main(0, 0, 0);
+  }
 
   // run module destructors
   count = __fini_array_end - __fini_array_start;
