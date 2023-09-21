@@ -13,14 +13,14 @@ asm(".intel_syntax noprefix\n"
     "sceRandomGetRandomNumber:\n"
     "jmp qword ptr [rip + __ptr_sceRandomGetRandomNumber]\n");
 
-static unsigned short __handle = 0x2001;
-static void __attribute__((constructor(102)))
+static unsigned short __handle = 0;
+static void __attribute__((constructor(103)))
 __constructor(void) {
-  sprx_dlopen("libSceRandom", &__handle);
-  sprx_dlsym(__handle, "sceRandomGetRandomNumber", &__ptr_sceRandomGetRandomNumber);
+  if(sprx_dlopen("libSceRandom", &__handle)) return;
+  if(sprx_dlsym(__handle, "sceRandomGetRandomNumber", &__ptr_sceRandomGetRandomNumber)) return;
 }
 
-static void __attribute__((destructor(102)))
+static void __attribute__((destructor(103)))
 __destructor(void) {
   sprx_dlclose(__handle);
 }
