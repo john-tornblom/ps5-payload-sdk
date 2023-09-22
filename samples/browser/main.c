@@ -14,16 +14,30 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 #ifndef PS5_URL
 #define PS5_URL "http://192.168.1.1"
 #endif
+
 
 int sceUserServiceInitialize(void*);
 int sceSystemServiceLaunchWebBrowser(const char *uri, void*);
 
 
-int main() {
-  sceUserServiceInitialize(0);
-  sceSystemServiceLaunchWebBrowser(PS5_URL, 0);
-  return 0;
+int
+main() {
+  if(sceUserServiceInitialize(0)) {
+    perror("sceUserServiceInitialize");
+    //return EXIT_FAILURE;
+  }
+
+  if(sceSystemServiceLaunchWebBrowser(PS5_URL, 0)) {
+    perror("sceSystemServiceLaunchWebBrowser");
+    return EXIT_FAILURE;
+  }
+
+  return EXIT_SUCCESS;
 }
