@@ -25,6 +25,18 @@ along with this program; see the file COPYING. If not, see
 #include <ps5/kernel.h>
 
 
+typedef struct app_info {
+  uint32_t app_id;
+  uint64_t unknown1;
+  uint32_t app_type;
+  char     title_id[10];
+  char     unknown2[0x3c];
+} app_info_t;
+
+
+int sceKernelGetAppInfo(pid_t pid, app_info_t *info);
+
+
 static char *state_abbrev[] = {
   "", "START", "RUN\0\0\0", "SLEEP", "STOP", "ZOMB", "WAIT", "LOCK"
 };
@@ -33,6 +45,7 @@ static char *state_abbrev[] = {
 int
 main() {
   int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PROC, 0};
+  app_info_t appinfo;
   size_t buf_size;
   void *buf;
 
@@ -55,14 +68,21 @@ main() {
   }
 
   printf("     PID      PPID     PGID      SID      UID           AuthId     "
-	 "     Emul  State  Command\n");
+	 "     Emul  State  AppId  TitleId  Command\n");
   for(void *ptr=buf; ptr<(buf+buf_size);) {
     struct kinfo_proc *ki = (struct kinfo_proc*)ptr;
     ptr += ki->ki_structsize;
-    printf("%8u  %8u %8u %8u %8u %016lx   %11s  %5s  %s\n",
+
+    if(sceKernelGetAppInfo(ki->ki_pid, &appinfo)) {
+      perror("sceKernelGetAppInfo");
+      continue;
+    }
+
+    printf("%8u  %8u %8u %8u %8u %016lx   %11s   %5s  %04x    %5s  %s\n",
 	   ki->ki_pid, ki->ki_ppid, ki->ki_pgid, ki->ki_sid,
 	   ki->ki_uid, kernel_get_ucred_authid(ki->ki_pid),
-	   ki->ki_emul, state_abbrev[ki->ki_stat], ki->ki_comm);
+	   ki->ki_emul, state_abbrev[ki->ki_stat], appinfo.app_id,
+	   appinfo.title_id, ki->ki_comm);
   }
 
   free(buf);
