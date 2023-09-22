@@ -52,6 +52,12 @@ libkernel_web.c:
 libSceLibcInternal.c:
 	$(PYTHON) trampgen.py --library-index C libSceLibcInternal.sprx > $@
 
+libSceSystemService.c:
+	$(PYTHON) trampgen.py --library-index W libSceSystemService.sprx > $@
+
+libSceUserService.c:
+	$(PYTHON) trampgen.py --library-index D libSceUserService.sprx > $@
+
 %.c: %.sprx
 	$(PYTHON) trampgen.py $*.sprx > $@
 
