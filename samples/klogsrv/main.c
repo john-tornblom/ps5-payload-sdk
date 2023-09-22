@@ -232,6 +232,8 @@ serve_file(const char *path, uint16_t port) {
 
 int
 main() {
+  uint16_t port = 3232;
+
   if(syscall(SYS_rfork, RFPROC | RFNOWAIT | RFCFDG)) {
     return 0;
   }
@@ -241,10 +243,10 @@ main() {
 
   sceKernelSetProcessName("klogsrv.elf");
   while(1) {
-    serve_file("/dev/klog", 3232);
+    serve_file("/dev/klog", port);
     sleep(1);
   }
-  _exit(0);
+  _exit(EXIT_SUCCESS);
 
   return 0;
 }
