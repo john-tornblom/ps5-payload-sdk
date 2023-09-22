@@ -115,6 +115,7 @@ def symbols(sym_type, filename, library_index):
 
                 nid, lid, mid = sym.name.split('#')
                 if lid != library_index:
+                    logger.debug(f'skipping unknown LID {lid}')
                     continue
 
                 if not nid in nid_map:
@@ -134,6 +135,7 @@ if __name__ == '__main__':
 
     if not cli_args.library_index:
         cli_args.library_index = guess_library_index(cli_args.SPRX_FILE)
+        logger.warning(f'assuming LID {cli_args.library_index}')
 
     libname = Path(cli_args.SPRX_FILE).stem
     filename = cli_args.SPRX_FILE
