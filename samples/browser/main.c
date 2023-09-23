@@ -24,16 +24,27 @@ along with this program; see the file COPYING. If not, see
 
 
 int sceUserServiceInitialize(void*);
+int sceUserServiceTerminate(void);
+
 int sceSystemServiceLaunchWebBrowser(const char *uri, void*);
 
 
-int
-main() {
+/**
+ * init UserService
+ **/
+__attribute__((constructor)) static void
+constructor(void) {
   if(sceUserServiceInitialize(0)) {
     perror("sceUserServiceInitialize");
-    //return EXIT_FAILURE;
   }
+}
 
+
+/**
+ * launch browser
+ **/
+int
+main() {
   if(sceSystemServiceLaunchWebBrowser(PS5_URL, 0)) {
     perror("sceSystemServiceLaunchWebBrowser");
     return EXIT_FAILURE;
@@ -41,3 +52,13 @@ main() {
 
   return EXIT_SUCCESS;
 }
+
+
+/**
+ * terminate UserService
+ **/
+__attribute__((destructor)) static void
+destructor(void) {
+  sceUserServiceTerminate();
+}
+
