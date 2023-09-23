@@ -57,6 +57,8 @@ intptr_t kernel_get_proc(pid_t pid);
 intptr_t kernel_get_proc_ucred(pid_t pid);
 intptr_t kernel_get_proc_filedesc(pid_t pid);
 
+intptr_t kernel_dynlib_resolve(pid_t pid, uint32_t handle, const char *nid);
+
 uint64_t kernel_get_ucred_authid(pid_t pid);
 int32_t  kernel_set_ucred_authid(pid_t pid, uint64_t authid);
 

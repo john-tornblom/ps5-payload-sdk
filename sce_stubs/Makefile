@@ -40,24 +40,6 @@ stubs: nid_db.xml $(STUBS)
 nid_db.xml:
 	wget -O $@ $(NID_DB_URL)
 
-libkernel.c:
-	$(PYTHON) trampgen.py --library-index I libkernel.sprx > $@
-
-libkernel_sys.c:
-	$(PYTHON) trampgen.py --library-index I libkernel_sys.sprx > $@
-
-libkernel_web.c:
-	$(PYTHON) trampgen.py --library-index I libkernel_web.sprx > $@
-
-libSceLibcInternal.c:
-	$(PYTHON) trampgen.py --library-index C libSceLibcInternal.sprx > $@
-
-libSceSystemService.c:
-	$(PYTHON) trampgen.py --library-index W libSceSystemService.sprx > $@
-
-libSceUserService.c:
-	$(PYTHON) trampgen.py --library-index D libSceUserService.sprx > $@
-
 %.c: %.sprx
 	$(PYTHON) trampgen.py $*.sprx > $@
 

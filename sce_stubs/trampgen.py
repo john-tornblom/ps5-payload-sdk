@@ -45,7 +45,7 @@ tmpl_head = string.Template('''/*
 
 # Dependencies template
 tmpl_deps = string.Template('''
-int sprx_dlsym(unsigned int handle, const char *symname, void *addr);
+int sprx_dlsym(unsigned int handle, const char *nid, void *addr);
 int sprx_dlopen(const char* libname, unsigned short *handle);
 int sprx_dlclose(unsigned short handle);''')
 
@@ -60,38 +60,7 @@ asm(".intel_syntax noprefix\\n"
     "jmp qword ptr [rip + __ptr_$name]\\n");''')
 
 
-def guess_library_index(filename):
-    '''
-    Assume the library index with the most number of symbols is the one
-    exported.
-    '''
-    with open(filename, 'rb') as f:
-        elf = ELFFile(f)
-        cntmap = dict()
-
-        for segment in elf.iter_segments():
-            if segment.header.p_type != 'PT_DYNAMIC':
-                continue
-
-            for sym in segment.iter_symbols():
-                if sym.entry['st_shndx'] == 'SHN_UNDEF':
-                    continue
-
-                if not sym.name:
-                    continue
-
-                try:
-                    nid, lid, mid = sym.name.split('#')
-                    cnt = cntmap.get(lid, 0)
-                    cntmap[lid] = cnt + 1
-                except:
-                    pass
-
-        if cntmap:
-            return max(cntmap, key=cntmap.get)
-
-
-def symbols(sym_type, filename, library_index):
+def symbols(sym_type, filename):
     '''
     yield symbol names in PT_DYNAMIC segments using the NID lookup table
     'nid_db.xml'.
@@ -114,35 +83,25 @@ def symbols(sym_type, filename, library_index):
                     continue
 
                 nid, lid, mid = sym.name.split('#')
-                if lid != library_index:
-                    logger.debug(f'skipping unknown LID {lid}')
-                    continue
-
                 if not nid in nid_map:
                     logger.warning(f'skipping unknown NID {nid}')
                     continue
 
-                yield nid_map[nid]
+                yield nid_map[nid], nid
 
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--library-index', metavar='INDEX')
     parser.add_argument('SPRX_FILE')
     cli_args = parser.parse_args()
 
-    if not cli_args.library_index:
-        cli_args.library_index = guess_library_index(cli_args.SPRX_FILE)
-        logger.warning(f'assuming LID {cli_args.library_index}')
-
     libname = Path(cli_args.SPRX_FILE).stem
     filename = cli_args.SPRX_FILE
-    libindex = cli_args.library_index
-
-    funcs = sorted(set(symbols('STT_FUNC', filename, libindex)))
-    gvars = sorted(set(symbols('STT_OBJECT', filename, libindex)))
+    
+    funcs = sorted(set(symbols('STT_FUNC', filename)))
+    gvars = sorted(set(symbols('STT_OBJECT', filename)))
 
     if not funcs: # and not gvars:
         sys.exit(0)
@@ -150,12 +109,12 @@ if __name__ == '__main__':
     print(tmpl_head.substitute())
     print(tmpl_deps.substitute())
 
-    for symname in funcs:
-            print(tmpl_func.substitute(name=symname))
+    for name, nid in funcs:
+            print(tmpl_func.substitute(name=name))
 
     print('')
     print('static unsigned short __handle = 0;')
-    print('static void __attribute__((constructor(103)))')
+    print('static void __attribute__((constructor(104)))')
     print('__constructor(void) {')
     if libname in ('libkernel', 'libkernel_sys', 'libkernel_web'):
         print('  __handle = 0x2001;')
@@ -163,13 +122,13 @@ if __name__ == '__main__':
         print('  __handle = 0x2;')
     else:
         print(f'  if(sprx_dlopen("{libname}", &__handle)) return;')
-    for symname in funcs:
-        print(f'  if(sprx_dlsym(__handle, "{symname}", &__ptr_{symname})) return;')
+    for name, nid in funcs:
+        print(f'  if(sprx_dlsym(__handle, "{nid}", &__ptr_{name})) return;')
     print('}')
 
     if not libname in ('libkernel', 'libkernel_sys', 'libkernel_web', 'libSceLibcInternal'):
         print('')
-        print('static void __attribute__((destructor(103)))')
+        print('static void __attribute__((destructor(104)))')
         print('__destructor(void) {')
         print(f'  sprx_dlclose(__handle);')
         print('}')

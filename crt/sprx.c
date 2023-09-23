@@ -29,6 +29,14 @@ static int (*sceKernelLoadStartModule)(const char*, unsigned long,
 static const char* (*sceKernelGetFsSandboxRandomWord)(void) = 0;
 static int (*snprintf)(char *, unsigned long, const char *, ...) = 0;
 static int (*access)(const char*, int) = 0;
+static int (*getpid)(void) = 0;
+
+
+/**
+ * See include_ps5/kernel.h
+ **/
+unsigned long kernel_dynlib_resolve(unsigned int pid, unsigned int handle,
+				    const char *nid);
 
 
 /**
@@ -38,9 +46,15 @@ static int *sprx_error = 0;
 
 
 /**
+ * process id used to resolve symbols.
+ **/
+static unsigned int pid = -1;
+
+
+/**
  *
  **/
-__attribute__((constructor(102))) static void
+__attribute__((constructor(103))) static void
 sprx_constructor(const payload_args_t *args) {
   int error;
 
@@ -62,6 +76,10 @@ sprx_constructor(const payload_args_t *args) {
     *sprx_error = error;
     return;
   }
+  if((error=sceKernelDlsym(0x2001, "getpid", &getpid))) {
+    *sprx_error = error;
+    return;
+  }
   if((error=sceKernelDlsym(0x2001, "access", &access))) {
     *sprx_error = error;
     return;
@@ -70,6 +88,8 @@ sprx_constructor(const payload_args_t *args) {
     *sprx_error = error;
     return;
   }
+
+  pid = getpid();
 }
 
 
@@ -77,12 +97,16 @@ sprx_constructor(const payload_args_t *args) {
  * Resolve the address of symbol from a module.
  **/
 int
-sprx_dlsym(unsigned short handle, const char *symname, void *addr) {
-  int error;
+sprx_dlsym(unsigned short handle, const char *nid, void **ptr) {
+  unsigned long addr;
+  int error = -1;
 
-  if((error=sceKernelDlsym(handle, symname, addr))) {
-    *sprx_error = error;
+  if((addr=kernel_dynlib_resolve(pid, handle, nid))) {
+    *ptr = (void*)addr;
+    return 0;
   }
+
+  *sprx_error = error;
 
   return error;
 }

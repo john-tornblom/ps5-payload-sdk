@@ -25,7 +25,125 @@ along with this program; see the file COPYING. If not, see
 
 
 /**
- * libkernel symbols
+ * dynamic library loaded in kernel memory.
+ **/
+typedef struct dynlib_dynsec {
+  struct {
+    unsigned long le_next;
+    unsigned long le_prev;
+  } list_entry;
+
+  unsigned long sysvec;
+  unsigned int refcount;
+  unsigned long size;
+
+  unsigned long symtab;
+  unsigned long symtabsize;
+
+  unsigned long strtab;
+  unsigned long strtabsize;
+
+  unsigned long pltrela;
+  unsigned long pltrelasize;
+
+  unsigned long rela;
+  unsigned long relasize;
+
+  unsigned long hash;
+  unsigned long hashsize;
+
+  unsigned long dynamic;
+  unsigned long dynamicsize;
+
+  unsigned long sce_comment;
+  unsigned long sce_commentsize;
+
+  unsigned long sce_dynlib;
+  unsigned long sce_dynlibsize;
+
+  unsigned long unknown1;     // execpath?
+  unsigned long unknown1size;
+
+  unsigned long buckets;
+  unsigned long bucketssize;
+  unsigned int nbuckets;
+
+  unsigned long chains;
+  unsigned long chainssize;
+  unsigned int nchains;
+
+  unsigned long unknown2[7];
+} dynlib_dynsec_t;
+
+
+/**
+ * an ELF loaded in kernel memory.
+ **/
+typedef struct dynlib_obj {
+  unsigned long next;
+  unsigned long path;
+  unsigned long unknown0[2];
+  unsigned int refcount;
+  unsigned long handle;
+
+  unsigned long mapbase;
+  unsigned long mapsize;
+  unsigned long textsize;
+
+  unsigned long database;
+  unsigned long datasize;
+
+  unsigned long unknown1;
+  unsigned long unknown1size;
+
+  unsigned long vaddrbase;
+  unsigned long relocbase;
+  unsigned long entry;
+
+  unsigned int tlsindex;
+  unsigned long tlsinit;
+  unsigned long tlsinitsize;
+  unsigned long tlssize;
+  unsigned long  tlsoffset;
+  unsigned long tlsalign;
+
+  unsigned long pltgot;
+
+  unsigned long unknown2[6];
+
+  unsigned long init;
+  unsigned long fini;
+
+  unsigned long eh_frame_hdr;
+  unsigned long eh_frame_hdr_size;
+
+  unsigned long eh_frame;
+  unsigned long eh_frame_size;
+
+  int status;
+  int flags;
+
+  unsigned long unknown5[5];
+  unsigned long dynsec;
+  unsigned long unknown6[6]; //fingerprint?
+} dynlib_obj_t;
+
+
+/**
+ * an ELF symbol loaded in kernel memory.
+ **/
+typedef struct {
+  unsigned int st_name;
+  unsigned char st_info;
+  unsigned char st_other;
+  unsigned short st_shndx;
+  unsigned long st_value;
+  unsigned long st_size;
+} Elf64_Sym;
+
+
+/**
+ * libkernel and libc symbols
  **/
 static long (*_read)(int, void*, unsigned long);
 static long (*_write)(int, const void*, unsigned long);
@@ -33,6 +151,9 @@ static int (*_getsockopt)(int, int, int, void *, unsigned int *);
 static int (*_setsockopt)(int, int, int, const void*, unsigned int);
 static int (*sysctlbyname)(const char *, void *, unsigned long*,
 			   const void *, unsigned long);
+static void* (*malloc)(unsigned long);
+static void  (*free)(void*);
+static int   (*strncmp)(const char*, const char*, unsigned long);
 
 
 /**
@@ -117,6 +238,21 @@ kernel_constructor(const payload_args_t *args) {
   }
 
   if((error=args->sceKernelDlsym(0x2001, "sysctlbyname", &sysctlbyname))) {
+    *args->payloadout = error;
+    return;
+  }
+
+  if((error=args->sceKernelDlsym(0x2, "malloc", &malloc))) {
+    *args->payloadout = error;
+    return;
+  }
+
+  if((error=args->sceKernelDlsym(0x2, "free", &free))) {
+    *args->payloadout = error;
+    return;
+  }
+
+  if((error=args->sceKernelDlsym(0x2, "strncmp", &strncmp))) {
     *args->payloadout = error;
     return;
   }
@@ -345,6 +481,81 @@ kernel_get_proc(unsigned int pid) {
   }
 
   return addr;
+}
+
+
+unsigned long
+kernel_dynlib_resolve(unsigned int pid, unsigned int handle, const char *nid) {
+  unsigned long kproc = kernel_get_proc(pid);
+  dynlib_dynsec_t dynsec;
+  unsigned long kaddr;
+  unsigned long vaddr;
+  Elf64_Sym *symtab;
+  dynlib_obj_t obj;
+  char *strtab;
+
+  if(!(kproc=kernel_get_proc(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(kproc + 0x3e8, &kaddr, sizeof(kaddr)) < 0) {
+    return 0;
+  }
+
+  do {
+    if(kernel_copyout(kaddr, &kaddr, sizeof(kaddr)) < 0) {
+      return 0;
+    }
+    if(!kaddr) {
+      return 0;
+    }
+
+    if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, handle),
+		      &obj.handle, sizeof(obj.handle)) < 0) {
+      return 0;
+    }
+  } while(obj.handle != handle);
+
+  if(kernel_copyout(kaddr, &obj, sizeof(obj)) < 0) {
+    return 0;
+  }
+
+  if(kernel_copyout(obj.dynsec, &dynsec, sizeof(dynsec)) < 0) {
+    return 0;
+  }
+
+  if(!(symtab=malloc(dynsec.symtabsize))) {
+    return 0;
+  }
+
+  if(kernel_copyout(dynsec.symtab, symtab, dynsec.symtabsize) < 0) {
+    free(symtab);
+    return 0;
+  }
+
+  if(!(strtab=malloc(dynsec.strtabsize))) {
+    free(symtab);
+    return 0;
+  }
+
+  if(kernel_copyout(dynsec.strtab, strtab, dynsec.strtabsize) < 0) {
+    free(symtab);
+    free(strtab);
+    return 0;
+  }
+
+  vaddr = 0;
+  for(unsigned long i=0; i<dynsec.symtabsize / sizeof(Elf64_Sym); i++) {
+    if(!strncmp(nid, strtab + symtab[i].st_name, 11)) {
+      vaddr = obj.mapbase + symtab[i].st_value;
+      break;
+    }
+  }
+
+  free(symtab);
+  free(strtab);
+
+  return vaddr;
 }
 
 
