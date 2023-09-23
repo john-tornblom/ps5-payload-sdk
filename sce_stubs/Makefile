@@ -41,7 +41,7 @@ nid_db.xml:
 	wget -O $@ $(NID_DB_URL)
 
 %.c: %.sprx
-	$(PYTHON) trampgen.py $*.sprx > $@
+	$(PYTHON) genstub.py $*.sprx > $@
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^

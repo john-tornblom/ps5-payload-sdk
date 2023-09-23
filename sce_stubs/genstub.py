@@ -99,7 +99,7 @@ if __name__ == '__main__':
 
     libname = Path(cli_args.SPRX_FILE).stem
     filename = cli_args.SPRX_FILE
-    
+
     funcs = sorted(set(symbols('STT_FUNC', filename)))
     gvars = sorted(set(symbols('STT_OBJECT', filename)))
 
