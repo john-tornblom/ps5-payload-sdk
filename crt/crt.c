@@ -90,6 +90,6 @@ _start(payload_args_t *args) {
   // run module destructors
   count = __fini_array_end - __fini_array_start;
   for(int i=0; i<count; i++) {
-    __fini_array_start[i]();
+    __fini_array_start[count-i-1]();
   }
 }
