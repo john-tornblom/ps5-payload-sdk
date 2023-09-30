@@ -22,6 +22,9 @@ along with this program; see the file COPYING. If not, see
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <unistd.h>
+
+#include <ps5/kernel.h>
 
 
 static void
@@ -64,7 +67,12 @@ list_dir(const char *base_path) {
 }
 
 int main() {
+  pid_t pid = getpid();
+  intptr_t rootdir = kernel_get_proc_rootdir(pid);
+
+  kernel_set_proc_rootdir(pid, kernel_get_root_vnode());
   list_dir("/");
+  kernel_set_proc_rootdir(pid, rootdir);
 
   return EXIT_SUCCESS;
 }
