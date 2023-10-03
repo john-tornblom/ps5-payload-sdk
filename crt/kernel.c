@@ -96,9 +96,9 @@ typedef struct dynlib_obj {
   unsigned long unknown1;
   unsigned long unknown1size;
 
-  unsigned long vaddrbase;
-  unsigned long relocbase;
   unsigned long entry;
+  unsigned long unknown2;
+  unsigned long vaddrbase;
 
   unsigned int tlsindex;
   unsigned long tlsinit;
@@ -109,7 +109,7 @@ typedef struct dynlib_obj {
 
   unsigned long pltgot;
 
-  unsigned long unknown2[6];
+  unsigned long unknown3[6];
 
   unsigned long init;
   unsigned long fini;
@@ -123,9 +123,9 @@ typedef struct dynlib_obj {
   int status;
   int flags;
 
-  unsigned long unknown5[5];
+  unsigned long unknown4[5];
   unsigned long dynsec;
-  unsigned long unknown6[6]; //fingerprint?
+  unsigned long unknown5[6]; //fingerprint?
 } dynlib_obj_t;
 
 
@@ -490,7 +490,43 @@ kernel_get_proc(unsigned int pid) {
 
 
 unsigned long
-kernel_dynlib_resolve(unsigned int pid, unsigned int handle, const char *nid) {
+kernel_dynlib_entry_addr(unsigned int pid, unsigned int handle) {
+  unsigned long kproc = kernel_get_proc(pid);
+  unsigned long kaddr;
+  dynlib_obj_t obj;
+
+  if(!(kproc=kernel_get_proc(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(kproc + 0x3e8, &kaddr, sizeof(kaddr)) < 0) {
+    return 0;
+  }
+
+  do {
+    if(kernel_copyout(kaddr, &kaddr, sizeof(kaddr)) < 0) {
+      return 0;
+    }
+    if(!kaddr) {
+      return 0;
+    }
+
+    if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, handle),
+		      &obj.handle, sizeof(obj.handle)) < 0) {
+      return 0;
+    }
+  } while(obj.handle != handle);
+
+  if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, entry),
+		    &obj.entry, sizeof(obj.entry)) < 0) {
+    return 0;
+  }
+  return obj.entry;
+}
+
+
+unsigned long
+kernel_dynlib_resolve(unsigned int pid, int handle, const char *nid) {
   unsigned long kproc = kernel_get_proc(pid);
   dynlib_dynsec_t dynsec;
   unsigned long kaddr;
