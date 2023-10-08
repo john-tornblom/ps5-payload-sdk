@@ -97,7 +97,7 @@ sprx_constructor(const payload_args_t *args) {
  * Resolve the address of symbol from a module.
  **/
 int
-sprx_dlsym(unsigned short handle, const char *nid, void **ptr) {
+sprx_dlsym(unsigned int handle, const char *nid, void **ptr) {
   unsigned long addr;
   int error = -1;
 
@@ -116,7 +116,7 @@ sprx_dlsym(unsigned short handle, const char *nid, void **ptr) {
  * Open a module with a given libname.
  **/
 int
-sprx_dlopen(const char* libname, unsigned short *handle) {
+sprx_dlopen(const char* libname, unsigned int *handle) {
   const char *sandbox_path = sceKernelGetFsSandboxRandomWord();
   char path[0x100];
 
@@ -169,7 +169,7 @@ sprx_dlopen(const char* libname, unsigned short *handle) {
  * Close a module with a give handle.
  **/
 int
-sprx_dlclose(unsigned short handle) {
+sprx_dlclose(unsigned int handle) {
   int error = 0;
 
   if((error=sceKernelStopUnloadModule(handle, 0, 0, 0, 0, 0))) {
