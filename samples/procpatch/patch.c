@@ -16,6 +16,7 @@ along with this program; see the file COPYING. If not, see
 
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 
@@ -24,7 +25,6 @@ along with this program; see the file COPYING. If not, see
 #include "mdbg.h"
 #include "patch.h"
 #include "pt.h"
-#include "ui.h"
 
 
 int
@@ -33,13 +33,13 @@ patch_app(pid_t pid, uint32_t app_id, uint32_t app_type, const char* title_id) {
   uint8_t *buf;
   size_t len;
 
-  ui_notify("New application launched\n"
-	    "------------------------\n"
-	    "title_id = %s\n"
-	    "app_id = 0x%x\n"
-	    "app_type = 0x%x\n"
-	    "pid = %d\n",
-	    title_id, app_id, app_type, pid);
+  printf("New application launched:\n"
+	 "------------------------\n"
+	 "  title_id = %s\n"
+	 "  app_id = 0x%x\n"
+	 "  app_type = 0x%x\n"
+	 "  pid = %d\n",
+	 title_id, app_id, app_type, pid);
 
   // TODO: something useful. For now, just sanity test mdbg
   memset(&ve, 0, sizeof(ve));
@@ -52,7 +52,7 @@ patch_app(pid_t pid, uint32_t app_id, uint32_t app_type, const char* title_id) {
     return -1;
   }
 
-  ui_notify("pid %d vm entry 0 starts at: 0x%lx\n", pid, ve.pve_start);
+  printf("  pid %d vm entry 0 starts at: 0x%lx\n", pid, ve.pve_start);
 
   if(mdbg_copyout(pid, ve.pve_start, buf, len)) {
     free(buf);

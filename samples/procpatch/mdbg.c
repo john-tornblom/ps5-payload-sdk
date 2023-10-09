@@ -14,13 +14,11 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
-#include <stdint.h>
+#include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 
 #include <ps5/kernel.h>
 
-#include "ui.h"
 #include "mdbg.h"
 
 
@@ -83,7 +81,7 @@ mdbg_memop(int memop, mdbg_memop_args_t *args) {
   do {
     memset(&res, 0, sizeof(res));
     if((err=syscall(573, &cmd, args, &res)) == -1) {
-      ui_perror("mdbg");
+      perror("mdbg");
       break;
     }
     args->src += res.len;

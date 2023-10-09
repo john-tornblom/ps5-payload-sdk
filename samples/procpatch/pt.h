@@ -35,22 +35,4 @@ int pt_detach(pid_t pid);
 /**
  *
  **/
-int pt_continue(pid_t pid);
-
-
-/**
- *
- **/
-int pt_follow_fork(pid_t pid);
-
-
-/**
- *
- **/
-pid_t pt_await_child(pid_t pid);
-
-
-/**
- *
- **/
 int pt_vm_entry(pid_t pid, struct ptrace_vm_entry *ve);

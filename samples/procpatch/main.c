@@ -14,13 +14,14 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
-#include <pthread.h>
+#include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
-#include "mdbg.h"
+#include <sys/event.h>
+
 #include "patch.h"
 #include "pt.h"
-#include "ui.h"
 
 
 #define TEST_RUN_ONCE 1
@@ -39,50 +40,47 @@ int sceKernelGetAppInfo(pid_t pid, app_info_t *info);
 
 
 static pid_t
-await_child(pid_t parent) {
-  pid_t child = 0;
+await_child(void) {
+  struct kevent evt;
+  pid_t pid = -1;
+  int kq;
 
-  if(pt_attach(parent) < 0) {
+  if((kq=kqueue()) < 0) {
+    perror("kqueue");
     return -1;
   }
 
-  if(pt_follow_fork(parent) < 0) {
-    pt_detach(parent);
+  EV_SET(&evt, getppid(), EVFILT_PROC, EV_ADD, NOTE_FORK | NOTE_TRACK, 0, NULL);
+  if(kevent(kq, &evt, 1, NULL, 0, NULL) < 0) {
+    perror("kevent");
+    close(kq);
     return -1;
   }
 
-  if(pt_continue(parent) < 0) {
-    pt_detach(parent);
-    return -1;
+  while(1) {
+    if(kevent(kq, NULL, 0, &evt, 1, NULL) < 0) {
+      perror("kevent");
+      break;
+    }
+
+    if(evt.fflags & NOTE_CHILD) {
+      pid = evt.ident;
+      break;
+    }
   }
 
-  if((child=pt_await_child(parent)) < 0) {
-    pt_detach(parent);
-    return -1;
-  }
+  close(kq);
 
-  if(pt_detach(child) < 0) {
-    pt_detach(parent);
-    return -1;
-  }
-
-  if(pt_detach(parent) < 0) {
-    return -1;
-  }
-
-  return child;
+  return pid;
 }
 
 
-static void*
-watchdog_thread(void *args) {
-  pid_t parent = getppid();
+int main() {
   app_info_t info;
   pid_t child;
 
-  ui_notify("procpatch sample started");
   while(1) {
-    if((child=await_child(parent)) < 0) {
+    if((child=await_child()) < 0) {
       break;
     }
 
@@ -94,7 +92,7 @@ watchdog_thread(void *args) {
     if(!sceKernelGetAppInfo(child, &info)) {
       patch_app(child, info.app_id, info.app_type, info.title_id);
     } else {
-      ui_perror("sceKernelGetAppInfo");
+      perror("sceKernelGetAppInfo");
     }
 
     if(pt_detach(child) < 0) {
@@ -105,16 +103,6 @@ watchdog_thread(void *args) {
     break;
 #endif
   }
-
-  return NULL;
-}
-
-
-int
-main() {
-  pthread_t trd;
-
-  pthread_create(&trd, NULL, &watchdog_thread, NULL);
 
   return 0;
 }
