@@ -64,6 +64,7 @@ main() {
   // query the kernel for proc info
   if(sysctl(mib, 4, buf, &buf_size, NULL, 0)) {
     perror("sysctl");
+    free(buf);
     return -1;
   }
 
