@@ -23,6 +23,5 @@ along with this program; see the file COPYING. If not, see
 /**
  *
  **/
-int patch_app(pid_t pid, uint32_t app_id, uint32_t app_type,
-	      const char* title_id);
+int patch_app(pid_t pid, uint32_t app_id, const char* title_id);
 

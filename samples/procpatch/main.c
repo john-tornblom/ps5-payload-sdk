@@ -30,9 +30,8 @@ along with this program; see the file COPYING. If not, see
 typedef struct app_info {
   uint32_t app_id;
   uint64_t unknown1;
-  uint32_t app_type;
   char     title_id[10];
-  char     unknown2[0x3c];
+  char     unknown2[0x40];
 } app_info_t;
 
 
@@ -90,7 +89,7 @@ int main() {
 
     memset(&info, 0, sizeof(info));
     if(!sceKernelGetAppInfo(child, &info)) {
-      patch_app(child, info.app_id, info.app_type, info.title_id);
+      patch_app(child, info.app_id, info.title_id);
     } else {
       perror("sceKernelGetAppInfo");
     }

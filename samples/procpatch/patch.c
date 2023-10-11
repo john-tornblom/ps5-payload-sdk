@@ -28,7 +28,7 @@ along with this program; see the file COPYING. If not, see
 
 
 int
-patch_app(pid_t pid, uint32_t app_id, uint32_t app_type, const char* title_id) {
+patch_app(pid_t pid, uint32_t app_id, const char* title_id) {
   struct ptrace_vm_entry ve;
   uint8_t *buf;
   size_t len;
@@ -37,9 +37,8 @@ patch_app(pid_t pid, uint32_t app_id, uint32_t app_type, const char* title_id) {
 	 "------------------------\n"
 	 "  title_id = %s\n"
 	 "  app_id = 0x%x\n"
-	 "  app_type = 0x%x\n"
 	 "  pid = %d\n",
-	 title_id, app_id, app_type, pid);
+	 title_id, app_id, pid);
 
   // TODO: something useful. For now, just sanity test mdbg
   memset(&ve, 0, sizeof(ve));
