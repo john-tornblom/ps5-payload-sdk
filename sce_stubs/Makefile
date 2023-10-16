@@ -19,39 +19,41 @@ DESTDIR ?= /opt/ps5-payload-sdk
 
 CC := clang
 LD := ld.lld
-AR := ar
 
 CFLAGS := -ffreestanding -fno-builtin -nostdlib -O2
-CFLAGS += -fPIE -target x86_64-pc-none
+CFLAGS += -fPIC -target x86_64-pc-none
 
 SPRXS := $(wildcard *.sprx)
 STUBS := $(SPRXS:.sprx=.c)
 
 SOURCES  := $(wildcard *.c)
-ARCHIVES := $(SOURCES:.c=.a)
+SHARED   := $(SOURCES:.c=.so)
 
 NID_DB_URL := https://raw.githubusercontent.com/astrelsky/GhidraOrbis/master/data/nid_db.xml
 
 
-all: $(SOURCES) $(ARCHIVES)
+all: $(SOURCES) $(SHARED)
 
 stubs: nid_db.xml $(STUBS)
 
 nid_db.xml:
 	wget -O $@ $(NID_DB_URL)
 
+%.map: %.sprx
+	$(PYTHON) genstub.py $^
+
 %.c: %.sprx
-	$(PYTHON) genstub.py $*.sprx > $@
+	$(PYTHON) genstub.py $^
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
-%.a: %.o
-	$(AR) rcs $@ $^
+%.so: %.o %.map
+	$(LD) -shared --version-script $*.map -o $@ $<
 
 clean:
-	rm -f *.o *.a nid_db.xml
+	rm -f *.o *.so *.map nid_db.xml
 
 install: $(ARCHIVES)
 	install -d $(DESTDIR)/usr/lib
-	install $(ARCHIVES) $(DESTDIR)/usr/lib
+	install $(SHARED) $(DESTDIR)/usr/lib

@@ -22,6 +22,7 @@ PHDRS {
 	ph_text   PT_LOAD FLAGS (0x1 | 0x4);
 	ph_rodata PT_LOAD FLAGS (0x4);
 	ph_data   PT_LOAD FLAGS (0x2 | 0x4);
+	ph_dyn    PT_DYNAMIC;
 }
 
 SECTIONS {
@@ -47,4 +48,6 @@ SECTIONS {
 	    KEEP(*(.fini_array .dtors))
 	    PROVIDE_HIDDEN(__fini_array_end = .);
 	}
+	. = ALIGN(0x4000);
+	.dynamic  : { *(.dynamic) } : ph_dyn
 }
