@@ -26,7 +26,7 @@ CANDIDATES=("ld.lld-17"
 for LD in "${CANDIDATES[@]}"; do
     if [ -x "$(command -v $LD)" ]; then
 	exec $LD \
-	     -pie \
+	     -pie --whole-archive \
 	     -T "${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x" \
 	     -L "${PS5_PAYLOAD_SDK}/usr/lib" \
 	     $* \
