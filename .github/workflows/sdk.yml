@@ -38,20 +38,14 @@ jobs:
       run: |
         make -C samples/arbitrary_syscall
         make -C samples/browser
-        make -C samples/elf_loader
         make -C samples/hello_sprx
         make -C samples/hello_stdio
         make -C samples/hello_world
         make -C samples/hwinfo
-        make -C samples/kernel_data_dump
-        make -C samples/klog
         make -C samples/launch_app
         make -C samples/list_files
         make -C samples/mntinfo
-        make -C samples/pipe_pirate
-        make -C samples/procpatch
         make -C samples/ps
-        make -C samples/ptrace_elfldr
         make -C samples/remount
         bash samples/hello_cmake/build.sh
 

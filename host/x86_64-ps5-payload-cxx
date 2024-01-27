@@ -32,7 +32,7 @@ for CXX in "${CANDIDATES[@]}"; do
 	exec $CXX \
 	     -target $PS5_TARGET_TRIPLE \
 	     -isystem ${PS5_PAYLOAD_SDK}/usr/include \
-	     -fno-stack-protector \
+	     -fno-stack-protector -fno-plt \
 	     $*
     fi
 done

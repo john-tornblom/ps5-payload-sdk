@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -14,12 +14,9 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
-#include <stdio.h>
-#include <string.h>
-
-#include <ps5/kernel.h>
-
+#include "kernel.h"
 #include "mdbg.h"
+#include "syscall.h"
 
 
 /**
@@ -33,8 +30,8 @@ along with this program; see the file COPYING. If not, see
  *
  **/
 typedef struct mdbg_cmd {
-  uint64_t type;
-  uint64_t cmd;
+  unsigned long type;
+  unsigned long cmd;
 } mdbg_cmd_t;
 
 
@@ -42,10 +39,10 @@ typedef struct mdbg_cmd {
  *
  **/
 typedef struct mdbg_memop_args {
-  pid_t pid;
-  intptr_t src;
-  intptr_t dst;
-  size_t len;
+  int pid;
+  unsigned long src;
+  unsigned long dst;
+  unsigned long len;
 } mdbg_memop_args_t;
 
 
@@ -54,7 +51,7 @@ typedef struct mdbg_memop_args {
  **/
 typedef struct mdbg_res {
   int status;
-  size_t len;
+  unsigned long len;
 } mdbg_res_t;
 
 
@@ -64,9 +61,9 @@ typedef struct mdbg_res {
  **/
 static int
 mdbg_memop(int memop, mdbg_memop_args_t *args) {
+  int pid = (int)syscall(SYS_getpid);
   mdbg_cmd_t cmd = {1, memop};
-  pid_t pid = getpid();
-  uint64_t authid;
+  unsigned long authid;
   mdbg_res_t res;
   long err;
 
@@ -79,9 +76,8 @@ mdbg_memop(int memop, mdbg_memop_args_t *args) {
   }
 
   do {
-    memset(&res, 0, sizeof(res));
-    if((err=syscall(573, &cmd, args, &res)) == -1) {
-      perror("mdbg");
+    res.len = res.status = 0;
+    if((err=syscall(SYS_mdbg_call, &cmd, args, &res)) == -1) {
       break;
     }
     args->src += res.len;
@@ -98,16 +94,16 @@ mdbg_memop(int memop, mdbg_memop_args_t *args) {
 
 
 int
-mdbg_copyout(pid_t pid, intptr_t addr, void *buf, size_t len) {
-  mdbg_memop_args_t args = {pid, addr, (intptr_t)buf, len};
+mdbg_copyout(int pid, unsigned long addr, void *buf, unsigned long len) {
+  mdbg_memop_args_t args = {pid, addr, (unsigned long)buf, len};
 
   return mdbg_memop(MDBG_MEMOP_READ, &args);
 }
 
 
 int
-mdbg_copyin(pid_t pid, const void* buf, intptr_t addr, size_t len) {
-  mdbg_memop_args_t args = {pid, (intptr_t)buf, addr, len};
+mdbg_copyin(int pid, const void* buf, unsigned long addr, unsigned long len) {
+  mdbg_memop_args_t args = {pid, addr, (unsigned long)buf, len};
 
   return mdbg_memop(MDBG_MEMOP_WRITE, &args);
 }

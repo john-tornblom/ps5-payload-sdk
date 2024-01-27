@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -14,11 +14,12 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
-#ifndef PS5SDK_SPRX_H
-#define PS5SDK_SPRX_H
+#pragma once
 
-int sprx_dlopen(const char* libname, unsigned short *handle);
-int sprx_dlsym(unsigned short handle, const char *symname, void *addr);
-int sprx_dlclose(unsigned short handle);
+unsigned long kernel_get_ucred_authid(int pid);
+int           kernel_set_ucred_authid(int pid, unsigned long authid);
 
-#endif // PS5SDK_SPRX_H
+unsigned long kernel_get_root_vnode(void);
+unsigned long kernel_get_proc_rootdir(int pid);
+int           kernel_set_proc_rootdir(int pid, unsigned long vnode);
+

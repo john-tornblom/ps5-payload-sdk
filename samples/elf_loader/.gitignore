@@ -1,5 +1,0 @@
-*.elf
-*.o
-*~
-payload_elf.c
-

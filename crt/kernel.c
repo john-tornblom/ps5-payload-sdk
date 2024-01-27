@@ -15,7 +15,7 @@ along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
 #include "payload.h"
-
+#include "syscall.h"
 
 /**
  * standard macros.
@@ -143,17 +143,11 @@ typedef struct {
 
 
 /**
- * libkernel and libc symbols
+ * external dependencies.
  **/
-static long (*_read)(int, void*, unsigned long);
-static long (*_write)(int, const void*, unsigned long);
-static int (*_getsockopt)(int, int, int, void *, unsigned int *);
-static int (*_setsockopt)(int, int, int, const void*, unsigned int);
-static int (*sysctlbyname)(const char *, void *, unsigned long*,
-			   const void *, unsigned long);
-static void* (*malloc)(unsigned long);
-static void  (*free)(void*);
-static int   (*strncmp)(const char*, const char*, unsigned long);
+static void* (*malloc)(unsigned long) = 0;
+static void  (*free)(void*) = 0;
+static int   (*strncmp)(const char*, const char*, unsigned long) = 0;
 
 
 /**
@@ -193,19 +187,15 @@ static int master_sock = -1;
 static int victim_sock = -1;
 static int rw_pipe[2] = {-1, -1};
 static unsigned long pipe_addr = 0;
-static unsigned long kdata_base = 0;
 
 
-
-/**
- *
- **/
 unsigned int
 kernel_get_fw_version(void) {
+  int mib[2] = {1, 46};
+  unsigned long size = sizeof(mib);
   unsigned int version = 0;
-  unsigned long size = sizeof(version);
 
-  if(sysctlbyname("kern.sdk_version", &version, &size, 0, 0)) {
+  if(syscall(SYS_sysctl, mib, 2, &version, &size, 0, 0)) {
     return 0;
   }
 
@@ -213,32 +203,11 @@ kernel_get_fw_version(void) {
 }
 
 
-__attribute__((constructor(101))) static void
-kernel_constructor(const payload_args_t *args) {
+__attribute__((constructor(102))) static void
+kernel_constructor(payload_args_t* args) {
   int error = 0;
 
-  if((error=args->sceKernelDlsym(0x2001, "_read", &_read))) {
-    *args->payloadout = error;
-    return;
-  }
-
-  if((error=args->sceKernelDlsym(0x2001, "_write", &_write))) {
-    *args->payloadout = error;
-    return;
-  }
-
-  if((error=args->sceKernelDlsym(0x2001, "_setsockopt", &_setsockopt))) {
-    *args->payloadout = error;
-    return;
-  }
-
-  if((error=args->sceKernelDlsym(0x2001, "_getsockopt", &_getsockopt))) {
-    *args->payloadout = error;
-    return;
-  }
-
-  if((error=args->sceKernelDlsym(0x2001, "sysctlbyname", &sysctlbyname))) {
-    *args->payloadout = error;
+  if(!args) {
     return;
   }
 
@@ -347,11 +316,13 @@ kernel_write(unsigned long addr, unsigned long *data) {
   victim_buf[1] = 0;
   victim_buf[2] = 0;
 
-  if(_setsockopt(master_sock, IPPROTO_IPV6, IPV6_PKTINFO, victim_buf, 0x14)) {
+  if(syscall(SYS_setsockopt, master_sock, IPPROTO_IPV6, IPV6_PKTINFO,
+	     victim_buf, 0x14)) {
     return -1;
   }
 
-  if(_setsockopt(victim_sock, IPPROTO_IPV6, IPV6_PKTINFO, data, 0x14)) {
+  if(syscall(SYS_setsockopt, victim_sock, IPPROTO_IPV6, IPV6_PKTINFO,
+	     data, 0x14)) {
     return -1;
   }
 
@@ -363,8 +334,12 @@ kernel_write(unsigned long addr, unsigned long *data) {
  *
  **/
 int
-kernel_copyin(const void *udaddr, unsigned long kaddr, unsigned long len) {
+kernel_copyin(const void *uaddr, unsigned long kaddr, unsigned long len) {
   unsigned long write_buf[3];
+
+  if(!kaddr || !uaddr || !len) {
+    return -1;
+  }
 
   // Set pipe flags
   write_buf[0] = 0;
@@ -383,7 +358,7 @@ kernel_copyin(const void *udaddr, unsigned long kaddr, unsigned long len) {
   }
 
   // Perform write across pipe
-  if(_write(rw_pipe[1], udaddr, len) < 0) {
+  if(syscall(SYS_write, rw_pipe[1], uaddr, len) < 0) {
     return -1;
   }
 
@@ -395,8 +370,12 @@ kernel_copyin(const void *udaddr, unsigned long kaddr, unsigned long len) {
  *
  **/
 int
-kernel_copyout(unsigned long kaddr, void *udaddr, unsigned long len) {
+kernel_copyout(unsigned long kaddr, void *uaddr, unsigned long len) {
   unsigned long write_buf[3];
+
+  if(!kaddr || !uaddr || !len) {
+    return -1;
+  }
 
   // Set pipe flags
   write_buf[0] = 0x4000000040000000;
@@ -415,7 +394,7 @@ kernel_copyout(unsigned long kaddr, void *udaddr, unsigned long len) {
   }
 
   // Perform read across pipe
-  if(_read(rw_pipe[0], udaddr, len) < 0) {
+  if(syscall(SYS_read, rw_pipe[0], uaddr, len) < 0) {
     return -1;
   }
 
@@ -455,11 +434,12 @@ kernel_get_root_vnode(void) {
   return vnode;
 }
 
+
 /**
  *
  **/
 unsigned long
-kernel_get_proc(unsigned int pid) {
+kernel_get_proc(int pid) {
   unsigned int other_pid = 0;
   unsigned long addr = 0;
   unsigned long next = 0;
@@ -489,8 +469,91 @@ kernel_get_proc(unsigned int pid) {
 }
 
 
+/**
+ *
+ **/
 unsigned long
-kernel_dynlib_entry_addr(unsigned int pid, unsigned int handle) {
+kernel_dynlib_fini_addr(int pid, unsigned int handle) {
+  unsigned long kproc = kernel_get_proc(pid);
+  unsigned long kaddr;
+  dynlib_obj_t obj;
+
+  if(!(kproc=kernel_get_proc(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(kproc + 0x3e8, &kaddr, sizeof(kaddr)) < 0) {
+    return 0;
+  }
+
+  do {
+    if(kernel_copyout(kaddr, &kaddr, sizeof(kaddr)) < 0) {
+      return 0;
+    }
+    if(!kaddr) {
+      return 0;
+    }
+
+    if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, handle),
+		      &obj.handle, sizeof(obj.handle)) < 0) {
+      return 0;
+    }
+  } while(obj.handle != handle);
+
+  if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, fini),
+		    &obj.fini, sizeof(obj.fini)) < 0) {
+    return 0;
+  }
+
+  return obj.fini;
+}
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_dynlib_init_addr(int pid, unsigned int handle) {
+  unsigned long kproc = kernel_get_proc(pid);
+  unsigned long kaddr;
+  dynlib_obj_t obj;
+
+  if(!(kproc=kernel_get_proc(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(kproc + 0x3e8, &kaddr, sizeof(kaddr)) < 0) {
+    return 0;
+  }
+
+  do {
+    if(kernel_copyout(kaddr, &kaddr, sizeof(kaddr)) < 0) {
+      return 0;
+    }
+    if(!kaddr) {
+      return 0;
+    }
+
+    if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, handle),
+		      &obj.handle, sizeof(obj.handle)) < 0) {
+      return 0;
+    }
+  } while(obj.handle != handle);
+
+  if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, init),
+		    &obj.init, sizeof(obj.init)) < 0) {
+    return 0;
+  }
+
+  return obj.init;
+}
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_dynlib_entry_addr(int pid, unsigned int handle) {
   unsigned long kproc = kernel_get_proc(pid);
   unsigned long kaddr;
   dynlib_obj_t obj;
@@ -525,8 +588,11 @@ kernel_dynlib_entry_addr(unsigned int pid, unsigned int handle) {
 }
 
 
+/**
+ *
+ **/
 unsigned long
-kernel_dynlib_resolve(unsigned int pid, int handle, const char *nid) {
+kernel_dynlib_resolve(int pid, int handle, const char *nid) {
   unsigned long kproc = kernel_get_proc(pid);
   dynlib_dynsec_t dynsec;
   unsigned long kaddr;
@@ -604,7 +670,7 @@ kernel_dynlib_resolve(unsigned int pid, int handle, const char *nid) {
  *
  **/
 unsigned long
-kernel_get_proc_ucred(unsigned int pid) {
+kernel_get_proc_ucred(int pid) {
   unsigned long proc = 0;
   unsigned long ucred = 0;
 
@@ -625,7 +691,7 @@ kernel_get_proc_ucred(unsigned int pid) {
  *
  **/
 unsigned long
-kernel_get_ucred_authid(unsigned int pid) {
+kernel_get_ucred_authid(int pid) {
   unsigned long authid = 0;
   unsigned long ucred = 0;
 
@@ -646,7 +712,7 @@ kernel_get_ucred_authid(unsigned int pid) {
  *
  **/
 int
-kernel_set_ucred_authid(unsigned int pid, unsigned long authid) {
+kernel_set_ucred_authid(int pid, unsigned long authid) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -666,7 +732,7 @@ kernel_set_ucred_authid(unsigned int pid, unsigned long authid) {
  *
  **/
 int
-kernel_get_ucred_caps(unsigned int pid, unsigned char caps[16]) {
+kernel_get_ucred_caps(int pid, unsigned char caps[16]) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -685,7 +751,7 @@ kernel_get_ucred_caps(unsigned int pid, unsigned char caps[16]) {
  *
  **/
 int
-kernel_set_ucred_caps(unsigned int pid, unsigned char caps[16]) {
+kernel_set_ucred_caps(int pid, unsigned char caps[16]) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -704,7 +770,7 @@ kernel_set_ucred_caps(unsigned int pid, unsigned char caps[16]) {
  *
  **/
 unsigned long
-kernel_get_ucred_attrs(unsigned int pid) {
+kernel_get_ucred_attrs(int pid) {
   unsigned long ucred = 0;
   unsigned long attrs = 0;
 
@@ -725,7 +791,7 @@ kernel_get_ucred_attrs(unsigned int pid) {
  *
  **/
 int
-kernel_set_ucred_attrs(unsigned int pid, unsigned long attrs) {
+kernel_set_ucred_attrs(int pid, unsigned long attrs) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -745,7 +811,7 @@ kernel_set_ucred_attrs(unsigned int pid, unsigned long attrs) {
  *
  **/
 int
-kernel_set_ucred_uid(unsigned int pid, unsigned int uid) {
+kernel_set_ucred_uid(int pid, unsigned int uid) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -765,7 +831,7 @@ kernel_set_ucred_uid(unsigned int pid, unsigned int uid) {
  *
  **/
 int
-kernel_set_ucred_ruid(unsigned int pid, unsigned int ruid) {
+kernel_set_ucred_ruid(int pid, unsigned int ruid) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -785,7 +851,7 @@ kernel_set_ucred_ruid(unsigned int pid, unsigned int ruid) {
  *
  **/
 int
-kernel_set_ucred_svuid(unsigned int pid, unsigned int svuid) {
+kernel_set_ucred_svuid(int pid, unsigned int svuid) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -806,7 +872,7 @@ kernel_set_ucred_svuid(unsigned int pid, unsigned int svuid) {
  *
  **/
 int
-kernel_set_ucred_rgid(unsigned int pid, unsigned int rgid) {
+kernel_set_ucred_rgid(int pid, unsigned int rgid) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -826,7 +892,7 @@ kernel_set_ucred_rgid(unsigned int pid, unsigned int rgid) {
  *
  **/
 int
-kernel_set_ucred_svgid(unsigned int pid, unsigned int svgid) {
+kernel_set_ucred_svgid(int pid, unsigned int svgid) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
@@ -846,7 +912,7 @@ kernel_set_ucred_svgid(unsigned int pid, unsigned int svgid) {
  *
  **/
 unsigned long
-kernel_get_proc_filedesc(unsigned int pid) {
+kernel_get_proc_filedesc(int pid) {
   unsigned long filedesc = 0;
   unsigned long proc = 0;
 
@@ -867,7 +933,137 @@ kernel_get_proc_filedesc(unsigned int pid) {
  *
  **/
 unsigned long
-kernel_get_proc_rootdir(unsigned int pid) {
+kernel_get_proc_file(int pid, int fd) {
+  unsigned long fd_files;
+  unsigned long fde_file;
+  unsigned long file;
+  unsigned long proc;
+  unsigned long p_fd;
+
+  if(!(proc=kernel_get_proc(pid))) {
+    return 0;
+  }
+
+  if(kernel_copyout(proc + 0x48, &p_fd, sizeof(p_fd))) {
+    return 0;
+  }
+
+  if(kernel_copyout(p_fd, &fd_files, sizeof(fd_files))) {
+    return 0;
+  }
+
+  if(kernel_copyout(fd_files + 8 + (0x30 * fd),
+		    &fde_file, sizeof(fde_file))) {
+    return 0;
+  }
+
+  if(kernel_copyout(fde_file, &file, sizeof(file))) {
+    return 0;
+  }
+
+  return file;
+}
+
+
+/**
+ *
+ **/
+static unsigned long
+kernel_get_proc_inp6_outputopts(int pid, int fd) {
+  unsigned long inp6_outputopts;
+  unsigned long so_pcb;
+  unsigned long file;
+
+  if(!(file=kernel_get_proc_file(pid, fd))) {
+    return 0;
+  }
+
+  if(kernel_copyout(file + 0x18, &so_pcb, sizeof(so_pcb))) {
+    return 0;
+  }
+
+  if(kernel_copyout(so_pcb + 0x120, &inp6_outputopts,
+		    sizeof(inp6_outputopts))) {
+    return 0;
+  }
+
+  return inp6_outputopts;
+}
+
+
+/**
+ *
+ **/
+static int
+kernel_inc_so_count(int pid, int fd) {
+  unsigned long file;
+  int so_count;
+
+  if(!(file=kernel_get_proc_file(pid, fd))) {
+    return -1;
+  }
+
+  if(kernel_copyout(file, &so_count, sizeof(so_count))) {
+    return -1;
+  }
+
+  so_count++;
+  if(kernel_copyin(&so_count, file, sizeof(so_count))) {
+    return -1;
+  }
+  return 0;
+}
+
+
+/**
+ *
+ **/
+int
+kernel_overlap_sockets(int pid, int master_sock, int victim_sock) {
+  unsigned long master_inp6_outputopts;
+  unsigned long victim_inp6_outputopts;
+  unsigned long pktinfo;
+  unsigned int tclass;
+
+  if(kernel_inc_so_count(pid, master_sock)) {
+    return -1;
+  }
+
+  if(!(master_inp6_outputopts=kernel_get_proc_inp6_outputopts(pid,
+							      master_sock))) {
+    return -1;
+  }
+
+  if(kernel_inc_so_count(pid, victim_sock)) {
+    return -1;
+  }
+
+  if(!(victim_inp6_outputopts=kernel_get_proc_inp6_outputopts(pid,
+							      victim_sock))) {
+    return -1;
+  }
+
+  pktinfo = victim_inp6_outputopts + 0x10;
+  if(kernel_copyin(&pktinfo, master_inp6_outputopts + 0x10,
+		   sizeof(pktinfo))) {
+
+    return -1;
+  }
+
+  tclass = 0x13370000;
+  if(kernel_copyin(&tclass, master_inp6_outputopts + 0xc0, sizeof(tclass))) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
+/**
+ *
+ **/
+unsigned long
+kernel_get_proc_rootdir(int pid) {
   unsigned long filedesc = 0;
   unsigned long vnode = 0;
 
@@ -888,7 +1084,7 @@ kernel_get_proc_rootdir(unsigned int pid) {
  *
  **/
 unsigned long
-kernel_get_proc_jaildir(unsigned int pid) {
+kernel_get_proc_jaildir(int pid) {
   unsigned long filedesc = 0;
   unsigned long vnode = 0;
 
@@ -909,7 +1105,7 @@ kernel_get_proc_jaildir(unsigned int pid) {
  *
  **/
 int
-kernel_set_proc_rootdir(unsigned int pid, unsigned long vnode) {
+kernel_set_proc_rootdir(int pid, unsigned long vnode) {
   unsigned long filedesc = 0;
 
   if(!(filedesc=kernel_get_proc_filedesc(pid))) {
@@ -929,7 +1125,7 @@ kernel_set_proc_rootdir(unsigned int pid, unsigned long vnode) {
  *
  **/
 int
-kernel_set_proc_jaildir(unsigned int pid, unsigned long vnode) {
+kernel_set_proc_jaildir(int pid, unsigned long vnode) {
   unsigned long filedesc = 0;
 
   if(!(filedesc=kernel_get_proc_filedesc(pid))) {

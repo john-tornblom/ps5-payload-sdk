@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -16,18 +16,14 @@ along with this program; see the file COPYING. If not, see
 
 #pragma once
 
-#include <stdint.h>
-#include <sys/types.h>
+
+/**
+ *
+ **/
+int mdbg_copyout(int pid, unsigned long addr, void *buf, unsigned long len);
 
 
 /**
- * Resolve a symbol with the given *nid* from an sprx with the given *handle*
- * that is loaded in a process with the given pid.
+ *
  **/
-intptr_t dynlib_resolve(pid_t pid, uint32_t handle, const char *nid);
-
-
-/**
- * Resolve sceKernelDlsym() loaded in a process with the given pid.
- **/
-intptr_t dynlib_resolve_sceKernelDlsym(pid_t pid);
+int mdbg_copyin(int pid, const void *buf, unsigned long addr, unsigned long len);

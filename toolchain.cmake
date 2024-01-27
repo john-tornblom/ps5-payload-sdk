@@ -57,7 +57,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 #
 set(CMAKE_ASM_FLAGS_INIT "-target ${PS5_TARGET_TRIPLE}")
 set(CMAKE_ASM_LINK_EXECUTABLE
-  "<CMAKE_LINKER> -pie -o <TARGET> <CMAKE_ASM_LINK_FLAGS> \
+  "<CMAKE_LINKER> -pie -z max-page-size=0x4000 -o <TARGET> <CMAKE_ASM_LINK_FLAGS> \
    -T${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x \
    -L${PS5_PAYLOAD_SDK}/usr/lib \
    --start-group \
@@ -68,15 +68,15 @@ set(CMAKE_ASM_LINK_EXECUTABLE
 #
 # Set flags for C programs
 #
-set(CMAKE_C_FLAGS_INIT "${CMAKE_ASM_FLAGS_INIT} -fno-stack-protector -isystem ${PS5_PAYLOAD_SDK}/usr/include")
+set(CMAKE_C_FLAGS_INIT "${CMAKE_ASM_FLAGS_INIT} -fno-plt -fno-stack-protector -isystem ${PS5_PAYLOAD_SDK}/usr/include")
 set(CMAKE_C_STANDARD_LIBRARIES "-lSceLibcInternal -l${PS5_KERNEL_LIBRARY}")
 set(CMAKE_C_LINK_EXECUTABLE
-  "<CMAKE_LINKER> -pie -o <TARGET> <CMAKE_C_LINK_FLAGS> \
+  "<CMAKE_LINKER> -pie -z max-page-size=0x4000 -o <TARGET> <CMAKE_C_LINK_FLAGS> \
    -T${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x \
    -L${PS5_PAYLOAD_SDK}/usr/lib \
    --start-group \
-     ${PS5_PAYLOAD_SDK}/usr/lib/crt1.o \
      <OBJECTS> <LINK_LIBRARIES> \
+     ${PS5_PAYLOAD_SDK}/usr/lib/crt1.o \
    --end-group \
   ")
 
@@ -86,11 +86,11 @@ set(CMAKE_C_LINK_EXECUTABLE
 set(CMAKE_CXX_FLAGS_INIT "${CMAKE_C_FLAGS_INIT}")
 set(CMAKE_CXX_STANDARD_LIBRARIES "${CMAKE_C_STANDARD_LIBRARIES}")
 set(CMAKE_CXX_LINK_EXECUTABLE
-  "<CMAKE_LINKER> -pie -o <TARGET> <CMAKE_CXX_LINK_FLAGS> \
+  "<CMAKE_LINKER> -pie -z max-page-size=0x4000 -o <TARGET> <CMAKE_CXX_LINK_FLAGS> \
    -T${PS5_PAYLOAD_SDK}/ldscripts/elf_x86_64.x \
    -L${PS5_PAYLOAD_SDK}/usr/lib \
    --start-group \
-     ${PS5_PAYLOAD_SDK}/usr/lib/crt1.o \
      <OBJECTS> <LINK_LIBRARIES> \
+     ${PS5_PAYLOAD_SDK}/usr/lib/crt1.o \
    --end-group \
   ")

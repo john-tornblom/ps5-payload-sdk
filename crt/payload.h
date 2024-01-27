@@ -14,4 +14,7 @@ typedef struct payload_args {
 } payload_args_t;
 
 
+extern payload_args_t* __payload_args;
+
+
 #endif // PS5SDK_PAYLOAD_H

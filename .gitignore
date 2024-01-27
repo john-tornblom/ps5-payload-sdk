@@ -1,5 +1,6 @@
 *~
 *.a
+*.so
 *.o
 *.sprx
 nid_db.xml

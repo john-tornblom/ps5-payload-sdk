@@ -15,7 +15,6 @@ along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
 #include "payload.h"
-#include "syscall.h"
 
 
 /**
@@ -24,8 +23,8 @@ along with this program; see the file COPYING. If not, see
 extern void (*__init_array_start[])(payload_args_t*) __attribute__((weak));
 extern void (*__init_array_end[])(payload_args_t*) __attribute__((weak));
 
-extern void (*__fini_array_start[])(void) __attribute__((weak));
-extern void (*__fini_array_end[])(void) __attribute__((weak));
+extern void (*__fini_array_start[])(payload_args_t*) __attribute__((weak));
+extern void (*__fini_array_end[])(payload_args_t*) __attribute__((weak));
 
 extern unsigned char __bss_start[] __attribute__((weak));
 extern unsigned char __bss_end[] __attribute__((weak));
@@ -38,58 +37,43 @@ extern int main(int argc, char* argv[], char *envp[]);
 
 
 /**
- * For error reporting to /dev/klog and /dev/stdout
- **/
-static char* (*strerror)(int) = 0;
-static void  (*printf)(const char*, ...) = 0;
-static void
-kerror(const char *s, int error) {
-  printf("%s: %s\n", s, strerror(error));
-
-  syscall(0x259, 7, "<118>[homebrew] ", 0);
-  syscall(0x259, 7, s, 0);
-  syscall(0x259, 7, ": ", 0);
-  syscall(0x259, 7, strerror(error), 0);
-  syscall(0x259, 7, "\n", 0);
-}
-
-
-/**
  * Entry-point used by the ELF loader.
  **/
 void
 _start(payload_args_t *args) {
-  unsigned long count;
+  unsigned long count = 0;
+  int exit_code = 0;
+  int *error;
 
   for(unsigned char* bss=__bss_start; bss<__bss_end; bss++) {
     *bss = 0;
   }
 
-  if((*args->payloadout=args->sceKernelDlsym(0x2, "strerror", &strerror))) {
-    return;
+  if(args) {
+    error = args->payloadout;
+  } else {
+    error = &exit_code;
   }
 
-  if((*args->payloadout=args->sceKernelDlsym(0x2, "printf", &printf))) {
-    return;
-  }
-
-  // run module constructors
+  *error = 0;
   count = __init_array_end - __init_array_start;
   for(int i=0; i<count; i++) {
     __init_array_start[i](args);
-    if(*args->payloadout) {
-      kerror("Unable to initialize payload", *args->payloadout);
-      break;
-    }
   }
 
-  if(!*args->payloadout) {
-    *args->payloadout = main(0, 0, 0);
+  if(!*error) {
+    exit_code = main(0, 0, 0);
+  } else {
+    exit_code = *error;
   }
 
-  // run module destructors
+  *error = 0;
   count = __fini_array_end - __fini_array_start;
   for(int i=0; i<count; i++) {
-    __fini_array_start[count-i-1]();
+    __fini_array_start[count-i-1](args);
+  }
+
+  if(!*error) {
+    *error = exit_code;
   }
 }

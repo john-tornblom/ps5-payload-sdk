@@ -56,9 +56,14 @@ int32_t  kernel_copyout(const intptr_t kaddr, void *udaddr, size_t  len);
 intptr_t kernel_get_proc(pid_t pid);
 intptr_t kernel_get_proc_ucred(pid_t pid);
 intptr_t kernel_get_proc_filedesc(pid_t pid);
+intptr_t kernel_get_proc_file(pid_t pid, int fd);
+
+int kernel_overlap_sockets(pid_t pid, int master_sock, int victim_sock);
 
 intptr_t kernel_dynlib_resolve(pid_t pid, uint32_t handle, const char *nid);
 intptr_t kernel_dynlib_entry_addr(pid_t pid, uint32_t handle);
+intptr_t kernel_dynlib_init_addr(pid_t pid, uint32_t handle);
+intptr_t kernel_dynlib_fini_addr(pid_t pid, uint32_t handle);
 
 uint64_t kernel_get_ucred_authid(pid_t pid);
 int32_t  kernel_set_ucred_authid(pid_t pid, uint64_t authid);
@@ -86,6 +91,5 @@ int32_t kernel_set_ucred_svuid(pid_t pid, uid_t svuid);
 
 int32_t kernel_set_ucred_rgid(pid_t pid, gid_t rgid);
 int32_t kernel_set_ucred_svgid(pid_t pid, gid_t svgid);
-
 
 #endif // PS5SDK_KERNEL_H

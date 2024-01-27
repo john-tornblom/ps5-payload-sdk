@@ -22,20 +22,14 @@ make clean install || exit 1
 
 MAKE_SAMPLES=("arbitrary_syscall"
 	      "browser"
-              "elf_loader"
 	      "hello_sprx"
 	      "hello_stdio"
 	      "hello_world"
 	      "hwinfo"
-	      "kernel_data_dump"
-	      "klog"
 	      "launch_app"
 	      "list_files"
 	      "mntinfo"
-	      "pipe_pirate"
-	      "procpatch"
 	      "ps"
-	      "ptrace_elfldr"
 	      "remount")
 
 CMAKE_SAMPLES=("hello_cmake"

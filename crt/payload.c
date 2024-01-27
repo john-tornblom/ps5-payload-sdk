@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -14,19 +14,15 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
-#pragma once
+#include "payload.h"
 
-#include <stdint.h>
-
-
-/**
- * Launch a socket server on the given port that execute ELFs
- * within inside process with the given name.
- **/
-int elfldr_serve(const char* procname, uint16_t port);
+payload_args_t* __payload_args = 0;
 
 
-/**
- * Execute an ELF inside the process with the given name.
- **/
-int elfldr_exec(const char* procname, uint8_t *elf, size_t size);
+__attribute__((constructor(101))) static void
+payload_constructor(payload_args_t* args) {
+  if(args) {
+    __payload_args = args;
+  }
+}
+

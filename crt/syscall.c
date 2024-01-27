@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -18,8 +18,6 @@ along with this program; see the file COPYING. If not, see
 
 
 static __attribute__ ((used)) long ptr_syscall;
-
-
 asm(".intel_syntax noprefix\n"
     ".global syscall\n"
     ".type syscall @function\n"
@@ -37,7 +35,14 @@ asm(".intel_syntax noprefix\n"
 
 
 __attribute__((constructor(101))) static void
-constructor(const payload_args_t *args) {
-  *args->payloadout = args->sceKernelDlsym(0x2001, "getpid", &ptr_syscall);
-  ptr_syscall += 0xa; // jump directly to syscall instruction
+syscall_constructor(const payload_args_t *args) {
+  if(!args) {
+    return;
+  }
+
+  if(args->sceKernelDlsym(0x2001, "getpid", &ptr_syscall)) {
+    return;
+  }
+
+  ptr_syscall += 0xa;
 }

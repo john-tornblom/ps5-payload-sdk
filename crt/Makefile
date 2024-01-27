@@ -19,13 +19,12 @@ DESTDIR ?= /opt/ps5-payload-sdk
 CC := clang
 LD := ld.lld
 
-CFLAGS  := -ffreestanding -fno-builtin -nostdlib -O2
-CFLAGS  += -fPIE -target x86_64-pc-none
-
+CFLAGS  := -ffreestanding -fno-builtin -nostdlib
+CFLAGS  += -target x86_64-sie-ps5 -fno-stack-protector
 
 all: crt1.o
 
-crt1.o: crt.o kernel.o sprx.o syscall.o
+crt1.o: crt.o syscall.o kernel.o rtld.o mdbg.o payload.o
 	$(LD) -r -o $@ $^
 
 %.o: %.c
