@@ -46,6 +46,8 @@ SECTIONS {
 	    PROVIDE_HIDDEN(__fini_array_end = .);
 	} : ph_rodata
 
+	.rela : { *(.rela *.rela.*) }
+
 	.data : ALIGN(CONSTANT(MAXPAGESIZE)) {
 	    *(.data .data.*)
 	} : ph_data
