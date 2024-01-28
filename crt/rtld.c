@@ -94,10 +94,11 @@ static int   (*strcmp)(const char*, const char*) = 0;
 static int   (*strlen)(const char*) = 0;
 static int   (*printf)(const char*, ...) = 0;
 static int   (*sprintf)(char*, const char*, ...) = 0;
+static int   (*sceKernelDlsym)(int, const char*, void*)  =  0;
 static int   (*sceKernelLoadStartModule)(const char*, unsigned long, const void*,
-					 unsigned int, void*, int*);
+					 unsigned int, void*, int*) = 0;
 static int   (*sceKernelStopUnloadModule)(int, unsigned long, const void*, unsigned int,
-					  const void*, void*);
+					  const void*, void*) = 0;
 
 static const char*
 LD_LIBRARY_PATH[] = {
@@ -165,7 +166,7 @@ static unsigned long
 rtld_sym(rtld_lib_t* lib, const char* name) {
   unsigned long addr = 0;
 
-  syscall(SYS_sprx_dlsym, lib->handle, name, &addr);
+  sceKernelDlsym(lib->handle, name, &addr);
 
   return addr;
 }
@@ -237,6 +238,15 @@ r_jmp_slot(Elf64_Rela* rela) {
 }
 
 
+static int
+r_relative(Elf64_Rela* rela) {
+  unsigned long loc = base_addr + rela->r_offset;
+  unsigned long val = base_addr + rela->r_addend;
+  int pid = syscall(SYS_getpid);
+
+  return mdbg_copyin(pid, &val, loc, sizeof(val));
+}
+
 
 static int
 rtld_load(void) {
@@ -289,6 +299,12 @@ rtld_load(void) {
 	return -1;
       }
       break;
+
+    case R_X86_64_RELATIVE:
+      if(r_relative(&rela[i])) {
+	return -1;
+      }
+      break;
     }
   }
 
@@ -337,6 +353,11 @@ rtld_constructor(const payload_args_t *args) {
   }
 
   if((error=args->sceKernelDlsym(0x2, "sprintf", &sprintf))) {
+    *args->payloadout = error;
+    return;
+  }
+
+  if((error=args->sceKernelDlsym(0x2001, "sceKernelDlsym", &sceKernelDlsym))) {
     *args->payloadout = error;
     return;
   }

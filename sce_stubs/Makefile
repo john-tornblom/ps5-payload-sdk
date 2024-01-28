@@ -20,8 +20,8 @@ DESTDIR ?= /opt/ps5-payload-sdk
 CC := clang
 LD := ld.lld
 
-CFLAGS := -ffreestanding -fno-builtin -nostdlib -O2
-CFLAGS += -fPIC -target x86_64-pc-none
+CFLAGS  := -ffreestanding -fno-builtin -nostdlib
+CFLAGS  += -target x86_64-sie-ps5 -fno-plt -fno-stack-protector
 
 SPRXS := $(wildcard *.sprx)
 STUBS := $(SPRXS:.sprx=.c)
