@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -70,8 +70,6 @@ typedef struct rtld_lib {
  * dependencies provided by the ELF linker.
  **/
 extern unsigned char __text_start[] __attribute__((weak));
-extern unsigned char __text_end[] __attribute__((weak));
-
 extern Elf64_Dyn _DYNAMIC[];
 
 
@@ -81,7 +79,6 @@ extern Elf64_Dyn _DYNAMIC[];
 static rtld_lib_t* libhead = 0;
 static Elf64_Sym* symtab = 0;
 static char* strtab = 0;
-static unsigned long base_addr = 0;
 
 
 /**
@@ -200,8 +197,8 @@ dt_needed(const char* basename) {
 
 static int
 r_glob_dat(Elf64_Rela* rela) {
+  unsigned long loc = (unsigned long)(__text_start + rela->r_offset);
   Elf64_Sym* sym = symtab + ELF64_R_SYM(rela->r_info);
-  unsigned long loc = base_addr + rela->r_offset;
   const char* name = strtab + sym->st_name;
   int pid = syscall(SYS_getpid);
   unsigned long val = 0;
@@ -220,28 +217,14 @@ r_glob_dat(Elf64_Rela* rela) {
 
 static int
 r_jmp_slot(Elf64_Rela* rela) {
-  Elf64_Sym* sym = symtab + ELF64_R_SYM(rela->r_info);
-  unsigned long loc = base_addr + rela->r_offset;
-  const char* name = strtab + sym->st_name;
-  int pid = syscall(SYS_getpid);
-  unsigned long val = 0;
-
-  for(rtld_lib_t *lib=libhead; lib!=0; lib=lib->next) {
-    if((val=rtld_sym(lib, name))) {
-      return mdbg_copyin(pid, &val, loc, sizeof(val));
-    }
-  }
-
-  printf("Unable to resolve %s\n", name);
-
-  return -1;
+  return r_glob_dat(rela);
 }
 
 
 static int
 r_relative(Elf64_Rela* rela) {
-  unsigned long loc = base_addr + rela->r_offset;
-  unsigned long val = base_addr + rela->r_addend;
+  unsigned long loc = (unsigned long)(__text_start + rela->r_offset);
+  unsigned long val = (unsigned long)(__text_start + rela->r_addend);
   int pid = syscall(SYS_getpid);
 
   return mdbg_copyin(pid, &val, loc, sizeof(val));
@@ -374,7 +357,6 @@ rtld_constructor(const payload_args_t *args) {
     return;
   }
 
-  base_addr = (long)__text_start;
   rootdir = kernel_get_proc_rootdir(pid);
   kernel_set_proc_rootdir(pid, kernel_get_root_vnode());
   *args->payloadout = rtld_load();
