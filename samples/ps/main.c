@@ -21,6 +21,7 @@ along with this program; see the file COPYING. If not, see
 #include <sys/sysctl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <ps5/kernel.h>
 
@@ -75,8 +76,7 @@ main() {
     ptr += ki->ki_structsize;
 
     if(sceKernelGetAppInfo(ki->ki_pid, &appinfo)) {
-      perror("sceKernelGetAppInfo");
-      continue;
+      memset(&appinfo, 0, sizeof(appinfo));
     }
 
     printf("%8u  %8u %8u %8u %8u %016lx   %11s   %5s  %04x    %5s  %s\n",
