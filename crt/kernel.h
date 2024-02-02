@@ -23,3 +23,4 @@ unsigned long kernel_get_root_vnode(void);
 unsigned long kernel_get_proc_rootdir(int pid);
 int           kernel_set_proc_rootdir(int pid, unsigned long vnode);
 
+unsigned long kernel_dynlib_entry_addr(int pid, unsigned int handle);
