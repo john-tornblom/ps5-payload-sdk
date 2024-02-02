@@ -79,6 +79,7 @@ extern Elf64_Dyn _DYNAMIC[];
 static rtld_lib_t* libhead = 0;
 static Elf64_Sym* symtab = 0;
 static char* strtab = 0;
+static int libkernel_handle = 0;
 
 
 /**
@@ -130,7 +131,7 @@ rtld_open(const char* basename) {
      !strcmp(basename, "libkernel_web.so") ||
      !strcmp(basename, "libkernel_sys.so")) {
     lib           = malloc(sizeof(rtld_lib_t));
-    lib->handle   = 0x2001;
+    lib->handle   = libkernel_handle;
     lib->next     = 0;
     return lib;
   }
@@ -327,12 +328,16 @@ rtld_load(void) {
 
 
 __attribute__((constructor(104))) static void
-rtld_constructor(const payload_args_t *args) {
+rtld_constructor(payload_args_t *args) {
   int pid = syscall(SYS_getpid);
   unsigned long rootdir = 0;
   int error = 0;
 
-  if(!args) {
+  if(!args->sceKernelDlsym(0x1, "sceKernelDlsym", &sceKernelDlsym)) {
+    libkernel_handle = 0x1;
+  } else if(!args->sceKernelDlsym(0x2001, "sceKernelDlsym", &sceKernelDlsym)) {
+    libkernel_handle = 0x2001;
+  } else {
     return;
   }
 
@@ -371,18 +376,19 @@ rtld_constructor(const payload_args_t *args) {
     return;
   }
 
-  if((error=args->sceKernelDlsym(0x2001, "sceKernelDlsym", &sceKernelDlsym))) {
+  if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelDlsym",
+				 &sceKernelDlsym))) {
     *args->payloadout = error;
     return;
   }
 
-  if((error=args->sceKernelDlsym(0x2001, "sceKernelLoadStartModule",
+  if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelLoadStartModule",
 				 &sceKernelLoadStartModule))) {
     *args->payloadout = error;
     return;
   }
 
-  if((error=args->sceKernelDlsym(0x2001, "sceKernelStopUnloadModule",
+  if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelStopUnloadModule",
 				 &sceKernelStopUnloadModule))) {
     *args->payloadout = error;
     return;
