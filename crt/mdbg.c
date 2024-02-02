@@ -107,3 +107,21 @@ mdbg_copyin(int pid, const void* buf, unsigned long addr, unsigned long len) {
 
   return mdbg_memop(MDBG_MEMOP_WRITE, &args);
 }
+
+
+int
+mdbg_setchar(int pid, unsigned long addr, char val) {
+  return mdbg_copyin(pid, &val, addr, sizeof(val));
+}
+
+
+int
+mdbg_setint(int pid, unsigned long addr, int val) {
+  return mdbg_copyin(pid, &val, addr, sizeof(val));
+}
+
+
+int
+mdbg_setlong(int pid, unsigned long addr, long val) {
+  return mdbg_copyin(pid, &val, addr, sizeof(val));
+}
