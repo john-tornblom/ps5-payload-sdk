@@ -91,12 +91,15 @@ static int   (*strcmp)(const char*, const char*) = 0;
 static int   (*strlen)(const char*) = 0;
 static int   (*printf)(const char*, ...) = 0;
 static int   (*sprintf)(char*, const char*, ...) = 0;
-static int   (*sceKernelDlsym)(int, const char*, void*)  =  0;
+static int   (*sceKernelDlsym)(int, const char*, void*) = 0;
 static int   (*sceKernelLoadStartModule)(const char*, unsigned long, const void*,
 					 unsigned int, void*, int*) = 0;
 static int   (*sceKernelStopUnloadModule)(int, unsigned long, const void*, unsigned int,
 					  const void*, void*) = 0;
 
+/**
+ *
+ **/
 static const char*
 LD_LIBRARY_PATH[] = {
   "/system/priv_ex/lib",
@@ -104,6 +107,14 @@ LD_LIBRARY_PATH[] = {
   "/system/priv/lib",
   "/system/common/lib"
 };
+
+
+#define KLOG(format, ...)				    \
+  do {							    \
+    char buf[0x100];					    \
+    sprintf(buf, "<118>[rtld] " format "\n", __VA_ARGS__);  \
+    syscall(0x259, 7, buf, 0);				    \
+  } while(0)
 
 
 /**
@@ -169,6 +180,9 @@ rtld_sym(rtld_lib_t* lib, const char* name) {
 }
 
 
+/**
+ *
+ **/
 static int
 rtld_close(rtld_lib_t* lib) {
   int handle = lib->handle;
@@ -179,6 +193,9 @@ rtld_close(rtld_lib_t* lib) {
 }
 
 
+/**
+ *
+ **/
 static int
 dt_needed(const char* basename) {
   rtld_lib_t* lib;
@@ -190,11 +207,15 @@ dt_needed(const char* basename) {
   }
 
   printf("Unable to find %s\n", basename);
+  KLOG("Unable to find %s\n", basename);
 
   return -1;
 }
 
 
+/**
+ *
+ **/
 static int
 r_glob_dat(Elf64_Rela* rela) {
   unsigned long loc = (unsigned long)(__text_start + rela->r_offset);
@@ -210,17 +231,24 @@ r_glob_dat(Elf64_Rela* rela) {
   }
 
   printf("Unable to resolve %s\n", name);
+  KLOG("Unable to resolve %s\n", name);
 
   return -1;
 }
 
 
+/**
+ *
+ **/
 static int
 r_jmp_slot(Elf64_Rela* rela) {
   return r_glob_dat(rela);
 }
 
 
+/**
+ *
+ **/
 static int
 r_relative(Elf64_Rela* rela) {
   unsigned long loc = (unsigned long)(__text_start + rela->r_offset);
@@ -231,6 +259,9 @@ r_relative(Elf64_Rela* rela) {
 }
 
 
+/**
+ *
+ **/
 static int
 rtld_load(void) {
   Elf64_Rela* rela = 0;
