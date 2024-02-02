@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -183,10 +183,12 @@ const unsigned long KERNEL_OFFSET_FILEDESC_FD_JDIR = 0x18;
 /**
  * private global variables.
  **/
-static int master_sock = -1;
-static int victim_sock = -1;
-static int rw_pipe[2] = {-1, -1};
 static unsigned long pipe_addr = 0;
+static int rw_pipe[2] = {-1, -1};
+static int rw_pair[2] = {-1, -1};
+
+#define MASTER_SOCK rw_pair[0]
+#define VICTIM_SOCK rw_pair[1]
 
 
 unsigned int
@@ -203,13 +205,10 @@ kernel_get_fw_version(void) {
 }
 
 
-__attribute__((constructor(102))) static void
+
+__attribute__((constructor(103))) static void
 kernel_constructor(payload_args_t* args) {
   int error = 0;
-
-  if(!args) {
-    return;
-  }
 
   if((error=args->sceKernelDlsym(0x2, "malloc", &malloc))) {
     *args->payloadout = error;
@@ -226,12 +225,12 @@ kernel_constructor(payload_args_t* args) {
     return;
   }
 
-  if((master_sock=args->rwpair[0]) < 0) {
+  if((rw_pair[0]=args->rwpair[0]) < 0) {
     *args->payloadout = -1;
     return;
   }
 
-  if((victim_sock=args->rwpair[1]) < 0) {
+  if((rw_pair[1]=args->rwpair[1]) < 0) {
     *args->payloadout = -1;
     return;
   }
@@ -301,7 +300,7 @@ kernel_constructor(payload_args_t* args) {
 
 
 /**
- *
+ * Write data to an address in kernel space.
  **/
 static int
 kernel_write(unsigned long addr, unsigned long *data) {
@@ -316,12 +315,12 @@ kernel_write(unsigned long addr, unsigned long *data) {
   victim_buf[1] = 0;
   victim_buf[2] = 0;
 
-  if(syscall(SYS_setsockopt, master_sock, IPPROTO_IPV6, IPV6_PKTINFO,
+  if(syscall(SYS_setsockopt, MASTER_SOCK, IPPROTO_IPV6, IPV6_PKTINFO,
 	     victim_buf, 0x14)) {
     return -1;
   }
 
-  if(syscall(SYS_setsockopt, victim_sock, IPPROTO_IPV6, IPV6_PKTINFO,
+  if(syscall(SYS_setsockopt, VICTIM_SOCK, IPPROTO_IPV6, IPV6_PKTINFO,
 	     data, 0x14)) {
     return -1;
   }
@@ -330,9 +329,6 @@ kernel_write(unsigned long addr, unsigned long *data) {
 }
 
 
-/**
- *
- **/
 int
 kernel_copyin(const void *uaddr, unsigned long kaddr, unsigned long len) {
   unsigned long write_buf[3];
@@ -366,9 +362,6 @@ kernel_copyin(const void *uaddr, unsigned long kaddr, unsigned long len) {
 }
 
 
-/**
- *
- **/
 int
 kernel_copyout(unsigned long kaddr, void *uaddr, unsigned long len) {
   unsigned long write_buf[3];
@@ -402,27 +395,18 @@ kernel_copyout(unsigned long kaddr, void *uaddr, unsigned long len) {
 }
 
 
-/**
- *
- **/
 int
 kernel_get_qaflags(unsigned char qaflags[16]) {
   return kernel_copyout(KERNEL_ADDRESS_QA_FLAGS, qaflags, 16);
 }
 
 
-/**
- *
- **/
 int
 kernel_set_qaflags(unsigned char qaflags[16]) {
   return kernel_copyin(qaflags, KERNEL_ADDRESS_QA_FLAGS, 16);
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_root_vnode(void) {
   unsigned long vnode = 0;
@@ -435,9 +419,6 @@ kernel_get_root_vnode(void) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_proc(int pid) {
   unsigned int other_pid = 0;
@@ -469,39 +450,46 @@ kernel_get_proc(int pid) {
 }
 
 
-/**
- *
- **/
-unsigned long
-kernel_dynlib_fini_addr(int pid, unsigned int handle) {
-  unsigned long kproc = kernel_get_proc(pid);
+static int
+kernel_dynlib_obj(int pid, unsigned int handle, dynlib_obj_t* obj) {
+  unsigned long kproc;
   unsigned long kaddr;
-  dynlib_obj_t obj;
 
   if(!(kproc=kernel_get_proc(pid))) {
-    return 0;
+    return -1;
   }
 
   if(kernel_copyout(kproc + 0x3e8, &kaddr, sizeof(kaddr)) < 0) {
-    return 0;
+    return -1;
   }
 
   do {
     if(kernel_copyout(kaddr, &kaddr, sizeof(kaddr)) < 0) {
-      return 0;
+      return -1;
     }
     if(!kaddr) {
-      return 0;
+      return -1;
     }
 
     if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, handle),
-		      &obj.handle, sizeof(obj.handle)) < 0) {
-      return 0;
+		      &obj->handle, sizeof(obj->handle)) < 0) {
+      return -1;
     }
-  } while(obj.handle != handle);
+  } while(obj->handle != handle);
 
-  if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, fini),
-		    &obj.fini, sizeof(obj.fini)) < 0) {
+  if(kernel_copyout(kaddr, obj, sizeof(dynlib_obj_t)) < 0) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
+unsigned long
+kernel_dynlib_fini_addr(int pid, unsigned int handle) {
+  dynlib_obj_t obj;
+
+  if(kernel_dynlib_obj(pid, handle, &obj)) {
     return 0;
   }
 
@@ -509,39 +497,11 @@ kernel_dynlib_fini_addr(int pid, unsigned int handle) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_dynlib_init_addr(int pid, unsigned int handle) {
-  unsigned long kproc = kernel_get_proc(pid);
-  unsigned long kaddr;
   dynlib_obj_t obj;
 
-  if(!(kproc=kernel_get_proc(pid))) {
-    return 0;
-  }
-
-  if(kernel_copyout(kproc + 0x3e8, &kaddr, sizeof(kaddr)) < 0) {
-    return 0;
-  }
-
-  do {
-    if(kernel_copyout(kaddr, &kaddr, sizeof(kaddr)) < 0) {
-      return 0;
-    }
-    if(!kaddr) {
-      return 0;
-    }
-
-    if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, handle),
-		      &obj.handle, sizeof(obj.handle)) < 0) {
-      return 0;
-    }
-  } while(obj.handle != handle);
-
-  if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, init),
-		    &obj.init, sizeof(obj.init)) < 0) {
+  if(kernel_dynlib_obj(pid, handle, &obj)) {
     return 0;
   }
 
@@ -549,51 +509,32 @@ kernel_dynlib_init_addr(int pid, unsigned int handle) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_dynlib_entry_addr(int pid, unsigned int handle) {
-  unsigned long kproc = kernel_get_proc(pid);
-  unsigned long kaddr;
   dynlib_obj_t obj;
 
-  if(!(kproc=kernel_get_proc(pid))) {
+  if(kernel_dynlib_obj(pid, handle, &obj)) {
     return 0;
   }
 
-  if(kernel_copyout(kproc + 0x3e8, &kaddr, sizeof(kaddr)) < 0) {
-    return 0;
-  }
-
-  do {
-    if(kernel_copyout(kaddr, &kaddr, sizeof(kaddr)) < 0) {
-      return 0;
-    }
-    if(!kaddr) {
-      return 0;
-    }
-
-    if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, handle),
-		      &obj.handle, sizeof(obj.handle)) < 0) {
-      return 0;
-    }
-  } while(obj.handle != handle);
-
-  if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, entry),
-		    &obj.entry, sizeof(obj.entry)) < 0) {
-    return 0;
-  }
   return obj.entry;
 }
 
 
-/**
- *
- **/
+unsigned long
+kernel_dynlib_mapbase_addr(int pid, unsigned int handle) {
+  dynlib_obj_t obj;
+
+  if(kernel_dynlib_obj(pid, handle, &obj)) {
+    return 0;
+  }
+
+  return obj.mapbase;
+}
+
+
 unsigned long
 kernel_dynlib_resolve(int pid, int handle, const char *nid) {
-  unsigned long kproc = kernel_get_proc(pid);
   dynlib_dynsec_t dynsec;
   unsigned long kaddr;
   unsigned long vaddr;
@@ -601,29 +542,7 @@ kernel_dynlib_resolve(int pid, int handle, const char *nid) {
   dynlib_obj_t obj;
   char *strtab;
 
-  if(!(kproc=kernel_get_proc(pid))) {
-    return 0;
-  }
-
-  if(kernel_copyout(kproc + 0x3e8, &kaddr, sizeof(kaddr)) < 0) {
-    return 0;
-  }
-
-  do {
-    if(kernel_copyout(kaddr, &kaddr, sizeof(kaddr)) < 0) {
-      return 0;
-    }
-    if(!kaddr) {
-      return 0;
-    }
-
-    if(kernel_copyout(kaddr + __builtin_offsetof(dynlib_obj_t, handle),
-		      &obj.handle, sizeof(obj.handle)) < 0) {
-      return 0;
-    }
-  } while(obj.handle != handle);
-
-  if(kernel_copyout(kaddr, &obj, sizeof(obj)) < 0) {
+  if(kernel_dynlib_obj(pid, handle, &obj)) {
     return 0;
   }
 
@@ -666,9 +585,6 @@ kernel_dynlib_resolve(int pid, int handle, const char *nid) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_proc_ucred(int pid) {
   unsigned long proc = 0;
@@ -687,9 +603,6 @@ kernel_get_proc_ucred(int pid) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_ucred_authid(int pid) {
   unsigned long authid = 0;
@@ -708,9 +621,6 @@ kernel_get_ucred_authid(int pid) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_ucred_authid(int pid, unsigned long authid) {
   unsigned long ucred = 0;
@@ -728,9 +638,6 @@ kernel_set_ucred_authid(int pid, unsigned long authid) {
 }
 
 
-/**
- *
- **/
 int
 kernel_get_ucred_caps(int pid, unsigned char caps[16]) {
   unsigned long ucred = 0;
@@ -747,9 +654,6 @@ kernel_get_ucred_caps(int pid, unsigned char caps[16]) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_ucred_caps(int pid, unsigned char caps[16]) {
   unsigned long ucred = 0;
@@ -766,9 +670,6 @@ kernel_set_ucred_caps(int pid, unsigned char caps[16]) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_ucred_attrs(int pid) {
   unsigned long ucred = 0;
@@ -787,9 +688,6 @@ kernel_get_ucred_attrs(int pid) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_ucred_attrs(int pid, unsigned long attrs) {
   unsigned long ucred = 0;
@@ -797,7 +695,7 @@ kernel_set_ucred_attrs(int pid, unsigned long attrs) {
   if(!(ucred=kernel_get_proc_ucred(pid))) {
     return -1;
   }
-
+
   if(kernel_copyin(&attrs, ucred + KERNEL_OFFSET_UCRED_CR_SCEATTRS,
 		   sizeof(attrs))) {
     return -1;
@@ -807,9 +705,6 @@ kernel_set_ucred_attrs(int pid, unsigned long attrs) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_ucred_uid(int pid, unsigned int uid) {
   unsigned long ucred = 0;
@@ -827,9 +722,6 @@ kernel_set_ucred_uid(int pid, unsigned int uid) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_ucred_ruid(int pid, unsigned int ruid) {
   unsigned long ucred = 0;
@@ -847,9 +739,6 @@ kernel_set_ucred_ruid(int pid, unsigned int ruid) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_ucred_svuid(int pid, unsigned int svuid) {
   unsigned long ucred = 0;
@@ -867,10 +756,6 @@ kernel_set_ucred_svuid(int pid, unsigned int svuid) {
 }
 
 
-
-/**
- *
- **/
 int
 kernel_set_ucred_rgid(int pid, unsigned int rgid) {
   unsigned long ucred = 0;
@@ -888,9 +773,6 @@ kernel_set_ucred_rgid(int pid, unsigned int rgid) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_ucred_svgid(int pid, unsigned int svgid) {
   unsigned long ucred = 0;
@@ -908,9 +790,6 @@ kernel_set_ucred_svgid(int pid, unsigned int svgid) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_proc_filedesc(int pid) {
   unsigned long filedesc = 0;
@@ -929,9 +808,6 @@ kernel_get_proc_filedesc(int pid) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_proc_file(int pid, int fd) {
   unsigned long fd_files;
@@ -1015,9 +891,6 @@ kernel_inc_so_count(int pid, int fd) {
 }
 
 
-/**
- *
- **/
 int
 kernel_overlap_sockets(int pid, int master_sock, int victim_sock) {
   unsigned long master_inp6_outputopts;
@@ -1059,9 +932,6 @@ kernel_overlap_sockets(int pid, int master_sock, int victim_sock) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_proc_rootdir(int pid) {
   unsigned long filedesc = 0;
@@ -1080,9 +950,6 @@ kernel_get_proc_rootdir(int pid) {
 }
 
 
-/**
- *
- **/
 unsigned long
 kernel_get_proc_jaildir(int pid) {
   unsigned long filedesc = 0;
@@ -1101,9 +968,6 @@ kernel_get_proc_jaildir(int pid) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_proc_rootdir(int pid, unsigned long vnode) {
   unsigned long filedesc = 0;
@@ -1121,9 +985,6 @@ kernel_set_proc_rootdir(int pid, unsigned long vnode) {
 }
 
 
-/**
- *
- **/
 int
 kernel_set_proc_jaildir(int pid, unsigned long vnode) {
   unsigned long filedesc = 0;
