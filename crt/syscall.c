@@ -41,12 +41,9 @@ asm(".intel_syntax noprefix\n"
 
 
 __attribute__((constructor(101))) static void
-syscall_constructor(const payload_args_t *args) {
-  if(!args) {
-    return;
-  }
-
-  if(args->sceKernelDlsym(0x2001, "getpid", &ptr_syscall)) {
+syscall_constructor(payload_args_t *args) {
+  if(args->sceKernelDlsym(0x1, "getpid", &ptr_syscall) &&
+     args->sceKernelDlsym(0x2001, "getpid", &ptr_syscall)) {
     return;
   }
 
