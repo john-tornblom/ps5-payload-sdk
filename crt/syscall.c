@@ -17,7 +17,13 @@ along with this program; see the file COPYING. If not, see
 #include "payload.h"
 
 
-static __attribute__ ((used)) long ptr_syscall;
+/**
+ * The PS5 does not allow syscalls from .text sections that are allocated in
+ * shared memory. Instead, we simply assign the approriate registers, and
+ * jump directly to a syscall instruction in libkernel (which is not in shared
+ * memory).
+ **/
+static __attribute__ ((used)) long ptr_syscall = 0;
 asm(".intel_syntax noprefix\n"
     ".global syscall\n"
     ".type syscall @function\n"
@@ -44,5 +50,7 @@ syscall_constructor(const payload_args_t *args) {
     return;
   }
 
+  // jump directly to the syscall instruction
+  // in getpid (provided by libkernel)
   ptr_syscall += 0xa;
 }
