@@ -327,79 +327,71 @@ rtld_load(void) {
 }
 
 
-__attribute__((constructor(104))) static void
-rtld_constructor(payload_args_t *args) {
+int
+__rtld_init(payload_args_t *args) {
   int pid = syscall(SYS_getpid);
   unsigned long rootdir = 0;
   int error = 0;
 
+  // determine libkernel handle
   if(!args->sceKernelDlsym(0x1, "sceKernelDlsym", &sceKernelDlsym)) {
     libkernel_handle = 0x1;
   } else if(!args->sceKernelDlsym(0x2001, "sceKernelDlsym", &sceKernelDlsym)) {
     libkernel_handle = 0x2001;
   } else {
-    return;
+    return -1;
   }
 
+  // load deps to libc
   if((error=args->sceKernelDlsym(0x2, "malloc", &malloc))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(0x2, "free", &free))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(0x2, "strcat", &strcat))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(0x2, "strcmp", &strcmp))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(0x2, "strlen", &strlen))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(0x2, "printf", &printf))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(0x2, "sprintf", &sprintf))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
 
+  // load deps to libkernel
   if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelDlsym",
 				 &sceKernelDlsym))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelLoadStartModule",
 				 &sceKernelLoadStartModule))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelStopUnloadModule",
 				 &sceKernelStopUnloadModule))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
 
-  rootdir = kernel_get_proc_rootdir(pid);
-  kernel_set_proc_rootdir(pid, kernel_get_root_vnode());
-  if((error=rtld_load())) {
-    *args->payloadout = error;
+  // jailbreak, and load shared objects
+  if(!(rootdir=kernel_get_proc_rootdir(pid))) {
+    return -1;
   }
-  kernel_set_proc_rootdir(pid, rootdir);
+  if(kernel_set_proc_rootdir(pid, kernel_get_root_vnode())) {
+    return -1;
+  }
+  error = rtld_load();
+  if(kernel_set_proc_rootdir(pid, rootdir)) {
+    return -1;
+  }
+
+  return error;
 }
 
 

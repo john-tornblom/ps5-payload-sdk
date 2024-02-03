@@ -205,54 +205,39 @@ kernel_get_fw_version(void) {
 }
 
 
-
-__attribute__((constructor(103))) static void
-kernel_constructor(payload_args_t* args) {
+int
+__kernel_init(payload_args_t* args) {
   int error = 0;
 
   if((error=args->sceKernelDlsym(0x2, "malloc", &malloc))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(0x2, "free", &free))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
-
   if((error=args->sceKernelDlsym(0x2, "strncmp", &strncmp))) {
-    *args->payloadout = error;
-    return;
+    return error;
   }
 
   if((rw_pair[0]=args->rwpair[0]) < 0) {
-    *args->payloadout = -1;
-    return;
+    return -1;
   }
-
   if((rw_pair[1]=args->rwpair[1]) < 0) {
-    *args->payloadout = -1;
-    return;
+    return -1;
   }
 
   if((rw_pipe[0]=args->rwpipe[0]) < 0) {
-    *args->payloadout = -1;
-    return;
+    return -1;
   }
-
   if((rw_pipe[1]=args->rwpipe[1]) < 0) {
-    *args->payloadout = -1;
-    return;
+    return -1;
   }
 
   if(!(pipe_addr=args->kpipe_addr)) {
-    *args->payloadout = -1;
-    return;
+    return -1;
   }
-
   if(!(KERNEL_ADDRESS_DATA_BASE=args->kdata_base_addr)) {
-    *args->payloadout = -1;
-    return;
+    return -1;
   }
 
   switch(kernel_get_fw_version() & 0xffff0000) {
@@ -293,9 +278,10 @@ kernel_constructor(payload_args_t* args) {
     break;
 
   default:
-    *args->payloadout = -1;
-    return;
+    return -1;
   }
+
+  return 0;
 }
 
 

@@ -36,6 +36,62 @@ extern unsigned char __bss_end[] __attribute__((weak));
 extern int main(int argc, char* argv[], char *envp[]);
 
 
+int __kernel_init(payload_args_t* args);
+int __rtld_init(payload_args_t* args);
+
+
+/**
+ * The PS5 does not allow syscalls from .text sections that are allocated in
+ * shared memory. Instead, we simply assign the approriate registers, and
+ * jump directly to a syscall instruction in libkernel (which is not in shared
+ * memory).
+ **/
+static __attribute__ ((used)) long ptr_syscall = 0;
+asm(".intel_syntax noprefix\n"
+    ".global syscall\n"
+    ".type syscall @function\n"
+    "syscall:\n"
+    "  mov rax, rdi\n"                      // sysno
+    "  mov rdi, rsi\n"                      // arg1
+    "  mov rsi, rdx\n"                      // arg2
+    "  mov rdx, rcx\n"                      // arg3
+    "  mov r10, r8\n"                       // arg4
+    "  mov r8,  r9\n"                       // arg5
+    "  mov r9,  qword ptr [rsp + 8]\n"      // arg6
+    "  jmp qword ptr [rip + ptr_syscall]\n" // syscall
+    "  ret\n"
+    );
+
+
+static payload_args_t* payload_args = 0;
+
+
+payload_args_t*
+payload_get_args(void) {
+  return payload_args;
+}
+
+
+static int
+pre_init(payload_args_t *args) {
+  payload_args = args;
+
+  if(args->sceKernelDlsym(0x1, "getpid", &ptr_syscall) &&
+     args->sceKernelDlsym(0x2001, "getpid", &ptr_syscall)) {
+    return -1;
+  }
+  // jump directly to the syscall instruction
+  // in getpid (provided by libkernel)
+  ptr_syscall += 0xa;
+
+  if(__kernel_init(args) || __rtld_init(args)) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
 /**
  * Entry-point invoked by the ELF loader.
  **/
@@ -51,6 +107,9 @@ _start(payload_args_t *args) {
   }
 
   *args->payloadout = 0;
+  if(pre_init(args)) {
+    return;
+  }
 
   // Run .init functions.
   count = __init_array_end - __init_array_start;
@@ -58,12 +117,8 @@ _start(payload_args_t *args) {
     __init_array_start[i](args);
   }
 
-  // Run the actual payload, but only if .init functions ran successfully.
-  if(*args->payloadout) {
-    exit_code = *args->payloadout;
-  } else {
-    exit_code = main(0, 0, 0);
-  }
+  // Run the actual payload
+  exit_code = main(0, 0, 0);
 
   // Run .fini functions.
   count = __fini_array_end - __fini_array_start;
