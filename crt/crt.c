@@ -71,8 +71,7 @@ _start(payload_args_t *args) {
     __fini_array_start[count-i-1]();
   }
 
-  args->sceKernelDlsym(0x1, "_exit", &_exit);
-  if(_exit) {
+  if(!args->sceKernelDlsym(0x1, "_exit", &_exit)) {
     _exit(exit_code);
   }
 }
