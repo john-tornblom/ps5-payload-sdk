@@ -1,7 +1,8 @@
 # PS5 Payload SDK
-This is an SDK for developing ELF payloads targeted at exploited PS5s running
-[ps5-payload-elfldr][elfldr]. Several artifacts in this repository originate
-from the [PS5SDK][PS5SDK] project.
+This is an SDK for developing payloads targeted at exploited PS5s running an ELF
+loader, e.g., [ps5-payload-elfldr][elfldr], the [BD-J ps5-payload-loader][bdj],
+or the [webkit approached from Specter][webkit]. Several artifacts in this
+repository originate from the [PS5SDK][PS5SDK] project.
 
 ## Prerequisites
 On Debian-flavored operating systems, you can invoke the following command to
@@ -49,6 +50,8 @@ Files in the include_bsd directory are licenced under BSD licences.
 Unless otherwhise explicitly stated inside a file, the rest are licensed under
 the GPLv2.
 
+[bdj]: https://github.com/john-tornblom/bdj-sdk/tree/master/samples/ps5-payload-loader
+[sdk]: https://github.com/john-tornblom/ps5-payload-sdk
 [issues]: https://github.com/john-tornblom/ps5-payload-sdk/issues/new
 [elfldr]: https://github.com/john-tornblom/ps5-payload-elfldr
 [PS5SDK]: https://github.com/PS5Dev/PS5SDK
