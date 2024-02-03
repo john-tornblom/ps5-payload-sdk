@@ -42,6 +42,7 @@ extern int main(int argc, char* argv[], char *envp[]);
 void
 _start(payload_args_t *args) {
   unsigned long count = 0;
+  void (*_exit)(int) = 0;
   int exit_code = 0;
 
   // Clear .bss section.
@@ -70,7 +71,8 @@ _start(payload_args_t *args) {
     __fini_array_start[count-i-1]();
   }
 
-  if(!*error) {
-    *error = exit_code;
+  args->sceKernelDlsym(0x1, "_exit", &_exit);
+  if(_exit) {
+    _exit(exit_code);
   }
 }
