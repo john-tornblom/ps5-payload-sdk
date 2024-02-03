@@ -14,20 +14,25 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
-#include "payload.h"
+#pragma once
+
+#include <stdint.h>
 
 
-static payload_args_t* g_args = 0;
+typedef struct payload_args {
+  int (*sceKernelDlsym)(int, const char*, void*);
+  int* rwpipe;
+  int* rwpair;
+
+  intptr_t kpipe_addr;
+  intptr_t kdata_base_addr;
+
+  int* payloadout;
+} payload_args_t;
 
 
-payload_args_t*
-payload_get_args(void) {
-  return g_args;
-}
-
-
-__attribute__((constructor(102))) static void
-payload_constructor(payload_args_t* args) {
-  g_args = args;
-}
+/**
+ *
+ **/
+payload_args_t* payload_get_args(void);
 
