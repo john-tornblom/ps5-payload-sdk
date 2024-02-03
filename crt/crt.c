@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -23,8 +23,8 @@ along with this program; see the file COPYING. If not, see
 extern void (*__init_array_start[])(payload_args_t*) __attribute__((weak));
 extern void (*__init_array_end[])(payload_args_t*) __attribute__((weak));
 
-extern void (*__fini_array_start[])(payload_args_t*) __attribute__((weak));
-extern void (*__fini_array_end[])(payload_args_t*) __attribute__((weak));
+extern void (*__fini_array_start[])(void) __attribute__((weak));
+extern void (*__fini_array_end[])(void) __attribute__((weak));
 
 extern unsigned char __bss_start[] __attribute__((weak));
 extern unsigned char __bss_end[] __attribute__((weak));
@@ -37,40 +37,37 @@ extern int main(int argc, char* argv[], char *envp[]);
 
 
 /**
- * Entry-point used by the ELF loader.
+ * Entry-point invoked by the ELF loader.
  **/
 void
 _start(payload_args_t *args) {
   unsigned long count = 0;
   int exit_code = 0;
-  int *error;
 
+  // Clear .bss section.
   for(unsigned char* bss=__bss_start; bss<__bss_end; bss++) {
     *bss = 0;
   }
 
-  if(args) {
-    error = args->payloadout;
-  } else {
-    error = &exit_code;
-  }
+  *args->payloadout = 0;
 
-  *error = 0;
+  // Run .init functions.
   count = __init_array_end - __init_array_start;
   for(int i=0; i<count; i++) {
     __init_array_start[i](args);
   }
 
-  if(!*error) {
-    exit_code = main(0, 0, 0);
+  // Run the actual payload, but only if .init functions ran successfully.
+  if(*args->payloadout) {
+    exit_code = *args->payloadout;
   } else {
-    exit_code = *error;
+    exit_code = main(0, 0, 0);
   }
 
-  *error = 0;
+  // Run .fini functions.
   count = __fini_array_end - __fini_array_start;
   for(int i=0; i<count; i++) {
-    __fini_array_start[count-i-1](args);
+    __fini_array_start[count-i-1]();
   }
 
   if(!*error) {

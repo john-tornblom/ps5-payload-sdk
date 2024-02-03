@@ -396,18 +396,18 @@ rtld_constructor(payload_args_t *args) {
 
   rootdir = kernel_get_proc_rootdir(pid);
   kernel_set_proc_rootdir(pid, kernel_get_root_vnode());
-  *args->payloadout = rtld_load();
+  if((error=rtld_load())) {
+    *args->payloadout = error;
+  }
   kernel_set_proc_rootdir(pid, rootdir);
 }
 
 
 __attribute__((destructor(104))) static void
-rtld_destructor(const payload_args_t *args) {
+rtld_destructor(void) {
   while(libhead) {
     rtld_lib_t *next = libhead->next;
-    if(rtld_close(libhead)) {
-      *args->payloadout = -1;
-    }
+    rtld_close(libhead);
     libhead = next;
   }
 }
