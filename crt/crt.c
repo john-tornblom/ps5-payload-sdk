@@ -99,7 +99,6 @@ void
 _start(payload_args_t *args) {
   unsigned long count = 0;
   void (*_exit)(int) = 0;
-  int exit_code = 0;
 
   // Clear .bss section.
   for(unsigned char* bss=__bss_start; bss<__bss_end; bss++) {
@@ -107,7 +106,7 @@ _start(payload_args_t *args) {
   }
 
   *args->payloadout = 0;
-  if(pre_init(args)) {
+  if((*args->payloadout=pre_init(args))) {
     return;
   }
 
@@ -118,7 +117,7 @@ _start(payload_args_t *args) {
   }
 
   // Run the actual payload
-  exit_code = main(0, 0, 0);
+  *args->payloadout = main(0, 0, 0);
 
   // Run .fini functions.
   count = __fini_array_end - __fini_array_start;
@@ -127,6 +126,6 @@ _start(payload_args_t *args) {
   }
 
   if(!args->sceKernelDlsym(0x1, "_exit", &_exit)) {
-    _exit(exit_code);
+    _exit(*args->payloadout);
   }
 }
