@@ -96,7 +96,7 @@ pre_init(payload_args_t *args) {
  * Entry-point invoked by the ELF loader.
  **/
 void
-_start(payload_args_t *args) {
+_start(payload_args_t *args, int argc, char* argv[], char* envp[]) {
   unsigned long count = 0;
   void (*_exit)(int) = 0;
 
@@ -117,7 +117,7 @@ _start(payload_args_t *args) {
   }
 
   // Run the actual payload
-  *args->payloadout = main(0, 0, 0);
+  *args->payloadout = main(argc, argv, envp);
 
   // Run .fini functions.
   count = __fini_array_end - __fini_array_start;
