@@ -82,6 +82,12 @@ static char* strtab = 0;
 static int libkernel_handle = 0;
 
 
+typedef struct sysmodtab {
+  const char* name;
+  unsigned int handle;
+} sysmodtab_t;
+
+
 /**
  * external dependencies.
  **/
@@ -97,6 +103,8 @@ static int   (*sceKernelLoadStartModule)(const char*, unsigned long, const void*
 					 unsigned int, void*, int*) = 0;
 static int   (*sceKernelStopUnloadModule)(int, unsigned long, const void*, unsigned int,
 					  const void*, void*) = 0;
+static int   (*sceSysmoduleLoadModuleInternal)(unsigned int) = 0;
+
 
 /**
  *
@@ -107,6 +115,150 @@ LD_LIBRARY_PATH[] = {
   "/system/common_ex/lib",
   "/system/priv/lib",
   "/system/common/lib"
+};
+
+
+/**
+ *
+ **/
+static const sysmodtab_t sysmodtab[] = {
+  {"libSceAbstractLocal.so", 0x8000005f},
+  {"libSceAbstractStorage.so", 0x80000058},
+  {"libSceAbstractTcs.so", 0x800000a1},
+  {"libSceAbstractTwitter.so", 0x80000062},
+  {"libSceAbstractYoutube.so", 0x80000061},
+  {"libSceAc3Enc.so", 0x80000013},
+  {"libSceAgc.so", 0x80000094},
+  {"libSceAgcDriver.so", 0x80000080},
+  {"libSceAgcResourceRegistration.so", 0x80000093},
+  {"libSceAgcVsh.so", 0x80000086},
+  {"libSceAgcVshDebug.so", 0x80000087},
+  {"libSceAjm.native.so", 0x80000023},
+  {"libSceAjmi.so", 0x8000007e},
+  {"libSceAmpr.so", 0x800000b7},
+  {"libSceAppChecker.so", 0x80000032},
+  {"libSceAppDbShellCoreClient.so", 0x800000a7},
+  {"libSceAppInstUtil.so", 0x80000014},
+  {"libSceAsyncStorageInternal.so", 0x80000077},
+  {"libSceAudioIn.so", 0x80000002},
+  {"libSceAudioOut.so", 0x80000001},
+  {"libSceAudioSystem.so", 0x80000083},
+  {"libSceAudiodecCpuDtsHdMa.so", 0x8000002d},
+  {"libSceAudiodecCpuLpcm.so", 0x8000002e},
+  {"libSceAudiodecCpuTrhd.so", 0x80000082},
+  {"libSceAvSetting.so", 0x80000021},
+  {"libSceAvcap2.so", 0x80000085},
+  {"libSceBackupRestoreUtil.so", 0x8000003f},
+  {"libSceBgft.so", 0x8000002a},
+  {"libSceBgsStorage.so", 0x800000a3},
+  {"libSceCamera.so", 0x8000001a},
+  {"libSceCdlgUtilServer.so", 0x80000007},
+  {"libSceCommonDialog.so", 0x80000018},
+  {"libSceComposite.so", 0x8000008a},
+  {"libSceCompositeExt.so", 0x8000008b},
+  {"libSceContentListController.so", 0x800000ad},
+  {"libSceDataTransfer.so", 0x80000057},
+  {"libSceDbg.so", 0x80000025},
+  {"libSceDipsw.so", 0x80000029},
+  {"libSceDseehx.so", 0x80000056},
+  {"libSceDtsEnc.so", 0x80000028},
+  {"libSceEmbeddedTts.so", 0x8000009c},
+  {"libSceEmbeddedTtsCoreG3.so", 0x8000009b},
+  {"libSceFsInternalForVsh.so", 0x80000066},
+  {"libSceGLSlimVSH.so", 0x800000a9},
+  {"libSceGifParser.so", 0x8000005e},
+  {"libSceGpuCapture.so", 0x8000007f},
+  {"libSceGpuTrace.so", 0x8000007b},
+  {"libSceGvMp4Parser.so", 0x8000005c},
+  {"libSceHidControl.so", 0x80000017},
+  {"libSceHttp.so", 0x8000000a},
+  {"libSceHttp2.so", 0x8000008c},
+  {"libSceHttpCache.so", 0x80000078},
+  {"libSceIcu.so", 0x800000a8},
+  {"libSceIdu.so", 0x800000a6},
+  {"libSceImageUtil.so", 0x80000059},
+  {"libSceIpmi.so", 0x8000001d},
+  {"libSceJemspace.so", 0x8000009e},
+  {"libSceJitBridge.so", 0x8000006f},
+  {"libSceJpegParser.so", 0x8000005b},
+  {"libSceJsc.so", 0x800000b0},
+  {"libSceJscCompiler.so", 0x80000070},
+  {"libSceJxr.so", 0x800000b4},
+  {"libSceJxrParser.so", 0x800000b5},
+  {"libSceKbEmulate.so", 0x80000031},
+  {"libSceLibreSsl.so", 0x80000065},
+  {"libSceLibreSsl3.so", 0x800000b8},
+  {"libSceLoginMgrServer.so", 0x80000045},
+  {"libSceMarlin.so", 0x80000027},
+  {"libSceMat.so", 0x80000048},
+  {"libSceMbus.so", 0x8000001e},
+  {"libSceMediaFrameworkInterface.so", 0x80000095},
+  {"libSceMediaFrameworkUtil.so", 0x800000b6},
+  {"libSceMetadataReaderWriter.so", 0x8000005a},
+  {"libSceNKWeb.so", 0x80000079},
+  {"libSceNKWebKit.so", 0x8000007a},
+  {"libSceNet.so", 0x8000001c},
+  {"libSceNetCtl.so", 0x80000009},
+  {"libSceNgs2.so", 0x80000090},
+  {"libSceNpCommon.so", 0x8000000c},
+  {"libSceNpGameIntent.so", 0x8000008d},
+  {"libSceNpManager.so", 0x8000000d},
+  {"libSceNpRemotePlaySessionSignaling.so", 0x8000009a},
+  {"libSceNpSns.so", 0x8000001b},
+  {"libSceNpTcs.so", 0x800000a0},
+  {"libSceNpWebApi.so", 0x8000000e},
+  {"libSceNpWebApi2.so", 0x8000008f},
+  {"libSceOpusCeltDec.so", 0x80000044},
+  {"libSceOpusCeltEnc.so", 0x80000043},
+  {"libSceOpusDec.so", 0x80000069},
+  {"libSceOpusSilkEnc.so", 0x80000068},
+  {"libSceOrbisCompat.so", 0x80000071},
+  {"libScePad.so", 0x80000024},
+  {"libScePngParser.so", 0x8000005d},
+  {"libScePosixForWebKit.so", 0x80000098},
+  {"libScePsm.so", 0x80000030},
+  {"libSceRazorCpu_debug.so", 0x80000075},
+  {"libSceRegMgr.so", 0x8000001f},
+  {"libSceRemotePlayClientIpc.so", 0x800000b9},
+  {"libSceResourceArbitrator.so", 0x80000092},
+  {"libSceRnpsAppMgr.so", 0x80000076},
+  {"libSceRtc.so", 0x80000020},
+  {"libSceSaveData.so", 0x8000000f},
+  {"libSceShareInternal.native.so", 0x8000008e},
+  {"libSceSocialScreen.so", 0x800000ae},
+  {"libSceSsl.so", 0x8000000b},
+  {"libSceSulphaDrv.so", 0x8000003b},
+  {"libSceSysCore.so", 0x80000004},
+  {"libSceSysUtil.so", 0x80000026},
+  {"libSceSystemLogger2.so", 0x800000b3},
+  {"libSceSystemLogger2Delivery.so", 0x80000089},
+  {"libSceSystemLogger2Game.so", 0x8000009f},
+  {"libSceSystemLogger2NativeQueueClient.so", 0x80000088},
+  {"libSceSystemService.so", 0x80000010},
+  {"libSceSystemTts.so", 0x80000097},
+  {"libSceTEEClient.so", 0x800000a2},
+  {"libSceUserService.so", 0x80000011},
+  {"libSceVcodec.so", 0x80000091},
+  {"libSceVdecCore.native.so", 0x80000015},
+  {"libSceVdecSavc2.native.so", 0x80000036},
+  {"libSceVdecShevc.native.so", 0x8000003c},
+  {"libSceVdecSvp9.native.so", 0x800000af},
+  {"libSceVenc.so", 0x80000084},
+  {"libSceVideoOut.so", 0x80000022},
+  {"libSceVideoOutSecondary.so", 0x80000046},
+  {"libSceVideoStreamingEngine_sys.so", 0x800000b2},
+  {"libSceVisionManager.so", 0x80000012},
+  {"libSceVnaInternal.so", 0x8000007c},
+  {"libSceVnaWebsocket.so", 0x8000007d},
+  {"libSceVoiceCommand.so", 0x80000099},
+  {"libSceWeb.so", 0x80000072},
+  {"libSceWebKit2.so", 0x80000073},
+  {"libSceWebKit2Secure.so", 0x80000074},
+  {"libSceWebmParserMdrw.so", 0x800000a4},
+  {"libcairo.so", 0x800000ac},
+  {"libcurl.so", 0x800000b1},
+  {"libicu.so", 0x800000aa},
+  {"libpng16.so", 0x800000ab}
 };
 
 
@@ -151,7 +303,18 @@ rtld_open(const char* basename) {
       continue;
     }
 
-   if((handle=sceKernelLoadStartModule(filename, 0, 0, 0, 0, 0)) > 0) {
+    // sysmodules needs to be loaded internally first
+    for(int i=0; i<sizeof(sysmodtab)/sizeof(sysmodtab[0]); i++) {
+      if(!strcmp(basename, sysmodtab[i].name)) {
+	if(!sceSysmoduleLoadModuleInternal) {
+	  return 0;
+	}
+	sceSysmoduleLoadModuleInternal(sysmodtab[i].handle);
+	break;
+      }
+    }
+
+    if((handle=sceKernelLoadStartModule(filename, 0, 0, 0, 0, 0)) > 0) {
       break;
     }
   }
@@ -386,7 +549,16 @@ __rtld_init(payload_args_t *args) {
   if(kernel_set_proc_rootdir(pid, kernel_get_root_vnode())) {
     return -1;
   }
+
+  if((libhead=rtld_open("libSceSysmodule.so"))) {
+    if((error=args->sceKernelDlsym(libhead->handle, "sceSysmoduleLoadModuleInternal",
+				   &sceSysmoduleLoadModuleInternal))) {
+      return error;
+    }
+  }
+
   error = rtld_load();
+
   if(kernel_set_proc_rootdir(pid, rootdir)) {
     return -1;
   }

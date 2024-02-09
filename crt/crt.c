@@ -74,18 +74,24 @@ payload_get_args(void) {
 
 static int
 pre_init(payload_args_t *args) {
-  payload_args = args;
+  int error = 0;
 
-  if(args->sceKernelDlsym(0x1, "getpid", &ptr_syscall) &&
-     args->sceKernelDlsym(0x2001, "getpid", &ptr_syscall)) {
-    return -1;
+  payload_args = args;
+  if(args->sceKernelDlsym(0x1, "getpid", &ptr_syscall)) {
+    if((error=args->sceKernelDlsym(0x2001, "getpid", &ptr_syscall))) {
+      return error;
+    }
   }
+
   // jump directly to the syscall instruction
   // in getpid (provided by libkernel)
   ptr_syscall += 0xa;
 
-  if(__kernel_init(args) || __rtld_init(args)) {
-    return -1;
+  if((error=__kernel_init(args))) {
+    return error;
+  }
+  if((error=__rtld_init(args))) {
+    return error;
   }
 
   return 0;
