@@ -309,8 +309,9 @@ rtld_open(const char* basename) {
 	if(!sceSysmoduleLoadModuleInternal) {
 	  return 0;
 	}
-	sceSysmoduleLoadModuleInternal(sysmodtab[i].handle);
-	break;
+	if(sceSysmoduleLoadModuleInternal(sysmodtab[i].handle)) {
+	  return 0;
+	}
       }
     }
 
@@ -370,8 +371,8 @@ dt_needed(const char* basename) {
     return 0;
   }
 
-  printf("Unable to find %s\n", basename);
-  KLOG("Unable to find %s\n", basename);
+  printf("Unable to load %s\n", basename);
+  KLOG("Unable to load %s\n", basename);
 
   return -1;
 }
