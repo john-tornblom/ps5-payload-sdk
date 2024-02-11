@@ -96,7 +96,6 @@ static void  (*free)(void*) = 0;
 static char* (*strcat)(char*, const char*);
 static int   (*strcmp)(const char*, const char*) = 0;
 static int   (*strlen)(const char*) = 0;
-static int   (*printf)(const char*, ...) = 0;
 static int   (*sprintf)(char*, const char*, ...) = 0;
 static int   (*sceKernelDlsym)(int, const char*, void*) = 0;
 static int   (*sceKernelLoadStartModule)(const char*, unsigned long, const void*,
@@ -371,7 +370,6 @@ dt_needed(const char* basename) {
     return 0;
   }
 
-  printf("Unable to load %s\n", basename);
   KLOG("Unable to load %s\n", basename);
 
   return -1;
@@ -395,7 +393,6 @@ r_glob_dat(Elf64_Rela* rela) {
     }
   }
 
-  printf("Unable to resolve %s\n", name);
   KLOG("Unable to resolve %s\n", name);
 
   return -1;
@@ -464,7 +461,7 @@ rtld_load(void) {
     }
   }
 
-  // Apply relocations.
+  // apply relocations
   for(int i=0; i<relasz/sizeof(Elf64_Rela); i++) {
     switch(rela[i].r_info & 0xffffffffl) {
     case R_X86_64_JMP_SLOT:
@@ -522,9 +519,6 @@ __rtld_init(payload_args_t *args) {
   if((error=args->sceKernelDlsym(0x2, "strlen", &strlen))) {
     return error;
   }
-  if((error=args->sceKernelDlsym(0x2, "printf", &printf))) {
-    return error;
-  }
   if((error=args->sceKernelDlsym(0x2, "sprintf", &sprintf))) {
     return error;
   }
@@ -567,12 +561,3 @@ __rtld_init(payload_args_t *args) {
   return error;
 }
 
-
-__attribute__((destructor(104))) static void
-rtld_destructor(void) {
-  while(libhead) {
-    rtld_lib_t *next = libhead->next;
-    rtld_close(libhead);
-    libhead = next;
-  }
-}
