@@ -43,10 +43,13 @@ asm(".global $name\\n"
     "$name:\\n");''')
 
 
-# read NIDs from nid_db.xml
-NID_DB = (os.path.dirname(__file__) or '.') + '/nid_db.xml'
-nid_map = {entry.get('obf'): entry.get('sym')
-           for entry in ET.parse(NID_DB).getroot()}
+# read NIDs from aerolib.csv
+NID_DB = (os.path.dirname(__file__) or '.') + '/aerolib.csv'
+nid_map = {}
+with open(NID_DB) as f:
+    for line in f.readlines():
+        nid, sym = line.split()
+        nid_map[nid] = sym
 
 
 def symbols(sym_type, filename):

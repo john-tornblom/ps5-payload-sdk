@@ -29,13 +29,14 @@ STUBS := $(SPRXS:.sprx=.c)
 SOURCES  := $(wildcard *.c)
 SHARED   := $(SOURCES:.c=.so)
 
-NID_DB_URL := https://raw.githubusercontent.com/astrelsky/GhidraOrbis/master/data/nid_db.xml
+NID_DB     := aerolib.csv
+NID_DB_URL := https://raw.githubusercontent.com/zecoxao/sce_symbols/main/$(NID_DB)
 
 all: $(SOURCES) $(SHARED)
 
-stubs: nid_db.xml $(STUBS)
+stubs: $(NID_DB) $(STUBS)
 
-nid_db.xml:
+$(NID_DB):
 	wget -O $@ $(NID_DB_URL)
 
 %.c: %.sprx
@@ -48,7 +49,7 @@ nid_db.xml:
 	$(LD) -shared -o $@ $<
 
 clean:
-	rm -f *.o *.so nid_db.xml
+	rm -f *.o *.so $(NID_DB)
 
 install: $(SHARED)
 	install -d $(DESTDIR)/usr/lib

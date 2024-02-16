@@ -35,6 +35,10 @@ asm(".global sceUserServiceGetAccessibilityZoomEnabled\n"
     ".type sceUserServiceGetAccessibilityZoomEnabled @function\n"
     "sceUserServiceGetAccessibilityZoomEnabled:\n");
 
+asm(".global sceUserServiceGetAccessibilityZoomFollowFocus\n"
+    ".type sceUserServiceGetAccessibilityZoomFollowFocus @function\n"
+    "sceUserServiceGetAccessibilityZoomFollowFocus:\n");
+
 asm(".global sceUserServiceGetAccountRemarks\n"
     ".type sceUserServiceGetAccountRemarks @function\n"
     "sceUserServiceGetAccountRemarks:\n");

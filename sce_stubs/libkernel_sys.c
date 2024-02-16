@@ -1835,6 +1835,10 @@ asm(".global sceKernelAddAmprEvent\n"
     ".type sceKernelAddAmprEvent @function\n"
     "sceKernelAddAmprEvent:\n");
 
+asm(".global sceKernelAddAmprSystemEvent\n"
+    ".type sceKernelAddAmprSystemEvent @function\n"
+    "sceKernelAddAmprSystemEvent:\n");
+
 asm(".global sceKernelAddCpumodeEvent\n"
     ".type sceKernelAddCpumodeEvent @function\n"
     "sceKernelAddCpumodeEvent:\n");
@@ -2075,6 +2079,10 @@ asm(".global sceKernelCallIndirectBuffer2\n"
     ".type sceKernelCallIndirectBuffer2 @function\n"
     "sceKernelCallIndirectBuffer2:\n");
 
+asm(".global sceKernelCallIndirectBuffer3\n"
+    ".type sceKernelCallIndirectBuffer3 @function\n"
+    "sceKernelCallIndirectBuffer3:\n");
+
 asm(".global sceKernelCancelEventFlag\n"
     ".type sceKernelCancelEventFlag @function\n"
     "sceKernelCancelEventFlag:\n");
@@ -2230,6 +2238,10 @@ asm(".global sceKernelDeleteACInfo\n"
 asm(".global sceKernelDeleteAmprEvent\n"
     ".type sceKernelDeleteAmprEvent @function\n"
     "sceKernelDeleteAmprEvent:\n");
+
+asm(".global sceKernelDeleteAmprSystemEvent\n"
+    ".type sceKernelDeleteAmprSystemEvent @function\n"
+    "sceKernelDeleteAmprSystemEvent:\n");
 
 asm(".global sceKernelDeleteBudget\n"
     ".type sceKernelDeleteBudget @function\n"
@@ -3315,6 +3327,14 @@ asm(".global sceKernelMapperGetParam\n"
     ".type sceKernelMapperGetParam @function\n"
     "sceKernelMapperGetParam:\n");
 
+asm(".global sceKernelMapperGetUsageStatsData\n"
+    ".type sceKernelMapperGetUsageStatsData @function\n"
+    "sceKernelMapperGetUsageStatsData:\n");
+
+asm(".global sceKernelMapperSetPageTablePoolOccupancyNotificationThreshold\n"
+    ".type sceKernelMapperSetPageTablePoolOccupancyNotificationThreshold @function\n"
+    "sceKernelMapperSetPageTablePoolOccupancyNotificationThreshold:\n");
+
 asm(".global sceKernelMemoryPoolBatch\n"
     ".type sceKernelMemoryPoolBatch @function\n"
     "sceKernelMemoryPoolBatch:\n");
@@ -4374,6 +4394,10 @@ asm(".global scePthreadMutexattrSettype\n"
 asm(".global scePthreadOnce\n"
     ".type scePthreadOnce @function\n"
     "scePthreadOnce:\n");
+
+asm(".global scePthreadRegisterThreadDeathHook\n"
+    ".type scePthreadRegisterThreadDeathHook @function\n"
+    "scePthreadRegisterThreadDeathHook:\n");
 
 asm(".global scePthreadRename\n"
     ".type scePthreadRename @function\n"

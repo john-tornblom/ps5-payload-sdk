@@ -175,6 +175,10 @@ asm(".global sceVideoOutDeleteFlipEvent\n"
     ".type sceVideoOutDeleteFlipEvent @function\n"
     "sceVideoOutDeleteFlipEvent:\n");
 
+asm(".global sceVideoOutDeleteOutputModeEvent\n"
+    ".type sceVideoOutDeleteOutputModeEvent @function\n"
+    "sceVideoOutDeleteOutputModeEvent:\n");
+
 asm(".global sceVideoOutDeletePreVblankStartEvent\n"
     ".type sceVideoOutDeletePreVblankStartEvent @function\n"
     "sceVideoOutDeletePreVblankStartEvent:\n");
