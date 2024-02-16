@@ -19,11 +19,18 @@ TOOLS   := x86_64-ps5-payload-cc x86_64-ps5-baremetal-cc \
 	   x86_64-ps5-payload-cxx x86_64-ps5-baremetal-cxx \
 	   x86_64-ps5-payload-ld x86_64-ps5-baremetal-ld
 
+MAKEFILES := x86_64-ps5-payload.inc x86_64-ps5-baremetal.inc
 
 all:
 
 clean:
 
-install: $(TOOLS)
+install: install-tools install-makefiles
+
+install-tools: $(TOOLS)
 	install -d $(DESTDIR)/host
 	install $^ $(DESTDIR)/host
+
+install-makefiles: $(MAKEFILES)
+	install -d $(DESTDIR)/make
+	install $^ $(DESTDIR)/make

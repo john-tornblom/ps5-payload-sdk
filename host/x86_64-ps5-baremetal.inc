@@ -1,4 +1,4 @@
-#   Copyright (C) 2023 John Törnblom
+#   Copyright (C) 2024 John Törnblom
 #
 # This file is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -14,27 +14,9 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-PS5_HOST ?= ps5
-PS5_PORT ?= 9021
+CC   := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-baremetal-cc
+LD   := $(PS5_PAYLOAD_SDK)/host/x86_64-ps5-baremetal-ld
+MAKE ?= make
 
-ifdef PS5_PAYLOAD_SDK
-    include $(PS5_PAYLOAD_SDK)/make/x86_64-ps5-payload.inc
-else
-    $(error PS5_PAYLOAD_SDK is undefined)
-endif
-
-ELF := hello_sprx.elf
-OBJ := main.o
-
-LDADD += -lSceRandom
-
-all: $(ELF)
-
-$(ELF): $(OBJ)
-	$(LD) $^ $(LDADD) -o $@
-
-clean:
-	rm -f $(OBJ) $(ELF)
-
-test: $(ELF)
-	nc -q0 $(PS5_HOST) $(PS5_PORT) < $^
+CFLAGS ?=
+LDADD  ?= 
