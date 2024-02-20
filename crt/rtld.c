@@ -110,10 +110,10 @@ static int   (*sceSysmoduleLoadModuleInternal)(unsigned int) = 0;
  **/
 static const char*
 LD_LIBRARY_PATH[] = {
-  "/system/priv_ex/lib",
-  "/system/common_ex/lib",
   "/system/priv/lib",
-  "/system/common/lib"
+  "/system/common/lib",
+  "/system_ex/priv_ex/lib",
+  "/system_ex/common_ex/lib",
 };
 
 
