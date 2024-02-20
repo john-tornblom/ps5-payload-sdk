@@ -113,6 +113,9 @@ _start(payload_args_t *args, int argc, char* argv[], char* envp[]) {
 
   *args->payloadout = 0;
   if((*args->payloadout=pre_init(args))) {
+    if(!args->sceKernelDlsym(0x1, "_exit", &_exit)) {
+      _exit(*args->payloadout);
+    }
     return;
   }
 
