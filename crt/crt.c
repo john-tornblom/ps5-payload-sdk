@@ -99,12 +99,30 @@ pre_init(payload_args_t *args) {
 
 
 /**
+ * Terminate the payload.
+ **/
+static void
+terminate(payload_args_t *args) {
+  void (*exit)(int) = 0;
+  long dummy;
+
+  // we are running inside a hijacked process, just return
+  if(args->sceKernelDlsym(0x1, "sceKernelDlsym", &dummy)) {
+    return;
+  }
+
+  if(!args->sceKernelDlsym(0x2, "exit", &exit)) {
+    exit(*args->payloadout);
+  }
+}
+
+
+/**
  * Entry-point invoked by the ELF loader.
  **/
 void
 _start(payload_args_t *args, int argc, char* argv[], char* envp[]) {
   unsigned long count = 0;
-  void (*_exit)(int) = 0;
 
   // Clear .bss section.
   for(unsigned char* bss=__bss_start; bss<__bss_end; bss++) {
@@ -113,9 +131,7 @@ _start(payload_args_t *args, int argc, char* argv[], char* envp[]) {
 
   *args->payloadout = 0;
   if((*args->payloadout=pre_init(args))) {
-    if(!args->sceKernelDlsym(0x1, "_exit", &_exit)) {
-      _exit(*args->payloadout);
-    }
+    terminate(args);
     return;
   }
 
@@ -134,7 +150,5 @@ _start(payload_args_t *args, int argc, char* argv[], char* envp[]) {
     __fini_array_start[count-i-1]();
   }
 
-  if(!args->sceKernelDlsym(0x1, "_exit", &_exit)) {
-    _exit(*args->payloadout);
-  }
+  terminate(args);
 }
