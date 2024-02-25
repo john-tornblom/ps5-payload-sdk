@@ -19,6 +19,12 @@ along with this program; see the file COPYING. If not, see
 unsigned long kernel_get_ucred_authid(int pid);
 int           kernel_set_ucred_authid(int pid, unsigned long authid);
 
+unsigned long kernel_get_ucred_attrs(int pid);
+int           kernel_set_ucred_attrs(int pid, unsigned long attrs);
+
+int kernel_get_ucred_caps(int pid, unsigned char caps[16]);
+int kernel_set_ucred_caps(int pid, unsigned char caps[16]);
+
 unsigned long kernel_get_root_vnode(void);
 unsigned long kernel_get_proc_rootdir(int pid);
 int           kernel_set_proc_rootdir(int pid, unsigned long vnode);

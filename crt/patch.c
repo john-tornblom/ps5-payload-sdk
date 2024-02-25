@@ -14,6 +14,7 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
+#include "kernel.h"
 #include "mdbg.h"
 #include "payload.h"
 #include "syscall.h"
@@ -68,9 +69,39 @@ patch_sceKernelSpawn(void) {
 }
 
 
+static int
+patch_kernel_ucred(void) {
+  int pid = syscall(SYS_getpid);
+  unsigned char caps[16];
+  unsigned long attrs;
+
+  if(kernel_get_ucred_caps(pid, caps)) {
+    return -1;
+  }
+  if(!(attrs=kernel_get_ucred_attrs(pid))) {
+    return -1;
+  }
+
+  caps[5]  = 0x1c; // ??
+  caps[7]  = 0x40; // jail related?
+  caps[15] |= 0x40; // jitshm
+  attrs    |= 0x80; // ptrace
+
+  if(kernel_set_ucred_caps(pid, caps)) {
+    return -1;
+  }
+  if(kernel_set_ucred_attrs(pid, attrs)) {
+    return -1;
+  }
+
+  return 0;
+}
+
+
 __attribute__((constructor(105))) static void
 payload_constructor(payload_args_t *args) {
   sceKernelDlsym = args->sceKernelDlsym;
   patch_sceKernelSpawn();
+  patch_kernel_ucred();
 }
 

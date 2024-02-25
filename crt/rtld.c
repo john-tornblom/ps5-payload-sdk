@@ -490,8 +490,11 @@ rtld_load(void) {
 
 int
 __rtld_init(payload_args_t *args) {
+  unsigned char privcaps[16] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,
+                                0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff};
   int pid = syscall(SYS_getpid);
   unsigned long rootdir = 0;
+  unsigned char caps[16];
   int error = 0;
 
   // determine libkernel handle
@@ -537,24 +540,34 @@ __rtld_init(payload_args_t *args) {
     return error;
   }
 
-  // jailbreak, and load shared objects
+  // jailbreak, raise caps
   if(!(rootdir=kernel_get_proc_rootdir(pid))) {
+    return -1;
+  }
+  if(kernel_get_ucred_caps(pid, caps)) {
     return -1;
   }
   if(kernel_set_proc_rootdir(pid, kernel_get_root_vnode())) {
     return -1;
   }
+  if(kernel_set_ucred_caps(pid, privcaps)) {
+    return -1;
+  }
 
+  // load shared objects
   if((libhead=rtld_open("libSceSysmodule.so"))) {
     if((error=args->sceKernelDlsym(libhead->handle, "sceSysmoduleLoadModuleInternal",
 				   &sceSysmoduleLoadModuleInternal))) {
       return error;
     }
   }
-
   error = rtld_load();
 
+  // restore jail and caps
   if(kernel_set_proc_rootdir(pid, rootdir)) {
+    return -1;
+  }
+  if(kernel_set_ucred_caps(pid, caps)) {
     return -1;
   }
 
