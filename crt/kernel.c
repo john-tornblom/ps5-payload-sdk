@@ -681,7 +681,7 @@ kernel_set_ucred_attrs(int pid, unsigned long attrs) {
   if(!(ucred=kernel_get_proc_ucred(pid))) {
     return -1;
   }
-
+
   if(kernel_copyin(&attrs, ucred + KERNEL_OFFSET_UCRED_CR_SCEATTRS,
 		   sizeof(attrs))) {
     return -1;
