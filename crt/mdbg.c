@@ -61,17 +61,28 @@ typedef struct mdbg_res {
  **/
 static int
 mdbg_memop(int memop, mdbg_memop_args_t *args) {
+  unsigned char privcaps[16] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,
+                                0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff};
   int pid = (int)syscall(SYS_getpid);
   mdbg_cmd_t cmd = {1, memop};
+  unsigned char caps[16];
   unsigned long authid;
   mdbg_res_t res;
   long err;
+
+  if(kernel_get_ucred_caps(pid, caps)) {
+    return -1;
+  }
 
   if(!(authid=kernel_get_ucred_authid(pid))) {
     return -1;
   }
 
   if(kernel_set_ucred_authid(pid, 0x4800000000000006l)) {
+    return -1;
+  }
+
+  if(kernel_set_ucred_caps(pid, privcaps)) {
     return -1;
   }
 
@@ -86,6 +97,9 @@ mdbg_memop(int memop, mdbg_memop_args_t *args) {
   } while(res.status != 0 && args->len && res.len);
 
   if(kernel_set_ucred_authid(pid, authid)) {
+    return -1;
+  }
+  if(kernel_set_ucred_caps(pid, caps)) {
     return -1;
   }
 
