@@ -14,6 +14,7 @@ You should have received a copy of the GNU General Public License
 along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
+#include "klog.h"
 #include "payload.h"
 #include "syscall.h"
 
@@ -210,33 +211,42 @@ __kernel_init(payload_args_t* args) {
   int error = 0;
 
   if((error=args->sceKernelDlsym(0x2, "malloc", &malloc))) {
+    klog_perror("Unable to resolve 'malloc'");
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "free", &free))) {
+    klog_perror("Unable to resolve 'free'");
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "strncmp", &strncmp))) {
+    klog_perror("Unable to resolve 'strncmp'");
     return error;
   }
 
   if((rw_pair[0]=args->rwpair[0]) < 0) {
+    klog_puts("Invalid master socket");
     return -1;
   }
   if((rw_pair[1]=args->rwpair[1]) < 0) {
+    klog_puts("Invalid victim socket");
     return -1;
   }
 
   if((rw_pipe[0]=args->rwpipe[0]) < 0) {
+    klog_puts("Invalid kernel read handle");
     return -1;
   }
   if((rw_pipe[1]=args->rwpipe[1]) < 0) {
+    klog_puts("Invalid kernel write handle");
     return -1;
   }
 
   if(!(pipe_addr=args->kpipe_addr)) {
+    klog_puts("Invalid kernel pipe address");
     return -1;
   }
   if(!(KERNEL_ADDRESS_DATA_BASE=args->kdata_base_addr)) {
+    klog_puts("Invalid kernel .data address");
     return -1;
   }
 
@@ -278,6 +288,7 @@ __kernel_init(payload_args_t* args) {
     break;
 
   default:
+    klog_printf("Unknown firmware 0x%x\n", kernel_get_fw_version());
     return -1;
   }
 

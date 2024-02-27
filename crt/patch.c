@@ -15,6 +15,7 @@ along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
 #include "kernel.h"
+#include "klog.h"
 #include "mdbg.h"
 #include "payload.h"
 #include "syscall.h"
@@ -49,6 +50,7 @@ patch_sceKernelSpawn(void) {
 
   loc += 52;
   if(mdbg_copyout(pid, loc, &val, sizeof(val))) {
+    klog_perror("mdbg_copyout");
     return -1;
   }
 
@@ -57,11 +59,13 @@ patch_sceKernelSpawn(void) {
     return 0;
 
   } else if(val != 0x00000000a845c748l) {
+    klog_puts("patch_sceKernelSpawn: wrong offset");
     return -1;
   }
 
   val = 0x90909090a8758948l;
   if(mdbg_copyin(pid, &val, loc, sizeof(val))) {
+    klog_perror("mdbg_copyin");
     return -1;
   }
 
@@ -76,9 +80,11 @@ patch_kernel_ucred(void) {
   unsigned long attrs;
 
   if(kernel_get_ucred_caps(pid, caps)) {
+    klog_puts("kernel_get_ucred_caps failed");
     return -1;
   }
   if(!(attrs=kernel_get_ucred_attrs(pid))) {
+    klog_puts("kernel_get_ucred_attrs failed");
     return -1;
   }
 
@@ -88,9 +94,11 @@ patch_kernel_ucred(void) {
   attrs    |= 0x80; // ptrace
 
   if(kernel_set_ucred_caps(pid, caps)) {
+    klog_puts("kernel_set_ucred_caps failed");
     return -1;
   }
   if(kernel_set_ucred_attrs(pid, attrs)) {
+    klog_puts("kernel_set_ucred_attrs failed");
     return -1;
   }
 

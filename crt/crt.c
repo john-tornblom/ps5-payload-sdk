@@ -36,6 +36,7 @@ extern unsigned char __bss_end[] __attribute__((weak));
 extern int main(int argc, char* argv[], char *envp[]);
 
 
+int __klog_init(payload_args_t *args);
 int __kernel_init(payload_args_t* args);
 int __rtld_init(payload_args_t* args);
 
@@ -87,6 +88,9 @@ pre_init(payload_args_t *args) {
   // in getpid (provided by libkernel)
   ptr_syscall += 0xa;
 
+  if((error=__klog_init(args))) {
+    return error;
+  }
   if((error=__kernel_init(args))) {
     return error;
   }

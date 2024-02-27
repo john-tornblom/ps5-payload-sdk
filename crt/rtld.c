@@ -15,6 +15,7 @@ along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
 #include "kernel.h"
+#include "klog.h"
 #include "mdbg.h"
 #include "payload.h"
 #include "syscall.h"
@@ -261,14 +262,6 @@ static const sysmodtab_t sysmodtab[] = {
 };
 
 
-#define KLOG(format, ...)				    \
-  do {							    \
-    char buf[0x100];					    \
-    sprintf(buf, "<118>[rtld] " format "\n", __VA_ARGS__);  \
-    syscall(0x259, 7, buf, 0);				    \
-  } while(0)
-
-
 /**
  *
  **/
@@ -309,6 +302,7 @@ rtld_open(const char* basename) {
 	  return 0;
 	}
 	if(sceSysmoduleLoadModuleInternal(sysmodtab[i].handle)) {
+	  klog_perror("sceSysmoduleLoadModuleInternal");
 	  return 0;
 	}
       }
@@ -370,7 +364,7 @@ dt_needed(const char* basename) {
     return 0;
   }
 
-  KLOG("Unable to load %s\n", basename);
+  klog_printf("Unable to load '%s'\n", basename);
 
   return -1;
 }
@@ -393,7 +387,7 @@ r_glob_dat(Elf64_Rela* rela) {
     }
   }
 
-  KLOG("Unable to resolve %s\n", name);
+  klog_printf("Unable to resolve '%s'\n", name);
 
   return -1;
 }
@@ -417,7 +411,11 @@ r_relative(Elf64_Rela* rela) {
   unsigned long val = (unsigned long)(__text_start + rela->r_addend);
   int pid = syscall(SYS_getpid);
 
-  return mdbg_copyin(pid, &val, loc, sizeof(val));
+  if(mdbg_copyin(pid, &val, loc, sizeof(val))) {
+    klog_perror("mdbg_copyin");
+    return -1;
+  }
+  return 0;
 }
 
 
@@ -503,54 +501,68 @@ __rtld_init(payload_args_t *args) {
   } else if(!args->sceKernelDlsym(0x2001, "sceKernelDlsym", &sceKernelDlsym)) {
     libkernel_handle = 0x2001;
   } else {
+    klog_puts("Unable to determine libkernel handle");
     return -1;
   }
 
   // load deps to libc
   if((error=args->sceKernelDlsym(0x2, "malloc", &malloc))) {
+    klog_perror("Unable to resolve 'malloc'");
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "free", &free))) {
+    klog_perror("Unable to resolve 'free'");
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "strcat", &strcat))) {
+    klog_perror("Unable to resolve 'strcat'");
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "strcmp", &strcmp))) {
+    klog_perror("Unable to resolve 'strcmp'");
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "strlen", &strlen))) {
+    klog_perror("Unable to resolve 'strlen'");
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "sprintf", &sprintf))) {
+    klog_perror("Unable to resolve 'sprintf'");
     return error;
   }
 
   // load deps to libkernel
   if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelDlsym",
 				 &sceKernelDlsym))) {
+    klog_perror("Unable to resolve 'sceKernelDlsym'");
     return error;
   }
   if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelLoadStartModule",
 				 &sceKernelLoadStartModule))) {
+    klog_perror("Unable to resolve 'sceKernelLoadStartModule'");
     return error;
   }
   if((error=args->sceKernelDlsym(libkernel_handle, "sceKernelStopUnloadModule",
 				 &sceKernelStopUnloadModule))) {
+    klog_perror("Unable to resolve 'sceKernelStopUnloadModule'");
     return error;
   }
 
   // jailbreak, raise caps
   if(!(rootdir=kernel_get_proc_rootdir(pid))) {
+    klog_puts("kernel_get_proc_rootdir failed");
     return -1;
   }
   if(kernel_get_ucred_caps(pid, caps)) {
+    klog_puts("kernel_get_ucred_caps failed");
     return -1;
   }
   if(kernel_set_proc_rootdir(pid, kernel_get_root_vnode())) {
+    klog_puts("kernel_set_proc_rootdir failed");
     return -1;
   }
   if(kernel_set_ucred_caps(pid, privcaps)) {
+    klog_puts("kernel_set_ucred_caps failed");
     return -1;
   }
 
@@ -565,9 +577,11 @@ __rtld_init(payload_args_t *args) {
 
   // restore jail and caps
   if(kernel_set_proc_rootdir(pid, rootdir)) {
+    klog_puts("kernel_set_proc_rootdir failed");
     return -1;
   }
   if(kernel_set_ucred_caps(pid, caps)) {
+    klog_puts("kernel_set_ucred_caps failed");
     return -1;
   }
 
