@@ -18,24 +18,18 @@ along with this program; see the file COPYING. If not, see
 #include "syscall.h"
 
 
-static int         (*snprintf)(char*, unsigned long, const char*, ...) = 0;
-static char*       (*strerror)(int) = 0;
-static const char* (*getprogname)(void) = 0;
-static int         (*vsnprintf)(char*, unsigned long, const char*, __builtin_va_list) = 0;
-static int*        (*__error)(void) = 0;
+static int   (*snprintf)(char*, unsigned long, const char*, ...) = 0;
+static char* (*strerror)(int) = 0;
+static int   (*vsnprintf)(char*, unsigned long, const char*, __builtin_va_list) = 0;
+static int*  (*__error)(void) = 0;
 
 
 static char*
 klog_label(char *buf, unsigned long size) {
-  const char* name = getprogname();
   int pid = syscall(SYS_getpid);
 
   buf[0] = 0;
-  if(name && name[0]) {
-    snprintf(buf, size, "%s", name);
-  } else {
-    syscall(0x268, pid, buf, size);
-  }
+  syscall(0x268, pid, buf, size);
 
   return buf;
 }
@@ -89,9 +83,6 @@ __klog_init(payload_args_t *args) {
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "strerror", &strerror))) {
-    return error;
-  }
-  if((error=args->sceKernelDlsym(0x2, "getprogname", &getprogname))) {
     return error;
   }
   if((error=args->sceKernelDlsym(0x2, "vsnprintf", &vsnprintf))) {
