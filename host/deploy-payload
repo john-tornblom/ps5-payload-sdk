@@ -1,4 +1,5 @@
-#   Copyright (C) 2023 John Törnblom
+#!/usr/bin/env bash
+#   Copyright (C) 2024 John Törnblom
 #
 # This file is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -14,24 +15,17 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-DESTDIR ?= /opt/ps5-payload-sdk
-TOOLS   := x86_64-ps5-payload-cc x86_64-ps5-baremetal-cc \
-	   x86_64-ps5-payload-cxx x86_64-ps5-baremetal-cxx \
-	   x86_64-ps5-payload-ld x86_64-ps5-baremetal-ld \
-	   deploy-payload
+if [[ -z "$PS5_HOST" ]]; then
+    PS5_HOST=ps5
+fi
 
-MAKEFILES := x86_64-ps5-payload.inc x86_64-ps5-baremetal.inc
+if [[ -z "$PS5_PORT" ]]; then
+    PS5_PORT=9021
+fi
 
-all:
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <PATH>"
+    exit 1
+fi
 
-clean:
-
-install: install-tools install-makefiles
-
-install-tools: $(TOOLS)
-	install -d $(DESTDIR)/host
-	install $^ $(DESTDIR)/host
-
-install-makefiles: $(MAKEFILES)
-	install -d $(DESTDIR)/make
-	install $^ $(DESTDIR)/make
+netcat -q0 -v $PS5_HOST $PS5_PORT < $1
