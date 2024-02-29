@@ -24,7 +24,7 @@ CFLAGS  += -target x86_64-sie-ps5 -fno-stack-protector
 
 all: crt1.o
 
-crt1.o: crt.o klog.o kernel.o rtld.o patch.o mdbg.o
+crt1.o: crt.o klog.o kernel.o rtld.o patch.o mdbg.o env.o
 	$(LD) -r -o $@ $^
 
 %.o: %.c

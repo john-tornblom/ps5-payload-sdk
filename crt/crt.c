@@ -20,8 +20,8 @@ along with this program; see the file COPYING. If not, see
 /**
  * Dependencies provided by the ELF linker.
  **/
-extern void (*__init_array_start[])(payload_args_t*) __attribute__((weak));
-extern void (*__init_array_end[])(payload_args_t*) __attribute__((weak));
+extern void (*__init_array_start[])(payload_args_t*, int, char**, char**) __attribute__((weak));
+extern void (*__init_array_end[])(payload_args_t*, int, char**, char**) __attribute__((weak));
 
 extern void (*__fini_array_start[])(void) __attribute__((weak));
 extern void (*__fini_array_end[])(void) __attribute__((weak));
@@ -142,7 +142,7 @@ _start(payload_args_t *args, int argc, char* argv[], char* envp[]) {
   // Run .init functions.
   count = __init_array_end - __init_array_start;
   for(int i=0; i<count; i++) {
-    __init_array_start[i](args);
+    __init_array_start[i](args, argc, argv, envp);
   }
 
   // Run the actual payload
