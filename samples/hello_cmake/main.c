@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 John Törnblom
+/* Copyright (C) 2024 John Törnblom
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -15,8 +15,10 @@ along with this program; see the file COPYING. If not, see
 <http://www.gnu.org/licenses/>.  */
 
 #include <stdio.h>
+#include <unistd.h>
+
 
 int main() {
-  printf("Hello, CMake!\n");
+  printf("cmake, pid %d says hello!\n", getpid());
   return 0;
 }
