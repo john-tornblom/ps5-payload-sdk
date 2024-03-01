@@ -94,7 +94,6 @@ env_constructor(payload_args_t *args, int argc, char** argv, char** envp) {
   }
 
   if((cwd=getenv("PWD"))) {
-    klog_printf("%s\n", cwd);
     chdir(cwd);
   }
 }
