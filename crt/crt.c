@@ -75,6 +75,7 @@ payload_get_args(void) {
 
 static int
 pre_init(payload_args_t *args) {
+  int *__isthreaded;
   int error = 0;
 
   payload_args = args;
@@ -87,6 +88,11 @@ pre_init(payload_args_t *args) {
   // jump directly to the syscall instruction
   // in getpid (provided by libkernel)
   ptr_syscall += 0xa;
+
+  if((error=args->sceKernelDlsym(0x2, "__isthreaded", &__isthreaded))) {
+    return error;
+  }
+  *__isthreaded = 1;
 
   if((error=__klog_init(args))) {
     return error;
