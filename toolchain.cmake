@@ -94,3 +94,9 @@ set(CMAKE_CXX_LINK_EXECUTABLE
      ${PS5_PAYLOAD_SDK}/usr/lib/crt1.o \
    --end-group \
   ")
+
+# Start find_package in config mode
+set(CMAKE_FIND_PACKAGE_PREFER_CONFIG TRUE)
+
+# Set pkg-config for the same
+set(PKG_CONFIG_EXECUTABLE ${PS5_PAYLOAD_SDK}/host/pkg-config CACHE PATH "pkg-config executable")

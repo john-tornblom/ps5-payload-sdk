@@ -1,4 +1,5 @@
-#   Copyright (C) 2023 John Törnblom
+#!/usr/bin/env bash
+#   Copyright (C) 2024 John Törnblom
 #
 # This file is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -14,24 +15,17 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-DESTDIR ?= /opt/ps5-payload-sdk
-TOOLS   := x86_64-ps5-payload-cc x86_64-ps5-baremetal-cc \
-	   x86_64-ps5-payload-cxx x86_64-ps5-baremetal-cxx \
-	   x86_64-ps5-payload-ld x86_64-ps5-baremetal-ld \
-	   deploy-payload pkg-config
+PS5_PAYLOAD_SDK="${BASH_SOURCE[0]}"
+PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
+PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
-MAKEFILES := x86_64-ps5-payload.inc x86_64-ps5-baremetal.inc
+export PKG_CONFIG_DIR=
+export PKG_CONFIG_PATH=
+export PKG_CONFIG_SYSROOT_DIR=
+export PKG_CONFIG_LIBDIR=${PS5_PAYLOAD_SDK}/usr/lib/pkgconfig
 
-all:
+if [ -x "$(command -v pkg-config)" ]; then
+   exec pkg-config --static "$@"
+fi
 
-clean:
-
-install: install-tools install-makefiles
-
-install-tools: $(TOOLS)
-	install -d $(DESTDIR)/host
-	install $^ $(DESTDIR)/host
-
-install-makefiles: $(MAKEFILES)
-	install -d $(DESTDIR)/make
-	install $^ $(DESTDIR)/make
+exit 1
