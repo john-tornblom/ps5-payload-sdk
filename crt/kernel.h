@@ -23,7 +23,7 @@ unsigned long kernel_get_ucred_attrs(int pid);
 int           kernel_set_ucred_attrs(int pid, unsigned long attrs);
 
 int kernel_get_ucred_caps(int pid, unsigned char caps[16]);
-int kernel_set_ucred_caps(int pid, unsigned char caps[16]);
+int kernel_set_ucred_caps(int pid, const unsigned char caps[16]);
 
 unsigned long kernel_get_root_vnode(void);
 unsigned long kernel_get_proc_rootdir(int pid);

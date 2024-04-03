@@ -31,7 +31,7 @@ ifndef CC
 endif
 
 CFLAGS  := -ffreestanding -fno-builtin -nostdlib -fPIC
-CFLAGS  += -target x86_64-sie-ps5 -fno-stack-protector
+CFLAGS  += -target x86_64-sie-ps5 -fno-plt -fno-stack-protector
 
 all: crt1.o
 

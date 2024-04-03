@@ -399,7 +399,7 @@ kernel_get_qaflags(unsigned char qaflags[16]) {
 
 
 int
-kernel_set_qaflags(unsigned char qaflags[16]) {
+kernel_set_qaflags(const unsigned char qaflags[16]) {
   return kernel_copyin(qaflags, KERNEL_ADDRESS_QA_FLAGS, 16);
 }
 
@@ -652,7 +652,7 @@ kernel_get_ucred_caps(int pid, unsigned char caps[16]) {
 
 
 int
-kernel_set_ucred_caps(int pid, unsigned char caps[16]) {
+kernel_set_ucred_caps(int pid, const unsigned char caps[16]) {
   unsigned long ucred = 0;
 
   if(!(ucred=kernel_get_proc_ucred(pid))) {
