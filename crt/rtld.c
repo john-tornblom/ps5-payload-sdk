@@ -341,7 +341,7 @@ rtld_sym(rtld_lib_t* lib, const char* name) {
 /**
  *
  **/
-static int
+static int __attribute__((used))
 rtld_close(rtld_lib_t* lib) {
   int handle = lib->handle;
 

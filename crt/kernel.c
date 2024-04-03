@@ -533,7 +533,6 @@ kernel_dynlib_mapbase_addr(int pid, unsigned int handle) {
 unsigned long
 kernel_dynlib_resolve(int pid, int handle, const char *nid) {
   dynlib_dynsec_t dynsec;
-  unsigned long kaddr;
   unsigned long vaddr;
   Elf64_Sym *symtab;
   dynlib_obj_t obj;

@@ -30,8 +30,9 @@ ifndef CC
     $(error No suitable linker found)
 endif
 
-CFLAGS  := -ffreestanding -fno-builtin -nostdlib -fPIC
-CFLAGS  += -target x86_64-sie-ps5 -fno-plt -fno-stack-protector
+CFLAGS := -ffreestanding -fno-builtin -nostdlib -fPIC
+CFLAGS += -target x86_64-sie-ps5 -fno-plt -fno-stack-protector
+CFLAGS += -Wall -Werror
 
 all: crt1.o
 
