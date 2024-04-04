@@ -35,5 +35,5 @@ clean:
 	rm -f $(OBJ) $(ELF)
 
 test: $(ELF)
-	nc -q0 $(PS5_HOST) $(PS5_PORT) < $^
+	$(PS5_PAYLOAD_DEPLOY) -h $(PS5_HOST) -p $(PS5_PORT) $^
 

@@ -8,7 +8,7 @@ repository originate from the [PS5SDK][PS5SDK] project.
 On Debian-flavored operating systems, you can invoke the following command to
 install dependencies used by the SDK.
 ```console
-john@localhost:ps5-payload-sdk$ sudo apt-get install bash cmake clang-15 lld-15
+john@localhost:ps5-payload-sdk$ sudo apt-get install bash socat cmake clang-15 lld-15
 ```
 
 ## Building

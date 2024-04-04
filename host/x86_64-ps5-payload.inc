@@ -21,3 +21,5 @@ MAKE ?= make
 CFLAGS ?=
 LDADD  ?= 
 LDADD  += -lSceLibcInternal
+
+PS5_PAYLOAD_DEPLOY := $(PS5_PAYLOAD_SDK)/host/deploy-payload

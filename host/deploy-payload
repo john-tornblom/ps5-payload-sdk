@@ -13,19 +13,25 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; see the file COPYING. If not see
-# <http://www.gnu.org/licenses/>.
+# <http://www.gnu.org/licenses/>
 
-if [[ -z "$PS5_HOST" ]]; then
-    PS5_HOST=ps5
-fi
+PS5_HOST=""
+PS5_PORT=""
+PS5_PAYLOAD=""
 
-if [[ -z "$PS5_PORT" ]]; then
-    PS5_PORT=9021
-fi
+while getopts "h:p:" opt; do
+    case ${opt} in
+	h) PS5_HOST=$OPTARG;;
+	p) PS5_PORT=$OPTARG;;
+    esac
+done
+shift $((OPTIND -1))
 
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <PATH>"
+if [[ -z $PS5_HOST || -z $PS5_PORT || -z $1 ]]; then
+    echo "Usage: $(basename $0) -h HOST -p PORT PAYLOAD_PATH" >&2
     exit 1
 fi
 
-netcat -q0 -v $PS5_HOST $PS5_PORT < $1
+PS5_PAYLOAD=$1
+
+socat -t 9999 - TCP:$PS5_HOST:$PS5_PORT < "$PS5_PAYLOAD"
