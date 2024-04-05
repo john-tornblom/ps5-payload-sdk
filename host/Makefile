@@ -15,23 +15,17 @@
 # <http://www.gnu.org/licenses/>.
 
 DESTDIR ?= /opt/ps5-payload-sdk
-TOOLS   := x86_64-ps5-payload-cc x86_64-ps5-baremetal-cc \
-	   x86_64-ps5-payload-cxx x86_64-ps5-baremetal-cxx \
-	   x86_64-ps5-payload-ld x86_64-ps5-baremetal-ld \
-	   deploy-payload pkg-config
 
-MAKEFILES := x86_64-ps5-payload.inc x86_64-ps5-baremetal.inc
+TOOLS   := prospero-clang \
+	   prospero-clang++ \
+	   prospero-lld \
+	   prospero-pkg-config \
+	   prospero-deploy
 
 all:
 
 clean:
 
-install: install-tools install-makefiles
-
-install-tools: $(TOOLS)
+install: $(TOOLS)
 	install -d $(DESTDIR)/host
 	install $^ $(DESTDIR)/host
-
-install-makefiles: $(MAKEFILES)
-	install -d $(DESTDIR)/make
-	install $^ $(DESTDIR)/make

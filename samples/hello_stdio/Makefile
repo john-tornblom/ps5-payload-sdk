@@ -18,7 +18,7 @@ PS5_HOST ?= ps5
 PS5_PORT ?= 9021
 
 ifdef PS5_PAYLOAD_SDK
-    include $(PS5_PAYLOAD_SDK)/make/x86_64-ps5-payload.inc
+    include $(PS5_PAYLOAD_SDK)/make/toolchain.mk
 else
     $(error PS5_PAYLOAD_SDK is undefined)
 endif
@@ -35,5 +35,5 @@ clean:
 	rm -f $(OBJ) $(ELF)
 
 test: $(ELF)
-	$(PS5_PAYLOAD_DEPLOY) -h $(PS5_HOST) -p $(PS5_PORT) $^
+	$(PS5_DEPLOY) -h $(PS5_HOST) -p $(PS5_PORT) $^
 

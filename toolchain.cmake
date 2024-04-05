@@ -99,4 +99,4 @@ set(CMAKE_CXX_LINK_EXECUTABLE
 set(CMAKE_FIND_PACKAGE_PREFER_CONFIG TRUE)
 
 # Set pkg-config for the same
-set(PKG_CONFIG_EXECUTABLE ${PS5_PAYLOAD_SDK}/host/pkg-config CACHE PATH "pkg-config executable")
+set(PKG_CONFIG_EXECUTABLE ${PS5_PAYLOAD_SDK}/host/prospero-pkg-config CACHE PATH "pkg-config executable")

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#   Copyright (C) 2023 John Törnblom
+#   Copyright (C) 2024 John Törnblom
 #
 # This file is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -19,23 +19,9 @@ PS5_PAYLOAD_SDK="${BASH_SOURCE[0]}"
 PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
 PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
-if [[ -z "$PS5_TARGET_TRIPLE" ]]; then
-    PS5_TARGET_TRIPLE=x86_64-pc-none
-fi
-
-CANDIDATES=("clang-17"
-            "clang-16"
-            "clang-15"
-            "clang")
-
-for CC in "${CANDIDATES[@]}"; do
-    if [ -x "$(command -v $CC)" ]; then
-	exec $CC \
-	     -target $PS5_TARGET_TRIPLE \
-	     -fPIE -fno-stack-protector -ffreestanding -fno-builtin -nostdlib \
-	     $*
-    fi
-done
-
-exit 1
-
+export PS5_PAYLOAD_SDK=${PS5_PAYLOAD_SDK}
+export CC=${PS5_PAYLOAD_SDK}/host/prospero-clang
+export CXX=${PS5_PAYLOAD_SDK}/host/prospero-clang++
+export LD=${PS5_PAYLOAD_SDK}/host/prospero-ldd
+export PKG_CONFIG=${PS5_PAYLOAD_SDK}/host/prospero-pkg-config
+export PS5_DEPLOY=${PS5_PAYLOAD_SDK}/host/prospero-deploy
