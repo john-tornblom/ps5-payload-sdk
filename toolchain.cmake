@@ -15,6 +15,8 @@
 # <http://www.gnu.org/licenses/>.
 
 set(PS5_PAYLOAD_SDK "${CMAKE_CURRENT_LIST_DIR}/.." CACHE PATH "")
+set(PS5 TRUE)
+set(PROSPERO TRUE)
 
 #
 # The PS5 is running a modified FreeBSD kernel on a x86_64 CPU
