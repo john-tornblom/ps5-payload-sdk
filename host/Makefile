@@ -27,5 +27,5 @@ all:
 clean:
 
 install: $(TOOLS)
-	install -d $(DESTDIR)/host
-	install $^ $(DESTDIR)/host
+	install -d $(DESTDIR)/bin
+	install $^ $(DESTDIR)/bin

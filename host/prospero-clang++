@@ -25,7 +25,7 @@ CANDIDATES=("clang++-17"
 
 
 # ensure clang++ knows where prospero-lld is at
-export PATH=${PS5_PAYLOAD_SDK}/host:$PATH
+export PATH=${PS5_PAYLOAD_SDK}/bin:$PATH
 
 for CXX in "${CANDIDATES[@]}"; do
     if [ -x "$(command -v $CXX)" ]; then

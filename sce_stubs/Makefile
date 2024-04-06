@@ -64,5 +64,5 @@ clean:
 	rm -f *.o *.so $(NID_DB)
 
 install: $(SHARED)
-	install -d $(DESTDIR)/usr/lib
-	install $(SHARED) $(DESTDIR)/usr/lib
+	install -d $(DESTDIR)/sysroot/usr/lib
+	install $(SHARED) $(DESTDIR)/sysroot/usr/lib

@@ -82,7 +82,7 @@ main() {
     printf("%8u  %8u %8u %8u %8u %016lx   %11s   %5s  %04x    %5s  %s\n",
 	   ki->ki_pid, ki->ki_ppid, ki->ki_pgid, ki->ki_sid,
 	   ki->ki_uid, kernel_get_ucred_authid(ki->ki_pid),
-	   ki->ki_emul, state_abbrev[ki->ki_stat], appinfo.app_id,
+	   ki->ki_emul, state_abbrev[(int)ki->ki_stat], appinfo.app_id,
 	   appinfo.title_id, ki->ki_comm);
   }
 

@@ -46,5 +46,5 @@ clean:
 	rm -f *.o
 
 install: crt1.o
-	install -d $(DESTDIR)/usr/lib
-	install $^ $(DESTDIR)/usr/lib
+	install -d $(DESTDIR)/sysroot/usr/lib
+	install $^ $(DESTDIR)/sysroot/usr/lib

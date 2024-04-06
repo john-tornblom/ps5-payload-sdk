@@ -24,17 +24,17 @@ else
 endif
 
 ELF := hwinfo.elf
-OBJ := main.o
 
-LDADD += -lkernel_sys
+CFLAGS := -Wall -Werror -lkernel_sys
 
 all: $(ELF)
 
-$(ELF): $(OBJ)
-	$(LD) $^ $(LDADD) -o $@
+$(ELF): main.c
+	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	rm -f $(OBJ) $(ELF)
+	rm -f $(ELF)
 
 test: $(ELF)
 	$(PS5_DEPLOY) -h $(PS5_HOST) -p $(PS5_PORT) $^
+

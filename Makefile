@@ -40,7 +40,7 @@ install: elf_x86_64.x toolchain.cmake toolchain.mk toolchain.sh
 	install -d $(DESTDIR)/shell
 	install toolchain.sh $(DESTDIR)/shell
 
-	cp -r include_bsd/. $(DESTDIR)/usr/include
-	cp -r include_ps5/. $(DESTDIR)/usr/include/ps5
+	cp -r include_bsd/. $(DESTDIR)/sysroot/usr/include
+	cp -r include_ps5/. $(DESTDIR)/sysroot/usr/include/ps5
 
 	cp -r samples/. $(DESTDIR)/samples

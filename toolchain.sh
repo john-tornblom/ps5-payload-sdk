@@ -20,8 +20,8 @@ PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
 PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
 export PS5_PAYLOAD_SDK=${PS5_PAYLOAD_SDK}
-export CC=${PS5_PAYLOAD_SDK}/host/prospero-clang
-export CXX=${PS5_PAYLOAD_SDK}/host/prospero-clang++
-export LD=${PS5_PAYLOAD_SDK}/host/prospero-ldd
-export PKG_CONFIG=${PS5_PAYLOAD_SDK}/host/prospero-pkg-config
-export PS5_DEPLOY=${PS5_PAYLOAD_SDK}/host/prospero-deploy
+export CC=${PS5_PAYLOAD_SDK}/bin/prospero-clang
+export CXX=${PS5_PAYLOAD_SDK}/bin/prospero-clang++
+export LD=${PS5_PAYLOAD_SDK}/bin/prospero-ldd
+export PKG_CONFIG=${PS5_PAYLOAD_SDK}/bin/prospero-pkg-config
+export PS5_DEPLOY=${PS5_PAYLOAD_SDK}/bin/prospero-deploy

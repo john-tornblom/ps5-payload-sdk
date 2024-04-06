@@ -24,19 +24,17 @@ else
 endif
 
 ELF := hello_world.elf
-OBJ := main.o
 
-LDADD += -lkernel_web
+CFLAGS := -Wall -Werror
 
 all: $(ELF)
 
-$(ELF): $(OBJ)
-	$(LD) $^ $(LDADD) -o $@
+$(ELF): main.c
+	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	rm -f $(OBJ) $(ELF)
+	rm -f $(ELF)
 
 test: $(ELF)
 	$(PS5_DEPLOY) -h $(PS5_HOST) -p $(PS5_PORT) $^
-
 

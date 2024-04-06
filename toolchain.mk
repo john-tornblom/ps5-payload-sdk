@@ -14,14 +14,9 @@
 # along with this program; see the file COPYING. If not see
 # <http://www.gnu.org/licenses/>.
 
-CC         := $(PS5_PAYLOAD_SDK)/host/prospero-clang
-CXX        := $(PS5_PAYLOAD_SDK)/host/prospero-clang++
-LD         := $(PS5_PAYLOAD_SDK)/host/prospero-lld
-PKG_CONFIG := $(PS5_PAYLOAD_SDK)/host/prospero-pkg-config
-MAKE       ?= make
+CC         := $(PS5_PAYLOAD_SDK)/bin/prospero-clang
+CXX        := $(PS5_PAYLOAD_SDK)/bin/prospero-clang++
+LD         := $(PS5_PAYLOAD_SDK)/bin/prospero-lld
+PKG_CONFIG := $(PS5_PAYLOAD_SDK)/bin/prospero-pkg-config
+PS5_DEPLOY := $(PS5_PAYLOAD_SDK)/bin/prospero-deploy
 
-CFLAGS ?=
-LDADD  ?= 
-LDADD  += -lSceLibcInternal
-
-PS5_DEPLOY := $(PS5_PAYLOAD_SDK)/host/prospero-deploy

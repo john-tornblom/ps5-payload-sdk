@@ -24,13 +24,13 @@ CANDIDATES=("clang-17"
             "clang-15")
 
 # ensure clang knows where prospero-lld is at
-export PATH=${PS5_PAYLOAD_SDK}/host:$PATH
+export PATH=${PS5_PAYLOAD_SDK}/bin:$PATH
 
 for CC in "${CANDIDATES[@]}"; do
     if [ -x "$(command -v $CC)" ]; then
 	exec $CC \
 	     -target x86_64-sie-ps5 \
-	     -isystem ${PS5_PAYLOAD_SDK}/usr/include \
+	     -isystem ${PS5_PAYLOAD_SDK}/sysroot/usr/include \
 	     -fno-stack-protector -fno-plt \
 	     $*
     fi
