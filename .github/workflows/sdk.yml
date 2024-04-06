@@ -42,11 +42,9 @@ jobs:
         make -C samples/hello_stdio
         make -C samples/hello_world
         make -C samples/hwinfo
-        make -C samples/launch_app
         make -C samples/list_files
         make -C samples/mntinfo
         make -C samples/ps
-        make -C samples/remount
         bash samples/hello_cmake/build.sh
 
     - name: Upload SDK

@@ -26,11 +26,9 @@ MAKE_SAMPLES=("arbitrary_syscall"
 	      "hello_stdio"
 	      "hello_world"
 	      "hwinfo"
-	      "launch_app"
 	      "list_files"
 	      "mntinfo"
-	      "ps"
-	      "remount")
+	      "ps")
 
 CMAKE_SAMPLES=("hello_cmake"
 	      )
