@@ -20,9 +20,9 @@ PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
 PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
 
 export PKG_CONFIG_DIR=
-export PKG_CONFIG_PATH=
 export PKG_CONFIG_SYSROOT_DIR=
-export PKG_CONFIG_LIBDIR=${PS5_PAYLOAD_SDK}/usr/lib/pkgconfig
+export PKG_CONFIG_LIBDIR=${PS5_PAYLOAD_SDK}/sysroot/usr/lib/pkgconfig
+export PKG_CONFIG_PATH=${PS5_PAYLOAD_SDK}/sysroot/usr/libdata/pkgconfig
 
 if [ -x "$(command -v pkg-config)" ]; then
    exec pkg-config --static "$@"
