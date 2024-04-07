@@ -45,10 +45,14 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 
 #
-# Set 
+# Set compilers
 #
 set(CMAKE_C_COMPILER ${PS5_PAYLOAD_SDK}/bin/prospero-clang CACHE PATH "")
+set(CMAKE_ASM_COMPILER ${PS5_PAYLOAD_SDK}/bin/prospero-clang CACHE PATH "")
 set(CMAKE_CXX_COMPILER ${PS5_PAYLOAD_SDK}/bin/prospero-clang++ CACHE PATH "")
-set(PKG_CONFIG_EXECUTABLE ${PS5_PAYLOAD_SDK}/bin/prospero-pkg-config CACHE PATH "")
 
+#
+# Set path to pkg-config
+#
+set(PKG_CONFIG_EXECUTABLE ${PS5_PAYLOAD_SDK}/bin/prospero-pkg-config CACHE PATH "")
 set(CMAKE_FIND_PACKAGE_PREFER_CONFIG TRUE)

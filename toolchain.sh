@@ -18,11 +18,22 @@
 PS5_PAYLOAD_SDK="${BASH_SOURCE[0]}"
 PS5_PAYLOAD_SDK="$(dirname "${PS5_PAYLOAD_SDK}")"
 PS5_PAYLOAD_SDK="${PS5_PAYLOAD_SDK}/.."
+PS5_PAYLOAD_SDK="$(realpath "${PS5_PAYLOAD_SDK}")"
 
 export PS5_PAYLOAD_SDK=${PS5_PAYLOAD_SDK}
+export PS5_SYSROOT=${PS5_PAYLOAD_SDK}/sysroot
+export PS5_DEPLOY=${PS5_PAYLOAD_SDK}/bin/prospero-deploy
+
 export CC=${PS5_PAYLOAD_SDK}/bin/prospero-clang
 export CXX=${PS5_PAYLOAD_SDK}/bin/prospero-clang++
+export AS=${PS5_PAYLOAD_SDK}/bin/prospero-clang
 export LD=${PS5_PAYLOAD_SDK}/bin/prospero-ldd
-export PKG_CONFIG=${PS5_PAYLOAD_SDK}/bin/prospero-pkg-config
+
+export AR=llvm-ar
+export NM=llvm-nm
+export OBJCOPY=llvm-objcopy
+export RANLIB=llvm-ranlib
+export STRIP=llvm-strip
+
 export CMAKE=${PS5_PAYLOAD_SDK}/bin/prospero-cmake
-export PS5_DEPLOY=${PS5_PAYLOAD_SDK}/bin/prospero-deploy
+export PKG_CONFIG=${PS5_PAYLOAD_SDK}/bin/prospero-pkg-config
