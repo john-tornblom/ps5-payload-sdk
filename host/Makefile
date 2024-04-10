@@ -20,6 +20,7 @@ TOOLS   := prospero-clang \
 	   prospero-clang++ \
 	   prospero-lld \
 	   prospero-pkg-config \
+	   prospero-cmake \
 	   prospero-deploy
 
 all:
