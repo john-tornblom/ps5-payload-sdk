@@ -1,3 +1,6 @@
+# This project has moved: https://github.com/ps5-payload-dev/sdk
+***
+
 # PS5 Payload SDK
 This is an SDK for developing payloads targeted at exploited PS5s running an ELF
 loader, e.g., [ps5-payload-elfldr][elfldr], the [BD-J ps5-payload-loader][bdj],
